@@ -1,0 +1,20 @@
+<!--
+  Example builds.xml for Simple Wizard
+  Keep the element structure for the parser to work. Add multiple <build> entries.
+-->
+<builds>
+
+  <build>
+    <name>Example Build</name>
+    <version>1.0</version>
+    <kodi>K19</kodi>
+    <url>https://example.com/mybuilds/example-build.zip</url>
+    <icon>https://example.com/mybuilds/icon.png</icon>
+    <fanart>https://example.com/mybuilds/fanart.jpg</fanart>
+    <preview>https://example.com/mybuilds/preview.jpg</preview>
+    <description>Short description of this build and what it contains.</description>
+  </build>
+
+  <!-- Add more <build> blocks as needed -->
+
+</builds>

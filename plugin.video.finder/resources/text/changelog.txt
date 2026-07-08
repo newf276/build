@@ -1,0 +1,83 @@
+[COLOR dodgerblue][B]Version 6.0.13[/B][/COLOR]
+- Fixed Trakt watched status: after Trakt's recent API change, only the first ~100 watched movies and shows were syncing — your full watched history now syncs again.
+- Restored watched flags, episode indicators, and Next Episodes for large libraries.
+- After updating, clear the Trakt cache (Settings → Clear Cache → Trakt) to force a full re-sync.
+
+
+[COLOR dodgerblue][B]Version 6.0.12[/B][/COLOR]
+- Added Trakt Collection as a selectable Quick Add target.
+
+
+[COLOR dodgerblue][B]Version 6.0.11[/B][/COLOR]
+- Fixed a native Kodi crash that could happen when returning to the Home screen after adding, removing, or editing list items (or marking watched).
+- In-plugin list edits now reliably refresh both the open list and its matching Home widget once you settle back on Home.
+- "Refresh Widgets" context-menu item is now a single entry per list (dropped the redundant duplicate).
+- "Show Notification after Refresh" setting is now always configurable (previously hidden unless the periodic refresh timer was set).
+
+
+[COLOR dodgerblue][B]Version 6.0.10[/B][/COLOR]
+- Mixed Providers and Mixed Genres widgets now honor "sort_by=random": add &sort_by=random to the widget path to shuffle the displayed titles (matches Mixed Channels).
+
+
+[COLOR dodgerblue][B]Version 6.0.9[/B][/COLOR]
+- New "Mixed My Lists" folder under Mixed Movies & TV: blended movie + TV views of your own lists — Trakt Collection/Watchlist and TMDb Watchlist/Favorites/Recommendations.
+- Provider menus (Movies, TV Shows, and Mixed Providers) now fold each brand's per-storefront duplicates into one entry, so picking e.g. "Starz" searches all its channels instead of just one.
+- Mixed Providers list cleaned up: deduplicated, sorted alphabetically, with crisper local brand icons.
+- Mixed Channels widgets now honor a "sort_by=random" path, shuffling the rendered page.
+
+
+[COLOR dodgerblue][B]Version 6.0.8[/B][/COLOR]
+- New: Finder can now be used as a player for TMDBHelper — play movies and episodes from TMDBHelper widgets/lists through Finder instead of seeing "Playback through external addons is not supported".
+- Added Tools > "Install TMDBHelper Player": one tap copies the Finder player configs into TMDBHelper, adding "Finder - Auto Play" and "Finder - Source Select" to its "Play with..." menu (restart Kodi afterward).
+
+
+[COLOR dodgerblue][B]Version 6.0.7[/B][/COLOR]
+- New "Skip Intro/Outro" feature: a Netflix-style Skip button appears during episode playback to jump past intros, recaps, and outros.
+- Skip timings come from crowd-sourced IntroDB data, with AniSkip used for anime episodes and an optional chapter-based fallback.
+- Configure under Settings > Playback: enable it, toggle AniSkip, and tune minimum confidence/submissions and button duration (off by default).
+- Skip-marker data is cached and can be cleared from the maintenance menu ("Clear Skip Markers Cache").
+- Stability fix: reworked the "In Progress" home widget to reduce a thread race that could crash Kodi.
+
+
+[COLOR dodgerblue][B]Version 6.0.6[/B][/COLOR]
+- New "Quick Add" context-menu item: one tap adds or removes the highlighted movie/show from a single chosen list.
+- Pick your Quick Add target in Settings > Context Menu: Trakt Watchlist, TMDb Watchlist/Favorites, Finder Favorites, or any of your Trakt/TMDb/Finder personal lists.
+- The menu entry reads "Add to ..." or "Remove from ..." depending on whether the item is already in that list.
+- When no target is set, it falls back to your Trakt Watchlist (or Finder Favorites if Trakt isn't connected).
+
+
+[COLOR dodgerblue][B]Version 6.0.5[/B][/COLOR]
+- Restored Easynews as a built-in source — browse and search Easynews videos and images, view account info, and play Easynews links directly
+- Added an Easynews settings section (login, language filter, playback method) under Settings → Scrapers
+- Easynews now shows a "Login Failed" toast when your username or password is wrong or expired, instead of silently returning no results
+- The actor info dialog can now search Easynews for images of that person
+
+
+[COLOR dodgerblue][B]Version 6.0.4[/B][/COLOR]
+- The Trakt, Real-Debrid, All-Debrid, and Premiumize authorization screens can now open the activation page directly in your browser
+
+
+[COLOR dodgerblue][B]Version 6.0.3[/B][/COLOR]
+- Fixed TMDb Lists account authorization, which was failing to start
+- The TMDb authorize screen now shows a short link and can open the page in your browser
+- Fixed "Revoke Account Authorization" for TMDb Lists, which left accounts stranded as connected
+- Improved the under-the-hood settings-migration system applied on addon updates
+
+
+[COLOR dodgerblue][B]Version 6.0.2[/B][/COLOR]
+- New "Mixed Channels" menu: a curated row per streaming service (Netflix, Disney+, Max, Prime Video, Apple TV+, and more), each combining movies & TV with crisp brand icons
+- Added a "Play Trailer" context-menu shortcut on movies, shows, seasons, and episodes
+- Mixed Genres now combine related genres: Action & Adventure, Mystery & Thriller, and Sci-Fi & Fantasy
+- Addon icon and background image are now fixed Finder artwork (removed the assign/restore options)
+- Fixed anime-by-provider lists returning non-anime results
+
+
+[COLOR dodgerblue][B]Version 6.0.1[/B][/COLOR]
+- Cache adjustment
+
+
+[COLOR dodgerblue][B]Version 6.0.0[/B][/COLOR]
+- Fresh release baseline. Best installed clean (uninstall any older Finder first).
+- Removed all legacy upgrade migrations; new installs start from correct defaults.
+- Faster scraping: precompiled title/episode matching and added database indexes.
+
