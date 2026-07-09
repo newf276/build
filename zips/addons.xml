@@ -140,7 +140,7 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.cbcgem" name="CBC Gem" version="0.2.22" provider-name="newf276">
+<addon id="plugin.video.cbcgem" name="[B]CBC Gem[/B]" version="0.2.22" provider-name="newf276">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
     <import addon="script.module.requests" version="2.22.0"/>
