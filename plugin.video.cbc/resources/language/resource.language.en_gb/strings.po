@@ -1,6 +1,6 @@
 # Kodi Media Center language file
-# Addon Name: CBC
-# Addon id: plugin.video.cbc
+# Addon Name: Gem
+# Addon id: plugin.video.gem
 # Addon Provider: micahg
 msgid ""
 msgstr ""
@@ -57,7 +57,7 @@ msgid "Authorization Failure"
 msgstr ""
 
 msgctxt "#30011"
-msgid "Please visit watch.cbc.ca, create your account, and enter your credential in the settings"
+msgid "Please visit watch.gem.ca, create your account, and enter your credential in the settings"
 msgstr ""
 
 msgctxt "#30012"

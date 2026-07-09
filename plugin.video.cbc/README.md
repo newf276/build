@@ -1,6 +1,6 @@
-# CBC TV App
+# Gem TV App
 
-This is the CBC TV application. The app has been reverse engineered from their
+This is the Gem TV application. The app has been reverse engineered from their
 online services.
 
 ## What is supported
@@ -13,9 +13,9 @@ online services.
 
 Install this add-on via Kodi's GUI using the [Add-on Manager](https://kodi.wiki/view/Add-ons).
 Once installed, you will have immediate access to live programming. If you wish
-to access TV shows and other on-demand content, you need a CBC Gem account.
+to access TV shows and other on-demand content, you need a Gem Gem account.
 
-Sign up for CBC Gem [here](https://gem.cbc.ca/join-now). It is suggested to
+Sign up for Gem Gem [here](https://gem.gem.ca/join-now). It is suggested to
 first login to your account via web browser and you should see a prompt for your
 name and postal code. After confirming your information via web browser, you
 should then be able to use your login email and password on the add-on
@@ -24,10 +24,10 @@ configuration page in Kodi.
 ## API Details
 
 Content is keyed off of the following links:
-* [Authorization](https://api-cbc.cloud.clearleap.com/cloffice/client/identities)
-* [Live channels](http://tpfeed.cbc.ca/f/ExhSPC/t_t3UKJR6MAT?pretty=true&sort=pubDate%7Cdesc)
-* [Live](https://tpfeed.cbc.ca/f/ExhSPC/FNiv9xQx_BnT?q=id:*&pretty=true&sort=pubDate%7Cdesc)
-* [Show](https://api-cbc.cloud.clearleap.com/cloffice/client/web/browse/babb23ae-fe47-40a0-b3ed-cdc91e31f3d6)
+* [Authorization](https://api-gem.cloud.clearleap.com/cloffice/client/identities)
+* [Live channels](http://tpfeed.gem.ca/f/ExhSPC/t_t3UKJR6MAT?pretty=true&sort=pubDate%7Cdesc)
+* [Live](https://tpfeed.gem.ca/f/ExhSPC/FNiv9xQx_BnT?q=id:*&pretty=true&sort=pubDate%7Cdesc)
+* [Show](https://api-gem.cloud.clearleap.com/cloffice/client/web/browse/babb23ae-fe47-40a0-b3ed-cdc91e31f3d6)
 
 ### Authorization
 

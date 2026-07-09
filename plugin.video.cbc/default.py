@@ -11,7 +11,7 @@ from xbmcvfs import translatePath
 import inputstreamhelper
 import routing
 
-from resources.lib.cbc import CBC
+from resources.lib.gem import Gem
 from resources.lib.utils import log, getAuthorizationFile, get_iptv_channels_file, is_pending, iso8601_to_local
 from resources.lib.livechannels import LiveChannels
 from resources.lib.gemv2 import GemV2
@@ -29,7 +29,7 @@ def authorize():
     """Authorize the client."""
     prog = xbmcgui.DialogProgress()
     prog.create(getString(30001))
-    cbc = CBC()
+    gem = Gem()
 
     username = xbmcaddon.Addon().getSetting("username")
     if len(username) == 0:
@@ -40,7 +40,7 @@ def authorize():
         password = None
         username = None
 
-    if not cbc.azure_authorize(username, password, prog.update):
+    if not gem.azure_authorize(username, password, prog.update):
         log('(authorize) unable to authorize', True)
         prog.close()
         xbmcgui.Dialog().ok(getString(30002), getString(30002))
@@ -89,7 +89,7 @@ def play(labels, image, data):
             license_headers = {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/109.0',
                 'Content-Type': 'application/octet-stream',
-                'Origin': 'https://gem.cbc.ca',
+                'Origin': 'https://gem.gem.ca',
                 'x-dt-auth-token': tok, # string containing "Bearer eyJ...."
             }
             license_config = [ lic, urlencode(license_headers), 'R{SSM}', 'R']
@@ -100,7 +100,7 @@ def play(labels, image, data):
 def add_items(handle, items):
     for item in items:
         list_item = xbmcgui.ListItem(item['title'])
-        list_item.setInfo(type="Video", infoLabels=CBC.get_labels(item))
+        list_item.setInfo(type="Video", infoLabels=Gem.get_labels(item))
         image = item['image']['url'].replace('(Size)', '224')
         list_item.setArt({'thumb': image, 'poster': image})
         item_type = item['type']
@@ -176,11 +176,11 @@ def live_channels_menu():
     xbmcplugin.addSortMethod(plugin.handle, xbmcplugin.SORT_METHOD_LABEL)
     chans = LiveChannels()
     chan_list = chans.get_live_channels()
-    cbc = CBC()
+    gem = Gem()
     for channel in chan_list:
-        labels = CBC.get_labels(channel)
-        callsign = cbc.get_callsign(channel)
-        image = cbc.get_image(channel)
+        labels = Gem.get_labels(channel)
+        callsign = gem.get_callsign(channel)
+        image = gem.get_image(channel)
         item = xbmcgui.ListItem(labels['title'])
         item.setArt({'thumb': image, 'poster': image})
         item.setInfo(type="Video", infoLabels=labels)
@@ -241,7 +241,7 @@ def layout_menu(path):
 @plugin.route('/')
 def main_menu():
     """Populate the menu with the main menu items."""
-    data_path = translatePath('special://userdata/addon_data/plugin.video.cbc')
+    data_path = translatePath('special://userdata/addon_data/plugin.video.gem')
     if not os.path.exists(data_path):
         os.makedirs(data_path)
     if not os.path.exists(getAuthorizationFile()):

@@ -1,9 +1,5 @@
-Newf's Wizard - Version 5.2.4
+[B]Newf's Wizard - Version 0.2.22[/B]
 
-[B]New Menu Items[/B]
+Simple Wizard to manage builds and caches.
 
-Use the new Authorize Premium Services under Kodi Search Icon next to Kodi Gear Icon.
-
-Or Open Newf's Wizard, and Select "Authorize Debbrid/Trakt Menu Item.
-
-*****Hoping this will make Authorization of Trakt and Real-Debrid more easy for you all*****
+Initial Piers Release
