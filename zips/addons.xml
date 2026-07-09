@@ -117,35 +117,6 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.gem" name="[B]CBC Gem[/B]" version="0.0.22" provider-name="newf276">
-  <requires>
-    <import addon="xbmc.python" version="3.0.0"/>
-    <import addon="script.module.requests" version="2.22.0"/>
-    <import addon="script.module.inputstreamhelper" version="0.5.6"/>
-    <import addon="script.module.routing" version="0.2.3+matrix.1"/>
-    <import addon="script.module.beautifulsoup4" version="4.9.3+matrix.1"/>
-    <import addon="script.module.unidecode" version="1.1.1+matrix.2"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-	<provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <assets>
-      <icon>icon.png</icon>
-      <fanart>fanart.jpg</fanart>
-    </assets>
-    <summary lang="en_GB">CBC Gem Addon</summary>
-    <description lang="en_GB">View online content from the CBC Gem.</description>
-    <platform>all</platform>
-    <language>en</language>
-    <disclaimer lang="en_GB">For bugs, requests or general questions visit the Gem TV thread on the Kodi forum.</disclaimer>
-    <license>GPL-2.0-or-later</license>
-    <website>https://watch.cbc.ca/</website>
-    <source>https://github.com/newf276/build/plugin.video.gem</source>
-    <news>Add back missing live channels</news>
-  </extension>
-</addon>
-
 <addon id="script.finder.helper" name="[B]Finder Plus Helper[/B]" version="0.0.22" provider-name="newf276">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
@@ -167,6 +138,35 @@
         <description lang="en_NZ">Helper for the Finder Plus Skin.</description>
         <description lang="en_US">Helper for the Finder Plus Skin.</description>
     </extension>
+</addon>
+
+<addon id="plugin.video.cbcgem" name="CBC Gem" version="0.2.22" provider-name="newf276">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+    <import addon="script.module.requests" version="2.22.0"/>
+    <import addon="script.module.inputstreamhelper" version="0.5.6"/>
+    <import addon="script.module.routing" version="0.2.3+matrix.1"/>
+    <import addon="script.module.beautifulsoup4" version="4.9.3+matrix.1"/>
+    <import addon="script.module.unidecode" version="1.1.1+matrix.2"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+	<provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <assets>
+      <icon>icon.png</icon>
+      <fanart>fanart.jpg</fanart>
+    </assets>
+    <summary lang="en_GB">CBC GEM TV Kodi Plugin</summary>
+    <description lang="en_GB">View online content from the CBC EGM.</description>
+    <platform>all</platform>
+    <language>en</language>
+    <disclaimer lang="en_GB">For bugs, requests or general questions visit the CBC TV thread on the Kodi forum.</disclaimer>
+    <license>GPL-2.0-or-later</license>
+    <website>https://watch.cbc.ca/</website>
+    <source>https://github.com/newf276/repository/plugin.video.cbcgem</source>
+    <news>Add back missing live channels</news>
+  </extension>
 </addon>
 
 <addon id="plugin.video.finder" name="[B]Newf's Finder[/B]" provider-name="newf276" version="0.0.22">

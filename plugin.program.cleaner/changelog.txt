@@ -1,5 +1,5 @@
-[B]Newf's Wizard - Version 0.2.22[/B]
+[COLOR dodgerblue][B]Version 0.2.22[/B][/COLOR]
 
-Simple Wizard to manage builds and caches.
+- Newf's Simple Wizard to manage builds and caches for family and friends
 
-Initial Piers Release
+- Initial release for Kodi (V-22) Piers
