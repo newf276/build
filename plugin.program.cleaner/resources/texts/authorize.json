@@ -1,4 +1,18 @@
 {
+        "TMDB": {
+        "icon": "https://github.com/newf276/newf276.github.io/blob/master/packages/media/icons/tmdb.png?raw=true",
+        "items": [
+            {
+                "name": "Authorize: Finder - TMDB",
+                "url": "RunPlugin(plugin://plugin.video.finder/?mode=tmdblist_api.authenticate)"
+            },
+			{
+                "name": "Revoke: Finder - TMDB",
+                "url": "RunPlugin(plugin://plugin.video.finder/?mode=tmdblist_api.revoke_authentication)"
+            }
+        ]
+    },
+
      "Trakt": {
         "icon": "https://github.com/newf276/newf276.github.io/blob/master/packages/media/icons/trakt.png?raw=true",
         "items": [
@@ -8,7 +22,7 @@
             },
 			{
                 "name": "Revoke: Finder - Trakt",
-                "url": "RunPlugin(plugin://plugin.video.finder/?mode=trakt.trakt_[COLOR white}Revoke: _authentication)"
+                "url": "RunPlugin(plugin://plugin.video.finder/?mode=trakt.trakt_Revoke: _authentication)"
             },
             {
                 "name": "Authorize: MDBH - Trakt",
@@ -16,7 +30,7 @@
             },
             {
                 "name": "Revoke: MDBH - Trakt",
-                "url": "RunScript(plugin.video.themoviedb.helper,[COLOR white}Revoke: _trakt)"
+                "url": "RunScript(plugin.video.themoviedb.helper,Revoke: _trakt)"
             }
         ]
     },
@@ -30,7 +44,7 @@
             },
              {
                 "name": "Revoke: Finder - Premiumize",
-                "url": "RunPlugin(plugin://plugin.video.finder/?mode=premiumize.[COLOR white}Revoke: _authentication)"
+                "url": "RunPlugin(plugin://plugin.video.finder/?mode=premiumize.Revoke: _authentication)"
             },
             {
                 "name": "Authorize: ResolveURL - Premiumize",
@@ -52,7 +66,7 @@
             },
             {
                 "name": "Revoke: Finder - Real-Debrid",
-                "url": "RunPlugin(plugin://plugin.video.finder/?mode=real_debrid.[COLOR white}Revoke: _authentication)"
+                "url": "RunPlugin(plugin://plugin.video.finder/?mode=real_debrid.Revoke: _authentication)"
             },
             {
                 "name": "Authorize: ResolveURL - Real-Debrid",

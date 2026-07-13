@@ -3,7 +3,7 @@
     <include name="TVShowsMainMenu">
         <item>
             <label>TV Shows</label>
-            <onclick>ActivateWindow(Videos,plugin://plugin.video.finder/?name=TV+Shows&amp;iconImage=tv&amp;mode=navigator.main&amp;action=TVShowList,return)</onclick>
+            <onclick>ActivateWindow(Videos,plugin://plugin.video.finder/?list_id=watchlist&list_name=TV Show Watchlist&media_type=tv&mode=tmdblist.build_tmdb_list",return)</onclick>
             <property name="menu_id">$NUMBER[22000]</property>
             <thumb>icons/sidemenu/tv.png</thumb>
             <property name="id">tvshows</property>
