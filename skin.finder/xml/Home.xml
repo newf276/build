@@ -52,21 +52,7 @@
 						</include>
 					</control>
 				</control>
-				<!-- MOVIES -->
-				<control type="group" id="19000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),movies)</visible>
-					<include content="Visible_Right_Delayed">
-						<param name="id" value="movies"/>
-					</include>
-					<control type="grouplist" id="19001">
-						<include>WidgetGroupListCommon</include>
-						<pagecontrol>19099</pagecontrol>
-						<include content="MovieWidgets" condition="!Skin.HasSetting(HomeMenuNoMoviesButton)"/>
-					</control>
-					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
-						<param name="scrollbar_id" value="19099"/>
-					</include>
-				</control>
+                
 				<!-- TV SHOWS -->
 				<control type="group" id="22000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),tvshows)</visible>
@@ -82,6 +68,23 @@
 						<param name="scrollbar_id" value="22099"/>
 					</include>
 				</control>
+                
+				<!-- MOVIES -->
+				<control type="group" id="19000">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(id),movies)</visible>
+					<include content="Visible_Right_Delayed">
+						<param name="id" value="movies"/>
+					</include>
+					<control type="grouplist" id="19001">
+						<include>WidgetGroupListCommon</include>
+						<pagecontrol>19099</pagecontrol>
+						<include content="MovieWidgets" condition="!Skin.HasSetting(HomeMenuNoMoviesButton)"/>
+					</control>
+					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
+						<param name="scrollbar_id" value="19099"/>
+					</include>
+				</control>
+
 				<!-- CUSTOM 1 -->
 				<control type="group" id="23000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),custom1)</visible>
@@ -1033,10 +1036,10 @@
 							</control>
 						</itemlayout>
 						<content>
-							<!-- MOVIES 19000 -->
-							<include content="MoviesMainMenu" condition="!Skin.HasSetting(HomeMenuNoMoviesButton)"/>
 							<!-- TVSHOWS 22000 -->
 							<include content="TVShowsMainMenu" condition="!Skin.HasSetting(HomeMenuNoTVShowsButton)"/>
+							<!-- MOVIES 19000 -->
+							<include content="MoviesMainMenu" condition="!Skin.HasSetting(HomeMenuNoMoviesButton)"/>
 							<!-- CUSTOM 1 23000 -->
 							<include content="Custom1MainMenu" condition="!Skin.HasSetting(HomeMenuNoCustom1Button)"/>
 							<!-- CUSTOM 2 24000 -->
