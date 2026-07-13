@@ -90,6 +90,14 @@
             {
                 "name": "Revoke: Finder - TorBox",
                 "url": "RunPlugin(plugin://plugin.video.finder/?mode=torbox.revoke_authentication)"
+            },
+            {
+                "name": "Authorize: ResolveURL - TorBox",
+                "url": "RunPlugin(plugin://script.module.resolveurl/?mode=auth_tb)"
+            },
+            {
+                "name": "Revoke: ResolveURL - TorBox",
+                "url": "RunPlugin(plugin://script.module.resolveurl/?mode=reset_tb)"
             }
         ]
     }

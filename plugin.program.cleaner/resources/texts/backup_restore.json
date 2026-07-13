@@ -24,28 +24,18 @@
         "setting": "savedata",
         "path": "data_path"
     },
-    "plugin.video.fen": {
-        "name": "Fen",
+    "plugin.video.pov": {
+        "name": "POV",
         "setting": "savedata",
         "path": "data_path"
     },
-    "plugin.video.fenlight": {
+    "plugin.video.finder": {
         "name": "Fen Light",
         "setting": "savedata",
         "path": "data_path"
     },
     "plugin.video.umbrella": {
         "name": "Umbrella",
-        "setting": "savedata",
-        "path": "data_path"
-    },
-    "plugin.video.shadow": {
-        "name": "Shadow",
-        "setting": "savedata",
-        "path": "data_path"
-    },
-    "plugin.video.ghost": {
-        "name": "Ghost",
         "setting": "savedata",
         "path": "data_path"
     },
@@ -65,7 +55,6 @@
         "path": "data_path"
     },
 
-
     "script.trakt": {
         "name": "Trakt",
         "setting": "savedata",
@@ -76,7 +65,6 @@
         "setting": "savedata",
         "path": "data_path"
     },
-
 
     "plugin.video.imdb.trailers": {
         "name": "IMDb Trailers",
