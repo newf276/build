@@ -99,8 +99,8 @@
     <setting id="osdautoclosetime" type="string"></setting>
     <setting id="current_search_provider" type="string">0</setting>
     <setting id="searchhistory.limit" type="string">5</setting>
-    <setting id="widgetitemlimit" type="string">20</setting>
-    <setting id="categorywidgetitemlimit" type="string">20</setting>
+    <setting id="widgetitemlimit" type="string">130</setting>
+    <setting id="categorywidgetitemlimit" type="string">130</setting>
     <setting id="stackedwidgetitemlimit" type="string">20</setting>
     <setting id="defaultbackgroundbrightness" type="string">Medium</setting>
     <setting id="defaultfanartbrightness" type="string">Medium</setting>

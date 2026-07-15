@@ -758,14 +758,14 @@
 				<visible>Container(9000).HasFocus(3)</visible>
 				<!-- WIDGET ITEM LIMIT -->
 				<control type="button" id="63710">
-					<label>Set widget limit[TABS]4[/TABS](Default=20)</label>
+					<label>Set widget limit[TABS]4[/TABS](Default=130)</label>
 					<label2>$INFO[Skin.String(WidgetItemLimit)]</label2>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.SetNumeric(WidgetItemLimit)</onclick>
 				</control>
 				<!-- CATEGORY ITEM LIMIT -->
 				<control type="button" id="63711">
-					<label>Set category widget limit[TABS]2[/TABS](Default=20)</label>
+					<label>Set category widget limit[TABS]2[/TABS](Default=130)</label>
 					<label2>$INFO[Skin.String(CategoryWidgetItemLimit)]</label2>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.SetNumeric(CategoryWidgetItemLimit)</onclick>
