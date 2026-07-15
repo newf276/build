@@ -73,8 +73,6 @@
 				<control type="radiobutton" id="625">
 					<label>$VAR[MenuMovieToggleLabelVar]</label>
 					<include>DefaultSettingButton</include>
-					<selected>!Skin.HasSetting(HomeMenuNoMoviesButton)</selected>
-					<onclick>Skin.ToggleSetting(HomeMenuNoMoviesButton)</onclick>
 					<onclick>RunScript(script.finder.helper,mode=remake_all_cpaths&amp;silent=true)</onclick>
 				</control>
 				<control type="button" id="6251">
@@ -99,8 +97,6 @@
 				<control type="radiobutton" id="626">
 					<label>$VAR[MenuTVShowToggleLabelVar]</label>
 					<include>DefaultSettingButton</include>
-					<selected>!Skin.HasSetting(HomeMenuNoTVShowsButton)</selected>
-					<onclick>Skin.ToggleSetting(HomeMenuNoTVShowsButton)</onclick>
 					<onclick>RunScript(script.finder.helper,mode=remake_all_cpaths&amp;silent=true)</onclick>
 				</control>
 				<control type="button" id="6260">
