@@ -336,17 +336,17 @@
   {
     "setting_id": "view.movies",
     "setting_type": "string",
-    "setting_default": "50"
+    "setting_default": "54"
   },
   {
     "setting_id": "view.tvshows",
     "setting_type": "string",
-    "setting_default": "50"
+    "setting_default": "54"
   },
   {
     "setting_id": "view.seasons",
     "setting_type": "string",
-    "setting_default": "55"
+    "setting_default": "54"
   },
   {
     "setting_id": "view.episodes",
