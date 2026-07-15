@@ -157,9 +157,9 @@
 						<bottom>0</bottom>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
-						<scrollspeed>190</scrollspeed>
+						<scrollspeed>300</scrollspeed>
 						<font>font52_title</font>
-						<label>[COLOR dodgerblue]$VAR[ListLabelVar][/COLOR]</label>
+						<label>$VAR[ListLabelVar]</label>
 						<shadowcolor>text_shadow</shadowcolor>
 					</control>
 					<control type="label">
@@ -170,7 +170,7 @@
 						<align>right</align>
 						<aligny>center</aligny>
 						<font>font32</font>
-						<label>[COLOR dodgerblue][B]$INFO[ListItem.Property(WatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,][/B][/COLOR]</label>
+						<label>[B]$INFO[ListItem.Property(WatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,][/B]</label>
 						<animation effect="fade" start="70" end="100" time="300" reversible="false">Focus</animation>
 						<shadowcolor>text_shadow</shadowcolor>
 					</control>
@@ -459,7 +459,7 @@
 						<label>$VAR[InfoPanelBottom]</label>
 						<textcolor>unfocused_text</textcolor>
 						<autoscroll delay="7000" time="2000" repeat="7000">Skin.HasSetting(autoscroll)</autoscroll>
-						<visible>!Skin.HasSetting(Enable.AlternateInfo) + Skin.HasSetting(UseLandscape) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
+						<visible>Skin.HasSetting(Enable.AlternateInfo) + Skin.HasSetting(UseLandscape) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
 					</control>
 					<!-- CLEARLOGO -->
 					<control type="textbox">
@@ -468,7 +468,7 @@
 						<label>$VAR[InfoPanelBottom]</label>
 						<textcolor>unfocused_text</textcolor>
 						<autoscroll delay="7000" time="2000" repeat="7000">Skin.HasSetting(autoscroll)</autoscroll>
-						<visible>!Skin.HasSetting(Enable.AlternateInfo) + !Skin.HasSetting(UseLandscape) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)]</visible>
+						<visible>Skin.HasSetting(Enable.AlternateInfo) + !Skin.HasSetting(UseLandscape) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)]</visible>
 					</control>
 					<control type="textbox">
 						<height max="335">auto</height>
@@ -476,7 +476,7 @@
 						<label>$VAR[InfoPanelBottom]</label>
 						<textcolor>unfocused_text</textcolor>
 						<autoscroll delay="7000" time="2000" repeat="7000">Skin.HasSetting(autoscroll)</autoscroll>
-						<visible>!Skin.HasSetting(Enable.AlternateInfo) + !Skin.HasSetting(UseLandscape) + Container.Content(episodes)</visible>
+						<visible>Skin.HasSetting(Enable.AlternateInfo) + !Skin.HasSetting(UseLandscape) + Container.Content(episodes)</visible>
 					</control>
 					<!-- ALTERNATE INFOPANEL PLOT -->
 					<!-- LANDSCAPE -->
@@ -486,7 +486,7 @@
 						<label>$VAR[InfoPanelBottom]</label>
 						<textcolor>unfocused_text</textcolor>
 						<autoscroll delay="5000" time="2000" repeat="5000">Skin.HasSetting(autoscroll)</autoscroll>
-						<visible>Skin.HasSetting(Enable.AlternateInfo) + Skin.HasSetting(UseLandscape) + [Container.Content(movies) | Container.Content(seasons)]</visible>
+						<visible>!Skin.HasSetting(Enable.AlternateInfo) + Skin.HasSetting(UseLandscape) + [Container.Content(movies) | Container.Content(seasons)]</visible>
 					</control>
 					<control type="textbox">
 						<height max="90">auto</height>
@@ -494,7 +494,7 @@
 						<label>$VAR[InfoPanelBottom]</label>
 						<textcolor>unfocused_text</textcolor>
 						<autoscroll delay="5000" time="2000" repeat="5000">Skin.HasSetting(autoscroll)</autoscroll>
-						<visible>Skin.HasSetting(Enable.AlternateInfo) + Skin.HasSetting(UseLandscape) + Container.Content(tvshows)</visible>
+						<visible>!Skin.HasSetting(Enable.AlternateInfo) + Skin.HasSetting(UseLandscape) + Container.Content(tvshows)</visible>
 					</control>
 					<control type="textbox">
 						<height max="210">auto</height>
@@ -502,7 +502,7 @@
 						<label>$VAR[InfoPanelBottom]</label>
 						<textcolor>unfocused_text</textcolor>
 						<autoscroll delay="5000" time="2000" repeat="5000">Skin.HasSetting(autoscroll)</autoscroll>
-						<visible>Skin.HasSetting(Enable.AlternateInfo) + Skin.HasSetting(UseLandscape) + Container.Content(episodes)</visible>
+						<visible>!Skin.HasSetting(Enable.AlternateInfo) + Skin.HasSetting(UseLandscape) + Container.Content(episodes)</visible>
 					</control>
 					<!-- CLEARLOGO -->
 					<control type="textbox">
@@ -511,7 +511,7 @@
 						<label>$VAR[InfoPanelBottom]</label>
 						<textcolor>unfocused_text</textcolor>
 						<autoscroll delay="5000" time="2000" repeat="5000">Skin.HasSetting(autoscroll)</autoscroll>
-						<visible>Skin.HasSetting(Enable.AlternateInfo) + !Skin.HasSetting(UseLandscape) + [Container.Content(movies) | Container.Content(seasons)]</visible>
+						<visible>!Skin.HasSetting(Enable.AlternateInfo) + !Skin.HasSetting(UseLandscape) + [Container.Content(movies) | Container.Content(seasons)]</visible>
 					</control>
 					<control type="textbox">
 						<height max="210">auto</height>
@@ -519,7 +519,7 @@
 						<label>$VAR[InfoPanelBottom]</label>
 						<textcolor>unfocused_text</textcolor>
 						<autoscroll delay="5000" time="2000" repeat="5000">Skin.HasSetting(autoscroll)</autoscroll>
-						<visible>Skin.HasSetting(Enable.AlternateInfo) + !Skin.HasSetting(UseLandscape) + [Container.Content(tvshows) | Container.Content(episodes)]</visible>
+						<visible>!Skin.HasSetting(Enable.AlternateInfo) + !Skin.HasSetting(UseLandscape) + [Container.Content(tvshows) | Container.Content(episodes)]</visible>
 					</control>
 				</control>
 				<!-- image control -->

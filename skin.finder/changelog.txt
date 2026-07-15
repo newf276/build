@@ -1,5 +1,0 @@
-[COLOR dodgerblue][B]Version 0.2.22[/B][/COLOR]
-
--  Fork of Estuary/FT
-
-- Initial release for Kodi (V-22) Piers

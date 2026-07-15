@@ -62,7 +62,7 @@
     <setting id="disable.ratingsinf" type="bool">false</setting>
     <setting id="hide_mediaflags" type="bool">false</setting>
     <setting id="disable.colorstudio" type="bool">false</setting>
-    <setting id="no_fanart" type="bool">false</setting>
+    <setting id="no_fanart" type="bool">true</setting>
     <setting id="enableaddonwidgetfanart" type="bool">false</setting>
     <setting id="enablecategorywidgetfanart" type="bool">false</setting>
     <setting id="enablewidgetfanart" type="bool">false</setting>
@@ -79,8 +79,8 @@
     <setting id="show_profileavatar" type="bool">false</setting>
     <setting id="show_profilename" type="bool">false</setting>
     <setting id="show_weatherinfo" type="bool">false</setting>
-    <setting id="classicfinder" type="bool">false</setting>
-    <setting id="noiconmainmenu" type="bool">true</setting>
+    <setting id="classicfinder" type="bool">true</setting>
+    <setting id="noiconmainmenu" type="bool">false</setting>
     <setting id="nohighlightmainmenu" type="bool">false</setting>
     <setting id="homemenunomusicbutton" type="bool">false</setting>
     <setting id="homemenunomusicvideobutton" type="bool">false</setting>

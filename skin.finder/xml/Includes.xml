@@ -3,6 +3,7 @@
 	<include file="Defaults.xml"/>
 	<include file="Includes_Home.xml"/>
 	<include file="Includes_Animations.xml"/>
+	<include file="Includes_AddonPanel.xml"/>
 	<include file="Includes_Games.xml"/>
 	<include file="Includes_MediaMenu.xml"/>
 	<include file="Includes_Buttons.xml"/>
@@ -1792,7 +1793,7 @@
 				<label>$VAR[InfoPanelBottom]</label>
 				<textcolor>unfocused_text</textcolor>
 				<autoscroll delay="7000" time="2000" repeat="7000">Skin.HasSetting(autoscroll)</autoscroll>
-				<visible>!Skin.HasSetting(Enable.AlternateInfo)</visible>
+				<visible>Skin.HasSetting(Enable.AlternateInfo)</visible>
 			</control>
 			<control type="textbox">
 				<height max="$PARAM[height_alt_movie]">auto</height>
@@ -1800,7 +1801,7 @@
 				<label>$VAR[InfoPanelBottom]</label>
 				<textcolor>unfocused_text</textcolor>
 				<autoscroll delay="5000" time="2000" repeat="5000">Skin.HasSetting(autoscroll)</autoscroll>
-				<visible>Skin.HasSetting(Enable.AlternateInfo) + [String.IsEqual(ListItem.DBtype,movie) | String.IsEqual(ListItem.DBtype,episode) | String.IsEqual(ListItem.DBtype,season)]</visible>
+				<visible>!Skin.HasSetting(Enable.AlternateInfo) + [String.IsEqual(ListItem.DBtype,movie) | String.IsEqual(ListItem.DBtype,episode) | String.IsEqual(ListItem.DBtype,season)]</visible>
 			</control>
 			<control type="textbox">
 				<height max="$PARAM[height_alt_tvshow]">auto</height>
@@ -1808,7 +1809,7 @@
 				<label>$VAR[InfoPanelBottom]</label>
 				<textcolor>unfocused_text</textcolor>
 				<autoscroll delay="5000" time="2000" repeat="5000">Skin.HasSetting(autoscroll)</autoscroll>
-				<visible>Skin.HasSetting(Enable.AlternateInfo) + String.IsEqual(ListItem.DBtype,tvshow)</visible>
+				<visible>!Skin.HasSetting(Enable.AlternateInfo) + String.IsEqual(ListItem.DBtype,tvshow)</visible>
 			</control>
 		</control>
 	</include>

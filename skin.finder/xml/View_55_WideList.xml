@@ -40,7 +40,7 @@
 							<scroll>true</scroll>
 							<scrollspeed>160</scrollspeed>
 							<font>font52_title</font>
-							<label>[COLOR dodgerblue]$VAR[ListLabelVar][/COLOR]</label>
+							<label>$VAR[ListLabelVar]</label>
 							<shadowcolor>text_shadow</shadowcolor>
 						</control>
 						<control type="label">
@@ -242,7 +242,7 @@
 							<aligny>center</aligny>
 							<scroll>true</scroll>
 							<font>font52_title</font>
-							<label>[COLOR dodgerblue]$INFO[ListItem.Label][/COLOR]</label>
+							<label>$INFO[ListItem.Label]</label>
 							<shadowcolor>text_shadow</shadowcolor>
 						</control>
 					</focusedlayout>

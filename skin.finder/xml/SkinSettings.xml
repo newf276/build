@@ -61,6 +61,7 @@
 					<aligny>center</aligny>
 					<onclick>noop</onclick>
 					<visible>!Skin.HasSetting(ClassicFinder)</visible>
+					<enable>false</enable>
 				</control>
 				<!-- REMAKE MENUS & WIDGETS -->
 				<control type="button" id="624">
@@ -286,6 +287,7 @@
 					<texturefocus>dialogs/separator-grey.png</texturefocus>
 					<aligny>center</aligny>
 					<onclick>noop</onclick>
+					<enable>false</enable>
 				</control>
 				<!-- MUSIC -->
 				<control type="radiobutton" id="6272">
@@ -621,7 +623,7 @@
 				<onup>638</onup>
 				<pagecontrol>60</pagecontrol>
 				<ondown>638</ondown>
-				<visible>Container(9000).HasFocus(11)</visible>
+				<visible>Container(9000).HasFocus(2)</visible>
 				<!-- MAINTENANCE & TOOLS -->
 				<control type="radiobutton" id="63800">
 					<label>Enable maintenance &amp; tools menu</label>
@@ -641,72 +643,79 @@
 					<include>DefaultSettingButton</include>
 					<selected>!Skin.HasSetting(ToolsNoAuthorizeServices)</selected>
 					<onclick>Skin.ToggleSetting(ToolsNoAuthorizeServices)</onclick>
-					<visible>Skin.HasSetting(Enable.MaintenanceTools) + !System.HasAddon(script.module.acctmgr) + [System.HasAddon(plugin.video.themoviedb.helper) | System.HasAddon(plugin.video.finder) | System.HasAddon(plugin.video.umbrella) | System.HasAddon(plugin.video.pov) | System.HasAddon(plugin.video.gears) | System.HasAddon(plugin.video.redlight) | System.HasAddon(script.module.resolveurl) | System.HasAddon(plugin.video.youtube)]</visible>
+					<visible>Skin.HasSetting(Enable.MaintenanceTools) + [System.HasAddon(plugin.video.themoviedb.helper) | System.HasAddon(plugin.video.finder) | System.HasAddon(plugin.video.umbrella) | System.HasAddon(plugin.video.pov) | System.HasAddon(plugin.video.gears) | System.HasAddon(plugin.video.redlight) | System.HasAddon(script.module.resolveurl) | System.HasAddon(plugin.video.youtube)]</visible>
 				</control>
 				<control type="radiobutton" id="63803">
 					<label>      - Trakt</label>
 					<include>DefaultSettingButton</include>
 					<selected>!Skin.HasSetting(AuthNoTrakt)</selected>
 					<onclick>Skin.ToggleSetting(AuthNoTrakt)</onclick>
-					<visible>Skin.HasSetting(Enable.MaintenanceTools) + !System.HasAddon(script.module.acctmgr) + [System.HasAddon(plugin.video.themoviedb.helper) | System.HasAddon(plugin.video.finder) | System.HasAddon(plugin.video.umbrella) | System.HasAddon(plugin.video.pov) | System.HasAddon(plugin.video.gears) | System.HasAddon(plugin.video.redlight)] + !Skin.HasSetting(ToolsNoAuthorizeServices)</visible>
+					<visible>Skin.HasSetting(Enable.MaintenanceTools) + [System.HasAddon(plugin.video.themoviedb.helper) | System.HasAddon(plugin.video.finder) | System.HasAddon(plugin.video.umbrella) | System.HasAddon(plugin.video.pov) | System.HasAddon(plugin.video.gears) | System.HasAddon(plugin.video.redlight)] + !Skin.HasSetting(ToolsNoAuthorizeServices)</visible>
 				</control>
 				<control type="radiobutton" id="63804">
 					<label>      - Real-Debrid</label>
 					<include>DefaultSettingButton</include>
 					<selected>!Skin.HasSetting(AuthNoRealDebrid)</selected>
 					<onclick>Skin.ToggleSetting(AuthNoRealDebrid)</onclick>
-					<visible>Skin.HasSetting(Enable.MaintenanceTools) + !System.HasAddon(script.module.acctmgr) + [System.HasAddon(plugin.video.finder) | System.HasAddon(plugin.video.umbrella) | System.HasAddon(plugin.video.pov) | System.HasAddon(plugin.video.gears) | System.HasAddon(plugin.video.redlight) | System.HasAddon(script.module.resolveurl)] + !Skin.HasSetting(ToolsNoAuthorizeServices)</visible>
+					<visible>Skin.HasSetting(Enable.MaintenanceTools) + [System.HasAddon(plugin.video.finder) | System.HasAddon(plugin.video.umbrella) | System.HasAddon(plugin.video.pov) | System.HasAddon(plugin.video.gears) | System.HasAddon(plugin.video.redlight) | System.HasAddon(script.module.resolveurl)] + !Skin.HasSetting(ToolsNoAuthorizeServices)</visible>
 				</control>
 				<control type="radiobutton" id="63805">
 					<label>      - Premiumize</label>
 					<include>DefaultSettingButton</include>
 					<selected>!Skin.HasSetting(AuthNoPremiumize)</selected>
 					<onclick>Skin.ToggleSetting(AuthNoPremiumize)</onclick>
-					<visible>Skin.HasSetting(Enable.MaintenanceTools) + !System.HasAddon(script.module.acctmgr) + [System.HasAddon(plugin.video.finder) | System.HasAddon(plugin.video.umbrella) | System.HasAddon(plugin.video.pov) | System.HasAddon(plugin.video.gears) | System.HasAddon(plugin.video.redlight) | System.HasAddon(script.module.resolveurl)] + !Skin.HasSetting(ToolsNoAuthorizeServices)</visible>
+					<visible>Skin.HasSetting(Enable.MaintenanceTools) + [System.HasAddon(plugin.video.finder) | System.HasAddon(plugin.video.umbrella) | System.HasAddon(plugin.video.pov) | System.HasAddon(plugin.video.gears) | System.HasAddon(plugin.video.redlight) | System.HasAddon(script.module.resolveurl)] + !Skin.HasSetting(ToolsNoAuthorizeServices)</visible>
 				</control>
 				<control type="radiobutton" id="63806">
 					<label>      - All-Debrid</label>
 					<include>DefaultSettingButton</include>
 					<selected>!Skin.HasSetting(AuthNoAllDebrid)</selected>
 					<onclick>Skin.ToggleSetting(AuthNoAllDebrid)</onclick>
-					<visible>Skin.HasSetting(Enable.MaintenanceTools) + !System.HasAddon(script.module.acctmgr) + [System.HasAddon(plugin.video.finder) | System.HasAddon(plugin.video.umbrella) | System.HasAddon(plugin.video.pov) | System.HasAddon(plugin.video.gears) | System.HasAddon(plugin.video.redlight) | System.HasAddon(script.module.resolveurl)] + !Skin.HasSetting(ToolsNoAuthorizeServices)</visible>
+					<visible>Skin.HasSetting(Enable.MaintenanceTools) + [System.HasAddon(plugin.video.finder) | System.HasAddon(plugin.video.umbrella) | System.HasAddon(plugin.video.pov) | System.HasAddon(plugin.video.gears) | System.HasAddon(plugin.video.redlight) | System.HasAddon(script.module.resolveurl)] + !Skin.HasSetting(ToolsNoAuthorizeServices)</visible>
 				</control>
 				<control type="radiobutton" id="63807">
 					<label>      - Torbox</label>
 					<include>DefaultSettingButton</include>
 					<selected>!Skin.HasSetting(AuthNoTorbox)</selected>
 					<onclick>Skin.ToggleSetting(AuthNoTorbox)</onclick>
-					<visible>Skin.HasSetting(Enable.MaintenanceTools) + !System.HasAddon(script.module.acctmgr) + [System.HasAddon(plugin.video.finder) | System.HasAddon(plugin.video.umbrella) | System.HasAddon(plugin.video.pov) | System.HasAddon(plugin.video.gears) | System.HasAddon(plugin.video.redlight) | System.HasAddon(script.module.resolveurl)] + !Skin.HasSetting(ToolsNoAuthorizeServices)</visible>
+					<visible>Skin.HasSetting(Enable.MaintenanceTools) + [System.HasAddon(plugin.video.finder) | System.HasAddon(plugin.video.umbrella) | System.HasAddon(plugin.video.pov) | System.HasAddon(plugin.video.gears) | System.HasAddon(plugin.video.redlight) | System.HasAddon(script.module.resolveurl)] + !Skin.HasSetting(ToolsNoAuthorizeServices)</visible>
 				</control>
 				<control type="radiobutton" id="63808">
+					<label>      - Offcloud</label>
+					<include>DefaultSettingButton</include>
+					<selected>!Skin.HasSetting(AuthNoOffcloud)</selected>
+					<onclick>Skin.ToggleSetting(AuthNoOffcloud)</onclick>
+					<visible>Skin.HasSetting(Enable.MaintenanceTools) + [System.HasAddon(plugin.video.umbrella) | System.HasAddon(plugin.video.pov) | System.HasAddon(plugin.video.redlight) | System.HasAddon(script.module.resolveurl)] + !Skin.HasSetting(ToolsNoAuthorizeServices)</visible>
+				</control>
+				<control type="radiobutton" id="63809">
 					<label>      - Skin MDbList API Key</label>
 					<include>DefaultSettingButton</include>
 					<selected>!Skin.HasSetting(AuthNoSkinMDBList)</selected>
 					<onclick>Skin.ToggleSetting(AuthNoSkinMDBList)</onclick>
-					<visible>Skin.HasSetting(Enable.MaintenanceTools) + !System.HasAddon(script.module.acctmgr) + !Skin.HasSetting(ToolsNoAuthorizeServices)</visible>
+					<visible>Skin.HasSetting(Enable.MaintenanceTools) + !Skin.HasSetting(ToolsNoAuthorizeServices)</visible>
 				</control>
-				<control type="radiobutton" id="63809">
+				<control type="radiobutton" id="63810">
 					<label>      - TMDbH MDbList API Key</label>
 					<include>DefaultSettingButton</include>
 					<selected>!Skin.HasSetting(AuthNoTMDBHMDBList)</selected>
 					<onclick>Skin.ToggleSetting(AuthNoTMDBHMDBList)</onclick>
-					<visible>Skin.HasSetting(Enable.MaintenanceTools) + !System.HasAddon(script.module.acctmgr) + !Skin.HasSetting(ToolsNoAuthorizeServices) + System.HasAddon(plugin.video.themoviedb.helper)</visible>
+					<visible>Skin.HasSetting(Enable.MaintenanceTools) + !Skin.HasSetting(ToolsNoAuthorizeServices) + System.HasAddon(plugin.video.themoviedb.helper)</visible>
 				</control>
-				<control type="radiobutton" id="63810">
+				<control type="radiobutton" id="63811">
 					<label>      - YouTube Sign-In</label>
 					<include>DefaultSettingButton</include>
 					<selected>!Skin.HasSetting(AuthNoYouTube)</selected>
 					<onclick>Skin.ToggleSetting(AuthNoYouTube)</onclick>
 					<visible>Skin.HasSetting(Enable.MaintenanceTools) + !Skin.HasSetting(ToolsNoAuthorizeServices) + System.HasAddon(plugin.video.youtube)</visible>
 				</control>
-				<control type="radiobutton" id="63811">
+				<control type="radiobutton" id="63812">
 					<label>   - Maintenance</label>
 					<include>DefaultSettingButton</include>
 					<selected>!Skin.HasSetting(ToolsNoMaintenance)</selected>
 					<onclick>Skin.ToggleSetting(ToolsNoMaintenance)</onclick>
 					<visible>Skin.HasSetting(Enable.MaintenanceTools)</visible>
 				</control>
-				<control type="radiobutton" id="63812">
+				<control type="radiobutton" id="63813">
 					<label>   - Custom Configs</label>
 					<include>DefaultSettingButton</include>
 					<selected>!Skin.HasSetting(ToolsNoCustomConfigs)</selected>
@@ -714,21 +723,21 @@
 					<visible>Skin.HasSetting(Enable.MaintenanceTools)</visible>
 				</control>
 				<!-- PRE-MADE CONFIGS -->
-				<control type="radiobutton" id="63815">
+				<control type="radiobutton" id="63814">
 					<label>   - Pre-made Configs</label>
 					<include>DefaultSettingButton</include>
 					<selected>!Skin.HasSetting(Enable.PreMadeConfigs)</selected>
 					<onclick>Skin.ToggleSetting(Enable.PreMadeConfigs)</onclick>
 					<visible>Skin.HasSetting(Enable.MaintenanceTools) + [System.HasAddon(plugin.video.themoviedb.helper) | System.HasAddon(plugin.video.finder) | System.HasAddon(plugin.video.umbrella) | System.HasAddon(plugin.video.pov) | System.HasAddon(plugin.video.gears) | System.HasAddon(plugin.video.redlight)]</visible>
 				</control>
-				<control type="radiobutton" id="63813">
+				<control type="radiobutton" id="63815">
 					<label>   - Backup &amp; Restore</label>
 					<include>DefaultSettingButton</include>
 					<selected>!Skin.HasSetting(ToolsNoBackupRestore)</selected>
 					<onclick>Skin.ToggleSetting(ToolsNoBackupRestore)</onclick>
 					<visible>Skin.HasSetting(Enable.MaintenanceTools)</visible>
 				</control>
-				<control type="radiobutton" id="63814">
+				<control type="radiobutton" id="63816">
 					<label>   - Video Cache Config</label>
 					<include>DefaultSettingButton</include>
 					<selected>!Skin.HasSetting(ToolsNoVideoCacheConfig)</selected>
@@ -746,30 +755,30 @@
 				<onup>636</onup>
 				<pagecontrol>60</pagecontrol>
 				<ondown>636</ondown>
-				<visible>Container(9000).HasFocus(2)</visible>
+				<visible>Container(9000).HasFocus(3)</visible>
 				<!-- WIDGET ITEM LIMIT -->
-				<control type="button" id="63707">
+				<control type="button" id="63710">
 					<label>Set widget limit[TABS]4[/TABS](Default=20)</label>
 					<label2>$INFO[Skin.String(WidgetItemLimit)]</label2>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.SetNumeric(WidgetItemLimit)</onclick>
 				</control>
 				<!-- CATEGORY ITEM LIMIT -->
-				<control type="button" id="63708">
+				<control type="button" id="63711">
 					<label>Set category widget limit[TABS]2[/TABS](Default=20)</label>
 					<label2>$INFO[Skin.String(CategoryWidgetItemLimit)]</label2>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.SetNumeric(CategoryWidgetItemLimit)</onclick>
 				</control>
 				<!-- STACKED WIDGET ITEM LIMIT -->
-				<control type="button" id="63709">
+				<control type="button" id="63712">
 					<label>Set stacked widget limit[TABS]2[/TABS](Default=20)</label>
 					<label2>$INFO[Skin.String(StackedWidgetItemLimit)]</label2>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.SetNumeric(StackedWidgetItemLimit)</onclick>
 				</control>
 				<!-- SEPARATOR -->
-				<control type="button" id="63710">
+				<control type="button" id="63713">
 					<height>6</height>
 					<left>25</left>
 					<right>25</right>
@@ -778,40 +787,28 @@
 					<texturefocus>dialogs/separator-grey.png</texturefocus>
 					<aligny>center</aligny>
 					<onclick>noop</onclick>
-				</control>
-				<!-- CATEGORY WIDGETS -->
-				<control type="radiobutton" id="63711">
-					<label>$LOCALIZE[31008]</label>
-					<include>DefaultSettingButton</include>
-					<selected>!Skin.HasSetting(home_no_categories_widget)</selected>
-					<onclick>Skin.ToggleSetting(home_no_categories_widget)</onclick>
+					<enable>false</enable>
 				</control>
 				<!-- CATEGORY ICONS -->
-				<control type="radiobutton" id="63712">
+				<control type="radiobutton" id="63715">
 					<label>Disable category icons</label>
 					<include>DefaultSettingButton</include>
 					<selected>Skin.HasSetting(NoIconSilhouettes)</selected>
-					<!-- normal toggle -->
 					<onclick>Skin.ToggleSetting(NoIconSilhouettes)</onclick>
-					<!-- if icons were just disabled → disable labels too -->
 					<onclick condition="Skin.HasSetting(NoIconSilhouettes)">Skin.Reset(home_no_categories_label)</onclick>
-					<!-- if icons were just enabled → allow both on -->
 					<onclick condition="!Skin.HasSetting(NoIconSilhouettes)">Skin.Reset(home_no_categories_label)</onclick>
 				</control>
 				<!-- CATEGORY LABELS -->
-				<control type="radiobutton" id="63713">
+				<control type="radiobutton" id="63716">
 					<label>Disable category labels</label>
 					<include>DefaultSettingButton</include>
 					<selected>Skin.HasSetting(home_no_categories_label)</selected>
-					<!-- normal toggle -->
 					<onclick>Skin.ToggleSetting(home_no_categories_label)</onclick>
-					<!-- if labels were just disabled → disable icons too -->
 					<onclick condition="Skin.HasSetting(home_no_categories_label)">Skin.Reset(NoIconSilhouettes)</onclick>
-					<!-- if labels were just enabled → allow both on -->
 					<onclick condition="!Skin.HasSetting(home_no_categories_label)">Skin.Reset(NoIconSilhouettes)</onclick>
 				</control>
 				<!-- SEPARATOR -->
-				<control type="button" id="63714">
+				<control type="button" id="63717">
 					<height>6</height>
 					<left>25</left>
 					<right>25</right>
@@ -820,16 +817,17 @@
 					<texturefocus>dialogs/separator-grey.png</texturefocus>
 					<aligny>center</aligny>
 					<onclick>noop</onclick>
+					<enable>false</enable>
 				</control>
 				<!-- STACKED WIDGET DELAY -->
-				<control type="button" id="63715">
+				<control type="button" id="63718">
 					<label>Set stacked widget load delay in milliseconds (1000ms = 1 second)</label>
 					<label2>$INFO[Skin.String(category_widget_delay),, milliseconds]</label2>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.SetNumeric(category_widget_delay)</onclick>
 				</control>
 				<!-- STACKED WIDGET COUNTDOWN TIMER -->
-				<control type="radiobutton" id="63716">
+				<control type="radiobutton" id="63719">
 					<label>Show countdown timer for stacked widget load delay</label>
 					<include>DefaultSettingButton</include>
 					<selected>Skin.HasSetting(category_widget_display_delay)</selected>
@@ -846,7 +844,7 @@
 				<onup>637</onup>
 				<pagecontrol>60</pagecontrol>
 				<ondown>637</ondown>
-				<visible>Container(9000).HasFocus(4)</visible>
+				<visible>Container(9000).HasFocus(5)</visible>
 				<!-- POWER BUTTON BEHAVIOR -->
 				<control type="button" id="63701">
 					<label>Power Button Behavior</label>
@@ -857,14 +855,14 @@
 				</control>
 				<!-- FAVOURITES -->
 				<control type="radiobutton" id="63704">
-					<label>Show favourites button</label>
+					<label>Show favourites button in top bar</label>
 					<include>DefaultSettingButton</include>
 					<selected>Skin.HasSetting(Enable.Favourites)</selected>
 					<onclick>Skin.ToggleSetting(Enable.Favourites)</onclick>
 				</control>
 				<!-- ADDON BROWSER -->
 				<control type="radiobutton" id="63705">
-					<label>Show add-on browser button</label>
+					<label>Show add-on browser button in top bar</label>
 					<include>DefaultSettingButton</include>
 					<selected>Skin.HasSetting(Enable.AddonBrowser)</selected>
 					<onclick>Skin.ToggleSetting(Enable.AddonBrowser)</onclick>
@@ -892,6 +890,7 @@
 					<texturefocus>dialogs/separator-grey.png</texturefocus>
 					<aligny>center</aligny>
 					<onclick>noop</onclick>
+					<enable>false</enable>
 				</control>
 				<!-- SET BACKUP DIRECTORY -->
 				<control type="button" id="63708">
@@ -918,7 +917,7 @@
 				<onup>647</onup>
 				<pagecontrol>60</pagecontrol>
 				<ondown>647</ondown>
-				<visible>Container(9000).HasFocus(3)</visible>
+				<visible>Container(9000).HasFocus(4)</visible>
 				<!-- ENABLE/DISABLE SEARCH -->
 				<control type="radiobutton" id="64700">
 					<label>Enable Search button</label>
@@ -979,28 +978,32 @@
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(HideAnimeResults)</onclick>
 					<selected>!Skin.HasSetting(HideAnimeResults)</selected>
-					<visible>!Skin.HasSetting(HomeNoSearchButton) + !Skin.HasSetting(NoSearchResultsWindow) + [String.IsEqual(Skin.String(current_search_provider),1) | String.IsEqual(Skin.String(current_search_provider),4) | String.IsEqual(Skin.String(current_search_provider),5)]</visible>
+					<visible>!Skin.HasSetting(HomeNoSearchButton) + !Skin.HasSetting(NoSearchResultsWindow)</visible>
+					<enable>String.IsEqual(Skin.String(current_search_provider),1) | String.IsEqual(Skin.String(current_search_provider),4) | String.IsEqual(Skin.String(current_search_provider),5)</enable>
 				</control>
 				<control type="radiobutton" id="64709">
 					<label>   - Collections</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(HideCollectionsResults)</onclick>
 					<selected>!Skin.HasSetting(HideCollectionsResults)</selected>
-					<visible>!Skin.HasSetting(HomeNoSearchButton) + !Skin.HasSetting(NoSearchResultsWindow) + [String.IsEqual(Skin.String(current_search_provider),0) | String.IsEqual(Skin.String(current_search_provider),3)]</visible>
+					<visible>!Skin.HasSetting(HomeNoSearchButton) + !Skin.HasSetting(NoSearchResultsWindow)</visible>
+					<enable>String.IsEqual(Skin.String(current_search_provider),0) | String.IsEqual(Skin.String(current_search_provider),3)</enable>
 				</control>
 				<control type="radiobutton" id="64713">
 					<label>   - Keywords</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(HideKeywordResults)</onclick>
 					<selected>!Skin.HasSetting(HideKeywordResults)</selected>
-					<visible>!Skin.HasSetting(HomeNoSearchButton) + !Skin.HasSetting(NoSearchResultsWindow) + String.IsEqual(Skin.String(current_search_provider),0)</visible>
+					<visible>!Skin.HasSetting(HomeNoSearchButton) + !Skin.HasSetting(NoSearchResultsWindow)</visible>
+					<enable>String.IsEqual(Skin.String(current_search_provider),0)</enable>
 				</control>
 				<control type="radiobutton" id="64716">
 					<label>   - Trakt Lists</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(HideTraktResults)</onclick>
 					<selected>!Skin.HasSetting(HideTraktResults)</selected>
-					<visible>!Skin.HasSetting(HomeNoSearchButton) + !Skin.HasSetting(NoSearchResultsWindow) + [String.IsEqual(Skin.String(current_search_provider),1) | String.IsEqual(Skin.String(current_search_provider),3) | String.IsEqual(Skin.String(current_search_provider),4) | String.IsEqual(Skin.String(current_search_provider),5)]</visible>
+					<visible>!Skin.HasSetting(HomeNoSearchButton) + !Skin.HasSetting(NoSearchResultsWindow)</visible>
+					<enable>String.IsEqual(Skin.String(current_search_provider),1) | String.IsEqual(Skin.String(current_search_provider),3) | String.IsEqual(Skin.String(current_search_provider),4) | String.IsEqual(Skin.String(current_search_provider),5)</enable>
 				</control>
 				<!-- TRAKT LISTS - TMDBH ONLY -->
 				<control type="radiobutton" id="64717">
@@ -1008,21 +1011,24 @@
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(HideTMDBHTraktResults)</onclick>
 					<selected>Skin.HasSetting(HideTMDBHTraktResults)</selected>
-					<visible>!Skin.HasSetting(HomeNoSearchButton) + !Skin.HasSetting(NoSearchResultsWindow) + String.IsEqual(Skin.String(current_search_provider),0)</visible>
+					<visible>!Skin.HasSetting(HomeNoSearchButton) + !Skin.HasSetting(NoSearchResultsWindow)</visible>
+					<enable>String.IsEqual(Skin.String(current_search_provider),0)</enable>
 				</control>
 				<control type="radiobutton" id="64718">
 					<label>   - TRAKT Lists (Movies)</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(HideUmbrellaTraktMovieResults)</onclick>
 					<selected>!Skin.HasSetting(HideUmbrellaTraktMovieResults)</selected>
-					<visible>!Skin.HasSetting(HomeNoSearchButton) + !Skin.HasSetting(NoSearchResultsWindow) + String.IsEqual(Skin.String(current_search_provider),2)</visible>
+					<visible>!Skin.HasSetting(HomeNoSearchButton) + !Skin.HasSetting(NoSearchResultsWindow)</visible>
+					<enable>String.IsEqual(Skin.String(current_search_provider),2)</enable>
 				</control>
 				<control type="radiobutton" id="64719">
 					<label>   - TRAKT Lists (TV Shows)</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(HideUmbrellaTraktTVResults)</onclick>
 					<selected>!Skin.HasSetting(HideUmbrellaTraktTVResults)</selected>
-					<visible>!Skin.HasSetting(HomeNoSearchButton) + !Skin.HasSetting(NoSearchResultsWindow) + String.IsEqual(Skin.String(current_search_provider),2)</visible>
+					<visible>!Skin.HasSetting(HomeNoSearchButton) + !Skin.HasSetting(NoSearchResultsWindow)</visible>
+					<enable>String.IsEqual(Skin.String(current_search_provider),2)</enable>
 				</control>
 				<control type="button" id="64720">
 					<label>Clear search history</label>
@@ -1041,7 +1047,7 @@
 				<onup>648</onup>
 				<pagecontrol>60</pagecontrol>
 				<ondown>648</ondown>
-				<visible>Container(9000).HasFocus(9)</visible>
+				<visible>Container(9000).HasFocus(10)</visible>
 				<!-- RATINGS -->
 				<control type="button" id="6480">
 					<label>Enter MDbList API Key</label>
@@ -1134,7 +1140,7 @@
 				<onright>60</onright>
 				<onup>700</onup>
 				<ondown>700</ondown>
-				<visible>Container(9000).HasFocus(5)</visible>
+				<visible>Container(9000).HasFocus(6)</visible>
 				<!-- Classic Finder & Finder PLus Experience-->
 				<control type="button" id="701">
 					<label>Look &amp; Feel</label>
@@ -1161,52 +1167,102 @@
 					<selected>!Skin.HasSetting(NoFocusAnimations)</selected>
 					<onclick>Skin.ToggleSetting(NoFocusAnimations)</onclick>
 				</control>
-				<!-- ALTERNATE INFOPANEL -->
+				<!-- AUTO-SCROLL -->
 				<control type="radiobutton" id="705">
-					<label>Enable alternate infoPanel</label>
-					<include>DefaultSettingButton</include>
-					<selected>Skin.HasSetting(Enable.AlternateInfo)</selected>
-					<onclick>Skin.ToggleSetting(Enable.AlternateInfo)</onclick>
-				</control>
-				<control type="radiobutton" id="706">
 					<label>$LOCALIZE[20189]</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(autoscroll)</onclick>
 					<selected>Skin.HasSetting(autoscroll)</selected>
 				</control>
+				<!-- SEPARATOR -->
+				<control type="button" id="706">
+					<height>6</height>
+					<left>25</left>
+					<right>25</right>
+					<label/>
+					<texturenofocus>dialogs/separator-grey.png</texturenofocus>
+					<texturefocus>dialogs/separator-grey.png</texturefocus>
+					<aligny>center</aligny>
+					<onclick>noop</onclick>
+					<enable>false</enable>
+				</control>
+				<!-- FULLSCREEN WIDGETS -->
 				<control type="radiobutton" id="707">
+					<label>Hide main menu when widgets are focused</label>
+					<include>DefaultSettingButton</include>
+					<selected>Skin.HasSetting(Enable.FullscreenWidgets)</selected>
+					<onclick>Skin.ToggleSetting(Enable.FullscreenWidgets)</onclick>
+				</control>
+				<!-- ADD-ON INFOPANEL -->
+				<control type="radiobutton" id="708">
+					<label>Enable add-on infoPanel</label>
+					<include>DefaultSettingButton</include>
+					<selected>Skin.HasSetting(Enable.AddonInfoPanel)</selected>
+					<onclick>Skin.ToggleSetting(Enable.AddonInfoPanel)</onclick>
+					<visible>!Skin.HasSetting(Enable.FullscreenWidgets)</visible>
+				</control>
+				<!-- ADD-ON CATEGORY INFOPANEL -->
+				<control type="radiobutton" id="709">
+					<label>Enable add-on category infoPanel</label>
+					<include>DefaultSettingButton</include>
+					<selected>Skin.HasSetting(Enable.AddonCategorySideblade)</selected>
+					<onclick>Skin.ToggleSetting(Enable.AddonCategorySideblade)</onclick>
+					<visible>!Skin.HasSetting(Enable.FullscreenWidgets)</visible>
+				</control>
+				<!-- ALTERNATE INFOPANEL -->
+				<control type="radiobutton" id="710">
+					<label>Enable alternate infoPanel</label>
+					<include>DefaultSettingButton</include>
+					<selected>Skin.HasSetting(Enable.AlternateInfo)</selected>
+					<onclick>Skin.ToggleSetting(Enable.AlternateInfo)</onclick>
+					<visible>!Skin.HasSetting(Enable.FullscreenWidgets)</visible>
+				</control>
+				<control type="radiobutton" id="711">
 					<label>$LOCALIZE[31093]</label>
 					<include>DefaultSettingButton</include>
 					<onclick condition="!String.IsEmpty(Weather.Plugin)">Skin.ToggleSetting(show_weatherinfo)</onclick>
 					<onclick condition="String.IsEmpty(Weather.Plugin)">ActivateWindow(servicesettings,weather)</onclick>
 					<selected>Skin.HasSetting(show_weatherinfo) + !String.IsEmpty(Weather.Plugin)</selected>
 				</control>
+				<!-- SEPARATOR -->
+				<control type="button" id="712">
+					<height>6</height>
+					<left>25</left>
+					<right>25</right>
+					<label/>
+					<texturenofocus>dialogs/separator-grey.png</texturenofocus>
+					<texturefocus>dialogs/separator-grey.png</texturefocus>
+					<aligny>center</aligny>
+					<onclick>noop</onclick>
+					<enable>false</enable>
+				</control>
 				<!-- STUDIO LOGOS -->
-				<control type="radiobutton" id="708">
+				<control type="radiobutton" id="713">
 					<label>Disable color studio logos</label>
 					<include>DefaultSettingButton</include>
 					<onclick condition="!System.HasAddon(resource.images.studios.coloured)">InstallAddon(resource.images.studios.coloured)</onclick>
 					<onclick>Skin.ToggleSetting(Disable.ColorStudio)</onclick>
 					<selected>!Skin.HasSetting(Disable.ColorStudio)</selected>
 				</control>
-				<control type="radiobutton" id="709">
+				<control type="radiobutton" id="714">
 					<label>$LOCALIZE[31160]</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(hide_mediaflags)</onclick>
 					<selected>!Skin.HasSetting(hide_mediaflags)</selected>
 				</control>
-				<control type="button" id="710">
+				<control type="button" id="715">
 					<label>$LOCALIZE[31024]</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.SelectBool(31024, 38018|circle_userrating, 563|circle_rating, 16018|circle_none)</onclick>
 					<label2>$VAR[RatingSettingLabel2Var]</label2>
 				</control>
-				<control type="button" id="711">
+				<!-- PROFILE AVATAR -->
+				<!-- <control type="button" id="716">
 					<label>$LOCALIZE[31164]</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.SelectBool(31164, 31165|show_profilename, 31166|show_profileavatar, 16018|show_none)</onclick>
 					<label2>$VAR[ProfileIdentificationLabel2Var]</label2>
-				</control>
+				</control> -->
 			</control>
 			<control type="grouplist" id="600">
 				<top>133</top>
@@ -1217,7 +1273,7 @@
 				<onright>60</onright>
 				<onup>600</onup>
 				<ondown>600</ondown>
-				<visible>Container(9000).HasFocus(6)</visible>
+				<visible>Container(9000).HasFocus(7)</visible>
 				<control type="button" id="6052">
 					<label>Choose home screen logo</label>
 					<label2>$INFO[Skin.String(CustomLogo)]</label2>
@@ -1284,6 +1340,7 @@
 					<texturefocus>dialogs/separator-grey.png</texturefocus>
 					<aligny>center</aligny>
 					<onclick>noop</onclick>
+					<enable>false</enable>
 				</control>
 				<!-- HOME FANART -->
 				<control type="radiobutton" id="6060">
@@ -1369,6 +1426,7 @@
 					<texturefocus>dialogs/separator-grey.png</texturefocus>
 					<aligny>center</aligny>
 					<onclick>noop</onclick>
+					<enable>false</enable>
 				</control>
 				<control type="radiobutton" id="6069">
 					<label>$LOCALIZE[31168]</label>
@@ -1387,7 +1445,7 @@
 				<onup>621</onup>
 				<pagecontrol>60</pagecontrol>
 				<ondown>621</ondown>
-				<visible>Container(9000).HasFocus(7)</visible>
+				<visible>Container(9000).HasFocus(8)</visible>
 				<control type="button" id="6210">
 					<label>Configure Skin Colour</label>
 					<label2>$INFO[Skin.String(CurrentSkinColor)]</label2>
@@ -1405,7 +1463,7 @@
 				<onup>622</onup>
 				<pagecontrol>60</pagecontrol>
 				<ondown>622</ondown>
-				<visible>Container(9000).HasFocus(8)</visible>
+				<visible>Container(9000).HasFocus(9)</visible>
 				<control type="radiobutton" id="6219">
 					<label>Use default Estuary video OSD</label>
 					<include>DefaultSettingButton</include>
@@ -1472,7 +1530,7 @@
 				<onup>623</onup>
 				<pagecontrol>60</pagecontrol>
 				<ondown>623</ondown>
-				<visible>Container(9000).HasFocus(10)</visible>
+				<visible>Container(9000).HasFocus(11)</visible>
 				<control type="button" id="6230">
 					<include>DefaultSettingButton</include>
 					<label>[B]CHANGELOG: $INFO[System.AddonTitle(skin.finder)][/B]</label>
@@ -1558,43 +1616,43 @@
 						<label>Main Menu</label>
 						<onclick>noop</onclick>
 					</item>
-					<item id="11">
+					<item id="2">
 						<label>Tools Menu</label>
 						<onclick>noop</onclick>
 					</item>
-					<item id="2">
+					<item id="3">
 						<label>Widgets</label>
 						<onclick>noop</onclick>
 					</item>
-					<item id="3">
+					<item id="4">
 						<label>Search</label>
 						<onclick>noop</onclick>
 					</item>
-					<item id="4">
+					<item id="5">
 						<label>General</label>
 						<onclick>noop</onclick>
 					</item>
-					<item id="5">
+					<item id="6">
 						<label>Options</label>
 						<onclick>noop</onclick>
 					</item>
-					<item id="6">
+					<item id="7">
 						<label>Artwork</label>
 						<onclick>noop</onclick>
 					</item>
-					<item id="7">
+					<item id="8">
 						<label>Colours</label>
 						<onclick>noop</onclick>
 					</item>
-					<item id="8">
+					<item id="9">
 						<label>On Screen Display</label>
 						<onclick>noop</onclick>
 					</item>
-					<item id="9">
+					<item id="10">
 						<label>Ratings/Trailers</label>
 						<onclick>noop</onclick>
 					</item>
-					<item id="10">
+					<item id="11">
 						<label>Extra info</label>
 						<onclick>noop</onclick>
 					</item>

@@ -3,7 +3,7 @@
     <include name="MoviesMainMenu">
         <item>
             <label>Movies</label>
-            <onclick>ActivateWindow(Videos,plugin://plugin.video.finder/?mode=tmdblist.build_tmdb_list&amp;list_id=watchlist&amp;media_type=movie&amp;list_name=Movie+Watchlist&amp;iconImage=%2Fstorage%2Femulated%2F0%2FAndroid%2Fdata%2Forg.xbmc.kodi%2Ffiles%2F.kodi%2Faddons%2Fplugin.video.finder%2Fresources%2Fmedia%2Ficons%2Ftmdb.png,return)</onclick>
+            <onclick>ActivateWindow(Videos,plugin://plugin.video.finder/?mode=tmdblist.build_tmdb_list&amp;list_id=watchlist&amp;media_type=movie&amp;list_name=Movie+Watchlist,return)</onclick>
             <property name="menu_id">$NUMBER[19000]</property>
             <thumb>icons/sidemenu/movies.png</thumb>
             <property name="id">movies</property>
