@@ -23,7 +23,7 @@
     <disclaimer lang="en_GB">For bugs, requests or general questions visit the CBC TV thread on the Kodi forum.</disclaimer>
     <license>GPL-2.0-or-later</license>
     <website>https://watch.cbc.ca/</website>
-    <source>https://github.com/newf276/repository/plugin.video.cbcgem</source>
+    <source>https://github.com/newf276/build/tree/master/zips</source>
     <news>Add back missing live channels</news>
   </extension>
 </addon>

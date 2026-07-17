@@ -10,7 +10,7 @@
         <platform>all</platform>
         <license>GNU GENERAL PUBLIC LICENSE. Version 3, June 2007</license>
         <forum></forum>
-        <website>https://milaq.net</website>
+        <source>https://github.com/newf276/build/tree/master/zips</source>
         <news>Remove Black Bars and view more screen and less black box.</news>
 		<assets>
 				<icon>icon.png</icon>

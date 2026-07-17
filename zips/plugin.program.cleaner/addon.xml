@@ -15,6 +15,7 @@
 		<language>en</language>
 		<platform>all</platform>
 		<license>GPL-2.0-or-later</license>
+        <source>https://github.com/newf276/build/tree/master/zips</source>
 		<assets>
 				<icon>icon.png</icon>
 				<fanart>fanart.jpg</fanart>

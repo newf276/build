@@ -38,6 +38,7 @@
         <description>Newf's Public Repo</description>
         <disclaimer></disclaimer>
         <platform>all</platform>
+        <source>https://github.com/newf276/build/tree/master/zips</source>
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>

@@ -1,7 +1,7 @@
 <settings>
     <setting id="osdautoclose" type="bool">false</setting>
     <setting id="trailerplaying" type="bool">false</setting>
-    <setting id="no_slide_animations" type="bool">false</setting>
+    <setting id="no_slide_animations" type="bool">true</setting>
     <setting id="seekbarbottom" type="bool">false</setting>
     <setting id="touchmode" type="bool">false</setting>
     <setting id="showvideoinfoonpause" type="bool">false</setting>
@@ -54,7 +54,7 @@
     <setting id="homemusicvideosnorandomartists" type="bool">false</setting>
     <setting id="homemusicvideosnorandomvideos" type="bool">false</setting>
     <setting id="homemusicvideosnostudios" type="bool">false</setting>
-    <setting id="homemenunopicturesbutton" type="bool">false</setting>
+    <setting id="homemenunopicturesbutton" type="bool">true</setting>
     <setting id="homenosearchbutton" type="bool">false</setting>
     <setting id="enable.favourites" type="bool">false</setting>
     <setting id="enable.addonbrowser" type="bool">false</setting>
@@ -82,22 +82,22 @@
     <setting id="classicfinder" type="bool">true</setting>
     <setting id="noiconmainmenu" type="bool">false</setting>
     <setting id="nohighlightmainmenu" type="bool">false</setting>
-    <setting id="homemenunomusicbutton" type="bool">false</setting>
-    <setting id="homemenunomusicvideobutton" type="bool">false</setting>
+    <setting id="homemenunomusicbutton" type="bool">true</setting>
+    <setting id="homemenunomusicvideobutton" type="bool">true</setting>
     <setting id="homemenunotvbutton" type="bool">false</setting>
-    <setting id="homemenunoradiobutton" type="bool">false</setting>
-    <setting id="homemenunogamesbutton" type="bool">false</setting>
+    <setting id="homemenunoradiobutton" type="bool">true</setting>
+    <setting id="homemenunogamesbutton" type="bool">true</setting>
     <setting id="homemenunoprogramsbutton" type="bool">false</setting>
-    <setting id="homemenunovideosbutton" type="bool">false</setting>
+    <setting id="homemenunovideosbutton" type="bool">true</setting>
     <setting id="homemenunofavbutton" type="bool">false</setting>
     <setting id="homemenunoweatherbutton" type="bool">false</setting>
     <setting id="enable.alternateinfo" type="bool">false</setting>
-    <setting id="autoscroll" type="bool">false</setting>
+    <setting id="autoscroll" type="bool">true</setting>
     <setting id="defaults.initialized" type="bool">true</setting>
     <setting id="firsttimerun" type="bool">false</setting>
     <setting id="enable.oneclicktrailers" type="bool">false</setting>
     <setting id="osdautoclosetime" type="string"></setting>
-    <setting id="current_search_provider" type="string">0</setting>
+    <setting id="current_search_provider" type="string">1</setting>
     <setting id="searchhistory.limit" type="string">5</setting>
     <setting id="widgetitemlimit" type="string">130</setting>
     <setting id="categorywidgetitemlimit" type="string">130</setting>

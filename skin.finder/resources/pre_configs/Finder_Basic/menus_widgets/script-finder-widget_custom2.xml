@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <include name="Custom1Widgets">
+        <include condition="System.HasAddon(plugin.video.finder)" content="WidgetListCategory">
+            <param name="content_path" value="plugin://plugin.video.finder/?name=Genres&amp;mode=navigator.genres&amp;menu_type=movie&amp;random_support=true&amp;iconImage=genres"/>
+            <param name="widget_header" value="Genres"/>
+            <param name="widget_target" value="videos"/>
+            <param name="list_id" value="24011"/>
+        </include>
+        <include condition="System.HasAddon(plugin.video.finder)" content="WidgetListCategory">
+            <param name="content_path" value="plugin://plugin.video.finder/?name=Movies&amp;mode=navigator.main&amp;action=MovieList&amp;iconImage=movies"/>
+            <param name="widget_header" value="Categories"/>
+            <param name="widget_target" value="videos"/>
+            <param name="list_id" value="24012"/>
+        </include>
+        <include condition="System.HasAddon(plugin.video.finder)" content="WidgetListBigEpisodes">
+            <param name="content_path" value="plugin://plugin.video.finder/?name=Popular+Today&amp;mode=build_movie_list&amp;action=tmdb_movies_popular_today&amp;random_support=true&amp;iconImage=popular_today"/>
+            <param name="widget_header" value="Popular Today"/>
+            <param name="widget_target" value="videos"/>
+            <param name="list_id" value="24013"/>
+        </include>
+        <include condition="System.HasAddon(plugin.video.finder)" content="WidgetListBigEpisodes">
+            <param name="content_path" value="plugin://plugin.video.finder/?name=Latest+Releases&amp;mode=build_movie_list&amp;action=tmdb_movies_latest_releases&amp;random_support=true&amp;iconImage=dvd"/>
+            <param name="widget_header" value="Latest Releases"/>
+            <param name="widget_target" value="videos"/>
+            <param name="list_id" value="24014"/>
+        </include>
+        <include condition="System.HasAddon(plugin.video.finder)" content="WidgetListCategory">
+            <param name="content_path" value="plugin://plugin.video.finder/?name=Providers&amp;mode=navigator.providers&amp;menu_type=movie&amp;random_support=true&amp;iconImage=providers"/>
+            <param name="widget_header" value="Providers"/>
+            <param name="widget_target" value="videos"/>
+            <param name="list_id" value="24015"/>
+        </include>
+    </include>
+</includes>

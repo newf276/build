@@ -16,6 +16,7 @@
 		<language>en</language>
 		<platform>all</platform>
 		<license>GPL-2.0-or-later</license>
+        <source>https://github.com/newf276/build/tree/master/zips</source>
 		<assets>
 				<icon>icon.png</icon>
 				<fanart>fanart.jpg</fanart>
@@ -23,7 +24,7 @@
 	</extension>
 </addon>
 
-<addon id="skin.finder" name="[B]Finder's Skin[/B]" version="0.2.26" provider-name="newf276">
+<addon id="skin.finder" name="[B]Finder's Skin[/B]" version="0.2.27" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0" />
 		<import addon="script.finder.helper" />
@@ -42,7 +43,7 @@
 		<platform>all</platform>
 		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
 		<forum>http://forum.kodi.tv/</forum>
-		<source>https://newf276.github.io/</source>
+        <source>https://github.com/newf276/build/tree/master/zips</source>
 		<assets>
 			<icon>icon.png</icon>
 			<fanart>fanart.jpg</fanart>
@@ -66,6 +67,7 @@
 		<summary>Newf's Scraper Module</summary>
 		<description>A module to query magnet providers.[CR][CR]This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</description>
 		<disclaimer>The author does not host or own any content found within this addon. The author is not responsible for the content found using this addon. The author is not responsible for the use of this addon.</disclaimer>
+        <source>https://github.com/newf276/build/tree/master/zips</source>
 		<assets><icon>icon.png</icon></assets>
 		<assets><fanart>fanart.jpg</fanart></assets>
 	</extension>
@@ -110,6 +112,7 @@
         <description>Newf's Public Repo</description>
         <disclaimer></disclaimer>
         <platform>all</platform>
+        <source>https://github.com/newf276/build/tree/master/zips</source>
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
@@ -117,7 +120,7 @@
     </extension>
 </addon>
 
-<addon id="script.finder.helper" name="[B]Finder Plus Helper[/B]" version="0.0.22" provider-name="newf276">
+<addon id="script.finder.helper" name="[B]Finder Plus Helper[/B]" version="0.0.27" provider-name="newf276">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.requests" version="2.19.1"/>
@@ -128,8 +131,7 @@
         <news />
         <platform>all</platform>
         <license>GPL-2.0-only</license>
-        <forum />
-        <source />
+        <source>https://github.com/newf276/build/tree/master/zips</source>
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
@@ -164,7 +166,7 @@
     <disclaimer lang="en_GB">For bugs, requests or general questions visit the CBC TV thread on the Kodi forum.</disclaimer>
     <license>GPL-2.0-or-later</license>
     <website>https://watch.cbc.ca/</website>
-    <source>https://github.com/newf276/repository/plugin.video.cbcgem</source>
+    <source>https://github.com/newf276/build/tree/master/zips</source>
     <news>Add back missing live channels</news>
   </extension>
 </addon>
@@ -188,6 +190,7 @@
         <platform>all</platform>
 		<disclaimer lang="en">The author of this addon does not host any of the content which is found and has no affiliation with any of the content providers.</disclaimer>
         <license>GPL-3.0-or-later</license>
+        <source>https://github.com/newf276/build/tree/master/zips</source>
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
@@ -210,7 +213,7 @@
         <platform>all</platform>
         <license>GNU GENERAL PUBLIC LICENSE. Version 3, June 2007</license>
         <forum></forum>
-        <website>https://milaq.net</website>
+        <source>https://github.com/newf276/build/tree/master/zips</source>
         <news>Remove Black Bars and view more screen and less black box.</news>
 		<assets>
 				<icon>icon.png</icon>
