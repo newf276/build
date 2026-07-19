@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-<addon id="plugin.program.cleaner" name="[B]Newf's Wizard[/B]" version="0.0.24" provider-name="newf276">
+<addon id="plugin.program.cleaner" name="[B]Newf's Wizard[/B]" version="0.0.27" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0"/>
 		<import addon="script.module.requests" optional="true" />
@@ -11,16 +11,18 @@
 	<extension point="xbmc.service" library="service.py" />
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en_GB">Newf's Wizard - Kodi's Swiss Army Knife</summary>
-		<description lang="en_GB">[B]New Menu Items[/B] - Use the new Authorize Premium Services under Kodi Search Icon next to Kodi Gear Icon. Or Open Newf's Wizard, and Select "Authorize Debbrid/Trakt Menu Item.I hope this will make authorization of Trakt and Real-Debrid premium services more easy for you all!</description>
+		<description lang="en_GB">Newf's Wizard is a lightweight template for installing builds on Kodi and clearing clutter from caches and temp files.</description>
 		<disclaimer lang="en_GB">This Addon contains no content</disclaimer>
 		<language>en</language>
 		<platform>all</platform>
 		<license>GPL-2.0-or-later</license>
         <source>https://github.com/newf276/build/tree/master/zips</source>
 		<assets>
-				<icon>icon.png</icon>
-				<fanart>fanart.jpg</fanart>
-		</assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+            <icon>resources/icon.png</icon>
+            <fanart>resources/fanart.jpg</fanart>
+        </assets>
 	</extension>
 </addon>
 
@@ -45,14 +47,16 @@
 		<forum>http://forum.kodi.tv/</forum>
         <source>https://github.com/newf276/build/tree/master/zips</source>
 		<assets>
-			<icon>icon.png</icon>
-			<fanart>fanart.jpg</fanart>
-		</assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+            <icon>resources/icon.png</icon>
+            <fanart>resources/fanart.jpg</fanart>
+        </assets>
 		<description lang="en_GB">Extra info for latest changes.</description>
 	</extension>
 </addon>
 
-<addon id="script.module.newfsscrapers" name="[B]Newf's Scrapers[/B]" version="0.2.22" provider-name="newf276">
+<addon id="script.module.newfsscrapers" name="[B]Newf's Scrapers[/B]" version="0.2.27" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 		<import addon="script.module.requests" />
@@ -68,10 +72,19 @@
 		<description>A module to query magnet providers.[CR][CR]This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</description>
 		<disclaimer>The author does not host or own any content found within this addon. The author is not responsible for the content found using this addon. The author is not responsible for the use of this addon.</disclaimer>
         <source>https://github.com/newf276/build/tree/master/zips</source>
-		<assets><icon>icon.png</icon></assets>
-		<assets><fanart>fanart.jpg</fanart></assets>
+		<assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+            <icon>resources/icon.png</icon>
+            <fanart>resources/fanart.jpg</fanart>
+        </assets>
 	</extension>
 </addon>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+            <icon>resources/media/addon_icons/icon.png</icon>
+            <clearlogo>resources/media/addon_icons/clearlogo.png</clearlogo>
+            <fanart>resources/media/fanart.jpg</fanart>
 
 <addon id="repository.newf" name="[B]Newf's Builds Repo[/B]" version="0.0.22" provider-name="newf276">
     <extension point="xbmc.addon.repository" name="[B]Newf's Builds Repo[/B]">
@@ -132,9 +145,11 @@
         <platform>all</platform>
         <license>GPL-2.0-only</license>
         <source>https://github.com/newf276/build/tree/master/zips</source>
-        <assets>
+		<assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
+            <icon>resources/icon.png</icon>
+            <fanart>resources/fanart.jpg</fanart>
         </assets>
         <description lang="en_GB">Helper for the Finder Plus Skin.</description>
         <description lang="en_NZ">Helper for the Finder Plus Skin.</description>
@@ -142,7 +157,7 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.cbcgem" name="[B]CBC Gem[/B]" version="0.2.22" provider-name="newf276">
+<addon id="plugin.video.cbcgem" name="[B]CBC Gem[/B]" version="0.2.27" provider-name="newf276">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
     <import addon="script.module.requests" version="2.22.0"/>
@@ -160,7 +175,7 @@
       <fanart>fanart.jpg</fanart>
     </assets>
     <summary lang="en_GB">CBC GEM TV Kodi Plugin</summary>
-    <description lang="en_GB">View online content from the CBC EGM.</description>
+    <description lang="en_GB">View online content from the CBC GEM.</description>
     <platform>all</platform>
     <language>en</language>
     <disclaimer lang="en_GB">For bugs, requests or general questions visit the CBC TV thread on the Kodi forum.</disclaimer>
@@ -171,12 +186,12 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.finder" name="[B]Newf's Finder[/B]" provider-name="newf276" version="0.0.23">
+<addon id="plugin.video.finder" name="[B]Newf's Finder[/B]" provider-name="newf276" version="0.0.27">
     <requires>
         <import addon="xbmc.python" version="3.0.1"/>
         <import addon="script.module.pil" version="1.1.7"/>
         <import addon="script.module.requests" version="2.19.1"/>
-		<import addon="script.module.newfsscrapers" version="0.0.22"/>
+		<import addon="script.module.newfsscrapers" version="0.0.27"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="resources/lib/finder.py">
         <provides>video</provides>
@@ -202,7 +217,7 @@
     </extension>
 </addon>
 
-<addon id="service.blackbarsremover" name="[B]Black Bars Remover[/B]" version="0.2.22" provider-name="newf276">
+<addon id="service.blackbarsremover" name="[B]Black Bars Remover[/B]" version="0.2.27" provider-name="newf276">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
     </requires>
@@ -216,9 +231,11 @@
         <source>https://github.com/newf276/build/tree/master/zips</source>
         <news>Remove Black Bars and view more screen and less black box.</news>
 		<assets>
-				<icon>icon.png</icon>
-				<fanart>fanart.jpg</fanart>
-		</assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+            <icon>resources/icon.png</icon>
+            <fanart>resources/fanart.jpg</fanart>
+        </assets>
     </extension>
 </addon>
 </addons>

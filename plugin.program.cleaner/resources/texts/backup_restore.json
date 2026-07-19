@@ -24,18 +24,48 @@
         "setting": "savedata",
         "path": "data_path"
     },
+    "plugin.video.fen": {
+        "name": "Fen",
+        "setting": "savedata",
+        "path": "data_path"
+    },
+    "plugin.video.fenlight": {
+        "name": "Fen Light",
+        "setting": "savedata",
+        "path": "data_path"
+    },
+    "plugin.video.redlight": {
+        "name": "Red Light",
+        "setting": "savedata",
+        "path": "data_path"
+    },
+    "plugin.video.thechains": {
+        "name": "The Chains",
+        "setting": "savedata",
+        "path": "data_path"
+    },
+    "plugin.video.gears": {
+        "name": "The Gears",
+        "setting": "savedata",
+        "path": "data_path"
+    },
     "plugin.video.pov": {
         "name": "POV",
         "setting": "savedata",
         "path": "data_path"
     },
-    "plugin.video.finder": {
-        "name": "Fen Light",
+    "plugin.video.umbrella": {
+        "name": "Umbrella",
         "setting": "savedata",
         "path": "data_path"
     },
-    "plugin.video.umbrella": {
-        "name": "Umbrella",
+    "plugin.video.shadow": {
+        "name": "Shadow",
+        "setting": "savedata",
+        "path": "data_path"
+    },
+    "plugin.video.ghost": {
+        "name": "Ghost",
         "setting": "savedata",
         "path": "data_path"
     },
@@ -57,11 +87,6 @@
 
     "script.trakt": {
         "name": "Trakt",
-        "setting": "savedata",
-        "path": "data_path"
-    },
-    "plugin.video.themoviedb.helper": {
-        "name": "TMDB Helper",
         "setting": "savedata",
         "path": "data_path"
     },

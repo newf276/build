@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.cbcgem" name="[B]CBC Gem[/B]" version="0.2.22" provider-name="newf276">
+<addon id="plugin.video.cbcgem" name="[B]CBC Gem[/B]" version="0.2.27" provider-name="newf276">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
     <import addon="script.module.requests" version="2.22.0"/>
@@ -17,7 +17,7 @@
       <fanart>fanart.jpg</fanart>
     </assets>
     <summary lang="en_GB">CBC GEM TV Kodi Plugin</summary>
-    <description lang="en_GB">View online content from the CBC EGM.</description>
+    <description lang="en_GB">View online content from the CBC GEM.</description>
     <platform>all</platform>
     <language>en</language>
     <disclaimer lang="en_GB">For bugs, requests or general questions visit the CBC TV thread on the Kodi forum.</disclaimer>

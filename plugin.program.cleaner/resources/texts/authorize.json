@@ -1,104 +1,358 @@
 {
-        "TMDB": {
-        "icon": "https://github.com/newf276/newf276.github.io/blob/master/packages/media/icons/tmdb.png?raw=true",
-        "items": [
-            {
-                "name": "Authorize: Finder - TMDB",
-                "url": "RunPlugin(plugin://plugin.video.finder/?mode=tmdblist_api.authenticate)"
-            },
-			{
-                "name": "Revoke: Finder - TMDB",
-                "url": "RunPlugin(plugin://plugin.video.finder/?mode=tmdblist_api.revoke_authentication)"
-            }
+  "supported_addons": [
+    {
+      "id": "plugin.video.finder",
+      "name": "Finder",
+      "services": {
+        "alldebrid": [
+          {
+            "type": "plugin",
+            "value": "plugin://plugin.video.finder/?mode=alldebrid.authenticate",
+            "label": "All-Debrid Auth"
+          }
+        ],
+        "premiumize": [
+          {
+            "type": "plugin",
+            "value": "plugin://plugin.video.finder/?mode=premiumize.authenticate",
+            "label": "Premiumize Auth"
+          }
+        ],
+        "realdebrid": [
+          {
+            "type": "plugin",
+            "value": "plugin://plugin.video.finder/?mode=real_debrid.authenticate",
+            "label": "Real-Debrid Auth"
+          }
+        ],
+        "torbox": [
+          {
+            "type": "plugin",
+            "value": "plugin://plugin.video.finder/?mode=torbox.authenticate",
+            "label": "Torbox Auth"
+          }
+        ],
+          "trakt": [
+          {
+            "type": "plugin",
+            "value": "plugin://plugin.video.finder/?mode=trakt.trakt_authenticate",
+            "label": "Trakt Auth"
+          }
         ]
+      }
     },
-
-     "Trakt": {
-        "icon": "https://github.com/newf276/newf276.github.io/blob/master/packages/media/icons/trakt.png?raw=true",
-        "items": [
-            {
-                "name": "Authorize: Finder - Trakt",
-                "url": "RunPlugin(plugin://plugin.video.finder/?mode=trakt.trakt_authenticate)"
-            },
-			{
-                "name": "Revoke: Finder - Trakt",
-                "url": "RunPlugin(plugin://plugin.video.finder/?mode=trakt.trakt_Revoke: _authentication)"
-            },
-            {
-                "name": "Authorize: MDBH - Trakt",
-                "url": "RunScript(plugin.video.themoviedb.helper,authenticate_trakt)"
-            },
-            {
-                "name": "Revoke: MDBH - Trakt",
-                "url": "RunScript(plugin.video.themoviedb.helper,Revoke: _trakt)"
-            }
+    {
+      "id": "plugin.video.redlight",
+      "name": "Red Light",
+      "services": {
+        "trakt": [
+          {
+            "type": "plugin",
+            "value": "plugin://plugin.video.redlight/?mode=trakt.trakt_authenticate",
+            "label": "Trakt Auth"
+          }
+        ],
+        "realdebrid": [
+          {
+            "type": "plugin",
+            "value": "plugin://plugin.video.redlight/?mode=real_debrid.authenticate",
+            "label": "Real-Debrid Auth"
+          }
+        ],
+        "premiumize": [
+          {
+            "type": "plugin",
+            "value": "plugin://plugin.video.redlight/?mode=premiumize.authenticate",
+            "label": "Premiumize Auth"
+          }
+        ],
+        "alldebrid": [
+          {
+            "type": "plugin",
+            "value": "plugin://plugin.video.redlight/?mode=alldebrid.authenticate",
+            "label": "All-Debrid Auth"
+          }
+        ],
+        "torbox": [
+          {
+            "type": "plugin",
+            "value": "plugin://plugin.video.redlight/?mode=torbox.authenticate",
+            "label": "Torbox Auth"
+          }
         ]
+      }
     },
-    
-    "Premiumize": {
-        "icon": "https://github.com/newf276/newf276.github.io/blob/master/packages/media/icons/premiumize.png?raw=true",
-        "items": [
-             {
-                "name": "Authorize: Finder - Premiumize",
-                "url": "RunPlugin(plugin://plugin.video.finder/?mode=premiumize.authenticate)"
-            },
-             {
-                "name": "Revoke: Finder - Premiumize",
-                "url": "RunPlugin(plugin://plugin.video.finder/?mode=premiumize.Revoke: _authentication)"
-            },
-            {
-                "name": "Authorize: ResolveURL - Premiumize",
-                "url": "RunPlugin(plugin://script.module.resolveurl/?mode=auth_pm)"
-            },
-            {
-                "name": "Revoke: ResolveURL - Premiumize",
-                "url": "RunPlugin(plugin://script.module.resolveurl/?mode=reset_pm)"
-              }
+    {
+      "id": "plugin.video.gears",
+      "name": "The Gears",
+      "services": {
+        "trakt": [
+          {
+            "type": "plugin",
+            "value": "plugin://plugin.video.gears/?mode=trakt.trakt_authenticate",
+            "label": "Trakt Auth"
+          }
+        ],
+        "realdebrid": [
+          {
+            "type": "plugin",
+            "value": "plugin://plugin.video.gears/?mode=real_debrid.authenticate",
+            "label": "Real-Debrid Auth"
+          }
+        ],
+        "premiumize": [
+          {
+            "type": "plugin",
+            "value": "plugin://plugin.video.gears/?mode=premiumize.authenticate",
+            "label": "Premiumize Auth"
+          }
+        ],
+        "alldebrid": [
+          {
+            "type": "plugin",
+            "value": "plugin://plugin.video.gears/?mode=alldebrid.authenticate",
+            "label": "All-Debrid Auth"
+          }
+        ],
+        "torbox": [
+          {
+            "type": "plugin",
+            "value": "plugin://plugin.video.gears/?mode=torbox.authenticate",
+            "label": "Torbox Auth"
+          }
         ]
+      }
     },
-    
-    "Real Debrid": {
-        "icon": "https://github.com/newf276/newf276.github.io/blob/master/packages/media/icons/realdebrid.png?raw=true",
-        "items": [
-            {
-                "name": "Authorize: Finder - Real-Debrid",
-                "url": "RunPlugin(plugin://plugin.video.finder/?mode=real_debrid.authenticate)"
-            },
-            {
-                "name": "Revoke: Finder - Real-Debrid",
-                "url": "RunPlugin(plugin://plugin.video.finder/?mode=real_debrid.Revoke: _authentication)"
-            },
-            {
-                "name": "Authorize: ResolveURL - Real-Debrid",
-                "url": "RunPlugin(plugin://script.module.resolveurl/?mode=auth_rd)"
-            },
-			{
-                "name": "Revoke: ResolveURL - Real-Debrid",
-                "url": "RunPlugin(plugin://script.module.resolveurl/?mode=reset_rd)"
-            }
-
+    {
+      "id": "plugin.video.thechains",
+      "name": "The Chains",
+      "services": {
+        "trakt": [
+          {
+            "type": "plugin",
+            "value": "plugin://plugin.video.thechains?mode=205&url=www",
+            "label": "Trakt Auth"
+          }
+        ],
+        "realdebrid": [
+          {
+            "type": "plugin",
+            "value": "plugin://plugin.video.thechains?mode=138&url=www",
+            "label": "Real-Debrid Auth"
+          }
+        ],
+        "premiumize": [
+          {
+            "type": "plugin",
+            "value": "plugin://plugin.video.thechains?mode=140&url=www",
+            "label": "Premiumize Auth"
+          }
+        ],
+        "alldebrid": [
+          {
+            "type": "plugin",
+            "value": "plugin://plugin.video.thechains?mode=142&url=www",
+            "label": "All-Debrid Auth"
+          }
+        ],
+        "torbox": [
+          {
+            "type": "plugin",
+            "value": "plugin://plugin.video.thechains?mode=208&url=www",
+            "label": "Torbox Auth"
+          }
         ]
+      }
     },
-           
-        "TorBox": {
-        "icon": "https://github.com/newf276/newf276.github.io/blob/master/packages/media/icons/torbox.png?raw=true",
-        "items": [
-            {
-                "name": "Authorize: Finder - TorBox",
-                "url": "RunPlugin(plugin://plugin.video.finder/?mode=torbox.authenticate)"
-            },
-            {
-                "name": "Revoke: Finder - TorBox",
-                "url": "RunPlugin(plugin://plugin.video.finder/?mode=torbox.revoke_authentication)"
-            },
-            {
-                "name": "Authorize: ResolveURL - TorBox",
-                "url": "RunPlugin(plugin://script.module.resolveurl/?mode=auth_tb)"
-            },
-            {
-                "name": "Revoke: ResolveURL - TorBox",
-                "url": "RunPlugin(plugin://script.module.resolveurl/?mode=reset_tb)"
-            }
+    {
+      "id": "plugin.video.umbrella",
+      "name": "Umbrella",
+      "services": {
+        "trakt": [
+          {
+            "type": "plugin",
+            "value": "plugin://plugin.video.umbrella/?action=traktAuth",
+            "label": "Trakt Auth"
+          }
+        ],
+        "realdebrid": [
+          {
+            "type": "plugin",
+            "value": "plugin://plugin.video.umbrella/?action=rd_Authorize",
+            "label": "Real-Debrid Auth"
+          }
+        ],
+        "premiumize": [
+          {
+            "type": "plugin",
+            "value": "plugin://plugin.video.umbrella/?action=pm_Authorize",
+            "label": "Premiumize Auth"
+          }
+        ],
+        "alldebrid": [
+          {
+            "type": "plugin",
+            "value": "plugin://plugin.video.umbrella/?action=ad_Authorize",
+            "label": "All-Debrid Auth"
+          }
+        ],
+        "torbox": [
+          {
+            "type": "plugin",
+            "value": "plugin://plugin.video.umbrella/?action=tb_Authorize",
+            "label": "Torbox Auth"
+          }
         ]
+      }
+    },
+    {
+      "id": "plugin.video.pov",
+      "name": "POV",
+      "services": {
+        "trakt": [
+          {
+            "type": "builtin",
+            "value": "PlayMedia(\"plugin://plugin.video.pov/?mode=myservices&name=My+Services&isFolder=false\")",
+            "label": "Open My Services"
+          }
+        ],
+        "realdebrid": [
+          {
+            "type": "builtin",
+            "value": "PlayMedia(\"plugin://plugin.video.pov/?mode=myservices&name=My+Services&isFolder=false\")",
+            "label": "Open My Services"
+          }
+        ],
+        "premiumize": [
+          {
+            "type": "builtin",
+            "value": "PlayMedia(\"plugin://plugin.video.pov/?mode=myservices&name=My+Services&isFolder=false\")",
+            "label": "Open My Services"
+          }
+        ],
+        "alldebrid": [
+          {
+            "type": "builtin",
+            "value": "PlayMedia(\"plugin://plugin.video.pov/?mode=myservices&name=My+Services&isFolder=false\")",
+            "label": "Open My Services"
+          }
+        ],
+        "torbox": [
+          {
+            "type": "builtin",
+            "value": "PlayMedia(\"plugin://plugin.video.pov/?mode=myservices&name=My+Services&isFolder=false\")",
+            "label": "Open My Services"
+          }
+        ]
+      }
+    },
+    {
+      "id": "plugin.video.the-loop",
+      "name": "The Loop",
+      "services": {
+        "realdebrid": [
+          {
+            "type": "plugin",
+            "value": "plugin://script.module.resolveurl/?mode=auth_rd",
+            "label": "ResolveURL Real-Debrid Auth"
+          }
+        ],
+        "premiumize": [
+          {
+            "type": "plugin",
+            "value": "plugin://script.module.resolveurl/?mode=auth_pm",
+            "label": "ResolveURL Premiumize Auth"
+          }
+        ],
+        "alldebrid": [
+          {
+            "type": "plugin",
+            "value": "plugin://script.module.resolveurl/?mode=auth_ad",
+            "label": "ResolveURL All-Debrid Auth"
+          }
+        ],
+        "torbox": [
+          {
+            "type": "plugin",
+            "value": "plugin://script.module.resolveurl/?mode=auth_tb",
+            "label": "ResolveURL Torbox Auth"
+          }
+        ]
+      }
+    },
+    {
+      "id": "script.module.resolveurl",
+      "name": "ResolveURL",
+      "services": {
+        "realdebrid": [
+          {
+            "type": "plugin",
+            "value": "plugin://script.module.resolveurl/?mode=auth_rd",
+            "label": "ResolveURL Real-Debrid Auth"
+          }
+        ],
+        "premiumize": [
+          {
+            "type": "plugin",
+            "value": "plugin://script.module.resolveurl/?mode=auth_pm",
+            "label": "ResolveURL Premiumize Auth"
+          }
+        ],
+        "alldebrid": [
+          {
+            "type": "plugin",
+            "value": "plugin://script.module.resolveurl/?mode=auth_ad",
+            "label": "ResolveURL All-Debrid Auth"
+          }
+        ],
+        "torbox": [
+          {
+            "type": "plugin",
+            "value": "plugin://script.module.resolveurl/?mode=auth_tb",
+            "label": "ResolveURL Torbox Auth"
+          }
+        ]
+      }
+    },
+    {
+      "id": "script.module.urlresolver",
+      "name": "URLResolver",
+      "services": {
+        "realdebrid": [
+          {
+            "type": "plugin",
+            "value": "plugin://script.module.urlresolver/?mode=auth_realdebrid",
+            "label": "URLResolver Real-Debrid Auth"
+          }
+        ],
+        "premiumize": [
+          {
+            "type": "plugin",
+            "value": "plugin://script.module.urlresolver/?mode=auth_pm",
+            "label": "URLResolver Premiumize Auth"
+          }
+        ],
+        "alldebrid": [
+          {
+            "type": "plugin",
+            "value": "plugin://script.module.urlresolver/?mode=auth_ad",
+            "label": "URLResolver All-Debrid Auth"
+          }
+        ]
+      }
+    },
+    {
+      "id": "plugin.video.themoviedb.helper",
+      "name": "TMDb Helper",
+      "services": {
+        "trakt": [
+          {
+            "type": "builtin",
+            "value": "RunScript(plugin.video.themoviedb.helper,authenticate_trakt)",
+            "label": "Authenticate Trakt"
+          }
+        ]
+      }
     }
+  ]
 }

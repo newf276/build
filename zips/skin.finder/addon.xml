@@ -20,9 +20,11 @@
 		<forum>http://forum.kodi.tv/</forum>
         <source>https://github.com/newf276/build/tree/master/zips</source>
 		<assets>
-			<icon>icon.png</icon>
-			<fanart>fanart.jpg</fanart>
-		</assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+            <icon>resources/icon.png</icon>
+            <fanart>resources/fanart.jpg</fanart>
+        </assets>
 		<description lang="en_GB">Extra info for latest changes.</description>
 	</extension>
 </addon>

@@ -428,3 +428,99 @@ msgstr ""
 msgctxt "#30112"
 msgid "Advanced Settings K22"
 msgstr ""
+
+msgctxt "#30113"
+msgid "Clear Cache"
+msgstr ""
+
+msgctxt "#30114"
+msgid "Clear Kodi cache/temp folders."
+msgstr ""
+
+msgctxt "#30115"
+msgid "AutoClean Settings"
+msgstr ""
+
+msgctxt "#30116"
+msgid "Configure automatic cleaning options."
+msgstr ""
+
+msgctxt "#30120"
+msgid "AutoClean"
+msgstr ""
+
+msgctxt "#30121"
+msgid "AutoClean Settings"
+msgstr ""
+
+msgctxt "#30122"
+msgid "Enable AutoClean at Startup"
+msgstr ""
+
+msgctxt "#30123"
+msgid "AutoClean Packages"
+msgstr ""
+
+msgctxt "#30124"
+msgid "AutoClean Thumbnails"
+msgstr ""
+
+msgctxt "#30125"
+msgid "AutoClean Cache"
+msgstr ""
+
+msgctxt "#30126"
+msgid "AutoClean Every X Days (0=Every Startup)"
+msgstr ""
+
+msgctxt "#30127"
+msgid "AutoClean At Hour (0-23, -1=Anytime)"
+msgstr ""
+
+msgctxt "#30128"
+msgid "Startup Clean"
+msgstr ""
+
+msgctxt "#30129"
+msgid "Enable Startup Clean"
+msgstr ""
+
+msgctxt "#30130"
+msgid "Startup Clean Packages"
+msgstr ""
+
+msgctxt "#30131"
+msgid "Startup Clean Thumbnails"
+msgstr ""
+
+msgctxt "#30132"
+msgid "Startup Clean Cache"
+msgstr ""
+
+msgctxt "#30133"
+msgid "Scheduled AutoClean"
+msgstr ""
+
+msgctxt "#30134"
+msgid "Enable Scheduled AutoClean"
+msgstr ""
+
+msgctxt "#30135"
+msgid "Scheduled AutoClean Packages"
+msgstr ""
+
+msgctxt "#30136"
+msgid "Scheduled AutoClean Thumbnails"
+msgstr ""
+
+msgctxt "#30137"
+msgid "Scheduled AutoClean Cache"
+msgstr ""
+
+msgctxt "#30138"
+msgid "Run Every X Days"
+msgstr ""
+
+msgctxt "#30139"
+msgid "Target Hour (0-23, -1=any hour)"
+msgstr ""
