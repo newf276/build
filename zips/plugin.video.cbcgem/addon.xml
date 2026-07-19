@@ -18,12 +18,14 @@
     </assets>
     <summary lang="en_GB">CBC GEM TV Kodi Plugin</summary>
     <description lang="en_GB">View online content from the CBC GEM.</description>
-    <platform>all</platform>
-    <language>en</language>
-    <disclaimer lang="en_GB">For bugs, requests or general questions visit the CBC TV thread on the Kodi forum.</disclaimer>
-    <license>GPL-2.0-or-later</license>
-    <website>https://watch.cbc.ca/</website>
-    <source>https://github.com/newf276/build/tree/master/zips</source>
-    <news>Add back missing live channels</news>
-  </extension>
+		<disclaimer lang="en_GB">This Addon contains no content</disclaimer>
+		<language>en</language>
+		<platform>all</platform>
+		<license>GPL-2.0-or-later</license>
+        <source>https://github.com/newf276/build/tree/master/zips</source>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
 </addon>

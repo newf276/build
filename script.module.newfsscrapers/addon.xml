@@ -10,21 +10,14 @@
 	<extension point="xbmc.service" library="lib/service.py" />
 	<extension point="xbmc.python.module" library="lib" />
 	<extension point="xbmc.addon.metadata">
-		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
-		<summary>Newf's Scraper Module</summary>
-		<description>A module to query magnet providers.[CR][CR]This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</description>
-		<disclaimer>The author does not host or own any content found within this addon. The author is not responsible for the content found using this addon. The author is not responsible for the use of this addon.</disclaimer>
+		<disclaimer lang="en_GB">This Addon contains no content</disclaimer>
+		<language>en</language>
+		<platform>all</platform>
+		<license>GPL-2.0-or-later</license>
         <source>https://github.com/newf276/build/tree/master/zips</source>
-		<assets>
+        <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
-            <icon>resources/icon.png</icon>
-            <fanart>resources/fanart.jpg</fanart>
         </assets>
-	</extension>
+    </extension>
 </addon>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
-            <icon>resources/media/addon_icons/icon.png</icon>
-            <clearlogo>resources/media/addon_icons/clearlogo.png</clearlogo>
-            <fanart>resources/media/fanart.jpg</fanart>

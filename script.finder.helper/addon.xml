@@ -7,18 +7,14 @@
     <extension point="xbmc.python.library" library="resources/lib/default.py"/>
     <extension point="xbmc.service" library="resources/lib/service.py" start="startup" />
     <extension point="xbmc.addon.metadata">
-        <news />
-        <platform>all</platform>
-        <license>GPL-2.0-only</license>
+		<disclaimer lang="en_GB">This Addon contains no content</disclaimer>
+		<language>en</language>
+		<platform>all</platform>
+		<license>GPL-2.0-or-later</license>
         <source>https://github.com/newf276/build/tree/master/zips</source>
-		<assets>
+        <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
-            <icon>resources/icon.png</icon>
-            <fanart>resources/fanart.jpg</fanart>
         </assets>
-        <description lang="en_GB">Helper for the Finder Plus Skin.</description>
-        <description lang="en_NZ">Helper for the Finder Plus Skin.</description>
-        <description lang="en_US">Helper for the Finder Plus Skin.</description>
     </extension>
 </addon>

@@ -16,12 +16,10 @@
 		<platform>all</platform>
 		<license>GPL-2.0-or-later</license>
         <source>https://github.com/newf276/build/tree/master/zips</source>
-		<assets>
+        <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
-            <icon>resources/icon.png</icon>
-            <fanart>resources/fanart.jpg</fanart>
         </assets>
-	</extension>
+    </extension>
 </addon>
 
