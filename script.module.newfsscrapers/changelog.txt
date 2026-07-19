@@ -1,4 +1,4 @@
-[COLOR dodgerblue][B]Version 0.2.22[/B][/COLOR]
+[COLOR dodgerblue][B]Version 0.2.29[/B][/COLOR]
 
 - Newf's Scrapers, forked from Gears Repo.
 

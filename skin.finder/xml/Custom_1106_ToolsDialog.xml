@@ -37,6 +37,11 @@
 				<include>ButtonMenuList_dialog</include>
 
 				<content>
+					<item>
+    				    <label>Pre-Made Configs</label>
+    				    <onclick>Dialog.Close(all)</onclick>
+    				    <onclick>RunScript(script.finder.helper,mode=pre_config)</onclick>
+					</item>
 
                     <item>
 
@@ -47,7 +52,6 @@
 						<onclick>ReloadSkin()</onclick>
 
 					</item>
-
                     <item>
 
 						<label>Authorize Premium Services</label>
@@ -57,7 +61,56 @@
 						<onclick>ActivateWindow(10001,"plugin://plugin.program.cleaner/?mode=10",return)</onclick>
 
 					</item>
+                    <item>
 
+						<label>Backup & Restore</label>
+
+						<onclick>Dialog.Close(all)</onclick>
+
+						<onclick condition="System.AddonIsEnabled(plugin.program.cleaner)">ActivateWindow(10001,"plugin://plugin.program.cleaner/?description=Backup%20and%20Restore%20Build%5b%2fB%5d&amp;kodi&amp;mode=12&amp;name=Backup%2fRestore%20Build%5b%2fB%5d&amp;name2&amp;url&amp;version",return)</onclick>
+
+                        <onclick condition="System.HasAddon(plugin.program.cleaner) + !System.AddonIsEnabled(plugin.program.cleaner)">EnableAddon(plugin.program.cleaner)</onclick>
+
+						<onclick condition="!System.HasAddon(plugin.program.cleaner)">InstallAddon(plugin.program.cleaner)</onclick>
+
+					</item>
+                    <item>
+
+						<label>Clear Finder Cache</label>
+
+						<onclick>Dialog.Close(all)</onclick>
+
+						<onclick condition="System.AddonIsEnabled(plugin.video.finder)">RunPlugin(plugin://plugin.video.finder/?mode=clear_all_cache)</onclick>
+
+					</item>
+                    <item>
+
+						<label>Clear Kodi Caches</label>
+
+						<onclick>Dialog.Close(all)</onclick>
+
+						<onclick >RunPlugin(plugin://plugin.program.cleaner?mode=33)</onclick>
+
+					</item>
+
+					<item>
+
+						<label>Clear Thumbnails</label>
+
+						<onclick>Dialog.Close(all)</onclick>
+
+						<onclick>RunScript(script.finder.helper,mode=clear_thumbnails)</onclick>
+
+					</item>
+                    <item>
+
+						<label>Network Speed Test</label>
+
+						<onclick>Dialog.Close(all)</onclick>
+
+						<onclick >RunPlugin(plugin://plugin.program.cleaner/?mode=28)</onclick>
+
+					</item> 
                    <item>
 
 						<label>Newf's Wizard</label>
@@ -97,37 +150,7 @@
 						<onclick>RunScript(script.finder.helper,mode=advanced_set)</onclick>
 
 					</item>
-
-                    <item>
-
-						<label>Network Speed Test</label>
-
-						<onclick>Dialog.Close(all)</onclick>
-
-						<onclick >RunPlugin(plugin://plugin.program.cleaner/?mode=28)</onclick>
-
-					</item>
-
-                    <item>
-
-						<label>Clear Finder Cache</label>
-
-						<onclick>Dialog.Close(all)</onclick>
-
-						<onclick condition="System.AddonIsEnabled(plugin.video.finder)">RunPlugin(plugin://plugin.video.finder/?mode=clear_all_cache)</onclick>
-
-					</item>
-
-					<item>
-
-						<label>Clear Thumbnails</label>
-
-						<onclick>Dialog.Close(all)</onclick>
-
-						<onclick>RunScript(script.finder.helper,mode=clear_thumbnails)</onclick>
-
-					</item>
-
+            
 					<item>
 
 						<label>System Information</label>
@@ -135,26 +158,6 @@
 						<onclick>Dialog.Close(all)</onclick>
 
 						<onclick>ActivateWindow(systeminfo)</onclick>
-
-					</item>
-
-					<item>
-    				    <label>Pre-Made Configs</label>
-    				    <onclick>Dialog.Close(all)</onclick>
-    				    <onclick>RunScript(script.finder.helper,mode=pre_config)</onclick>
-					</item>
-
-                    <item>
-
-						<label>Backup & Restore</label>
-
-						<onclick>Dialog.Close(all)</onclick>
-
-						<onclick condition="System.AddonIsEnabled(plugin.program.cleaner)">ActivateWindow(10001,"plugin://plugin.program.cleaner/?description=Backup%20and%20Restore%20Build%5b%2fB%5d&amp;kodi&amp;mode=12&amp;name=Backup%2fRestore%20Build%5b%2fB%5d&amp;name2&amp;url&amp;version",return)</onclick>
-
-                        <onclick condition="System.HasAddon(plugin.program.cleaner) + !System.AddonIsEnabled(plugin.program.cleaner)">EnableAddon(plugin.program.cleaner)</onclick>
-
-						<onclick condition="!System.HasAddon(plugin.program.cleaner)">InstallAddon(plugin.program.cleaner)</onclick>
 
 					</item>
 
