@@ -1,3 +1,10 @@
+[COLOR dodgerblue][B]Version 0.2.30[/B][/COLOR]
+
+- Updated settings to remove foreign sources.
+- Updated settings to remove undesirables, hopefully helps with Real Debrid filters.
+- Chose the most beneficial scrapers automatically, reducing each time and fall positives.
+
+
 [COLOR dodgerblue][B]Version 0.2.29[/B][/COLOR]
 
 - Newf's Scrapers, forked from Gears Repo.

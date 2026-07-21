@@ -52,7 +52,7 @@
     </extension>
 </addon>
 
-<addon id="script.module.newfsscrapers" name="[B]Newf's Scrapers[/B]" version="0.2.29" provider-name="newf276">
+<addon id="script.module.newfsscrapers" name="[B]Newf's Scrapers[/B]" version="0.2.30" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 		<import addon="script.module.requests" />
