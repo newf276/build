@@ -178,7 +178,7 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.finder" name="[B]Newf's Finder[/B]" provider-name="newf276" version="0.0.29">
+<addon id="plugin.video.finder" name="[B]Newf's Finder[/B]" provider-name="newf276" version="0.0.30">
     <requires>
         <import addon="xbmc.python" version="3.0.1"/>
         <import addon="script.module.pil" version="1.1.7"/>
