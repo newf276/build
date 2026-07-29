@@ -52,14 +52,10 @@
 						<onclick>ReloadSkin()</onclick>
 
 					</item>
-                    <item>
-
-						<label>Authorize Premium Services</label>
-
+					<item>
+						<label>Authorize Services</label>
 						<onclick>Dialog.Close(all)</onclick>
-
-						<onclick>ActivateWindow(10001,"plugin://plugin.program.cleaner/?mode=10",return)</onclick>
-
+						<onclick>ActivateWindow(1111)</onclick>
 					</item>
                     <item>
 

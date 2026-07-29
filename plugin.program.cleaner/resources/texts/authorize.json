@@ -4,6 +4,31 @@
       "id": "plugin.video.finder",
       "name": "Finder",
       "services": {
+          "mdblist": [
+          {
+            "type": "plugin",
+            "value": "plugin.video.finder/?mode=mdblist.mdblist_authenticate",
+            "label": "MDBList Auth"
+          }
+        ],
+          
+           "tmdb": [
+          {
+            "type": "plugin",
+            "value": "plugin.video.finder/?mode=tmdblist_api.authenticate",
+            "label": "TMDB Auth"
+          }
+        ],         
+          
+          
+          "trakt": [
+          {
+            "type": "plugin",
+            "value": "plugin://plugin.video.finder/?mode=trakt.trakt_authenticate",
+            "label": "Trakt Auth"
+          }
+        ],
+          
         "alldebrid": [
           {
             "type": "plugin",
@@ -30,326 +55,6 @@
             "type": "plugin",
             "value": "plugin://plugin.video.finder/?mode=torbox.authenticate",
             "label": "Torbox Auth"
-          }
-        ],
-          "trakt": [
-          {
-            "type": "plugin",
-            "value": "plugin://plugin.video.finder/?mode=trakt.trakt_authenticate",
-            "label": "Trakt Auth"
-          }
-        ]
-      }
-    },
-    {
-      "id": "plugin.video.redlight",
-      "name": "Red Light",
-      "services": {
-        "trakt": [
-          {
-            "type": "plugin",
-            "value": "plugin://plugin.video.redlight/?mode=trakt.trakt_authenticate",
-            "label": "Trakt Auth"
-          }
-        ],
-        "realdebrid": [
-          {
-            "type": "plugin",
-            "value": "plugin://plugin.video.redlight/?mode=real_debrid.authenticate",
-            "label": "Real-Debrid Auth"
-          }
-        ],
-        "premiumize": [
-          {
-            "type": "plugin",
-            "value": "plugin://plugin.video.redlight/?mode=premiumize.authenticate",
-            "label": "Premiumize Auth"
-          }
-        ],
-        "alldebrid": [
-          {
-            "type": "plugin",
-            "value": "plugin://plugin.video.redlight/?mode=alldebrid.authenticate",
-            "label": "All-Debrid Auth"
-          }
-        ],
-        "torbox": [
-          {
-            "type": "plugin",
-            "value": "plugin://plugin.video.redlight/?mode=torbox.authenticate",
-            "label": "Torbox Auth"
-          }
-        ]
-      }
-    },
-    {
-      "id": "plugin.video.gears",
-      "name": "The Gears",
-      "services": {
-        "trakt": [
-          {
-            "type": "plugin",
-            "value": "plugin://plugin.video.gears/?mode=trakt.trakt_authenticate",
-            "label": "Trakt Auth"
-          }
-        ],
-        "realdebrid": [
-          {
-            "type": "plugin",
-            "value": "plugin://plugin.video.gears/?mode=real_debrid.authenticate",
-            "label": "Real-Debrid Auth"
-          }
-        ],
-        "premiumize": [
-          {
-            "type": "plugin",
-            "value": "plugin://plugin.video.gears/?mode=premiumize.authenticate",
-            "label": "Premiumize Auth"
-          }
-        ],
-        "alldebrid": [
-          {
-            "type": "plugin",
-            "value": "plugin://plugin.video.gears/?mode=alldebrid.authenticate",
-            "label": "All-Debrid Auth"
-          }
-        ],
-        "torbox": [
-          {
-            "type": "plugin",
-            "value": "plugin://plugin.video.gears/?mode=torbox.authenticate",
-            "label": "Torbox Auth"
-          }
-        ]
-      }
-    },
-    {
-      "id": "plugin.video.thechains",
-      "name": "The Chains",
-      "services": {
-        "trakt": [
-          {
-            "type": "plugin",
-            "value": "plugin://plugin.video.thechains?mode=205&url=www",
-            "label": "Trakt Auth"
-          }
-        ],
-        "realdebrid": [
-          {
-            "type": "plugin",
-            "value": "plugin://plugin.video.thechains?mode=138&url=www",
-            "label": "Real-Debrid Auth"
-          }
-        ],
-        "premiumize": [
-          {
-            "type": "plugin",
-            "value": "plugin://plugin.video.thechains?mode=140&url=www",
-            "label": "Premiumize Auth"
-          }
-        ],
-        "alldebrid": [
-          {
-            "type": "plugin",
-            "value": "plugin://plugin.video.thechains?mode=142&url=www",
-            "label": "All-Debrid Auth"
-          }
-        ],
-        "torbox": [
-          {
-            "type": "plugin",
-            "value": "plugin://plugin.video.thechains?mode=208&url=www",
-            "label": "Torbox Auth"
-          }
-        ]
-      }
-    },
-    {
-      "id": "plugin.video.umbrella",
-      "name": "Umbrella",
-      "services": {
-        "trakt": [
-          {
-            "type": "plugin",
-            "value": "plugin://plugin.video.umbrella/?action=traktAuth",
-            "label": "Trakt Auth"
-          }
-        ],
-        "realdebrid": [
-          {
-            "type": "plugin",
-            "value": "plugin://plugin.video.umbrella/?action=rd_Authorize",
-            "label": "Real-Debrid Auth"
-          }
-        ],
-        "premiumize": [
-          {
-            "type": "plugin",
-            "value": "plugin://plugin.video.umbrella/?action=pm_Authorize",
-            "label": "Premiumize Auth"
-          }
-        ],
-        "alldebrid": [
-          {
-            "type": "plugin",
-            "value": "plugin://plugin.video.umbrella/?action=ad_Authorize",
-            "label": "All-Debrid Auth"
-          }
-        ],
-        "torbox": [
-          {
-            "type": "plugin",
-            "value": "plugin://plugin.video.umbrella/?action=tb_Authorize",
-            "label": "Torbox Auth"
-          }
-        ]
-      }
-    },
-    {
-      "id": "plugin.video.pov",
-      "name": "POV",
-      "services": {
-        "trakt": [
-          {
-            "type": "builtin",
-            "value": "PlayMedia(\"plugin://plugin.video.pov/?mode=myservices&name=My+Services&isFolder=false\")",
-            "label": "Open My Services"
-          }
-        ],
-        "realdebrid": [
-          {
-            "type": "builtin",
-            "value": "PlayMedia(\"plugin://plugin.video.pov/?mode=myservices&name=My+Services&isFolder=false\")",
-            "label": "Open My Services"
-          }
-        ],
-        "premiumize": [
-          {
-            "type": "builtin",
-            "value": "PlayMedia(\"plugin://plugin.video.pov/?mode=myservices&name=My+Services&isFolder=false\")",
-            "label": "Open My Services"
-          }
-        ],
-        "alldebrid": [
-          {
-            "type": "builtin",
-            "value": "PlayMedia(\"plugin://plugin.video.pov/?mode=myservices&name=My+Services&isFolder=false\")",
-            "label": "Open My Services"
-          }
-        ],
-        "torbox": [
-          {
-            "type": "builtin",
-            "value": "PlayMedia(\"plugin://plugin.video.pov/?mode=myservices&name=My+Services&isFolder=false\")",
-            "label": "Open My Services"
-          }
-        ]
-      }
-    },
-    {
-      "id": "plugin.video.the-loop",
-      "name": "The Loop",
-      "services": {
-        "realdebrid": [
-          {
-            "type": "plugin",
-            "value": "plugin://script.module.resolveurl/?mode=auth_rd",
-            "label": "ResolveURL Real-Debrid Auth"
-          }
-        ],
-        "premiumize": [
-          {
-            "type": "plugin",
-            "value": "plugin://script.module.resolveurl/?mode=auth_pm",
-            "label": "ResolveURL Premiumize Auth"
-          }
-        ],
-        "alldebrid": [
-          {
-            "type": "plugin",
-            "value": "plugin://script.module.resolveurl/?mode=auth_ad",
-            "label": "ResolveURL All-Debrid Auth"
-          }
-        ],
-        "torbox": [
-          {
-            "type": "plugin",
-            "value": "plugin://script.module.resolveurl/?mode=auth_tb",
-            "label": "ResolveURL Torbox Auth"
-          }
-        ]
-      }
-    },
-    {
-      "id": "script.module.resolveurl",
-      "name": "ResolveURL",
-      "services": {
-        "realdebrid": [
-          {
-            "type": "plugin",
-            "value": "plugin://script.module.resolveurl/?mode=auth_rd",
-            "label": "ResolveURL Real-Debrid Auth"
-          }
-        ],
-        "premiumize": [
-          {
-            "type": "plugin",
-            "value": "plugin://script.module.resolveurl/?mode=auth_pm",
-            "label": "ResolveURL Premiumize Auth"
-          }
-        ],
-        "alldebrid": [
-          {
-            "type": "plugin",
-            "value": "plugin://script.module.resolveurl/?mode=auth_ad",
-            "label": "ResolveURL All-Debrid Auth"
-          }
-        ],
-        "torbox": [
-          {
-            "type": "plugin",
-            "value": "plugin://script.module.resolveurl/?mode=auth_tb",
-            "label": "ResolveURL Torbox Auth"
-          }
-        ]
-      }
-    },
-    {
-      "id": "script.module.urlresolver",
-      "name": "URLResolver",
-      "services": {
-        "realdebrid": [
-          {
-            "type": "plugin",
-            "value": "plugin://script.module.urlresolver/?mode=auth_realdebrid",
-            "label": "URLResolver Real-Debrid Auth"
-          }
-        ],
-        "premiumize": [
-          {
-            "type": "plugin",
-            "value": "plugin://script.module.urlresolver/?mode=auth_pm",
-            "label": "URLResolver Premiumize Auth"
-          }
-        ],
-        "alldebrid": [
-          {
-            "type": "plugin",
-            "value": "plugin://script.module.urlresolver/?mode=auth_ad",
-            "label": "URLResolver All-Debrid Auth"
-          }
-        ]
-      }
-    },
-    {
-      "id": "plugin.video.themoviedb.helper",
-      "name": "TMDb Helper",
-      "services": {
-        "trakt": [
-          {
-            "type": "builtin",
-            "value": "RunScript(plugin.video.themoviedb.helper,authenticate_trakt)",
-            "label": "Authenticate Trakt"
           }
         ]
       }
