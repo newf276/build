@@ -157,7 +157,7 @@
 						<bottom>0</bottom>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
-						<scrollspeed>180</scrollspeed>
+						<scrollspeed>300</scrollspeed>
 						<font>font52_title</font>
 						<label>$VAR[ListLabelVar]</label>
 						<shadowcolor>text_shadow</shadowcolor>

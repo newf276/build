@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1154">
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<include>Animation_DialogPopupOpenClose</include>
+	<controls>
+		<control type="group">
+			<centerleft>50%</centerleft>
+			<width>600</width>
+			<centertop>50%</centertop>
+			<height>700</height>
+			<include content="DialogBackgroundCommons">
+				<param name="width" value="600" />
+				<param name="height" value="$VAR[DialogHeight8]" />
+				<param name="header_label" value="Choose Colour Preset" />
+				<param name="header_id" value="" />
+				<param name="diffusetexture" value="masks/dialog-bg-squareish.png" />
+			</include>
+			<control type="panel" id="9000">
+				<include content="ButtonMenuList_dialog">
+					<param name="panel_height" value="560" />
+				</include>
+				<content>
+					<item>
+						<label>[COLOR FFC40300]Finder Plus[/COLOR]</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=set_color&amp;color=Finder%20Plus)</onclick>
+					</item>
+					<item>
+						<label>[COLOR FFFF8A00]Finder Hybrid[/COLOR]</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=set_color&amp;color=Finder%20Hybrid)</onclick>
+					</item>
+					<item>
+						<label>[COLOR FFEAECED]Classic Finder[/COLOR]</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=set_color&amp;color=Classic%20Finder)</onclick>
+					</item>
+					<item>
+						<label>[COLOR FF12A0C7]Estuary[/COLOR]</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=set_color&amp;color=Estuary)</onclick>
+					</item>
+					<item>
+						<label>[COLOR FFFFB300]Amber[/COLOR]</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=set_color&amp;color=Amber)</onclick>
+					</item>
+					<item>
+						<label>[COLOR FF00D7F5]Aqua[/COLOR]</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=set_color&amp;color=Aqua)</onclick>
+					</item>
+					<item>
+						<label>[COLOR FF83513F]Brown[/COLOR]</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=set_color&amp;color=Brown)</onclick>
+					</item>
+					<item>
+						<label>[COLOR FFA2A2A2]Charcoal[/COLOR]</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=set_color&amp;color=Charcoal)</onclick>
+					</item>
+					<item>
+						<label>[COLOR FF4FAF00]Chartreuse[/COLOR]</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=set_color&amp;color=Chartreuse)</onclick>
+					</item>
+					<item>
+						<label>[COLOR FF4E86FF]Cobalt[/COLOR]</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=set_color&amp;color=Cobalt)</onclick>
+					</item>
+					<item>
+						<label>[COLOR FFB0BEC5]Concrete[/COLOR]</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=set_color&amp;color=Concrete)</onclick>
+					</item>
+					<item>
+						<label>[COLOR FFC87533]Copper[/COLOR]</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=set_color&amp;color=Copper)</onclick>
+					</item>
+					<item>
+						<label>[COLOR FFE51E4F]Crimson[/COLOR]</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=set_color&amp;color=Crimson)</onclick>
+					</item>
+					<item>
+						<label>[COLOR FF00A86B]Emerald[/COLOR]</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=set_color&amp;color=Emerald)</onclick>
+					</item>
+					<item>
+						<label>[COLOR FFCFA700]Gold[/COLOR]</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=set_color&amp;color=Gold)</onclick>
+					</item>
+					<item>
+						<label>[COLOR FF24CA7A]Green[/COLOR]</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=set_color&amp;color=Green)</onclick>
+					</item>
+					<item>
+						<label>[COLOR FF6C5CE7]Indigo[/COLOR]</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=set_color&amp;color=Indigo)</onclick>
+					</item>
+					<item>
+						<label>[COLOR FFB497FF]Lavender[/COLOR]</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=set_color&amp;color=Lavender)</onclick>
+					</item>
+					<item>
+						<label>[COLOR FF2866A4]Midnight[/COLOR]</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=set_color&amp;color=Midnight)</onclick>
+					</item>
+					<item>
+						<label>[COLOR FF3A3D3D]Monochrome[/COLOR]</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=set_color&amp;color=Monochrome)</onclick>
+					</item>
+					<item>
+						<label>[COLOR FFCC6E14]Orange[/COLOR]</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=set_color&amp;color=Orange)</onclick>
+					</item>
+					<item>
+						<label>[COLOR FFE91E63]Pink[/COLOR]</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=set_color&amp;color=Pink)</onclick>
+					</item>
+					<item>
+						<label>[COLOR FF845BFB]Purple[/COLOR]</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=set_color&amp;color=Purple)</onclick>
+					</item>
+					<item>
+						<label>[COLOR FFFF8EC4]Rose[/COLOR]</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=set_color&amp;color=Rose)</onclick>
+					</item>
+					<item>
+						<label>[COLOR FF0F8BFF]Sapphire[/COLOR]</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=set_color&amp;color=Sapphire)</onclick>
+					</item>
+					<item>
+						<label>[COLOR FF6F8FA3]Slate[/COLOR]</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=set_color&amp;color=Slate)</onclick>
+					</item>
+					<item>
+						<label>[COLOR FFFFA726]Tangerine[/COLOR]</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=set_color&amp;color=Tangerine)</onclick>
+					</item>
+					<item>
+						<label>[COLOR FF009688]Teal[/COLOR]</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=set_color&amp;color=Teal)</onclick>
+					</item>
+					<item>
+						<label>[COLOR FFC050FF]Violet[/COLOR]</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=set_color&amp;color=Violet)</onclick>
+					</item>
+				</content>
+			</control>
+			<include content="UpDownArrows">
+				<param name="container_id" value="9000" />
+				<param name="posx" value="276" />
+				<param name="up_posy" value="-35" />
+				<param name="down_posy" value="710" />
+			</include>
+		</control>
+	</controls>
+</window>

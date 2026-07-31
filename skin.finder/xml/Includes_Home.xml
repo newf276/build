@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<include name="FinderBackground">
-		<!-- Default/custom background - always-on fallback layer -->
+		<!-- Default/Custom background-->
+		<control type="image">
+			<depth>-0.99</depth>
+			<include>FullScreenDimensions</include>
+			<aspectratio>scale</aspectratio>
+			<texture colordiffuse="$VAR[HomeBackgroundDiffuseVar]" fallback="special://skin/extras/backgrounds/estuary.jpg">$VAR[CustomBackgroundImage]</texture>
+			<visible>Window.IsActive(home) + !Player.HasMedia + Skin.HasSetting(EstuaryLookFeel)</visible>
+		</control>
 		<control type="image">
 			<depth>DepthBackground</depth>
 			<include>FullScreenDimensions</include>
 			<aspectratio>scale</aspectratio>
 			<texture background="true" colordiffuse="$VAR[BackgroundBrightnessVar]" fallback="special://skin/extras/backgrounds/redblur.png">$VAR[CustomBackgroundImage]</texture>
-			<visible>Window.IsActive(home) + !Player.HasMedia</visible>
+			<visible>Window.IsActive(home) + !Player.HasMedia + !Skin.HasSetting(EstuaryLookFeel)</visible>
 		</control>
 		<!-- Add-on widget fanart -->
 		<control type="image">
@@ -1384,6 +1391,7 @@
 		<param name="visible_2">true</param>
 		<param name="visible_3">true</param>
 		<param name="button2_label">$LOCALIZE[31116]</param>
+		<param name="left">50</param>
 		<param name="button3_label">Return to the home screen</param>
 		<param name="button2_onclick">true</param>
 		<definition>
@@ -1394,11 +1402,12 @@
 					<top>0</top>
 					<bottom>0</bottom>
 					<left>$PARAM[left]</left>
-					<right>50</right>
+					<width>1300</width>
 					<align>center</align>
+					<itemgap>22</itemgap>
 					<control type="textbox">
-						<width>100%</width>
-						<height min="110" max="300">auto</height>
+						<width>1300</width>
+						<height min="110" max="240">auto</height>
 						<label>$PARAM[text_label]</label>
 						<textcolor>unfocused_text</textcolor>
 						<align>center</align>
@@ -1406,7 +1415,7 @@
 					</control>
 					<control type="grouplist" id="$PARAM[button_id]567">
 						<itemgap>30</itemgap>
-						<width>100%</width>
+						<width>1300</width>
 						<onup>9000</onup>
 						<ondown>9000</ondown>
 						<orientation>horizontal</orientation>
@@ -2096,16 +2105,18 @@
 	<include name="WidgetListCommon">
 		<scrolltime tween="cubic" easing="out">500</scrolltime>
 		<orientation>horizontal</orientation>
-		<onleft condition="Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(finder.widget_focus),true)">$PARAM[list_id]</onleft>
-		<onleft condition="![Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(finder.widget_focus),true)]">9000</onleft>
+		<onleft condition="Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true)">$PARAM[list_id]</onleft>
+		<onleft condition="![Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true)]">9000</onleft>
 		<onright>$PARAM[list_id]</onright>
-		<onback condition="Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(finder.widget_focus),true)">SetFocus(9000)</onback>
-		<onback condition="Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(finder.widget_focus),true)">ClearProperty(finder.widget_focus,home)</onback>
-		<onback condition="![Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(finder.widget_focus),true)]">SetFocus($PARAM[list_id],0,absolute)</onback>
-		<onback condition="![Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(finder.widget_focus),true)]">9000</onback>
+		<onback condition="Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true)">SetFocus(9000)</onback>
+		<onback condition="Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true)">ClearProperty(finder.widget_focus,home)</onback>
+		<onback condition="![Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true)]">SetFocus($PARAM[list_id],0,absolute)</onback>
+		<onback condition="![Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true)]">9000</onback>
 		<onfocus>Control.Move($PARAM[list_id],-$INFO[Container($PARAM[list_id]).Position])</onfocus>
 		<onunfocus>SetProperty(listposition,$INFO[Container($PARAM[list_id]).Position],home)</onunfocus>
+		<onfocus condition="String.IsEqual(Container($PARAM[list_id]).ListItem.Property(IsFavouriteWidget),true)">SetProperty(finder.disable_infopanel,true,home)</onfocus>
 		<onfocus>SetProperty(finder.widget_focus,true,home)</onfocus>
+		<onunfocus>ClearProperty(finder.disable_infopanel,home)</onunfocus>
 		<onunfocus>ClearProperty(finder.widget_focus,home)</onunfocus>
 		<!-- <preloaditems>2</preloaditems> -->
 	</include>
@@ -2202,5 +2213,608 @@
 	</include>
 	<include name="MenuTopPosition">
 		<top>$PARAM[top]</top>
+	</include>
+	<!-- Finder Hybrid main menu -->
+	<include name="FinderHybridMainMenuMovement">
+		<movement>6</movement>
+	</include>
+	<!-- Finder Plus, Classic Finder and Estuary main menu -->
+	<include name="FinderStandardMainMenuMovement">
+		<movement>6</movement>
+	</include>
+	<!-- Main menu layouts -->
+	<include name="FinderStandardMainMenuLayout">
+		<focusedlayout height="108">
+			<control type="group">
+				<animation effect="fade" start="100" end="0" time="0">UnFocus</animation>
+			</control>
+			<!-- Finder Plus focused layout -->
+			<control type="group">
+				<visible>!Skin.HasSetting(FinderHybrid) + !Skin.HasSetting(ClassicFinder) + !Skin.HasSetting(EstuaryLookFeel)</visible>
+				<left>2</left>
+				<!-- Highlight BG -->
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>422</width>
+					<height>95</height>
+					<texture colordiffuse="button_focus">masks/banner.png</texture>
+					<visible>!Skin.HasSetting(NoHighlightMainMenu) + !ControlGroup(700).HasFocus</visible>
+				</control>
+				<!-- SideMenu Focused Icon Background Shading -->
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>95</width>
+					<height>95</height>
+					<texture colordiffuse="51FFFFFF">masks/icon_mainmenu.png</texture>
+					<visible>Skin.HasSetting(NoIconMainMenu) + !Skin.HasSetting(NoHighlightMainMenu) + !Skin.HasSetting(FinderHybrid) + !Skin.HasSetting(ClassicFinder) + !Skin.HasSetting(EstuaryLookFeel) + !ControlGroup(700).HasFocus</visible>
+				</control>
+				<!-- SideMenu Focused Icon -->
+				<control type="image">
+					<left>-8</left>
+					<top>-9</top>
+					<width>110</width>
+					<height>110</height>
+					<texture>$INFO[ListItem.Art(thumb)]</texture>
+					<visible>Skin.HasSetting(NoIconMainMenu) + !ControlGroup(700).HasFocus</visible>
+				</control>
+				<!-- Focused Label with Icons Enabled -->
+				<control type="label">
+					<include>FocusBounce</include>
+					<left>104</left>
+					<top>0</top>
+					<height>95</height>
+					<width>355</width>
+					<aligny>center</aligny>
+					<font>font40</font>
+					<label>$INFO[ListItem.Label]</label>
+					<shadowcolor>text_shadow</shadowcolor>
+					<textcolor>focused_text</textcolor>
+					<visible>Skin.HasSetting(NoIconMainMenu) + !ControlGroup(700).HasFocus</visible>
+				</control>
+				<!-- Focused Label with Icons Disabled -->
+				<control type="label">
+					<include>FocusBounce</include>
+					<left>104</left>
+					<top>0</top>
+					<height>95</height>
+					<width>355</width>
+					<aligny>center</aligny>
+					<font>font45_title</font>
+					<label>$INFO[ListItem.Label]</label>
+					<shadowcolor>text_shadow</shadowcolor>
+					<textcolor>focused_text</textcolor>
+					<visible>!Skin.HasSetting(NoIconMainMenu) + !ControlGroup(700).HasFocus</visible>
+				</control>
+				<!-- Top bar fallback icon -->
+				<control type="image">
+					<left>5</left>
+					<top>1</top>
+					<width>95</width>
+					<height>95</height>
+					<texture colordiffuse="44FFFFFF">$INFO[ListItem.Art(thumb)]</texture>
+					<visible>Skin.HasSetting(NoIconMainMenu) + ControlGroup(700).HasFocus</visible>
+				</control>
+				<!-- Top bar fallback label -->
+				<control type="label">
+					<left>104</left>
+					<top>0</top>
+					<height>95</height>
+					<width>355</width>
+					<aligny>center</aligny>
+					<font>font40</font>
+					<label>$INFO[ListItem.Label]</label>
+					<shadowcolor>text_shadow</shadowcolor>
+					<textcolor>unfocused_text</textcolor>
+					<visible>ControlGroup(700).HasFocus</visible>
+				</control>
+			</control>
+			<!-- Finder Hybrid focused layout -->
+			<control type="group">
+				<visible>Skin.HasSetting(FinderHybrid)</visible>
+				<control type="image">
+					<left>41</left>
+					<top>0</top>
+					<width>380</width>
+					<height>110</height>
+					<aspectratio>stretch</aspectratio>
+					<texture colordiffuse="button_focus">frame/mainframe.png</texture>
+					<visible>!ControlGroup(700).HasFocus + !Skin.HasSetting(NoHighlightMainMenu)</visible>
+				</control>
+				<control type="label">
+					<left>41</left>
+					<top>0</top>
+					<width>380</width>
+					<height>110</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font45_title</font>
+					<label>$INFO[ListItem.Label]</label>
+					<textcolor>focused_text</textcolor>
+					<shadowcolor>text_shadow</shadowcolor>
+					<visible>!ControlGroup(700).HasFocus</visible>
+				</control>
+				<control type="label">
+					<left>31</left>
+					<top>16</top>
+					<width>400</width>
+					<height>76</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font45</font>
+					<label>$INFO[ListItem.Label]</label>
+					<textcolor>unfocused_text</textcolor>
+					<shadowcolor>text_shadow</shadowcolor>
+					<visible>ControlGroup(700).HasFocus</visible>
+				</control>
+			</control>
+			<!-- Estuary focused layout -->
+			<control type="group">
+				<visible>!Skin.HasSetting(FinderHybrid) + Skin.HasSetting(EstuaryLookFeel)</visible>
+				<control type="image">
+					<left>0</left>
+					<width>450</width>
+					<height>108</height>
+					<texture colordiffuse="button_focus">colors/white.png</texture>
+					<visible>!Skin.HasSetting(NoHighlightMainMenu)</visible>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<width>108</width>
+					<height>108</height>
+					<texture colordiffuse="primary_background">colors/white.png</texture>
+					<visible>Skin.HasSetting(NoIconMainMenu) + !Skin.HasSetting(NoHighlightMainMenu)</visible>
+				</control>
+				<control type="image">
+					<left>-16</left>
+					<top>-16</top>
+					<width>140</width>
+					<height>140</height>
+					<aspectratio>keep</aspectratio>
+					<texture colordiffuse="focused_text">$INFO[ListItem.Art(thumb)]</texture>
+					<visible>Skin.HasSetting(NoIconMainMenu)</visible>
+				</control>
+				<!-- Focused label with icons enabled -->
+				<control type="label">
+					<include>FocusBounce</include>
+					<left>118</left>
+					<height>108</height>
+					<width>292</width>
+					<aligny>center</aligny>
+					<font>font45</font>
+					<label>$INFO[ListItem.Label]</label>
+					<textcolor>focused_text</textcolor>
+					<visible>Skin.HasSetting(NoIconMainMenu)</visible>
+				</control>
+				<!-- Focused label with icons disabled -->
+				<control type="label">
+					<include>FocusBounce</include>
+					<left>20</left>
+					<height>108</height>
+					<width>410</width>
+					<aligny>center</aligny>
+					<font>font45</font>
+					<label>$INFO[ListItem.Label]</label>
+					<textcolor>focused_text</textcolor>
+					<visible>!Skin.HasSetting(NoIconMainMenu)</visible>
+				</control>
+			</control>
+			<!-- Classic Finder focused layout -->
+			<control type="group">
+				<visible>!Skin.HasSetting(FinderHybrid) + Skin.HasSetting(ClassicFinder) + !Skin.HasSetting(EstuaryLookFeel)</visible>
+				<control type="label">
+					<include>FocusBounce</include>
+					<left>65</left>
+					<top>0</top>
+					<height>95</height>
+					<width>315</width>
+					<aligny>center</aligny>
+					<font>font45</font>
+					<textcolor>darkgrey</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+					<shadowcolor>text_shadow</shadowcolor>
+					<visible>ControlGroup(700).HasFocus</visible>
+				</control>
+				<control type="label">
+					<include>FocusBounce</include>
+					<left>65</left>
+					<top>0</top>
+					<height>95</height>
+					<width>315</width>
+					<aligny>center</aligny>
+					<font>font52_title</font>
+					<label>$INFO[ListItem.Label]</label>
+					<textcolor>button_focus</textcolor>
+					<shadowcolor>text_shadow</shadowcolor>
+					<visible>!ControlGroup(700).HasFocus</visible>
+				</control>
+			</control>
+		</focusedlayout>
+		<itemlayout height="108">
+			<!-- Finder Plus item layout -->
+			<control type="group">
+				<visible>!Skin.HasSetting(FinderHybrid) + !Skin.HasSetting(ClassicFinder) + !Skin.HasSetting(EstuaryLookFeel)</visible>
+				<left>2</left>
+				<control type="image">
+					<left>5</left>
+					<top>1</top>
+					<width>95</width>
+					<height>95</height>
+					<texture colordiffuse="44FFFFFF">$INFO[ListItem.Art(thumb)]</texture>
+					<visible>Skin.HasSetting(NoIconMainMenu)</visible>
+				</control>
+				<control type="label">
+					<include>FocusBounce</include>
+					<left>104</left>
+					<top>0</top>
+					<height>95</height>
+					<width>355</width>
+					<aligny>center</aligny>
+					<font>font40</font>
+					<label>$INFO[ListItem.Label]</label>
+					<shadowcolor>text_shadow</shadowcolor>
+					<textcolor>unfocused_text</textcolor>
+				</control>
+			</control>
+			<!-- Finder Hybrid item layout -->
+			<control type="group">
+				<visible>Skin.HasSetting(FinderHybrid)</visible>
+				<control type="label">
+					<left>31</left>
+					<top>16</top>
+					<width>400</width>
+					<height>76</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font45</font>
+					<label>$INFO[ListItem.Label]</label>
+					<textcolor>unfocused_text</textcolor>
+					<shadowcolor>text_shadow</shadowcolor>
+				</control>
+			</control>
+			<!-- Estuary item layout -->
+			<control type="group">
+				<visible>!Skin.HasSetting(FinderHybrid) + Skin.HasSetting(EstuaryLookFeel)</visible>
+				<!-- Same icon and label geometry as the focused layout -->
+				<control type="image">
+					<left>-16</left>
+					<top>-16</top>
+					<width>140</width>
+					<height>140</height>
+					<aspectratio>keep</aspectratio>
+					<texture colordiffuse="grey">$INFO[ListItem.Art(thumb)]</texture>
+					<visible>Skin.HasSetting(NoIconMainMenu)</visible>
+				</control>
+				<!-- Label with icons enabled -->
+				<control type="label">
+					<left>118</left>
+					<height>108</height>
+					<width>292</width>
+					<aligny>center</aligny>
+					<font>font37</font>
+					<label>$INFO[ListItem.Label]</label>
+					<textcolor>unfocused_text</textcolor>
+					<visible>Skin.HasSetting(NoIconMainMenu)</visible>
+				</control>
+				<!-- Label with icons disabled -->
+				<control type="label">
+					<left>20</left>
+					<height>108</height>
+					<width>410</width>
+					<aligny>center</aligny>
+					<font>font37</font>
+					<label>$INFO[ListItem.Label]</label>
+					<textcolor>unfocused_text</textcolor>
+					<visible>!Skin.HasSetting(NoIconMainMenu)</visible>
+				</control>
+			</control>
+			<!-- Classic Finder item layout -->
+			<control type="group">
+				<visible>!Skin.HasSetting(FinderHybrid) + Skin.HasSetting(ClassicFinder) + !Skin.HasSetting(EstuaryLookFeel)</visible>
+				<control type="label">
+					<left>65</left>
+					<top>0</top>
+					<height>95</height>
+					<width>315</width>
+					<aligny>center</aligny>
+					<font>font45</font>
+					<textcolor>darkgrey</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+					<shadowcolor>text_shadow</shadowcolor>
+				</control>
+			</control>
+		</itemlayout>
+	</include>
+	<include name="FinderHybridMainMenuLayout">
+		<focusedlayout height="98">
+			<control type="group">
+				<animation effect="fade" start="100" end="0" time="0">UnFocus</animation>
+			</control>
+			<!-- Finder Plus focused layout -->
+			<control type="group">
+				<visible>!Skin.HasSetting(FinderHybrid) + !Skin.HasSetting(ClassicFinder) + !Skin.HasSetting(EstuaryLookFeel)</visible>
+				<left>2</left>
+				<!-- Highlight BG -->
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>422</width>
+					<height>95</height>
+					<texture colordiffuse="button_focus">masks/banner.png</texture>
+					<visible>Skin.HasSetting(NoIconMainMenu) + !Skin.HasSetting(NoHighlightMainMenu) + !String.IsEqual(Skin.String(CurrentSkinColor),Classic Finder) + !ControlGroup(700).HasFocus</visible>
+				</control>
+				<!-- SideMenu Focused Icon Background Shading -->
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>95</width>
+					<height>95</height>
+					<texture colordiffuse="51FFFFFF">masks/icon_mainmenu.png</texture>
+					<visible>Skin.HasSetting(NoIconMainMenu) + !Skin.HasSetting(NoHighlightMainMenu) + !Skin.HasSetting(FinderHybrid) + !Skin.HasSetting(ClassicFinder) + !Skin.HasSetting(EstuaryLookFeel) + !ControlGroup(700).HasFocus</visible>
+				</control>
+				<!-- SideMenu Focused Icon -->
+				<control type="image">
+					<left>-8</left>
+					<top>-9</top>
+					<width>110</width>
+					<height>110</height>
+					<texture>$INFO[ListItem.Art(thumb)]</texture>
+					<visible>Skin.HasSetting(NoIconMainMenu) + !ControlGroup(700).HasFocus</visible>
+				</control>
+				<!-- Focused Label with Icons Enabled -->
+				<control type="label">
+					<include>FocusBounce</include>
+					<left>104</left>
+					<top>0</top>
+					<height>95</height>
+					<width>355</width>
+					<aligny>center</aligny>
+					<font>font37</font>
+					<label>$INFO[ListItem.Label]</label>
+					<shadowcolor>text_shadow</shadowcolor>
+					<textcolor>focused_text</textcolor>
+					<visible>Skin.HasSetting(NoIconMainMenu) + !ControlGroup(700).HasFocus</visible>
+				</control>
+				<!-- Focused Label with Icons Disabled -->
+				<control type="label">
+					<include>FocusBounce</include>
+					<left>104</left>
+					<top>0</top>
+					<height>95</height>
+					<width>355</width>
+					<aligny>center</aligny>
+					<font>font45_title</font>
+					<label>$INFO[ListItem.Label]</label>
+					<shadowcolor>text_shadow</shadowcolor>
+					<textcolor>focused_text</textcolor>
+					<visible>!Skin.HasSetting(NoIconMainMenu) + !ControlGroup(700).HasFocus</visible>
+				</control>
+				<!-- Top bar fallback icon -->
+				<control type="image">
+					<left>5</left>
+					<top>1</top>
+					<width>95</width>
+					<height>95</height>
+					<texture colordiffuse="44FFFFFF">$INFO[ListItem.Art(thumb)]</texture>
+					<visible>Skin.HasSetting(NoIconMainMenu) + ControlGroup(700).HasFocus</visible>
+				</control>
+				<!-- Top bar fallback label -->
+				<control type="label">
+					<left>104</left>
+					<top>0</top>
+					<height>95</height>
+					<width>355</width>
+					<aligny>center</aligny>
+					<font>font37</font>
+					<label>$INFO[ListItem.Label]</label>
+					<shadowcolor>text_shadow</shadowcolor>
+					<textcolor>unfocused_text</textcolor>
+					<visible>ControlGroup(700).HasFocus</visible>
+				</control>
+			</control>
+			<!-- Finder Hybrid focused layout -->
+			<control type="group">
+				<visible>Skin.HasSetting(FinderHybrid)</visible>
+				<control type="image">
+					<left>41</left>
+					<top>0</top>
+					<width>380</width>
+					<height>110</height>
+					<aspectratio>stretch</aspectratio>
+					<texture colordiffuse="button_focus">frame/mainframe.png</texture>
+					<visible>!ControlGroup(700).HasFocus + !Skin.HasSetting(NoHighlightMainMenu)</visible>
+				</control>
+				<control type="label">
+					<left>41</left>
+					<top>0</top>
+					<width>380</width>
+					<height>110</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font45_title</font>
+					<label>$INFO[ListItem.Label]</label>
+					<textcolor>focused_text</textcolor>
+					<shadowcolor>text_shadow</shadowcolor>
+					<visible>!ControlGroup(700).HasFocus</visible>
+				</control>
+				<control type="label">
+					<left>31</left>
+					<top>16</top>
+					<width>400</width>
+					<height>76</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font45</font>
+					<label>$INFO[ListItem.Label]</label>
+					<textcolor>unfocused_text</textcolor>
+					<shadowcolor>text_shadow</shadowcolor>
+					<visible>ControlGroup(700).HasFocus</visible>
+				</control>
+			</control>
+			<!-- Estuary focused layout -->
+			<control type="group">
+				<visible>!Skin.HasSetting(FinderHybrid) + Skin.HasSetting(EstuaryLookFeel)</visible>
+				<!-- Uses the same geometry as the unfocused layout -->
+				<control type="image">
+					<left>0</left>
+					<width>450</width>
+					<height>108</height>
+					<texture colordiffuse="button_focus">colors/white.png</texture>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<width>108</width>
+					<height>108</height>
+					<texture colordiffuse="primary_background">colors/white.png</texture>
+				</control>
+				<control type="image">
+					<left>-16</left>
+					<top>-16</top>
+					<width>140</width>
+					<height>140</height>
+					<aspectratio>keep</aspectratio>
+					<texture colordiffuse="focused_text">$INFO[ListItem.Art(thumb)]</texture>
+				</control>
+				<control type="label">
+					<left>118</left>
+					<height>108</height>
+					<width>292</width>
+					<aligny>center</aligny>
+					<font>font37</font>
+					<label>$INFO[ListItem.Label]</label>
+					<textcolor>focused_text</textcolor>
+				</control>
+			</control>
+			<!-- Classic Finder focused layout -->
+			<control type="group">
+				<visible>!Skin.HasSetting(FinderHybrid) + Skin.HasSetting(ClassicFinder) + !Skin.HasSetting(EstuaryLookFeel)</visible>
+				<control type="label">
+					<include>FocusBounce</include>
+					<left>65</left>
+					<top>0</top>
+					<height>95</height>
+					<width>315</width>
+					<aligny>center</aligny>
+					<font>font45</font>
+					<textcolor>darkgrey</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+					<shadowcolor>text_shadow</shadowcolor>
+					<visible>ControlGroup(700).HasFocus</visible>
+				</control>
+				<control type="label">
+					<include>FocusBounce</include>
+					<left>65</left>
+					<top>0</top>
+					<height>95</height>
+					<width>315</width>
+					<aligny>center</aligny>
+					<font>font52_title</font>
+					<label>$INFO[ListItem.Label]</label>
+					<textcolor>button_focus</textcolor>
+					<shadowcolor>text_shadow</shadowcolor>
+					<visible>!ControlGroup(700).HasFocus</visible>
+				</control>
+			</control>
+		</focusedlayout>
+		<itemlayout height="98">
+			<!-- Finder Plus item layout -->
+			<control type="group">
+				<visible>!Skin.HasSetting(FinderHybrid) + !Skin.HasSetting(ClassicFinder) + !Skin.HasSetting(EstuaryLookFeel)</visible>
+				<left>2</left>
+				<control type="image">
+					<left>5</left>
+					<top>1</top>
+					<width>95</width>
+					<height>95</height>
+					<texture colordiffuse="44FFFFFF">$INFO[ListItem.Art(thumb)]</texture>
+					<visible>Skin.HasSetting(NoIconMainMenu)</visible>
+				</control>
+				<control type="label">
+					<include>FocusBounce</include>
+					<left>104</left>
+					<top>0</top>
+					<height>95</height>
+					<width>355</width>
+					<aligny>center</aligny>
+					<font>font37</font>
+					<label>$INFO[ListItem.Label]</label>
+					<shadowcolor>text_shadow</shadowcolor>
+					<textcolor>unfocused_text</textcolor>
+				</control>
+			</control>
+			<!-- Finder Hybrid item layout -->
+			<control type="group">
+				<visible>Skin.HasSetting(FinderHybrid)</visible>
+				<control type="label">
+					<left>31</left>
+					<top>16</top>
+					<width>400</width>
+					<height>76</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font45</font>
+					<label>$INFO[ListItem.Label]</label>
+					<textcolor>unfocused_text</textcolor>
+					<shadowcolor>text_shadow</shadowcolor>
+				</control>
+			</control>
+			<!-- Estuary item layout -->
+			<control type="group">
+				<visible>!Skin.HasSetting(FinderHybrid) + Skin.HasSetting(EstuaryLookFeel)</visible>
+				<!-- Same icon and label geometry as the focused layout -->
+				<control type="image">
+					<left>-16</left>
+					<top>-16</top>
+					<width>140</width>
+					<height>140</height>
+					<aspectratio>keep</aspectratio>
+					<texture colordiffuse="grey">$INFO[ListItem.Art(thumb)]</texture>
+				</control>
+				<control type="label">
+					<left>118</left>
+					<height>108</height>
+					<width>292</width>
+					<aligny>center</aligny>
+					<font>font37</font>
+					<label>$INFO[ListItem.Label]</label>
+					<textcolor>unfocused_text</textcolor>
+				</control>
+			</control>
+			<!-- Classic Finder item layout -->
+			<control type="group">
+				<visible>!Skin.HasSetting(FinderHybrid) + Skin.HasSetting(ClassicFinder) + !Skin.HasSetting(EstuaryLookFeel)</visible>
+				<control type="label">
+					<left>65</left>
+					<top>0</top>
+					<height>95</height>
+					<width>315</width>
+					<aligny>center</aligny>
+					<font>font45</font>
+					<textcolor>darkgrey</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+					<shadowcolor>text_shadow</shadowcolor>
+				</control>
+			</control>
+		</itemlayout>
+	</include>
+	<!-- Main submenu position by Look & Feel -->
+	<include name="FinderSubmenuPosition">
+		<!-- Finder Plus: Divider enabled -->
+		<animation effect="slide" start="0,0" end="0,0" time="0" condition="!Skin.HasSetting(FinderHybrid) + !Skin.HasSetting(ClassicFinder) + !Skin.HasSetting(EstuaryLookFeel) + !Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
+		<!-- Finder Plus: Divider disabled -->
+		<animation effect="slide" start="0,0" end="0,-40" time="0" condition="!Skin.HasSetting(FinderHybrid) + !Skin.HasSetting(ClassicFinder) + !Skin.HasSetting(EstuaryLookFeel) + Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
+		<!-- Finder Hybrid: Divider enabled -->
+		<animation effect="slide" start="0,0" end="0,110" time="0" condition="Skin.HasSetting(FinderHybrid) + !Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
+		<!-- Finder Hybrid: Divider disabled -->
+		<animation effect="slide" start="0,0" end="0,90" time="0" condition="Skin.HasSetting(FinderHybrid) + Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
+		<!-- Classic Finder: Divider enabled -->
+		<animation effect="slide" start="0,0" end="0,-30" time="0" condition="!Skin.HasSetting(FinderHybrid) + Skin.HasSetting(ClassicFinder) + !Skin.HasSetting(EstuaryLookFeel) + !Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
+		<!-- Classic Finder: Divider disabled -->
+		<animation effect="slide" start="0,0" end="0,-30" time="0" condition="!Skin.HasSetting(FinderHybrid) + Skin.HasSetting(ClassicFinder) + !Skin.HasSetting(EstuaryLookFeel) + Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
+		<!-- Estuary: Divider enabled -->
+		<animation effect="slide" start="0,0" end="0,0" time="0" condition="!Skin.HasSetting(FinderHybrid) + !Skin.HasSetting(ClassicFinder) + Skin.HasSetting(EstuaryLookFeel) + !Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
+		<!-- Estuary: Divider disabled -->
+		<animation effect="slide" start="0,0" end="0,-20" time="0" condition="!Skin.HasSetting(FinderHybrid) + !Skin.HasSetting(ClassicFinder) + Skin.HasSetting(EstuaryLookFeel) + Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
 	</include>
 </includes>

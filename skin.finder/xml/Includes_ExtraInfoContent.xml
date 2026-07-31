@@ -2,6 +2,20 @@
 <includes>
 	<include name="Changelog">
 		<label>[B][COLOR accent_color]Version $INFO[System.AddonVersion(skin.finder)] by Zaxxon709[/COLOR][/B]
+- Added the ability to reorder main menu items
+- Added support for creating and managing main menu submenus
+- Introduced a customizable top bar menu
+- Added Finder Helper action shortcuts and manual Kodi path entry to the Choose Path dialog
+- Added two new Look & Feel options: Finder Hybrid and Default Estuary
+- Fixed background video playback when returning to the Home screen during playback
+- Restored the Profile Identification setting and added a new option to display both the profile name and avatar
+- Added a Video OSD setting to display the stream filename when playback is paused
+- Fixed the Favourites and GUI Settings backup and restore functions
+- Added the ability to show or hide individual Power Shutdown Menu items
+- Cleaned up the Settings menu
+- Minor bug fixes and improvements
+
+[B][COLOR accent_color]Version 100.0.31a[/COLOR][/B]
 - Fix Maintenance & Tools menu item enable/disable settings not applying correctly
 - Included a fallback rating to the infoPanel when no MDBList API key is configured
 - Added Offcloud authorization shortcuts
@@ -328,7 +342,7 @@
 - Cleaned up season views
 - Adjusted background transparency skin-wide. I don't use all parts of the skin so if some colors look off in a particular area of the skin please let me know by opening an issue on my Github
 - Small text alignment changes to PVR guide
-- Removed widget limits (Set limits for addon and widgets in FEN settings)
+- Removed widget limits (Set limits for addon and widgets in Finder settings)
 - Removed startup video (Total skin size is now under 7 MB)
 - Other small fixes/changes
 

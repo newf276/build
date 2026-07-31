@@ -2,6 +2,7 @@
 <includes>
 	<include file="Defaults.xml"/>
 	<include file="Includes_Home.xml"/>
+	<include file="Includes_MainMenu.xml"/>
 	<include file="Includes_Animations.xml"/>
 	<include file="Includes_AddonPanel.xml"/>
 	<include file="Includes_Games.xml"/>
@@ -18,6 +19,14 @@
 	<include file="script-finder-main_menu_custom4.xml"/>
 	<include file="script-finder-main_menu_custom5.xml"/>
 	<include file="script-finder-main_menu_custom6.xml"/>
+	<include file="script-finder-submenu_movie.xml"/>
+	<include file="script-finder-submenu_tvshow.xml"/>
+	<include file="script-finder-submenu_custom1.xml"/>
+	<include file="script-finder-submenu_custom2.xml"/>
+	<include file="script-finder-submenu_custom3.xml"/>
+	<include file="script-finder-submenu_custom4.xml"/>
+	<include file="script-finder-submenu_custom5.xml"/>
+	<include file="script-finder-submenu_custom6.xml"/>
 	<include file="script-finder-widget_movies.xml"/>
 	<include file="script-finder-widget_tvshows.xml"/>
 	<include file="script-finder-widget_custom1.xml"/>
@@ -26,6 +35,7 @@
 	<include file="script-finder-widget_custom4.xml"/>
 	<include file="script-finder-widget_custom5.xml"/>
 	<include file="script-finder-widget_custom6.xml"/>
+	<include file="script-finder-topbar_custom_menu.xml"/>
 	<include file="script-finder-search_history.xml"/>
 	<include file="View_50_List.xml"/>
 	<include file="View_51_Poster.xml"/>
@@ -934,25 +944,27 @@
 				</control>
 				<control type="grouplist">
 					<top>20</top>
-					<align>right</align>
 					<right>23</right>
-					<height>200</height>
-					<orientation>horizontal</orientation>
 					<width>1100</width>
+					<height>100</height>
+					<orientation>horizontal</orientation>
+					<align>right</align>
 					<itemgap>10</itemgap>
-					<visible>!Window.IsVisible(extendedprogressdialog) + !Window.IsActive(fullscreenvideo) + !Skin.HasSetting(TrailerPlaying)</visible>
+					<usecontrolcoords>true</usecontrolcoords>
+					<visible>!Window.IsVisible(extendedprogressdialog) + !Window.IsActive(fullscreenvideo) + !Skin.HasSetting(TrailerPlaying) + ![Window.IsActive(home) + Skin.HasSetting(FinderHybrid)]</visible>
 					<animation effect="fade" time="150">VisibleChange</animation>
 					<control type="group">
 						<width>600</width>
+						<height>100</height>
 						<visible>!Control.IsVisible(503) + Player.HasMedia + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))</visible>
 						<animation effect="fade" time="200">VisibleChange</animation>
 						<control type="grouplist">
-							<left>-75</left>
-							<orientation>horizontal</orientation>
-							<height>38</height>
-							<top>14</top>
-							<align>right</align>
+							<left>-121</left>
+							<top>20</top>
 							<width>660</width>
+							<height>38</height>
+							<orientation>horizontal</orientation>
+							<align>right</align>
 							<itemgap>5</itemgap>
 							<usecontrolcoords>true</usecontrolcoords>
 							<control type="image">
@@ -969,73 +981,133 @@
 								<shadowcolor>text_shadow</shadowcolor>
 								<height>35</height>
 								<width min="1" max="602">auto</width>
+								<aligny>center</aligny>
 							</control>
 						</control>
 						<control type="label" id="7700">
-							<label>$VAR[NowPlayingSublabelVar]</label>
-							<left>-44</left>
-							<top>44</top>
+							<left>-90</left>
+							<top>50</top>
+							<width>630</width>
+							<height>25</height>
 							<font>font12</font>
+							<align>right</align>
+							<aligny>center</aligny>
+							<label>$VAR[NowPlayingSublabelVar]</label>
 							<textcolor>grey</textcolor>
 							<shadowcolor>text_shadow</shadowcolor>
-							<height>25</height>
-							<width>630</width>
-							<align>right</align>
 							<scroll>true</scroll>
 						</control>
 					</control>
+					<!-- PROFILE NAME -->
 					<control type="group">
-						<visible>Integer.IsGreater(System.ProfileCount,1) + !Player.HasMedia</visible>
-						<control type="image">
-							<visible>Skin.HasSetting(show_profileavatar)</visible>
-							<top>25</top>
-							<left>-70</left>
-							<width>50</width>
-							<height>50</height>
-							<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(screencalibration)">WindowClose</animation>
-							<texture>$INFO[System.ProfileThumb]</texture>
-							<aspectratio>scale</aspectratio>
-						</control>
+						<width>360</width>
+						<height>100</height>
+						<visible>!Skin.HasSetting(FinderHybrid) + Integer.IsGreater(System.ProfileCount,1) + !Player.HasMedia + [Skin.HasSetting(show_profilename) | Skin.HasSetting(show_profileboth)]</visible>
 						<control type="label">
-							<visible>Skin.HasSetting(show_profilename)</visible>
+							<top>-2</top>
+							<right>0</right>
+							<width>360</width>
+							<height>100</height>
 							<font>font45</font>
 							<align>right</align>
-							<left>-630</left>
-							<shadowcolor>text_shadow</shadowcolor>
 							<aligny>center</aligny>
-							<height>110</height>
-							<width max="600">auto</width>
+							<shadowcolor>text_shadow</shadowcolor>
 							<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(screencalibration)">WindowClose</animation>
 							<label>$INFO[System.ProfileName]</label>
 							<textcolor>unfocused_text</textcolor>
 						</control>
 					</control>
-					<control type="image">
-						<width>60</width>
+					<!-- PROFILE AVATAR -->
+					<control type="group">
+						<width>70</width>
 						<height>100</height>
-						<fadetime>300</fadetime>
-						<aspectratio aligny="center" align="left">keep</aspectratio>
-						<texture colordiffuse="unfocused_text">$INFO[Weather.FanartCode,weather/small/,.png]</texture>
-						<visible>Skin.HasSetting(show_weatherinfo) + Weather.IsFetched + ![String.IsEqual(Weather.FanartCode,na)]</visible>
+						<visible>!Skin.HasSetting(FinderHybrid) + Integer.IsGreater(System.ProfileCount,1) + !Player.HasMedia + [Skin.HasSetting(show_profileavatar) | Skin.HasSetting(show_profileboth)]</visible>
+						<control type="image">
+							<left>0</left>
+							<top>15</top>
+							<width>70</width>
+							<height>70</height>
+							<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(screencalibration)">WindowClose</animation>
+							<texture>$INFO[System.ProfileThumb]</texture>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+						</control>
 					</control>
+					<!-- PROFILE NAME DIVIDER -->
 					<control type="label">
-						<font>font_clock_small</font>
-						<height>100</height>
+						<top>-1</top>
 						<width>auto</width>
-						<aligny>center</aligny>
+						<height>100</height>
+						<font>font_clock_small</font>
 						<align>right</align>
-						<label>$INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits] [COLOR accent_color][B] • [/B][/COLOR]</label>
+						<aligny>center</aligny>
+						<label>[COLOR accent_color][B]•[/B][/COLOR]</label>
 						<textcolor>unfocused_text</textcolor>
-						<visible>Skin.HasSetting(show_weatherinfo) + Weather.IsFetched + ![String.IsEqual(Weather.FanartCode,na)]</visible>
+						<visible>!Skin.HasSetting(FinderHybrid) + Integer.IsGreater(System.ProfileCount,1) + !Player.HasMedia + Skin.HasSetting(show_weatherinfo) + Skin.HasSetting(show_profilename)</visible>
 					</control>
+					<!-- PROFILE AVATAR DIVIDER -->
 					<control type="label">
+						<top>-1</top>
+						<width>auto</width>
+						<height>100</height>
+						<font>font_clock_small</font>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>[COLOR accent_color][B]•[/B][/COLOR]</label>
+						<textcolor>unfocused_text</textcolor>
+						<visible>!Skin.HasSetting(FinderHybrid) + Integer.IsGreater(System.ProfileCount,1) + !Player.HasMedia + Skin.HasSetting(show_weatherinfo) + [Skin.HasSetting(show_profileavatar) | Skin.HasSetting(show_profileboth)]</visible>
+					</control>
+					<!-- WEATHER ICON -->
+					<control type="group">
+						<width>70</width>
+						<height>100</height>
+						<visible>Skin.HasSetting(show_weatherinfo) + Weather.IsFetched + !String.IsEqual(Weather.FanartCode,na)</visible>
+						<control type="image">
+							<left>0</left>
+							<top>10</top>
+							<width>70</width>
+							<height>70</height>
+							<fadetime>300</fadetime>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+							<texture colordiffuse="unfocused_text">$INFO[Weather.FanartCode,weather/small/,.png]</texture>
+						</control>
+					</control>
+					<!-- WEATHER TEMPERATURE -->
+					<control type="label">
+						<top>-1</top>
+						<width>auto</width>
+						<height>100</height>
+						<font>font_clock_small</font>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits]  [COLOR accent_color][B]•[/B][/COLOR]</label>
+						<textcolor>unfocused_text</textcolor>
+						<visible>Skin.HasSetting(show_weatherinfo) + Weather.IsFetched + !String.IsEqual(Weather.FanartCode,na)</visible>
+					</control>
+					<!-- 12-HOUR CLOCK -->
+					<control type="label">
+						<width>260</width>
+						<height>100</height>
 						<font>font_clock_bold</font>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[System.Time]</label>
 						<textcolor>unfocused_text</textcolor>
 						<shadowcolor>text_shadow</shadowcolor>
-						<height>200</height>
-						<width>auto</width>
+						<visible>!String.IsEmpty(System.Time(xx))</visible>
 						<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(screencalibration)">WindowClose</animation>
+					</control>
+					<!-- 24-HOUR CLOCK -->
+					<control type="label">
+						<width>170</width>
+						<height>100</height>
+						<font>font_clock_bold</font>
+						<align>right</align>
+						<aligny>center</aligny>
 						<label>$INFO[System.Time]</label>
+						<textcolor>unfocused_text</textcolor>
+						<shadowcolor>text_shadow</shadowcolor>
+						<visible>String.IsEmpty(System.Time(xx))</visible>
+						<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(screencalibration)">WindowClose</animation>
 					</control>
 				</control>
 				<control type="grouplist">
@@ -1147,14 +1219,28 @@
 	</include>
 	<include name="ColoredBackgroundImages">
 		<control type="image">
-			<visible>![Window.IsActive(home) | Window.IsActive(1121)] + [Skin.HasSetting(no_fanart) | String.IsEmpty(Listitem.Art(fanart))] + !Player.HasMedia + !Skin.HasSetting(TrailerPlaying)</visible>
+			<visible>![Window.IsActive(home) | Window.IsActive(1121)] + [Skin.HasSetting(no_fanart) | String.IsEmpty(Listitem.Art(fanart))] + !Player.HasMedia + !Skin.HasSetting(TrailerPlaying) + Skin.HasSetting(EstuaryLookFeel)</visible>
+			<depth>-0.99</depth>
+			<include>FullScreenDimensions</include>
+			<aspectratio>scale</aspectratio>
+			<texture colordiffuse="$VAR[HomeBackgroundDiffuseVar]" fallback="special://skin/extras/backgrounds/estuary.jpg">$VAR[CustomBackgroundImage]</texture>
+		</control>
+		<control type="image">
+			<visible>![Window.IsActive(home) | Window.IsActive(1121)] + [Skin.HasSetting(no_fanart) | String.IsEmpty(Listitem.Art(fanart))] + !Player.HasMedia + !Skin.HasSetting(TrailerPlaying) + !Skin.HasSetting(EstuaryLookFeel)</visible>
 			<depth>DepthBackground</depth>
 			<include>FullScreenDimensions</include>
 			<aspectratio>scale</aspectratio>
 			<texture colordiffuse="$VAR[BackgroundBrightnessVar]" fallback="special://skin/extras/backgrounds/redblur.png">$VAR[CustomBackgroundImage]</texture>
 		</control>
 		<control type="image">
-			<visible>![Window.IsActive(home) | Window.IsActive(1121)] + Player.HasMedia + !Skin.HasSetting(TrailerPlaying)</visible>
+			<visible>![Window.IsActive(home) | Window.IsActive(1121)] + Player.HasMedia + !Skin.HasSetting(TrailerPlaying) + Skin.HasSetting(EstuaryLookFeel)</visible>
+			<depth>-0.99</depth>
+			<include>FullScreenDimensions</include>
+			<aspectratio>scale</aspectratio>
+			<texture colordiffuse="$VAR[HomeBackgroundDiffuseVar]" fallback="special://skin/extras/backgrounds/estuary.jpg">$VAR[CustomBackgroundImage]</texture>
+		</control>
+		<control type="image">
+			<visible>![Window.IsActive(home) | Window.IsActive(1121)] + Player.HasMedia + !Skin.HasSetting(TrailerPlaying) + !Skin.HasSetting(EstuaryLookFeel)</visible>
 			<depth>DepthBackground</depth>
 			<include>FullScreenDimensions</include>
 			<aspectratio>scale</aspectratio>
@@ -1578,9 +1664,10 @@
 				</control>
 				<control type="image">
 					<include>FocusBounce</include>
-					<left>-5</left>
-					<width>410</width>
-					<height>270</height>
+					<left>-7</left>
+					<top>-2</top>
+					<width>414</width>
+					<height>274</height>
 					<texture colordiffuse="button_focus">masks/settingspanel.png</texture>
 					<bordersize>20</bordersize>
 					<include>Animation_FocusTextureFade</include>
@@ -1812,5 +1899,38 @@
 				<visible>!Skin.HasSetting(Enable.AlternateInfo) + String.IsEqual(ListItem.DBtype,tvshow)</visible>
 			</control>
 		</control>
+	</include>
+	<include name="TopBarCustomMenuDialog">
+		<param name="height" default="350"/>
+		<param name="list_height" default="210"/>
+		<param name="down_posy" default="360"/>
+		<definition>
+			<control type="group">
+				<centerleft>50%</centerleft>
+				<width>600</width>
+				<centertop>50%</centertop>
+				<height>$PARAM[height]</height>
+				<include content="DialogBackgroundCommons">
+					<param name="width" value="600"/>
+					<param name="height" value="$PARAM[height]"/>
+					<param name="header_label" value="$INFO[Skin.String(TopBarCustomMenuLabel)]"/>
+					<param name="header_id" value=""/>
+					<param name="diffusetexture" value="masks/dialog-bg-squareish.png"/>
+				</include>
+				<control type="panel" id="9000">
+					<height>$PARAM[list_height]</height>
+					<include>ButtonMenuList_dialog</include>
+					<content>
+						<include content="TopBarCustomMenuItems"/>
+					</content>
+				</control>
+				<include content="UpDownArrows">
+					<param name="container_id" value="9000"/>
+					<param name="posx" value="276"/>
+					<param name="up_posy" value="-35"/>
+					<param name="down_posy" value="$PARAM[down_posy]"/>
+				</include>
+			</control>
+		</definition>
 	</include>
 </includes>

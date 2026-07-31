@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1170">
+	<onload condition="String.IsEmpty(Skin.String(TopBarCustomMenuLabel))">Skin.SetString(TopBarCustomMenuLabel,Custom Menu)</onload>
+	<onload condition="String.IsEmpty(Skin.String(TopBarCustomMenuSize))">Skin.SetString(TopBarCustomMenuSize,3)</onload>
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<include>Animation_DialogPopupOpenClose</include>
+	<controls>
+		<include content="TopBarCustomMenuDialog" condition="String.IsEqual(Skin.String(TopBarCustomMenuSize),1) | String.IsEqual(Skin.String(TopBarCustomMenuSize),2)">
+			<param name="height" value="280"/>
+			<param name="list_height" value="140"/>
+			<param name="down_posy" value="290"/>
+		</include>
+		<include content="TopBarCustomMenuDialog" condition="String.IsEmpty(Skin.String(TopBarCustomMenuSize)) | String.IsEqual(Skin.String(TopBarCustomMenuSize),3)">
+			<param name="height" value="350"/>
+			<param name="list_height" value="210"/>
+			<param name="down_posy" value="360"/>
+		</include>
+		<include content="TopBarCustomMenuDialog" condition="String.IsEqual(Skin.String(TopBarCustomMenuSize),4)">
+			<param name="height" value="420"/>
+			<param name="list_height" value="280"/>
+			<param name="down_posy" value="430"/>
+		</include>
+		<include content="TopBarCustomMenuDialog" condition="String.IsEqual(Skin.String(TopBarCustomMenuSize),5)">
+			<param name="height" value="490"/>
+			<param name="list_height" value="350"/>
+			<param name="down_posy" value="500"/>
+		</include>
+		<include content="TopBarCustomMenuDialog" condition="String.IsEqual(Skin.String(TopBarCustomMenuSize),6)">
+			<param name="height" value="560"/>
+			<param name="list_height" value="420"/>
+			<param name="down_posy" value="570"/>
+		</include>
+		<include content="TopBarCustomMenuDialog" condition="String.IsEqual(Skin.String(TopBarCustomMenuSize),7)">
+			<param name="height" value="630"/>
+			<param name="list_height" value="490"/>
+			<param name="down_posy" value="640"/>
+		</include>
+		<include content="TopBarCustomMenuDialog" condition="String.IsEqual(Skin.String(TopBarCustomMenuSize),8)">
+			<param name="height" value="700"/>
+			<param name="list_height" value="560"/>
+			<param name="down_posy" value="710"/>
+		</include>
+	</controls>
+</window>

@@ -92,7 +92,7 @@
 			<animation effect="slide" time="300" start="-492,0" end="0,0" tween="sine" easing="inout">VisibleChange</animation>
 			<width>550</width>
 			<depth>DepthContentPanel</depth>
-			<visible>String.IsEqual(Container(9000).ListItem.Property(id),addons) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !Control.HasFocus(9000) + !Skin.HasSetting(TrailerPlaying) + !Skin.HasSetting(Enable.FullscreenWidgets) + !Control.HasFocus(8900) + Skin.HasSetting(Enable.AddonInfoPanel) + Skin.HasSetting(Enable.AlternateInfo)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),addons) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !Control.HasFocus(9000) + !Skin.HasSetting(TrailerPlaying) + !Skin.HasSetting(Enable.FullscreenWidgets) + !Control.HasFocus(8900) + Skin.HasSetting(Enable.AddonInfoPanel) + Skin.HasSetting(Enable.AlternateAddonInfo)</visible>
 			<include>OpenClose_Left</include>
 				<control type="image">
 					<left>30</left>
@@ -241,7 +241,7 @@
 			<animation effect="slide" time="300" start="-492,0" end="0,0" tween="sine" easing="inout">VisibleChange</animation>
 			<width>550</width>
 			<depth>DepthContentPanel</depth>
-			<visible>String.IsEqual(Container(9000).ListItem.Property(id),addons) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !Control.HasFocus(9000) + !Skin.HasSetting(TrailerPlaying) + !Skin.HasSetting(Enable.FullscreenWidgets) + !Control.HasFocus(8900) + Skin.HasSetting(Enable.AddonInfoPanel) + !Skin.HasSetting(Enable.AlternateInfo)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),addons) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !Control.HasFocus(9000) + !Skin.HasSetting(TrailerPlaying) + !Skin.HasSetting(Enable.FullscreenWidgets) + !Control.HasFocus(8900) + Skin.HasSetting(Enable.AddonInfoPanel) + !Skin.HasSetting(Enable.AlternateAddonInfo)</visible>
 			<include>OpenClose_Left</include>
 			<control type="group">
 				<left>30</left>
