@@ -10,7 +10,7 @@
 			<height>350</height>
 			<include content="DialogBackgroundCommons">
 				<param name="width" value="600" />
-				<param name="height" value="350" />
+				<param name="height" value="$VAR[DialogHeight3]" />
 				<param name="header_label" value="Backup & Restore Configs" />
 				<param name="header_id" value="" />
 				<param name="diffusetexture" value="masks/dialog-bg-squareish.png" />
@@ -23,12 +23,12 @@
 					<item>
 						<label>Backup Config</label>
 						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=backup_config)</onclick>
+						<onclick>RunScript(script.fentastic.helper,mode=backup_config)</onclick>
 					</item>
 					<item>
 						<label>Restore Config</label>
 						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=restore_config)</onclick>
+						<onclick>RunScript(script.fentastic.helper,mode=restore_config)</onclick>
 					</item>
 					<item>
 						<label>Set Backup Directory</label>
@@ -37,12 +37,6 @@
 					</item>
 				</content>
 			</control>
-			<include content="UpDownArrows">
-				<param name="container_id" value="9000" />
-				<param name="posx" value="276" />
-				<param name="up_posy" value="-35" />
-				<param name="down_posy" value="360" />
-			</include>
 		</control>
 	</controls>
 </window>

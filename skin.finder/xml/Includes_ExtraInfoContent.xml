@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<include name="Changelog">
-		<label>[B][COLOR accent_color]Version $INFO[System.AddonVersion(skin.finder)] by Zaxxon709[/COLOR][/B]
+		<label>[B][COLOR accent_color]Version $INFO[System.AddonVersion(skin.fentastic)] by Zaxxon709[/COLOR][/B]
+- Added the ability to reorder main menu items
+- Added support for creating and managing main menu submenus
+- Introduced a customizable top bar menu
+- Added FENtastic Helper action shortcuts and manual Kodi path entry to the Choose Path dialog
+- Added two new Look & Feel options: FENtastic Hybrid and Default Estuary
+- Fixed background video playback when returning to the Home screen during playback
+- Restored the Profile Identification setting and added a new option to display both the profile name and avatar
+- Added a Video OSD setting to display the stream filename when playback is paused
+- Fixed the Favourites and GUI Settings backup and restore functions
+- Added the ability to show or hide individual Power Shutdown Menu items
+- Cleaned up the Settings menu
+- Minor bug fixes and improvements
+
+[B][COLOR accent_color]Version 100.0.31a[/COLOR][/B]
 - Fix Maintenance & Tools menu item enable/disable settings not applying correctly
 - Included a fallback rating to the infoPanel when no MDBList API key is configured
 - Added Offcloud authorization shortcuts
@@ -80,9 +94,9 @@
 
 [B][COLOR accent_color]Version 100.0.30a[/COLOR][/B]
 - Added Red Light (FLAM fork by Red Wizard) to the list of search providers 
-- Added a first-run setup wizard to choose your preferred Finder experience:
-  1. Classic Finder
-  2. Finder Plus
+- Added a first-run setup wizard to choose your preferred FENtastic experience:
+  1. Classic FENtastic
+  2. FENtastic Plus
 - Don’t worry, if you’re unhappy with your selection, you can change it at any time under Skin Settings → Options → Look and Feel
 - Improved the search window Switch Provider option. When changing providers, the previously searched title is now automatically re-run using the newly selected provider.
 - Fixed search history re-search functionality
@@ -168,7 +182,7 @@
 - When creating main menus there is now has an additional 'No Path' option listed in the dialog. This allows the creation of main menus that have no action when selected. The user can still label the menu as per normal.
 - Fixed bug that caused Landscape/Landscape Big view type icons to be covered/diffused when focused
 - Added pre-configured menu/widget setups for supported addons
-- Changed the name of the skin to Finder Plus. Kept the same plugin name 'skin.finder'
+- Changed the name of the skin to FENtastic Plus. Kept the same plugin name 'skin.fentastic'
 - Enjoy! Credit to ivarbrandt for this skin!
 
 [B][COLOR accent_color]Version 1.0.25[/COLOR][/B]
@@ -229,7 +243,7 @@
 - Added optional color studio logos
 - Added custom background and fanart brightness
 - Added custom version of AutoCompletion for virtual keyboard to repo (only try if you are having issues with your version)
-- Added optional Finder Audio Suite to repo
+- Added optional FENtastic Audio Suite to repo
 - Reorganized skin settings
 - Fixed WideWall view
 - Removed color themes
@@ -401,9 +415,9 @@ Main changes from default Estuary include:
     </label>
 	</include>
 	<include name="SetupGuide">
-		<label>[B][COLOR accent_color]Welcome to the Finder Setup Guide[/COLOR][/B]
+		<label>[B][COLOR accent_color]Welcome to the FENtastic Setup Guide[/COLOR][/B]
 
-Finder Plus is a skin specifically designed for TMDbH, Finder, Umbrella and POV users. It can display movie, tvshow, and episode widgets as well as submenu widgets. It can also set paths for main menu items (more on this later). Here in this guide I will show you how these work and how to set them up.
+FENtastic Plus is a skin specifically designed for TMDbH, Finder, Umbrella and POV users. It can display movie, tvshow, and episode widgets as well as submenu widgets. It can also set paths for main menu items (more on this later). Here in this guide I will show you how these work and how to set them up.
 
 On first install the home screen should be empty. This means that the Movie and Show sections should be missing from the main menu on the left.
 
@@ -422,7 +436,7 @@ Click a menu item to toggle the display of a section on and off. This will show 
 
 That's it! You're all set to go. Enjoy the skin!
 
-If you would like to see a more detailed version of this Setup Guide, please visit my Github repo at https://github.com/ivarbrandt/skin.finder
+If you would like to see a more detailed version of this Setup Guide, please visit my Github repo at https://github.com/ivarbrandt/skin.fentastic
     </label>
 	</include>
 </includes>

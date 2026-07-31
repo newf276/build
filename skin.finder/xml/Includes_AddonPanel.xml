@@ -6,7 +6,7 @@
 			<animation effect="slide" time="300" start="-492,0" end="0,0" tween="sine" easing="inout">VisibleChange</animation>
 			<width>550</width>
 			<depth>DepthContentPanel</depth>
-			<visible>String.IsEqual(Container(9000).ListItem.Property(id),addons) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !Control.HasFocus(9000) + !Skin.HasSetting(TrailerPlaying) + !Skin.HasSetting(Enable.FullscreenWidgets) + Control.HasFocus(8900) + Skin.HasSetting(Enable.AddonCategorySideblade)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),addons) + String.IsEqual(Window(Home).Property(fentastic.widget_focus),true) + !Control.HasFocus(9000) + !Skin.HasSetting(TrailerPlaying) + !Skin.HasSetting(Enable.FullscreenWidgets) + Control.HasFocus(8900) + Skin.HasSetting(Enable.AddonCategorySideblade)</visible>
 			<include>OpenClose_Left</include>
 				<control type="image">
 					<left>20</left>
@@ -27,7 +27,7 @@
 					<font>font30_title</font>
 					<label>$INFO[ListItem.Label]</label>
 					<textcolor>FFFFFFFF</textcolor>
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),addons) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !Control.HasFocus(9000)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(id),addons) + String.IsEqual(Window(Home).Property(fentastic.widget_focus),true) + !Control.HasFocus(9000)</visible>
 				</control>
 				<control type="image">
 					<left>30</left>
@@ -92,7 +92,7 @@
 			<animation effect="slide" time="300" start="-492,0" end="0,0" tween="sine" easing="inout">VisibleChange</animation>
 			<width>550</width>
 			<depth>DepthContentPanel</depth>
-			<visible>String.IsEqual(Container(9000).ListItem.Property(id),addons) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !Control.HasFocus(9000) + !Skin.HasSetting(TrailerPlaying) + !Skin.HasSetting(Enable.FullscreenWidgets) + !Control.HasFocus(8900) + Skin.HasSetting(Enable.AddonInfoPanel) + Skin.HasSetting(Enable.AlternateInfo)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),addons) + String.IsEqual(Window(Home).Property(fentastic.widget_focus),true) + !Control.HasFocus(9000) + !Skin.HasSetting(TrailerPlaying) + !Skin.HasSetting(Enable.FullscreenWidgets) + !Control.HasFocus(8900) + Skin.HasSetting(Enable.AddonInfoPanel) + Skin.HasSetting(Enable.AlternateAddonInfo)</visible>
 			<include>OpenClose_Left</include>
 				<control type="image">
 					<left>30</left>
@@ -101,7 +101,7 @@
 					<height>210</height>
 					<texture background="true" fallback="DefaultAddon.png">$VAR[InfoWallThumbVar]</texture>
 					<aspectratio align="center">keep</aspectratio>
-					<visible>!Control.HasFocus(8900) + String.IsEqual(Container(9000).ListItem.Property(id),addons) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !Control.HasFocus(9000)</visible>
+					<visible>!Control.HasFocus(8900) + String.IsEqual(Container(9000).ListItem.Property(id),addons) + String.IsEqual(Window(Home).Property(fentastic.widget_focus),true) + !Control.HasFocus(9000)</visible>
 				</control>
 				<control type="textbox">
 					<left>30</left>
@@ -114,7 +114,7 @@
 					<label>$INFO[ListItem.Label]</label>
 					<textcolor>FFFFFFFF</textcolor>
 					<autoscroll delay="1000" time="1000" repeat="1000">Skin.HasSetting(autoscroll)</autoscroll>
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),addons) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !Control.HasFocus(9000)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(id),addons) + String.IsEqual(Window(Home).Property(fentastic.widget_focus),true) + !Control.HasFocus(9000)</visible>
 				</control>
 				<control type="image">
 					<left>30</left>
@@ -241,7 +241,7 @@
 			<animation effect="slide" time="300" start="-492,0" end="0,0" tween="sine" easing="inout">VisibleChange</animation>
 			<width>550</width>
 			<depth>DepthContentPanel</depth>
-			<visible>String.IsEqual(Container(9000).ListItem.Property(id),addons) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !Control.HasFocus(9000) + !Skin.HasSetting(TrailerPlaying) + !Skin.HasSetting(Enable.FullscreenWidgets) + !Control.HasFocus(8900) + Skin.HasSetting(Enable.AddonInfoPanel) + !Skin.HasSetting(Enable.AlternateInfo)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),addons) + String.IsEqual(Window(Home).Property(fentastic.widget_focus),true) + !Control.HasFocus(9000) + !Skin.HasSetting(TrailerPlaying) + !Skin.HasSetting(Enable.FullscreenWidgets) + !Control.HasFocus(8900) + Skin.HasSetting(Enable.AddonInfoPanel) + !Skin.HasSetting(Enable.AlternateAddonInfo)</visible>
 			<include>OpenClose_Left</include>
 			<control type="group">
 				<left>30</left>

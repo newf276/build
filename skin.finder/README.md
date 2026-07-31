@@ -1,17 +1,17 @@
-# Finder Skin for Kodi Omega
+# FENtastic Skin for Kodi Omega
 
 **IMPORTANT INFO:** I am currently not accepting **ANY** feature requests.
 
-Finder is a modded version of the default Estuary skin, specifically designed for FEN users. It includes several new features and adjustments to pre-existing views, a new UI, viewtypes, customizable widgets, and a new default colors theme.
+FENtastic is a modded version of the default Estuary skin, specifically designed for FEN users. It includes several new features and adjustments to pre-existing views, a new UI, viewtypes, customizable widgets, and a new default colors theme.
 
-Below you'll find some information about the [differences](#finder-vs-default-estuary-skin) between Estuary and Finder along with some screenshots and a detailed [setup guide](#setup-guide) of the skin.
+Below you'll find some information about the [differences](#fentastic-vs-default-estuary-skin) between Estuary and FENtastic along with some screenshots and a detailed [setup guide](#setup-guide) of the skin.
 
 
-## Finder vs Default Estuary Skin
+## FENtastic vs Default Estuary Skin
 
-Here are some of the key differences between Finder and the default Estuary skin.
+Here are some of the key differences between FENtastic and the default Estuary skin.
 
-* **New UI Experience**: Finder introduces an updated modern UI.
+* **New UI Experience**: FENtastic introduces an updated modern UI.
 
   ![Viewtypes Widelist](resources/images/viewtypes1.jpg)
 
@@ -21,25 +21,25 @@ Here are some of the key differences between Finder and the default Estuary skin
 
   ![Viewtypes List](resources/images/viewtypes4.jpg)
 
-* **New viewtypes**: Finder introduces "WideInfoWall" and "WideWall" viewtypes.
+* **New viewtypes**: FENtastic introduces "WideInfoWall" and "WideWall" viewtypes.
 
   ![Viewtypes WideInfoWall](resources/images/viewtypes.jpg)
 
-* **Customizable Widgets**: Finder allows you to customize widgets and category widgets for movies, tvshows, and episodes.
+* **Customizable Widgets**: FENtastic allows you to customize widgets and category widgets for movies, tvshows, and episodes.
 
   ![Customizable Widgets](resources/images/customizable_widgets.jpg)
 
-* **Custom Stacked Widgets**: Finder introduces stacked widgets for movies and tvshows.
+* **Custom Stacked Widgets**: FENtastic introduces stacked widgets for movies and tvshows.
 
   ![Stacked Widgets](resources/images/stacked_widgets.jpg)
 
-* **Custom Search Window**: Finder introduces a search window to simultaneously search multiple categories including TRAKT Lists.
+* **Custom Search Window**: FENtastic introduces a search window to simultaneously search multiple categories including TRAKT Lists.
 
   ![Search Window](resources/images/search_window.jpg)
 
   ![Search Window](resources/images/search_window1.jpg)
 
-* **InfoPanel with Ratings**: Finder introduces a new InfoPanel with optional displaying of ratings for widgets. The ratings can be dislayed in the InfoPanel, widget labels, or both.
+* **InfoPanel with Ratings**: FENtastic introduces a new InfoPanel with optional displaying of ratings for widgets. The ratings can be dislayed in the InfoPanel, widget labels, or both.
 
   ![InfoPanel](resources/images/infopanel.jpg)
 
@@ -69,7 +69,7 @@ After adding the source go back to the Settings page » click Addons » Install 
 
 ![Install from zip](resources/images/install_from_zip.jpg)
 
-Now click Install from repository » Find and click ivarbrandt's Repository » Look and feel » Skin » Finder » click to install it.
+Now click Install from repository » Find and click ivarbrandt's Repository » Look and feel » Skin » FENtastic » click to install it.
 
 ![Addon Info](resources/images/addon_info.jpg)
 
@@ -113,7 +113,7 @@ To set up the widgets, follow these steps:
 
 <!-- ## Rules for Reporting Issues -->
 
-<!-- If you encounter any issues while using Finder, please follow these guidelines before opening an Issue:
+<!-- If you encounter any issues while using FENtastic, please follow these guidelines before opening an Issue:
 
 - Read the **CHANGELOG**. As new updates get released features are added, changed, modified or removed. *Before opening an Issue* related to this make sure you read the changelog (located at the bottom of Skin settings in Extra info) as it will contain information for all the changes made to each update. It is also a good way to stay current with what is new with the skin.
 - **Pre-made builds** of any kind are *not supported*. If you installed someone else's build, you need to go to them to troubleshoot issues. These builds often contain a plethora of addons so any number of things could go wrong. Keep in mind this skin was designed exclusively for use with **FEN**.
