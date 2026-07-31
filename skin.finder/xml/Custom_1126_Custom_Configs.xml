@@ -7,18 +7,16 @@
 			<centerleft>50%</centerleft>
 			<width>600</width>
 			<centertop>50%</centertop>
-			<height>280</height>
+			<height>350</height>
 			<include content="DialogBackgroundCommons">
 				<param name="width" value="600" />
-				<param name="height" value="$VAR[DialogHeight1-2]" />
+				<param name="height" value="350" />
 				<param name="header_label" value="Manage Your Configs" />
 				<param name="header_id" value="" />
 				<param name="diffusetexture" value="masks/dialog-bg-squareish.png" />
 			</include>
 			<control type="panel" id="9000">
-				<include content="ButtonMenuList_dialog">
-					<param name="panel_height" value="140" />
-				</include>
+				<include>ButtonMenuList_dialog</include>
 				<onback>Dialog.Close(1126)</onback>
 				<onback>ActivateWindow(1106)</onback>
 				<content>
@@ -34,6 +32,12 @@
 					</item>
 				</content>
 			</control>
+			<include content="UpDownArrows">
+				<param name="container_id" value="9000" />
+				<param name="posx" value="276" />
+				<param name="up_posy" value="-35" />
+				<param name="down_posy" value="360" />
+			</include>
 		</control>
 	</controls>
 </window>

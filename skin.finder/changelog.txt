@@ -1,0 +1,7 @@
+Added some more things to tool menu.
+
+- Clear Kodi caches and temp files.
+
+- Tweaked Authorize premium Services.
+
+- Clear thumbnails

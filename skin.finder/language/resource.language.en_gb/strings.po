@@ -781,7 +781,7 @@ msgstr ""
 #. Choose profile identifier
 #: /xml/SkinSettings.xml
 msgctxt "#31164"
-msgid "Choose profile identification to show in top bar"
+msgid "Choose kind of profile identification"
 msgstr ""
 
 #. Label for the kind of profile identification
@@ -1004,11 +1004,5 @@ msgstr ""
 #. Description label for tools menu area
 #: /xml/Variables.xml
 msgctxt "#31623"
-msgid "Top bar menu: Configure the custom menu and show or hide individual menu items."
-msgstr ""
-
-#. Description label for profile setting
-#: /xml/Variables.xml
-msgctxt "#31624"
-msgid "Name and avatar"
+msgid "Maintenance & Tools related settings: Enable/Disable menu items"
 msgstr ""
