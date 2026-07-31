@@ -35,7 +35,7 @@
     <setting id="homeradionocategories" type="bool">false</setting>
     <setting id="homemusicvideosnostudios" type="bool">false</setting>
     <setting id="hometvnotimers" type="bool">false</setting>
-    <setting id="fentastichybrid" type="bool">false</setting>
+    <setting id="finderhybrid" type="bool">false</setting>
     <setting id="homeradionolastplayedchannels" type="bool">false</setting>
     <setting id="hide_mediaflags" type="bool">false</setting>
     <setting id="homemusicvideosnorandomartists" type="bool">false</setting>
@@ -70,7 +70,7 @@
     <setting id="homemenunogamesbutton" type="bool">false</setting>
     <setting id="homemenunoprogramsbutton" type="bool">false</setting>
     <setting id="homemenunofavbutton" type="bool">false</setting>
-    <setting id="classicfentastic" type="bool">false</setting>
+    <setting id="classicfinder" type="bool">false</setting>
     <setting id="disable.rtcrating" type="bool">false</setting>
     <setting id="hidemainmenudivider" type="bool">false</setting>
     <setting id="homemenunoweatherbutton" type="bool">false</setting>
@@ -125,7 +125,7 @@
     <setting id="defaultbackgroundbrightness" type="string">Medium</setting>
     <setting id="searchbehavior" type="string">1</setting>
     <setting id="defaultraindropbrightness" type="string">Medium</setting>
-    <setting id="backup_directory" type="string">special://home/backups/FENtastic_Plus/</setting>
+    <setting id="backup_directory" type="string">special://home/backups/Finder_Plus/</setting>
     <setting id="homefanart.path" type="string"></setting>
     <setting id="categorywidgetitemlimit" type="string">20</setting>
     <setting id="osdaudiobuttonmode" type="string">Next audio stream</setting>

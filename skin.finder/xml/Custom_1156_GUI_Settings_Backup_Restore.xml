@@ -23,17 +23,17 @@
 					<item>
 						<label>Backup GUI Settings</label>
 						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.fentastic.helper,mode=backup_gui)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=backup_gui)</onclick>
 					</item>
 					<item>
 						<label>Restore GUI Settings</label>
 						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.fentastic.helper,mode=restore_gui)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=restore_gui)</onclick>
 					</item>
 					<item>
 						<label>Restore Default GUI Settings</label>
 						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.fentastic.helper,mode=restore_gui_dflt)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=restore_gui_dflt)</onclick>
 					</item>
 				</content>
 			</control>

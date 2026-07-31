@@ -11,32 +11,32 @@
 	<include file="Includes_DialogSelect.xml"/>
 	<include file="Includes_MusicInfo.xml"/>
 	<include file="Includes_PVR.xml"/>
-	<include file="script-fentastic-main_menu_movies.xml"/>
-	<include file="script-fentastic-main_menu_tvshows.xml"/>
-	<include file="script-fentastic-main_menu_custom1.xml"/>
-	<include file="script-fentastic-main_menu_custom2.xml"/>
-	<include file="script-fentastic-main_menu_custom3.xml"/>
-	<include file="script-fentastic-main_menu_custom4.xml"/>
-	<include file="script-fentastic-main_menu_custom5.xml"/>
-	<include file="script-fentastic-main_menu_custom6.xml"/>
-	<include file="script-fentastic-submenu_movie.xml"/>
-	<include file="script-fentastic-submenu_tvshow.xml"/>
-	<include file="script-fentastic-submenu_custom1.xml"/>
-	<include file="script-fentastic-submenu_custom2.xml"/>
-	<include file="script-fentastic-submenu_custom3.xml"/>
-	<include file="script-fentastic-submenu_custom4.xml"/>
-	<include file="script-fentastic-submenu_custom5.xml"/>
-	<include file="script-fentastic-submenu_custom6.xml"/>
-	<include file="script-fentastic-widget_movies.xml"/>
-	<include file="script-fentastic-widget_tvshows.xml"/>
-	<include file="script-fentastic-widget_custom1.xml"/>
-	<include file="script-fentastic-widget_custom2.xml"/>
-	<include file="script-fentastic-widget_custom3.xml"/>
-	<include file="script-fentastic-widget_custom4.xml"/>
-	<include file="script-fentastic-widget_custom5.xml"/>
-	<include file="script-fentastic-widget_custom6.xml"/>
-	<include file="script-fentastic-topbar_custom_menu.xml"/>
-	<include file="script-fentastic-search_history.xml"/>
+	<include file="script-finder-main_menu_movies.xml"/>
+	<include file="script-finder-main_menu_tvshows.xml"/>
+	<include file="script-finder-main_menu_custom1.xml"/>
+	<include file="script-finder-main_menu_custom2.xml"/>
+	<include file="script-finder-main_menu_custom3.xml"/>
+	<include file="script-finder-main_menu_custom4.xml"/>
+	<include file="script-finder-main_menu_custom5.xml"/>
+	<include file="script-finder-main_menu_custom6.xml"/>
+	<include file="script-finder-submenu_movie.xml"/>
+	<include file="script-finder-submenu_tvshow.xml"/>
+	<include file="script-finder-submenu_custom1.xml"/>
+	<include file="script-finder-submenu_custom2.xml"/>
+	<include file="script-finder-submenu_custom3.xml"/>
+	<include file="script-finder-submenu_custom4.xml"/>
+	<include file="script-finder-submenu_custom5.xml"/>
+	<include file="script-finder-submenu_custom6.xml"/>
+	<include file="script-finder-widget_movies.xml"/>
+	<include file="script-finder-widget_tvshows.xml"/>
+	<include file="script-finder-widget_custom1.xml"/>
+	<include file="script-finder-widget_custom2.xml"/>
+	<include file="script-finder-widget_custom3.xml"/>
+	<include file="script-finder-widget_custom4.xml"/>
+	<include file="script-finder-widget_custom5.xml"/>
+	<include file="script-finder-widget_custom6.xml"/>
+	<include file="script-finder-topbar_custom_menu.xml"/>
+	<include file="script-finder-search_history.xml"/>
 	<include file="View_50_List.xml"/>
 	<include file="View_51_Poster.xml"/>
 	<include file="View_52_IconWall.xml"/>
@@ -951,7 +951,7 @@
 					<align>right</align>
 					<itemgap>10</itemgap>
 					<usecontrolcoords>true</usecontrolcoords>
-					<visible>!Window.IsVisible(extendedprogressdialog) + !Window.IsActive(fullscreenvideo) + !Skin.HasSetting(TrailerPlaying) + ![Window.IsActive(home) + Skin.HasSetting(FENtasticHybrid)]</visible>
+					<visible>!Window.IsVisible(extendedprogressdialog) + !Window.IsActive(fullscreenvideo) + !Skin.HasSetting(TrailerPlaying) + ![Window.IsActive(home) + Skin.HasSetting(FinderHybrid)]</visible>
 					<animation effect="fade" time="150">VisibleChange</animation>
 					<control type="group">
 						<width>600</width>
@@ -1002,7 +1002,7 @@
 					<control type="group">
 						<width>360</width>
 						<height>100</height>
-						<visible>!Skin.HasSetting(FENtasticHybrid) + Integer.IsGreater(System.ProfileCount,1) + !Player.HasMedia + [Skin.HasSetting(show_profilename) | Skin.HasSetting(show_profileboth)]</visible>
+						<visible>!Skin.HasSetting(FinderHybrid) + Integer.IsGreater(System.ProfileCount,1) + !Player.HasMedia + [Skin.HasSetting(show_profilename) | Skin.HasSetting(show_profileboth)]</visible>
 						<control type="label">
 							<top>-2</top>
 							<right>0</right>
@@ -1021,7 +1021,7 @@
 					<control type="group">
 						<width>70</width>
 						<height>100</height>
-						<visible>!Skin.HasSetting(FENtasticHybrid) + Integer.IsGreater(System.ProfileCount,1) + !Player.HasMedia + [Skin.HasSetting(show_profileavatar) | Skin.HasSetting(show_profileboth)]</visible>
+						<visible>!Skin.HasSetting(FinderHybrid) + Integer.IsGreater(System.ProfileCount,1) + !Player.HasMedia + [Skin.HasSetting(show_profileavatar) | Skin.HasSetting(show_profileboth)]</visible>
 						<control type="image">
 							<left>0</left>
 							<top>15</top>
@@ -1042,7 +1042,7 @@
 						<aligny>center</aligny>
 						<label>[COLOR accent_color][B]•[/B][/COLOR]</label>
 						<textcolor>unfocused_text</textcolor>
-						<visible>!Skin.HasSetting(FENtasticHybrid) + Integer.IsGreater(System.ProfileCount,1) + !Player.HasMedia + Skin.HasSetting(show_weatherinfo) + Skin.HasSetting(show_profilename)</visible>
+						<visible>!Skin.HasSetting(FinderHybrid) + Integer.IsGreater(System.ProfileCount,1) + !Player.HasMedia + Skin.HasSetting(show_weatherinfo) + Skin.HasSetting(show_profilename)</visible>
 					</control>
 					<!-- PROFILE AVATAR DIVIDER -->
 					<control type="label">
@@ -1054,7 +1054,7 @@
 						<aligny>center</aligny>
 						<label>[COLOR accent_color][B]•[/B][/COLOR]</label>
 						<textcolor>unfocused_text</textcolor>
-						<visible>!Skin.HasSetting(FENtasticHybrid) + Integer.IsGreater(System.ProfileCount,1) + !Player.HasMedia + Skin.HasSetting(show_weatherinfo) + [Skin.HasSetting(show_profileavatar) | Skin.HasSetting(show_profileboth)]</visible>
+						<visible>!Skin.HasSetting(FinderHybrid) + Integer.IsGreater(System.ProfileCount,1) + !Player.HasMedia + Skin.HasSetting(show_weatherinfo) + [Skin.HasSetting(show_profileavatar) | Skin.HasSetting(show_profileboth)]</visible>
 					</control>
 					<!-- WEATHER ICON -->
 					<control type="group">
@@ -1740,21 +1740,21 @@
 					<orientation>vertical</orientation>
 					<itemgap>5</itemgap>
 					<align>center</align>
-					<visible>![String.IsEmpty(Window.Property(fentastic.metascore)) | Skin.HasSetting(Disable.MetacriticRating)]</visible>
+					<visible>![String.IsEmpty(Window.Property(finder.metascore)) | Skin.HasSetting(Disable.MetacriticRating)]</visible>
 					<control type="image">
 						<width>60</width>
 						<height>36</height>
 						<aspectratio>keep</aspectratio>
 						<align>center</align>
 						<aligny>center</aligny>
-						<texture>$INFO[Window.Property(fentastic.metascoreImage)]</texture>
+						<texture>$INFO[Window.Property(finder.metascoreImage)]</texture>
 					</control>
 					<control type="label">
 						<width max="60">auto</width>
 						<height>42</height>
 						<align>center</align>
 						<aligny>center</aligny>
-						<label>$INFO[Window.Property(fentastic.metascore)]</label>
+						<label>$INFO[Window.Property(finder.metascore)]</label>
 						<textcolor>unfocused_text</textcolor>
 					</control>
 				</control>
@@ -1763,21 +1763,21 @@
 					<orientation>vertical</orientation>
 					<itemgap>5</itemgap>
 					<align>center</align>
-					<visible>![String.IsEmpty(Window.Property(fentastic.tomatoMeter)) | Skin.HasSetting(Disable.RTCRating)]</visible>
+					<visible>![String.IsEmpty(Window.Property(finder.tomatoMeter)) | Skin.HasSetting(Disable.RTCRating)]</visible>
 					<control type="image">
 						<width>60</width>
 						<height>36</height>
 						<aspectratio>keep</aspectratio>
 						<align>center</align>
 						<aligny>center</aligny>
-						<texture>$INFO[Window.Property(fentastic.tomatoImage)]</texture>
+						<texture>$INFO[Window.Property(finder.tomatoImage)]</texture>
 					</control>
 					<control type="label">
 						<width max="60">auto</width>
 						<height>42</height>
 						<align>center</align>
 						<aligny>center</aligny>
-						<label>$INFO[Window.Property(fentastic.tomatoMeter)]</label>
+						<label>$INFO[Window.Property(finder.tomatoMeter)]</label>
 						<textcolor>unfocused_text</textcolor>
 					</control>
 				</control>
@@ -1786,21 +1786,21 @@
 					<orientation>vertical</orientation>
 					<itemgap>5</itemgap>
 					<align>center</align>
-					<visible>![String.IsEmpty(Window.Property(fentastic.tomatoUserMeter)) | Skin.HasSetting(Disable.RTARating)]</visible>
+					<visible>![String.IsEmpty(Window.Property(finder.tomatoUserMeter)) | Skin.HasSetting(Disable.RTARating)]</visible>
 					<control type="image">
 						<width>60</width>
 						<height>36</height>
 						<aspectratio>keep</aspectratio>
 						<align>center</align>
 						<aligny>center</aligny>
-						<texture>$INFO[Window.Property(fentastic.tomatoUserImage)]</texture>
+						<texture>$INFO[Window.Property(finder.tomatoUserImage)]</texture>
 					</control>
 					<control type="label">
 						<width max="60">auto</width>
 						<height>42</height>
 						<align>center</align>
 						<aligny>center</aligny>
-						<label>$INFO[Window.Property(fentastic.tomatoUserMeter)]</label>
+						<label>$INFO[Window.Property(finder.tomatoUserMeter)]</label>
 						<textcolor>unfocused_text</textcolor>
 					</control>
 				</control>
@@ -1809,21 +1809,21 @@
 					<orientation>vertical</orientation>
 					<itemgap>5</itemgap>
 					<align>center</align>
-					<visible>![String.IsEmpty(Window.Property(fentastic.imdbRating)) | Skin.HasSetting(Disable.IMDbRating)]</visible>
+					<visible>![String.IsEmpty(Window.Property(finder.imdbRating)) | Skin.HasSetting(Disable.IMDbRating)]</visible>
 					<control type="image">
 						<width>60</width>
 						<height>36</height>
 						<aspectratio>keep</aspectratio>
 						<align>center</align>
 						<aligny>center</aligny>
-						<texture>$INFO[Window.Property(fentastic.imdbImage)]</texture>
+						<texture>$INFO[Window.Property(finder.imdbImage)]</texture>
 					</control>
 					<control type="label">
 						<width max="60">auto</width>
 						<height>42</height>
 						<align>center</align>
 						<aligny>center</aligny>
-						<label>$INFO[Window.Property(fentastic.imdbRating)]</label>
+						<label>$INFO[Window.Property(finder.imdbRating)]</label>
 						<textcolor>unfocused_text</textcolor>
 					</control>
 				</control>
@@ -1832,21 +1832,21 @@
 					<orientation>vertical</orientation>
 					<itemgap>5</itemgap>
 					<align>center</align>
-					<visible>![String.IsEmpty(Window.Property(fentastic.popularRating)) | Skin.HasSetting(Disable.IMDbPopularRating)]</visible>
+					<visible>![String.IsEmpty(Window.Property(finder.popularRating)) | Skin.HasSetting(Disable.IMDbPopularRating)]</visible>
 					<control type="image">
 						<width>87</width>
 						<height>36</height>
 						<aspectratio>keep</aspectratio>
 						<align>center</align>
 						<aligny>center</aligny>
-						<texture>$INFO[Window.Property(fentastic.popularImage)]</texture>
+						<texture>$INFO[Window.Property(finder.popularImage)]</texture>
 					</control>
 					<control type="label">
 						<width max="87">auto</width>
 						<height>42</height>
 						<align>center</align>
 						<aligny>center</aligny>
-						<label>$INFO[Window.Property(fentastic.popularRating)]</label>
+						<label>$INFO[Window.Property(finder.popularRating)]</label>
 						<textcolor>unfocused_text</textcolor>
 					</control>
 				</control>
@@ -1855,21 +1855,21 @@
 					<orientation>vertical</orientation>
 					<itemgap>8</itemgap>
 					<align>center</align>
-					<visible>![String.IsEmpty(Window.Property(fentastic.tmdbRating)) | Skin.HasSetting(Disable.TMDbRating)]</visible>
+					<visible>![String.IsEmpty(Window.Property(finder.tmdbRating)) | Skin.HasSetting(Disable.TMDbRating)]</visible>
 					<control type="image">
 						<width>65</width>
 						<height>33</height>
 						<aspectratio>keep</aspectratio>
 						<align>center</align>
 						<aligny>center</aligny>
-						<texture>$INFO[Window.Property(fentastic.tmdbImage)]</texture>
+						<texture>$INFO[Window.Property(finder.tmdbImage)]</texture>
 					</control>
 					<control type="label">
 						<width max="65">auto</width>
 						<height>42</height>
 						<align>center</align>
 						<aligny>center</aligny>
-						<label>$INFO[Window.Property(fentastic.tmdbRating)]</label>
+						<label>$INFO[Window.Property(finder.tmdbRating)]</label>
 						<textcolor>unfocused_text</textcolor>
 					</control>
 				</control>

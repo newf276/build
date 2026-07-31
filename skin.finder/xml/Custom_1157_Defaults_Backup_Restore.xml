@@ -25,12 +25,12 @@
 					<item>
 						<label>Restore Default Skin Settings</label>
 						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.fentastic.helper,mode=restore_skin_dflt)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=restore_skin_dflt)</onclick>
 					</item>
 					<item>
 						<label>Restore Default GUI Settings</label>
 						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.fentastic.helper,mode=restore_gui_dflt)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=restore_gui_dflt)</onclick>
 					</item>
 				</content>
 			</control>

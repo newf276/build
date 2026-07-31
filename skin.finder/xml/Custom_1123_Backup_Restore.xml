@@ -25,7 +25,7 @@
 					<item>
 						<label>Set Backup Directory</label>
 						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.fentastic.helper,mode=set_backup_directory)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=set_backup_directory)</onclick>
 					</item>
 					<item>
 						<label>Favourites</label>

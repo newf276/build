@@ -2,7 +2,7 @@
 <window type="dialog" id="1153">
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<include>Animation_DialogPopupOpenClose</include>
-	<onunload>Skin.Reset(FENtastic.PendingLookFeel)</onunload>
+	<onunload>Skin.Reset(Finder.PendingLookFeel)</onunload>
 	<controls>
 		<control type="group">
 			<centerleft>50%</centerleft>
@@ -25,18 +25,18 @@
 				<content>
 					<item>
 						<label>Default Artwork</label>
-						<onclick condition="String.IsEqual(Skin.String(FENtastic.PendingLookFeel),fenplus)">RunScript(script.fentastic.helper,mode=apply_lookfeel&amp;lookfeel=fenplus&amp;keep_artwork=false)</onclick>
-						<onclick condition="String.IsEqual(Skin.String(FENtastic.PendingLookFeel),hybrid)">RunScript(script.fentastic.helper,mode=apply_lookfeel&amp;lookfeel=hybrid&amp;keep_artwork=false)</onclick>
-						<onclick condition="String.IsEqual(Skin.String(FENtastic.PendingLookFeel),classic)">RunScript(script.fentastic.helper,mode=apply_lookfeel&amp;lookfeel=classic&amp;keep_artwork=false)</onclick>
-						<onclick condition="String.IsEqual(Skin.String(FENtastic.PendingLookFeel),estuary)">RunScript(script.fentastic.helper,mode=apply_lookfeel&amp;lookfeel=estuary&amp;keep_artwork=false)</onclick>
+						<onclick condition="String.IsEqual(Skin.String(Finder.PendingLookFeel),fenplus)">RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=fenplus&amp;keep_artwork=false)</onclick>
+						<onclick condition="String.IsEqual(Skin.String(Finder.PendingLookFeel),hybrid)">RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=hybrid&amp;keep_artwork=false)</onclick>
+						<onclick condition="String.IsEqual(Skin.String(Finder.PendingLookFeel),classic)">RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=classic&amp;keep_artwork=false)</onclick>
+						<onclick condition="String.IsEqual(Skin.String(Finder.PendingLookFeel),estuary)">RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=estuary&amp;keep_artwork=false)</onclick>
 						<onclick>Dialog.Close(all)</onclick>
 					</item>
 					<item>
 						<label>Keep Current Artwork</label>
-						<onclick condition="String.IsEqual(Skin.String(FENtastic.PendingLookFeel),fenplus)">RunScript(script.fentastic.helper,mode=apply_lookfeel&amp;lookfeel=fenplus&amp;keep_artwork=true)</onclick>
-						<onclick condition="String.IsEqual(Skin.String(FENtastic.PendingLookFeel),hybrid)">RunScript(script.fentastic.helper,mode=apply_lookfeel&amp;lookfeel=hybrid&amp;keep_artwork=true)</onclick>
-						<onclick condition="String.IsEqual(Skin.String(FENtastic.PendingLookFeel),classic)">RunScript(script.fentastic.helper,mode=apply_lookfeel&amp;lookfeel=classic&amp;keep_artwork=true)</onclick>
-						<onclick condition="String.IsEqual(Skin.String(FENtastic.PendingLookFeel),estuary)">RunScript(script.fentastic.helper,mode=apply_lookfeel&amp;lookfeel=estuary&amp;keep_artwork=true)</onclick>
+						<onclick condition="String.IsEqual(Skin.String(Finder.PendingLookFeel),fenplus)">RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=fenplus&amp;keep_artwork=true)</onclick>
+						<onclick condition="String.IsEqual(Skin.String(Finder.PendingLookFeel),hybrid)">RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=hybrid&amp;keep_artwork=true)</onclick>
+						<onclick condition="String.IsEqual(Skin.String(Finder.PendingLookFeel),classic)">RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=classic&amp;keep_artwork=true)</onclick>
+						<onclick condition="String.IsEqual(Skin.String(Finder.PendingLookFeel),estuary)">RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=estuary&amp;keep_artwork=true)</onclick>
 						<onclick>Dialog.Close(all)</onclick>
 					</item>
 				</content>

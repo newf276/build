@@ -25,12 +25,12 @@
 					<item>
 						<label>Backup Favourites</label>
 						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.fentastic.helper,mode=backup_favs)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=backup_favs)</onclick>
 					</item>
 					<item>
 						<label>Restore Favourites</label>
 						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.fentastic.helper,mode=restore_favs)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=restore_favs)</onclick>
 					</item>
 				</content>
 			</control>

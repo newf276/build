@@ -127,7 +127,7 @@
     </extension>
 </addon>
 
-<addon id="script.finder.helper" name="[B]Finder Plus Helper[/B]" version="0.2.31" provider-name="newf276">
+<addon id="script.finder.helper" name="[B]Finder Plus Skin Helper[/B]" version="0.2.31" provider-name="newf276">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.requests" version="2.19.1"/>

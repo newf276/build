@@ -21,26 +21,26 @@
 				</include>
 				<content>
 					<item>
-						<label>[COLOR FFC40300]FENtastic Plus[/COLOR]</label>
-						<onclick>Skin.SetString(FENtastic.PendingLookFeel,fenplus)</onclick>
+						<label>[COLOR FFC40300]Finder Plus[/COLOR]</label>
+						<onclick>Skin.SetString(Finder.PendingLookFeel,fenplus)</onclick>
 						<onclick>Dialog.Close(all)</onclick>
 						<onclick>ActivateWindow(1153)</onclick>
 					</item>
 					<item>
-						<label>[COLOR FFFF8A00]FENtastic Hybrid[/COLOR]</label>
-						<onclick>Skin.SetString(FENtastic.PendingLookFeel,hybrid)</onclick>
+						<label>[COLOR FFFF8A00]Finder Hybrid[/COLOR]</label>
+						<onclick>Skin.SetString(Finder.PendingLookFeel,hybrid)</onclick>
 						<onclick>Dialog.Close(all)</onclick>
 						<onclick>ActivateWindow(1153)</onclick>
 					</item>
 					<item>
-						<label>[COLOR FFEAECED]Classic FENtastic[/COLOR]</label>
-						<onclick>Skin.SetString(FENtastic.PendingLookFeel,classic)</onclick>
+						<label>[COLOR FFEAECED]Classic Finder[/COLOR]</label>
+						<onclick>Skin.SetString(Finder.PendingLookFeel,classic)</onclick>
 						<onclick>Dialog.Close(all)</onclick>
 						<onclick>ActivateWindow(1153)</onclick>
 					</item>
 					<item>
 						<label>[COLOR FF12A0C7]Default Estuary[/COLOR]</label>
-						<onclick>Skin.SetString(FENtastic.PendingLookFeel,estuary)</onclick>
+						<onclick>Skin.SetString(Finder.PendingLookFeel,estuary)</onclick>
 						<onclick>Dialog.Close(all)</onclick>
 						<onclick>ActivateWindow(1153)</onclick>
 					</item>

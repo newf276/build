@@ -2,7 +2,7 @@
 <window>
 	<defaultcontrol>9000</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
-	<onload>RunScript(script.fentastic.helper,mode=check_for_update&amp;skin_id=skin.fentastic)</onload>
+	<onload>RunScript(script.finder.helper,mode=check_for_update&amp;skin_id=skin.finder)</onload>
 	<onload condition="String.IsEmpty(Skin.String(PowerButtonMode))">Skin.SetString(PowerButtonMode,Show Shutdown Menu)</onload>
 	<onload condition="String.IsEmpty(Skin.String(SearchBehavior))">Skin.SetString(SearchBehavior,1)</onload>
 	<onload condition="String.IsEmpty(Skin.String(TopBarCustomMenuIcon))">Skin.SetString(TopBarCustomMenuIcon,icons/system.png)</onload>
@@ -10,21 +10,21 @@
 	<onload condition="!Skin.HasSetting(Defaults.Initialized)">Skin.SetBool(NoIconMainMenu)</onload>
 	<onload condition="!Skin.HasSetting(Defaults.Initialized)">Skin.SetBool(Defaults.Initialized)</onload>
 	<onload condition="!Skin.HasSetting(firsttimerun)">ActivateWindow(1112)</onload>
-	<onload>RunScript(script.fentastic.helper,mode=check_for_profile_change&amp;skin_id=skin.fentastic)</onload>
-	<onload condition="String.IsEmpty(Window(Home).Property(fentastic.starting_widgets))">RunScript(script.fentastic.helper,mode=starting_widgets)</onload>
-	<onload condition="String.IsEmpty(Window(Home).Property(fentastic.starting_widgets))">SetProperty(fentastic.starting_widgets,true)</onload>
-	<onload>RunScript(script.fentastic.helper,mode=modify_keymap)</onload>
-	<onload>RunScript(script.fentastic.helper,mode=fix_black_screen)</onload>
+	<onload>RunScript(script.finder.helper,mode=check_for_profile_change&amp;skin_id=skin.finder)</onload>
+	<onload condition="String.IsEmpty(Window(Home).Property(finder.starting_widgets))">RunScript(script.finder.helper,mode=starting_widgets)</onload>
+	<onload condition="String.IsEmpty(Window(Home).Property(finder.starting_widgets))">SetProperty(finder.starting_widgets,true)</onload>
+	<onload>RunScript(script.finder.helper,mode=modify_keymap)</onload>
+	<onload>RunScript(script.finder.helper,mode=fix_black_screen)</onload>
 	<controls>
 		<include>DefaultBackground</include>
-		<include>FENtasticBackground</include>
+		<include>FinderBackground</include>
 		<control type="group">
 			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
 			<!-- WIDGETS GROUP -->
 			<control type="group" id="2000">
 				<left>0</left>
 				<width>2312</width>
-				<animation effect="slide" time="300" start="0,0" end="462,0" tween="sine" easing="inout" condition="![Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(fentastic.widget_focus),true) + !Control.HasFocus(9000) + !String.IsEqual(Window(Home).Property(fentastic.disable_infopanel),true)]">Conditional</animation>
+				<animation effect="slide" time="300" start="0,0" end="462,0" tween="sine" easing="inout" condition="![Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !Control.HasFocus(9000) + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true)]">Conditional</animation>
 				<include>OpenClose_Right</include>
 				<visible>!Skin.HasSetting(TrailerPlaying)</visible>
 				<animation effect="slide" time="700" start="1380,0" end="0,0" tween="sine" easing="inout">VisibleChange</animation>
@@ -532,8 +532,8 @@
 						<onright>14100</onright>
 						<onup>14100</onup>
 						<ondown>14100</ondown>
-						<onfocus>SetProperty(fentastic.widget_focus,true,home)</onfocus>
-						<onunfocus>ClearProperty(fentastic.widget_focus,home)</onunfocus>
+						<onfocus>SetProperty(finder.widget_focus,true,home)</onfocus>
+						<onunfocus>ClearProperty(finder.widget_focus,home)</onunfocus>
 						<preloaditems>2</preloaditems>
 						<scrolltime tween="cubic" easing="out">500</scrolltime>
 						<orientation>vertical</orientation>
@@ -572,10 +572,10 @@
 						<onright>14100</onright>
 						<onup>14100</onup>
 						<ondown>14100</ondown>
-						<onback condition="Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(fentastic.widget_focus),true)">SetFocus(9000)</onback>
-						<onback condition="Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(fentastic.widget_focus),true)">ClearProperty(fentastic.widget_focus,home)</onback>
-						<onfocus>SetProperty(fentastic.widget_focus,true,home)</onfocus>
-						<onunfocus>ClearProperty(fentastic.widget_focus,home)</onunfocus>
+						<onback condition="Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(finder.widget_focus),true)">SetFocus(9000)</onback>
+						<onback condition="Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(finder.widget_focus),true)">ClearProperty(finder.widget_focus,home)</onback>
+						<onfocus>SetProperty(finder.widget_focus,true,home)</onfocus>
+						<onunfocus>ClearProperty(finder.widget_focus,home)</onunfocus>
 						<preloaditems>2</preloaditems>
 						<scrolltime tween="cubic" easing="out">500</scrolltime>
 						<orientation>vertical</orientation>
@@ -892,21 +892,21 @@
 				</control>
 			</control>
 			<control type="group">
-				<visible>![Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(fentastic.widget_focus),true) + !Control.HasFocus(9000) + !String.IsEqual(Window(Home).Property(fentastic.disable_infopanel),true)]</visible>
+				<visible>![Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !Control.HasFocus(9000) + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true)]</visible>
 				<include content="TopBar">
 					<param name="breadcrumbs_label" value=""/>
 				</include>
 			</control>
-			<include condition="![Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(fentastic.widget_focus),true) + !Control.HasFocus(9000) + !String.IsEqual(Window(Home).Property(fentastic.disable_infopanel),true)]">BottomBar</include>
+			<include condition="![Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !Control.HasFocus(9000) + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true)]">BottomBar</include>
 			<control type="group">
-				<visible>[Control.HasFocus(8991) | Control.HasFocus(8992) | Control.HasFocus(8993) | Control.HasFocus(8994) | Control.HasFocus(8995) | Control.HasFocus(8996) | Control.HasFocus(8997) | Control.HasFocus(8998)] | [!Skin.HasSetting(TrailerPlaying) + ![Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(fentastic.widget_focus),true) + !Control.HasFocus(9000) + !String.IsEqual(Window(Home).Property(fentastic.disable_infopanel),true)]]</visible>
+				<visible>[Control.HasFocus(8991) | Control.HasFocus(8992) | Control.HasFocus(8993) | Control.HasFocus(8994) | Control.HasFocus(8995) | Control.HasFocus(8996) | Control.HasFocus(8997) | Control.HasFocus(8998)] | [!Skin.HasSetting(TrailerPlaying) + ![Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !Control.HasFocus(9000) + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true)]]</visible>
 				<animation effect="slide" time="700" start="-492,0" end="0,0" tween="sine" easing="inout">VisibleChange</animation>
 				<depth>DepthContentPanel</depth>
 				<include>OpenClose_Left</include>
 				<include content="ContentPanel">
 					<param name="width" value="900"/>
 				</include>
-				<!-- FENtastic Hybrid Profile/Weather/Now Playing Top Bar -->
+				<!-- Finder Hybrid Profile/Weather/Now Playing Top Bar -->
 				<control type="grouplist">
 					<top>20</top>
 					<right>23</right>
@@ -916,7 +916,7 @@
 					<align>right</align>
 					<itemgap>10</itemgap>
 					<usecontrolcoords>true</usecontrolcoords>
-					<visible>Skin.HasSetting(FENtasticHybrid) + !Skin.HasSetting(TrailerPlaying)</visible>
+					<visible>Skin.HasSetting(FinderHybrid) + !Skin.HasSetting(TrailerPlaying)</visible>
 					<animation effect="fade" time="150">VisibleChange</animation>
 					<!-- NOW PLAYING -->
 					<control type="group">
@@ -1062,7 +1062,7 @@
 				<control type="group">
 					<animation effect="slide" time="300" start="-492,0" end="0,0" tween="sine" easing="inout">VisibleChange</animation>
 					<visible allowhiddenfocus="true">
-	String.IsEqual(Window(Home).Property(fentastic.disable_infopanel),true) | Control.HasFocus(9000) | [Control.HasFocus(8991) | Control.HasFocus(8992) | Control.HasFocus(8993) | Control.HasFocus(8994) | Control.HasFocus(8995) | Control.HasFocus(8996) | Control.HasFocus(8997) | Control.HasFocus(8998)] | [![String.IsEqual(ListItem.DBtype,movie) | String.IsEqual(ListItem.DBtype,tvshow) | String.IsEqual(ListItem.DBtype,season) | String.IsEqual(ListItem.DBtype,episode) | [String.IsEqual(Container(9000).ListItem.Property(id),addons) + String.IsEqual(Window(Home).Property(fentastic.widget_focus),true) + [Skin.HasSetting(Enable.AddonInfoPanel) | String.IsEqual(Window(Home).Property(fentastic.category_widget_focus),true)] + [!String.IsEqual(Window(Home).Property(fentastic.category_widget_focus),true) | Skin.HasSetting(Enable.AddonCategorySideblade)] + [!Control.HasFocus(8900) | Skin.HasSetting(Enable.AddonCategorySideblade)]]] + ![Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(fentastic.widget_focus),true) + !Control.HasFocus(9000) + !String.IsEqual(Window(Home).Property(fentastic.disable_infopanel),true)]]
+	String.IsEqual(Window(Home).Property(finder.disable_infopanel),true) | Control.HasFocus(9000) | [Control.HasFocus(8991) | Control.HasFocus(8992) | Control.HasFocus(8993) | Control.HasFocus(8994) | Control.HasFocus(8995) | Control.HasFocus(8996) | Control.HasFocus(8997) | Control.HasFocus(8998)] | [![String.IsEqual(ListItem.DBtype,movie) | String.IsEqual(ListItem.DBtype,tvshow) | String.IsEqual(ListItem.DBtype,season) | String.IsEqual(ListItem.DBtype,episode) | [String.IsEqual(Container(9000).ListItem.Property(id),addons) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + [Skin.HasSetting(Enable.AddonInfoPanel) | String.IsEqual(Window(Home).Property(finder.category_widget_focus),true)] + [!String.IsEqual(Window(Home).Property(finder.category_widget_focus),true) | Skin.HasSetting(Enable.AddonCategorySideblade)] + [!Control.HasFocus(8900) | Skin.HasSetting(Enable.AddonCategorySideblade)]]] + ![Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !Control.HasFocus(9000) + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true)]]
 </visible>
 					<!-- Estuary Main Menu Panel -->
 					<control type="image">
@@ -1071,26 +1071,26 @@
 						<width>475</width>
 						<bottom>0</bottom>
 						<texture>colors/black.png</texture>
-						<visible>!Skin.HasSetting(FENtasticHybrid) + Skin.HasSetting(EstuaryLookFeel)</visible>
+						<visible>!Skin.HasSetting(FinderHybrid) + Skin.HasSetting(EstuaryLookFeel)</visible>
 					</control>
-					<!-- FENtastic Main Menu -->
+					<!-- Finder Main Menu -->
 					<control type="fixedlist" id="9000">
-						<!-- FENtastic Hybrid: Divider enabled -->
-						<animation effect="slide" start="0,0" end="-25,141" time="0" condition="Skin.HasSetting(FENtasticHybrid) + !Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
-						<!-- FENtastic Hybrid: Divider disabled -->
-						<animation effect="slide" start="0,0" end="-25,116" time="0" condition="Skin.HasSetting(FENtasticHybrid) + Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
-						<!-- FENtastic Plus: Divider enabled -->
-						<animation effect="slide" start="0,0" end="0,50" time="0" condition="!Skin.HasSetting(FENtasticHybrid) + !Skin.HasSetting(ClassicFENtastic) + !Skin.HasSetting(EstuaryLookFeel) + !Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
-						<!-- FENtastic Plus: Divider disabled -->
-						<animation effect="slide" start="0,0" end="0,10" time="0" condition="!Skin.HasSetting(FENtasticHybrid) + !Skin.HasSetting(ClassicFENtastic) + !Skin.HasSetting(EstuaryLookFeel) + Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
-						<!-- Classic FENtastic: Divider enabled -->
-						<animation effect="slide" start="0,0" end="0,0" time="0" condition="!Skin.HasSetting(FENtasticHybrid) + Skin.HasSetting(ClassicFENtastic) + !Skin.HasSetting(EstuaryLookFeel) + !Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
-						<!-- Classic FENtastic: Divider disabled -->
-						<animation effect="slide" start="0,0" end="0,0" time="0" condition="!Skin.HasSetting(FENtasticHybrid) + Skin.HasSetting(ClassicFENtastic) + !Skin.HasSetting(EstuaryLookFeel) + Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
+						<!-- Finder Hybrid: Divider enabled -->
+						<animation effect="slide" start="0,0" end="-25,141" time="0" condition="Skin.HasSetting(FinderHybrid) + !Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
+						<!-- Finder Hybrid: Divider disabled -->
+						<animation effect="slide" start="0,0" end="-25,116" time="0" condition="Skin.HasSetting(FinderHybrid) + Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
+						<!-- Finder Plus: Divider enabled -->
+						<animation effect="slide" start="0,0" end="0,50" time="0" condition="!Skin.HasSetting(FinderHybrid) + !Skin.HasSetting(ClassicFinder) + !Skin.HasSetting(EstuaryLookFeel) + !Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
+						<!-- Finder Plus: Divider disabled -->
+						<animation effect="slide" start="0,0" end="0,10" time="0" condition="!Skin.HasSetting(FinderHybrid) + !Skin.HasSetting(ClassicFinder) + !Skin.HasSetting(EstuaryLookFeel) + Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
+						<!-- Classic Finder: Divider enabled -->
+						<animation effect="slide" start="0,0" end="0,0" time="0" condition="!Skin.HasSetting(FinderHybrid) + Skin.HasSetting(ClassicFinder) + !Skin.HasSetting(EstuaryLookFeel) + !Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
+						<!-- Classic Finder: Divider disabled -->
+						<animation effect="slide" start="0,0" end="0,0" time="0" condition="!Skin.HasSetting(FinderHybrid) + Skin.HasSetting(ClassicFinder) + !Skin.HasSetting(EstuaryLookFeel) + Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
 						<!-- Estuary: Divider enabled -->
-						<animation effect="slide" start="0,0" end="0,50" time="0" condition="!Skin.HasSetting(FENtasticHybrid) + !Skin.HasSetting(ClassicFENtastic) + Skin.HasSetting(EstuaryLookFeel) + !Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
+						<animation effect="slide" start="0,0" end="0,50" time="0" condition="!Skin.HasSetting(FinderHybrid) + !Skin.HasSetting(ClassicFinder) + Skin.HasSetting(EstuaryLookFeel) + !Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
 						<!-- Estuary: Divider disabled -->
-						<animation effect="slide" start="0,0" end="0,25" time="0" condition="!Skin.HasSetting(FENtasticHybrid) + !Skin.HasSetting(ClassicFENtastic) + Skin.HasSetting(EstuaryLookFeel) + Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
+						<animation effect="slide" start="0,0" end="0,25" time="0" condition="!Skin.HasSetting(FinderHybrid) + !Skin.HasSetting(ClassicFinder) + Skin.HasSetting(EstuaryLookFeel) + Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
 						<visible allowhiddenfocus="true">![Control.HasFocus(8991) | Control.HasFocus(8992) | Control.HasFocus(8993) | Control.HasFocus(8994) | Control.HasFocus(8995) | Control.HasFocus(8996) | Control.HasFocus(8997) | Control.HasFocus(8998)]</visible>
 						<animation effect="fade" start="0" end="100" time="0" delay="300">Visible</animation>
 						<animation effect="fade" start="100" end="0" time="0">Hidden</animation>
@@ -1098,8 +1098,8 @@
 						<top>248</top>
 						<width>497</width>
 						<bottom>50</bottom>
-						<include condition="Skin.HasSetting(FENtasticHybrid)">FENtasticHybridMainMenuMovement</include>
-						<include condition="!Skin.HasSetting(FENtasticHybrid)">FENtasticStandardMainMenuMovement</include>
+						<include condition="Skin.HasSetting(FinderHybrid)">FinderHybridMainMenuMovement</include>
+						<include condition="!Skin.HasSetting(FinderHybrid)">FinderStandardMainMenuMovement</include>
 						<focusposition>0</focusposition>
 						<onfocus>ClearProperty(listposition,home)</onfocus>
 						<onleft condition="String.IsEqual(Container(9000).ListItem.Property(id),movies)">8991</onleft>
@@ -1116,17 +1116,17 @@
 						<ondown condition="Skin.HasSetting(EstuaryLookFeel) + !Skin.HasSetting(HomeNoSearchButton) + !Skin.HasSetting(Enable.Favourites) + !Skin.HasSetting(Enable.AddonBrowser) + !Skin.HasSetting(Enable.MaintenanceTools)">701</ondown>
 						<ondown>700</ondown>
 						<scrolltime tween="cubic" easing="out">500</scrolltime>
-						<include condition="Skin.HasSetting(FENtasticHybrid)">FENtasticHybridMainMenuLayout</include>
-						<include condition="!Skin.HasSetting(FENtasticHybrid)">FENtasticStandardMainMenuLayout</include>
-						<!-- FENtastic Main Menu Items -->
+						<include condition="Skin.HasSetting(FinderHybrid)">FinderHybridMainMenuLayout</include>
+						<include condition="!Skin.HasSetting(FinderHybrid)">FinderStandardMainMenuLayout</include>
+						<!-- Finder Main Menu Items -->
 						<content>
-							<include content="FENtasticMainMenuItems"/>
+							<include content="FinderMainMenuItems"/>
 						</content>
 					</control>
-					<!-- FENtastic Submenus -->
+					<!-- Finder Submenus -->
 					<control type="fixedlist" id="8991">
 						<animation effect="slide" start="-422,0" end="0,0" time="300" tween="sine" easing="inout">VisibleChange</animation>
-						<include>FENtasticSubmenuPosition</include>
+						<include>FinderSubmenuPosition</include>
 						<left>25</left>
 						<top>300</top>
 						<width>492</width>
@@ -1172,7 +1172,7 @@
 					</control>
 					<control type="fixedlist" id="8992">
 						<animation effect="slide" start="-422,0" end="0,0" time="300" tween="sine" easing="inout">VisibleChange</animation>
-						<include>FENtasticSubmenuPosition</include>
+						<include>FinderSubmenuPosition</include>
 						<left>25</left>
 						<top>300</top>
 						<width>492</width>
@@ -1218,7 +1218,7 @@
 					</control>
 					<control type="fixedlist" id="8993">
 						<animation effect="slide" start="-422,0" end="0,0" time="300" tween="sine" easing="inout">VisibleChange</animation>
-						<include>FENtasticSubmenuPosition</include>
+						<include>FinderSubmenuPosition</include>
 						<left>25</left>
 						<top>300</top>
 						<width>492</width>
@@ -1264,7 +1264,7 @@
 					</control>
 					<control type="fixedlist" id="8994">
 						<animation effect="slide" start="-422,0" end="0,0" time="300" tween="sine" easing="inout">VisibleChange</animation>
-						<include>FENtasticSubmenuPosition</include>
+						<include>FinderSubmenuPosition</include>
 						<left>25</left>
 						<top>300</top>
 						<width>492</width>
@@ -1310,7 +1310,7 @@
 					</control>
 					<control type="fixedlist" id="8995">
 						<animation effect="slide" start="-422,0" end="0,0" time="300" tween="sine" easing="inout">VisibleChange</animation>
-						<include>FENtasticSubmenuPosition</include>
+						<include>FinderSubmenuPosition</include>
 						<left>25</left>
 						<top>300</top>
 						<width>492</width>
@@ -1356,7 +1356,7 @@
 					</control>
 					<control type="fixedlist" id="8996">
 						<animation effect="slide" start="-422,0" end="0,0" time="300" tween="sine" easing="inout">VisibleChange</animation>
-						<include>FENtasticSubmenuPosition</include>
+						<include>FinderSubmenuPosition</include>
 						<left>25</left>
 						<top>300</top>
 						<width>492</width>
@@ -1402,7 +1402,7 @@
 					</control>
 					<control type="fixedlist" id="8997">
 						<animation effect="slide" start="-422,0" end="0,0" time="300" tween="sine" easing="inout">VisibleChange</animation>
-						<include>FENtasticSubmenuPosition</include>
+						<include>FinderSubmenuPosition</include>
 						<left>25</left>
 						<top>300</top>
 						<width>492</width>
@@ -1448,7 +1448,7 @@
 					</control>
 					<control type="fixedlist" id="8998">
 						<animation effect="slide" start="-422,0" end="0,0" time="300" tween="sine" easing="inout">VisibleChange</animation>
-						<include>FENtasticSubmenuPosition</include>
+						<include>FinderSubmenuPosition</include>
 						<left>25</left>
 						<top>300</top>
 						<width>492</width>
@@ -1511,7 +1511,7 @@
 						<align>left</align>
 						<include content="IconButton">
 							<param name="control_id" value="811"/>
-							<param name="onclick" value="RunScript(script.fentastic.helper,mode=force_close)"/>
+							<param name="onclick" value="RunScript(script.finder.helper,mode=force_close)"/>
 							<param name="icon" value="icons/power.png"/>
 							<param name="label" value="$LOCALIZE[33060]"/>
 							<param name="visible" value="String.IsEqual(Skin.String(PowerButtonMode),Force Close)"/>
@@ -1545,14 +1545,14 @@
 						</include>
 						<include content="IconButton">
 							<param name="control_id" value="816"/>
-							<param name="onclick" value="RunScript(script.fentastic.helper,mode=search_input)"/>
+							<param name="onclick" value="RunScript(script.finder.helper,mode=search_input)"/>
 							<param name="icon" value="icons/search.png"/>
 							<param name="label" value="$LOCALIZE[137]"/>
 							<param name="visible" value="String.IsEqual(Skin.String(SearchBehavior),1)"/>
 						</include>
 						<include content="IconButton">
 							<param name="control_id" value="817"/>
-							<param name="onclick" value="RunScript(script.fentastic.helper,mode=open_search_window)"/>
+							<param name="onclick" value="RunScript(script.finder.helper,mode=open_search_window)"/>
 							<param name="icon" value="icons/search.png"/>
 							<param name="label" value="$LOCALIZE[137]"/>
 							<param name="visible" value="String.IsEqual(Skin.String(SearchBehavior),2)"/>
@@ -1560,23 +1560,23 @@
 					</control>
 					<control type="grouplist" id="700">
 						<visible>![Skin.HasSetting(EstuaryLookFeel) + !Skin.HasSetting(HomeNoSearchButton) + !Skin.HasSetting(Enable.Favourites) + !Skin.HasSetting(Enable.AddonBrowser) + !Skin.HasSetting(Enable.MaintenanceTools) + !Skin.HasSetting(Enable.TopBarCustomMenu)]</visible>
-						<animation effect="slide" start="0,0" end="-60,0" time="0" condition="Skin.HasSetting(ClassicFENtastic) + !Skin.HasSetting(FENtasticHybrid) + !Skin.HasSetting(EstuaryLookFeel) + Skin.HasSetting(HomeNoSearchButton) + !Skin.HasSetting(Enable.Favourites) + !Skin.HasSetting(Enable.AddonBrowser) + !Skin.HasSetting(Enable.MaintenanceTools)">Conditional</animation>
-						<!-- FENtastic Plus: Divider enabled -->
-						<animation effect="slide" start="0,0" end="0,0" time="0" condition="!Skin.HasSetting(FENtasticHybrid) + !Skin.HasSetting(ClassicFENtastic) + !Skin.HasSetting(EstuaryLookFeel) + !Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
-						<!-- FENtastic Plus: Divider disabled -->
-						<animation effect="slide" start="0,0" end="0,10" time="0" condition="!Skin.HasSetting(FENtasticHybrid) + !Skin.HasSetting(ClassicFENtastic) + !Skin.HasSetting(EstuaryLookFeel) + Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
-						<!-- FENtastic Hybrid: Divider enabled -->
-						<animation effect="slide" start="0,0" end="0,-10" time="0" condition="Skin.HasSetting(FENtasticHybrid) + !Skin.HasSetting(ClassicFENtastic) + !Skin.HasSetting(EstuaryLookFeel) + !Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
-						<!-- FENtastic Hybrid: Divider disabled -->
-						<animation effect="slide" start="0,0" end="0,-10" time="0" condition="Skin.HasSetting(FENtasticHybrid) + !Skin.HasSetting(ClassicFENtastic) + !Skin.HasSetting(EstuaryLookFeel) + Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
-						<!-- Classic FENtastic: Divider enabled -->
-						<animation effect="slide" start="0,0" end="0,-15" time="0" condition="!Skin.HasSetting(FENtasticHybrid) + Skin.HasSetting(ClassicFENtastic) + !Skin.HasSetting(EstuaryLookFeel) + !Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
-						<!-- Classic FENtastic: Divider disabled -->
-						<animation effect="slide" start="0,0" end="0,10" time="0" condition="!Skin.HasSetting(FENtasticHybrid) + Skin.HasSetting(ClassicFENtastic) + !Skin.HasSetting(EstuaryLookFeel) + Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
+						<animation effect="slide" start="0,0" end="-60,0" time="0" condition="Skin.HasSetting(ClassicFinder) + !Skin.HasSetting(FinderHybrid) + !Skin.HasSetting(EstuaryLookFeel) + Skin.HasSetting(HomeNoSearchButton) + !Skin.HasSetting(Enable.Favourites) + !Skin.HasSetting(Enable.AddonBrowser) + !Skin.HasSetting(Enable.MaintenanceTools)">Conditional</animation>
+						<!-- Finder Plus: Divider enabled -->
+						<animation effect="slide" start="0,0" end="0,0" time="0" condition="!Skin.HasSetting(FinderHybrid) + !Skin.HasSetting(ClassicFinder) + !Skin.HasSetting(EstuaryLookFeel) + !Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
+						<!-- Finder Plus: Divider disabled -->
+						<animation effect="slide" start="0,0" end="0,10" time="0" condition="!Skin.HasSetting(FinderHybrid) + !Skin.HasSetting(ClassicFinder) + !Skin.HasSetting(EstuaryLookFeel) + Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
+						<!-- Finder Hybrid: Divider enabled -->
+						<animation effect="slide" start="0,0" end="0,-10" time="0" condition="Skin.HasSetting(FinderHybrid) + !Skin.HasSetting(ClassicFinder) + !Skin.HasSetting(EstuaryLookFeel) + !Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
+						<!-- Finder Hybrid: Divider disabled -->
+						<animation effect="slide" start="0,0" end="0,-10" time="0" condition="Skin.HasSetting(FinderHybrid) + !Skin.HasSetting(ClassicFinder) + !Skin.HasSetting(EstuaryLookFeel) + Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
+						<!-- Classic Finder: Divider enabled -->
+						<animation effect="slide" start="0,0" end="0,-15" time="0" condition="!Skin.HasSetting(FinderHybrid) + Skin.HasSetting(ClassicFinder) + !Skin.HasSetting(EstuaryLookFeel) + !Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
+						<!-- Classic Finder: Divider disabled -->
+						<animation effect="slide" start="0,0" end="0,10" time="0" condition="!Skin.HasSetting(FinderHybrid) + Skin.HasSetting(ClassicFinder) + !Skin.HasSetting(EstuaryLookFeel) + Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
 						<!-- Estuary: Divider enabled -->
-						<animation effect="slide" start="0,0" end="0,-10" time="0" condition="!Skin.HasSetting(FENtasticHybrid) + !Skin.HasSetting(ClassicFENtastic) + Skin.HasSetting(EstuaryLookFeel) + !Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
+						<animation effect="slide" start="0,0" end="0,-10" time="0" condition="!Skin.HasSetting(FinderHybrid) + !Skin.HasSetting(ClassicFinder) + Skin.HasSetting(EstuaryLookFeel) + !Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
 						<!-- Estuary: Divider disabled -->
-						<animation effect="slide" start="0,0" end="0,15" time="0" condition="!Skin.HasSetting(FENtasticHybrid) + !Skin.HasSetting(ClassicFENtastic) + Skin.HasSetting(EstuaryLookFeel) + Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
+						<animation effect="slide" start="0,0" end="0,15" time="0" condition="!Skin.HasSetting(FinderHybrid) + !Skin.HasSetting(ClassicFinder) + Skin.HasSetting(EstuaryLookFeel) + Skin.HasSetting(HideMainMenuDivider)">Conditional</animation>
 						<orientation>horizontal</orientation>
 						<itemgap>$VAR[HomeTopButtonBarGap]</itemgap>
 						<left>$VAR[HomeTopButtonBarLeft]</left>
@@ -1591,7 +1591,7 @@
 						<!-- Force Close -->
 						<include content="IconButton">
 							<param name="control_id" value="801"/>
-							<param name="onclick" value="RunScript(script.fentastic.helper,mode=force_close)"/>
+							<param name="onclick" value="RunScript(script.finder.helper,mode=force_close)"/>
 							<param name="icon" value="icons/power.png"/>
 							<param name="label" value="$LOCALIZE[33060]"/>
 							<param name="visible" value="String.IsEqual(Skin.String(PowerButtonMode),Force Close)"/>
@@ -1623,7 +1623,7 @@
 						<!-- Search: Open Keyboard -->
 						<include content="IconButton">
 							<param name="control_id" value="805"/>
-							<param name="onclick" value="RunScript(script.fentastic.helper,mode=search_input)"/>
+							<param name="onclick" value="RunScript(script.finder.helper,mode=search_input)"/>
 							<param name="icon" value="icons/search.png"/>
 							<param name="label" value="$LOCALIZE[137]"/>
 							<param name="visible" value="String.IsEqual(Skin.String(SearchBehavior),1) + !Skin.HasSetting(HomeNoSearchButton)"/>
@@ -1631,7 +1631,7 @@
 						<!-- Search: Open Search Window -->
 						<include content="IconButton">
 							<param name="control_id" value="806"/>
-							<param name="onclick" value="RunScript(script.fentastic.helper,mode=open_search_window)"/>
+							<param name="onclick" value="RunScript(script.finder.helper,mode=open_search_window)"/>
 							<param name="icon" value="icons/search.png"/>
 							<param name="label" value="$LOCALIZE[137]"/>
 							<param name="visible" value="String.IsEqual(Skin.String(SearchBehavior),2) + !Skin.HasSetting(HomeNoSearchButton)"/>
@@ -1668,7 +1668,7 @@
 							<param name="visible" value="Skin.HasSetting(Enable.MaintenanceTools)"/>
 						</include>
 						<!-- Custom Menu -->
-						<include>FENtasticTopBarCustomMenuButton</include>
+						<include>FinderTopBarCustomMenuButton</include>
 						<!-- Fullscreen Video -->
 						<include content="IconButton">
 							<param name="control_id" value="812"/>
@@ -1679,39 +1679,39 @@
 						</include>
 					</control>
 					<control type="group">
-						<visible>String.IsEqual(Window(Home).Property(fentastic.disable_infopanel),true) | [![String.IsEqual(ListItem.DBtype,movie) | String.IsEqual(ListItem.DBtype,tvshow) | String.IsEqual(ListItem.DBtype,season) | String.IsEqual(ListItem.DBtype,episode) | [String.IsEqual(Container(9000).ListItem.Property(id),addons) + String.IsEqual(Window(Home).Property(fentastic.widget_focus),true) + [Skin.HasSetting(Enable.AddonInfoPanel) | String.IsEqual(Window(Home).Property(fentastic.category_widget_focus),true)] + [!String.IsEqual(Window(Home).Property(fentastic.category_widget_focus),true) | Skin.HasSetting(Enable.AddonCategorySideblade)] + [!Control.HasFocus(8900) | Skin.HasSetting(Enable.AddonCategorySideblade)]]] + !Skin.HasSetting(TrailerPlaying) + ![Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(fentastic.widget_focus),true) + !Control.HasFocus(9000) + !String.IsEqual(Window(Home).Property(fentastic.disable_infopanel),true)]]</visible>
+						<visible>String.IsEqual(Window(Home).Property(finder.disable_infopanel),true) | [![String.IsEqual(ListItem.DBtype,movie) | String.IsEqual(ListItem.DBtype,tvshow) | String.IsEqual(ListItem.DBtype,season) | String.IsEqual(ListItem.DBtype,episode) | [String.IsEqual(Container(9000).ListItem.Property(id),addons) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + [Skin.HasSetting(Enable.AddonInfoPanel) | String.IsEqual(Window(Home).Property(finder.category_widget_focus),true)] + [!String.IsEqual(Window(Home).Property(finder.category_widget_focus),true) | Skin.HasSetting(Enable.AddonCategorySideblade)] + [!Control.HasFocus(8900) | Skin.HasSetting(Enable.AddonCategorySideblade)]]] + !Skin.HasSetting(TrailerPlaying) + ![Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !Control.HasFocus(9000) + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true)]]</visible>
 						<depth>DepthBars</depth>
 						<animation effect="slide" end="0,-90" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>
 						<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
 						<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
 						<top>35</top>
 						<left>35</left>
-						<!-- FENtastic Hybrid Divider -->
+						<!-- Finder Hybrid Divider -->
 						<control type="image">
 							<left>-19</left>
 							<top>345</top>
 							<width>430</width>
 							<height>4</height>
 							<texture>masks/divider.png</texture>
-							<visible>Skin.HasSetting(FENtasticHybrid) + !Skin.HasSetting(HideMainMenuDivider)</visible>
+							<visible>Skin.HasSetting(FinderHybrid) + !Skin.HasSetting(HideMainMenuDivider)</visible>
 						</control>
-						<!-- FENtastic Plus Divider -->
+						<!-- Finder Plus Divider -->
 						<control type="image">
 							<left>-10</left>
 							<top>210</top>
 							<width>430</width>
 							<height>4</height>
 							<texture>masks/divider.png</texture>
-							<visible>!Skin.HasSetting(HideMainMenuDivider) + !Skin.HasSetting(FENtasticHybrid) + !Skin.HasSetting(ClassicFENtastic) + !Skin.HasSetting(EstuaryLookFeel)</visible>
+							<visible>!Skin.HasSetting(HideMainMenuDivider) + !Skin.HasSetting(FinderHybrid) + !Skin.HasSetting(ClassicFinder) + !Skin.HasSetting(EstuaryLookFeel)</visible>
 						</control>
-						<!-- Classic FENtastic Divider -->
+						<!-- Classic Finder Divider -->
 						<control type="image">
 							<left>-10</left>
 							<top>190</top>
 							<width>430</width>
 							<height>4</height>
 							<texture>masks/divider.png</texture>
-							<visible>!Skin.HasSetting(HideMainMenuDivider) + Skin.HasSetting(ClassicFENtastic)</visible>
+							<visible>!Skin.HasSetting(HideMainMenuDivider) + Skin.HasSetting(ClassicFinder)</visible>
 						</control>
 						<!-- Estuary Divider -->
 						<control type="image">
@@ -1722,7 +1722,7 @@
 							<texture>masks/divider.png</texture>
 							<visible>!Skin.HasSetting(HideMainMenuDivider) + Skin.HasSetting(EstuaryLookFeel)</visible>
 						</control>
-						<!-- FENtastic Hybrid Clock -->
+						<!-- Finder Hybrid Clock -->
 						<control type="label">
 							<left>0</left>
 							<top>-12</top>
@@ -1734,9 +1734,9 @@
 							<label>$INFO[System.Time]</label>
 							<textcolor>unfocused_text</textcolor>
 							<shadowcolor>text_shadow</shadowcolor>
-							<visible>Skin.HasSetting(FENtasticHybrid)</visible>
+							<visible>Skin.HasSetting(FinderHybrid)</visible>
 						</control>
-						<!-- FENtastic Hybrid Artwork -->
+						<!-- Finder Hybrid Artwork -->
 						<control type="image">
 							<left>34</left>
 							<top>205</top>
@@ -1744,9 +1744,9 @@
 							<height>88</height>
 							<aspectratio>keep</aspectratio>
 							<texture colordiffuse="button_focus">$VAR[CustomLogoImage]</texture>
-							<visible>Skin.HasSetting(FENtasticHybrid) + !String.IsEmpty(Skin.String(customlogo))</visible>
+							<visible>Skin.HasSetting(FinderHybrid) + !String.IsEmpty(Skin.String(customlogo))</visible>
 						</control>
-						<!-- FENtastic Hybrid Artwork -->
+						<!-- Finder Hybrid Artwork -->
 						<control type="image">
 							<left>143</left>
 							<top>201</top>
@@ -1754,7 +1754,7 @@
 							<height>92</height>
 							<aspectratio>keep</aspectratio>
 							<texture colordiffuse="button_focus">logos/letters-1.png</texture>
-							<visible>Skin.HasSetting(FENtasticHybrid) + String.IsEmpty(Skin.String(customlogo))</visible>
+							<visible>Skin.HasSetting(FinderHybrid) + String.IsEmpty(Skin.String(customlogo))</visible>
 						</control>
 						<control type="image">
 							<left>14</left>
@@ -1763,25 +1763,25 @@
 							<height>90</height>
 							<aspectratio>keep</aspectratio>
 							<texture>logos/K-logo-1.png</texture>
-							<visible>Skin.HasSetting(FENtasticHybrid) + String.IsEmpty(Skin.String(customlogo))</visible>
+							<visible>Skin.HasSetting(FinderHybrid) + String.IsEmpty(Skin.String(customlogo))</visible>
 						</control>
-						<!-- FENtastic Plus Artwork -->
+						<!-- Finder Plus Artwork -->
 						<control type="image">
 							<left>24</left>
 							<top>-4</top>
 							<width>365</width>
 							<height>85</height>
-							<texture colordiffuse="button_focus" fallback="special://skin/extras/logos/fentastic.png">$VAR[CustomLogoImage]</texture>
-							<visible>!Skin.HasSetting(FENtasticHybrid) + !Skin.HasSetting(ClassicFENtastic) + !Skin.HasSetting(EstuaryLookFeel)</visible>
+							<texture colordiffuse="button_focus" fallback="special://skin/extras/logos/finder.png">$VAR[CustomLogoImage]</texture>
+							<visible>!Skin.HasSetting(FinderHybrid) + !Skin.HasSetting(ClassicFinder) + !Skin.HasSetting(EstuaryLookFeel)</visible>
 						</control>
-						<!-- Classic FENtastic Artwork -->
+						<!-- Classic Finder Artwork -->
 						<control type="image">
 							<left>24</left>
 							<top>-4</top>
 							<width>365</width>
 							<height>85</height>
 							<texture colordiffuse="button_focus" fallback="special://skin/extras/logos/kodi_logo.png">$VAR[CustomLogoImage]</texture>
-							<visible>Skin.HasSetting(ClassicFENtastic) + !String.IsEmpty(Skin.String(customlogo))</visible>
+							<visible>Skin.HasSetting(ClassicFinder) + !String.IsEmpty(Skin.String(customlogo))</visible>
 						</control>
 						<control type="image">
 							<left>17</left>
@@ -1790,7 +1790,7 @@
 							<width>140</width>
 							<height>60</height>
 							<texture colordiffuse="button_focus" fallback="special://skin/media/logos/K-logo.png">$VAR[CustomLogoImage]</texture>
-							<visible>Skin.HasSetting(ClassicFENtastic) + String.IsEmpty(Skin.String(customlogo)) + !String.IsEqual(Skin.String(CurrentSkinColor),Classic FENtastic)</visible>
+							<visible>Skin.HasSetting(ClassicFinder) + String.IsEmpty(Skin.String(customlogo)) + !String.IsEqual(Skin.String(CurrentSkinColor),Classic Finder)</visible>
 						</control>
 						<control type="image">
 							<left>17</left>
@@ -1799,7 +1799,7 @@
 							<width>140</width>
 							<height>60</height>
 							<texture colordiffuse="accent_color" fallback="special://skin/media/logos/K-logo.png">$VAR[CustomLogoImage]</texture>
-							<visible>Skin.HasSetting(ClassicFENtastic) + String.IsEmpty(Skin.String(customlogo)) + String.IsEqual(Skin.String(CurrentSkinColor),Classic FENtastic)</visible>
+							<visible>Skin.HasSetting(ClassicFinder) + String.IsEmpty(Skin.String(customlogo)) + String.IsEqual(Skin.String(CurrentSkinColor),Classic Finder)</visible>
 						</control>
 						<control type="image">
 							<left>55</left>
@@ -1808,7 +1808,7 @@
 							<width>206</width>
 							<height>60</height>
 							<texture colordiffuse="unfocused_text" fallback="special://skin/media/logos/letters.png">$VAR[CustomLogoImage]</texture>
-							<visible>Skin.HasSetting(ClassicFENtastic) + String.IsEmpty(Skin.String(customlogo))</visible>
+							<visible>Skin.HasSetting(ClassicFinder) + String.IsEmpty(Skin.String(customlogo))</visible>
 						</control>
 						<!-- Estuary Artwork -->
 						<control type="image">
@@ -1833,7 +1833,7 @@
 				<control type="group">
 					<animation effect="slide" time="300" start="-492,0" end="0,0" tween="sine" easing="inout">VisibleChange</animation>
 					<width>550</width>
-					<visible>[String.IsEqual(ListItem.DBtype,movie) | String.IsEqual(ListItem.DBtype,tvshow) | String.IsEqual(ListItem.DBtype,season) | String.IsEqual(ListItem.DBtype,episode)] + !Skin.HasSetting(Enable.FullscreenWidgets) + !String.IsEqual(Window(Home).Property(fentastic.disable_infopanel),true)</visible>
+					<visible>[String.IsEqual(ListItem.DBtype,movie) | String.IsEqual(ListItem.DBtype,tvshow) | String.IsEqual(ListItem.DBtype,season) | String.IsEqual(ListItem.DBtype,episode)] + !Skin.HasSetting(Enable.FullscreenWidgets) + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true)</visible>
 					<include>OpenClose_Left</include>
 					<control type="image">
 						<left>30</left>

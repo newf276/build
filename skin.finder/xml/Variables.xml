@@ -1293,12 +1293,12 @@
 		<value condition="!Skin.HasSetting(HideTMDBHTraktResults) + !Skin.HasSetting(HideTraktResults) + String.IsEqual(Skin.String(current_search_provider),0)">true</value>
 		<value>false</value>
 	</variable>
-	<!-- FENtastic Look & Feel Experience -->
+	<!-- Finder Look & Feel Experience -->
 	<variable name="LookFeelLabel">
 		<value condition="Skin.HasSetting(EstuaryLookFeel)">Estuary</value>
-		<value condition="Skin.HasSetting(ClassicFENtastic)">Classic FENtastic</value>
-		<value condition="Skin.HasSetting(FENtasticHybrid)">FENtastic Hybrid</value>
-		<value>FENtastic Plus</value>
+		<value condition="Skin.HasSetting(ClassicFinder)">Classic Finder</value>
+		<value condition="Skin.HasSetting(FinderHybrid)">Finder Hybrid</value>
+		<value>Finder Plus</value>
 	</variable>
 	<!-- OSD Audio Button Behaviour -->
 	<variable name="OSDAudioButtonModeVar">

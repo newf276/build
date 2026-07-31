@@ -22,7 +22,7 @@
     				    <label>Pre-Made Configs</label>
     				    <visible>[System.HasAddon(plugin.video.themoviedb.helper) | System.HasAddon(plugin.video.finder) | System.HasAddon(plugin.video.umbrella) | System.HasAddon(plugin.video.pov) | System.HasAddon(plugin.video.gears) | System.HasAddon(plugin.video.redlight)] + !Skin.HasSetting(Enable.PreMadeConfigs)</visible>
     				    <onclick>Dialog.Close(all)</onclick>
-    				    <onclick>RunScript(script.fentastic.helper,mode=pre_config)</onclick>
+    				    <onclick>RunScript(script.finder.helper,mode=pre_config)</onclick>
 					</item>
                     <item>
                         <label>Reload Skin</label>
@@ -80,7 +80,7 @@
 						<label>Video Cache Config</label>
 						<visible>!Skin.HasSetting(ToolsNoVideoCacheConfig)</visible>
 						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.fentastic.helper,mode=advanced_set)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=advanced_set)</onclick>
 					</item>
                     <item>
                         <label>System Information</label>
