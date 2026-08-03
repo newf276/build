@@ -18,42 +18,44 @@
 			<control type="panel" id="9000">
 				<include>ButtonMenuList_dialog</include>
 				<onback>Dialog.Close(1115)</onback>
-				<onback>ActivateWindow(1111)</onback>
+				<onback condition="!String.IsEqual(Window(Home).Property(Finder.DirectDialog1115),true)">ActivateWindow(1111)</onback>
+				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1115),true)">ActivateWindow(1170)</onback>
+				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1115),true)">ClearProperty(Finder.DirectDialog1115,home)</onback>
 				<content>
 					<item>
 						<label>Finder</label>
 						<visible>System.HasAddon(plugin.video.finder)</visible>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1115)</onclick>
 						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=alldebrid.authenticate)</onclick>
 					</item>
 					<item>
 						<label>Red Light</label>
 						<visible>System.HasAddon(plugin.video.redlight)</visible>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1115)</onclick>
 						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=alldebrid.authenticate)</onclick>
 					</item>
 					<item>
 						<label>The Gears</label>
 						<visible>System.HasAddon(plugin.video.gears)</visible>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1115)</onclick>
 						<onclick>RunPlugin(plugin://plugin.video.gears/?mode=alldebrid.authenticate)</onclick>
 					</item>
 					<item>
 						<label>Umbrella</label>
 						<visible>System.HasAddon(plugin.video.umbrella)</visible>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1115)</onclick>
 						<onclick>RunPlugin(plugin://plugin.video.umbrella/?action=ad_Authorize)</onclick>
 					</item>
 					<item>
 						<label>POV</label>
 						<visible>System.HasAddon(plugin.video.pov)</visible>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1115)</onclick>
 						<onclick>PlayMedia("plugin://plugin.video.pov/?mode=myservices&amp;name=My+Services&amp;isFolder=false")</onclick>
 					</item>
 					<item>
 						<label>ResolveURL Settings</label>
 						<visible>System.HasAddon(plugin.video.script.module.resolveurl)</visible>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1115)</onclick>
 						<onclick>RunScript(script.finder.helper,rurl_settings_ad)</onclick>
 					</item>
 				</content>

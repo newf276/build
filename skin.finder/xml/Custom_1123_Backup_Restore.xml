@@ -23,24 +23,24 @@
 				<onback>ActivateWindow(1106)</onback>
 				<content>
 					<item>
-						<label>Set Backup Directory</label>
-						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=set_backup_directory)</onclick>
-					</item>
-					<item>
 						<label>Favourites</label>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1123)</onclick>
 						<onclick>ActivateWindow(1155)</onclick>
 					</item>
 					<item>
 						<label>GUI Settings</label>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1123)</onclick>
 						<onclick>ActivateWindow(1156)</onclick>
 					</item>
 					<item>
 						<label>Skin/GUI Defaults</label>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1123)</onclick>
 						<onclick>ActivateWindow(1157)</onclick>
+					</item>
+					<item>
+						<label>Set Backup Directory</label>
+						<onclick>Dialog.Close(1123)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=set_backup_directory)</onclick>
 					</item>
 				</content>
 			</control>

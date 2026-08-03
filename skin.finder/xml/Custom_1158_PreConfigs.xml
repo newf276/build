@@ -21,7 +21,9 @@
 					<param name="panel_height" value="420" />
 				</include>
 				<onback>Dialog.Close(1158)</onback>
-				<onback>ActivateWindow(1106)</onback>
+				<onback condition="!String.IsEqual(Window(Home).Property(Finder.DirectDialog1158),true)">ActivateWindow(1106)</onback>
+				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1158),true)">ActivateWindow(1170)</onback>
+				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1158),true)">ClearProperty(Finder.DirectDialog1158,home)</onback>
 				<content>
 					<item>
 						<label>Finder</label>
@@ -61,6 +63,7 @@
 					<item>
 						<label>TMDb Helper</label>
 						<onclick condition="!System.HasAddon(plugin.video.themoviedb.helper)">RunScript(script.finder.helper,mode=addon_not_installed&amp;addon=TMDb Helper)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.themoviedb.helper)">ClearProperty(Finder.DirectDialog1158,home)</onclick>
 						<onclick condition="System.HasAddon(plugin.video.themoviedb.helper)">Dialog.Close(1158)</onclick>
 						<onclick condition="System.HasAddon(plugin.video.themoviedb.helper)">RunScript(script.finder.helper,mode=apply_pre_config&amp;config=tmdbh)</onclick>
 					</item>

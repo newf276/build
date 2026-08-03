@@ -56,21 +56,6 @@
 						</include>
 					</control>
 				</control>
-				<!-- TV SHOWS -->
-				<control type="group" id="22000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),tvshows)</visible>
-					<include content="Visible_Right_Delayed">
-						<param name="id" value="tvshows"/>
-					</include>
-					<control type="grouplist" id="22001">
-						<include>WidgetGroupListCommon</include>
-						<pagecontrol>22099</pagecontrol>
-						<include content="TVShowWidgets" condition="!Skin.HasSetting(HomeMenuNoTVShowsButton)"/>
-					</control>
-					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
-						<param name="scrollbar_id" value="22099"/>
-					</include>
-				</control>
 				<!-- MOVIES -->
 				<control type="group" id="19000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),movies)</visible>
@@ -84,6 +69,21 @@
 					</control>
 					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
 						<param name="scrollbar_id" value="19099"/>
+					</include>
+				</control>
+				<!-- TV SHOWS -->
+				<control type="group" id="22000">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(id),tvshows)</visible>
+					<include content="Visible_Right_Delayed">
+						<param name="id" value="tvshows"/>
+					</include>
+					<control type="grouplist" id="22001">
+						<include>WidgetGroupListCommon</include>
+						<pagecontrol>22099</pagecontrol>
+						<include content="TVShowWidgets" condition="!Skin.HasSetting(HomeMenuNoTVShowsButton)"/>
+					</control>
+					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
+						<param name="scrollbar_id" value="22099"/>
 					</include>
 				</control>
 				<!-- CUSTOM 1 -->

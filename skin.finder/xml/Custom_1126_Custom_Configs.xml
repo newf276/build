@@ -24,12 +24,12 @@
 				<content>
 					<item>
 						<label>Backup & Restore Configs</label>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1126)</onclick>
 						<onclick>ActivateWindow(1124)</onclick>
 					</item>
 					<item>
 						<label>Import & Export Configs</label>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1126)</onclick>
 						<onclick>ActivateWindow(1125)</onclick>
 					</item>
 				</content>

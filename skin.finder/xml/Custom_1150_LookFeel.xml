@@ -34,7 +34,7 @@
 				<align>center</align>
 				<onleft>103</onleft>
 				<onright>101</onright>
-				<onclick>RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=fenplus&amp;keep_artwork=false)</onclick>
+				<onclick>RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=finderplus&amp;keep_artwork=false)</onclick>
 				<onclick>Close</onclick>
 				<texturefocus border="48" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
 				<texturenofocus border="48" colordiffuse="button_focus2">buttons/dialogbutton-nofo.png</texturenofocus>

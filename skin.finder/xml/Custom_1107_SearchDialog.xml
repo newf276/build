@@ -16,6 +16,9 @@
 				<param name="diffusetexture" value="masks/dialog-bg-squareish.png" />
 			</include>
 			<control type="panel" id="9000">
+				<onback>Dialog.Close(1107)</onback>
+				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1107),true)">ActivateWindow(1170)</onback>
+				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1107),true)">ClearProperty(Finder.DirectDialog1107,home)</onback>
 				<include content="ButtonMenuList_dialog">
 					<param name="panel_height" value="560" />
 				</include>
@@ -23,7 +26,7 @@
 					<!-- MOVIES -->
 					<item>
 						<label>Movies</label>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1107)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),0)">ActivateWindow(10025,"plugin://plugin.video.themoviedb.helper/?info=search&amp;tmdb_type=movie",return)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),1)">ActivateWindow(Videos,"plugin://plugin.video.finder/?action=movie&amp;mode=navigator.search_history&amp;name=Movies",return)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),2)">ActivateWindow(Videos,"plugin://plugin.video.umbrella/?action=movieSearch",return)</onclick>
@@ -35,7 +38,7 @@
 					<!-- TV SHOWS -->
 					<item>
 						<label>TV Shows</label>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1107)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),0)">ActivateWindow(10025,"plugin://plugin.video.themoviedb.helper/?info=search&amp;tmdb_type=tv",return)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),1)">ActivateWindow(Videos,"plugin://plugin.video.finder/?action=tvshow&amp;mode=navigator.search_history&amp;name=TV%20Shows",return)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),2)">ActivateWindow(Videos,"plugin://plugin.video.umbrella/?action=tvSearch",return)</onclick>
@@ -47,7 +50,7 @@
 					<!-- ANIME -->
 					<item>
 						<label>Anime</label>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1107)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),1)">ActivateWindow(10025,"plugin://plugin.video.finder/?action=anime&amp;mode=navigator.search_history&amp;name=Search%20History%20Anime",return)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),4)">ActivateWindow(10025,"plugin://plugin.video.gears/?action=anime&amp;mode=navigator.search_history&amp;name=Search%20History%20Anime",return)</onclick>
 						<visible>String.IsEqual(Skin.String(current_search_provider),1) | String.IsEqual(Skin.String(current_search_provider),4)</visible>
@@ -57,7 +60,7 @@
 					<!-- COLLECTIONS / BOX SETS -->
 					<item>
 						<label>Movie Collections</label>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1107)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),0)">ActivateWindow(10025,"plugin://plugin.video.themoviedb.helper/?info=search&amp;tmdb_type=collection",return)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),2)">ActivateWindow(10025,"plugin://plugin.video.umbrella/?action=collections_Search&amp;folderName=Search%20TMDb%20Collections",return)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),3)">ActivateWindow(Videos,"plugin://plugin.video.pov/?action=tmdb_collections&amp;mode=search_history",return)</onclick>
@@ -67,7 +70,7 @@
 					<!-- ACTORS / PEOPLE -->
 					<item>
 						<label>Actors/Actresses</label>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1107)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),0)">ActivateWindow(10025,"plugin://plugin.video.themoviedb.helper/?info=search&amp;tmdb_type=person",return)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),1)">ActivateWindow(Videos,"plugin://plugin.video.finder/?action=people&amp;mode=navigator.search_history&amp;name=People",return)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),3)">ActivateWindow(Videos,"plugin://plugin.video.pov/?action=people&amp;mode=search_history",return)</onclick>
@@ -79,7 +82,7 @@
 					<!-- ACTORS / ACTRESSES (MOVIES) -->
 					<item>
 						<label>Actors/Actresses (Movies)</label>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1107)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),2)">ActivateWindow(Videos,"plugin://plugin.video.umbrella/?action=moviePerson",return)</onclick>
 						<visible>String.IsEqual(Skin.String(current_search_provider),2)</visible>
 					</item>
@@ -87,7 +90,7 @@
 					<!-- ACTORS / ACTRESSES (TV SHOWS) -->
 					<item>
 						<label>Actors/Actresses (TV Shows)</label>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1107)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),2)">ActivateWindow(Videos,"plugin://plugin.video.umbrella/?action=tvPerson",return)</onclick>
 						<visible>String.IsEqual(Skin.String(current_search_provider),2)</visible>
 					</item>
@@ -95,7 +98,7 @@
 					 <!-- ACTORS / ACTRESSES (TMDB) -->
 					<item>
 						<label>Actors TMDb</label>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1107)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),0)">ActivateWindow(10025,"plugin://plugin.video.themoviedb.helper/?info=search&amp;tmdb_type=person",return)</onclick>
 						<visible>String.IsEqual(Skin.String(current_search_provider),0)</visible>
 					</item>
@@ -103,7 +106,7 @@
 					<!-- COMPANIES / STUDIOS -->
 					<item>
 						<label>Companies/Studios</label>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1107)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),0)">ActivateWindow(10025,"plugin://plugin.video.themoviedb.helper/?info=search&amp;tmdb_type=company",return)</onclick>
 						<visible>String.IsEqual(Skin.String(current_search_provider),0)</visible>
 					</item> 
@@ -111,7 +114,7 @@
 					<!-- KEYWORDS (MOVIES) -->
 					<item>
 						<label>$VAR[KeywordMoviesLabelVar]</label>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1107)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),1)">ActivateWindow(Videos,"plugin://plugin.video.finder/?action=tmdb_keyword_movie&amp;mode=navigator.search_history&amp;name=Keywords%20(Movies)",return)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),3)">ActivateWindow(Videos,"plugin://plugin.video.pov/?action=imdb_keyword_movie&amp;mode=search_history",return)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),4)">ActivateWindow(Videos,"plugin://plugin.video.gears/?action=tmdb_keyword_movie&amp;mode=navigator.search_history&amp;name=Keywords%20(Movies)",return)</onclick>
@@ -122,7 +125,7 @@
 					<!-- KEYWORDS (TV SHOWS) -->
 					<item>
 						<label>$VAR[KeywordTVShowsLabelVar]</label>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1107)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),1)">ActivateWindow(Videos,"plugin://plugin.video.finder/?action=tmdb_keyword_tvshow&amp;mode=navigator.search_history&amp;name=Keywords%20(TV%20Shows)",return)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),3)">ActivateWindow(Videos,"plugin://plugin.video.pov/?action=imdb_keyword_tvshow&amp;mode=search_history",return)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),4)">ActivateWindow(Videos,"plugin://plugin.video.gears/?action=tmdb_keyword_tvshow&amp;mode=navigator.search_history&amp;name=Keywords%20(TV%20Shows)",return)</onclick>
@@ -133,7 +136,7 @@
 					<!-- KEYWORDS (TMDB) -->
 					<item>
 						<label>Keywords TMDb</label>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1107)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),0)">ActivateWindow(10025,"plugin://plugin.video.themoviedb.helper/?info=search&amp;tmdb_type=keyword",return)</onclick>
 						<visible>String.IsEqual(Skin.String(current_search_provider),0)</visible>
 					</item>
@@ -141,7 +144,7 @@
 					<!-- TRAKT LISTS -->
 					<item>
 						<label>Trakt Lists</label>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1107)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),0)">ActivateWindow(10025,"plugin://plugin.video.themoviedb.helper/?info=trakt_searchlists&amp;tmdb_type=both",return)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),1)">ActivateWindow(10025,"plugin://plugin.video.finder/?action=trakt_lists&amp;mode=navigator.search_history",return)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),2)">ActivateWindow(10025,"plugin://plugin.video.umbrella/?action=movies_SearchLists&amp;media_type=movies",return)</onclick>
@@ -153,14 +156,14 @@
 					<!-- KODI ADDONS -->
 					<item>
 						<label>Addons</label>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1107)</onclick>
 						<onclick>ActivateWindow(addonbrowser,addons://search/,return)</onclick>
 					</item>
 
 					<!-- YOUTUBE ADDON -->
 					<item>
 						<label>YouTube</label>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1107)</onclick>
 						<onclick condition="System.AddonIsEnabled(plugin.video.youtube)">
 							ActivateWindow(videos,"plugin://plugin.video.youtube/kodion/search/list/",return)</onclick>
 						<onclick

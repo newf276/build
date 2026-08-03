@@ -22,17 +22,17 @@
 				<content>
 					<item>
 						<label>Backup GUI Settings</label>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1156)</onclick>
 						<onclick>RunScript(script.finder.helper,mode=backup_gui)</onclick>
 					</item>
 					<item>
 						<label>Restore GUI Settings</label>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1156)</onclick>
 						<onclick>RunScript(script.finder.helper,mode=restore_gui)</onclick>
 					</item>
 					<item>
 						<label>Restore Default GUI Settings</label>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1156)</onclick>
 						<onclick>RunScript(script.finder.helper,mode=restore_gui_dflt)</onclick>
 					</item>
 				</content>

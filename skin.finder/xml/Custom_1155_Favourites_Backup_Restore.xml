@@ -24,12 +24,12 @@
 				<content>
 					<item>
 						<label>Backup Favourites</label>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1155)</onclick>
 						<onclick>RunScript(script.finder.helper,mode=backup_favs)</onclick>
 					</item>
 					<item>
 						<label>Restore Favourites</label>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1155)</onclick>
 						<onclick>RunScript(script.finder.helper,mode=restore_favs)</onclick>
 					</item>
 				</content>

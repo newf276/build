@@ -16,32 +16,35 @@
 				<param name="diffusetexture" value="masks/dialog-bg-squareish.png" />
 			</include>
 			<control type="panel" id="9000">
+				<onback>Dialog.Close(1152)</onback>
+				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1152),true)">ActivateWindow(1170)</onback>
+				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1152),true)">ClearProperty(Finder.DirectDialog1152,home)</onback>
 				<include content="ButtonMenuList_dialog">
 					<param name="panel_height" value="280" />
 				</include>
 				<content>
 					<item>
 						<label>[COLOR FFC40300]Finder Plus[/COLOR]</label>
-						<onclick>Skin.SetString(Finder.PendingLookFeel,fenplus)</onclick>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Skin.SetString(Finder.PendingLookFeel,finderplus)</onclick>
+						<onclick>Dialog.Close(1152)</onclick>
 						<onclick>ActivateWindow(1153)</onclick>
 					</item>
 					<item>
 						<label>[COLOR FFFF8A00]Finder Hybrid[/COLOR]</label>
 						<onclick>Skin.SetString(Finder.PendingLookFeel,hybrid)</onclick>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1152)</onclick>
 						<onclick>ActivateWindow(1153)</onclick>
 					</item>
 					<item>
 						<label>[COLOR FFEAECED]Classic Finder[/COLOR]</label>
 						<onclick>Skin.SetString(Finder.PendingLookFeel,classic)</onclick>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1152)</onclick>
 						<onclick>ActivateWindow(1153)</onclick>
 					</item>
 					<item>
 						<label>[COLOR FF12A0C7]Default Estuary[/COLOR]</label>
 						<onclick>Skin.SetString(Finder.PendingLookFeel,estuary)</onclick>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1152)</onclick>
 						<onclick>ActivateWindow(1153)</onclick>
 					</item>
 				</content>

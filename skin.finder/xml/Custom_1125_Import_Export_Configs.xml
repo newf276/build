@@ -24,12 +24,12 @@
 				<content>
 					<item>
 						<label>Import Config</label>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1125)</onclick>
 						<onclick>RunScript(script.finder.helper,mode=import_config)</onclick>
 					</item>
 					<item>
 						<label>Export Config</label>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1125)</onclick>
 						<onclick>RunScript(script.finder.helper,mode=export_config)</onclick>
 					</item>
 				</content>
