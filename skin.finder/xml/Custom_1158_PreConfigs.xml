@@ -2,44 +2,47 @@
 <window type="dialog" id="1158">
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<include>Animation_DialogPopupOpenClose</include>
-	<onload>Skin.Reset(SelectedPreConfigAddon)</onload>
 	<controls>
 		<control type="group">
 			<centerleft>50%</centerleft>
 			<width>600</width>
 			<centertop>50%</centertop>
-			<height>560</height>
+			<height>350</height>
 			<include content="DialogBackgroundCommons">
 				<param name="width" value="600" />
-				<param name="height" value="$VAR[DialogHeight6]" />
-				<param name="header_label" value="Pre-Made Configs" />
+				<param name="height" value="$VAR[DialogHeight3]" />
+				<param name="header_label" value="$VAR[SelectedPreConfigAddonLabelVar]" />
 				<param name="header_id" value="" />
 				<param name="diffusetexture" value="masks/dialog-bg-squareish.png" />
 			</include>
 			<control type="panel" id="9000">
-				<include content="ButtonMenuList_dialog">
-					<param name="panel_height" value="420" />
-				</include>
+				<include>ButtonMenuList_dialog</include>
 				<onback>Dialog.Close(1158)</onback>
-				<onback condition="!String.IsEqual(Window(Home).Property(Finder.DirectDialog1158),true)">ActivateWindow(1106)</onback>
-				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1158),true)">ActivateWindow(1170)</onback>
-				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1158),true)">ClearProperty(Finder.DirectDialog1158,home)</onback>
 				<content>
+					<!-- Finder -->
 					<item>
-						<label>Finder</label>
-						<onclick condition="System.HasAddon(plugin.video.finder)">Skin.SetString(SelectedPreConfigAddon,finder)</onclick>
-						<onclick condition="System.HasAddon(plugin.video.finder)">Dialog.Close(1158)</onclick>
-						<onclick condition="System.HasAddon(plugin.video.finder)">ActivateWindow(1159)</onclick>
-						<onclick condition="!System.HasAddon(plugin.video.finder)">RunScript(script.finder.helper,mode=addon_not_installed&amp;addon=Finder)</onclick>
+						<label>Trakt</label>
+						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),finder)</visible>
+						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
+						<onclick>Dialog.Close(1159)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_trakt)</onclick>
+					</item>
+					<item>
+						<label>TMDB</label>
+						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),finder)</visible>
+						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
+						<onclick>Dialog.Close(1159)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_tmdb)</onclick>
+					</item>
+					<item>
+						<label>MDBList</label>
+						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),finder)</visible>
+						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
+						<onclick>Dialog.Close(1159)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_mdblist)</onclick>
 					</item>
 				</content>
 			</control>
-			<include content="UpDownArrows">
-				<param name="container_id" value="9000" />
-				<param name="posx" value="276" />
-				<param name="up_posy" value="-35" />
-				<param name="down_posy" value="570" />
-			</include>
 		</control>
 	</controls>
 </window>
