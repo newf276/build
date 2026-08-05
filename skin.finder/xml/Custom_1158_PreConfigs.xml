@@ -16,8 +16,9 @@
 				<param name="diffusetexture" value="masks/dialog-bg-squareish.png" />
 			</include>
 			<control type="panel" id="9000">
-				<include>ButtonMenuList_dialog</include>
-				<onback>Dialog.Close(1158)</onback>
+				<include content="ButtonMenuList_dialog">
+					<param name="panel_height" value="420" />
+				</include>
 				<content>
 					<!-- Finder -->
 					<item>
