@@ -24,16 +24,6 @@
                         <onclick>ActivateWindow(1158)</onclick>
                     </item>
                     <item>
-                        <label>Import/Export Redlight Settings</label>
-                        <onclick>Dialog.Close(all)</onclick>
-                        <onclick condition="System.AddonIsEnabled(plugin.video.redlight)">ActivateWindow(10025,"plugin://plugin.video.redlight/?mode=navigator.import_export",return)</onclick>
-                    </item>
-                    <item>
-                        <label>Import/Export Finder Settings</label>
-                        <onclick>Dialog.Close(all)</onclick>
-                        <onclick condition="System.AddonIsEnabled(plugin.video.finder)">ActivateWindow(10025,"plugin://plugin.video.finder/?mode=navigator.import_export",return)</onclick>
-                    </item>
-                    <item>
                         <label>Reload Skin</label>
                         <onclick>Dialog.Close(all)</onclick>
                         <onclick>ReloadSkin()</onclick>
@@ -90,6 +80,16 @@
                         <onclick condition="System.AddonIsEnabled(plugin.program.cleaner)">ActivateWindow(10001,"plugin://plugin.program.cleaner/?description=Backup%20and%20Restore%20Build%5b%2fB%5d&amp;kodi&amp;mode=12&amp;name=Backup%2fRestore%20Build%5b%2fB%5d&amp;name2&amp;url&amp;version",return)</onclick>
                         <onclick condition="System.HasAddon(plugin.program.cleaner) + !System.AddonIsEnabled(plugin.program.cleaner)">EnableAddon(plugin.program.cleaner)</onclick>
                         <onclick condition="!System.HasAddon(plugin.program.cleaner)">InstallAddon(plugin.program.cleaner)</onclick>
+                    </item>
+                    <item>
+                        <label>Import/Export Redlight Settings</label>
+                        <onclick>Dialog.Close(all)</onclick>
+                        <onclick condition="System.AddonIsEnabled(plugin.video.redlight)">ActivateWindow(10025,"plugin://plugin.video.redlight/?mode=navigator.import_export",return)</onclick>
+                    </item>
+                    <item>
+                        <label>Import/Export Finder Settings</label>
+                        <onclick>Dialog.Close(all)</onclick>
+                        <onclick condition="System.AddonIsEnabled(plugin.video.finder)">ActivateWindow(10025,"plugin://plugin.video.finder/?mode=navigator.import_export",return)</onclick>
                     </item>
 				</content>
 			</control>
