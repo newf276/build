@@ -21,16 +21,28 @@
 				<onback>ActivateWindow(1106)</onback>
 				<content>
 					<item>
-						<label>Authorize All-Debrid Finder</label>
-						<visible>!Skin.HasSetting(AuthNoAllDebrid)</visible>
-						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=alldebrid.authenticate)</onclick>
-					</item>
-					<item>
 						<label>Authorize MDbList Finder</label>
 						<visible>!Skin.HasSetting(AuthNoAllDebrid)</visible>
 						<onclick>Dialog.Close(all)</onclick>
 						<onclick>RunScript(plugin.video.finder/?mode=mdblist.mdblist_authenticate)</onclick>
+					</item>
+					<item>
+						<label>Authorize TMDB Finder</label>
+						<visible>!Skin.HasSetting(AuthNoAllDebrid)</visible>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=tmdblist_api.authenticate)</onclick>
+					</item>
+					<item>
+						<label>Authorize Trakt Finder</label>
+						<visible>!Skin.HasSetting(AuthNoTrakt)</visible>
+						<onclick>Dialog.Close(all)</onclick>
+                        <onclick>RunPlugin(plugin://plugin.video.finder/?mode=trakt.trakt_authenticate)</onclick>
+					</item>
+					<item>
+						<label>Authorize All-Debrid Finder</label>
+						<visible>!Skin.HasSetting(AuthNoAllDebrid)</visible>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=alldebrid.authenticate)</onclick>
 					</item>
 					<item>
 						<label>Authorize Premiumize Finder</label>
@@ -45,22 +57,52 @@
 						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=real_debrid.authenticate)</onclick>
 					</item>
 					<item>
-						<label>Authorize TMDB Finder</label>
-						<visible>!Skin.HasSetting(AuthNoAllDebrid)</visible>
-						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=tmdblist_api.authenticate)</onclick>
-					</item>
-					<item>
 						<label>Authorize Torbox Finder</label>
 						<visible>!Skin.HasSetting(AuthNoTorbox)</visible>
 						<onclick>Dialog.Close(all)</onclick>
 						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=torbox.authenticate)</onclick>
 					</item>
 					<item>
-						<label>Authorize Trakt Finder</label>
+						<label>Authorize MDbList Redlight</label>
+						<visible>!Skin.HasSetting(AuthNoAllDebrid)</visible>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(plugin.video.redlight/?mode=mdblist.mdblist_authenticate)</onclick>
+					</item>
+					<item>
+						<label>Authorize TMDB Redlight</label>
+						<visible>!Skin.HasSetting(AuthNoAllDebrid)</visible>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=tmdblist_api.authenticate)</onclick>
+					</item>
+					<item>
+						<label>Authorize Trakt Redlight</label>
 						<visible>!Skin.HasSetting(AuthNoTrakt)</visible>
 						<onclick>Dialog.Close(all)</onclick>
-                        <onclick>RunPlugin(plugin://plugin.video.finder/?mode=trakt.trakt_authenticate)</onclick>
+                        <onclick>RunPlugin(plugin://plugin.video.redlight/?mode=trakt.trakt_authenticate)</onclick>
+					</item>
+					<item>
+						<label>Authorize All-Debrid Redlight</label>
+						<visible>!Skin.HasSetting(AuthNoAllDebrid)</visible>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=alldebrid.authenticate)</onclick>
+					</item>
+					<item>
+						<label>Authorize Premiumize Redlight</label>
+						<visible>!Skin.HasSetting(AuthNoPremiumize)</visible>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=premiumize.authenticate)</onclick>
+					</item>
+					<item>
+						<label>Authorize Real-Debrid Redlight </label>
+						<visible>!Skin.HasSetting(AuthNoRealDebrid)</visible>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=real_debrid.authenticate)</onclick>
+					</item>
+					<item>
+						<label>Authorize Torbox Redlight</label>
+						<visible>!Skin.HasSetting(AuthNoTorbox)</visible>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=torbox.authenticate)</onclick>
 					</item>
 				</content>
 			</control>

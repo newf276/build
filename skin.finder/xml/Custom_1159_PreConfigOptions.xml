@@ -22,26 +22,38 @@
 				<content>
 					<!-- Finder -->
 					<item>
-						<label>MDBList</label>
-						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),finder)</visible>
+						<label>[COLOR darkgoldenrod]Finder-TMDB[/COLOR]</label>
+
 						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
 						<onclick>Dialog.Close(1159)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_mdblist)</onclick>
+						<onclick>RunScript(script.redlight.helper,mode=apply_pre_config&amp;config=finder_tmdb)</onclick>
 					</item>
 					<item>
-						<label>Trakt</label>
-						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),finder)</visible>
+						<label>[COLOR lavender]Finder-Trakt[/COLOR]</label>
+
 						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
 						<onclick>Dialog.Close(1159)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_trakt)</onclick>
+						<onclick>RunScript(script.redlight.helper,mode=apply_pre_config&amp;config=finder_trakt)</onclick>
 					</item>
-					<item>
-						<label>TMDB</label>
-						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),finder)</visible>
-						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
-						<onclick>Dialog.Close(1159)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_tmdb)</onclick>
-					</item>
+					<!-- Redlight -->
+                    <item>
+						<label>[COLOR dodgerblue]Redlight-MDBList[/COLOR]</label>
+
+                        <onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(script.redlight.helper,mode=apply_pre_config&amp;config=redlight_mdblist)</onclick>
+                    </item>
+                    <item>
+						<label>[COLOR darkgoldenrod]Redlight-TMDB[/COLOR]</label>
+
+                        <onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(script.redlight.helper,mode=apply_pre_config&amp;config=redlight_tmdb)</onclick>
+                    </item>
+                    <item>
+						<label>[COLOR lavender]Redlight-Trakt[/COLOR]</label>
+
+                        <onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(script.redlight.helper,mode=apply_pre_config&amp;config=redlight_trakt)</onclick>
+                    </item>
 				</content>
 			</control>
 		</control>
