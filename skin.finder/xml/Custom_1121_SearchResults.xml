@@ -542,8 +542,8 @@
 							<include content="IconButton">
 								<param name="control_id" value="802"/>
 								<param name="onclick" value="$VAR[TRAKTButtonActionsVar]"/>
-								<param name="icon" value="icons/trakt-icon-white.png"/>
-								<param name="label" value="Trakt Lists"/>
+								<param name="icon" value="icons/menu.png"/>
+								<param name="label" value="My Lists"/>
 							</include>
 							<!-- Studios -->
 							<include content="IconButton" condition="System.HasAddon(plugin.video.themoviedb.helper)">

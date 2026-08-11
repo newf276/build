@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<includes>
-    <include name="MoviesMainMenu">
-        <item>
-            <label>Movies</label>
-            <onclick>ActivateWindow(Videos,plugin://plugin.video.fenlight/?list_id=watchlist&list_name=Movie+Watchlist&media_type=movie&mode=tmdblist.build_tmdb_list,return)</onclick>
-            <property name="menu_id">$NUMBER[19000]</property>
-            <thumb>icons/sidemenu/movies.png</thumb>
-            <property name="id">movies</property>
-            <visible>!Skin.HasSetting(HomeMenuNoMoviesButton)</visible>
-        </item>
-    </include>
-</includes>
+    <includes>
+        <include name="MoviesMainMenu">
+            <item>
+                <label>Empty</label>
+                <onclick>noop</onclick>
+                <visible>false</visible>
+            </item>
+        </include>
+    </includes>
