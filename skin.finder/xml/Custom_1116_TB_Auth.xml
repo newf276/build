@@ -29,10 +29,10 @@
 						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=torbox.authenticate)</onclick>
 					</item>
 					<item>
-						<label>Red Light</label>
-						<visible>System.HasAddon(plugin.video.redlight)</visible>
+						<label>Fen Light</label>
+						<visible>System.HasAddon(plugin.video.fenlight)</visible>
 						<onclick>Dialog.Close(1116)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=torbox.authenticate)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.fenlight/?mode=torbox.authenticate)</onclick>
 					</item>
 					<item>
 						<label>The Gears</label>

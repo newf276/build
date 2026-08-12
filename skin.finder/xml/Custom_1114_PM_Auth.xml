@@ -29,10 +29,10 @@
 						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=premiumize.authenticate)</onclick>
 					</item>
 					<item>
-						<label>Red Light</label>
-						<visible>System.HasAddon(plugin.video.redlight)</visible>
+						<label>Fen Light</label>
+						<visible>System.HasAddon(plugin.video.fenlight)</visible>
 						<onclick>Dialog.Close(1114)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=premiumize.authenticate)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.fenlight/?mode=premiumize.authenticate)</onclick>
 					</item>
 					<item>
 						<label>The Gears</label>

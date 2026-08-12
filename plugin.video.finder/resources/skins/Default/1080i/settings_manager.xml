@@ -1917,7 +1917,7 @@
                       </item>
                       <item>
                           <visible>Container(2000).HasFocus(50)</visible>
-                          <visible>!String.IsEqual(Window(10000).Property(finder.trakt.client),30e6c73030cc41dbff996200ac3060cde689555ba207020e08a2175533b912c3)</visible>
+                          <visible>!String.IsEqual(Window(10000).Property(finder.trakt.client),d37e53be8a9ad6a243d6e72e6271de71bac2f718c8c512b93198bf3fd747ec37)</visible>
                           <property name="setting_label">    - Restore Default Client ID Key</property>
                           <property name="setting_type">action</property>
                           <property name="setting_value">...</property>
@@ -1934,7 +1934,7 @@
                       </item>
                       <item>
                           <visible>Container(2000).HasFocus(50)</visible>
-                          <visible>!String.IsEqual(Window(10000).Property(finder.trakt.secret),726f6b12a9f0079d5850a7bb0e15860725cd487cbfb54ce5471de217639465c5)</visible>
+                          <visible>!String.IsEqual(Window(10000).Property(finder.trakt.secret),f1006109f91fb48f1fa97abb9fe35506e72af8843972efedfd0c7c544bfa63dd)</visible>
                           <property name="setting_label">    - Restore Default Client Secret Key</property>
                           <property name="setting_type">action</property>
                           <property name="setting_value">...</property>
@@ -2042,7 +2042,7 @@
                       </item>
                       <item>
                           <visible>Container(2000).HasFocus(50)</visible>
-                          <visible>!String.IsEqual(Window(10000).Property(finder.tmdb_api),a0bf207c5ff6c0caabac0327e39b1cd2)</visible>
+                          <visible>!String.IsEqual(Window(10000).Property(finder.tmdb_api),772defd0fb9daa76166a0163c458ad7e)</visible>
                           <property name="setting_label">    - Restore Default TMDb API Key</property>
                           <property name="setting_type">action</property>
                           <property name="setting_value">...</property>
@@ -2051,7 +2051,7 @@
                       </item>
                       <item>
                           <visible>Container(2000).HasFocus(50)</visible>
-                          <visible>!String.IsEqual(Window(10000).Property(finder.tmdb_api),a0bf207c5ff6c0caabac0327e39b1cd2)</visible>
+                          <visible>!String.IsEqual(Window(10000).Property(finder.tmdb_api),772defd0fb9daa76166a0163c458ad7e)</visible>
                           <property name="setting_label">Test API Key...</property>
                           <property name="setting_type">action</property>
                           <property name="setting_value">...</property>

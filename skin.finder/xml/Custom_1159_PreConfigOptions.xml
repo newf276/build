@@ -22,6 +22,13 @@
 				<content>
 					<!-- Fen Light -->
 					<item>
+						<label>MDB List</label>
+						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),fenlight)</visible>
+						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
+						<onclick>Dialog.Close(1159)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=fenlight_mdblist)</onclick>
+					</item>
+					<item>
 						<label>TMDB</label>
 						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),fenlight)</visible>
 						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
@@ -29,19 +36,18 @@
 						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=fenlight_tmdb)</onclick>
 					</item>
 					<item>
-						<label>Trakt</label>
-                        
+						<label>Trakt Library</label>
 						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),fenlight)</visible>
 						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
 						<onclick>Dialog.Close(1159)</onclick>
 						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=fenlight_trakt)</onclick>
 					</item>
 					<item>
-						<label>MDB List</label>
+						<label>Trakt Watchlist</label>
 						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),fenlight)</visible>
 						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
 						<onclick>Dialog.Close(1159)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=fenlight_mdblist)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=redlight_basic)</onclick>
 					</item>
 					<!-- Finder -->
 					<item>
@@ -59,11 +65,18 @@
 						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_tmdb)</onclick>
 					</item>
 					<item>
-						<label>Trakt</label>
+						<label>Trakt Library</label>
 						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),finder)</visible>
 						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
 						<onclick>Dialog.Close(1159)</onclick>
 						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_trakt)</onclick>
+					</item>
+					<item>
+						<label>Trakt Watchlist</label>
+						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),finder)</visible>
+						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
+						<onclick>Dialog.Close(1159)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=redlight_trakt)</onclick>
 					</item>
 					<!-- POV -->
 					<item>

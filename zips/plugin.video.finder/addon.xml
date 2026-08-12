@@ -1,4 +1,4 @@
-<addon id="plugin.video.finder" name="[B]Newf's Finder[/B]" provider-name="newf276" version="4.1.0">
+<addon id="plugin.video.finder" name="[B]Newf's Finder[/B]" provider-name="newf276" version="4.2.0">
     <requires>
         <import addon="xbmc.python" version="3.0.1"/>
         <import addon="script.module.pil" version="1.1.7"/>

@@ -29,10 +29,10 @@
 						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=alldebrid.authenticate)</onclick>
 					</item>
 					<item>
-						<label>Red Light</label>
-						<visible>System.HasAddon(plugin.video.redlight)</visible>
+						<label>Fen Light</label>
+						<visible>System.HasAddon(plugin.video.fenlight)</visible>
 						<onclick>Dialog.Close(1115)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=alldebrid.authenticate)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.fenlight/?mode=alldebrid.authenticate)</onclick>
 					</item>
 					<item>
 						<label>The Gears</label>

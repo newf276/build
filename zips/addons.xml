@@ -24,38 +24,10 @@
     </extension>
 </addon>
 
-<addon id="skin.redlight" name="[B]Redlight's Skin[/B]" version="0.0.1" provider-name="newf276">
+<addon id="skin.finder" name="[B]Finder's Skin[/B]" version="4.2.0" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0" />
-		<import addon="script.redlight.helper" version="0.0.1" />
-	</requires>
-	<extension point="xbmc.gui.skin" debugging="false">
-		<res width="1920" height="1440" aspect="4:3" default="false" folder="xml" />
-		<res width="1920" height="1280" aspect="3:2" default="false" folder="xml" />
-		<res width="1920" height="1200" aspect="16:10" default="false" folder="xml" />
-		<res width="2040" height="1080" aspect="17:9" default="false" folder="xml" />
-		<res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
-		<res width="2560" height="1080" aspect="21:9" default="false" folder="xml" />
-		<res width="2338" height="1080" aspect="19.5:9" default="false" folder="xml" />
-		<res width="2160" height="1080" aspect="18:9" default="false" folder="xml" />
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<disclaimer lang="en_GB">This Addon contains no content</disclaimer>
-		<language>en</language>
-		<platform>all</platform>
-		<license>GPL-2.0-or-later</license>
-        <source>https://github.com/newf276/build/tree/master/zips</source>
-        <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
-        </assets>
-    </extension>
-</addon>
-
-<addon id="skin.finder" name="[B]Finder's Skin[/B]" version="4.1.0" provider-name="newf276">
-	<requires>
-		<import addon="xbmc.gui" version="5.17.0" />
-		<import addon="script.finder.helper" version="4.1.0" />
+		<import addon="script.finder.helper" version="4.2.0" />
 	</requires>
 	<extension point="xbmc.gui.skin" debugging="false">
 		<res width="1920" height="1440" aspect="4:3" default="false" folder="xml" />
@@ -91,26 +63,6 @@
 	<extension point="xbmc.service" library="lib/service.py" />
 	<extension point="xbmc.python.module" library="lib" />
 	<extension point="xbmc.addon.metadata">
-		<disclaimer lang="en_GB">This Addon contains no content</disclaimer>
-		<language>en</language>
-		<platform>all</platform>
-		<license>GPL-2.0-or-later</license>
-        <source>https://github.com/newf276/build/tree/master/zips</source>
-        <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
-        </assets>
-    </extension>
-</addon>
-
-<addon id="script.redlight.helper" name="[B]Skin Redlight Plus Helper[/B]" version="0.0.1" provider-name="newf276">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0"/>
-        <import addon="script.module.requests" version="2.19.1"/>
-    </requires>
-    <extension point="xbmc.python.library" library="resources/lib/default.py"/>
-    <extension point="xbmc.service" library="resources/lib/service.py" start="startup" />
-    <extension point="xbmc.addon.metadata">
 		<disclaimer lang="en_GB">This Addon contains no content</disclaimer>
 		<language>en</language>
 		<platform>all</platform>
@@ -200,7 +152,7 @@
     </extension>
 </addon>
 
-<addon id="script.finder.helper" name="[B]Skin Finder Plus Helper[/B]" version="4.1.0" provider-name="newf276">
+<addon id="script.finder.helper" name="[B]Skin Finder Plus Helper[/B]" version="4.2.0" provider-name="newf276">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.requests" version="2.19.1"/>
@@ -251,7 +203,7 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.finder" name="[B]Newf's Finder[/B]" provider-name="newf276" version="4.1.0">
+<addon id="plugin.video.finder" name="[B]Newf's Finder[/B]" provider-name="newf276" version="4.2.0">
     <requires>
         <import addon="xbmc.python" version="3.0.1"/>
         <import addon="script.module.pil" version="1.1.7"/>
@@ -277,26 +229,6 @@
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
             <clearlogo>clearlogo.png</clearlogo>
-        </assets>
-    </extension>
-</addon>
-
-<addon id="service.blackbarsremover" name="[B]Black Bars Remover[/B]" version="0.2.29" provider-name="newf276">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0"/>
-    </requires>
-    <extension point="xbmc.service" library="service.py"/>
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en_gb">Automatically fit video to screen</summary>
-        <description lang="en_gb">Automatically adjusts the zoomlevel to eliminate black bars in videos. This addon also respects Kodi's "minimise black bars" setting.</description>
-		<disclaimer lang="en_GB">This Addon contains no content</disclaimer>
-		<language>en</language>
-		<platform>all</platform>
-		<license>GPL-2.0-or-later</license>
-        <source>https://github.com/newf276/build/tree/master/zips</source>
-        <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
 </addon>
