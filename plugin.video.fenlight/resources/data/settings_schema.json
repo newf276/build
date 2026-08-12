@@ -672,12 +672,12 @@
   {
     "setting_id": "trakt.client",
     "setting_type": "string",
-    "setting_default": "d37e53be8a9ad6a243d6e72e6271de71bac2f718c8c512b93198bf3fd747ec37"
+    "setting_default": "9JlEEyHO8ouXuzjNvksss7HzRMltxQQ0qxlREDdBYvs"
   },
   {
     "setting_id": "trakt.secret",
     "setting_type": "string",
-    "setting_default": "f1006109f91fb48f1fa97abb9fe35506e72af8843972efedfd0c7c544bfa63dd"
+    "setting_default": "4NOHkwI6UatrUn2a7NAzQrNk-cPWpnIKgm3ALhTu0LY"
   },
   {
     "_section": "TMDb API"
