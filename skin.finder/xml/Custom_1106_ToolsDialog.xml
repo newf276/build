@@ -47,15 +47,18 @@
                     <item>
                         <label>Clear Finder Cache</label>
                         <onclick>Dialog.Close(all)</onclick>
+						<visible>System.HasAddon(plugin.video.finder)</visible>
                         <onclick condition="System.AddonIsEnabled(plugin.video.finder)">RunPlugin(plugin://plugin.video.finder/?mode=clear_all_cache)</onclick>
                     </item>
                     <item>
                         <label>Clear Fenlight Cache</label>
+						<visible>System.HasAddon(plugin.video.fenlight)</visible>
                         <onclick>Dialog.Close(all)</onclick>
                         <onclick condition="System.AddonIsEnabled(plugin.video.fenlight)">RunPlugin(plugin://plugin.video.fenlight/?mode=clear_all_cache)</onclick>
                     </item>
                     <item>
                         <label>Clear POV Cache</label>
+						<visible>System.HasAddon(plugin.video.pov)</visible>
                         <onclick>Dialog.Close(all)</onclick>
                         <onclick condition="System.AddonIsEnabled(plugin.video.pov)">RunPlugin(plugin://plugin.video.pov/?mode=clear_all_cache)</onclick>
                     </item>
@@ -78,6 +81,7 @@
                     </item>
                     <item>
                         <label>Import/Export Finder Settings</label>
+						<visible>System.HasAddon(plugin.video.finder)</visible>
                         <onclick>Dialog.Close(all)</onclick>
                         <onclick condition="System.AddonIsEnabled(plugin.video.finder)">ActivateWindow(10025,"plugin://plugin.video.finder/?mode=navigator.import_export",return)</onclick>
                     </item>
