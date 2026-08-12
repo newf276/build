@@ -23,16 +23,19 @@
 				<content>
 					<item>
 						<label>Finder</label>
+						<visible>System.HasAddon(plugin.video.finder)</visible>
 						<onclick>Dialog.Close(all)</onclick>
 						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=tmdblist_api.authenticate)</onclick>
 					</item>
 					<item>
 						<label>Fenlight</label>
+						<visible>System.HasAddon(plugin.video.fenlight)</visible>
 						<onclick>Dialog.Close(all)</onclick>
 						<onclick>RunPlugin(plugin://plugin.video.fenlight/?mode=mdblist.mdblist_authenticate)</onclick>
 					</item>
 					<item>
 						<label>POV</label>
+						<visible>System.HasAddon(plugin.video.pov)</visible>
 						<onclick>Dialog.Close(1113)</onclick>
 						<onclick>PlayMedia("plugin://plugin.video.pov/?mode=myservices&amp;name=My+Services&amp;isFolder=false")</onclick>
 					</item>
