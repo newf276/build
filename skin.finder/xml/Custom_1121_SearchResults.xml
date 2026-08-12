@@ -542,7 +542,7 @@
 							<include content="IconButton">
 								<param name="control_id" value="802"/>
 								<param name="onclick" value="$VAR[TRAKTButtonActionsVar]"/>
-								<param name="icon" value="icons/menu.png"/>
+								<param name="icon" value="icons/list.png"/>
 								<param name="label" value="My Lists"/>
 							</include>
 							<!-- Studios -->

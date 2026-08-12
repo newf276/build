@@ -21,8 +21,8 @@
             <control type="image">
                 <left>7</left>
                 <top>7</top>
-                <width>100</width>
-                <height>100</height>
+                <width>45</width>
+                <height>45</height>
                 <align>left</align>
                 <aspectratio aligny="top">keep</aspectratio>
                 <texture>$INFO[Window(10000).Property(finder.addon_icon_mini)]</texture>
@@ -35,7 +35,7 @@
                     <left>0</left>
                     <width>1035</width>
                     <height>5</height>
-                    <font>font10</font> <!-- Finder_21 -->
+                    <font>font10</font> <!-- FINDER_21 -->
                     <align>left</align>
                     <aligny>bottom</aligny>
                     <textcolor>B3CCCCCC</textcolor>
@@ -54,7 +54,7 @@
                     <left>5</left>
                     <height>20</height>
                     <align>center</align>
-                    <font>font12</font> <!-- Finder_26 -->
+                    <font>font12</font> <!-- FINDER_26 -->
                     <textcolor>FFCCCCCC</textcolor>
                 </control>
                 <control type="textbox" id="2001">
@@ -62,7 +62,7 @@
                     <left>20</left>
                     <width>580</width>
                     <height>250</height>
-                    <font>font13</font> <!-- Finder_30 -->
+                    <font>font13</font> <!-- FINDER_30 -->
                     <align>center</align>
                     <aligny>center</aligny>
                     <textcolor>FFCCCCCC</textcolor>

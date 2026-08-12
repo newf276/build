@@ -31,8 +31,8 @@
                 <control type="image">
                     <left>7</left>
                     <top>7</top>
-                    <width>100</width>
-                    <height>100</height>
+                    <width>45</width>
+                    <height>45</height>
                     <align>top</align>
                     <aspectratio aligny="top">keep</aspectratio>
                     <texture>$INFO[Window(10000).Property(finder.addon_icon_mini)]</texture>
@@ -40,9 +40,9 @@
                 <control type="textbox" id="2001">
                     <top>50</top>
                     <left>20</left>
-                    <width>1100</width>
+                    <width>1088</width>
                     <height>690</height>
-                    <font>font14</font> <!-- Finder_33 -->
+                    <font>font14</font> <!-- FINDER_33 -->
                     <align>center</align>
                     <aligny>center</aligny>
                     <textcolor>FFCCCCCC</textcolor>
@@ -50,9 +50,9 @@
                     <autoscroll>false</autoscroll>
                 </control>
                 <control type="scrollbar" id="2099">
-                    <left>1140</left>
+                    <left>1120</left>
                     <top>35</top>
-                    <width>10</width>
+                    <width>32</width>
                     <height>740</height>
                     <texturesliderbackground colordiffuse="FF1F2020">finder_common/white.png</texturesliderbackground>
                     <texturesliderbar colordiffuse="FF555556">finder_common/white.png</texturesliderbar>

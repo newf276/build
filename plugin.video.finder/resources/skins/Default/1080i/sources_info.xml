@@ -22,8 +22,8 @@
                 <control type="image">
                     <left>15</left>
                     <top>15</top>
-                    <width>100</width>
-                    <height>100</height>
+                    <width>70</width>
+                    <height>70</height>
                     <align>left</align>
                     <aspectratio aligny="top">keep</aspectratio>
                     <texture>$INFO[Window(10000).Property(finder.addon_icon_mini)]</texture>
@@ -55,7 +55,7 @@
                 <control type="label">
                     <width max="1275">auto</width>
                     <height>20</height>
-                    <font>font14</font> <!-- Finder_33 -->
+                    <font>font14</font> <!-- FINDER_33 -->
                     <textcolor>FFCCCCCC</textcolor>
                     <align>left</align>
                     <aligny>center</aligny>
@@ -65,7 +65,7 @@
                     <top>50</top>
                     <width max="1275">auto</width>
                     <height>20</height>
-                    <font>font14</font> <!-- Finder_33 -->
+                    <font>font14</font> <!-- FINDER_33 -->
                     <textcolor>FFCCCCCC</textcolor>
                     <align>left</align>
                     <aligny>center</aligny>
@@ -75,17 +75,28 @@
                     <top>100</top>
                     <width max="1275">auto</width>
                     <height>20</height>
-                    <font>font14</font> <!-- Finder_33 -->
+                    <font>font14</font> <!-- FINDER_33 -->
                     <textcolor>FFCCCCCC</textcolor>
                     <align>left</align>
                     <aligny>center</aligny>
                     <label>[UPPERCASE][COLOR $INFO[Window.Property(highlight)]][B]Site: [/B][/COLOR]$INFO[Window.Property(source_site)][/UPPERCASE]</label>
                 </control>
                 <control type="label">
+                    <visible>!String.IsEmpty(Window.Property(scraper_module))</visible>
+                    <top>125</top>
+                    <width max="1275">auto</width>
+                    <height>20</height>
+                    <font>font14</font> <!-- FINDER_33 -->
+                    <textcolor>FFCCCCCC</textcolor>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <label>[UPPERCASE][COLOR $INFO[Window.Property(highlight)]][B]$INFO[Window.Property(scraper_module_label)]: [/B][/COLOR]$INFO[Window.Property(scraper_module)][/UPPERCASE]</label>
+                </control>
+                <control type="label">
                     <top>150</top>
                     <width max="1275">auto</width>
                     <height>20</height>
-                    <font>font14</font> <!-- Finder_33 -->
+                    <font>font14</font> <!-- FINDER_33 -->
                     <textcolor>FFCCCCCC</textcolor>
                     <align>left</align>
                     <aligny>center</aligny>
@@ -95,7 +106,7 @@
                     <top>200</top>
                     <width max="1275">auto</width>
                     <height>20</height>
-                    <font>font14</font> <!-- Finder_33 -->
+                    <font>font14</font> <!-- FINDER_33 -->
                     <textcolor>FFCCCCCC</textcolor>
                     <align>left</align>
                     <aligny>center</aligny>
@@ -105,7 +116,7 @@
                     <top>250</top>
                     <width max="1275">auto</width>
                     <height>20</height>
-                    <font>font14</font> <!-- Finder_33 -->
+                    <font>font14</font> <!-- FINDER_33 -->
                     <textcolor>FFCCCCCC</textcolor>
                     <align>left</align>
                     <aligny>center</aligny>
@@ -115,7 +126,7 @@
                     <top>300</top>
                     <width max="1275">auto</width>
                     <height>20</height>
-                    <font>font14</font> <!-- Finder_33 -->
+                    <font>font14</font> <!-- FINDER_33 -->
                     <textcolor>FFCCCCCC</textcolor>
                     <align>left</align>
                     <aligny>center</aligny>
@@ -126,7 +137,7 @@
                     <left>0</left>
                     <width max="1275">auto</width>
                     <height>140</height>
-                    <font>font14</font> <!-- Finder_33 -->
+                    <font>font14</font> <!-- FINDER_33 -->
                     <textcolor>FFCCCCCC</textcolor>
                     <align>left</align>
                     <aligny>top</aligny>

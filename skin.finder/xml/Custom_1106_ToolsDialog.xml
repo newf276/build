@@ -42,27 +42,22 @@
 						<label>Video Cache Config</label>
 						<visible>!Skin.HasSetting(ToolsNoVideoCacheConfig)</visible>
 						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.redlight.helper,mode=advanced_set)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=advanced_set)</onclick>
 					</item>
-                    <item>
-                        <label>Finder Settings</label>
-                        <onclick>Dialog.Close(all)</onclick>
-                        <onclick condition="System.AddonIsEnabled(plugin.video.finder)">RunPlugin(plugin://plugin.video.finder/?mode=open_settings)</onclick>
-                    </item>
-                    <item>
-                        <label>Redlight Settings</label>
-                        <onclick>Dialog.Close(all)</onclick>
-                        <onclick condition="System.AddonIsEnabled(plugin.video.redlight)">RunPlugin(plugin://plugin.video.redlight/?mode=open_settings)</onclick>
-                    </item>
                     <item>
                         <label>Clear Finder Cache</label>
                         <onclick>Dialog.Close(all)</onclick>
                         <onclick condition="System.AddonIsEnabled(plugin.video.finder)">RunPlugin(plugin://plugin.video.finder/?mode=clear_all_cache)</onclick>
                     </item>
                     <item>
-                        <label>Clear Redlight Cache</label>
+                        <label>Clear Fenlight Cache</label>
                         <onclick>Dialog.Close(all)</onclick>
-                        <onclick condition="System.AddonIsEnabled(plugin.video.redlight)">RunPlugin(plugin://plugin.video.redlight/?mode=clear_all_cache)</onclick>
+                        <onclick condition="System.AddonIsEnabled(plugin.video.fenlight)">RunPlugin(plugin://plugin.video.fenlight/?mode=clear_all_cache)</onclick>
+                    </item>
+                    <item>
+                        <label>Clear POV Cache</label>
+                        <onclick>Dialog.Close(all)</onclick>
+                        <onclick condition="System.AddonIsEnabled(plugin.video.pov)">RunPlugin(plugin://plugin.video.pov/?mode=clear_all_cache)</onclick>
                     </item>
                     <item>
                         <label>Clear Kodi Caches</label>
@@ -72,7 +67,7 @@
                     <item>
                         <label>Clear Thumbnails</label>
                         <onclick>Dialog.Close(all)</onclick>
-                        <onclick>RunScript(script.redlight.helper,mode=clear_thumbnails)</onclick>
+                        <onclick>RunScript(script.finder.helper,mode=clear_thumbnails)</onclick>
                     </item>
                     <item>
                         <label>Backup & Restore</label>
@@ -85,11 +80,6 @@
                         <label>Import/Export Finder Settings</label>
                         <onclick>Dialog.Close(all)</onclick>
                         <onclick condition="System.AddonIsEnabled(plugin.video.finder)">ActivateWindow(10025,"plugin://plugin.video.finder/?mode=navigator.import_export",return)</onclick>
-                    </item>
-                    <item>
-                        <label>Import/Export Redlight Settings</label>
-                        <onclick>Dialog.Close(all)</onclick>
-                        <onclick condition="System.AddonIsEnabled(plugin.video.redlight)">ActivateWindow(10025,"plugin://plugin.video.redlight/?mode=navigator.import_export",return)</onclick>
                     </item>
 				</content>
 			</control>

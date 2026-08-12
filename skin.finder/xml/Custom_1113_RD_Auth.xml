@@ -11,7 +11,7 @@
 			<include content="DialogBackgroundCommons">
 				<param name="width" value="600" />
 				<param name="height" value="$VAR[DialogHeight3]" />
-				<param name="header_label" value="Real-Debrid" />
+				<param name="header_label" value="TMDB" />
 				<param name="header_id" value="" />
 				<param name="diffusetexture" value="masks/dialog-bg-squareish.png" />
 			</include>
@@ -23,39 +23,18 @@
 				<content>
 					<item>
 						<label>Finder</label>
-						<visible>System.HasAddon(plugin.video.finder)</visible>
-						<onclick>Dialog.Close(1113)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=real_debrid.authenticate)</onclick>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=tmdblist_api.authenticate)</onclick>
 					</item>
 					<item>
-						<label>Red Light</label>
-						<visible>System.HasAddon(plugin.video.redlight)</visible>
-						<onclick>Dialog.Close(1113)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=real_debrid.authenticate)</onclick>
-					</item>
-					<item>
-						<label>The Gears</label>
-						<visible>System.HasAddon(plugin.video.gears)</visible>
-						<onclick>Dialog.Close(1113)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.gears/?mode=real_debrid.authenticate)</onclick>
-					</item>
-					<item>
-						<label>Umbrella</label>
-						<visible>System.HasAddon(plugin.video.umbrella)</visible>
-						<onclick>Dialog.Close(1113)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.umbrella/?action=rd_Authorize)</onclick>
+						<label>Fenlight</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.fenlight/?mode=mdblist.mdblist_authenticate)</onclick>
 					</item>
 					<item>
 						<label>POV</label>
-						<visible>System.HasAddon(plugin.video.pov)</visible>
 						<onclick>Dialog.Close(1113)</onclick>
 						<onclick>PlayMedia("plugin://plugin.video.pov/?mode=myservices&amp;name=My+Services&amp;isFolder=false")</onclick>
-					</item>
-					<item>
-						<label>ResolveURL Settings</label>
-						<visible>System.HasAddon(script.module.resolveurl)</visible>
-						<onclick>Dialog.Close(1113)</onclick>
-						<onclick>RunScript(script.finder.helper,rurl_settings_rd)</onclick>
 					</item>
 				</content>
 			</control>

@@ -52,10 +52,10 @@
     </extension>
 </addon>
 
-<addon id="skin.finder" name="[B]Finder's Skin[/B]" version="4.0.65" provider-name="newf276">
+<addon id="skin.finder" name="[B]Finder's Skin[/B]" version="4.1.0" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0" />
-		<import addon="script.finder.helper" version="4.0.65" />
+		<import addon="script.finder.helper" version="4.1.0" />
 	</requires>
 	<extension point="xbmc.gui.skin" debugging="false">
 		<res width="1920" height="1440" aspect="4:3" default="false" folder="xml" />
@@ -80,7 +80,7 @@
     </extension>
 </addon>
 
-<addon id="script.module.newfsscrapers" name="[B]Newf's Scrapers[/B]" version="0.2.50" provider-name="newf276">
+<addon id="script.module.newfsscrapers" name="[B]NewfsScrapers[/B]" version="4.1.0" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 		<import addon="script.module.requests" />
@@ -200,7 +200,7 @@
     </extension>
 </addon>
 
-<addon id="script.finder.helper" name="[B]Skin Finder Plus Helper[/B]" version="4.0.65" provider-name="newf276">
+<addon id="script.finder.helper" name="[B]Skin Finder Plus Helper[/B]" version="4.1.0" provider-name="newf276">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.requests" version="2.19.1"/>
@@ -251,12 +251,12 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.finder" name="[B]Newf's Finder[/B]" provider-name="newf276" version="0.0.30">
+<addon id="plugin.video.finder" name="[B]Newf's Finder[/B]" provider-name="newf276" version="4.1.0">
     <requires>
         <import addon="xbmc.python" version="3.0.1"/>
         <import addon="script.module.pil" version="1.1.7"/>
         <import addon="script.module.requests" version="2.19.1"/>
-		<import addon="script.module.newfsscrapers" version="0.0.27"/>
+		<import addon="script.module.newfsscrapers" version="4.1.0"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="resources/lib/finder.py">
         <provides>video</provides>

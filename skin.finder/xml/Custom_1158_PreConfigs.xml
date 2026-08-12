@@ -25,70 +25,30 @@
 				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1158),true)">ActivateWindow(1170)</onback>
 				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1158),true)">ClearProperty(Finder.DirectDialog1158,home)</onback>
 				<content>
-					<!-- Finder -->
-                    <item>
-						<label>[COLOR dodgerblue]Finder-MDBList[/COLOR]</label>
-                        <onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_mdblist)</onclick>
-                    </item>
 					<item>
-						<label>[COLOR darkgoldenrod]Finder-TMDB[/COLOR]</label>
-                        <onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_tmdb)</onclick>
+						<label>Finder</label>
+                        <visible>System.HasAddon(plugin.video.finder)</visible>
+						<onclick condition="System.HasAddon(plugin.video.finder)">Skin.SetString(SelectedPreConfigAddon,finder)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.finder)">Dialog.Close(1158)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.finder)">ActivateWindow(1159)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.finder)">RunScript(script.finder.helper,mode=addon_not_installed&amp;addon=Finder)</onclick>
 					</item>
 					<item>
-						<label>[COLOR lavender]Finder-Trakt[/COLOR]</label>
-                        <onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_trakt)</onclick>
-					</item>
-                    <!-- Fenlight -->
-                    <item>
-						<label>[COLOR dodgerblue]Fenlight-MDBList[/COLOR]</label>
-                        <onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=fenlight_mdblist)</onclick>
-                    </item>
-					<item>
-						<label>[COLOR darkgoldenrod]Fenlight-TMDB[/COLOR]</label>
-                        <onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=fenlight_tmdb)</onclick>
+						<label>Fen Light</label>
+                        <visible>System.HasAddon(plugin.video.fenlight)</visible>
+						<onclick condition="System.HasAddon(plugin.video.fenlight)">Skin.SetString(SelectedPreConfigAddon,fenlight)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.fenlight)">Dialog.Close(1158)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.fenlight)">ActivateWindow(1159)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.fenlight)">RunScript(script.finder.helper,mode=addon_not_installed&amp;addon=Fen Light)</onclick>
 					</item>
 					<item>
-						<label>[COLOR lavender]Fenlight-Trakt[/COLOR]</label>
-                        <onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=fenlight_trakt)</onclick>
+						<label>POV</label>
+                        <visible>System.HasAddon(plugin.video.pov)</visible>
+						<onclick condition="System.HasAddon(plugin.video.pov)">Skin.SetString(SelectedPreConfigAddon,pov)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.pov)">Dialog.Close(1158)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.pov)">ActivateWindow(1159)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.pov)">RunScript(script.finder.helper,mode=addon_not_installed&amp;addon=POV)</onclick>
 					</item>
-					<!-- Redlight -->
-                    <item>
-						<label>[COLOR dodgerblue]Redlight-MDBList[/COLOR]</label>
-                        <onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=redlight_mdblist)</onclick>
-                    </item>
-                    <item>
-						<label>[COLOR darkgoldenrod]Redlight-TMDB[/COLOR]</label>
-                        <onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=redlight_tmdb)</onclick>
-                    </item>
-                    <item>
-						<label>[COLOR lavender]Redlight-Trakt[/COLOR]</label>
-                        <onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=redlight_trakt)</onclick>
-                    </item>
-					<!-- POV -->
-                    <item>
-						<label>[COLOR dodgerblue]POV-MDBList[/COLOR]</label>
-                        <onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=pov_mdblist)</onclick>
-                    </item>
-                    <item>
-						<label>[COLOR darkgoldenrod]POV-TMDB[/COLOR]</label>
-                        <onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=pov_tmdb)</onclick>
-                    </item>
-                    <item>
-						<label>[COLOR lavender]POV-Trakt[/COLOR]</label>
-                        <onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=pov_trakt)</onclick>
-                    </item>
 				</content>
 			</control>
 			<include content="UpDownArrows">
