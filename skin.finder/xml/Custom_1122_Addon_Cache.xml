@@ -23,16 +23,16 @@
 				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1122),true)">ClearProperty(Finder.DirectDialog1122,home)</onback>
 				<content>
 					<item>
+						<label>Fen Light</label>
+						<visible>System.HasAddon(plugin.video.fenlight)</visible>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>ActivateWindow(10025,"plugin://plugin.video.fenlight/?mode=navigator.maintenance",return)</onclick>
+					</item>
+					<item>
 						<label>Finder</label>
 						<visible>System.HasAddon(plugin.video.finder)</visible>
 						<onclick>Dialog.Close(1122)</onclick>
 						<onclick>ActivateWindow(10025,"plugin://plugin.video.finder/?mode=navigator.maintenance",return)</onclick>
-					</item>
-					<item>
-						<label>Red Light</label>
-						<visible>System.HasAddon(plugin.video.redlight)</visible>
-						<onclick>Dialog.Close(1122)</onclick>
-						<onclick>ActivateWindow(10025,"plugin://plugin.video.redlight/?mode=navigator.maintenance",return)</onclick>
 					</item>
 					<item>
 						<label>The Gears</label>

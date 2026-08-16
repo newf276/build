@@ -18,7 +18,9 @@
 			<control type="panel" id="9000">
 				<include>ButtonMenuList_dialog</include>
 				<onback>Dialog.Close(1124)</onback>
-				<onback>ActivateWindow(1126)</onback>
+				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1124),true)">ActivateWindow(1170)</onback>
+				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1124),true)">ClearProperty(Finder.DirectDialog1124,home)</onback>
+				<onback condition="!String.IsEqual(Window(Home).Property(Finder.DirectDialog1124),true)">ActivateWindow(1126)</onback>
 				<content>
 					<item>
 						<label>Backup Config</label>

@@ -15,6 +15,8 @@
 	<onload condition="String.IsEmpty(Window(Home).Property(finder.starting_widgets))">SetProperty(finder.starting_widgets,true)</onload>
 	<onload>RunScript(script.finder.helper,mode=modify_keymap)</onload>
 	<onload>RunScript(script.finder.helper,mode=fix_black_screen)</onload>
+	<onload condition="Skin.HasSetting(CinemaLookFeel) + String.IsEmpty(Window(Home).Property(finder.cinema_section))">SetProperty(finder.cinema_section,movies,home)</onload>
+	<onload condition="Skin.HasSetting(CinemaLookFeel)">SetFocus(1700)</onload>
 	<controls>
 		<include>DefaultBackground</include>
 		<include>FinderBackground</include>
@@ -24,7 +26,7 @@
 			<control type="group" id="2000">
 				<left>0</left>
 				<width>2312</width>
-				<animation effect="slide" time="300" start="0,0" end="462,0" tween="sine" easing="inout" condition="![Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !Control.HasFocus(9000) + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true)]">Conditional</animation>
+				<animation effect="slide" time="300" start="0,0" end="462,0" tween="sine" easing="inout" condition="!Skin.HasSetting(CinemaLookFeel) + ![Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !Control.HasFocus(9000) + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true)]">Conditional</animation>
 				<include>OpenClose_Right</include>
 				<visible>!Skin.HasSetting(TrailerPlaying)</visible>
 				<animation effect="slide" time="700" start="1380,0" end="0,0" tween="sine" easing="inout">VisibleChange</animation>
@@ -58,7 +60,7 @@
 				</control>
 				<!-- MOVIES -->
 				<control type="group" id="19000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),movies)</visible>
+					<visible>[!Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Container(9000).ListItem.Property(id),movies)] | [Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Window(Home).Property(finder.cinema_section),movies)]</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="movies"/>
 					</include>
@@ -73,7 +75,7 @@
 				</control>
 				<!-- TV SHOWS -->
 				<control type="group" id="22000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),tvshows)</visible>
+					<visible>[!Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Container(9000).ListItem.Property(id),tvshows)] | [Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Window(Home).Property(finder.cinema_section),tvshows)]</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="tvshows"/>
 					</include>
@@ -88,7 +90,7 @@
 				</control>
 				<!-- CUSTOM 1 -->
 				<control type="group" id="23000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),custom1)</visible>
+					<visible>[!Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Container(9000).ListItem.Property(id),custom1)] | [Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Window(Home).Property(finder.cinema_section),custom1)]</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="custom1"/>
 					</include>
@@ -103,7 +105,7 @@
 				</control>
 				<!-- CUSTOM 2 -->
 				<control type="group" id="24000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),custom2)</visible>
+					<visible>[!Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Container(9000).ListItem.Property(id),custom2)] | [Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Window(Home).Property(finder.cinema_section),custom2)]</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="custom2"/>
 					</include>
@@ -118,7 +120,7 @@
 				</control>
 				<!-- CUSTOM 3 -->
 				<control type="group" id="25000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),custom3)</visible>
+					<visible>[!Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Container(9000).ListItem.Property(id),custom3)] | [Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Window(Home).Property(finder.cinema_section),custom3)]</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="custom3"/>
 					</include>
@@ -133,7 +135,7 @@
 				</control>
 				<!-- CUSTOM 4 -->
 				<control type="group" id="26000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),custom4)</visible>
+					<visible>[!Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Container(9000).ListItem.Property(id),custom4)] | [Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Window(Home).Property(finder.cinema_section),custom4)]</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="custom4"/>
 					</include>
@@ -148,7 +150,7 @@
 				</control>
 				<!-- CUSTOM 5 -->
 				<control type="group" id="27000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),custom5)</visible>
+					<visible>[!Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Container(9000).ListItem.Property(id),custom5)] | [Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Window(Home).Property(finder.cinema_section),custom5)]</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="custom5"/>
 					</include>
@@ -163,7 +165,7 @@
 				</control>
 				<!-- CUSTOM 6 -->
 				<control type="group" id="28000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),custom6)</visible>
+					<visible>[!Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Container(9000).ListItem.Property(id),custom6)] | [Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Window(Home).Property(finder.cinema_section),custom6)]</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="custom6"/>
 					</include>
@@ -177,7 +179,7 @@
 					</include>
 				</control>
 				<control type="group" id="7000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),music)</visible>
+					<visible>[!Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Container(9000).ListItem.Property(id),music)] | [Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Window(Home).Property(finder.cinema_section),music)]</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="music"/>
 					</include>
@@ -258,7 +260,7 @@
 					</include>
 				</control>
 				<control type="group" id="8000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),addons)</visible>
+					<visible>[!Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Container(9000).ListItem.Property(id),addons)] | [Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Window(Home).Property(finder.cinema_section),addons)]</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="addons"/>
 					</include>
@@ -341,7 +343,7 @@
 					</include>
 				</control>
 				<control type="group" id="11000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),video)</visible>
+					<visible>[!Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Container(9000).ListItem.Property(id),video)] | [Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Window(Home).Property(finder.cinema_section),video)]</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="video"/>
 					</include>
@@ -382,7 +384,7 @@
 					</include>
 				</control>
 				<control type="group" id="12000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),livetv)</visible>
+					<visible>[!Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Container(9000).ListItem.Property(id),livetv)] | [Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Window(Home).Property(finder.cinema_section),livetv)]</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="livetv"/>
 					</include>
@@ -450,7 +452,7 @@
 					</include>
 				</control>
 				<control type="group" id="13000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),radio)</visible>
+					<visible>[!Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Container(9000).ListItem.Property(id),radio)] | [Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Window(Home).Property(finder.cinema_section),radio)]</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="radio"/>
 					</include>
@@ -518,7 +520,7 @@
 					</include>
 				</control>
 				<control type="group" id="14000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),favorites)</visible>
+					<visible>[!Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Container(9000).ListItem.Property(id),favorites)] | [Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Window(Home).Property(finder.cinema_section),favorites)]</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="favorites"/>
 					</include>
@@ -538,7 +540,7 @@
 						<scrolltime tween="cubic" easing="out">500</scrolltime>
 						<orientation>vertical</orientation>
 						<pagecontrol>14010</pagecontrol>
-						<visible>!Skin.HasSetting(Enable.FullscreenWidgets) + [Integer.IsGreater(Container(14100).NumItems,0) | Container(14100).IsUpdating]</visible>
+						<visible>![Skin.HasSetting(Enable.FullscreenWidgets) | Skin.HasSetting(CinemaLookFeel)] + [Integer.IsGreater(Container(14100).NumItems,0) | Container(14100).IsUpdating]</visible>
 						<itemlayout width="280" height="365">
 							<control type="group">
 								<top>130</top>
@@ -572,15 +574,15 @@
 						<onright>14100</onright>
 						<onup>14100</onup>
 						<ondown>14100</ondown>
-						<onback condition="Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(finder.widget_focus),true)">SetFocus(9000)</onback>
-						<onback condition="Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(finder.widget_focus),true)">ClearProperty(finder.widget_focus,home)</onback>
+						<onback condition="[Skin.HasSetting(Enable.FullscreenWidgets) | Skin.HasSetting(CinemaLookFeel)] + String.IsEqual(Window(Home).Property(finder.widget_focus),true)">SetFocus(9000)</onback>
+						<onback condition="[Skin.HasSetting(Enable.FullscreenWidgets) | Skin.HasSetting(CinemaLookFeel)] + String.IsEqual(Window(Home).Property(finder.widget_focus),true)">ClearProperty(finder.widget_focus,home)</onback>
 						<onfocus>SetProperty(finder.widget_focus,true,home)</onfocus>
 						<onunfocus>ClearProperty(finder.widget_focus,home)</onunfocus>
 						<preloaditems>2</preloaditems>
 						<scrolltime tween="cubic" easing="out">500</scrolltime>
 						<orientation>vertical</orientation>
 						<pagecontrol>14010</pagecontrol>
-						<visible>Skin.HasSetting(Enable.FullscreenWidgets) + [Integer.IsGreater(Container(14100).NumItems,0) | Container(14100).IsUpdating]</visible>
+						<visible>[Skin.HasSetting(Enable.FullscreenWidgets) | Skin.HasSetting(CinemaLookFeel)] + [Integer.IsGreater(Container(14100).NumItems,0) | Container(14100).IsUpdating]</visible>
 						<itemlayout width="275" height="365">
 							<control type="group">
 								<top>130</top>
@@ -619,7 +621,7 @@
 					</include>
 				</control>
 				<control type="group" id="15000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),weather)</visible>
+					<visible>[!Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Container(9000).ListItem.Property(id),weather)] | [Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Window(Home).Property(finder.cinema_section),weather)]</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="weather"/>
 					</include>
@@ -734,7 +736,7 @@
 					</include>
 				</control>
 				<control type="group" id="16000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),musicvideos)</visible>
+					<visible>[!Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Container(9000).ListItem.Property(id),musicvideos)] | [Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Window(Home).Property(finder.cinema_section),musicvideos)]</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="musicvideos"/>
 					</include>
@@ -825,7 +827,7 @@
 					</include>
 				</control>
 				<control type="group" id="4000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),pictures)</visible>
+					<visible>[!Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Container(9000).ListItem.Property(id),pictures)] | [Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Window(Home).Property(finder.cinema_section),pictures)]</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="pictures"/>
 					</include>
@@ -841,7 +843,7 @@
 					</control>
 				</control>
 				<control type="group" id="17000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),games)</visible>
+					<visible>[!Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Container(9000).ListItem.Property(id),games)] | [Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Window(Home).Property(finder.cinema_section),games)]</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="games"/>
 					</include>
@@ -872,7 +874,7 @@
 					</include>
 				</control>
 				<control type="group" id="21000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),disc)</visible>
+					<visible>[!Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Container(9000).ListItem.Property(id),disc)] | [Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Window(Home).Property(finder.cinema_section),disc)]</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="disc"/>
 					</include>
@@ -892,14 +894,110 @@
 				</control>
 			</control>
 			<control type="group">
-				<visible>![Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !Control.HasFocus(9000) + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true)]</visible>
+				<visible>![[Skin.HasSetting(Enable.FullscreenWidgets) | Skin.HasSetting(CinemaLookFeel)] + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !Control.HasFocus(9000) + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true)] + !Skin.HasSetting(CinemaLookFeel)</visible>
 				<include content="TopBar">
 					<param name="breadcrumbs_label" value=""/>
 				</include>
 			</control>
-			<include condition="![Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !Control.HasFocus(9000) + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true)]">BottomBar</include>
+			<!-- Finder Cinema Top Bar -->
+			<control type="grouplist" id="1700">
+				<visible>Skin.HasSetting(CinemaLookFeel)</visible>
+				<animation effect="fade" start="100" end="0" time="200" condition="String.IsEqual(Window(Home).Property(finder.widget_focus),true)">Conditional</animation>
+				<centerleft>50%</centerleft>
+				<top>20</top>
+				<width>1300</width>
+				<height>110</height>
+				<orientation>horizontal</orientation>
+				<align>center</align>
+				<itemgap>20</itemgap>
+				<ondown>RunScript(script.finder.helper,mode=focus_cinema_section)</ondown>
+				<include content="IconButton">
+					<param name="control_id" value="1801"/>
+					<param name="onclick" value="RunScript(script.finder.helper,mode=open_cinema_sections)"/>
+					<param name="icon" value="icons/home.png"/>
+					<param name="label" value="Sections"/>
+				</include>
+				<include content="IconButton">
+					<param name="control_id" value="1802"/>
+					<param name="onclick" value="ActivateWindow(1107)"/>
+					<param name="icon" value="icons/search.png"/>
+					<param name="label" value="$LOCALIZE[137]"/>
+					<param name="visible" value="String.IsEqual(Skin.String(SearchBehavior),0) + !Skin.HasSetting(HomeNoSearchButton)"/>
+				</include>
+				<include content="IconButton">
+					<param name="control_id" value="1803"/>
+					<param name="onclick" value="RunScript(script.finder.helper,mode=search_input)"/>
+					<param name="icon" value="icons/search.png"/>
+					<param name="label" value="$LOCALIZE[137]"/>
+					<param name="visible" value="String.IsEqual(Skin.String(SearchBehavior),1) + !Skin.HasSetting(HomeNoSearchButton)"/>
+				</include>
+				<include content="IconButton">
+					<param name="control_id" value="1804"/>
+					<param name="onclick" value="RunScript(script.finder.helper,mode=open_search_window)"/>
+					<param name="icon" value="icons/search.png"/>
+					<param name="label" value="$LOCALIZE[137]"/>
+					<param name="visible" value="String.IsEqual(Skin.String(SearchBehavior),2) + !Skin.HasSetting(HomeNoSearchButton)"/>
+				</include>
+				<include content="IconButton">
+					<param name="control_id" value="1805"/>
+					<param name="onclick" value="ActivateWindow(favouritesbrowser)"/>
+					<param name="icon" value="icons/favourites.png"/>
+					<param name="label" value="Favourites"/>
+					<param name="visible" value="Skin.HasSetting(Enable.Favourites)"/>
+				</include>
+				<include content="IconButton">
+					<param name="control_id" value="1806"/>
+					<param name="onclick" value="ActivateWindow(1100)"/>
+					<param name="icon" value="icons/addons.png"/>
+					<param name="label" value="Add-ons"/>
+					<param name="visible" value="Skin.HasSetting(Enable.AddonBrowser)"/>
+				</include>
+				<include content="IconButton">
+					<param name="control_id" value="1807"/>
+					<param name="onclick" value="ActivateWindow(1106)"/>
+					<param name="icon" value="icons/settings/configure.png"/>
+					<param name="label" value="Maintenance &amp; Tools"/>
+					<param name="visible" value="Skin.HasSetting(Enable.MaintenanceTools)"/>
+				</include>
+<!-- Custom Menu -->
+<include content="IconButton">
+	<param name="control_id" value="1808"/>
+	<param name="onclick" value="ActivateWindow(1170)"/>
+	<param name="icon" value="icons/system.png"/>
+	<param name="label" value="$INFO[Skin.String(TopBarCustomMenuLabel)]"/>
+	<param name="visible" value="Skin.HasSetting(Enable.TopBarCustomMenu)"/>
+</include>
+				<include content="IconButton">
+					<param name="control_id" value="1809"/>
+					<param name="onclick" value="ActivateWindow(settings)"/>
+					<param name="icon" value="icons/settings.png"/>
+					<param name="label" value="Settings"/>
+				</include>
+				<include content="IconButton">
+					<param name="control_id" value="1810"/>
+					<param name="onclick" value="RunScript(script.finder.helper,mode=force_close)"/>
+					<param name="icon" value="icons/power.png"/>
+					<param name="label" value="$LOCALIZE[33060]"/>
+					<param name="visible" value="String.IsEqual(Skin.String(PowerButtonMode),Force Close)"/>
+				</include>
+				<include content="IconButton">
+					<param name="control_id" value="1811"/>
+					<param name="onclick" value="Quit()"/>
+					<param name="icon" value="icons/power.png"/>
+					<param name="label" value="$LOCALIZE[33060]"/>
+					<param name="visible" value="String.IsEqual(Skin.String(PowerButtonMode),Quit Kodi)"/>
+				</include>
+				<include content="IconButton">
+					<param name="control_id" value="1812"/>
+					<param name="onclick" value="ActivateWindow(shutdownmenu)"/>
+					<param name="icon" value="icons/power.png"/>
+					<param name="label" value="$LOCALIZE[33060]"/>
+					<param name="visible" value="String.IsEqual(Skin.String(PowerButtonMode),Show Shutdown Menu)"/>
+				</include>
+			</control>
+			<include condition="![[Skin.HasSetting(Enable.FullscreenWidgets) | Skin.HasSetting(CinemaLookFeel)] + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !Control.HasFocus(9000) + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true)] + !Skin.HasSetting(CinemaLookFeel)">BottomBar</include>
 			<control type="group">
-				<visible>[Control.HasFocus(8991) | Control.HasFocus(8992) | Control.HasFocus(8993) | Control.HasFocus(8994) | Control.HasFocus(8995) | Control.HasFocus(8996) | Control.HasFocus(8997) | Control.HasFocus(8998)] | [!Skin.HasSetting(TrailerPlaying) + ![Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !Control.HasFocus(9000) + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true)]]</visible>
+				<visible>[Control.HasFocus(8991) | Control.HasFocus(8992) | Control.HasFocus(8993) | Control.HasFocus(8994) | Control.HasFocus(8995) | Control.HasFocus(8996) | Control.HasFocus(8997) | Control.HasFocus(8998)] | [!Skin.HasSetting(TrailerPlaying) + ![[Skin.HasSetting(Enable.FullscreenWidgets) | Skin.HasSetting(CinemaLookFeel)] + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !Control.HasFocus(9000) + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true)]]</visible>
 				<animation effect="slide" time="700" start="-492,0" end="0,0" tween="sine" easing="inout">VisibleChange</animation>
 				<depth>DepthContentPanel</depth>
 				<include>OpenClose_Left</include>
@@ -918,7 +1016,7 @@
 					<usecontrolcoords>true</usecontrolcoords>
 					<visible>Skin.HasSetting(FinderHybrid) + !Skin.HasSetting(TrailerPlaying)</visible>
 					<animation effect="fade" time="150">VisibleChange</animation>
-					<!-- NOW PLAYING -->
+					<!-- Now Playing -->
 					<control type="group">
 						<width>660</width>
 						<height>100</height>
@@ -1060,19 +1158,13 @@
 					</control>
 				</control>
 				<control type="group">
+					<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(CinemaLookFeel)">Conditional</animation>
 					<animation effect="slide" time="300" start="-492,0" end="0,0" tween="sine" easing="inout">VisibleChange</animation>
 					<visible allowhiddenfocus="true">
-	String.IsEqual(Window(Home).Property(finder.disable_infopanel),true) | Control.HasFocus(9000) | [Control.HasFocus(8991) | Control.HasFocus(8992) | Control.HasFocus(8993) | Control.HasFocus(8994) | Control.HasFocus(8995) | Control.HasFocus(8996) | Control.HasFocus(8997) | Control.HasFocus(8998)] | [![String.IsEqual(ListItem.DBtype,movie) | String.IsEqual(ListItem.DBtype,tvshow) | String.IsEqual(ListItem.DBtype,season) | String.IsEqual(ListItem.DBtype,episode) | [String.IsEqual(Container(9000).ListItem.Property(id),addons) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + [Skin.HasSetting(Enable.AddonInfoPanel) | String.IsEqual(Window(Home).Property(finder.category_widget_focus),true)] + [!String.IsEqual(Window(Home).Property(finder.category_widget_focus),true) | Skin.HasSetting(Enable.AddonCategorySideblade)] + [!Control.HasFocus(8900) | Skin.HasSetting(Enable.AddonCategorySideblade)]]] + ![Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !Control.HasFocus(9000) + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true)]]
+	String.IsEqual(Window(Home).Property(finder.disable_infopanel),true) | Control.HasFocus(9000) | [Control.HasFocus(8991) | Control.HasFocus(8992) | Control.HasFocus(8993) | Control.HasFocus(8994) | Control.HasFocus(8995) | Control.HasFocus(8996) | Control.HasFocus(8997) | Control.HasFocus(8998)] | [![String.IsEqual(ListItem.DBtype,movie) | String.IsEqual(ListItem.DBtype,tvshow) | String.IsEqual(ListItem.DBtype,season) | String.IsEqual(ListItem.DBtype,episode) | [String.IsEqual(Container(9000).ListItem.Property(id),addons) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + [Skin.HasSetting(Enable.AddonInfoPanel) | String.IsEqual(Window(Home).Property(finder.category_widget_focus),true)] + [!String.IsEqual(Window(Home).Property(finder.category_widget_focus),true) | Skin.HasSetting(Enable.AddonCategorySideblade)] + [!Control.HasFocus(8900) | Skin.HasSetting(Enable.AddonCategorySideblade)]]] + ![[Skin.HasSetting(Enable.FullscreenWidgets) | Skin.HasSetting(CinemaLookFeel)] + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !Control.HasFocus(9000) + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true)]]
 </visible>
 					<!-- Estuary Main Menu Panel -->
-					<control type="image">
-						<left>0</left>
-						<top>0</top>
-						<width>475</width>
-						<bottom>0</bottom>
-						<texture>colors/black.png</texture>
-						<visible>!Skin.HasSetting(FinderHybrid) + Skin.HasSetting(EstuaryLookFeel)</visible>
-					</control>
+					<include>EstuaryContentPanel</include>
 					<!-- Finder Main Menu -->
 					<control type="fixedlist" id="9000">
 						<!-- Finder Hybrid: Divider enabled -->
@@ -1679,7 +1771,7 @@
 						</include>
 					</control>
 					<control type="group">
-						<visible>String.IsEqual(Window(Home).Property(finder.disable_infopanel),true) | [![String.IsEqual(ListItem.DBtype,movie) | String.IsEqual(ListItem.DBtype,tvshow) | String.IsEqual(ListItem.DBtype,season) | String.IsEqual(ListItem.DBtype,episode) | [String.IsEqual(Container(9000).ListItem.Property(id),addons) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + [Skin.HasSetting(Enable.AddonInfoPanel) | String.IsEqual(Window(Home).Property(finder.category_widget_focus),true)] + [!String.IsEqual(Window(Home).Property(finder.category_widget_focus),true) | Skin.HasSetting(Enable.AddonCategorySideblade)] + [!Control.HasFocus(8900) | Skin.HasSetting(Enable.AddonCategorySideblade)]]] + !Skin.HasSetting(TrailerPlaying) + ![Skin.HasSetting(Enable.FullscreenWidgets) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !Control.HasFocus(9000) + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true)]]</visible>
+						<visible>String.IsEqual(Window(Home).Property(finder.disable_infopanel),true) | [![String.IsEqual(ListItem.DBtype,movie) | String.IsEqual(ListItem.DBtype,tvshow) | String.IsEqual(ListItem.DBtype,season) | String.IsEqual(ListItem.DBtype,episode) | [String.IsEqual(Container(9000).ListItem.Property(id),addons) + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + [Skin.HasSetting(Enable.AddonInfoPanel) | String.IsEqual(Window(Home).Property(finder.category_widget_focus),true)] + [!String.IsEqual(Window(Home).Property(finder.category_widget_focus),true) | Skin.HasSetting(Enable.AddonCategorySideblade)] + [!Control.HasFocus(8900) | Skin.HasSetting(Enable.AddonCategorySideblade)]]] + !Skin.HasSetting(TrailerPlaying) + ![[Skin.HasSetting(Enable.FullscreenWidgets) | Skin.HasSetting(CinemaLookFeel)] + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !Control.HasFocus(9000) + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true)]]</visible>
 						<depth>DepthBars</depth>
 						<animation effect="slide" end="0,-90" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>
 						<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
@@ -1833,7 +1925,7 @@
 				<control type="group">
 					<animation effect="slide" time="300" start="-492,0" end="0,0" tween="sine" easing="inout">VisibleChange</animation>
 					<width>550</width>
-					<visible>[String.IsEqual(ListItem.DBtype,movie) | String.IsEqual(ListItem.DBtype,tvshow) | String.IsEqual(ListItem.DBtype,season) | String.IsEqual(ListItem.DBtype,episode)] + !Skin.HasSetting(Enable.FullscreenWidgets) + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true)</visible>
+					<visible>[String.IsEqual(ListItem.DBtype,movie) | String.IsEqual(ListItem.DBtype,tvshow) | String.IsEqual(ListItem.DBtype,season) | String.IsEqual(ListItem.DBtype,episode)] + ![Skin.HasSetting(Enable.FullscreenWidgets) | Skin.HasSetting(CinemaLookFeel)] + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true)</visible>
 					<include>OpenClose_Left</include>
 					<control type="image">
 						<left>30</left>
@@ -1965,4 +2057,3 @@
 		</control>
 	</controls>
 </window>
-

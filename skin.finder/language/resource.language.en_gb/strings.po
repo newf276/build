@@ -956,7 +956,7 @@ msgstr ""
 #. Description label for skin settings area
 #: /xml/Variables.xml
 msgctxt "#31615"
-msgid "Colour related settings: Change the default skin colour"
+msgid "Color related settings: Change the default skin color"
 msgstr ""
 
 #. Description label for skin settings area

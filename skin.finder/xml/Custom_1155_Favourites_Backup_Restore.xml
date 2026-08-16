@@ -7,17 +7,17 @@
 			<centerleft>50%</centerleft>
 			<width>600</width>
 			<centertop>50%</centertop>
-			<height>280</height>
+			<height>420</height>
 			<include content="DialogBackgroundCommons">
 				<param name="width" value="600" />
-				<param name="height" value="$VAR[DialogHeight1-2]" />
+				<param name="height" value="$VAR[DialogHeight4]" />
 				<param name="header_label" value="Backup &amp; Restore" />
 				<param name="header_id" value="" />
 				<param name="diffusetexture" value="masks/dialog-bg-squareish.png" />
 			</include>
 			<control type="panel" id="9000">
 				<include content="ButtonMenuList_dialog">
-					<param name="panel_height" value="140" />
+					<param name="panel_height" value="280" />
 				</include>
 				<onback>Dialog.Close(1155)</onback>
 				<onback>ActivateWindow(1123)</onback>
@@ -31,6 +31,16 @@
 						<label>Restore Favourites</label>
 						<onclick>Dialog.Close(1155)</onclick>
 						<onclick>RunScript(script.finder.helper,mode=restore_favs)</onclick>
+					</item>
+					<item>
+						<label>Import Favourites</label>
+						<onclick>Dialog.Close(1155)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=import_favs)</onclick>
+					</item>
+					<item>
+						<label>Export Favourites</label>
+						<onclick>Dialog.Close(1155)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=export_favs)</onclick>
 					</item>
 				</content>
 			</control>

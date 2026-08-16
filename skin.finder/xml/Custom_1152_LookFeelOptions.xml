@@ -7,42 +7,48 @@
 			<centerleft>50%</centerleft>
 			<width>600</width>
 			<centertop>50%</centertop>
-			<height>420</height>
+			<height>490</height>
 			<include content="DialogBackgroundCommons">
 				<param name="width" value="600" />
-				<param name="height" value="$VAR[DialogHeight4]" />
+				<param name="height" value="$VAR[DialogHeight5]" />
 				<param name="header_label" value="Choose Look &amp; Feel" />
 				<param name="header_id" value="" />
 				<param name="diffusetexture" value="masks/dialog-bg-squareish.png" />
 			</include>
 			<control type="panel" id="9000">
+				<include content="ButtonMenuList_dialog">
+					<param name="panel_height" value="350" />
+				</include>
 				<onback>Dialog.Close(1152)</onback>
 				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1152),true)">ActivateWindow(1170)</onback>
 				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1152),true)">ClearProperty(Finder.DirectDialog1152,home)</onback>
-				<include content="ButtonMenuList_dialog">
-					<param name="panel_height" value="280" />
-				</include>
-				<content>
+				<content>                    
 					<item>
-						<label>[COLOR FFC40300]Finder Plus[/COLOR]</label>
-						<onclick>Skin.SetString(Finder.PendingLookFeel,finderplus)</onclick>
-						<onclick>Dialog.Close(1152)</onclick>
-						<onclick>ActivateWindow(1153)</onclick>
-					</item>
-					<item>
-						<label>[COLOR FFFF8A00]Finder Hybrid[/COLOR]</label>
-						<onclick>Skin.SetString(Finder.PendingLookFeel,hybrid)</onclick>
-						<onclick>Dialog.Close(1152)</onclick>
-						<onclick>ActivateWindow(1153)</onclick>
-					</item>
-					<item>
-						<label>[COLOR FFEAECED]Classic Finder[/COLOR]</label>
+						<label>Classic Finder</label>
 						<onclick>Skin.SetString(Finder.PendingLookFeel,classic)</onclick>
 						<onclick>Dialog.Close(1152)</onclick>
 						<onclick>ActivateWindow(1153)</onclick>
 					</item>
 					<item>
-						<label>[COLOR FF12A0C7]Default Estuary[/COLOR]</label>
+						<label>Finder Plus</label>
+						<onclick>Skin.SetString(Finder.PendingLookFeel,fenplus)</onclick>
+						<onclick>Dialog.Close(1152)</onclick>
+						<onclick>ActivateWindow(1153)</onclick>
+					</item>
+					<item>
+						<label>Finder Hybrid</label>
+						<onclick>Skin.SetString(Finder.PendingLookFeel,hybrid)</onclick>
+						<onclick>Dialog.Close(1152)</onclick>
+						<onclick>ActivateWindow(1153)</onclick>
+					</item>
+					<item>
+						<label>Cinema Mode</label>
+						<onclick>Skin.SetString(Finder.PendingLookFeel,cinema)</onclick>
+						<onclick>Dialog.Close(1152)</onclick>
+						<onclick>ActivateWindow(1153)</onclick>
+					</item>
+					<item>
+						<label>Estuary Mod</label>
 						<onclick>Skin.SetString(Finder.PendingLookFeel,estuary)</onclick>
 						<onclick>Dialog.Close(1152)</onclick>
 						<onclick>ActivateWindow(1153)</onclick>

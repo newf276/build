@@ -374,53 +374,49 @@
 			</control>
 		</focusedlayout>
 	</include>
-<include name="ButtonMenuList_dialog">
-	<param name="panel_height">210</param>
-
-	<definition>
-		<left>0</left>
-		<top>100</top>
-		<width>600</width>
-		<height>$PARAM[panel_height]</height>
-		<onleft>9000</onleft>
-		<onright>9000</onright>
-		<onup>9000</onup>
-		<ondown>9000</ondown>
-		<orientation>vertical</orientation>
-
-		<itemlayout height="70" width="600">
-			<control type="label">
-				<left>0</left>
-				<top>0</top>
-				<width>600</width>
-				<height>70</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<textcolor>unfocused_text</textcolor>
-				<label>$INFO[ListItem.Label]</label>
-			</control>
-		</itemlayout>
-
-		<focusedlayout height="70" width="600">
-			<control type="image">
-				<left>25</left>
-				<top>0</top>
-				<width>550</width>
-				<height>70</height>
-				<texture colordiffuse="button_focus">masks/focus.png</texture>
-			</control>
-
-			<control type="label">
-				<left>0</left>
-				<top>0</top>
-				<width>600</width>
-				<height>70</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label>[B]$INFO[ListItem.Label][/B]</label>
-				<textcolor>focused_text</textcolor>
-			</control>
-		</focusedlayout>
-	</definition>
-</include>
+	<include name="ButtonMenuList_dialog">
+		<param name="panel_height">210</param>
+		<definition>
+			<left>0</left>
+			<top>100</top>
+			<width>600</width>
+			<height>$PARAM[panel_height]</height>
+			<onleft>9000</onleft>
+			<onright>9000</onright>
+			<onup>9000</onup>
+			<ondown>9000</ondown>
+			<orientation>vertical</orientation>
+			<itemlayout height="70" width="600">
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width>600</width>
+					<height>70</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>unfocused_text</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+			</itemlayout>
+			<focusedlayout height="70" width="600">
+				<control type="image">
+					<left>25</left>
+					<top>0</top>
+					<width>550</width>
+					<height>70</height>
+					<texture colordiffuse="button_focus">masks/focus.png</texture>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width>600</width>
+					<height>70</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>[B]$INFO[ListItem.Label][/B]</label>
+					<textcolor>focused_text</textcolor>
+				</control>
+			</focusedlayout>
+		</definition>
+	</include>
 </includes>

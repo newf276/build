@@ -28,36 +28,6 @@
 						<onclick>Dialog.Close(1115)</onclick>
 						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=alldebrid.authenticate)</onclick>
 					</item>
-					<item>
-						<label>Fen Light</label>
-						<visible>System.HasAddon(plugin.video.fenlight)</visible>
-						<onclick>Dialog.Close(1115)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.fenlight/?mode=alldebrid.authenticate)</onclick>
-					</item>
-					<item>
-						<label>The Gears</label>
-						<visible>System.HasAddon(plugin.video.gears)</visible>
-						<onclick>Dialog.Close(1115)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.gears/?mode=alldebrid.authenticate)</onclick>
-					</item>
-					<item>
-						<label>Umbrella</label>
-						<visible>System.HasAddon(plugin.video.umbrella)</visible>
-						<onclick>Dialog.Close(1115)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.umbrella/?action=ad_Authorize)</onclick>
-					</item>
-					<item>
-						<label>POV</label>
-						<visible>System.HasAddon(plugin.video.pov)</visible>
-						<onclick>Dialog.Close(1115)</onclick>
-						<onclick>PlayMedia("plugin://plugin.video.pov/?mode=myservices&amp;name=My+Services&amp;isFolder=false")</onclick>
-					</item>
-					<item>
-						<label>ResolveURL Settings</label>
-						<visible>System.HasAddon(plugin.video.script.module.resolveurl)</visible>
-						<onclick>Dialog.Close(1115)</onclick>
-						<onclick>RunScript(script.finder.helper,rurl_settings_ad)</onclick>
-					</item>
 				</content>
 			</control>
 			<include content="UpDownArrows">

@@ -2,6 +2,13 @@
 <includes>
 	<include name="Changelog">
 		<label>[B][COLOR accent_color]Version $INFO[System.AddonVersion(skin.finder)] by Zaxxon709[/COLOR][/B]
+- Enhanced Look & Feel customization with independent background artwork, brightness controls, and color opacity options
+- Added Cinema Mode to the Look & Feel options, featuring a fullscreen, widget-focused Home layout with the standard main menu hidden
+- Added color preservation options to Look & Feel preset customization, allowing users to keep or reset their current artwork and color settings independently
+- Added support for importing and exporting GUI settings and favourites
+- Fixed a minor navigation issue affecting custom top bar menu items
+
+[B][COLOR accent_color]Version 100.0.32a[/COLOR][/B]
 - Updated the Choose Path dialogs to support browsing network shares
 - Added a new Finder Dialogs option to the Choose Path dialogs
 - Added support for adding Finder dialogs to the Custom Top Bar Menu
@@ -90,7 +97,7 @@
 [B][COLOR accent_color]Version 100.0.30c[/COLOR][/B]
 - Fixed an issue preventing fanart brightness adjustments from applying correctly
 - Added TorBox authentication support to the Authorize Services menu
-- Fixed Trakt authorization shortcuts for Finder and compatible forks
+- Fixed Trakt authorization shortcuts for Fen Light and compatible forks
 - Added an Account Manager shortcut to the tools menu.
 - Added configurable widget limits (Keep in mind, TMDb-powered widgets are capped at 20 items due to TMDb API limitations)
 - Miscellaneous fixes and improvements
@@ -99,14 +106,14 @@
 - Fixed a focus issue causing category selection to be lost when returning to the home screen
 
 [B][COLOR accent_color]Version 100.0.30a[/COLOR][/B]
-- Added Red Light (FLAM fork by Red Wizard) to the list of search providers 
+- Added Finder (FLAM fork by Red Wizard) to the list of search providers 
 - Added a first-run setup wizard to choose your preferred Finder experience:
   1. Classic Finder
   2. Finder Plus
 - Don’t worry, if you’re unhappy with your selection, you can change it at any time under Skin Settings → Options → Look and Feel
 - Improved the search window Switch Provider option. When changing providers, the previously searched title is now automatically re-run using the newly selected provider.
 - Fixed search history re-search functionality
-- Fix Finder and Red Light Anime search results widget
+- Fix Fen Light and Finder Anime search results widget
 - Other Additions:
   - You can now set or change the backup directory via Skin Settings → General
   - Added an option to restore Default Skin Settings. This feature is located in Tools → Backup and Restore
@@ -133,9 +140,9 @@
 - Added user config import/export functions to tools menu. Users can now export and easy share their configs with other users.
 - Added a setting to limit the search history list to 5, 10, 15, or 20 items
 - Updated search results window artwork
-- Added The Gears add-on to the list of supported add-ons. This is a Finder fork with no external player block and an updated set of external scrapers.
+- Added The Gears add-on to the list of supported add-ons. This is a Fen Light fork with no external player block and an updated set of external scrapers.
 - Added a Pre-Config for The Gears add-on
-- Fixed Finder/The Gears Anime widget
+- Fixed Fen Light/The Gears Anime widget
 - Other minor changes/fixes
 
 [B][COLOR accent_color]Version 100.0.26[/COLOR][/B]
@@ -157,7 +164,7 @@
       • Pre-Made Configurations for supported add-ons
       • Backup/Restore GUI and Skin Settings
       • Back/Restore Menu/Widgets
-- Finder Anime widget added to search results
+- Fen Light Anime widget added to search results
 - Removed the actors/actresses widget from search results
 - Fix included to prevent home screen widgets from refreshing after exiting search results window
 - A help section was added to the search results left panel
@@ -174,7 +181,7 @@
       • TMDb Helper
 - Search shortcuts added to the search results window top bar
       • Search Studios (TMDbH)
-      • Search actors (TMDbH, Finder, Umbrella, POV)
+      • Search actors (TMDbH, Fen Light, Umbrella, POV)
       • Delete search history
 - Increased the number of custom main menu items from 3 to 6
 - Choose custom main menu icons (A large selection of icons are now included with the skin)
@@ -201,9 +208,9 @@
 
 [B][COLOR accent_color]Version 1.0.23[/COLOR][/B]
 - Fixed a few bugs related to one-click trailers
-- Added search window (SW) functionality for Finder and Umbrella
+- Added search window (SW) functionality for FEN Light and Umbrella
   • Set the default add on to use in Skin settings » Search
-  • Choose between FEN, Finder, and Umbrella
+  • Choose between FEN, FEN Light, and Umbrella
   • Functionality extends to TRAKT button and default search dialog
   • Included SW hot swap button to change search providers on the fly
 - Moved 'Clear Search History' to Search tab in Skin settings
@@ -423,7 +430,7 @@ Main changes from default Estuary include:
 	<include name="SetupGuide">
 		<label>[B][COLOR accent_color]Welcome to the Finder Setup Guide[/COLOR][/B]
 
-Finder Plus is a skin specifically designed for TMDbH, Finder, Umbrella and POV users. It can display movie, tvshow, and episode widgets as well as submenu widgets. It can also set paths for main menu items (more on this later). Here in this guide I will show you how these work and how to set them up.
+Finder Plus is a skin specifically designed for TMDbH, Fen Light, Umbrella and POV users. It can display movie, tvshow, and episode widgets as well as submenu widgets. It can also set paths for main menu items (more on this later). Here in this guide I will show you how these work and how to set them up.
 
 On first install the home screen should be empty. This means that the Movie and Show sections should be missing from the main menu on the left.
 

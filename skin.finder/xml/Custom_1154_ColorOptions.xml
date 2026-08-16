@@ -11,17 +11,17 @@
 			<include content="DialogBackgroundCommons">
 				<param name="width" value="600" />
 				<param name="height" value="$VAR[DialogHeight8]" />
-				<param name="header_label" value="Choose Colour Preset" />
+				<param name="header_label" value="Choose Color Preset" />
 				<param name="header_id" value="" />
 				<param name="diffusetexture" value="masks/dialog-bg-squareish.png" />
 			</include>
 			<control type="panel" id="9000">
-				<onback>Dialog.Close(1154)</onback>
-				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1154),true)">ActivateWindow(1170)</onback>
-				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1154),true)">ClearProperty(Finder.DirectDialog1154,home)</onback>
 				<include content="ButtonMenuList_dialog">
 					<param name="panel_height" value="560" />
 				</include>
+				<onback>Dialog.Close(1154)</onback>
+				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1154),true)">ActivateWindow(1170)</onback>
+				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1154),true)">ClearProperty(Finder.DirectDialog1154,home)</onback>
 				<content>
 					<item>
 						<label>[COLOR FFC40300]Finder Plus[/COLOR]</label>
@@ -40,12 +40,6 @@
 						<onclick>ClearProperty(Finder.DirectDialog1154,home)</onclick>
 						<onclick>Dialog.Close(1154)</onclick>
 						<onclick>RunScript(script.finder.helper,mode=set_color&amp;color=Classic%20Finder)</onclick>
-					</item>
-					<item>
-						<label>[COLOR FF12A0C7]Estuary[/COLOR]</label>
-						<onclick>ClearProperty(Finder.DirectDialog1154,home)</onclick>
-						<onclick>Dialog.Close(1154)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=set_color&amp;color=Estuary)</onclick>
 					</item>
 					<item>
 						<label>[COLOR FFFFB300]Amber[/COLOR]</label>
@@ -106,6 +100,12 @@
 						<onclick>ClearProperty(Finder.DirectDialog1154,home)</onclick>
 						<onclick>Dialog.Close(1154)</onclick>
 						<onclick>RunScript(script.finder.helper,mode=set_color&amp;color=Emerald)</onclick>
+					</item>
+					<item>
+						<label>[COLOR FF12A0C7]Estuary[/COLOR]</label>
+						<onclick>ClearProperty(Finder.DirectDialog1154,home)</onclick>
+						<onclick>Dialog.Close(1154)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=set_color&amp;color=Estuary)</onclick>
 					</item>
 					<item>
 						<label>[COLOR FFCFA700]Gold[/COLOR]</label>

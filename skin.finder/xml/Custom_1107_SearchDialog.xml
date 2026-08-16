@@ -28,10 +28,10 @@
 						<label>Movies</label>
 						<onclick>Dialog.Close(1107)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),0)">ActivateWindow(10025,"plugin://plugin.video.themoviedb.helper/?info=search&amp;tmdb_type=movie",return)</onclick>
-						<onclick condition="String.IsEqual(Skin.String(current_search_provider),1)">ActivateWindow(Videos,"plugin://plugin.video.finder/?action=movie&amp;mode=navigator.search_history&amp;name=Movies",return)</onclick>
+						<onclick condition="String.IsEqual(Skin.String(current_search_provider),1)">ActivateWindow(Videos,"plugin://plugin.video.fenlight/?action=movie&amp;mode=navigator.search_history&amp;name=Movies",return)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),2)">ActivateWindow(Videos,"plugin://plugin.video.umbrella/?action=movieSearch",return)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),3)">ActivateWindow(Videos,"plugin://plugin.video.pov/?action=movie&amp;mode=search_history",return)</onclick>
-						<onclick condition="String.IsEqual(Skin.String(current_search_provider),4)">ActivateWindow(Videos,"plugin://plugin.video.fenlight/?action=movie&amp;mode=navigator.search_history&amp;name=Movies",return)</onclick>
+						<onclick condition="String.IsEqual(Skin.String(current_search_provider),4)">ActivateWindow(Videos,"plugin://plugin.video.gears/?action=movie&amp;mode=navigator.search_history&amp;name=Movies",return)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),5)">ActivateWindow(Videos,"plugin://plugin.video.finder/?action=movie&amp;mode=navigator.search_history&amp;name=Movies",return)</onclick>
 					</item>
 
@@ -40,10 +40,10 @@
 						<label>TV Shows</label>
 						<onclick>Dialog.Close(1107)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),0)">ActivateWindow(10025,"plugin://plugin.video.themoviedb.helper/?info=search&amp;tmdb_type=tv",return)</onclick>
-						<onclick condition="String.IsEqual(Skin.String(current_search_provider),1)">ActivateWindow(Videos,"plugin://plugin.video.finder/?action=tvshow&amp;mode=navigator.search_history&amp;name=TV%20Shows",return)</onclick>
+						<onclick condition="String.IsEqual(Skin.String(current_search_provider),1)">ActivateWindow(Videos,"plugin://plugin.video.fenlight/?action=tvshow&amp;mode=navigator.search_history&amp;name=TV%20Shows",return)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),2)">ActivateWindow(Videos,"plugin://plugin.video.umbrella/?action=tvSearch",return)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),3)">ActivateWindow(Videos,"plugin://plugin.video.pov/?action=tvshow&amp;mode=search_history",return)</onclick>
-						<onclick condition="String.IsEqual(Skin.String(current_search_provider),4)">ActivateWindow(Videos,"plugin://plugin.video.fenlight/?action=tvshow&amp;mode=navigator.search_history&amp;name=TV%20Shows",return)</onclick>
+						<onclick condition="String.IsEqual(Skin.String(current_search_provider),4)">ActivateWindow(Videos,"plugin://plugin.video.gears/?action=tvshow&amp;mode=navigator.search_history&amp;name=TV%20Shows",return)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),5)">ActivateWindow(Videos,"plugin://plugin.video.finder/?action=tvshow&amp;mode=navigator.search_history&amp;name=TV%20Shows",return)</onclick>
 					</item>
 
@@ -51,8 +51,8 @@
 					<item>
 						<label>Anime</label>
 						<onclick>Dialog.Close(1107)</onclick>
-						<onclick condition="String.IsEqual(Skin.String(current_search_provider),1)">ActivateWindow(10025,"plugin://plugin.video.finder/?action=anime&amp;mode=navigator.search_history&amp;name=Search%20History%20Anime",return)</onclick>
-						<onclick condition="String.IsEqual(Skin.String(current_search_provider),4)">ActivateWindow(10025,"plugin://plugin.video.fenlight/?action=anime&amp;mode=navigator.search_history&amp;name=Search%20History%20Anime",return)</onclick>
+						<onclick condition="String.IsEqual(Skin.String(current_search_provider),1)">ActivateWindow(10025,"plugin://plugin.video.fenlight/?action=anime&amp;mode=navigator.search_history&amp;name=Search%20History%20Anime",return)</onclick>
+						<onclick condition="String.IsEqual(Skin.String(current_search_provider),4)">ActivateWindow(10025,"plugin://plugin.video.gears/?action=anime&amp;mode=navigator.search_history&amp;name=Search%20History%20Anime",return)</onclick>
 						<visible>String.IsEqual(Skin.String(current_search_provider),1) | String.IsEqual(Skin.String(current_search_provider),4)</visible>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),5)">ActivateWindow(10025,"plugin://plugin.video.finder/?action=anime&amp;mode=navigator.search_history&amp;name=Search%20History%20Anime",return)</onclick>
 					</item>
@@ -72,9 +72,9 @@
 						<label>Actors/Actresses</label>
 						<onclick>Dialog.Close(1107)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),0)">ActivateWindow(10025,"plugin://plugin.video.themoviedb.helper/?info=search&amp;tmdb_type=person",return)</onclick>
-						<onclick condition="String.IsEqual(Skin.String(current_search_provider),1)">ActivateWindow(Videos,"plugin://plugin.video.finder/?action=people&amp;mode=navigator.search_history&amp;name=People",return)</onclick>
+						<onclick condition="String.IsEqual(Skin.String(current_search_provider),1)">ActivateWindow(Videos,"plugin://plugin.video.fenlight/?action=people&amp;mode=navigator.search_history&amp;name=People",return)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),3)">ActivateWindow(Videos,"plugin://plugin.video.pov/?action=people&amp;mode=search_history",return)</onclick>
-						<onclick condition="String.IsEqual(Skin.String(current_search_provider),4)">ActivateWindow(Videos,"plugin://plugin.video.fenlight/?action=people&amp;mode=navigator.search_history&amp;name=People",return)</onclick>
+						<onclick condition="String.IsEqual(Skin.String(current_search_provider),4)">ActivateWindow(Videos,"plugin://plugin.video.gears/?action=people&amp;mode=navigator.search_history&amp;name=People",return)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),5)">ActivateWindow(Videos,"plugin://plugin.video.finder/?action=people&amp;mode=navigator.search_history&amp;name=People",return)</onclick>
 						<visible>String.IsEqual(Skin.String(current_search_provider),0) | String.IsEqual(Skin.String(current_search_provider),1) | String.IsEqual(Skin.String(current_search_provider),3) | String.IsEqual(Skin.String(current_search_provider),4) | String.IsEqual(Skin.String(current_search_provider),5)</visible>
 					</item>
@@ -115,10 +115,10 @@
 					<item>
 						<label>$VAR[KeywordMoviesLabelVar]</label>
 						<onclick>Dialog.Close(1107)</onclick>
-						<onclick condition="String.IsEqual(Skin.String(current_search_provider),1)">ActivateWindow(Videos,"plugin://plugin.video.finder/?action=tmdb_keyword_movie&amp;mode=navigator.search_history&amp;name=Keywords%20(Movies)",return)</onclick>
+						<onclick condition="String.IsEqual(Skin.String(current_search_provider),1)">ActivateWindow(Videos,"plugin://plugin.video.fenlight/?action=tmdb_keyword_movie&amp;mode=navigator.search_history&amp;name=Keywords%20(Movies)",return)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),3)">ActivateWindow(Videos,"plugin://plugin.video.pov/?action=imdb_keyword_movie&amp;mode=search_history",return)</onclick>
-						<onclick condition="String.IsEqual(Skin.String(current_search_provider),4)">ActivateWindow(Videos,"plugin://plugin.video.fenlight/?action=tmdb_keyword_movie&amp;mode=navigator.search_history&amp;name=Keywords%20(Movies)",return)</onclick>
-						<onclick condition="String.IsEqual(Skin.String(current_search_provider),5)">ActivateWindow(Videos,"plugin://plugin.video.finder/?action=tmdb_keyword_movie&amp;mode=navigator.search_history&amp;name=Keywords%20(Movies)",return)</onclick>
+						<onclick condition="String.IsEqual(Skin.String(current_search_provider),4)">ActivateWindow(Videos,"plugin://plugin.video.gears/?action=tmdb_keyword_movie&amp;mode=navigator.search_history&amp;name=Keywords%20(Movies)",return)</onclick>
+						<onclick condition="String.IsEqual(Skin.String(current_search_provider),5)">ActivateWindow(Videos,"plugin://plugin.video.fenlight/?action=tmdb_keyword_movie&amp;mode=navigator.search_history&amp;name=Keywords%20(Movies)",return)</onclick>
 						<visible>String.IsEqual(Skin.String(current_search_provider),1) | String.IsEqual(Skin.String(current_search_provider),3) | String.IsEqual(Skin.String(current_search_provider),4) | String.IsEqual(Skin.String(current_search_provider),5)</visible>
 					</item>
 
@@ -126,10 +126,10 @@
 					<item>
 						<label>$VAR[KeywordTVShowsLabelVar]</label>
 						<onclick>Dialog.Close(1107)</onclick>
-						<onclick condition="String.IsEqual(Skin.String(current_search_provider),1)">ActivateWindow(Videos,"plugin://plugin.video.finder/?action=tmdb_keyword_tvshow&amp;mode=navigator.search_history&amp;name=Keywords%20(TV%20Shows)",return)</onclick>
+						<onclick condition="String.IsEqual(Skin.String(current_search_provider),1)">ActivateWindow(Videos,"plugin://plugin.video.fenlight/?action=tmdb_keyword_tvshow&amp;mode=navigator.search_history&amp;name=Keywords%20(TV%20Shows)",return)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),3)">ActivateWindow(Videos,"plugin://plugin.video.pov/?action=imdb_keyword_tvshow&amp;mode=search_history",return)</onclick>
-						<onclick condition="String.IsEqual(Skin.String(current_search_provider),4)">ActivateWindow(Videos,"plugin://plugin.video.fenlight/?action=tmdb_keyword_tvshow&amp;mode=navigator.search_history&amp;name=Keywords%20(TV%20Shows)",return)</onclick>
-						<onclick condition="String.IsEqual(Skin.String(current_search_provider),5)">ActivateWindow(Videos,"plugin://plugin.video.finder/?action=tmdb_keyword_tvshow&amp;mode=navigator.search_history&amp;name=Keywords%20(TV%20Shows)",return)</onclick>
+						<onclick condition="String.IsEqual(Skin.String(current_search_provider),4)">ActivateWindow(Videos,"plugin://plugin.video.gears/?action=tmdb_keyword_tvshow&amp;mode=navigator.search_history&amp;name=Keywords%20(TV%20Shows)",return)</onclick>
+						<onclick condition="String.IsEqual(Skin.String(current_search_provider),5)">ActivateWindow(Videos,"plugin://plugin.video.fenlight/?action=tmdb_keyword_tvshow&amp;mode=navigator.search_history&amp;name=Keywords%20(TV%20Shows)",return)</onclick>
 						<visible>String.IsEqual(Skin.String(current_search_provider),1) | String.IsEqual(Skin.String(current_search_provider),3) | String.IsEqual(Skin.String(current_search_provider),4) | String.IsEqual(Skin.String(current_search_provider),5)</visible>
 					</item>
 
@@ -146,10 +146,10 @@
 						<label>Trakt Lists</label>
 						<onclick>Dialog.Close(1107)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),0)">ActivateWindow(10025,"plugin://plugin.video.themoviedb.helper/?info=trakt_searchlists&amp;tmdb_type=both",return)</onclick>
-						<onclick condition="String.IsEqual(Skin.String(current_search_provider),1)">ActivateWindow(10025,"plugin://plugin.video.finder/?action=trakt_lists&amp;mode=navigator.search_history",return)</onclick>
+						<onclick condition="String.IsEqual(Skin.String(current_search_provider),1)">ActivateWindow(10025,"plugin://plugin.video.fenlight/?action=trakt_lists&amp;mode=navigator.search_history",return)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(current_search_provider),2)">ActivateWindow(10025,"plugin://plugin.video.umbrella/?action=movies_SearchLists&amp;media_type=movies",return)</onclick>
-						<onclick condition="String.IsEqual(Skin.String(current_search_provider),4)">ActivateWindow(10025,"plugin://plugin.video.fenlight/?action=trakt_lists&amp;mode=navigator.search_history",return)</onclick>
-						<onclick condition="String.IsEqual(Skin.String(current_search_provider),5)">ActivateWindow(10025,"plugin://plugin.video.finder/?action=trakt_lists&amp;mode=navigator.search_history",return)</onclick>
+						<onclick condition="String.IsEqual(Skin.String(current_search_provider),4)">ActivateWindow(10025,"plugin://plugin.video.gears/?action=trakt_lists&amp;mode=navigator.search_history",return)</onclick>
+						<onclick condition="String.IsEqual(Skin.String(current_search_provider),5)">ActivateWindow(10025,"plugin://plugin.video.fenlight/?action=trakt_lists&amp;mode=navigator.search_history",return)</onclick>
 						<visible>String.IsEqual(Skin.String(current_search_provider),0) | String.IsEqual(Skin.String(current_search_provider),1) | String.IsEqual(Skin.String(current_search_provider),2) | String.IsEqual(Skin.String(current_search_provider),4) | String.IsEqual(Skin.String(current_search_provider),5)</visible>
 					</item>
 

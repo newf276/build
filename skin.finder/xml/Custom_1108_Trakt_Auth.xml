@@ -28,18 +28,6 @@
 						<onclick>Dialog.Close(1108)</onclick>
 						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=trakt.trakt_authenticate)</onclick>
 					</item>
-					<item>
-						<label>Fen Light</label>
-						<visible>System.HasAddon(plugin.video.fenlight)</visible>
-						<onclick>Dialog.Close(1108)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.fenlight/?mode=trakt.trakt_authenticate)</onclick>
-					</item>
-					<item>
-						<label>POV</label>
-						<visible>System.HasAddon(plugin.video.pov)</visible>
-						<onclick>Dialog.Close(1108)</onclick>
-						<onclick>PlayMedia("plugin://plugin.video.pov/?mode=myservices&amp;name=My+Services&amp;isFolder=false")</onclick>
-					</item>
 				</content>
 			</control>
 			<include content="UpDownArrows">

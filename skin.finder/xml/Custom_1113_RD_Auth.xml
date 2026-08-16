@@ -11,7 +11,7 @@
 			<include content="DialogBackgroundCommons">
 				<param name="width" value="600" />
 				<param name="height" value="$VAR[DialogHeight3]" />
-				<param name="header_label" value="TMDB" />
+				<param name="header_label" value="Real-Debrid" />
 				<param name="header_id" value="" />
 				<param name="diffusetexture" value="masks/dialog-bg-squareish.png" />
 			</include>
@@ -19,25 +19,14 @@
 				<include>ButtonMenuList_dialog</include>
 				<onback>Dialog.Close(1113)</onback>
 				<onback condition="!String.IsEqual(Window(Home).Property(Finder.DirectDialog1113),true)">ActivateWindow(1111)</onback>
+				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1113),true)">ActivateWindow(1170)</onback>
 				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1113),true)">ClearProperty(Finder.DirectDialog1113,home)</onback>
 				<content>
 					<item>
 						<label>Finder</label>
 						<visible>System.HasAddon(plugin.video.finder)</visible>
-						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=tmdblist_api.authenticate)</onclick>
-					</item>
-					<item>
-						<label>Fenlight</label>
-						<visible>System.HasAddon(plugin.video.fenlight)</visible>
-						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.fenlight/?mode=mdblist.mdblist_authenticate)</onclick>
-					</item>
-					<item>
-						<label>POV</label>
-						<visible>System.HasAddon(plugin.video.pov)</visible>
 						<onclick>Dialog.Close(1113)</onclick>
-						<onclick>PlayMedia("plugin://plugin.video.pov/?mode=myservices&amp;name=My+Services&amp;isFolder=false")</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=real_debrid.authenticate)</onclick>
 					</item>
 				</content>
 			</control>
