@@ -1,9 +1,8 @@
-<addon id="plugin.video.finder" name="[B]Newf's Finder[/B]" provider-name="newf276" version="4.2.0">
+<addon id="plugin.video.finder" name="[COLOR white]Newf's Finder[/COLOR]" provider-name="[COLOR white]newf/COLOR]" version="15.2.8a">
     <requires>
         <import addon="xbmc.python" version="3.0.1"/>
         <import addon="script.module.pil" version="1.1.7"/>
         <import addon="script.module.requests" version="2.19.1"/>
-		<import addon="script.module.newfsscrapers" version="4.1.0"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="resources/lib/finder.py">
         <provides>video</provides>
@@ -12,18 +11,18 @@
     <extension point="xbmc.python.module" library="resources/lib/"/>
     <extension point="xbmc.addon.metadata">
         <reuselanguageinvoker>true</reuselanguageinvoker>
-        <summary lang="en">Access your content from premium cloud services.</summary>
-        <description lang="en">Finder is a streamlined Kodi video addon for browsing and playing content from your own services. Discover, Search, and browse media of interest. You must own the content of any media you play through this addon.</description>
+        <summary lang="en">[COLOR white]The Finder[/COLOR]</summary>
+        <description lang="en">[COLOR white]* AllDebrid, Offcloud, Premiumize, Real Debrid and TorBox
+* AIOStreams
+* EasyNews, NZB Indexers and Local Folders
+* MDBList, PunchPlay, Simkl, TMDb Lists, Trakt and WeTrakr[/COLOR]</description>
         <platform>all</platform>
-		<disclaimer lang="en">The author of this addon does not host any of the content which is found and has no affiliation with any of the content providers.</disclaimer>
-		<language>en</language>
-		<platform>all</platform>
-		<license>GPL-2.0-or-later</license>
-        <source>https://github.com/newf276/build/tree/master/zips</source>
+        <disclaimer lang="en">[COLOR white]The author of this add-on does not host any content and has no affiliation with the content providers[/COLOR]</disclaimer>
+        <license>GPL-3.0</license>
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
-            <clearlogo>clearlogo.png</clearlogo>
         </assets>
+        <news>[COLOR white]Check the Changelog in Tools &gt; Changelog &amp; Log Utils[/COLOR]</news>
     </extension>
 </addon>

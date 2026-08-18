@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.finder"  name="Newf's Finder Plus Skin"  version="1.0.0"  provider-name="newf276">
+<addon id="skin.finder"  name="Newf's Finder Plus Skin"  version="6.0.0"  provider-name="newf276">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0" />
 		<import addon="script.finder.helper" version="1.0.0" />
