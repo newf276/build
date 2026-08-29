@@ -64,17 +64,17 @@
                 <control type="image">
                     <top>5</top>
                     <left>5</left>
-                    <width>60</width>
-                    <height>60</height>
+                    <width>100</width>
+                    <height>100</height>
                     <aspectratio aligny="top">keep</aspectratio>
                     <texture>$INFO[Window(10000).Property(finder.addon_icon_mini)]</texture>
                 </control>
                 <control type="label">
-                    <left>75</left>
+                    <left>130</left>
                     <top>25</top>
-                    <width>1770</width>
+                    <width>1715</width>
                     <height>20</height>
-                    <font>font10</font> <!-- FINDER_21 -->
+                    <font>font10</font> <!-- Finder_21 -->
                     <textcolor>FFFFFFFF</textcolor>
                     <align>left</align>
                     <aligny>center</aligny>

@@ -23,28 +23,7 @@
 				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1159),true)">ClearProperty(Finder.DirectDialog1159,home)</onback>
 				<content>
 					<item>
-						<label>MDBlist Library</label>
-						<visible>true</visible>
-						<onclick>ClearProperty(Finder.DirectDialog1159,home)</onclick>
-						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_mdblist_library)</onclick>
-					</item>
-					<item>
-						<label>MDBlist Watchlist</label>
-						<visible>true</visible>
-						<onclick>ClearProperty(Finder.DirectDialog1159,home)</onclick>
-						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_mdblist_watchlist)</onclick>
-					</item>
-					<item>
-						<label>TMDB Watchlist</label>
-						<visible>true</visible>
-						<onclick>ClearProperty(Finder.DirectDialog1159,home)</onclick>
-						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_tmdb_watchlist)</onclick>
-					</item>
-					<item>
-						<label>Trakt Library</label>
+						<label>Trakt Collection</label>
 						<visible>true</visible>
 						<onclick>ClearProperty(Finder.DirectDialog1159,home)</onclick>
 						<onclick>Dialog.Close(all)</onclick>
@@ -56,6 +35,13 @@
 						<onclick>ClearProperty(Finder.DirectDialog1159,home)</onclick>
 						<onclick>Dialog.Close(all)</onclick>
 						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_trakt_watchlist)</onclick>
+					</item>
+					<item>
+						<label>TMDB Watchlist</label>
+						<visible>true</visible>
+						<onclick>ClearProperty(Finder.DirectDialog1159,home)</onclick>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_tmdb_watchlist)</onclick>
 					</item>
 				</content>
 			</control>

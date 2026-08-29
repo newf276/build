@@ -21,18 +21,18 @@
                 <control type="image">
                     <left>5</left>
                     <top>5</top>
-                    <width>60</width>
-                    <height>60</height>
+                    <width>100</width>
+                    <height>100</height>
                     <align>top</align>
                     <aspectratio aligny="top">keep</aspectratio>
                     <texture>$INFO[Window(10000).Property(finder.addon_icon_mini)]</texture>
                 </control>
                 <control type="label">
-                    <left>70</left>
+                    <left>130</left>
                     <top>22</top>
-                    <width max="1160">auto</width>
+                    <width max="1100">auto</width>
                     <height>20</height>
-                    <font>font10</font> <!-- FINDER_21 -->
+                    <font>font10</font> <!-- Finder_21 -->
                     <textcolor>FFFFFFFF</textcolor>
                     <align>left</align>
                     <aligny>center</aligny>
@@ -40,11 +40,11 @@
                     <visible>String.IsEqual(Window.Property(window_mode),scraper)</visible>
                 </control>
                 <control type="label">
-                    <left>70</left>
+                    <left>130</left>
                     <top>22</top>
-                    <width max="1160">auto</width>
+                    <width max="1100">auto</width>
                     <height>20</height>
-                    <font>font10</font> <!-- FINDER_21 -->
+                    <font>font10</font> <!-- Finder_21 -->
                     <textcolor>FFFFFFFF</textcolor>
                     <align>left</align>
                     <aligny>center</aligny>
@@ -69,7 +69,7 @@
                     <top>400</top>
                     <width>1920</width>
                     <height>30</height>
-                    <font>font60</font> <!-- FINDER_60_BOLD -->
+                    <font>font60</font> <!-- Finder_60_BOLD -->
                     <textcolor>FFCCCCCC</textcolor>
                     <align>center</align>
                     <aligny>bottom</aligny>
@@ -80,7 +80,7 @@
                     <top>480</top>
                     <width>1920</width>
                     <height>25</height>
-                    <font>font14</font> <!-- FINDER_33 -->
+                    <font>font14</font> <!-- Finder_33 -->
                     <textcolor>FFCCCCCC</textcolor>
                     <align>center</align>
                     <aligny>bottom</aligny>
@@ -90,7 +90,7 @@
             </control>
             <!-- Busy Spinner -->
             <control type="image">
-                <visible>String.IsEqual(Window.Property(window_mode),resolver) + String.IsEqual(Window.Property(enable_busy_spinner),true)</visible>
+                <visible>String.IsEqual(Window.Property(enable_busy_spinner),true)</visible>
                 <left>715</left>
                 <top>552</top>
                 <width>30</width>
@@ -102,7 +102,6 @@
             </control>
             <!-- Progress -->
             <control type="group">
-                <visible>String.IsEqual(Window.Property(window_mode),scraper) | String.IsEqual(Window.Property(window_mode),resolver)</visible>
                 <top>560</top>
                 <left>750</left>
                 <control type="group">
@@ -111,147 +110,147 @@
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF434343">finder_common/white.png</texture>
-                        <visible>Integer.IsLess(Window(10000).Property(finder.scrape.percent),1)</visible>
+                        <visible>Integer.IsLess(Window().Property(percent),1)</visible>
                     </control>
                     <control type="image">
                         <left>20</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF434343">finder_common/white.png</texture>
-                        <visible>Integer.IsLess(Window(10000).Property(finder.scrape.percent),5)</visible>
+                        <visible>Integer.IsLess(Window().Property(percent),5)</visible>
                     </control>
                     <control type="image">
                         <left>40</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF434343">finder_common/white.png</texture>
-                        <visible>Integer.IsLess(Window(10000).Property(finder.scrape.percent),10)</visible>
+                        <visible>Integer.IsLess(Window().Property(percent),10)</visible>
                     </control>
                     <control type="image">
                         <left>60</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF434343">finder_common/white.png</texture>
-                        <visible>Integer.IsLess(Window(10000).Property(finder.scrape.percent),15)</visible>
+                        <visible>Integer.IsLess(Window().Property(percent),15)</visible>
                     </control>
                     <control type="image">
                         <left>80</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF434343">finder_common/white.png</texture>
-                        <visible>Integer.IsLess(Window(10000).Property(finder.scrape.percent),20)</visible>
+                        <visible>Integer.IsLess(Window().Property(percent),20)</visible>
                     </control>
                     <control type="image">
                         <left>100</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF434343">finder_common/white.png</texture>
-                        <visible>Integer.IsLess(Window(10000).Property(finder.scrape.percent),25)</visible>
+                        <visible>Integer.IsLess(Window().Property(percent),25)</visible>
                     </control>
                     <control type="image">
                         <left>120</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF434343">finder_common/white.png</texture>
-                        <visible>Integer.IsLess(Window(10000).Property(finder.scrape.percent),30)</visible>
+                        <visible>Integer.IsLess(Window().Property(percent),30)</visible>
                     </control>
                     <control type="image">
                         <left>140</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF434343">finder_common/white.png</texture>
-                        <visible>Integer.IsLess(Window(10000).Property(finder.scrape.percent),35)</visible>
+                        <visible>Integer.IsLess(Window().Property(percent),35)</visible>
                     </control>
                     <control type="image">
                         <left>160</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF434343">finder_common/white.png</texture>
-                        <visible>Integer.IsLess(Window(10000).Property(finder.scrape.percent),40)</visible>
+                        <visible>Integer.IsLess(Window().Property(percent),40)</visible>
                     </control>
                     <control type="image">
                         <left>180</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF434343">finder_common/white.png</texture>
-                        <visible>Integer.IsLess(Window(10000).Property(finder.scrape.percent),45)</visible>
+                        <visible>Integer.IsLess(Window().Property(percent),45)</visible>
                     </control>
                     <control type="image">
                         <left>200</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF434343">finder_common/white.png</texture>
-                        <visible>Integer.IsLess(Window(10000).Property(finder.scrape.percent),50)</visible>
+                        <visible>Integer.IsLess(Window().Property(percent),50)</visible>
                     </control>
                     <control type="image">
                         <left>220</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF434343">finder_common/white.png</texture>
-                        <visible>Integer.IsLess(Window(10000).Property(finder.scrape.percent),55)</visible>
+                        <visible>Integer.IsLess(Window().Property(percent),55)</visible>
                     </control>
                     <control type="image">
                         <left>240</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF434343">finder_common/white.png</texture>
-                        <visible>Integer.IsLess(Window(10000).Property(finder.scrape.percent),60)</visible>
+                        <visible>Integer.IsLess(Window().Property(percent),60)</visible>
                     </control>
                     <control type="image">
                         <left>260</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF434343">finder_common/white.png</texture>
-                        <visible>Integer.IsLess(Window(10000).Property(finder.scrape.percent),65)</visible>
+                        <visible>Integer.IsLess(Window().Property(percent),65)</visible>
                     </control>
                     <control type="image">
                         <left>280</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF434343">finder_common/white.png</texture>
-                        <visible>Integer.IsLess(Window(10000).Property(finder.scrape.percent),70)</visible>
+                        <visible>Integer.IsLess(Window().Property(percent),70)</visible>
                     </control>
                     <control type="image">
                         <left>300</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF434343">finder_common/white.png</texture>
-                        <visible>Integer.IsLess(Window(10000).Property(finder.scrape.percent),75)</visible>
+                        <visible>Integer.IsLess(Window().Property(percent),75)</visible>
                     </control>
                     <control type="image">
                         <left>320</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF434343">finder_common/white.png</texture>
-                        <visible>Integer.IsLess(Window(10000).Property(finder.scrape.percent),80)</visible>
+                        <visible>Integer.IsLess(Window().Property(percent),80)</visible>
                     </control>
                     <control type="image">
                         <left>340</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF434343">finder_common/white.png</texture>
-                        <visible>Integer.IsLess(Window(10000).Property(finder.scrape.percent),85)</visible>
+                        <visible>Integer.IsLess(Window().Property(percent),85)</visible>
                     </control>
                     <control type="image">
                         <left>360</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF434343">finder_common/white.png</texture>
-                        <visible>Integer.IsLess(Window(10000).Property(finder.scrape.percent),90)</visible>
+                        <visible>Integer.IsLess(Window().Property(percent),90)</visible>
                     </control>
                     <control type="image">
                         <left>380</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF434343">finder_common/white.png</texture>
-                        <visible>Integer.IsLess(Window(10000).Property(finder.scrape.percent),95)</visible>
+                        <visible>Integer.IsLess(Window().Property(percent),95)</visible>
                     </control>
                     <control type="image">
                         <left>400</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF434343">finder_common/white.png</texture>
-                        <visible>Integer.IsLess(Window(10000).Property(finder.scrape.percent),99)</visible>
+                        <visible>Integer.IsLess(Window().Property(percent),99)</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -260,147 +259,147 @@
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF7C7C7C">finder_common/white.png</texture>
-                        <visible>Integer.IsGreaterOrEqual(Window(10000).Property(finder.scrape.percent),1)</visible>
+                        <visible>Integer.IsGreaterOrEqual(Window().Property(percent),1)</visible>
                     </control>
                     <control type="image">
                         <left>20</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF7C7C7C">finder_common/white.png</texture>
-                        <visible>Integer.IsGreaterOrEqual(Window(10000).Property(finder.scrape.percent),5)</visible>
+                        <visible>Integer.IsGreaterOrEqual(Window().Property(percent),5)</visible>
                     </control>
                     <control type="image">
                         <left>40</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF7C7C7C">finder_common/white.png</texture>
-                        <visible>Integer.IsGreaterOrEqual(Window(10000).Property(finder.scrape.percent),10)</visible>
+                        <visible>Integer.IsGreaterOrEqual(Window().Property(percent),10)</visible>
                     </control>
                     <control type="image">
                         <left>60</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF7C7C7C">finder_common/white.png</texture>
-                        <visible>Integer.IsGreaterOrEqual(Window(10000).Property(finder.scrape.percent),15)</visible>
+                        <visible>Integer.IsGreaterOrEqual(Window().Property(percent),15)</visible>
                     </control>
                     <control type="image">
                         <left>80</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF7C7C7C">finder_common/white.png</texture>
-                        <visible>Integer.IsGreaterOrEqual(Window(10000).Property(finder.scrape.percent),20)</visible>
+                        <visible>Integer.IsGreaterOrEqual(Window().Property(percent),20)</visible>
                     </control>
                     <control type="image">
                         <left>100</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF7C7C7C">finder_common/white.png</texture>
-                        <visible>Integer.IsGreaterOrEqual(Window(10000).Property(finder.scrape.percent),25)</visible>
+                        <visible>Integer.IsGreaterOrEqual(Window().Property(percent),25)</visible>
                     </control>
                     <control type="image">
                         <left>120</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF7C7C7C">finder_common/white.png</texture>
-                        <visible>Integer.IsGreaterOrEqual(Window(10000).Property(finder.scrape.percent),30)</visible>
+                        <visible>Integer.IsGreaterOrEqual(Window().Property(percent),30)</visible>
                     </control>
                     <control type="image">
                         <left>140</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF7C7C7C">finder_common/white.png</texture>
-                        <visible>Integer.IsGreaterOrEqual(Window(10000).Property(finder.scrape.percent),35)</visible>
+                        <visible>Integer.IsGreaterOrEqual(Window().Property(percent),35)</visible>
                     </control>
                     <control type="image">
                         <left>160</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF7C7C7C">finder_common/white.png</texture>
-                        <visible>Integer.IsGreaterOrEqual(Window(10000).Property(finder.scrape.percent),40)</visible>
+                        <visible>Integer.IsGreaterOrEqual(Window().Property(percent),40)</visible>
                     </control>
                     <control type="image">
                         <left>180</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF7C7C7C">finder_common/white.png</texture>
-                        <visible>Integer.IsGreaterOrEqual(Window(10000).Property(finder.scrape.percent),45)</visible>
+                        <visible>Integer.IsGreaterOrEqual(Window().Property(percent),45)</visible>
                     </control>
                     <control type="image">
                         <left>200</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF7C7C7C">finder_common/white.png</texture>
-                        <visible>Integer.IsGreaterOrEqual(Window(10000).Property(finder.scrape.percent),50)</visible>
+                        <visible>Integer.IsGreaterOrEqual(Window().Property(percent),50)</visible>
                     </control>
                     <control type="image">
                         <left>220</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF7C7C7C">finder_common/white.png</texture>
-                        <visible>Integer.IsGreaterOrEqual(Window(10000).Property(finder.scrape.percent),55)</visible>
+                        <visible>Integer.IsGreaterOrEqual(Window().Property(percent),55)</visible>
                     </control>
                     <control type="image">
                         <left>240</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF7C7C7C">finder_common/white.png</texture>
-                        <visible>Integer.IsGreaterOrEqual(Window(10000).Property(finder.scrape.percent),60)</visible>
+                        <visible>Integer.IsGreaterOrEqual(Window().Property(percent),60)</visible>
                     </control>
                     <control type="image">
                         <left>260</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF7C7C7C">finder_common/white.png</texture>
-                        <visible>Integer.IsGreaterOrEqual(Window(10000).Property(finder.scrape.percent),65)</visible>
+                        <visible>Integer.IsGreaterOrEqual(Window().Property(percent),65)</visible>
                     </control>
                     <control type="image">
                         <left>280</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FF7C7C7C">finder_common/white.png</texture>
-                        <visible>Integer.IsGreaterOrEqual(Window(10000).Property(finder.scrape.percent),70)</visible>
+                        <visible>Integer.IsGreaterOrEqual(Window().Property(percent),70)</visible>
                     </control>
                     <control type="image">
                         <left>300</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FFB40025">finder_common/white.png</texture>
-                        <visible>Integer.IsGreaterOrEqual(Window(10000).Property(finder.scrape.percent),75)</visible>
+                        <visible>Integer.IsGreaterOrEqual(Window().Property(percent),75)</visible>
                     </control>
                     <control type="image">
                         <left>320</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FFB40025">finder_common/white.png</texture>
-                        <visible>Integer.IsGreaterOrEqual(Window(10000).Property(finder.scrape.percent),80)</visible>
+                        <visible>Integer.IsGreaterOrEqual(Window().Property(percent),80)</visible>
                     </control>
                     <control type="image">
                         <left>340</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FFB40025">finder_common/white.png</texture>
-                        <visible>Integer.IsGreaterOrEqual(Window(10000).Property(finder.scrape.percent),85)</visible>
+                        <visible>Integer.IsGreaterOrEqual(Window().Property(percent),85)</visible>
                     </control>
                     <control type="image">
                         <left>360</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FFB40025">finder_common/white.png</texture>
-                        <visible>Integer.IsGreaterOrEqual(Window(10000).Property(finder.scrape.percent),90)</visible>
+                        <visible>Integer.IsGreaterOrEqual(Window().Property(percent),90)</visible>
                     </control>
                     <control type="image">
                         <left>380</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FFB40025">finder_common/white.png</texture>
-                        <visible>Integer.IsGreaterOrEqual(Window(10000).Property(finder.scrape.percent),95)</visible>
+                        <visible>Integer.IsGreaterOrEqual(Window().Property(percent),95)</visible>
                     </control>
                     <control type="image">
                         <left>400</left>
                         <width>15</width>
                         <height>15</height>
                         <texture colordiffuse="FFB40025">finder_common/white.png</texture>
-                        <visible>Integer.IsGreaterOrEqual(Window(10000).Property(finder.scrape.percent),99)</visible>
+                        <visible>Integer.IsGreaterOrEqual(Window().Property(percent),99)</visible>
                     </control>
                 </control>
             </control>
@@ -419,7 +418,7 @@
                             <height>0</height>
                             <align>center</align>
                             <aligny>center</aligny>
-                            <font>font12</font> <!-- FINDER_26 -->
+                            <font>font12</font> <!-- Finder_26 -->
                             <label>[COLOR FF7C7C7C][B]4K[/B][/COLOR]</label>
                         </control>
                         <control type="label">
@@ -429,8 +428,8 @@
                             <height>0</height>
                             <align>center</align>
                             <aligny>center</aligny>
-                            <font>font12</font> <!-- FINDER_26 -->
-                            <label>[COLOR $INFO[Window(10000).Property(finder.scrape.progress_4k_color)]][B]$INFO[Window(10000).Property(finder.scrape.results_4k)][/B][/COLOR]</label>
+                            <font>font12</font> <!-- Finder_26 -->
+                            <label>[COLOR FFFFFFFF][B]$INFO[Window.Property(results_4k)][/B][/COLOR]</label>
                         </control>
                     </control>
                     <control type="group">
@@ -442,7 +441,7 @@
                             <height>0</height>
                             <align>center</align>
                             <aligny>center</aligny>
-                            <font>font12</font> <!-- FINDER_26 -->
+                            <font>font12</font> <!-- Finder_26 -->
                             <label>[COLOR FF7C7C7C][B]1080[/B][/COLOR]</label>
                         </control>
                         <control type="label">
@@ -452,8 +451,8 @@
                             <height>0</height>
                             <align>center</align>
                             <aligny>center</aligny>
-                            <font>font12</font> <!-- FINDER_26 -->
-                            <label>[COLOR $INFO[Window(10000).Property(finder.scrape.progress_1080p_color)]][B]$INFO[Window(10000).Property(finder.scrape.results_1080p)][/B][/COLOR]</label>
+                            <font>font12</font> <!-- Finder_26 -->
+                            <label>[COLOR FFFFFFFF][B]$INFO[Window.Property(results_1080p)][/B][/COLOR]</label>
                         </control>
                     </control>
                     <control type="group">
@@ -465,7 +464,7 @@
                             <height>0</height>
                             <align>center</align>
                             <aligny>center</aligny>
-                            <font>font12</font> <!-- FINDER_26 -->
+                            <font>font12</font> <!-- Finder_26 -->
                             <label>[COLOR FF7C7C7C][B]720[/B][/COLOR]</label>
                         </control>
                         <control type="label">
@@ -475,8 +474,8 @@
                             <height>0</height>
                             <align>center</align>
                             <aligny>center</aligny>
-                            <font>font12</font> <!-- FINDER_26 -->
-                            <label>[COLOR $INFO[Window(10000).Property(finder.scrape.progress_720p_color)]][B]$INFO[Window(10000).Property(finder.scrape.results_720p)][/B][/COLOR]</label>
+                            <font>font12</font> <!-- Finder_26 -->
+                            <label>[COLOR FFFFFFFF][B]$INFO[Window.Property(results_720p)][/B][/COLOR]</label>
                         </control>
                     </control>
                     <control type="group">
@@ -488,7 +487,7 @@
                             <height>0</height>
                             <align>center</align>
                             <aligny>center</aligny>
-                            <font>font12</font> <!-- FINDER_26 -->
+                            <font>font12</font> <!-- Finder_26 -->
                             <label>[COLOR FF7C7C7C][B]SD[/B][/COLOR]</label>
                         </control>
                         <control type="label">
@@ -498,8 +497,8 @@
                             <height>0</height>
                             <align>center</align>
                             <aligny>center</aligny>
-                            <font>font12</font> <!-- FINDER_26 -->
-                            <label>[COLOR $INFO[Window(10000).Property(finder.scrape.progress_sd_color)]][B]$INFO[Window(10000).Property(finder.scrape.results_sd)][/B][/COLOR]</label>
+                            <font>font12</font> <!-- Finder_26 -->
+                            <label>[COLOR FFFFFFFF][B]$INFO[Window.Property(results_sd)][/B][/COLOR]</label>
                         </control>
                     </control>
                     <control type="group">
@@ -511,7 +510,7 @@
                             <height>0</height>
                             <align>center</align>
                             <aligny>center</aligny>
-                            <font>font12</font> <!-- FINDER_26 -->
+                            <font>font12</font> <!-- Finder_26 -->
                             <label>[COLOR FF7C7C7C][B]TOTAL[/B][/COLOR]</label>
                         </control>
                         <control type="label">
@@ -521,8 +520,8 @@
                             <height>0</height>
                             <align>center</align>
                             <aligny>center</aligny>
-                            <font>font12</font> <!-- FINDER_26 -->
-                            <label>[COLOR $INFO[Window(10000).Property(finder.scrape.progress_total_color)]][B]$INFO[Window(10000).Property(finder.scrape.results_total)][/B][/COLOR]</label>
+                            <font>font12</font> <!-- Finder_26 -->
+                            <label>[COLOR FFFFFFFF][B]$INFO[Window.Property(results_total)][/B][/COLOR]</label>
                         </control>
                     </control>
                 </control>
@@ -533,7 +532,7 @@
                     <height>310</height>
                     <align>center</align>
                     <aligny>bottom</aligny>
-                    <font>font12</font> <!-- FINDER_26 -->
+                    <font>font12</font> <!-- Finder_26 -->
                     <textcolor>FFFFFFFF</textcolor>
                 </control>
             </control>
@@ -545,7 +544,7 @@
                     <top>600</top>
                     <width>820</width>
                     <height>310</height>
-                    <font>font12</font> <!-- FINDER_26 -->
+                    <font>font12</font> <!-- Finder_26 -->
                     <align>center</align>
                     <aligny>bottom</aligny>
                     <textcolor>FFB7B4BB</textcolor>
@@ -556,27 +555,27 @@
                     <left>360</left>
                     <width>1200</width>
                     <height>100</height>
-                    <font>font12</font> <!-- FINDER_26 -->
+                    <font>font12</font> <!-- Finder_26 -->
                     <align>center</align>
                     <aligny>bottom</aligny>
                     <textcolor>FFB7B4BB</textcolor>
                 </control>
             </control>
             <!-- Resume -->
-            <control type="grouplist" id="3001">
-                <visible>String.IsEqual(Window.Property(window_mode),resume) + String.IsEqual(Window.Property(resume_ready),true)</visible>
+            <control type="grouplist">
+                <visible>String.IsEqual(Window.Property(window_mode),resume)</visible>
                 <top>620</top>
                 <left>650</left>
                 <orientation>horizontal</orientation>
                 <itemgap>10</itemgap>
-                <control type="button" id="3010">
+                <control type="button" id="10">
                     <description>Resume</description>
                     <width>200</width>
                     <height>60</height>
-                    <onleft>3012</onleft>
-                    <onright>3011</onright>
-                    <label>$INFO[Window.Property(resume_btn_label)]</label>
-                    <font>font12</font> <!-- FINDER_26 -->
+                    <onleft>12</onleft>
+                    <onright>11</onright>
+                    <label>Resume $INFO[Window.Property(resume_percent)]%</label>
+                    <font>font12</font> <!-- Finder_26 -->
                     <textcolor>FFCCCCCC</textcolor>
                     <focusedcolor>FF1F2020</focusedcolor>
                     <texturefocus colordiffuse="CCCCCCCC" border="30">finder_common/circle.png</texturefocus>
@@ -584,14 +583,14 @@
                     <align>center</align>
                     <aligny>center</aligny>
                 </control>
-                <control type="button" id="3011">
+                <control type="button" id="11">
                     <description>Start Over</description>
                     <width>200</width>
                     <height>60</height>
-                    <onleft>3010</onleft>
-                    <onright>3012</onright>
-                    <label>$INFO[Window.Property(startover_btn_label)]</label>
-                    <font>font12</font> <!-- FINDER_26 -->
+                    <onleft>10</onleft>
+                    <onright>12</onright>
+                    <label>Start Over</label>
+                    <font>font12</font> <!-- Finder_26 -->
                     <textcolor>FFCCCCCC</textcolor>
                     <focusedcolor>FF1F2020</focusedcolor>
                     <texturefocus colordiffuse="CCCCCCCC" border="30">finder_common/circle.png</texturefocus>
@@ -599,14 +598,14 @@
                     <align>center</align>
                     <aligny>center</aligny>
                 </control>
-                <control type="button" id="3012">
+                <control type="button" id="12">
                     <description>Cancel</description>
                     <width>200</width>
                     <height>60</height>
-                    <onleft>3011</onleft>
-                    <onright>3010</onright>
-                    <label>$INFO[Window.Property(cancel_btn_label)]</label>
-                    <font>font12</font> <!-- FINDER_26 -->
+                    <onleft>11</onleft>
+                    <onright>10</onright>
+                    <label>Cancel</label>
+                    <font>font12</font> <!-- Finder_26 -->
                     <textcolor>FFCCCCCC</textcolor>
                     <focusedcolor>FF1F2020</focusedcolor>
                     <texturefocus colordiffuse="CCCCCCCC" border="30">finder_common/circle.png</texturefocus>

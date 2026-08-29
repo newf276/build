@@ -22,87 +22,73 @@
                 <control type="image">
                     <left>15</left>
                     <top>15</top>
-                    <width>70</width>
-                    <height>70</height>
+                    <width>100</width>
+                    <height>100</height>
                     <align>left</align>
                     <aspectratio aligny="top">keep</aspectratio>
                     <texture>$INFO[Window(10000).Property(finder.addon_icon_mini)]</texture>
                 </control>
                 <control type="label">
                     <top>40</top>
-                    <left>105</left>
-                    <width max="1115">auto</width>
+                    <left>130</left>
+                    <width max="1090">auto</width>
                     <height>20</height>
-                    <font>font14</font> <!-- FINDER_33 -->
+                    <font>font14</font> <!-- Finder_33 -->
                     <textcolor>FFCCCCCC</textcolor>
                     <shadowcolor>FF000000</shadowcolor>
                     <align>center</align>
                     <aligny>center</aligny>
                     <label>[B]$INFO[Window.Property(heading)][/B]</label>
                 </control>
-                <control type="list" id="2000">
-                    <pagecontrol>4000</pagecontrol>
+                <control type="textbox" id="2000">
+                    <visible>String.IsEqual(Window.Property(font_size),small)</visible>
                     <left>45</left>
                     <top>114</top>
-                    <width>1234</width>
-                    <height>800</height>
-                    <itemlayout height="40">
-                        <control type="label">
-                            <visible>String.IsEqual(Window.Property(font_size),large)</visible>
-                            <left>10</left>
-                            <top>0</top>
-                            <width>1214</width>
-                            <height>40</height>
-                            <font>font14</font> <!-- FINDER_33 -->
-                            <label>$INFO[ListItem.Property(line1)]</label>
-                            <scroll>false</scroll>
-                        </control>
-                        <control type="label">
-                            <visible>String.IsEqual(Window.Property(font_size),small)</visible>
-                            <left>10</left>
-                            <top>0</top>
-                            <width>1214</width>
-                            <height>40</height>
-                            <font>font12</font> <!-- FINDER_26 -->
-                            <label>$INFO[ListItem.Property(line1)]</label>
-                            <scroll>false</scroll>
-                        </control>
-                    </itemlayout>
-                    <focusedlayout height="40">
-                        <control type="label">
-                            <visible>String.IsEqual(Window.Property(font_size),large)</visible>
-                            <left>10</left>
-                            <top>0</top>
-                            <width>1214</width>
-                            <height>40</height>
-                            <font>font14</font> <!-- FINDER_33 -->
-                            <label>$INFO[ListItem.Property(line1)]</label>
-                            <scroll>false</scroll>
-                        </control>
-                        <control type="label">
-                            <visible>String.IsEqual(Window.Property(font_size),small)</visible>
-                            <left>10</left>
-                            <top>0</top>
-                            <width>1214</width>
-                            <height>40</height>
-                            <font>font12</font> <!-- FINDER_26 -->
-                            <label>$INFO[ListItem.Property(line1)]</label>
-                            <scroll>false</scroll>
-                        </control>
-                    </focusedlayout>
+                    <width>1254</width>
+                    <height>816</height>
+                    <font>font12</font> <!-- Finder_26 -->
+                    <textcolor>FFCCCCCC</textcolor>
+                    <label>$INFO[Window.Property(text)]</label>
+                    <pagecontrol>2060</pagecontrol>
+                    <autoscroll>false</autoscroll>
                 </control>
-                <control type="scrollbar" id="4000">
-                    <left>1310</left>
+                <control type="textbox" id="2000">
+                    <visible>String.IsEqual(Window.Property(font_size),large)</visible>
+                    <left>45</left>
+                    <top>114</top>
+                    <width>1254</width>
+                    <height>826</height>
+                    <font>font14</font> <!-- Finder_33 -->
+                    <textcolor>FFCCCCCC</textcolor>
+                    <label>$INFO[Window.Property(text)]</label>
+                    <pagecontrol>2061</pagecontrol>
+                    <autoscroll>false</autoscroll>
+                </control>
+                <control type="scrollbar" id="2060">
+                    <visible>String.IsEqual(Window.Property(font_size),small)</visible>
+                    <left>1335</left>
                     <top>110</top>
-                    <width>32</width>
+                    <width>10</width>
                     <height>820</height>
                     <texturesliderbackground colordiffuse="FF1F2020">finder_common/white.png</texturesliderbackground>
                     <texturesliderbar colordiffuse="FF555556">finder_common/white.png</texturesliderbar>
                     <texturesliderbarfocus colordiffuse="FFCCCCCC">finder_common/white.png</texturesliderbarfocus>
-                    <textureslidernib colordiffuse="FF555556">finder_common/scrollbar_nib.png</textureslidernib>
-                    <textureslidernibfocus colordiffuse="FFCCCCCC">finder_common/scrollbar_nib.png</textureslidernibfocus>
-                    <onleft>4000</onleft>
-                    <onright>4000</onright>
+                    <onleft>2060</onleft>
+                    <onright>2060</onright>
+                    <showonepage>false</showonepage>
+                    <orientation>vertical</orientation>
+                </control>
+                <control type="scrollbar" id="2061">
+                    <visible>String.IsEqual(Window.Property(font_size),large)</visible>
+                    <left>1335</left>
+                    <top>110</top>
+                    <width>10</width>
+                    <height>820</height>
+                    <texturesliderbackground colordiffuse="FF1F2020">finder_common/white.png</texturesliderbackground>
+                    <texturesliderbar colordiffuse="FF555556">finder_common/white.png</texturesliderbar>
+                    <texturesliderbarfocus colordiffuse="FFCCCCCC">finder_common/white.png</texturesliderbarfocus>
+                    <onleft>2061</onleft>
+                    <onright>2061</onright>
                     <showonepage>false</showonepage>
                     <orientation>vertical</orientation>
                 </control>

@@ -27,34 +27,21 @@
             <control type="image">
                 <left>5</left>
                 <top>5</top>
-                <width>60</width>
-                <height>60</height>
+                <width>100</width>
+                <height>100</height>
                 <aspectratio aligny="top">keep</aspectratio>
                 <texture>$INFO[Window(10000).Property(finder.addon_icon_mini)]</texture>
             </control>
             <control type="label">
-                <left>70</left>
+                <left>130</left>
                 <top>22</top>
                 <width max="650">auto</width>
                 <height>20</height>
-                <font>font10</font> <!-- FINDER_21 -->
+                <font>font10</font> <!-- Finder_21 -->
                 <textcolor>FFFFFFFF</textcolor>
                 <align>left</align>
                 <aligny>center</aligny>
                 <label>[B]$INFO[Window.Property(total_results)][/B] [UPPERCASE]Results $INFO[Window.Property(filters_ignored)] $INFO[Window.Property(filter_info)][/UPPERCASE]</label>
-            </control>
-            <control type="label">
-                <left>730</left>
-                <top>22</top>
-                <width>1170</width>
-                <height>20</height>
-                <font>font10</font> <!-- FINDER_21 -->
-                <textcolor>FFFFFFFF</textcolor>
-                <align>right</align>
-                <aligny>center</aligny>
-                <scroll>true</scroll>
-                <label>[B]$INFO[Window.Property(episode_label)][/B]</label>
-                <visible>!String.IsEmpty(Window.Property(episode_label))</visible>
             </control>
         </control>
         <!-- Results -->
@@ -79,7 +66,7 @@
                     <left>355</left>
                     <width max="1210">auto</width>
                     <height>30</height>
-                    <font>font60</font> <!-- FINDER_60_BOLD -->
+                    <font>font60</font> <!-- Finder_60_BOLD -->
                     <textcolor>FFCCCCCC</textcolor>
                     <align>center</align>
                     <aligny>top</aligny>
@@ -123,7 +110,7 @@
                             <left>20</left>
                             <visible>String.IsEmpty(ListItem.Property(perform_full_search))</visible>
                             <control type="label">
-                                <font>font14</font> <!-- FINDER_33 -->
+                                <font>font14</font> <!-- Finder_33 -->
                                 <align>left</align>
                                 <aligny>bottom</aligny>
                                 <label>[COLOR $INFO[ListItem.Property(highlight)]][B]$INFO[ListItem.Property(quality)][/B][/COLOR]</label>
@@ -131,7 +118,7 @@
                             </control>
                             <control type="label">
                                 <top>35</top>
-                                <font>font10</font> <!-- FINDER_21 -->
+                                <font>font10</font> <!-- Finder_21 -->
                                 <align>left</align>
                                 <aligny>top</aligny>
                                 <label>[COLOR $INFO[ListItem.Property(highlight)]][B]$INFO[ListItem.Property(provider)][/B][/COLOR]</label>
@@ -145,11 +132,11 @@
                                 <left>210</left>
                                 <width max="950">auto</width>
                                 <height>12</height>
-                                <font>font10</font> <!-- FINDER_21 -->
+                                <font>font10</font> <!-- Finder_21 -->
                                 <textcolor>FFCCCCCC</textcolor>
                                 <align>left</align>
                                 <aligny>center</aligny>
-                                <label>[UPPERCASE][COLOR $INFO[ListItem.Property(highlight)]][B]Size: [/B][/COLOR]$INFO[ListItem.Property(size_label)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Hoster: [/B][/COLOR]$INFO[ListItem.Property(source_type)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Site: [/B][/COLOR]$INFO[ListItem.Property(source_site)]$INFO[ListItem.Property(scraper_suffix)][/UPPERCASE]</label>
+                                <label>[UPPERCASE][COLOR $INFO[ListItem.Property(highlight)]][B]Size: [/B][/COLOR]$INFO[ListItem.Property(size_label)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Hoster: [/B][/COLOR]$INFO[ListItem.Property(source_type)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Site: [/B][/COLOR]$INFO[ListItem.Property(source_site)][/UPPERCASE]</label>
                                 <scroll>false</scroll>
                             </control>
                             <control type="label">
@@ -157,7 +144,7 @@
                                 <left>210</left>
                                 <width max="950">auto</width>
                                 <height>12</height>
-                                <font>font10</font> <!-- FINDER_21 -->
+                                <font>font10</font> <!-- Finder_21 -->
                                 <textcolor>FFCCCCCC</textcolor>
                                 <align>left</align>
                                 <aligny>center</aligny>
@@ -169,7 +156,7 @@
                                 <left>210</left>
                                 <width max="950">auto</width>
                                 <height>12</height>
-                                <font>font10</font> <!-- FINDER_21 -->
+                                <font>font10</font> <!-- Finder_21 -->
                                 <textcolor>FFCCCCCC</textcolor>
                                 <align>left</align>
                                 <aligny>center</aligny>
@@ -193,11 +180,11 @@
                                 <left>230</left>
                                 <width max="860">auto</width>
                                 <height>40</height>
-                                <font>font14</font> <!-- FINDER_33 -->
+                                <font>font14</font> <!-- Finder_33 -->
                                 <textcolor>FF9c9a9b</textcolor>
                                 <align>center</align>
                                 <aligny>center</aligny>
-                                <label>[B]RUN EXTERNAL SCRAPER SEARCH[/B]</label>
+                                <label>[B]***START FULL SCRAPE***[/B]</label>
                                 <scroll>false</scroll>
                                 <visible>!String.IsEmpty(ListItem.Property(perform_full_search))</visible>
                             </control>
@@ -211,7 +198,7 @@
                                 <animation effect="fade" start="100" end="60" time="0" condition="!Control.HasFocus(2000)">Conditional</animation>
                                 <control type="image">
                                     <width>1180</width>
-                                    <texture colordiffuse="$INFO[ListItem.Property(highlight_bg)]" border="30">finder_common/circle.png</texture>
+                                    <texture colordiffuse="FFCCCCCC" border="30">finder_common/circle.png</texture>
                                 </control>
                                 <control type="image">
                                     <width>200</width>
@@ -219,14 +206,14 @@
                                 </control>
                             </control>
                             <control type="group">
-                                <visible>String.IsEmpty(ListItem.Property(perform_full_search)) + !String.IsEqual(ListItem.Property(highlight_tint_focused_background),true)</visible>
+                                <visible>String.IsEmpty(ListItem.Property(perform_full_search))</visible>
                                 <control type="group">
                                     <height max="100">auto</height>
                                     <width max="160">auto</width>
                                     <top>35</top>
                                     <left>20</left>
                                     <control type="label">
-                                        <font>font14</font> <!-- FINDER_33 -->
+                                        <font>font14</font> <!-- Finder_33 -->
                                         <textcolor>FF1F2020</textcolor>
                                         <align>left</align>
                                         <aligny>bottom</aligny>
@@ -234,7 +221,7 @@
                                     </control>
                                     <control type="label">
                                         <top>35</top>
-                                        <font>font10</font> <!-- FINDER_21 -->
+                                        <font>font10</font> <!-- Finder_21 -->
                                         <textcolor>FF1F2020</textcolor>
                                         <align>left</align>
                                         <aligny>top</aligny>
@@ -246,11 +233,11 @@
                                     <left>210</left>
                                     <width max="950">auto</width>
                                     <height>12</height>
-                                    <font>font10</font> <!-- FINDER_21 -->
+                                    <font>font10</font> <!-- Finder_21 -->
                                     <textcolor>FF1F2020</textcolor>
                                     <align>left</align>
                                     <aligny>center</aligny>
-                                    <label>[UPPERCASE][COLOR $INFO[ListItem.Property(highlight)]][B]Size: [/B][/COLOR]$INFO[ListItem.Property(size_label)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Hoster: [/B][/COLOR]$INFO[ListItem.Property(source_type)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Site: [/B][/COLOR]$INFO[ListItem.Property(source_site)]$INFO[ListItem.Property(scraper_suffix)][/UPPERCASE]</label>
+                                    <label>[UPPERCASE][COLOR $INFO[ListItem.Property(highlight)]][B]Size: [/B][/COLOR]$INFO[ListItem.Property(size_label)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Hoster: [/B][/COLOR]$INFO[ListItem.Property(source_type)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Site: [/B][/COLOR]$INFO[ListItem.Property(source_site)][/UPPERCASE]</label>
                                     <scroll>Control.HasFocus(2000)</scroll>
                                 </control>
                                 <control type="label">
@@ -258,7 +245,7 @@
                                     <left>210</left>
                                     <width max="950">auto</width>
                                     <height>12</height>
-                                    <font>font10</font> <!-- FINDER_21 -->
+                                    <font>font10</font> <!-- Finder_21 -->
                                     <textcolor>FF1F2020</textcolor>
                                     <align>left</align>
                                     <aligny>center</aligny>
@@ -270,71 +257,11 @@
                                     <left>210</left>
                                     <width max="950">auto</width>
                                     <height>12</height>
-                                    <font>font10</font> <!-- FINDER_21 -->
+                                    <font>font10</font> <!-- Finder_21 -->
                                     <textcolor>FF1F2020</textcolor>
                                     <align>left</align>
                                     <aligny>center</aligny>
                                     <label>[UPPERCASE][COLOR $INFO[ListItem.Property(highlight)]][B]Title: [/B][/COLOR]$INFO[ListItem.Property(count)] $INFO[ListItem.Property(name)][/UPPERCASE]</label>
-                                    <scroll>Control.HasFocus(2000)</scroll>
-                                </control>
-                            </control>
-                            <control type="group">
-                                <visible>String.IsEmpty(ListItem.Property(perform_full_search)) + String.IsEqual(ListItem.Property(highlight_tint_focused_background),true)</visible>
-                                <control type="group">
-                                    <height max="100">auto</height>
-                                    <width max="160">auto</width>
-                                    <top>35</top>
-                                    <left>20</left>
-                                    <control type="label">
-                                        <font>font14</font> <!-- FINDER_33 -->
-                                        <textcolor>FFFFFFFF</textcolor>
-                                        <align>left</align>
-                                        <aligny>bottom</aligny>
-                                        <label>[B]$INFO[ListItem.Property(quality)][/B]</label>
-                                    </control>
-                                    <control type="label">
-                                        <top>35</top>
-                                        <font>font10</font> <!-- FINDER_21 -->
-                                        <textcolor>FFFFFFFF</textcolor>
-                                        <align>left</align>
-                                        <aligny>top</aligny>
-                                        <label>[B]$INFO[ListItem.Property(provider)][/B]</label>
-                                    </control>
-                                </control>
-                                <control type="label">
-                                    <top>30</top>
-                                    <left>210</left>
-                                    <width max="950">auto</width>
-                                    <height>12</height>
-                                    <font>font10</font> <!-- FINDER_21 -->
-                                    <textcolor>FFFFFFFF</textcolor>
-                                    <align>left</align>
-                                    <aligny>center</aligny>
-                                    <label>[UPPERCASE][COLOR FFA8A8A8][B]Size:[/B][/COLOR] [COLOR FFFFFFFF]$INFO[ListItem.Property(size_label)][/COLOR]     [COLOR FFA8A8A8][B]Hoster:[/B][/COLOR] [COLOR FFFFFFFF]$INFO[ListItem.Property(source_type)][/COLOR]     [COLOR FFA8A8A8][B]Site:[/B][/COLOR] [COLOR FFFFFFFF]$INFO[ListItem.Property(source_site)][/COLOR]$INFO[ListItem.Property(scraper_suffix_tint)][/UPPERCASE]</label>
-                                    <scroll>Control.HasFocus(2000)</scroll>
-                                </control>
-                                <control type="label">
-                                    <top>62</top>
-                                    <left>210</left>
-                                    <width max="950">auto</width>
-                                    <height>12</height>
-                                    <font>font10</font> <!-- FINDER_21 -->
-                                    <textcolor>FFFFFFFF</textcolor>
-                                    <align>left</align>
-                                    <aligny>center</aligny>
-                                    <label>[UPPERCASE][COLOR FFA8A8A8][B]Info:[/B][/COLOR] [COLOR FFFFFFFF]$INFO[ListItem.Property(extraInfo)][/COLOR][/UPPERCASE]</label>
-                                    <scroll>Control.HasFocus(2000)</scroll>
-                                </control>
-                                <control type="label">
-                                    <top>94</top>
-                                    <left>210</left>
-                                    <width max="950">auto</width>
-                                    <height>12</height>
-                                    <font>font10</font> <!-- FINDER_21 -->
-                                    <textcolor>FFFFFFFF</textcolor>
-                                    <align>left</align>
-                                    <aligny>center</aligny>
-                                    <label>[UPPERCASE][COLOR FFA8A8A8][B]Title:[/B][/COLOR] [COLOR FFFFFFFF]$INFO[ListItem.Property(count)] $INFO[ListItem.Property(name)][/COLOR][/UPPERCASE]</label>
                                     <scroll>Control.HasFocus(2000)</scroll>
                                 </control>
                             </control>
@@ -354,11 +281,11 @@
                                     <left>210</left>
                                     <width max="860">auto</width>
                                     <height>40</height>
-                                    <font>font14</font> <!-- FINDER_33 -->
+                                    <font>font14</font> <!-- Finder_33 -->
                                     <textcolor>FF1F2020</textcolor>
                                     <align>center</align>
                                     <aligny>center</aligny>
-                                    <label>[B]RUN EXTERNAL SCRAPER SEARCH[/B]</label>
+                                    <label>[B]***START FULL SCRAPE***[/B]</label>
                                 </control>
                             </control>
                         </control>
@@ -419,7 +346,7 @@
                     <left>355</left>
                     <width max="1210">auto</width>
                     <height>30</height>
-                    <font>font60</font> <!-- FINDER_60_BOLD -->
+                    <font>font60</font> <!-- Finder_60_BOLD -->
                     <textcolor>FFCCCCCC</textcolor>
                     <align>center</align>
                     <aligny>bottom</aligny>
@@ -454,7 +381,7 @@
                                 <top>35</top>
                                 <left>20</left>
                                 <control type="label">
-                                    <font>font14</font> <!-- FINDER_33 -->
+                                    <font>font14</font> <!-- Finder_33 -->
                                     <align>left</align>
                                     <aligny>bottom</aligny>
                                     <label>[COLOR $INFO[ListItem.Property(highlight)]][B]$INFO[ListItem.Property(quality)][/B][/COLOR]</label>
@@ -462,7 +389,7 @@
                                 </control>
                                 <control type="label">
                                     <top>35</top>
-                                    <font>font10</font> <!-- FINDER_21 -->
+                                    <font>font10</font> <!-- Finder_21 -->
                                     <align>left</align>
                                     <aligny>top</aligny>
                                     <label>[COLOR $INFO[ListItem.Property(highlight)]][B]$INFO[ListItem.Property(provider)][/B][/COLOR]</label>
@@ -474,11 +401,11 @@
                                 <left>185</left>
                                 <width max="725">auto</width>
                                 <height>12</height>
-                                <font>font10</font> <!-- FINDER_21 -->
+                                <font>font10</font> <!-- Finder_21 -->
                                 <textcolor>FFCCCCCC</textcolor>
                                 <align>left</align>
                                 <aligny>center</aligny>
-                                <label>[UPPERCASE][COLOR $INFO[ListItem.Property(highlight)]][B]Size: [/B][/COLOR]$INFO[ListItem.Property(size_label)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Hoster: [/B][/COLOR]$INFO[ListItem.Property(source_type)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Site: [/B][/COLOR]$INFO[ListItem.Property(source_site)]$INFO[ListItem.Property(scraper_suffix)][/UPPERCASE]</label>
+                                <label>[UPPERCASE][COLOR $INFO[ListItem.Property(highlight)]][B]Size: [/B][/COLOR]$INFO[ListItem.Property(size_label)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Hoster: [/B][/COLOR]$INFO[ListItem.Property(source_type)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Site: [/B][/COLOR]$INFO[ListItem.Property(source_site)][/UPPERCASE]</label>
                                 <scroll>false</scroll>
                             </control>
                             <control type="label">
@@ -486,7 +413,7 @@
                                 <left>185</left>
                                 <width max="725">auto</width>
                                 <height>12</height>
-                                <font>font10</font> <!-- FINDER_21 -->
+                                <font>font10</font> <!-- Finder_21 -->
                                 <textcolor>FFCCCCCC</textcolor>
                                 <align>left</align>
                                 <aligny>center</aligny>
@@ -498,7 +425,7 @@
                                 <left>185</left>
                                 <width max="725">auto</width>
                                 <height>12</height>
-                                <font>font10</font> <!-- FINDER_21 -->
+                                <font>font10</font> <!-- Finder_21 -->
                                 <textcolor>FFCCCCCC</textcolor>
                                 <align>left</align>
                                 <aligny>center</aligny>
@@ -522,11 +449,11 @@
                                 <left>40</left>
                                 <width max="860">auto</width>
                                 <height>40</height>
-                                <font>font14</font> <!-- FINDER_33 -->
+                                <font>font14</font> <!-- Finder_33 -->
                                 <textcolor>FF9c9a9b</textcolor>
                                 <align>center</align>
                                 <aligny>center</aligny>
-                                <label>[B]RUN EXTERNAL SCRAPER SEARCH[/B]</label>
+                                <label>[B]***START FULL SCRAPE***[/B]</label>
                                 <scroll>false</scroll>
                                 <visible>!String.IsEmpty(ListItem.Property(perform_full_search))</visible>
                             </control>
@@ -540,7 +467,7 @@
                                 <height>110</height>
                                 <control type="image">
                                     <width>925</width>
-                                    <texture colordiffuse="$INFO[ListItem.Property(highlight_bg)]" border="30">finder_common/circle.png</texture>
+                                    <texture colordiffuse="FFCCCCCC" border="30">finder_common/circle.png</texture>
                                 </control>
                                 <control type="image">
                                     <width>175</width>
@@ -548,14 +475,14 @@
                                 </control>
                             </control>
                             <control type="group">
-                                <visible>String.IsEmpty(ListItem.Property(perform_full_search)) + !String.IsEqual(ListItem.Property(highlight_tint_focused_background),true)</visible>
+                                <visible>String.IsEmpty(ListItem.Property(perform_full_search))</visible>
                                 <control type="group">
                                     <height max="100">auto</height>
                                     <width max="150">auto</width>
                                     <top>35</top>
                                     <left>20</left>
                                     <control type="label">
-                                        <font>font14</font> <!-- FINDER_33 -->
+                                        <font>font14</font> <!-- Finder_33 -->
                                         <textcolor>FF1F2020</textcolor>
                                         <align>left</align>
                                         <aligny>bottom</aligny>
@@ -563,7 +490,7 @@
                                     </control>
                                     <control type="label">
                                         <top>35</top>
-                                        <font>font10</font> <!-- FINDER_21 -->
+                                        <font>font10</font> <!-- Finder_21 -->
                                         <textcolor>FF1F2020</textcolor>
                                         <align>left</align>
                                         <aligny>top</aligny>
@@ -575,11 +502,11 @@
                                     <left>185</left>
                                     <width max="725">auto</width>
                                     <height>12</height>
-                                    <font>font10</font> <!-- FINDER_21 -->
+                                    <font>font10</font> <!-- Finder_21 -->
                                     <textcolor>FF1F2020</textcolor>
                                     <align>left</align>
                                     <aligny>center</aligny>
-                                    <label>[UPPERCASE][COLOR $INFO[ListItem.Property(highlight)]][B]Size: [/B][/COLOR]$INFO[ListItem.Property(size_label)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Hoster: [/B][/COLOR]$INFO[ListItem.Property(source_type)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Site: [/B][/COLOR]$INFO[ListItem.Property(source_site)]$INFO[ListItem.Property(scraper_suffix)][/UPPERCASE]</label>
+                                    <label>[UPPERCASE][COLOR $INFO[ListItem.Property(highlight)]][B]Size: [/B][/COLOR]$INFO[ListItem.Property(size_label)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Hoster: [/B][/COLOR]$INFO[ListItem.Property(source_type)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Site: [/B][/COLOR]$INFO[ListItem.Property(source_site)][/UPPERCASE]</label>
                                     <scroll>Control.HasFocus(2001)</scroll>
                                 </control>
                                 <control type="label">
@@ -587,7 +514,7 @@
                                     <left>185</left>
                                     <width max="725">auto</width>
                                     <height>12</height>
-                                    <font>font10</font> <!-- FINDER_21 -->
+                                    <font>font10</font> <!-- Finder_21 -->
                                     <textcolor>FF1F2020</textcolor>
                                     <align>left</align>
                                     <aligny>center</aligny>
@@ -599,71 +526,11 @@
                                     <left>185</left>
                                     <width max="725">auto</width>
                                     <height>12</height>
-                                    <font>font10</font> <!-- FINDER_21 -->
+                                    <font>font10</font> <!-- Finder_21 -->
                                     <textcolor>FF1F2020</textcolor>
                                     <align>left</align>
                                     <aligny>center</aligny>
                                     <label>[UPPERCASE][COLOR $INFO[ListItem.Property(highlight)]][B]Title: [/B][/COLOR]$INFO[ListItem.Property(count)] $INFO[ListItem.Property(name)][/UPPERCASE]</label>
-                                    <scroll>Control.HasFocus(2001)</scroll>
-                                </control>
-                            </control>
-                            <control type="group">
-                                <visible>String.IsEmpty(ListItem.Property(perform_full_search)) + String.IsEqual(ListItem.Property(highlight_tint_focused_background),true)</visible>
-                                <control type="group">
-                                    <height max="100">auto</height>
-                                    <width max="150">auto</width>
-                                    <top>35</top>
-                                    <left>20</left>
-                                    <control type="label">
-                                        <font>font14</font> <!-- FINDER_33 -->
-                                        <textcolor>FFFFFFFF</textcolor>
-                                        <align>left</align>
-                                        <aligny>bottom</aligny>
-                                        <label>[B]$INFO[ListItem.Property(quality)][/B]</label>
-                                    </control>
-                                    <control type="label">
-                                        <top>35</top>
-                                        <font>font10</font> <!-- FINDER_21 -->
-                                        <textcolor>FFFFFFFF</textcolor>
-                                        <align>left</align>
-                                        <aligny>top</aligny>
-                                        <label>[B]$INFO[ListItem.Property(provider)][/B]</label>
-                                    </control>
-                                </control>
-                                <control type="label">
-                                    <top>30</top>
-                                    <left>185</left>
-                                    <width max="725">auto</width>
-                                    <height>12</height>
-                                    <font>font10</font> <!-- FINDER_21 -->
-                                    <textcolor>FFFFFFFF</textcolor>
-                                    <align>left</align>
-                                    <aligny>center</aligny>
-                                    <label>[UPPERCASE][COLOR FFA8A8A8][B]Size:[/B][/COLOR] [COLOR FFFFFFFF]$INFO[ListItem.Property(size_label)][/COLOR]     [COLOR FFA8A8A8][B]Hoster:[/B][/COLOR] [COLOR FFFFFFFF]$INFO[ListItem.Property(source_type)][/COLOR]     [COLOR FFA8A8A8][B]Site:[/B][/COLOR] [COLOR FFFFFFFF]$INFO[ListItem.Property(source_site)][/COLOR]$INFO[ListItem.Property(scraper_suffix_tint)][/UPPERCASE]</label>
-                                    <scroll>Control.HasFocus(2001)</scroll>
-                                </control>
-                                <control type="label">
-                                    <top>62</top>
-                                    <left>185</left>
-                                    <width max="725">auto</width>
-                                    <height>12</height>
-                                    <font>font10</font> <!-- FINDER_21 -->
-                                    <textcolor>FFFFFFFF</textcolor>
-                                    <align>left</align>
-                                    <aligny>center</aligny>
-                                    <label>[UPPERCASE][COLOR FFA8A8A8][B]Info:[/B][/COLOR] [COLOR FFFFFFFF]$INFO[ListItem.Property(extraInfo)][/COLOR][/UPPERCASE]</label>
-                                    <scroll>Control.HasFocus(2001)</scroll>
-                                </control>
-                                <control type="label">
-                                    <top>94</top>
-                                    <left>185</left>
-                                    <width max="725">auto</width>
-                                    <height>12</height>
-                                    <font>font10</font> <!-- FINDER_21 -->
-                                    <textcolor>FFFFFFFF</textcolor>
-                                    <align>left</align>
-                                    <aligny>center</aligny>
-                                    <label>[UPPERCASE][COLOR FFA8A8A8][B]Title:[/B][/COLOR] [COLOR FFFFFFFF]$INFO[ListItem.Property(count)] $INFO[ListItem.Property(name)][/COLOR][/UPPERCASE]</label>
                                     <scroll>Control.HasFocus(2001)</scroll>
                                 </control>
                             </control>
@@ -683,11 +550,11 @@
                                     <left>40</left>
                                     <width max="860">auto</width>
                                     <height>40</height>
-                                    <font>font14</font> <!-- FINDER_33 -->
+                                    <font>font14</font> <!-- Finder_33 -->
                                     <textcolor>FF1F2020</textcolor>
                                     <align>center</align>
                                     <aligny>center</aligny>
-                                    <label>[B]RUN EXTERNAL SCRAPER SEARCH[/B]</label>
+                                    <label>[B]***START FULL SCRAPE***[/B]</label>
                                     <scroll>false</scroll>
                                     <visible>!String.IsEmpty(ListItem.Property(perform_full_search))</visible>
                                 </control>
@@ -750,7 +617,7 @@
                     <left>355</left>
                     <width max="1210">auto</width>
                     <height>30</height>
-                    <font>font60</font> <!-- FINDER_60_BOLD -->
+                    <font>font60</font> <!-- Finder_60_BOLD -->
                     <textcolor>FFCCCCCC</textcolor>
                     <align>center</align>
                     <aligny>top</aligny>
@@ -787,7 +654,7 @@
                                 <top>35</top>
                                 <left>20</left>
                                 <control type="label">
-                                    <font>font14</font> <!-- FINDER_33 -->
+                                    <font>font14</font> <!-- Finder_33 -->
                                     <align>left</align>
                                     <aligny>bottom</aligny>
                                     <label>[COLOR $INFO[ListItem.Property(highlight)]][B]$INFO[ListItem.Property(quality)][/B][/COLOR]</label>
@@ -795,7 +662,7 @@
                                 </control>
                                 <control type="label">
                                     <top>35</top>
-                                    <font>font10</font> <!-- FINDER_21 -->
+                                    <font>font10</font> <!-- Finder_21 -->
                                     <align>left</align>
                                     <aligny>top</aligny>
                                     <label>[COLOR $INFO[ListItem.Property(highlight)]][B]$INFO[ListItem.Property(provider)][/B][/COLOR]</label>
@@ -807,19 +674,19 @@
                                 <left>210</left>
                                 <width max="1460">auto</width>
                                 <height>12</height>
-                                <font>font10</font> <!-- FINDER_21 -->
+                                <font>font10</font> <!-- Finder_21 -->
                                 <textcolor>FFCCCCCC</textcolor>
                                 <align>left</align>
                                 <aligny>center</aligny>
                                 <scroll>false</scroll>
-                                <label>[UPPERCASE][COLOR $INFO[ListItem.Property(highlight)]][B]Size: [/B][/COLOR]$INFO[ListItem.Property(size_label)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Hoster: [/B][/COLOR]$INFO[ListItem.Property(source_type)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Site: [/B][/COLOR]$INFO[ListItem.Property(source_site)]$INFO[ListItem.Property(scraper_suffix)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Info: [/B][/COLOR]$INFO[ListItem.Property(extraInfo)][/UPPERCASE]</label>
+                                <label>[UPPERCASE][COLOR $INFO[ListItem.Property(highlight)]][B]Size: [/B][/COLOR]$INFO[ListItem.Property(size_label)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Hoster: [/B][/COLOR]$INFO[ListItem.Property(source_type)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Site: [/B][/COLOR]$INFO[ListItem.Property(source_site)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Info: [/B][/COLOR]$INFO[ListItem.Property(extraInfo)][/UPPERCASE]</label>
                             </control>
                             <control type="label">
                                 <top>80</top>
                                 <left>210</left>
                                 <width max="1460">auto</width>
                                 <height>12</height>
-                                <font>font12</font> <!-- FINDER_26 -->
+                                <font>font12</font> <!-- Finder_26 -->
                                 <textcolor>FFCCCCCC</textcolor>
                                 <align>left</align>
                                 <aligny>center</aligny>
@@ -843,11 +710,11 @@
                                 <left>600</left>
                                 <width max="1460">auto</width>
                                 <height>40</height>
-                                <font>font14</font> <!-- FINDER_33 -->
+                                <font>font14</font> <!-- Finder_33 -->
                                 <textcolor>FF9c9a9b</textcolor>
                                 <align>left</align>
                                 <aligny>center</aligny>
-                                <label>[B]RUN EXTERNAL SCRAPER SEARCH[/B]</label>
+                                <label>[B]***START FULL SCRAPE***[/B]</label>
                                 <scroll>false</scroll>
                             </control>
                         </control>
@@ -860,7 +727,7 @@
                                 <height>110</height>
                                 <control type="image">
                                     <width>1700</width>
-                                    <texture colordiffuse="$INFO[ListItem.Property(highlight_bg)]" border="30">finder_common/circle.png</texture>
+                                    <texture colordiffuse="FFCCCCCC" border="30">finder_common/circle.png</texture>
                                 </control>
                                 <control type="image">
                                     <width>200</width>
@@ -868,14 +735,14 @@
                                 </control>
                             </control>
                             <control type="group">
-                                <visible>String.IsEmpty(ListItem.Property(perform_full_search)) + !String.IsEqual(ListItem.Property(highlight_tint_focused_background),true)</visible>
+                                <visible>String.IsEmpty(ListItem.Property(perform_full_search))</visible>
                                 <control type="group">
                                     <height max="100">auto</height>
                                     <width max="160">auto</width>
                                     <top>35</top>
                                     <left>20</left>
                                     <control type="label">
-                                        <font>font14</font> <!-- FINDER_33 -->
+                                        <font>font14</font> <!-- Finder_33 -->
                                         <textcolor>FF1F2020</textcolor>
                                         <align>left</align>
                                         <aligny>bottom</aligny>
@@ -883,7 +750,7 @@
                                     </control>
                                     <control type="label">
                                         <top>35</top>
-                                        <font>font10</font> <!-- FINDER_21 -->
+                                        <font>font10</font> <!-- Finder_21 -->
                                         <textcolor>FF1F2020</textcolor>
                                         <align>left</align>
                                         <aligny>top</aligny>
@@ -895,11 +762,11 @@
                                     <left>210</left>
                                     <width max="1460">auto</width>
                                     <height>12</height>
-                                    <font>font10</font> <!-- FINDER_21 -->
+                                    <font>font10</font> <!-- Finder_21 -->
                                     <textcolor>FF1F2020</textcolor>
                                     <align>left</align>
                                     <aligny>center</aligny>
-                                    <label>[UPPERCASE][COLOR $INFO[ListItem.Property(highlight)]][B]Size: [/B][/COLOR]$INFO[ListItem.Property(size_label)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Hoster: [/B][/COLOR]$INFO[ListItem.Property(source_type)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Site: [/B][/COLOR]$INFO[ListItem.Property(source_site)]$INFO[ListItem.Property(scraper_suffix)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Info: [/B][/COLOR]$INFO[ListItem.Property(extraInfo)][/UPPERCASE]</label>
+                                    <label>[UPPERCASE][COLOR $INFO[ListItem.Property(highlight)]][B]Size: [/B][/COLOR]$INFO[ListItem.Property(size_label)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Hoster: [/B][/COLOR]$INFO[ListItem.Property(source_type)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Site: [/B][/COLOR]$INFO[ListItem.Property(source_site)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Info: [/B][/COLOR]$INFO[ListItem.Property(extraInfo)][/UPPERCASE]</label>
                                     <scroll>Control.HasFocus(2002)</scroll>
                                 </control>
                                 <control type="label">
@@ -907,59 +774,11 @@
                                     <left>210</left>
                                     <width max="1460">auto</width>
                                     <height>12</height>
-                                    <font>font12</font> <!-- FINDER_26 -->
+                                    <font>font12</font> <!-- Finder_26 -->
                                     <textcolor>FF1F2020</textcolor>
                                     <align>left</align>
                                     <aligny>center</aligny>
                                     <label>[UPPERCASE]$INFO[ListItem.Property(count)] $INFO[ListItem.Property(name)][/UPPERCASE]</label>
-                                    <scroll>Control.HasFocus(2002)</scroll>
-                                </control>
-                            </control>
-                            <control type="group">
-                                <visible>String.IsEmpty(ListItem.Property(perform_full_search)) + String.IsEqual(ListItem.Property(highlight_tint_focused_background),true)</visible>
-                                <control type="group">
-                                    <height max="100">auto</height>
-                                    <width max="160">auto</width>
-                                    <top>35</top>
-                                    <left>20</left>
-                                    <control type="label">
-                                        <font>font14</font> <!-- FINDER_33 -->
-                                        <textcolor>FFFFFFFF</textcolor>
-                                        <align>left</align>
-                                        <aligny>bottom</aligny>
-                                        <label>[B]$INFO[ListItem.Property(quality)][/B]</label>
-                                    </control>
-                                    <control type="label">
-                                        <top>35</top>
-                                        <font>font10</font> <!-- FINDER_21 -->
-                                        <textcolor>FFFFFFFF</textcolor>
-                                        <align>left</align>
-                                        <aligny>top</aligny>
-                                        <label>[B]$INFO[ListItem.Property(provider)][/B]</label>
-                                    </control>
-                                </control>
-                                <control type="label">
-                                    <top>30</top>
-                                    <left>210</left>
-                                    <width max="1460">auto</width>
-                                    <height>12</height>
-                                    <font>font10</font> <!-- FINDER_21 -->
-                                    <textcolor>FFFFFFFF</textcolor>
-                                    <align>left</align>
-                                    <aligny>center</aligny>
-                                    <label>[UPPERCASE][COLOR FFA8A8A8][B]Size:[/B][/COLOR] [COLOR FFFFFFFF]$INFO[ListItem.Property(size_label)][/COLOR]     [COLOR FFA8A8A8][B]Hoster:[/B][/COLOR] [COLOR FFFFFFFF]$INFO[ListItem.Property(source_type)][/COLOR]     [COLOR FFA8A8A8][B]Site:[/B][/COLOR] [COLOR FFFFFFFF]$INFO[ListItem.Property(source_site)][/COLOR]$INFO[ListItem.Property(scraper_suffix_tint)]     [COLOR FFA8A8A8][B]Info:[/B][/COLOR] [COLOR FFFFFFFF]$INFO[ListItem.Property(extraInfo)][/COLOR][/UPPERCASE]</label>
-                                    <scroll>Control.HasFocus(2002)</scroll>
-                                </control>
-                                <control type="label">
-                                    <top>80</top>
-                                    <left>210</left>
-                                    <width max="1460">auto</width>
-                                    <height>12</height>
-                                    <font>font12</font> <!-- FINDER_26 -->
-                                    <textcolor>FFFFFFFF</textcolor>
-                                    <align>left</align>
-                                    <aligny>center</aligny>
-                                    <label>[UPPERCASE][COLOR FFFFFFFF]$INFO[ListItem.Property(count)] $INFO[ListItem.Property(name)][/COLOR][/UPPERCASE]</label>
                                     <scroll>Control.HasFocus(2002)</scroll>
                                 </control>
                             </control>
@@ -979,11 +798,11 @@
                                     <left>600</left>
                                     <width max="1460">auto</width>
                                     <height>40</height>
-                                    <font>font14</font> <!-- FINDER_33 -->
+                                    <font>font14</font> <!-- Finder_33 -->
                                     <textcolor>FF1F2020</textcolor>
                                     <align>left</align>
                                     <aligny>center</aligny>
-                                    <label>[B]RUN EXTERNAL SCRAPER SEARCH[/B]</label>
+                                    <label>[B]***START FULL SCRAPE***[/B]</label>
                                 </control>
                             </control>
                         </control>
@@ -1041,19 +860,19 @@
             <control type="image">
                 <left>10</left>
                 <top>10</top>
-                <width>45</width>
-                <height>45</height>
+                <width>100</width>
+                <height>100</height>
                 <align>left</align>
                 <aligny>top</aligny>
                 <aspectratio aligny="top">keep</aspectratio>
                 <texture colordiffuse="CCCCCCCC">$INFO[Window(10000).Property(finder.addon_icon_mini)]</texture>
             </control>
             <control type="label">
-                <width max="580">auto</width>
+                <width max="560">auto</width>
                 <top>10</top>
-                <left>110</left>
+                <left>130</left>
                 <height>20</height>
-                <font>font12</font> <!-- FINDER_26 -->
+                <font>font12</font> <!-- Finder_26 -->
                 <textcolor>FFCCCCCC</textcolor>
                 <shadowcolor>FF000000</shadowcolor>
                 <align>center</align>
@@ -1097,7 +916,7 @@
                         <left>70</left>
                         <top>45</top>
                         <height>5</height>
-                        <font>font12</font> <!-- FINDER_26 -->
+                        <font>font12</font> <!-- Finder_26 -->
                         <textcolor>FFCCCCCC</textcolor>
                         <aligny>center</aligny>
                         <label>[UPPERCASE]$INFO[ListItem.Property(label)][/UPPERCASE]</label>
@@ -1114,7 +933,7 @@
                         <top>45</top>
                         <height>5</height>
                         <width max="610">auto</width>
-                        <font>font12</font> <!-- FINDER_26 -->
+                        <font>font12</font> <!-- Finder_26 -->
                         <textcolor>FF1F2020</textcolor>
                         <aligny>center</aligny>
                         <label>[UPPERCASE]$INFO[ListItem.Property(label)][/UPPERCASE]</label>
