@@ -98,7 +98,7 @@
   {
     "setting_id": "trakt.sync_interval",
     "setting_type": "action",
-    "setting_default": "20",
+    "setting_default": "15",
     "min_value": "5",
     "max_value": "600"
   },
@@ -218,7 +218,7 @@
   {
     "setting_id": "paginate.limit_widgets",
     "setting_type": "action",
-    "setting_default": "20"
+    "setting_default": "15"
   },
   {
     "setting_id": "paginate.jump_to",
@@ -510,22 +510,22 @@
   {
     "setting_id": "context_menu.enabled",
     "setting_type": "string",
-    "setting_default": "play_trailer,mark_watched,trakt_manager,tmdb_manager,extras,options,playback_options,recommended,related,more_like_this,refresh"
+    "setting_default": "extras,play_trailer,related,more_like_this,simkl_manager,simkl_plantowatch,trakt_collection,mark_watched,refresh,quick_add"
   },
   {
     "setting_id": "context_menu.order",
     "setting_type": "string",
-    "setting_default": "quick_add,mark_watched,trakt_manager,tmdb_manager,extras,play_trailer,options,playback_options,browse_movie_set,browse_seasons,browse_episodes,recommended,related,more_like_this,similar,in_trakt_list,personal_manager,favorites_manager,unmark_previous_episode,exit,refresh,reload"
+    "setting_default": "simkl_plantowatch,mark_watched,quick_add,play_trailer,mdblist_manager,punchplay_manager,simkl_manager,tmdb_manager,trakt_manager,mdblist_library,trakt_collection,extras,options,playback_options,external_scraper_settings,browse_movie_set,browse_seasons,browse_episodes,recommended,related,more_like_this,similar,in_trakt_list,personal_manager,favorites_manager,unmark_previous_episode,exit,refresh,reload"
   },
   {
     "setting_id": "context_menu.quick_add_target",
     "setting_type": "string",
-    "setting_default": "empty_setting"
+    "setting_default": "trakt_collection"
   },
   {
     "setting_id": "context_menu.quick_add_target_label",
     "setting_type": "string",
-    "setting_default": ""
+    "setting_default": "Trakt Collection"
   },
   {
     "_section": "SINGLE EPISODE LISTS"
@@ -672,12 +672,12 @@
   {
     "setting_id": "trakt.client",
     "setting_type": "string",
-    "setting_default": "d37e53be8a9ad6a243d6e72e6271de71bac2f718c8c512b93198bf3fd747ec37"
+    "setting_default": "9JlEEyHO8ouXuzjNvksss7HzRMltxQQ0qxlREDdBYvs"
   },
   {
     "setting_id": "trakt.secret",
     "setting_type": "string",
-    "setting_default": "f1006109f91fb48f1fa97abb9fe35506e72af8843972efedfd0c7c544bfa63dd"
+    "setting_default": "4NOHkwI6UatrUn2a7NAzQrNk-cPWpnIKgm3ALhTu0LY"
   },
   {
     "_section": "TMDb API"
@@ -1104,7 +1104,7 @@
   {
     "setting_id": "results.timeout",
     "setting_type": "action",
-    "setting_default": "10",
+    "setting_default": "9",
     "min_value": "1"
   },
   {

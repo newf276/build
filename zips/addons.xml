@@ -245,7 +245,7 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.finder" name="[B]Newf's Finder[/B]" provider-name="newf276" version="6.0.0">
+<addon id="plugin.video.finder" name="[B]Newf's Finder[/B]" provider-name="newf276" version="6.0.1">
     <requires>
         <import addon="xbmc.python" version="3.0.1"/>
         <import addon="script.module.pil" version="1.1.7"/>
@@ -263,16 +263,15 @@
         <description lang="en">Finder is a streamlined Kodi video addon for browsing and playing content from your own services. Discover, Search, and browse media of interest. You must own the content of any media you play through this addon.</description>
         <platform>all</platform>
 		<disclaimer lang="en">The author of this addon does not host any of the content which is found and has no affiliation with any of the content providers.</disclaimer>
-        <license>GPL-3.0-or-later</license>
+		<language>en</language>
+		<platform>all</platform>
+		<license>GPL-2.0-or-later</license>
         <source>https://github.com/newf276/build/tree/master/zips</source>
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
-            <icon>resources/media/addon_icons/icon.png</icon>
-            <clearlogo>resources/media/addon_icons/clearlogo.png</clearlogo>
-            <fanart>resources/media/fanart.jpg</fanart>
+            <clearlogo>clearlogo.png</clearlogo>
         </assets>
-        <news>Latest changelog within Finder Add-on under tools menu, changelog.</news>
     </extension>
 </addon>
 </addons>
