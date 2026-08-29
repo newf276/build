@@ -510,22 +510,22 @@
   {
     "setting_id": "context_menu.enabled",
     "setting_type": "string",
-    "setting_default": "play_trailer,mark_watched,trakt_manager,tmdb_manager,extras,options,playback_options,recommended,related,more_like_this,refresh"
+    "setting_default": "quick_add,play_trailer,mark_watched,extras,related,more_like_this,refresh,trakt_manager,tmdb_manager"
   },
   {
     "setting_id": "context_menu.order",
     "setting_type": "string",
-    "setting_default": "quick_add,mark_watched,trakt_manager,tmdb_manager,extras,play_trailer,options,playback_options,browse_movie_set,browse_seasons,browse_episodes,recommended,related,more_like_this,similar,in_trakt_list,personal_manager,favorites_manager,unmark_previous_episode,exit,refresh,reload"
+    "setting_default": "quick_add,mark_watched,extras,play_trailer,trakt_manager,tmdb_manager,options,playback_options,browse_movie_set,browse_seasons,browse_episodes,recommended,related,more_like_this,similar,in_trakt_list,personal_manager,favorites_manager,unmark_previous_episode,exit,refresh,reload"
   },
   {
     "setting_id": "context_menu.quick_add_target",
     "setting_type": "string",
-    "setting_default": "empty_setting"
+    "setting_default": "trakt_collection"
   },
   {
     "setting_id": "context_menu.quick_add_target_label",
     "setting_type": "string",
-    "setting_default": ""
+    "setting_default": "Trakt Collection"
   },
   {
     "_section": "SINGLE EPISODE LISTS"
