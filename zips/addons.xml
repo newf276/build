@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-<addon id="plugin.video.youtube" version="276.8.0" name="[B]Newf's Trailers[/B]" provider-name="newf276">
+<addon id="plugin.video.youtube" version="276.0.0" name="[B]Newf's Trailers[/B]" provider-name="newf276">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.requests" version="2.22.0"/>
@@ -10,20 +10,19 @@
     </extension>
     <extension point="xbmc.python.pluginsource" library="resources/lib/default.py" />
     <extension point="xbmc.addon.metadata">
-        <description lang="en">[B]Player for YouTube trailers[/B]</description>
-        <summary lang="en">Standalone Youtube trailer player</summary>
-        <reuselanguageinvoker>true</reuselanguageinvoker>
-        <language></language>
-        <license>MIT</license>
-        <platform>all</platform>
+		<disclaimer lang="en_GB">This Addon contains no content</disclaimer>
+		<language>en</language>
+		<platform>all</platform>
+		<license>GPL-2.0-or-later</license>
+        <source>https://github.com/newf276/build/tree/master/zips</source>
         <assets>
             <icon>icon.png</icon>
-            <fanart>fanart.png</fanart>
+            <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
 </addon>
 
-<addon id="plugin.program.cleaner" name="[B]Newf's Wizard[/B]" version="0.0.29" provider-name="newf276">
+<addon id="plugin.program.cleaner" name="[B]Newf's Wizard[/B]" version="276.0.0" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0"/>
 		<import addon="script.module.requests" optional="true" />
@@ -47,7 +46,7 @@
     </extension>
 </addon>
 
-<addon id="skin.finder"  name="[B]Newf's Finder Plus Skin[/B]"  version="6.0.1"  provider-name="newf276">
+<addon id="skin.finder"  name="[B]Newf's Finder Plus Skin[/B]"  version="276.0.0"  provider-name="newf276">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0" />
 		<import addon="script.finder.helper" version="6.0.0" />
@@ -63,19 +62,20 @@
 		<res width="2160" height="1080" aspect="18:9" default="false" folder="xml" />
 	</extension>
 	<extension point="xbmc.addon.metadata">
+        <disclaimer lang="en_GB">This Addon contains no content</disclaimer>
+		<language>en</language>
 		<platform>all</platform>
-		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
-		<forum>http://forum.kodi.tv/</forum>
-		<source>https://github.com/xbmc/skin.estuary/</source>
-		<assets>
-			<icon>icon.png</icon>
-			<fanart>fanart.jpg</fanart>
-		</assets>
+		<license>GPL-2.0-or-later</license>
+        <source>https://github.com/newf276/build/tree/master/zips</source>
 		<description>Newf's Finder Plus Skin is a modified version of the default Estuary skin for Kodi. It is intended for use with Newf's Finder Addon ONLY.</description>
-	</extension>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
 </addon>
 
-<addon id="script.module.newfsscrapers" name="[B]Newf's Scrapers[/B]" version="6.0.0" provider-name="newf276">
+<addon id="script.module.newfsscrapers" name="[B]Newf's Scrapers[/B]" version="276.0.0" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 		<import addon="script.module.requests" />
@@ -98,7 +98,7 @@
     </extension>
 </addon>
 
-<addon id="repository.newf" name="[B]Newf's Builds Repo[/B]" version="4.1.1" provider-name="newf276">
+<addon id="repository.newf" name="[B]Newf's Builds Repo[/B]" version="276.0.0" provider-name="newf276">
     <extension point="xbmc.addon.repository" name="[B]Newfs Builds Repo[/B]">
         <dir><!--Newf's Main Repository-->
             <info compressed="false">https://raw.githubusercontent.com/newf276/build/master/zips/addons.xml</info>
@@ -120,55 +120,6 @@
     <extension point="xbmc.addon.metadata">
         <summary>[B]Newf's Builds Repo[/B]</summary>
         <description>Newf's Public Repo</description>
-        <disclaimer></disclaimer>
-        <platform>all</platform>
-        <source>https://github.com/newf276/build/tree/master/zips</source>
-        <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
-        </assets>
-    </extension>
-</addon>
-
-<addon id="script.finder.helper" name="[B]Newf's Finder Plus Helper[/B]" version="6.0.0" provider-name="newf276">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0"/>
-        <import addon="script.module.requests" version="2.19.1"/>
-    </requires>
-    <extension point="xbmc.python.library" library="resources/lib/default.py"/>
-    <extension point="xbmc.service" library="resources/lib/service.py" start="startup" />
-    <extension point="xbmc.addon.metadata">
-        <news />
-        <platform>all</platform>
-        <license>GPL-2.0-only</license>
-        <source>https://github.com/newf276/build/tree/master/zips</source>
-		<assets>
-			<icon>icon.png</icon>
-			<fanart>fanart.jpg</fanart>
-		</assets>
-		<description>Newf's Finder Plus Helper is bridge between the skin and its addons. It is intended for use with Newf's Finder Addon ONLY.</description>
-	</extension>
-</addon>
-
-<addon id="plugin.video.cbcgem" name="[B]CBC Gem[/B]" version="0.2.29" provider-name="newf276">
-  <requires>
-    <import addon="xbmc.python" version="3.0.0"/>
-    <import addon="script.module.requests" version="2.22.0"/>
-    <import addon="script.module.inputstreamhelper" version="0.5.6"/>
-    <import addon="script.module.routing" version="0.2.3+matrix.1"/>
-    <import addon="script.module.beautifulsoup4" version="4.9.3+matrix.1"/>
-    <import addon="script.module.unidecode" version="1.1.1+matrix.2"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-	<provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <assets>
-      <icon>icon.png</icon>
-      <fanart>fanart.jpg</fanart>
-    </assets>
-    <summary lang="en_GB">CBC GEM TV Kodi Plugin</summary>
-    <description lang="en_GB">View online content from the CBC GEM.</description>
 		<disclaimer lang="en_GB">This Addon contains no content</disclaimer>
 		<language>en</language>
 		<platform>all</platform>
@@ -181,12 +132,58 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.finder" name="[B]Newf's Finder[/B]" provider-name="newf276" version="6.0.2">
+<addon id="script.finder.helper" name="[B]Newf's Finder Plus Helper[/B]" version="276.0.0" provider-name="newf276">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.module.requests" version="2.19.1"/>
+    </requires>
+    <extension point="xbmc.python.library" library="resources/lib/default.py"/>
+    <extension point="xbmc.service" library="resources/lib/service.py" start="startup" />
+    <extension point="xbmc.addon.metadata">
+		<disclaimer lang="en_GB">This Addon contains no content</disclaimer>
+		<language>en</language>
+		<platform>all</platform>
+		<license>GPL-2.0-or-later</license>
+        <source>https://github.com/newf276/build/tree/master/zips</source>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
+
+<addon id="plugin.video.cbcgem" name="[B]CBC Gem[/B]" version="276.0.0" provider-name="newf276">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+    <import addon="script.module.requests" version="2.22.0"/>
+    <import addon="script.module.inputstreamhelper" version="0.5.6"/>
+    <import addon="script.module.routing" version="0.2.3+matrix.1"/>
+    <import addon="script.module.beautifulsoup4" version="4.9.3+matrix.1"/>
+    <import addon="script.module.unidecode" version="1.1.1+matrix.2"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+	<provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+		<disclaimer lang="en_GB">This Addon contains no content</disclaimer>
+		<language>en</language>
+		<platform>all</platform>
+		<license>GPL-2.0-or-later</license>
+        <source>https://github.com/newf276/build/tree/master/zips</source>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
+
+<addon id="plugin.video.finder" name="[B]Newf's Finder[/B]" provider-name="newf276" version="276.0.0">
     <requires>
         <import addon="xbmc.python" version="3.0.1"/>
         <import addon="script.module.pil" version="1.1.7"/>
         <import addon="script.module.requests" version="2.19.1"/>
-		<import addon="script.module.newfsscrapers" version="6.0.0"/>
+		<import addon="script.module.newfsscrapers" version="276.0.0"/>
+		<import addon="plugin.video.youtube" version="276.0.0"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="resources/lib/finder.py">
         <provides>video</provides>

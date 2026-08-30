@@ -1,8 +1,77 @@
-[COLORcyan] VERSION 1.5.0[/COLOR]
+[COLORcyan] VERSION 1.5.7[/COLOR]
 
 
+ Newfs Scrapers has been expanded with 3 brand-new scraper sources:
 
-Settings & Configuration Framework
+• ApacheTorrent — Added as a new torrent source
+• TorSeek — Added for additional torrent results
+• Redetorrent — Added for increased source coverage
+
+ IMPROVEMENTS
+
+• Increased overall scraper coverage
+• More sources available when searching for content
+• Improved chances of finding additional torrent results
+• Expanded the Newfs Scrapers ecosystem with new providers
+
+
+ New Scrapers Added
+
+ YourBittorrent
+
+• Added YourBittorrent scraper for additional torrent search coverage.
+• Provides another source for movie and TV results.
+
+ Snowfl
+
+• Added Snowfl scraper.
+• Adds meta-search coverage across multiple torrent sources.
+• Includes additional results and alternative sources where available.
+
+ Improvements
+
+• Expanded overall scraper coverage.
+• More sources available when searching for content.
+• Improved variety of results across different releases and qualities.
+
+
+ Newfs Scrapers — UPDATE
+
+ Fixes & Improvements
+
+• Scrapers fixed — restored and improved scraper functionality.
+• Anime Providers section added to Newfs Scrapers settings for easier management of anime sources.
+• Anime scrapers added — bringing more dedicated providers to Newfs.
+
+ Anime Support
+
+Newfs now has a dedicated Anime Providers settings section, making anime-specific sources easier to manage and configure.
+
+ Starfleet-Ported Providers
+
+• Expanded the Starfleet-Ported Providers section with additional scrapers, giving Newfs even more provider coverage and source diversity.
+• More scrapers. More providers. Better coverage
+• A new batch of Starfleet-Ported Providers has now been integrated into Newfs Scrapers, expanding source coverage and improving search reliability.
+
+ New Providers Added And Fixed.
+
+ Improvements
+
+• Added 12 new Starfleet-ported providers.
+• Expanded torrent index coverage.
+• Improved source availability across supported content.
+• Increased provider redundancy for more consistent results.
+• All new providers can be individually enabled or disabled from the Newfs Scrapers settings.
+
+ Newfs Scrapers Improved.
+
+• Enhanced source aggregation across multiple providers for faster, more efficient source collection.
+• Refined and stabilized the Other scraper, improving provider compatibility and delivering more consistent results.
+• Optimized scraper communication and processing pipelines to reduce source retrieval latency.
+• Eliminated redundant processing routines, improving overall scraper efficiency.
+• Improved memory management to reduce resource consumption during intensive scraping operations.
+• Enhanced caching mechanisms to minimize duplicate requests, reduce unnecessary network traffic, and accelerate subsequent searches.
+• General scraper optimizations and backend refinements for improved stability, reliability, and overall performance. Settings & Configuration Framework
 
 • Improved reliability across supported providers.
 • Improved handling of provider responses and timeouts.
@@ -81,12 +150,12 @@ Cleaner management of pack-capable sources directly from the settings interface.
 
 [COLOR cyan][B]New Feature Added[/B][/COLOR]
 
-DDM Setup Integration Added to Newfs Scrapers
-Added full DDM setup support within Newfs Scrapers.
+DDM Setup Integration Added to Newfs Scraper
+Added full DDM setup support within Newfs Scraper.
 Improved compatibility with DDM-powered source providers.
 Streamlined configuration process for easier setup and management.
 Enhanced source detection and retrieval performance when using DDM configurations.
-Optimized communication between Newfs Scrapers and DDM modules for greater reliability.
+Optimized communication between Newfs Scraper and DDM modules for greater reliability.
 Reduced setup complexity, allowing users to get up and running faster.
 
 
@@ -104,14 +173,6 @@ Better overall user experience.
 • Torz Scraper has been fixed, optimized, and enhanced to improve source reliability, stability, and overall performance during searches.
 
 • AIO Scraper has been updated with multiple fixes and enhancements, resolving issues that could affect source retrieval while improving compatibility with supported providers.
-
-• Other Scraper has been fixed and refined, delivering more consistent results and better handling of provider responses.
-
-• Improved source aggregation across multiple providers, allowing results to be collected faster and more efficiently.
-
-• Optimized scraper communication and processing routines to reduce delays when gathering sources.
-
-• Enhanced caching mechanisms to minimize duplicate requests, reduce unnecessary network traffic, and improve overall search speed.
 
 • Reduced scraper initialization and startup times, resulting in faster search launches and improved responsiveness throughout the addon.
 
@@ -148,8 +209,6 @@ This release includes extensive backend optimization work focused on improving r
 [B]Core Framework Improvements[/B]
 
 • Significant internal code cleanup and restructuring completed.
-• Reduced redundant processing throughout scraper execution pipelines.
-• Improved memory management to lower resource usage during intensive scraping sessions.
 • Optimized thread handling and background task execution.
 • Reduced bottlenecks affecting large multi-provider searches.
 • Improved handling of provider initialization and shutdown procedures.
@@ -192,12 +251,12 @@ This release includes extensive backend optimization work focused on improving r
 
 [COLOR=yellow][B]OVERALL RESULT[/B][/COLOR]
 
-Version 1.4.2 delivers substantial improvements to scraper reliability, backend efficiency, provider compatibility, and overall addon responsiveness. Users should experience faster searches, improved source retrieval, greater stability during heavy scraping operations, and enhanced long-term reliability across the entire GEARS scraping framework.
+Version 1.4.2 delivers substantial improvements to scraper reliability, backend efficiency, provider compatibility, and overall addon responsiveness. Users should experience faster searches, improved source retrieval, greater stability during heavy scraping operations, and enhanced long-term reliability across the entire Newfs scraping framework.
 
 Thank you for your continued support and feedback.
 More improvements and provider enhancements are already in development.
 
-[COLORcyan][B]NEWFS SCRAPERS UPDATE[/B][/COLOR]
+[COLORcyan][B]Newfs Scrapers UPDATE[/B][/COLOR]
 
 This update delivers one of the largest scraper maintenance and backend optimization releases to date, focusing on improved provider compatibility, scraper reliability, performance enhancements, and long-term stability across the entire scraping framework.
 
