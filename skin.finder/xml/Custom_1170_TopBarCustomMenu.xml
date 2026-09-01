@@ -4,6 +4,7 @@
 	<onload condition="String.IsEmpty(Skin.String(TopBarCustomMenuSize))">Skin.SetString(TopBarCustomMenuSize,3)</onload>
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<include>Animation_DialogPopupOpenClose</include>
+	<onback>Close</onback>
 	<controls>
 		<include content="TopBarCustomMenuDialog" condition="String.IsEqual(Skin.String(TopBarCustomMenuSize),1) | String.IsEqual(Skin.String(TopBarCustomMenuSize),2)">
 			<param name="height" value="280"/>

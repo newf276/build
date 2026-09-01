@@ -11,18 +11,24 @@
 			<include content="DialogBackgroundCommons">
 				<param name="width" value="600" />
 				<param name="height" value="$VAR[DialogHeight3]" />
-				<param name="header_label" value="Maintenance & Tools" />
+				<param name="header_label" value="Maintenance &amp; Tools" />
 				<param name="header_id" value="" />
 				<param name="diffusetexture" value="masks/dialog-bg-squareish.png" />
 			</include>
 			<control type="panel" id="9000">
 				<include>ButtonMenuList_dialog</include>
+				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1106),true)">Dialog.Close(1106)</onback>
+				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1106),true)">ActivateWindow(1170)</onback>
+				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1106),true)">ClearProperty(Finder.DirectDialog1106,home)</onback>
+				<onback condition="!String.IsEqual(Window(Home).Property(Finder.DirectDialog1106),true)">Dialog.Close(1106)</onback>
 				<content>
-					<item>
-    				    <label>Pre-Made Configs</label>
-    				    <visible>[System.HasAddon(plugin.video.themoviedb.helper) | System.HasAddon(plugin.video.finder) | System.HasAddon(plugin.video.umbrella) | System.HasAddon(plugin.video.pov) | System.HasAddon(plugin.video.gears) | System.HasAddon(plugin.video.redlight)] + !Skin.HasSetting(Enable.PreMadeConfigs)</visible>
-    				    <onclick>Dialog.Close(all)</onclick>
-    				    <onclick>RunScript(script.finder.helper,mode=pre_config)</onclick>
+                    <item>
+						<label>Pre-Made Configs</label>
+						<onclick>Dialog.Close(1106)</onclick>
+						<onclick condition="System.AddonIsEnabled(plugin.video.finder)">ActivateWindow(1159)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.finder) + !System.AddonIsEnabled(plugin.video.finder)">
+							EnableAddon(plugin.video.finder)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.finder)">InstallAddon(plugin.video.finder)</onclick>
 					</item>
                     <item>
                         <label>Reload Skin</label>
@@ -35,16 +41,20 @@
                         <onclick>ActivateWindow(1111)</onclick>
                     </item>
                     <item>
-                        <label>Backup & Restore</label>
+                        <label>Network Speed Test</label>
                         <onclick>Dialog.Close(all)</onclick>
-                        <onclick condition="System.AddonIsEnabled(plugin.program.cleaner)">ActivateWindow(10001,"plugin://plugin.program.cleaner/?description=Backup%20and%20Restore%20Build%5b%2fB%5d&amp;kodi&amp;mode=12&amp;name=Backup%2fRestore%20Build%5b%2fB%5d&amp;name2&amp;url&amp;version",return)</onclick>
-                        <onclick condition="System.HasAddon(plugin.program.cleaner) + !System.AddonIsEnabled(plugin.program.cleaner)">EnableAddon(plugin.program.cleaner)</onclick>
-                        <onclick condition="!System.HasAddon(plugin.program.cleaner)">InstallAddon(plugin.program.cleaner)</onclick>
+                        <onclick>RunPlugin(plugin://plugin.program.cleaner/?mode=28)</onclick>
                     </item>
+					<item>
+						<label>Video Cache Config</label>
+						<visible>!Skin.HasSetting(ToolsNoVideoCacheConfig)</visible>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=advanced_set)</onclick>
+					</item>
                     <item>
                         <label>Clear Finder Cache</label>
                         <onclick>Dialog.Close(all)</onclick>
-                        <onclick condition="System.AddonIsEnabled(plugin.video.finder)">RunPlugin(plugin://plugin.video.finder/?mode=clear_all_cache)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=clear_all_cache)</onclick>
                     </item>
                     <item>
                         <label>Clear Kodi Caches</label>
@@ -57,35 +67,9 @@
                         <onclick>RunScript(script.finder.helper,mode=clear_thumbnails)</onclick>
                     </item>
                     <item>
-                        <label>Network Speed Test</label>
+                        <label>Backup & Restore</label>
                         <onclick>Dialog.Close(all)</onclick>
-                        <onclick>RunPlugin(plugin://plugin.program.cleaner/?mode=28)</onclick>
-                    </item>
-                    <item>
-                        <label>Newf's Wizard</label>
-                        <onclick>Dialog.Close(all)</onclick>
-                        <onclick>ActivateWindow(10001,"plugin://plugin.program.cleaner",return)</onclick>
-                    </item>
-                    <item>
-                        <label>Finder Settings</label>
-                        <onclick>Dialog.Close(all)</onclick>
-                        <onclick>RunPlugin(plugin://plugin.video.finder/?mode=open_settings)</onclick>
-                    </item>
-                    <item>
-                        <label>Skin Settings</label>
-                        <onclick>Dialog.Close(all)</onclick>
-                        <onclick>ActivateWindow(SkinSettings)</onclick>
-                    </item>
-					<item>
-						<label>Video Cache Config</label>
-						<visible>!Skin.HasSetting(ToolsNoVideoCacheConfig)</visible>
-						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=advanced_set)</onclick>
-					</item>
-                    <item>
-                        <label>System Information</label>
-                        <onclick>Dialog.Close(all)</onclick>
-                        <onclick>ActivateWindow(systeminfo)</onclick>
+                        <onclick>ActivateWindow(10001,"plugin://plugin.program.cleaner/?description=Backup%20and%20Restore%20Build%5b%2fB%5d&amp;kodi&amp;mode=12&amp;name=Backup%2fRestore%20Build%5b%2fB%5d&amp;name2&amp;url&amp;version",return)</onclick>
                     </item>
 				</content>
 			</control>

@@ -7,33 +7,40 @@
 			<centerleft>50%</centerleft>
 			<width>600</width>
 			<centertop>50%</centertop>
-			<height>350</height>
+			<height>420</height>
 			<include content="DialogBackgroundCommons">
 				<param name="width" value="600" />
-				<param name="height" value="$VAR[DialogHeight3]" />
+				<param name="height" value="$VAR[DialogHeight4]" />
 				<param name="header_label" value="Backup &amp; Restore" />
 				<param name="header_id" value="" />
 				<param name="diffusetexture" value="masks/dialog-bg-squareish.png" />
 			</include>
 			<control type="panel" id="9000">
-				<include>ButtonMenuList_dialog</include>
+				<include content="ButtonMenuList_dialog">
+					<param name="panel_height" value="280" />
+				</include>
 				<onback>Dialog.Close(1156)</onback>
 				<onback>ActivateWindow(1123)</onback>
 				<content>
 					<item>
 						<label>Backup GUI Settings</label>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1156)</onclick>
 						<onclick>RunScript(script.finder.helper,mode=backup_gui)</onclick>
 					</item>
 					<item>
 						<label>Restore GUI Settings</label>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1156)</onclick>
 						<onclick>RunScript(script.finder.helper,mode=restore_gui)</onclick>
 					</item>
 					<item>
-						<label>Restore Default GUI Settings</label>
-						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=restore_gui_dflt)</onclick>
+						<label>Import GUI Settings</label>
+						<onclick>Dialog.Close(1156)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=import_gui)</onclick>
+					</item>
+					<item>
+						<label>Export GUI Settings</label>
+						<onclick>Dialog.Close(1156)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=export_gui)</onclick>
 					</item>
 				</content>
 			</control>

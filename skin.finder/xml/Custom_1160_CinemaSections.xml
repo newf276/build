@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1160">
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<include>Animation_DialogPopupOpenClose</include>
+	<controls>
+		<control type="group">
+			<centerleft>50%</centerleft>
+			<width>600</width>
+			<centertop>50%</centertop>
+			<height>420</height>
+			<include content="DialogBackgroundCommons">
+				<param name="width" value="600"/>
+				<param name="height" value="$VAR[DialogHeight4]" />
+				<param name="header_label" value="Choose Section"/>
+				<param name="header_id" value=""/>
+				<param name="diffusetexture" value="masks/dialog-bg-squareish.png"/>
+			</include>
+			<control type="panel" id="9000">
+				<onback>Dialog.Close(1160)</onback>
+				<include content="ButtonMenuList_dialog">
+					<param name="panel_height" value="280"/>
+				</include>
+				<content>
+					<item>
+						<label>Movies</label>
+						<onclick>SetProperty(finder.cinema_section,movies,home)</onclick>
+						<onclick>Dialog.Close(1160)</onclick>
+						<onclick>SetFocus(19000)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoMoviesButton) + Skin.HasSetting(CinemaMoviesHasWidgets)</visible>
+					</item>
+					<item>
+						<label>TV Shows</label>
+						<onclick>SetProperty(finder.cinema_section,tvshows,home)</onclick>
+						<onclick>Dialog.Close(1160)</onclick>
+						<onclick>SetFocus(22000)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoTVShowsButton) + Skin.HasSetting(CinemaTVShowsHasWidgets)</visible>
+					</item>
+					<item>
+						<label>$VAR[MenuCustom1ToggleLabelVar]</label>
+						<onclick>SetProperty(finder.cinema_section,custom1,home)</onclick>
+						<onclick>Dialog.Close(1160)</onclick>
+						<onclick>SetFocus(23000)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoCustom1Button) + Skin.HasSetting(CinemaCustom1HasWidgets)</visible>
+					</item>
+					<item>
+						<label>$VAR[MenuCustom2ToggleLabelVar]</label>
+						<onclick>SetProperty(finder.cinema_section,custom2,home)</onclick>
+						<onclick>Dialog.Close(1160)</onclick>
+						<onclick>SetFocus(24000)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoCustom2Button) + Skin.HasSetting(CinemaCustom2HasWidgets)</visible>
+					</item>
+					<item>
+						<label>$VAR[MenuCustom3ToggleLabelVar]</label>
+						<onclick>SetProperty(finder.cinema_section,custom3,home)</onclick>
+						<onclick>Dialog.Close(1160)</onclick>
+						<onclick>SetFocus(25000)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoCustom3Button) + Skin.HasSetting(CinemaCustom3HasWidgets)</visible>
+					</item>
+					<item>
+						<label>$VAR[MenuCustom4ToggleLabelVar]</label>
+						<onclick>SetProperty(finder.cinema_section,custom4,home)</onclick>
+						<onclick>Dialog.Close(1160)</onclick>
+						<onclick>SetFocus(26000)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoCustom4Button) + Skin.HasSetting(CinemaCustom4HasWidgets)</visible>
+					</item>
+					<item>
+						<label>$VAR[MenuCustom5ToggleLabelVar]</label>
+						<onclick>SetProperty(finder.cinema_section,custom5,home)</onclick>
+						<onclick>Dialog.Close(1160)</onclick>
+						<onclick>SetFocus(27000)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoCustom5Button) + Skin.HasSetting(CinemaCustom5HasWidgets)</visible>
+					</item>
+					<item>
+						<label>$VAR[MenuCustom6ToggleLabelVar]</label>
+						<onclick>SetProperty(finder.cinema_section,custom6,home)</onclick>
+						<onclick>Dialog.Close(1160)</onclick>
+						<onclick>SetFocus(28000)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoCustom6Button) + Skin.HasSetting(CinemaCustom6HasWidgets)</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[2]</label>
+						<onclick>SetProperty(finder.cinema_section,music,home)</onclick>
+						<onclick>Dialog.Close(1160)</onclick>
+						<onclick>SetFocus(7000)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoMusicButton)</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[427]</label>
+						<onclick>SetProperty(finder.cinema_section,disc,home)</onclick>
+						<onclick>Dialog.Close(1160)</onclick>
+						<onclick>SetFocus(21000)</onclick>
+						<visible>System.HasMediaDVD</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[20389]</label>
+						<onclick>SetProperty(finder.cinema_section,musicvideos,home)</onclick>
+						<onclick>Dialog.Close(1160)</onclick>
+						<onclick>SetFocus(16000)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoMusicVideoButton)</visible>
+					</item>
+					<item>
+						<label>Live TV</label>
+						<onclick>SetProperty(finder.cinema_section,livetv,home)</onclick>
+						<onclick>Dialog.Close(1160)</onclick>
+						<onclick>SetFocus(12000)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoTVButton)</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[19021]</label>
+						<onclick>SetProperty(finder.cinema_section,radio,home)</onclick>
+						<onclick>Dialog.Close(1160)</onclick>
+						<onclick>SetFocus(13000)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoRadioButton)</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[15016]</label>
+						<onclick>SetProperty(finder.cinema_section,games,home)</onclick>
+						<onclick>Dialog.Close(1160)</onclick>
+						<onclick>SetFocus(17000)</onclick>
+						<visible>System.GetBool(gamesgeneral.enable) + !Skin.HasSetting(HomeMenuNoGamesButton)</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[24001]</label>
+						<onclick>SetProperty(finder.cinema_section,addons,home)</onclick>
+						<onclick>Dialog.Close(1160)</onclick>
+						<onclick>SetFocus(8000)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoProgramsButton)</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[1]</label>
+						<onclick>SetProperty(finder.cinema_section,pictures,home)</onclick>
+						<onclick>Dialog.Close(1160)</onclick>
+						<onclick>SetFocus(4000)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoPicturesButton)</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[3]</label>
+						<onclick>SetProperty(finder.cinema_section,video,home)</onclick>
+						<onclick>Dialog.Close(1160)</onclick>
+						<onclick>SetFocus(11000)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoVideosButton)</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[10134]</label>
+						<onclick>SetProperty(finder.cinema_section,favorites,home)</onclick>
+						<onclick>Dialog.Close(1160)</onclick>
+						<onclick>SetFocus(14000)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoFavButton)</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[8]</label>
+						<onclick>SetProperty(finder.cinema_section,weather,home)</onclick>
+						<onclick>Dialog.Close(1160)</onclick>
+						<onclick>SetFocus(15000)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoWeatherButton)</visible>
+					</item>
+				</content>
+			</control>
+		</control>
+	</controls>
+</window>

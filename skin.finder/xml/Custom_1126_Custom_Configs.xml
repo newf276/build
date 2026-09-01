@@ -20,16 +20,18 @@
 					<param name="panel_height" value="140" />
 				</include>
 				<onback>Dialog.Close(1126)</onback>
-				<onback>ActivateWindow(1106)</onback>
+				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1126),true)">ActivateWindow(1170)</onback>
+				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1126),true)">ClearProperty(Finder.DirectDialog1126,home)</onback>
+				<onback condition="!String.IsEqual(Window(Home).Property(Finder.DirectDialog1126),true)">ActivateWindow(1106)</onback>
 				<content>
 					<item>
 						<label>Backup & Restore Configs</label>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1126)</onclick>
 						<onclick>ActivateWindow(1124)</onclick>
 					</item>
 					<item>
 						<label>Import & Export Configs</label>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1126)</onclick>
 						<onclick>ActivateWindow(1125)</onclick>
 					</item>
 				</content>

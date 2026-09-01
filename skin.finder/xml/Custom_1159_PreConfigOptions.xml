@@ -11,100 +11,48 @@
 			<include content="DialogBackgroundCommons">
 				<param name="width" value="600" />
 				<param name="height" value="$VAR[DialogHeight3]" />
-				<param name="header_label" value="$VAR[SelectedPreConfigAddonLabelVar]" />
+				<param name="header_label" value="Newf's Pre-configs" />
 				<param name="header_id" value="" />
 				<param name="diffusetexture" value="masks/dialog-bg-squareish.png" />
 			</include>
 			<control type="panel" id="9000">
 				<include>ButtonMenuList_dialog</include>
 				<onback>Dialog.Close(1159)</onback>
-				<onback>ActivateWindow(1158)</onback>
+				<onback condition="!String.IsEqual(Window(Home).Property(Finder.DirectDialog1159),true)">ActivateWindow(1106)</onback>
+				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1159),true)">ActivateWindow(1170)</onback>
+				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1159),true)">ClearProperty(Finder.DirectDialog1159,home)</onback>
 				<content>
-					<!-- Finder -->
 					<item>
-						<label>MDBList</label>
-						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),finder)</visible>
+						<label>Trakt Collection</label>
+						<visible>true</visible>
+						<onclick>ClearProperty(Finder.DirectDialog1159,home)</onclick>
 						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_mdblist)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_trakt_library)</onclick>
 					</item>
 					<item>
-						<label>Trakt</label>
-						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),finder)</visible>
+						<label>Trakt Watchlist</label>
+						<visible>true</visible>
+						<onclick>ClearProperty(Finder.DirectDialog1159,home)</onclick>
 						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_trakt)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_trakt_watchlist)</onclick>
 					</item>
 					<item>
-						<label>TMDB</label>
-						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),finder)</visible>
+						<label>TMDB Watchlist + Trakt as Tracker</label>
+						<visible>true</visible>
+						<onclick>ClearProperty(Finder.DirectDialog1159,home)</onclick>
 						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_tmdb)</onclick>
-					</item>
-					<!-- Red Light -->
-					<item>
-						<label>Basic</label>
-						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),redlight)</visible>
-						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=redlight_basic)</onclick>
-					</item>
-					<item>
-						<label>Trakt</label>
-						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),redlight)</visible>
-						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=redlight_trakt)</onclick>
-					</item>
-					<item>
-						<label>Anime</label>
-						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),redlight)</visible>
-						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=redlight_anime)</onclick>
-					</item>
-					<!-- POV -->
-					<item>
-						<label>Basic</label>
-						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),pov)</visible>
-						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=pov_basic)</onclick>
-					</item>
-					<item>
-						<label>Trakt</label>
-						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),pov)</visible>
-						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=pov_trakt)</onclick>
-					</item>
-					<item>
-						<label>Anime</label>
-						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),pov)</visible>
-						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=pov_anime)</onclick>
-					</item>
-					<!-- Umbrella -->
-					<item>
-						<label>Basic</label>
-						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),umbrella)</visible>
-						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=umbrella_basic)</onclick>
-					</item>
-					<item>
-						<label>Trakt</label>
-						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),umbrella)</visible>
-						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=umbrella_trakt)</onclick>
-					</item>
-					<!-- The Gears -->
-					<item>
-						<label>Basic</label>
-						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),gears)</visible>
-						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=gears_basic)</onclick>
-					</item>
-					<item>
-						<label>Trakt</label>
-						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),gears)</visible>
-						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=gears_trakt)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_tmdb_watchlist)</onclick>
 					</item>
 				</content>
 			</control>
+			<include content="UpDownArrows">
+				<param name="container_id" value="9000" />
+				<param name="posx" value="276" />
+				<param name="up_posy" value="-35" />
+				<param name="down_posy" value="360" />
+			</include>
 		</control>
 	</controls>
 </window>
+
+				

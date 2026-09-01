@@ -372,9 +372,9 @@
 		<value condition="Container(9000).HasFocus(3)">$LOCALIZE[31612]</value>
 		<value condition="Container(9000).HasFocus(4)">$LOCALIZE[31613]</value>
 		<value condition="Container(9000).HasFocus(5)">$LOCALIZE[31129]</value>
-		<value condition="Container(9000).HasFocus(6)">$LOCALIZE[31614]</value>
-		<value condition="Container(9000).HasFocus(7)">$LOCALIZE[31169]</value>
-		<value condition="Container(9000).HasFocus(8)">$LOCALIZE[31615]</value>
+		<value condition="Container(9000).HasFocus(6)">$LOCALIZE[31169]</value>
+		<value condition="Container(9000).HasFocus(7)">$LOCALIZE[31615]</value>
+		<value condition="Container(9000).HasFocus(8)">$LOCALIZE[31614]</value>
 		<value condition="Container(9000).HasFocus(9)">$LOCALIZE[31171]</value>
 		<value condition="Container(9000).HasFocus(10)">$LOCALIZE[31616]</value>
 		<value condition="Container(9000).HasFocus(11)">$LOCALIZE[31617]</value>
@@ -458,9 +458,9 @@
 		<value condition="!String.IsEmpty(Skin.String(HomeFanart.path))">$INFO[Skin.String(HomeFanart.path)]$INFO[Container(9000).ListItem.Property(id)]$INFO[Skin.String(HomeFanart.ext)]</value>
 	</variable>
 	<variable name="HomeCategoryFanartVar">
-		<value condition="!Skin.HasSetting(no_fanart) + !Skin.HasSetting(EnableCategoryWidgetFanart) + [Control.HasFocus(19011) | Control.HasFocus(19014) | Control.HasFocus(22011) | Control.HasFocus(22014)]">$VAR[CustomBackgroundImage]</value>
+		<value condition="!Skin.HasSetting(no_fanart) + !Skin.HasSetting(EnableCategoryWidgetFanart) + [Control.HasFocus(19011) | Control.HasFocus(19014) | Control.HasFocus(22011) | Control.HasFocus(22014)]">$VAR[HomeCustomBackgroundImage]</value>
 		<value condition="!Skin.HasSetting(no_fanart)">$VAR[HomeFanartVar]</value>
-		<value>$VAR[CustomBackgroundImage]</value>
+		<value>$VAR[HomeCustomBackgroundImage]</value>
 	</variable>
 	<variable name="HomeFanartVar">
 		<value condition="Window.IsActive(musicinformation) | Window.IsActive(movieinformation) | Window.IsActive(addoninformation) | Window.IsActive(pvrguideinfo) | Window.IsActive(pvrrecordinginfo) | Window.IsActive(pictureinfo)">$INFO[Window(home).Property(infobackground)]</value>
@@ -700,6 +700,10 @@
 		<value>[B]$LOCALIZE[1223][/B]</value>
 	</variable>
 	<!-- MY VARIABLES -->
+	<variable name="HomeCustomBackgroundImage">
+		<value condition="!String.IsEmpty(Skin.String(HomeCustomBackground))">$INFO[Skin.String(HomeCustomBackground)]</value>
+		<value>special://skin/extras/backgrounds/redblur.jpg</value>
+	</variable>
 	<variable name="CustomBackgroundImage">
 		<value condition="!String.IsEmpty(Skin.String(CustomBackground))">$INFO[Skin.String(CustomBackground)]</value>
 		<value>special://skin/extras/backgrounds/redblur.jpg</value>
@@ -712,15 +716,34 @@
 		<value condition="!String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
 		<value>$INFO[ListItem.Label]</value>
 	</variable>
-	<variable name="HomeBackgroundDiffuseVar">
-		<value condition="Skin.HasSetting(EstuaryLookFeel)">primary_background</value>
+	<variable name="BackgroundDiffuseVar">
+		<value condition="!String.IsEmpty(Skin.String(DefaultBackgroundDiffuseBrightness)) + !String.IsEqual(Skin.String(DefaultBackgroundDiffuseBrightness),Off)">primary_background</value>
 		<value>$VAR[BackgroundBrightnessVar]</value>
+	</variable>
+	<variable name="HomeBackgroundDiffuseVar">
+		<value condition="!String.IsEmpty(Skin.String(DefaultHomeBackgroundDiffuseBrightness)) + !String.IsEqual(Skin.String(DefaultHomeBackgroundDiffuseBrightness),Off)">primary_background</value>
+		<value>$VAR[HomeBackgroundBrightnessVar]</value>
+	</variable>
+	<variable name="BackgroundDiffuseBrightnessLabelVar">
+		<value condition="!String.IsEmpty(Skin.String(DefaultBackgroundDiffuseBrightness))">$INFO[Skin.String(DefaultBackgroundDiffuseBrightness)]</value>
+		<value>Off</value>
+	</variable>
+	<variable name="HomeBackgroundDiffuseBrightnessLabelVar">
+		<value condition="!String.IsEmpty(Skin.String(DefaultHomeBackgroundDiffuseBrightness))">$INFO[Skin.String(DefaultHomeBackgroundDiffuseBrightness)]</value>
+		<value>Off</value>
 	</variable>
 	<variable name="BackgroundBrightnessVar">
 		<value condition="String.IsEqual(Skin.String(DefaultBackgroundBrightness),Highest)">E6FFFFFF</value>
 		<value condition="String.IsEqual(Skin.String(DefaultBackgroundBrightness),High)">CCFFFFFF</value>
 		<value condition="String.IsEqual(Skin.String(DefaultBackgroundBrightness),Medium)">99FFFFFF</value>
 		<value condition="String.IsEqual(Skin.String(DefaultBackgroundBrightness),Low)">4DFFFFFF</value>
+		<value>99FFFFFF</value>
+	</variable>
+	<variable name="HomeBackgroundBrightnessVar">
+		<value condition="String.IsEqual(Skin.String(DefaultHomeBackgroundBrightness),Highest)">E6FFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(DefaultHomeBackgroundBrightness),High)">CCFFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(DefaultHomeBackgroundBrightness),Medium)">99FFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(DefaultHomeBackgroundBrightness),Low)">4DFFFFFF</value>
 		<value>99FFFFFF</value>
 	</variable>
 	<variable name="FanartBrightnessVar">
@@ -759,55 +782,50 @@
 		<value condition="!Skin.HasSetting(UseLandscape)">Clearlogo</value>
 	</variable>
 	<variable name="CurrentSearchProviderVar">
-		<value condition="String.IsEqual(Skin.String(current_search_provider),0)">TMDb Helper</value>
-		<value condition="String.IsEqual(Skin.String(current_search_provider),1)">Finder</value>
-		<value condition="String.IsEqual(Skin.String(current_search_provider),2)">Umbrella</value>
-		<value condition="String.IsEqual(Skin.String(current_search_provider),3)">POV</value>
-		<value condition="String.IsEqual(Skin.String(current_search_provider),4)">The Gears</value>
-		<value condition="String.IsEqual(Skin.String(current_search_provider),5)">Red Light</value>
-		<value>TMDb Helper</value>
+		<value condition="String.IsEqual(Skin.String(current_search_provider),5)">Finder</value>
+		<value>Finder</value>
 	</variable>
 	<variable name="CurrentSearchProviderToggleVar">
 		<!-- ===================================================== -->
 		<!-- FROM PROVIDER 0 (TMDb Helper) -->
 		<!-- ===================================================== -->
-		<!-- 0 → Finder -->
+		<!-- 0 → Fen Light -->
 		<value condition="String.IsEqual(Skin.String(current_search_provider),0)
-					  + System.HasAddon(plugin.video.finder)">
+					  + System.HasAddon(plugin.video.fenlight)">
 		Skin.SetString(current_search_provider,1)
 	</value>
 		<!-- 0 → Umbrella -->
 		<value condition="String.IsEqual(Skin.String(current_search_provider),0)
-					  + !System.HasAddon(plugin.video.finder)
+					  + !System.HasAddon(plugin.video.fenlight)
 					  + System.HasAddon(plugin.video.umbrella)">
 		Skin.SetString(current_search_provider,2)
 	</value>
 		<!-- 0 → POV -->
 		<value condition="String.IsEqual(Skin.String(current_search_provider),0)
-					  + !System.HasAddon(plugin.video.finder)
+					  + !System.HasAddon(plugin.video.fenlight)
 					  + !System.HasAddon(plugin.video.umbrella)
 					  + System.HasAddon(plugin.video.pov)">
 		Skin.SetString(current_search_provider,3)
 	</value>
 		<!-- 0 → The Gears -->
 		<value condition="String.IsEqual(Skin.String(current_search_provider),0)
-					  + !System.HasAddon(plugin.video.finder)
+					  + !System.HasAddon(plugin.video.fenlight)
 					  + !System.HasAddon(plugin.video.umbrella)
 					  + !System.HasAddon(plugin.video.pov)
 					  + System.HasAddon(plugin.video.gears)">
 		Skin.SetString(current_search_provider,4)
 	</value>
-		<!-- 0 → Red Light -->
+		<!-- 0 → Finder -->
 		<value condition="String.IsEqual(Skin.String(current_search_provider),0)
-					  + !System.HasAddon(plugin.video.finder)
+					  + !System.HasAddon(plugin.video.fenlight)
 					  + !System.HasAddon(plugin.video.umbrella)
 					  + !System.HasAddon(plugin.video.pov)
 					  + !System.HasAddon(plugin.video.gears)
-					  + System.HasAddon(plugin.video.redlight)">
+					  + System.HasAddon(plugin.video.finder)">
 		Skin.SetString(current_search_provider,5)
 	</value>
 		<!-- ===================================================== -->
-		<!-- FROM PROVIDER 1 (Finder) -->
+		<!-- FROM PROVIDER 1 (Fen Light) -->
 		<!-- ===================================================== -->
 		<!-- 1 → Umbrella -->
 		<value condition="String.IsEqual(Skin.String(current_search_provider),1)
@@ -827,12 +845,12 @@
 					  + System.HasAddon(plugin.video.gears)">
 		Skin.SetString(current_search_provider,4)
 	</value>
-		<!-- 1 → Red Light -->
+		<!-- 1 → Finder -->
 		<value condition="String.IsEqual(Skin.String(current_search_provider),1)
 					  + !System.HasAddon(plugin.video.umbrella)
 					  + !System.HasAddon(plugin.video.pov)
 					  + !System.HasAddon(plugin.video.gears)
-					  + System.HasAddon(plugin.video.redlight)">
+					  + System.HasAddon(plugin.video.finder)">
 		Skin.SetString(current_search_provider,5)
 	</value>
 		<!-- 1 → TMDb -->
@@ -840,7 +858,7 @@
 					  + !System.HasAddon(plugin.video.umbrella)
 					  + !System.HasAddon(plugin.video.pov)
 					  + !System.HasAddon(plugin.video.gears)
-					  + !System.HasAddon(plugin.video.redlight)
+					  + !System.HasAddon(plugin.video.finder)
 				          + System.HasAddon(plugin.video.themoviedb.helper)">
 		Skin.SetString(current_search_provider,0)
 	</value>
@@ -858,28 +876,28 @@
 					  + System.HasAddon(plugin.video.gears)">
 		Skin.SetString(current_search_provider,4)
 	</value>
-		<!-- 2 → Red Light -->
+		<!-- 2 → Finder -->
 		<value condition="String.IsEqual(Skin.String(current_search_provider),2)
 					  + !System.HasAddon(plugin.video.pov)
 					  + !System.HasAddon(plugin.video.gears)
-					  + System.HasAddon(plugin.video.redlight)">
+					  + System.HasAddon(plugin.video.finder)">
 		Skin.SetString(current_search_provider,5)
 	</value>
 		<!-- 2 → TMDb -->
 		<value condition="String.IsEqual(Skin.String(current_search_provider),2)
 					  + !System.HasAddon(plugin.video.pov)
 					  + !System.HasAddon(plugin.video.gears)
-					  + !System.HasAddon(plugin.video.redlight)
+					  + !System.HasAddon(plugin.video.finder)
 					  + System.HasAddon(plugin.video.themoviedb.helper)">
 		Skin.SetString(current_search_provider,0)
 	</value>
-		<!-- 2 → Finder -->
+		<!-- 2 → Fen Light -->
 		<value condition="String.IsEqual(Skin.String(current_search_provider),2)
 					  + !System.HasAddon(plugin.video.pov)
 					  + !System.HasAddon(plugin.video.gears)
-					  + !System.HasAddon(plugin.video.redlight)
+					  + !System.HasAddon(plugin.video.finder)
 					  + !System.HasAddon(plugin.video.themoviedb.helper)
-					  + System.HasAddon(plugin.video.finder)">
+					  + System.HasAddon(plugin.video.fenlight)">
 		Skin.SetString(current_search_provider,1)
 	</value>
 		<!-- ===================================================== -->
@@ -890,99 +908,99 @@
 					  + System.HasAddon(plugin.video.gears)">
 		Skin.SetString(current_search_provider,4)
 	</value>
-		<!-- 3 → Red Light -->
+		<!-- 3 → Finder -->
 		<value condition="String.IsEqual(Skin.String(current_search_provider),3)
 					  + !System.HasAddon(plugin.video.gears)
-					  + System.HasAddon(plugin.video.redlight)">
+					  + System.HasAddon(plugin.video.finder)">
 		Skin.SetString(current_search_provider,5)
 	</value>
 		<!-- 3 → TMDb -->
 		<value condition="String.IsEqual(Skin.String(current_search_provider),3)
 					  + !System.HasAddon(plugin.video.gears)
-					  + !System.HasAddon(plugin.video.redlight)
+					  + !System.HasAddon(plugin.video.finder)
 					  + System.HasAddon(plugin.video.themoviedb.helper)">
 		Skin.SetString(current_search_provider,0)
 	</value>
-		<!-- 3 → Finder -->
+		<!-- 3 → Fen Light -->
 		<value condition="String.IsEqual(Skin.String(current_search_provider),3)
 					  + !System.HasAddon(plugin.video.gears)
-					  + !System.HasAddon(plugin.video.redlight)
+					  + !System.HasAddon(plugin.video.finder)
 					  + !System.HasAddon(plugin.video.themoviedb.helper)
-					  + System.HasAddon(plugin.video.finder)">
+					  + System.HasAddon(plugin.video.fenlight)">
 		Skin.SetString(current_search_provider,1)
 	</value>
 		<!-- 3 → Umbrella -->
 		<value condition="String.IsEqual(Skin.String(current_search_provider),3)
 					  + !System.HasAddon(plugin.video.gears)
-					  + !System.HasAddon(plugin.video.redlight)
-					  + !System.HasAddon(plugin.video.themoviedb.helper)
 					  + !System.HasAddon(plugin.video.finder)
+					  + !System.HasAddon(plugin.video.themoviedb.helper)
+					  + !System.HasAddon(plugin.video.fenlight)
 					  + System.HasAddon(plugin.video.umbrella)">
 		Skin.SetString(current_search_provider,2)
 	</value>
 		<!-- ===================================================== -->
 		<!-- FROM PROVIDER 4 (The Gears) -->
 		<!-- ===================================================== -->
-		<!-- 4 → Red Light -->
+		<!-- 4 → Finder -->
 		<value condition="String.IsEqual(Skin.String(current_search_provider),4)
-					  + System.HasAddon(plugin.video.redlight)">
+					  + System.HasAddon(plugin.video.finder)">
 		Skin.SetString(current_search_provider,5)
 	</value>
 		<!-- 4 → TMDb -->
 		<value condition="String.IsEqual(Skin.String(current_search_provider),4)
-					  + !System.HasAddon(plugin.video.redlight)
+					  + !System.HasAddon(plugin.video.finder)
 					  + System.HasAddon(plugin.video.themoviedb.helper)">
 		Skin.SetString(current_search_provider,0)
 	</value>
-		<!-- 4 → Finder -->
+		<!-- 4 → Fen Light -->
 		<value condition="String.IsEqual(Skin.String(current_search_provider),4)
-					  + !System.HasAddon(plugin.video.redlight)
+					  + !System.HasAddon(plugin.video.finder)
 					  + !System.HasAddon(plugin.video.themoviedb.helper)
-					  + System.HasAddon(plugin.video.finder)">
+					  + System.HasAddon(plugin.video.fenlight)">
 		Skin.SetString(current_search_provider,1)
 	</value>
 		<!-- 4 → Umbrella -->
 		<value condition="String.IsEqual(Skin.String(current_search_provider),4)
-					  + !System.HasAddon(plugin.video.redlight)
-					  + !System.HasAddon(plugin.video.themoviedb.helper)
 					  + !System.HasAddon(plugin.video.finder)
+					  + !System.HasAddon(plugin.video.themoviedb.helper)
+					  + !System.HasAddon(plugin.video.fenlight)
 					  + System.HasAddon(plugin.video.umbrella)">
 		Skin.SetString(current_search_provider,2)
 	</value>
 		<!-- 4 → POV -->
 		<value condition="String.IsEqual(Skin.String(current_search_provider),4)
-					  + !System.HasAddon(plugin.video.redlight)
-					  + !System.HasAddon(plugin.video.themoviedb.helper)
 					  + !System.HasAddon(plugin.video.finder)
+					  + !System.HasAddon(plugin.video.themoviedb.helper)
+					  + !System.HasAddon(plugin.video.fenlight)
 					  + !System.HasAddon(plugin.video.umbrella)
 					  + System.HasAddon(plugin.video.pov)">
 		Skin.SetString(current_search_provider,3)
 	</value>
 		<!-- ===================================================== -->
-		<!-- FROM PROVIDER 5 (Red Light) -->
+		<!-- FROM PROVIDER 5 (Finder) -->
 		<!-- ===================================================== -->
 		<!-- 5 → TMDb -->
 		<value condition="String.IsEqual(Skin.String(current_search_provider),5)
 					  + System.HasAddon(plugin.video.themoviedb.helper)">
 		Skin.SetString(current_search_provider,0)
 	</value>
-		<!-- 5 → Finder -->
+		<!-- 5 → Fen Light -->
 		<value condition="String.IsEqual(Skin.String(current_search_provider),5)
 					  + !System.HasAddon(plugin.video.themoviedb.helper)
-					  + System.HasAddon(plugin.video.finder)">
+					  + System.HasAddon(plugin.video.fenlight)">
 		Skin.SetString(current_search_provider,1)
 	</value>
 		<!-- 5 → Umbrella -->
 		<value condition="String.IsEqual(Skin.String(current_search_provider),5)
 					  + !System.HasAddon(plugin.video.themoviedb.helper)
-					  + !System.HasAddon(plugin.video.finder)
+					  + !System.HasAddon(plugin.video.fenlight)
 					  + System.HasAddon(plugin.video.umbrella)">
 		Skin.SetString(current_search_provider,2)
 	</value>
 		<!-- 5 → POV -->
 		<value condition="String.IsEqual(Skin.String(current_search_provider),5)
 					  + !System.HasAddon(plugin.video.themoviedb.helper)
-					  + !System.HasAddon(plugin.video.finder)
+					  + !System.HasAddon(plugin.video.fenlight)
 					  + !System.HasAddon(plugin.video.umbrella)
 					  + System.HasAddon(plugin.video.pov)">
 		Skin.SetString(current_search_provider,3)
@@ -991,7 +1009,7 @@
 		<value condition="String.IsEqual(Skin.String(current_search_provider),5)
 
 					  + !System.HasAddon(plugin.video.themoviedb.helper)
-					  + !System.HasAddon(plugin.video.finder)
+					  + !System.HasAddon(plugin.video.fenlight)
 					  + !System.HasAddon(plugin.video.umbrella)
 					  + !System.HasAddon(plugin.video.pov)
 					  + System.HasAddon(plugin.video.gears)">
@@ -1004,8 +1022,8 @@
 		<value condition="System.HasAddon(plugin.video.themoviedb.helper)">
 			Skin.SetString(current_search_provider,0)
 		</value>
-		<!-- Else Finder -->
-		<value condition="System.HasAddon(plugin.video.finder)">
+		<!-- Else Fen -->
+		<value condition="System.HasAddon(plugin.video.fenlight)">
 			Skin.SetString(current_search_provider,1)
 		</value>
 		<!-- Else Umbrella -->
@@ -1020,8 +1038,8 @@
 		<value condition="System.HasAddon(plugin.video.gears)">
 			Skin.SetString(current_search_provider,4)
 		</value>
-		<!-- Else Red Light -->
-		<value condition="System.HasAddon(plugin.video.redlight)">
+		<!-- Else Finder -->
+		<value condition="System.HasAddon(plugin.video.finder)">
 			Skin.SetString(current_search_provider,5)
 		</value>
 	</variable>
@@ -1060,18 +1078,18 @@
 	</variable>
 	<variable name="TRAKTButtonActionsVar">
 		<value condition="String.IsEqual(Skin.String(current_search_provider),0)">ActivateWindow(10025,plugin://plugin.video.themoviedb.helper/?info=trakt_searchlists&amp;tmdb_type=both,return)</value>
-		<value condition="String.IsEqual(Skin.String(current_search_provider),1)">ActivateWindow(10025,plugin://plugin.video.finder/?&amp;mode=navigator.my_content&amp;name=My%20Lists,return)</value>
+		<value condition="String.IsEqual(Skin.String(current_search_provider),1)">ActivateWindow(10025,plugin://plugin.video.fenlight/?&amp;mode=navigator.my_content&amp;name=My%20Lists,return)</value>
 		<value condition="String.IsEqual(Skin.String(current_search_provider),2)">ActivateWindow(10025,plugin://plugin.video.umbrella/?action=trakt_Navigator,return)</value>
 		<value condition="String.IsEqual(Skin.String(current_search_provider),3)">ActivateWindow(10025,plugin://plugin.video.pov/?mode=navigator.my_content&amp;name=32454,return)</value>
 		<value condition="String.IsEqual(Skin.String(current_search_provider),4)">ActivateWindow(10025,plugin://plugin.video.gears/?&amp;mode=navigator.my_content&amp;name=My%20Lists,return)</value>
-		<value condition="String.IsEqual(Skin.String(current_search_provider),5)">ActivateWindow(10025,plugin://plugin.video.redlight/?&amp;mode=navigator.my_content&amp;name=My%20Lists,return)</value>
+		<value condition="String.IsEqual(Skin.String(current_search_provider),5)">ActivateWindow(10025,plugin://plugin.video.finder/?&amp;mode=navigator.my_content&amp;name=My%20Lists,return)</value>
 		<value>ActivateWindow(10025,plugin://plugin.video.themoviedb.helper/?info=trakt_searchlists&amp;tmdb_type=both,return)</value>
 	</variable>
 	<variable name="KeywordMoviesLabelVar">
-		<value condition="String.IsEqual(Skin.String(current_search_provider),1) | String.IsEqual(Skin.String(current_search_provider),3) | String.IsEqual(Skin.String(current_search_provider),4) | String.IsEqual(Skin.String(current_search_provider),5)">TMDb Keywords (Movies)</value>
+		<value condition="String.IsEqual(Skin.String(current_search_provider),1) | String.IsEqual(Skin.String(current_search_provider),3) | String.IsEqual(Skin.String(current_search_provider),4) | String.IsEqual(Skin.String(current_search_provider),5)">Movies</value>
 	</variable>
 	<variable name="KeywordTVShowsLabelVar">
-		<value condition="String.IsEqual(Skin.String(current_search_provider),1) | String.IsEqual(Skin.String(current_search_provider),3) | String.IsEqual(Skin.String(current_search_provider),4) | String.IsEqual(Skin.String(current_search_provider),5)">TMDb Keywords (TV Shows)</value>
+		<value condition="String.IsEqual(Skin.String(current_search_provider),1) | String.IsEqual(Skin.String(current_search_provider),3) | String.IsEqual(Skin.String(current_search_provider),4) | String.IsEqual(Skin.String(current_search_provider),5)">TV Shows</value>
 	</variable>
 	<!-- RATINGS INFOPANEL VARIABLES -->
 	<!-- Released -->
@@ -1295,9 +1313,10 @@
 	</variable>
 	<!-- Finder Look & Feel Experience -->
 	<variable name="LookFeelLabel">
-		<value condition="Skin.HasSetting(EstuaryLookFeel)">Estuary</value>
-		<value condition="Skin.HasSetting(ClassicFinder)">Classic Finder</value>
 		<value condition="Skin.HasSetting(FinderHybrid)">Finder Hybrid</value>
+		<value condition="Skin.HasSetting(ClassicFinder)">Classic Finder</value>
+		<value condition="Skin.HasSetting(CinemaLookFeel)">Cinema</value>
+		<value condition="Skin.HasSetting(EstuaryLookFeel)">Estuary</value>
 		<value>Finder Plus</value>
 	</variable>
 	<!-- OSD Audio Button Behaviour -->
@@ -1371,8 +1390,8 @@
 	</variable>
 	<!-- Pre-Config Add-ons -->
 	<variable name="SelectedPreConfigAddonLabelVar">
+		<value condition="String.IsEqual(Skin.String(SelectedPreConfigAddon),fenlight)">Fen Light</value>
 		<value condition="String.IsEqual(Skin.String(SelectedPreConfigAddon),finder)">Finder</value>
-		<value condition="String.IsEqual(Skin.String(SelectedPreConfigAddon),redlight)">Red Light</value>
 		<value condition="String.IsEqual(Skin.String(SelectedPreConfigAddon),pov)">POV</value>
 		<value condition="String.IsEqual(Skin.String(SelectedPreConfigAddon),umbrella)">Umbrella</value>
 		<value condition="String.IsEqual(Skin.String(SelectedPreConfigAddon),gears)">The Gears</value>

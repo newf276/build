@@ -92,11 +92,11 @@
 								<param name="list_id" value="27011"/>
 								<param name="visible" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
 							</include>
-							<!-- Movies – Red Light (5) -->
+							<!-- Movies – Finder (5) -->
 							<include content="WidgetListBigPoster" condition="!Skin.HasSetting(HideMovieResults)
 									   + String.IsEqual(Skin.String(current_search_provider),5)
-									   + System.AddonIsEnabled(plugin.video.redlight)">
-								<param name="content_path" value="plugin://plugin.video.redlight/?mode=build_movie_list&amp;action=tmdb_movies_search&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
+									   + System.AddonIsEnabled(plugin.video.finder)">
+								<param name="content_path" value="plugin://plugin.video.finder/?mode=build_movie_list&amp;action=tmdb_movies_search&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
 						  		<param name="onleft" value="SetFocus(700)" />
 						  		<param name="widget_header" value="$LOCALIZE[342]"/>
 						  		<param name="widget_target" value="videos"/>
@@ -161,11 +161,11 @@
 								<param name="list_id" value="27012"/>
 								<param name="visible" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
 							</include>
-							<!-- TV – Red Light (5) -->
+							<!-- TV – Finder (5) -->
 							<include content="WidgetListBigPoster" condition="!Skin.HasSetting(HideTVShowResults)
 									   + String.IsEqual(Skin.String(current_search_provider),5)
-									   + System.AddonIsEnabled(plugin.video.redlight)">
-								<param name="content_path" value="plugin://plugin.video.redlight/?mode=build_tvshow_list&amp;action=tmdb_tv_search&amp;isFolder=true&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
+									   + System.AddonIsEnabled(plugin.video.finder)">
+								<param name="content_path" value="plugin://plugin.video.finder/?mode=build_tvshow_list&amp;action=tmdb_tv_search&amp;isFolder=true&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
 						  		<param name="onleft" value="SetFocus(700)" />
 						  		<param name="widget_header" value="TV Shows"/>
 						  		<param name="widget_target" value="videos"/>
@@ -195,10 +195,10 @@
 								<param name="visible" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
 							</include>
 							<!-- ========================================================= -->
-							<!-- ANIME (Red Light) -->
+							<!-- ANIME (Finder) -->
 							<!-- ========================================================= -->
-							<include content="WidgetListPoster" condition="!Skin.HasSetting(HideAnimeResults) + String.IsEqual(Skin.String(current_search_provider),5) + System.AddonIsEnabled(plugin.video.redlight)">
-							<param name="content_path" value="plugin://plugin.video.redlight/?mode=build_tvshow_list&amp;action=tmdb_tv_search&amp;is_anime_list=true&amp;query=$INFO[Skin.String(SearchInputEncoded)]&amp;key_id=$INFO[Skin.String(SearchInputEncoded)]&amp;name=Search Results for $INFO[Skin.String(SearchInputEncoded)]"/>
+							<include content="WidgetListPoster" condition="!Skin.HasSetting(HideAnimeResults) + String.IsEqual(Skin.String(current_search_provider),5) + System.AddonIsEnabled(plugin.video.finder)">
+							<param name="content_path" value="plugin://plugin.video.finder/?mode=build_tvshow_list&amp;action=tmdb_tv_search&amp;is_anime_list=true&amp;query=$INFO[Skin.String(SearchInputEncoded)]&amp;key_id=$INFO[Skin.String(SearchInputEncoded)]&amp;name=Search Results for $INFO[Skin.String(SearchInputEncoded)]"/>
 						  		<param name="onleft" value="SetFocus(700)" />
 						  		<param name="widget_header" value="Anime"/>
 						  		<param name="widget_target" value="videos"/>
@@ -266,22 +266,22 @@
 								<param name="list_id" value="27015"/>
 								<param name="visible" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
 							</include> -->
-							<!-- Keywords Movies – Red Light (5) -->
+							<!-- Keywords Movies – Finder (5) -->
 							<!-- <include content="WidgetListBigPoster" condition="!Skin.HasSetting(HideKeywordResults)
 									   + String.IsEqual(Skin.String(current_search_provider),5)
-									   + System.AddonIsEnabled(plugin.video.redlight)">
-								<param name="content_path" value="plugin://plugin.video.redlight/?mode=search.tmdb_keyword_movies&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
+									   + System.AddonIsEnabled(plugin.video.finder)">
+								<param name="content_path" value="plugin://plugin.video.finder/?mode=search.tmdb_keyword_movies&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
 						  		<param name="onleft" value="SetFocus(700)" />
 						  		<param name="widget_header" value="Keywords - TMDb"/>
 						  		<param name="widget_target" value="videos"/>
 								<param name="list_id" value="27015"/>
 								<param name="visible" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
 							</include> -->
-							<!-- Keywords TV Shows – Red Light (5) -->
+							<!-- Keywords TV Shows – Finder (5) -->
 							<!-- <include content="WidgetListBigPoster" condition="!Skin.HasSetting(HideKeywordResults)
 									   + String.IsEqual(Skin.String(current_search_provider),5)
-									   + System.AddonIsEnabled(plugin.video.redlight)">
-								<param name="content_path" value="plugin://plugin.video.redlight/?mode=search.tmdb_keyword_tvshows&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
+									   + System.AddonIsEnabled(plugin.video.finder)">
+								<param name="content_path" value="plugin://plugin.video.finder/?mode=search.tmdb_keyword_tvshows&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
 						  		<param name="onleft" value="SetFocus(700)" />
 						  		<param name="widget_header" value="Keywords - TMDb"/>
 						  		<param name="widget_target" value="videos"/>
@@ -331,11 +331,11 @@
 								<param name="widget_target" value="videos"/>
 								<param name="list_id" value="270171"/>
 							</include>
-							<!-- TRAKT – Red Light (provider 5) -->
+							<!-- TRAKT – Finder (provider 5) -->
 							<include content="WidgetListCategoryStacked" condition="!Skin.HasSetting(HideTraktResults)
 									   + String.IsEqual(Skin.String(current_search_provider),5)
-									   + System.AddonIsEnabled(plugin.video.redlight)">
-								<param name="content_path" value="plugin://plugin.video.redlight/?mode=trakt.list.search_trakt_lists&amp;query=$INFO[Skin.String(SearchInputTraktEncoded)]"/>
+									   + System.AddonIsEnabled(plugin.video.finder)">
+								<param name="content_path" value="plugin://plugin.video.finder/?mode=trakt.list.search_trakt_lists&amp;query=$INFO[Skin.String(SearchInputTraktEncoded)]"/>
 						  		<param name="onleft" value="SetFocus(700)" />
 						  		<param name="widget_header" value="Trakt Lists"/>
 								<param name="widget_target" value="videos"/>
@@ -344,7 +344,7 @@
 							</include>
 							<include content="WidgetListBigPosterStacked" condition="!Skin.HasSetting(HideTraktResults)
 									   + String.IsEqual(Skin.String(current_search_provider),5)
-									   + System.AddonIsEnabled(plugin.video.redlight)">
+									   + System.AddonIsEnabled(plugin.video.finder)">
 								<param name="content_path" value="$INFO[Window(1121).Property(finder.27017.path)]"/>
 								<param name="widget_header" value="$INFO[Window(1121).Property(finder.27017.label)]"/>
 								<param name="widget_target" value="videos"/>
@@ -530,19 +530,13 @@
 							<onup>SetFocus(9000,99,absolute)</onup>
 							<ondown>SetFocus(9000,0,absolute)</ondown>
 							<onright>700</onright>
-							<align>center</align>
-							<!-- Switch Search Provider -->
-							<include content="IconButton">
-								<param name="control_id" value="801"/>
-								<param name="onclick" value="RunScript(script.finder.helper,mode=select_search_provider)"/>
-								<param name="icon" value="icons/infodialogs/configure.png"/>
-								<param name="label" value="Switch Search Provider"/>
-							</include>
+							<align>left</align>
+
 							<!-- Trakt Lists -->
 							<include content="IconButton">
 								<param name="control_id" value="802"/>
 								<param name="onclick" value="$VAR[TRAKTButtonActionsVar]"/>
-								<param name="icon" value="icons/trakt-icon-white.png"/>
+								<param name="icon" value="icons/trakt.png"/>
 								<param name="label" value="Trakt Lists"/>
 							</include>
 							<!-- Studios -->
@@ -585,7 +579,7 @@
 							</include>
 							<include content="IconButton" condition="String.IsEqual(Skin.String(current_search_provider),5)">
 								<param name="control_id" value="809"/>
-								<param name="onclick" value="ActivateWindow(10025,plugin://plugin.video.redlight/?action=people&amp;mode=navigator.search_history&amp;name=People)"/>
+								<param name="onclick" value="ActivateWindow(10025,plugin://plugin.video.finder/?action=people&amp;mode=navigator.search_history&amp;name=People)"/>
 								<param name="icon" value="icons/people.png"/>
 								<param name="label" value="Search Actors"/>
 							</include>
@@ -706,9 +700,9 @@
 					<top>30</top>
 					<left>90</left>
 					<control type="image">
-						<visible>!Skin.HasSetting(show_search_help)</visible>
+						<visible>true</visible>
 						<left>-23</left>
-						<top>840</top>
+						<top>1080</top>
 						<aspectratio>keep</aspectratio>
 						<width>350</width>
 						<height>144</height>
@@ -721,7 +715,7 @@
 						<aligny>center</aligny>
 						<height>98</height>
 						<font>font27</font>
-						<label>Search provider: [COLOR accent_color][B]$VAR[CurrentSearchProviderVar][/B][/COLOR]</label>
+						<label>[COLOR accent_color]Finder Search Results[/COLOR]</label>
 					</control>
 					<control type="label">
 						<top>180</top>
@@ -729,7 +723,7 @@
 						<width>1085</width>
 						<aligny>center</aligny>
 						<height>98</height>
-						<font>font36_title</font>
+						<font>font27_title</font>
 						<label>Recent searches:</label>
 					</control>
 					<control type="label">
@@ -743,7 +737,7 @@
 						<font>font14</font>
 						<textcolor>unfocused_text</textcolor>
 						<wrapmultiline>true</wrapmultiline>
-						<label>What you can do here:[CR][CR]Explore your past searches on the left, switch the search provider, dive into TRAKT lists using the TRAKT button, search companies/studios, search for actors/actresses, click the search icon to initiate a new search, clear your recent search history.</label>
+						<label>What you can do here:[CR][CR]Explore your past searches on the left, dive into your and public TRAKT lists using the TRAKT button,search for actors/actresses, click the search icon to initiate a new search, clear your recent search history by selecting delete button.</label>
 					</control>
 					<control type="label">
 						<visible>Skin.GetBool(show_search_help) + !Skin.HasSetting(DefaultSearchWindowBehavior)</visible>
@@ -765,7 +759,7 @@
 						<font>font12</font>
 						<textcolor>unfocused_text</textcolor>
 						<wrapmultiline>true</wrapmultiline>
-						<label>1. Explore your past searches[CR]2. Switch the search provider[CR]3. Dive into Trakt lists[CR]4. Search companies/studios[CR]5. Search for actors/actresses[CR]6. Initiate a new Movie/TV search[CR]7. Clear your recent search history</label>
+						<label>1. Explore your Recent Searches[CR]2. Explore Public or your own Trakt lists by selecting Icon[CR]3. Initiate a new search from the Search Icon[CR]4. Delete recent history by selecting Delete Icon</label>
 					</control>
 				</control>
 				<control type="group">

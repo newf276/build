@@ -24,12 +24,12 @@
 				<content>
 					<item>
 						<label>Restore Default Skin Settings</label>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1157)</onclick>
 						<onclick>RunScript(script.finder.helper,mode=restore_skin_dflt)</onclick>
 					</item>
 					<item>
 						<label>Restore Default GUI Settings</label>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1157)</onclick>
 						<onclick>RunScript(script.finder.helper,mode=restore_gui_dflt)</onclick>
 					</item>
 				</content>
