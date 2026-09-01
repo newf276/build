@@ -531,13 +531,7 @@
 							<ondown>SetFocus(9000,0,absolute)</ondown>
 							<onright>700</onright>
 							<align>center</align>
-							<!-- Switch Search Provider -->
-							<include content="IconButton">
-								<param name="control_id" value="801"/>
-								<param name="onclick" value="RunScript(script.finder.helper,mode=select_search_provider)"/>
-								<param name="icon" value="icons/infodialogs/configure.png"/>
-								<param name="label" value="Switch Search Provider"/>
-							</include>
+
 							<!-- Trakt Lists -->
 							<include content="IconButton">
 								<param name="control_id" value="802"/>
@@ -721,7 +715,7 @@
 						<aligny>center</aligny>
 						<height>98</height>
 						<font>font27</font>
-						<label>Search provider: [COLOR accent_color][B]$VAR[CurrentSearchProviderVar][/B][/COLOR]</label>
+						<label>Search provider: [B]$VAR[CurrentSearchProviderVar][/B]</label>
 					</control>
 					<control type="label">
 						<top>180</top>

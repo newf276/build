@@ -782,13 +782,8 @@
 		<value condition="!Skin.HasSetting(UseLandscape)">Clearlogo</value>
 	</variable>
 	<variable name="CurrentSearchProviderVar">
-		<value condition="String.IsEqual(Skin.String(current_search_provider),0)">TMDb Helper</value>
-		<value condition="String.IsEqual(Skin.String(current_search_provider),1)">Fen Light</value>
-		<value condition="String.IsEqual(Skin.String(current_search_provider),2)">Umbrella</value>
-		<value condition="String.IsEqual(Skin.String(current_search_provider),3)">POV</value>
-		<value condition="String.IsEqual(Skin.String(current_search_provider),4)">The Gears</value>
 		<value condition="String.IsEqual(Skin.String(current_search_provider),5)">Finder</value>
-		<value>TMDb Helper</value>
+		<value>Finder</value>
 	</variable>
 	<variable name="CurrentSearchProviderToggleVar">
 		<!-- ===================================================== -->
@@ -1091,10 +1086,10 @@
 		<value>ActivateWindow(10025,plugin://plugin.video.themoviedb.helper/?info=trakt_searchlists&amp;tmdb_type=both,return)</value>
 	</variable>
 	<variable name="KeywordMoviesLabelVar">
-		<value condition="String.IsEqual(Skin.String(current_search_provider),1) | String.IsEqual(Skin.String(current_search_provider),3) | String.IsEqual(Skin.String(current_search_provider),4) | String.IsEqual(Skin.String(current_search_provider),5)">TMDb Keywords (Movies)</value>
+		<value condition="String.IsEqual(Skin.String(current_search_provider),1) | String.IsEqual(Skin.String(current_search_provider),3) | String.IsEqual(Skin.String(current_search_provider),4) | String.IsEqual(Skin.String(current_search_provider),5)">Movies</value>
 	</variable>
 	<variable name="KeywordTVShowsLabelVar">
-		<value condition="String.IsEqual(Skin.String(current_search_provider),1) | String.IsEqual(Skin.String(current_search_provider),3) | String.IsEqual(Skin.String(current_search_provider),4) | String.IsEqual(Skin.String(current_search_provider),5)">TMDb Keywords (TV Shows)</value>
+		<value condition="String.IsEqual(Skin.String(current_search_provider),1) | String.IsEqual(Skin.String(current_search_provider),3) | String.IsEqual(Skin.String(current_search_provider),4) | String.IsEqual(Skin.String(current_search_provider),5)">TV Shows</value>
 	</variable>
 	<!-- RATINGS INFOPANEL VARIABLES -->
 	<!-- Released -->
