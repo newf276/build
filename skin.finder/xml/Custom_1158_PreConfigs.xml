@@ -21,17 +21,48 @@
 					<param name="panel_height" value="420" />
 				</include>
 				<onback>Dialog.Close(1158)</onback>
-				<onback condition="!String.IsEqual(Window(Home).Property(Finder.DirectDialog1158),true)">ActivateWindow(1106)</onback>
-				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1158),true)">ActivateWindow(1170)</onback>
-				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1158),true)">ClearProperty(Finder.DirectDialog1158,home)</onback>
+				<onback>ActivateWindow(1106)</onback>
 				<content>
 					<item>
 						<label>Finder</label>
-                        <visible>System.HasAddon(plugin.video.finder)</visible>
 						<onclick condition="System.HasAddon(plugin.video.finder)">Skin.SetString(SelectedPreConfigAddon,finder)</onclick>
 						<onclick condition="System.HasAddon(plugin.video.finder)">Dialog.Close(1158)</onclick>
 						<onclick condition="System.HasAddon(plugin.video.finder)">ActivateWindow(1159)</onclick>
 						<onclick condition="!System.HasAddon(plugin.video.finder)">RunScript(script.finder.helper,mode=addon_not_installed&amp;addon=Finder)</onclick>
+					</item>
+					<item>
+						<label>Red Light</label>
+						<onclick condition="System.HasAddon(plugin.video.redlight)">Skin.SetString(SelectedPreConfigAddon,redlight)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.redlight)">Dialog.Close(1158)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.redlight)">ActivateWindow(1159)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.redlight)">RunScript(script.finder.helper,mode=addon_not_installed&amp;addon=Red Light)</onclick>
+					</item>
+					<item>
+						<label>POV</label>
+						<onclick condition="System.HasAddon(plugin.video.pov)">Skin.SetString(SelectedPreConfigAddon,pov)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.pov)">Dialog.Close(1158)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.pov)">ActivateWindow(1159)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.pov)">RunScript(script.finder.helper,mode=addon_not_installed&amp;addon=POV)</onclick>
+					</item>
+					<item>
+						<label>Umbrella</label>
+						<onclick condition="System.HasAddon(plugin.video.umbrella)">Skin.SetString(SelectedPreConfigAddon,umbrella)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.umbrella)">Dialog.Close(1158)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.umbrella)">ActivateWindow(1159)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.umbrella)">RunScript(script.finder.helper,mode=addon_not_installed&amp;addon=Umbrella)</onclick>
+					</item>
+					<item>
+						<label>The Gears</label>
+						<onclick condition="System.HasAddon(plugin.video.gears)">Skin.SetString(SelectedPreConfigAddon,gears)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.gears)">Dialog.Close(1158)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.gears)">ActivateWindow(1159)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.gears)">RunScript(script.finder.helper,mode=addon_not_installed&amp;addon=The Gears)</onclick>
+					</item>
+					<item>
+						<label>TMDb Helper</label>
+						<onclick condition="!System.HasAddon(plugin.video.themoviedb.helper)">RunScript(script.finder.helper,mode=addon_not_installed&amp;addon=TMDb Helper)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.themoviedb.helper)">Dialog.Close(1158)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.themoviedb.helper)">RunScript(script.finder.helper,mode=apply_pre_config&amp;config=tmdbh)</onclick>
 					</item>
 				</content>
 			</control>

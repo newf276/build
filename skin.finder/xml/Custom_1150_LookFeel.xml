@@ -5,12 +5,12 @@
 	<depth>DepthDialog+</depth>
 	<controls>
 		<control type="group">
-			<width>1240</width>
+			<width>995</width>
 			<height>560</height>
 			<centerleft>50%</centerleft>
 			<centertop>50%</centertop>
 			<include content="DialogBackgroundCommons">
-				<param name="width" value="1240" />
+				<param name="width" value="995" />
 				<param name="height" value="560" />
 				<param name="header_label" value="Choose Look &amp; Feel" />
 				<param name="header_id" value="1" />
@@ -21,7 +21,7 @@
 				<top>90</top>
 				<width>935</width>
 				<height>290</height>
-				<label>Choose your preferred Finder experience:[CR][CR]1. Trakt Collection[CR]2. Trakt Watchlist[CR]3. TMDB Watchlist[CR][CR]Don't worry, you can switch to another premade configuration from the Maintenance icon on Kodi Home screen.</label>
+				<label>Choose your preferred Finder experience:[CR][CR]1. Finder Plus[CR]2. Finder Hybrid[CR]3. Classic Finder[CR]4. Estuary[CR][CR]Don't worry, you can change this anytime in Skin Settings &gt; Look &amp; Feel.</label>
 				<autoscroll time="3000" delay="4000" repeat="5000">true</autoscroll>
 			</control>
 			<control type="button" id="100">
@@ -29,12 +29,12 @@
 				<top>425</top>
 				<width>255</width>
 				<height>100</height>
-				<label>Trakt Collection</label>
+				<label>Finder Plus</label>
 				<font>font20_title</font>
 				<align>center</align>
 				<onleft>103</onleft>
 				<onright>101</onright>
-				<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_trakt_library)</onclick>
+				<onclick>RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=fenplus&amp;keep_artwork=false)</onclick>
 				<onclick>Close</onclick>
 				<texturefocus border="48" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
 				<texturenofocus border="48" colordiffuse="button_focus2">buttons/dialogbutton-nofo.png</texturenofocus>
@@ -44,12 +44,12 @@
 				<top>425</top>
 				<width>255</width>
 				<height>100</height>
-				<label>Trakt Watchlist</label>
+				<label>Finder Hybrid</label>
 				<font>font20_title</font>
 				<align>center</align>
 				<onleft>100</onleft>
 				<onright>102</onright>
-				<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_trakt_watchlist)</onclick>
+				<onclick>RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=hybrid&amp;keep_artwork=false)</onclick>
 				<onclick>Close</onclick>
 				<texturefocus border="48" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
 				<texturenofocus border="48" colordiffuse="button_focus2">buttons/dialogbutton-nofo.png</texturenofocus>
@@ -59,12 +59,27 @@
 				<top>425</top>
 				<width>255</width>
 				<height>100</height>
-				<label>TMDB Watchlist</label>
+				<label>Classic Finder</label>
 				<font>font20_title</font>
 				<align>center</align>
 				<onleft>101</onleft>
+				<onright>103</onright>
+				<onclick>RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=classic&amp;keep_artwork=false)</onclick>
+				<onclick>Close</onclick>
+				<texturefocus border="48" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
+				<texturenofocus border="48" colordiffuse="button_focus2">buttons/dialogbutton-nofo.png</texturenofocus>
+			</control>
+			<control type="button" id="103">
+				<left>730</left>
+				<top>425</top>
+				<width>255</width>
+				<height>100</height>
+				<label>Estuary</label>
+				<font>font20_title</font>
+				<align>center</align>
+				<onleft>102</onleft>
 				<onright>100</onright>
-				<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_tmdb_watchlist)</onclick>
+				<onclick>RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=estuary&amp;keep_artwork=false)</onclick>
 				<onclick>Close</onclick>
 				<texturefocus border="48" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
 				<texturenofocus border="48" colordiffuse="button_focus2">buttons/dialogbutton-nofo.png</texturenofocus>

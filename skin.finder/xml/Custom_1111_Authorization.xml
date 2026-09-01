@@ -18,45 +18,49 @@
 			<control type="panel" id="9000">
 				<include>ButtonMenuList_dialog</include>
 				<onback>Dialog.Close(1111)</onback>
-				<onback condition="!String.IsEqual(Window(Home).Property(Finder.DirectDialog1111),true)">ActivateWindow(1106)</onback>
-				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1111),true)">ActivateWindow(1170)</onback>
-				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1111),true)">ClearProperty(Finder.DirectDialog1111,home)</onback>
+				<onback>ActivateWindow(1106)</onback>
 				<content>
 					<item>
-						<label>Trakt</label>
-						<visible>true</visible>
-						<onclick>Dialog.Close(1111)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=trakt.trakt_authenticate)</onclick>
-					</item>
-					<item>
-						<label>TMDB</label>
-						<visible>true</visible>
-						<onclick>Dialog.Close(1111)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=tmdblist_api.authenticate)</onclick>
-					</item>
-					<item>
-						<label>All-Debrid</label>
+						<label>Authorize All-Debrid Finder</label>
 						<visible>!Skin.HasSetting(AuthNoAllDebrid)</visible>
-						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>Dialog.Close(all)</onclick>
 						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=alldebrid.authenticate)</onclick>
 					</item>
 					<item>
-						<label>Premiumize</label>
+						<label>Authorize MDbList Finder</label>
+						<visible>!Skin.HasSetting(AuthNoAllDebrid)</visible>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunScript(plugin.video.finder/?mode=mdblist.mdblist_authenticate)</onclick>
+					</item>
+					<item>
+						<label>Authorize Premiumize Finder</label>
 						<visible>!Skin.HasSetting(AuthNoPremiumize)</visible>
-						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>Dialog.Close(all)</onclick>
 						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=premiumize.authenticate)</onclick>
 					</item>
 					<item>
-						<label>Real-Debrid</label>
+						<label>Authorize Real-Debrid Finder </label>
 						<visible>!Skin.HasSetting(AuthNoRealDebrid)</visible>
-						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>Dialog.Close(all)</onclick>
 						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=real_debrid.authenticate)</onclick>
 					</item>
 					<item>
-						<label>Torbox</label>
+						<label>Authorize TMDB Finder</label>
+						<visible>!Skin.HasSetting(AuthNoAllDebrid)</visible>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=tmdblist_api.authenticate)</onclick>
+					</item>
+					<item>
+						<label>Authorize Torbox Finder</label>
 						<visible>!Skin.HasSetting(AuthNoTorbox)</visible>
-						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>Dialog.Close(all)</onclick>
 						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=torbox.authenticate)</onclick>
+					</item>
+					<item>
+						<label>Authorize Trakt Finder</label>
+						<visible>!Skin.HasSetting(AuthNoTrakt)</visible>
+						<onclick>Dialog.Close(all)</onclick>
+                        <onclick>RunPlugin(plugin://plugin.video.finder/?mode=trakt.trakt_authenticate)</onclick>
 					</item>
 				</content>
 			</control>

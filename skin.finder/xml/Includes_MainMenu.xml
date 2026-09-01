@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<include name="FinderMainMenuItems">
-		<include content="FinderMainMenuTVShows"/>
 		<include content="FinderMainMenuMovies"/>
+		<include content="FinderMainMenuTVShows"/>
 		<include content="FinderMainMenuCustom1"/>
 		<include content="FinderMainMenuCustom2"/>
 		<include content="FinderMainMenuCustom3"/>
@@ -21,8 +21,8 @@
 		<include content="FinderMainMenuFavourites"/>
 		<include content="FinderMainMenuWeather"/>
 	</include>
-	<include name="FinderMainMenuTVShows"><include content="TVShowsMainMenu" condition="!Skin.HasSetting(HomeMenuNoTVShowsButton)"/></include>
 	<include name="FinderMainMenuMovies"><include content="MoviesMainMenu" condition="!Skin.HasSetting(HomeMenuNoMoviesButton)"/></include>
+	<include name="FinderMainMenuTVShows"><include content="TVShowsMainMenu" condition="!Skin.HasSetting(HomeMenuNoTVShowsButton)"/></include>
 	<include name="FinderMainMenuCustom1"><include content="Custom1MainMenu" condition="!Skin.HasSetting(HomeMenuNoCustom1Button)"/></include>
 	<include name="FinderMainMenuCustom2"><include content="Custom2MainMenu" condition="!Skin.HasSetting(HomeMenuNoCustom2Button)"/></include>
 	<include name="FinderMainMenuCustom3"><include content="Custom3MainMenu" condition="!Skin.HasSetting(HomeMenuNoCustom3Button)"/></include>

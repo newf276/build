@@ -18,44 +18,42 @@
 			<control type="panel" id="9000">
 				<include>ButtonMenuList_dialog</include>
 				<onback>Dialog.Close(1122)</onback>
-				<onback condition="!String.IsEqual(Window(Home).Property(Finder.DirectDialog1122),true)">ActivateWindow(1120)</onback>
-				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1122),true)">ActivateWindow(1170)</onback>
-				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1122),true)">ClearProperty(Finder.DirectDialog1122,home)</onback>
+				<onback>ActivateWindow(1120)</onback>
 				<content>
-					<item>
-						<label>Fen Light</label>
-						<visible>System.HasAddon(plugin.video.fenlight)</visible>
-						<onclick>Dialog.Close(1122)</onclick>
-						<onclick>ActivateWindow(10025,"plugin://plugin.video.fenlight/?mode=navigator.maintenance",return)</onclick>
-					</item>
 					<item>
 						<label>Finder</label>
 						<visible>System.HasAddon(plugin.video.finder)</visible>
-						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Dialog.Close(all)</onclick>
 						<onclick>ActivateWindow(10025,"plugin://plugin.video.finder/?mode=navigator.maintenance",return)</onclick>
+					</item>
+					<item>
+						<label>Red Light</label>
+						<visible>System.HasAddon(plugin.video.redlight)</visible>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>ActivateWindow(10025,"plugin://plugin.video.redlight/?mode=navigator.maintenance",return)</onclick>
 					</item>
 					<item>
 						<label>The Gears</label>
 						<visible>System.HasAddon(plugin.video.gears)</visible>
-						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Dialog.Close(all)</onclick>
 						<onclick>ActivateWindow(10025,"plugin://plugin.video.gears/?mode=navigator.maintenance",return)</onclick>
 					</item>
 					<item>
 						<label>Umbrella</label>
 						<visible>System.HasAddon(plugin.video.umbrella)</visible>
-						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Dialog.Close(all)</onclick>
 						<onclick>ActivateWindow(10025,"plugin://plugin.video.umbrella/?action=cache_Navigator&amp;folderName=Cache%20Functions",return)</onclick>
 					</item>
 					<item>
 						<label>POV</label>
 						<visible>System.HasAddon(plugin.video.pov)</visible>
-						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Dialog.Close(all)</onclick>
 						<onclick>ActivateWindow(10025,"plugin://plugin.video.pov/?mode=navigator.clear_info&amp;name=Clean%20Settings%20Files%20and%20Clear%20Caches",return)</onclick>
 					</item>
 					<item>
 						<label>ResolveURL</label>
 						<visible>System.HasAddon(script.module.resolveurl)</visible>
-						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Dialog.Close(all)</onclick>
 						<onclick>RunPlugin(plugin://script.module.resolveurl/?mode=reset_cache)</onclick>
 					</item>
 				</content>
