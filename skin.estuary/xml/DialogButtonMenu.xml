@@ -111,6 +111,7 @@
                     </item>
                     <item>
                         <label>Reload Skin</label>
+                        <onclick>Dialog.Close(all)</onclick>
                         <onclick>ReloadSkin()</onclick>
                     </item>
                     <item>
