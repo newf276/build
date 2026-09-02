@@ -92,7 +92,7 @@
 						<label>Video Cache Config</label>
 						<visible>!Skin.HasSetting(ToolsNoVideoCacheConfig)</visible>
 						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=advanced_set)</onclick>
+						<onclick>RunPlugin("plugin://plugin.program.cleaner/?url=&amp;mode=31&amp;name=%5BB%5D%5BCOLOR+white%5DAdvanced+Settings+K22%5B%2FCOLOR%5D%5B%2FB%5D&amp;icon=%2FUsers%2Fian%2FLibrary%2FApplication+Support%2FKodi%2Faddons%2Fplugin.program.cleaner%2Ficon.png&amp;fanart=%2FUsers%2Fian%2FLibrary%2FApplication+Support%2FKodi%2Faddons%2Fplugin.program.cleaner%2Ffanart.jpg&amp;description=%5BB%5D%5BCOLOR+white%5DA+list+of+presets+to+set+the+cache+size+based+on+your+device%27s+RAM+size.%5B%2FCOLOR%5D%5B%2FB%5D&amp;name2=&amp;version=&amp;kodi=")</onclick>
 					</item>
                     <item>
                         <label>Clear Finder Cache</label>
@@ -107,11 +107,10 @@
                     <item>
                         <label>Clear Thumbnails</label>
                         <onclick>Dialog.Close(all)</onclick>
-                        <onclick>RunScript(script.finder.helper,mode=clear_thumbnails)</onclick>
+                        <onclick>RunPlugin("plugin://plugin.program.cleaner/?url=&amp;mode=7&amp;name=%5BB%5D%5BCOLOR+white%5DClear+Thumbnails%5B%2FCOLOR%5D%5B%2FB%5D&amp;description=%5BB%5D%5BCOLOR+white%5DDelete+the+Thumbnails+folder+and+Textures13+database+file.+You+should+only+delete+these+if+you+want+to+free+up+space.+Reboot+Kodi+for+thumbnails+to+repopulate.%5B%2FCOLOR%5D%5B%2FB%5D&amp;name2=&amp;version=&amp;kodi=")</onclick>
                     </item>
                     <item>
                         <label>Reload Skin</label>
-                        <onclick>Dialog.Close(all)</onclick>
                         <onclick>ReloadSkin()</onclick>
                     </item>
                     <item>

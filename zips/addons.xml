@@ -152,7 +152,7 @@
     </extension>
 </addon>
 
-<addon id="skin.estuary" version="4.1.0" name="Estuary" provider-name="phil65, Ichabod Fletchman">
+<addon id="skin.estuary" version="276.0.0" name="Estuary" provider-name="newf276,phil65, Ichabod Fletchman">
 	<requires>
 		<import addon="xbmc.gui" version="5.18.0"/>
 	</requires>
