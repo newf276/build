@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol>9000</defaultcontrol>
+	<include>Animation_DialogPopupOpenClose</include>
+	<controls>
+		<control type="group">
+			<centerleft>50%</centerleft>
+			<width>600</width>
+			<centertop>50%</centertop>
+			<height>980</height>
+			<include content="DialogBackgroundCommons">
+				<param name="width" value="600" />
+				<param name="height" value="480" />
+				<param name="header_label" value="$LOCALIZE[31072]" />
+				<param name="header_id" value="2" />
+			</include>
+			<control type="panel" id="9000">
+				<include>ButtonMenuList</include>
+				<content>
+					<item>
+						<label>$LOCALIZE[13012]</label>
+						<onclick>Quit()</onclick>
+						<visible>System.ShowExitButton</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[13016]</label>
+						<onclick>Powerdown()</onclick>
+						<visible>System.CanPowerDown</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[13013]</label>
+						<onclick>Reset()</onclick>
+						<visible>System.CanReboot</visible>
+					</item>
+					<item>
+						<label>$VAR[MasterModeLabel]</label>
+						<onclick>mastermode</onclick>
+						<visible>System.HasLocks</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[13017]</label>
+						<onclick>InhibitIdleShutdown(true)</onclick>
+						<visible>System.HasShutdown +!System.IdleShutdownInhibited</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[13018]</label>
+						<onclick>InhibitIdleShutdown(false)</onclick>
+						<visible>System.HasShutdown + System.IdleShutdownInhibited</visible>
+					</item>
+					<item>
+						<label>Authorize TMDB</label>
+						<visible>true</visible>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=tmdblist_api.authenticate)</onclick>
+					</item>
+					<item>
+						<label>Authorize Trakt</label>
+						<visible>true</visible>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=trakt.trakt_authenticate)</onclick>
+					</item>
+					<item>
+						<label>Authorize All-Debrid</label>
+						<visible>!Skin.HasSetting(AuthNoAllDebrid)</visible>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=alldebrid.authenticate)</onclick>
+					</item>
+					<item>
+						<label>Authorize Premiumize</label>
+						<visible>!Skin.HasSetting(AuthNoPremiumize)</visible>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=premiumize.authenticate)</onclick>
+					</item>
+					<item>
+						<label>Authorize Authorize Real-Debrid</label>
+						<visible>!Skin.HasSetting(AuthNoRealDebrid)</visible>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=real_debrid.authenticate)</onclick>
+					</item>
+					<item>
+						<label>Authorize Torbox</label>
+						<visible>!Skin.HasSetting(AuthNoTorbox)</visible>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=torbox.authenticate)</onclick>
+					</item>
+                    <item>
+                        <label>Network Speed Test</label>
+                        <onclick>Dialog.Close(all)</onclick>
+                        <onclick>RunPlugin(plugin://plugin.program.cleaner/?mode=28)</onclick>
+                    </item>
+					<item>
+						<label>Video Cache Config</label>
+						<visible>!Skin.HasSetting(ToolsNoVideoCacheConfig)</visible>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>RunPlugin("plugin://plugin.program.cleaner/?url=&amp;mode=31&amp;name=%5BB%5D%5BCOLOR+white%5DAdvanced+Settings+K22%5B%2FCOLOR%5D%5B%2FB%5D&amp;icon=%2FUsers%2Fian%2FLibrary%2FApplication+Support%2FKodi%2Faddons%2Fplugin.program.cleaner%2Ficon.png&amp;fanart=%2FUsers%2Fian%2FLibrary%2FApplication+Support%2FKodi%2Faddons%2Fplugin.program.cleaner%2Ffanart.jpg&amp;description=%5BB%5D%5BCOLOR+white%5DA+list+of+presets+to+set+the+cache+size+based+on+your+device%27s+RAM+size.%5B%2FCOLOR%5D%5B%2FB%5D&amp;name2=&amp;version=&amp;kodi=")</onclick>
+					</item>
+                    <item>
+                        <label>Clear Finder Cache</label>
+                        <onclick>Dialog.Close(all)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=clear_all_cache)</onclick>
+                    </item>
+                    <item>
+                        <label>Clear Kodi Caches</label>
+                        <onclick>Dialog.Close(all)</onclick>
+                        <onclick>RunPlugin(plugin://plugin.program.cleaner?mode=33)</onclick>
+                    </item>
+                    <item>
+                        <label>Clear Thumbnails</label>
+                        <onclick>Dialog.Close(all)</onclick>
+                        <onclick>RunPlugin("plugin://plugin.program.cleaner/?url=&amp;mode=7&amp;name=%5BB%5D%5BCOLOR+white%5DClear+Thumbnails%5B%2FCOLOR%5D%5B%2FB%5D&amp;description=%5BB%5D%5BCOLOR+white%5DDelete+the+Thumbnails+folder+and+Textures13+database+file.+You+should+only+delete+these+if+you+want+to+free+up+space.+Reboot+Kodi+for+thumbnails+to+repopulate.%5B%2FCOLOR%5D%5B%2FB%5D&amp;name2=&amp;version=&amp;kodi=")</onclick>
+                    </item>
+                    <item>
+                        <label>Reload Skin</label>
+                        <onclick>Dialog.Close(all)</onclick>
+                        <onclick>ReloadSkin()</onclick>
+                    </item>
+                    <item>
+						<label>[COLOR ffff4500]Force Close Kodi[/COLOR]</label>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick condition="System.AddonIsEnabled(plugin.program.cleaner)">RunPlugin(plugin://plugin.program.cleaner/?mode=18)</onclick>
+                        <onclick condition="System.HasAddon(plugin.program.cleaner) + !System.AddonIsEnabled(plugin.program.cleaner)">EnableAddon(plugin.program.cleaner)</onclick>
+						<onclick condition="!System.HasAddon(plugin.program.cleaner)">InstallAddon(plugin.program.cleaner)</onclick>
+					</item>
+				</content>
+			</control>
+		</control>
+	</controls>
+</window>
+
+
