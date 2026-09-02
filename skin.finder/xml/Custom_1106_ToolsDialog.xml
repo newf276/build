@@ -26,8 +26,7 @@
 						<label>Pre-Made Configs</label>
 						<onclick>Dialog.Close(1106)</onclick>
 						<onclick condition="System.AddonIsEnabled(plugin.video.finder)">ActivateWindow(1159)</onclick>
-						<onclick condition="System.HasAddon(plugin.video.finder) + !System.AddonIsEnabled(plugin.video.finder)">
-							EnableAddon(plugin.video.finder)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.finder) + !System.AddonIsEnabled(plugin.video.finder)">EnableAddon(plugin.video.finder)</onclick>
 						<onclick condition="!System.HasAddon(plugin.video.finder)">InstallAddon(plugin.video.finder)</onclick>
 					</item>
                     <item>
