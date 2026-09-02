@@ -51,62 +51,43 @@
 					<control type="grouplist" id="5001">
 						<include>WidgetGroupListCommon</include>
 						<pagecontrol>5010</pagecontrol>
-						<include content="WidgetListCategories" condition="!Skin.HasSetting(home_no_movies_categories_widget)">
-							<param name="content_path" value="plugin://plugin.video.finder/?name=Genres&amp;mode=navigator.genres&amp;menu_type=movie&amp;random_support=true&amp;iconImage=genres"/>
-							<param name="additional_movie_items" value="true"/>
-							<param name="widget_header" value="Genres"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="5900"/>
-						</include>
-						<include content="WidgetListPoster" condition="!Skin.HasSetting(home_no_movies_categories_widget)">
-							<param name="content_path" value="plugin://plugin.video.finder/?name=Popular+Today&amp;mode=build_movie_list&amp;action=tmdb_movies_popular_today&amp;random_support=true&amp;iconImage=popular_today"/>
-							<param name="widget_header" value="Popular Today"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="5100"/>
-						</include>
-						<include content="WidgetListPoster" condition="!Skin.HasSetting(home_no_movies_categories_widget)">
-							<param name="content_path" value="plugin://plugin.video.finder/?name=Latest+Releases&amp;mode=build_movie_list&amp;action=tmdb_movies_latest_releases&amp;random_support=true&amp;iconImage=dvd"/>
-							<param name="widget_header" value="Latest Releases"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="5200"/>
-						</include>
-						<include content="WidgetListCategories" condition="!Skin.HasSetting(home_no_movies_categories_widget)">
-							<param name="content_path" value="plugin://plugin.video.finder/?iconImage=calender&amp;menu_type=movie&amp;mode=navigator.years&amp;name=Years&amp;random_support=true"/>
-							<param name="additional_movie_items" value="true"/>
-							<param name="widget_header" value="Movies by Years"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="5300"/>
-						</include>
-						<include content="WidgetListPoster" condition="!Skin.HasSetting(home_no_movies_inprogress_widget)">
-							<param name="content_path" value="special://skin/playlists/random_movies.xsp"/>
-							<param name="widget_header" value="$LOCALIZE[31006]"/>
-							<param name="widget_target" value="videos"/>
-							<param name="browse_mode" value="never"/>
-							<param name="list_id" value="5400"/>
-						</include>
-						<include content="WidgetListCategories" condition="!Skin.HasSetting(home_no_movies_inprogress_widget)">
-							<param name="content_path" value="videodb://movies/genres/"/>
-							<param name="widget_header" value="$LOCALIZE[135]"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="5500"/>
-							<param name="icon" value="$VAR[WidgetGenreIconVar]"/>
-							<param name="icon_height" value="70"/>
-						</include>
-						<include content="WidgetListPoster" condition="!Skin.HasSetting(home_no_movies_inprogress_widget)">
-							<param name="content_path" value="videodb://movies/sets/"/>
-							<param name="widget_header" value="$LOCALIZE[31075]"/>
-							<param name="widget_target" value="videos"/>
-							<param name="sortby" value="random"/>
-							<param name="list_id" value="5600"/>
-							<param name="onclick_condition" value="true"/>
-							<param name="onclick_action" value="$VAR[MovieSetOnClickActionVar]"/>
-						</include>
-					</control>
-					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
-						<param name="scrollbar_id" value="5010"/>
-					</include>
-				</control>
-				<control type="group" id="6000">
+        <include condition="System.HasAddon(plugin.video.finder)" content="WidgetListCategories">
+            <param name="content_path" value="plugin://plugin.video.finder/?name=Genres&amp;mode=navigator.genres&amp;menu_type=movie&amp;random_support=true&amp;iconImage=genres"/>
+            <param name="widget_header" value="Genres"/>
+            <param name="widget_target" value="videos"/>
+            <param name="list_id" value="5900"/>
+        </include>
+        <include condition="System.HasAddon(plugin.video.finder)" content="WidgetListCategories">
+            <param name="content_path" value="plugin://plugin.video.finder/?name=Movies&amp;mode=navigator.main&amp;action=MovieList&amp;iconImage=movies"/>
+            <param name="widget_header" value="Categories"/>
+            <param name="widget_target" value="videos"/>
+            <param name="list_id" value="5100"/>
+        </include>
+        <include condition="System.HasAddon(plugin.video.finder)" content="WidgetListPoster">
+            <param name="content_path" value="plugin://plugin.video.finder/?name=Popular+Today&amp;mode=build_movie_list&amp;action=tmdb_movies_popular_today&amp;random_support=true&amp;iconImage=popular_today"/>
+            <param name="widget_header" value="Popular Today"/>
+            <param name="widget_target" value="videos"/>
+            <param name="list_id" value="5200"/>
+        </include>
+        <include condition="System.HasAddon(plugin.video.finder)" content="WidgetListPoster">
+            <param name="content_path" value="plugin://plugin.video.finder/?name=Latest+Releases&amp;mode=build_movie_list&amp;action=tmdb_movies_latest_releases&amp;random_support=true&amp;iconImage=dvd"/>
+            <param name="widget_header" value="Latest Releases"/>
+            <param name="widget_target" value="videos"/>
+            <param name="list_id" value="5300"/>
+        </include>
+        <include condition="System.HasAddon(plugin.video.finder)" content="WidgetListCategories">
+            <param name="content_path" value="plugin://plugin.video.finder/?name=Providers&amp;mode=navigator.providers&amp;menu_type=movie&amp;random_support=true&amp;iconImage=providers"/>
+            <param name="widget_header" value="Providers"/>
+            <param name="widget_target" value="videos"/>
+            <param name="list_id" value="5400"/>
+        </include>
+            </control>
+        <include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
+            <param name="scrollbar_id" value="5010"/>
+        </include>
+            </control>
+
+                <control type="group" id="6000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),tvshows)</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="tvshows"/>
@@ -114,36 +95,36 @@
 					<control type="grouplist" id="6001">
 						<include>WidgetGroupListCommon</include>
 						<pagecontrol>6010</pagecontrol>
-						<include content="WidgetListCategories">
-							<param name="content_path" value="plugin://plugin.video.finder/?name=Genres&amp;mode=navigator.genres&amp;menu_type=tvshow&amp;random_support=true&amp;iconImage=genres"/>
-							<param name="widget_header" value="Genres"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="6900"/>
-						</include>
-						<include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.finder/?name=In+Progress&amp;mode=build_tvshow_list&amp;action=in_progress_tvshows&amp;iconImage=in_progress_tvshow"/>
-							<param name="widget_header" value="In Progress Shows"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="6100"/>
-							<param name="onclick_condition" value="true"/>
-							<param name="onclick_action" value="$VAR[TVShowOnClickActionVar]"/>
-						</include>
-						<include content="WidgetListPoster" >
-							<param name="content_path" value="plugin://plugin.video.finder/?name=Popular+Today&amp;mode=build_tvshow_list&amp;action=tmdb_tv_popular_today&amp;random_support=true&amp;iconImage=popular_today"/>
-							<param name="widget_header" value="Popular Today"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="6200"/>
-							<param name="onclick_condition" value="true"/>
-							<param name="onclick_action" value="$VAR[TVShowOnClickActionVar]"/>
-						</include>
-                        <include content="WidgetListCategories">
-                        <param name="content_path" value="plugin://plugin.video.finder/?name=Networks&amp;mode=navigator.networks&amp;menu_type=tvshow&amp;random_support=true&amp;iconImage=networks"/>
-                        <param name="widget_header" value="Networks"/>
-                        <param name="widget_target" value="videos"/>
-							<param name="list_id" value="6300"/>
-							<param name="onclick_condition" value="true"/>
-							<param name="onclick_action" value="$VAR[TVShowOnClickActionVar]"/>
-						</include>
+        <include condition="System.HasAddon(plugin.video.finder)" content="WidgetListCategories">
+            <param name="content_path" value="plugin://plugin.video.finder/?name=Genres&amp;mode=navigator.genres&amp;menu_type=tvshow&amp;random_support=true&amp;iconImage=genres"/>
+            <param name="widget_header" value="Genres"/>
+            <param name="widget_target" value="videos"/>
+            <param name="list_id" value="6900"/>
+        </include>
+        <include condition="System.HasAddon(plugin.video.finder)" content="WidgetListCategories">
+            <param name="content_path" value="plugin://plugin.video.finder/?name=TV+Shows&amp;mode=navigator.main&amp;action=TVShowList&amp;iconImage=tv"/>
+            <param name="widget_header" value="Categories"/>
+            <param name="widget_target" value="videos"/>
+            <param name="list_id" value="6100"/>
+        </include>
+        <include condition="System.HasAddon(plugin.video.finder)" content="WidgetListPoster">
+            <param name="content_path" value="plugin://plugin.video.finder/?name=In+Progress&amp;mode=build_tvshow_list&amp;action=in_progress_tvshows&amp;iconImage=in_progress_tvshow"/>
+            <param name="widget_header" value="In Progress"/>
+            <param name="widget_target" value="videos"/>
+            <param name="list_id" value="6200"/>
+        </include>
+        <include condition="System.HasAddon(plugin.video.finder)" content="WidgetListPoster">
+            <param name="content_path" value="plugin://plugin.video.finder/?name=Popular+Today&amp;mode=build_tvshow_list&amp;action=tmdb_tv_popular_today&amp;random_support=true&amp;iconImage=popular_today"/>
+            <param name="widget_header" value="Popular Today"/>
+            <param name="widget_target" value="videos"/>
+            <param name="list_id" value="6300"/>
+        </include>
+        <include condition="System.HasAddon(plugin.video.finder)" content="WidgetListCategories">
+            <param name="content_path" value="plugin://plugin.video.finder/?name=Networks&amp;mode=navigator.networks&amp;menu_type=tvshow&amp;random_support=true&amp;iconImage=networks"/>
+            <param name="widget_header" value="Networks"/>
+            <param name="widget_target" value="videos"/>
+            <param name="list_id" value="6400"/>
+        </include>
 					</control>
 					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
 						<param name="scrollbar_id" value="6010"/>
