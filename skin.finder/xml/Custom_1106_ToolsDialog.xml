@@ -68,7 +68,7 @@
                     <item>
                         <label>Backup & Restore</label>
                         <onclick>Dialog.Close(all)</onclick>
-                        <onclick>ActivateWindow(10001,"plugin://plugin.program.cleaner/?description=Backup%20and%20Restore%20Build%5b%2fB%5d&amp;kodi&amp;mode=12&amp;name=Backup%2fRestore%20Build%5b%2fB%5d&amp;name2&amp;url&amp;version",return)</onclick>
+                        <onclick>ActivateWindow(10001,"plugin://plugin.program.cleaner/?description=Backup+and+Restore+Build&kodi&mode=12&name=Backup/Restore Build&name2&url&version",return)</onclick>
                     </item>
 				</content>
 			</control>

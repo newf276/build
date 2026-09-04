@@ -46,7 +46,7 @@
     </extension>
 </addon>
 
-<addon id="skin.finder"  name="[B]Newf's Finder Plus Skin[/B]"  version="276.0.02"  provider-name="newf276">
+<addon id="skin.finder"  name="[B]Newf's Finder Plus Skin[/B]"  version="276.0.03"  provider-name="newf276">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0" />
 		<import addon="script.finder.helper" version="6.0.0" />
@@ -71,6 +71,10 @@
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
+            <screenshot>screenshot-01.png</screenshot>
+            <screenshot>screenshot-02.png</screenshot>
+            <screenshot>screenshot-03.png</screenshot>
+            <screenshot>screenshot-04.png</screenshot>
         </assets>
     </extension>
 </addon>

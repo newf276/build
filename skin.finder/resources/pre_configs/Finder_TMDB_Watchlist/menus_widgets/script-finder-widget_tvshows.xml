@@ -13,13 +13,13 @@
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="22012"/>
         </include>
-        <include condition="System.HasAddon(plugin.video.finder)" content="WidgetListBigEpisodes">
+        <include condition="System.HasAddon(plugin.video.finder)" content="WidgetListBigPoster">
             <param name="content_path" value="plugin://plugin.video.finder/?name=In+Progress&amp;mode=build_tvshow_list&amp;action=in_progress_tvshows&amp;iconImage=in_progress_tvshow"/>
             <param name="widget_header" value="In Progress"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="22013"/>
         </include>
-        <include condition="System.HasAddon(plugin.video.finder)" content="WidgetListBigEpisodes">
+        <include condition="System.HasAddon(plugin.video.finder)" content="WidgetListBigPoster">
             <param name="content_path" value="plugin://plugin.video.finder/?name=Popular+Today&amp;mode=build_tvshow_list&amp;action=tmdb_tv_popular_today&amp;random_support=true&amp;iconImage=popular_today"/>
             <param name="widget_header" value="Popular Today"/>
             <param name="widget_target" value="videos"/>

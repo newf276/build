@@ -150,25 +150,6 @@
 						<visible>String.IsEqual(Skin.String(current_search_provider),0) | String.IsEqual(Skin.String(current_search_provider),1) | String.IsEqual(Skin.String(current_search_provider),2) | String.IsEqual(Skin.String(current_search_provider),4) | String.IsEqual(Skin.String(current_search_provider),5)</visible>
 					</item>
 
-					<!-- KODI ADDONS -->
-					<item>
-						<label>Addons</label>
-						<onclick>Dialog.Close(all)</onclick>
-						<onclick>ActivateWindow(addonbrowser,addons://search/,return)</onclick>
-					</item>
-
-					<!-- YOUTUBE ADDON -->
-					<item>
-						<label>YouTube</label>
-						<onclick>Dialog.Close(all)</onclick>
-						<onclick condition="System.AddonIsEnabled(plugin.video.youtube)">
-							ActivateWindow(videos,"plugin://plugin.video.youtube/kodion/search/list/",return)</onclick>
-						<onclick
-							condition="System.HasAddon(plugin.video.youtube) + !System.AddonIsEnabled(plugin.video.youtube)">
-							EnableAddon(plugin.video.youtube)</onclick>
-						<onclick condition="!System.HasAddon(plugin.video.youtube)">
-							InstallAddon(plugin.video.youtube)</onclick>
-					</item>
 				</content>
 			</control>
 			<include content="UpDownArrows">

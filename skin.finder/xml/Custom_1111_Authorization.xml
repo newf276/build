@@ -22,6 +22,24 @@
 				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1111),true)">ActivateWindow(1170)</onback>
 				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1111),true)">ClearProperty(Finder.DirectDialog1111,home)</onback>
 				<content>
+	<!--	          <item>
+						<label>MDB List</label>
+						<visible>true</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=mdblist.mdblist_authenticate)</onclick>
+					</item> -->
+ 	<!--	          <item>
+						<label>PunchPlay</label>
+						<visible>true</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=punchplay.punchplay_authenticate)</onclick>
+					</item> -->                   
+ 	<!--	          <item>
+						<label>Simkl</label>
+						<visible>true</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=simkl.simkl_authenticate)</onclick>
+					</item> -->                      
 					<item>
 						<label>Trakt</label>
 						<visible>true</visible>
