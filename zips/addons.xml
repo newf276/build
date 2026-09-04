@@ -71,10 +71,12 @@
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
-            <screenshot>screenshot-01.png</screenshot>
-            <screenshot>screenshot-02.png</screenshot>
-            <screenshot>screenshot-03.png</screenshot>
-            <screenshot>screenshot-04.png</screenshot>
+            <screenshot>resources/screenshots/screenshot-1.png</screenshot>
+            <screenshot>resources/screenshots/screenshot-2.png</screenshot>
+            <screenshot>resources/screenshots/screenshot-3.png</screenshot>
+            <screenshot>resources/screenshots/screenshot-4.png</screenshot>
+            <screenshot>resources/screenshots/screenshot-5.png</screenshot>
+            <screenshot>resources/screenshots/screenshot-6.png</screenshot>
         </assets>
     </extension>
 </addon>
