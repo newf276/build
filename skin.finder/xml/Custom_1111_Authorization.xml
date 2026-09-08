@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1111">
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<include>Animation_DialogPopupOpenClose</include>
+	<controls>
+		<control type="group">
+			<centerleft>50%</centerleft>
+			<width>600</width>
+			<centertop>50%</centertop>
+			<height>350</height>
+			<include content="DialogBackgroundCommons">
+				<param name="width" value="600" />
+				<param name="height" value="$VAR[DialogHeight3]" />
+				<param name="header_label" value="Authorize Services" />
+				<param name="header_id" value="" />
+				<param name="diffusetexture" value="masks/dialog-bg-squareish.png" />
+			</include>
+			<control type="panel" id="9000">
+				<include>ButtonMenuList_dialog</include>
+				<onback>Dialog.Close(1111)</onback>
+				<onback condition="!String.IsEqual(Window(Home).Property(Finder.DirectDialog1111),true)">ActivateWindow(1106)</onback>
+				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1111),true)">ActivateWindow(1170)</onback>
+				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1111),true)">ClearProperty(Finder.DirectDialog1111,home)</onback>
+				<content>
+	<!--	          <item>
+						<label>MDB List</label>
+						<visible>true</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=mdblist.mdblist_authenticate)</onclick>
+					</item> -->
+ 	<!--	          <item>
+						<label>PunchPlay</label>
+						<visible>true</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=punchplay.punchplay_authenticate)</onclick>
+					</item> -->                   
+ 	<!--	          <item>
+						<label>Simkl</label>
+						<visible>true</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=simkl.simkl_authenticate)</onclick>
+					</item> -->                      
+					<item>
+						<label>Trakt</label>
+						<visible>true</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=trakt.trakt_authenticate)</onclick>
+					</item>
+					<item>
+						<label>TMDB</label>
+						<visible>true</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=tmdblist_api.authenticate)</onclick>
+					</item>
+					<item>
+						<label>All-Debrid</label>
+						<visible>!Skin.HasSetting(AuthNoAllDebrid)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=alldebrid.authenticate)</onclick>
+					</item>
+					<item>
+						<label>Premiumize</label>
+						<visible>!Skin.HasSetting(AuthNoPremiumize)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=premiumize.authenticate)</onclick>
+					</item>
+					<item>
+						<label>Real-Debrid</label>
+						<visible>!Skin.HasSetting(AuthNoRealDebrid)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=real_debrid.authenticate)</onclick>
+					</item>
+					<item>
+						<label>Torbox</label>
+						<visible>!Skin.HasSetting(AuthNoTorbox)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=torbox.authenticate)</onclick>
+					</item>
+				</content>
+			</control>
+			<include content="UpDownArrows">
+				<param name="container_id" value="9000" />
+				<param name="posx" value="276" />
+				<param name="up_posy" value="-35" />
+				<param name="down_posy" value="360" />
+			</include>
+		</control>
+	</controls>
+</window>

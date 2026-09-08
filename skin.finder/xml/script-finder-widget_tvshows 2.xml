@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <include name="TVShowWidgets">
+        <include condition="System.HasAddon(plugin.video.finder)" content="WidgetListCategory">
+            <param name="content_path" value="plugin://plugin.video.finder/?name=Genres&amp;mode=navigator.genres&amp;menu_type=tvshow&amp;random_support=true&amp;iconImage=genres"/>
+            <param name="widget_header" value="Genres"/>
+            <param name="widget_target" value="videos"/>
+            <param name="list_id" value="22011"/>
+        </include>
+        <include condition="System.HasAddon(plugin.video.finder)" content="WidgetListCategory">
+            <param name="content_path" value="plugin://plugin.video.finder/?name=TV+Shows&amp;mode=navigator.main&amp;action=TVShowList&amp;iconImage=tv"/>
+            <param name="widget_header" value="Categories"/>
+            <param name="widget_target" value="videos"/>
+            <param name="list_id" value="22012"/>
+        </include>
+        <include condition="System.HasAddon(plugin.video.finder)" content="WidgetListBigEpisodes">
+            <param name="content_path" value="plugin://plugin.video.finder/?name=In+Progress&amp;mode=build_tvshow_list&amp;action=in_progress_tvshows&amp;iconImage=in_progress_tvshow"/>
+            <param name="widget_header" value="In Progress"/>
+            <param name="widget_target" value="videos"/>
+            <param name="list_id" value="22013"/>
+        </include>
+        <include condition="System.HasAddon(plugin.video.finder)" content="WidgetListBigEpisodes">
+            <param name="content_path" value="plugin://plugin.video.finder/?name=Popular+Today&amp;mode=build_tvshow_list&amp;action=tmdb_tv_popular_today&amp;random_support=true&amp;iconImage=popular_today"/>
+            <param name="widget_header" value="Popular Today"/>
+            <param name="widget_target" value="videos"/>
+            <param name="list_id" value="22014"/>
+        </include>
+        <include condition="System.HasAddon(plugin.video.finder)" content="WidgetListCategory">
+            <param name="content_path" value="plugin://plugin.video.finder/?name=Networks&amp;mode=navigator.networks&amp;menu_type=tvshow&amp;random_support=true&amp;iconImage=networks"/>
+            <param name="widget_header" value="Networks"/>
+            <param name="widget_target" value="videos"/>
+            <param name="list_id" value="22015"/>
+        </include>
+    </include>
+</includes>
