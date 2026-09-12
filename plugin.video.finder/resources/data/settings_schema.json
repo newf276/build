@@ -685,7 +685,7 @@
   {
     "setting_id": "tmdb_api",
     "setting_type": "string",
-    "setting_default": "772defd0fb9daa76166a0163c458ad7e"
+    "setting_default": "3b37d9295aff2bc7b5542e7814b8e147"
   },
   {
     "_section": "TMDb Lists"
