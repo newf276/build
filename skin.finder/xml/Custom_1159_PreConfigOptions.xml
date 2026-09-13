@@ -23,36 +23,70 @@
 				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1159),true)">ClearProperty(Finder.DirectDialog1159,home)</onback>
 				<content>
 					<item>
-						<label>Trakt Collection</label>
-						<visible>true</visible>
+						<label>TMDB Watchlist + Trakt as Tracker</label>
+						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),finder)</visible>
 						<onclick>ClearProperty(Finder.DirectDialog1159,home)</onclick>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1159)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_tmdb_watchlist)</onclick>
+					</item>
+					<item>
+						<label>Trakt Collection</label>
+						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),finder)</visible>
+						<onclick>ClearProperty(Finder.DirectDialog1159,home)</onclick>
+						<onclick>Dialog.Close(1159)</onclick>
 						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_trakt_library)</onclick>
 					</item>
 					<item>
 						<label>Trakt Watchlist</label>
-						<visible>true</visible>
+						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),finder)</visible>
 						<onclick>ClearProperty(Finder.DirectDialog1159,home)</onclick>
-						<onclick>Dialog.Close(all)</onclick>
+						<onclick>Dialog.Close(1159)</onclick>
 						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_trakt_watchlist)</onclick>
 					</item>
 					<item>
-						<label>TMDB Watchlist + Trakt as Tracker</label>
-						<visible>true</visible>
+						<label>MDBList Library</label>
+						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),redlight)</visible>
 						<onclick>ClearProperty(Finder.DirectDialog1159,home)</onclick>
-						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_tmdb_watchlist)</onclick>
+						<onclick>Dialog.Close(1159)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=redlight_mdblist_library)</onclick>
+					</item>
+					<item>
+						<label>MDBList Watchlist</label>
+						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),redlight)</visible>
+						<onclick>ClearProperty(Finder.DirectDialog1159,home)</onclick>
+						<onclick>Dialog.Close(1159)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=redlight_mdblist_watchlist)</onclick>
+					</item>
+					<item>
+						<label>Simkl Watchlist</label>
+						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),redlight)</visible>
+						<onclick>ClearProperty(Finder.DirectDialog1159,home)</onclick>
+						<onclick>Dialog.Close(1159)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=redlight_simkl_watchlist)</onclick>
+					</item>
+					<item>
+						<label>TMDB Watchlist + Trakt</label>
+						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),redlight)</visible>
+						<onclick>ClearProperty(Finder.DirectDialog1159,home)</onclick>
+						<onclick>Dialog.Close(1159)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=redlight_tmdb_watchlist)</onclick>
+					</item>
+					<item>
+						<label>Trakt Collection</label>
+						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),redlight)</visible>
+						<onclick>ClearProperty(Finder.DirectDialog1159,home)</onclick>
+						<onclick>Dialog.Close(1159)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=redlight_trakt_library)</onclick>
+					</item>
+					<item>
+						<label>Trakt Watchlist</label>
+						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),redlight)</visible>
+						<onclick>ClearProperty(Finder.DirectDialog1159,home)</onclick>
+						<onclick>Dialog.Close(1159)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=redlight_trakt_watchlist)</onclick>
 					</item>
 				</content>
 			</control>
-			<include content="UpDownArrows">
-				<param name="container_id" value="9000" />
-				<param name="posx" value="276" />
-				<param name="up_posy" value="-35" />
-				<param name="down_posy" value="360" />
-			</include>
 		</control>
 	</controls>
 </window>
-
-				

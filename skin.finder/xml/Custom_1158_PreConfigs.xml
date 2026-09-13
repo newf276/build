@@ -27,11 +27,17 @@
 				<content>
 					<item>
 						<label>Finder</label>
-                        <visible>System.HasAddon(plugin.video.finder)</visible>
 						<onclick condition="System.HasAddon(plugin.video.finder)">Skin.SetString(SelectedPreConfigAddon,finder)</onclick>
 						<onclick condition="System.HasAddon(plugin.video.finder)">Dialog.Close(1158)</onclick>
 						<onclick condition="System.HasAddon(plugin.video.finder)">ActivateWindow(1159)</onclick>
 						<onclick condition="!System.HasAddon(plugin.video.finder)">RunScript(script.finder.helper,mode=addon_not_installed&amp;addon=Finder)</onclick>
+					</item>
+					<item>
+						<label>RedLight</label>
+						<onclick condition="System.HasAddon(plugin.video.redlight)">Skin.SetString(SelectedPreConfigAddon,redlight)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.redlight)">Dialog.Close(1158)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.redlight)">ActivateWindow(1159)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.redlight)">RunScript(script.finder.helper,mode=addon_not_installed&amp;addon=RedLight)</onclick>
 					</item>
 				</content>
 			</control>

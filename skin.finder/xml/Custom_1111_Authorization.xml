@@ -22,59 +22,100 @@
 				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1111),true)">ActivateWindow(1170)</onback>
 				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1111),true)">ClearProperty(Finder.DirectDialog1111,home)</onback>
 				<content>
-	<!--	          <item>
-						<label>MDB List</label>
-						<visible>true</visible>
+		          <item>
+						<label>MDB List RedLight</label>
+						<visible>System.HasAddon(plugin.video.redlight)</visible>
 						<onclick>Dialog.Close(1111)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=mdblist.mdblist_authenticate)</onclick>
-					</item> -->
- 	<!--	          <item>
-						<label>PunchPlay</label>
-						<visible>true</visible>
-						<onclick>Dialog.Close(1111)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=punchplay.punchplay_authenticate)</onclick>
-					</item> -->                   
- 	<!--	          <item>
-						<label>Simkl</label>
-						<visible>true</visible>
-						<onclick>Dialog.Close(1111)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=simkl.simkl_authenticate)</onclick>
-					</item> -->                      
-					<item>
-						<label>Trakt</label>
-						<visible>true</visible>
-						<onclick>Dialog.Close(1111)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=trakt.trakt_authenticate)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=mdblist.mdblist_authenticate)</onclick>
 					</item>
+ 		          <item>
+						<label>PunchPlay RedLight</label>
+						<visible>System.HasAddon(plugin.video.redlight)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=punchplay.punchplay_authenticate)</onclick>
+					</item>                  
+ 		          <item>
+						<label>Simkl RedLight</label>
+						<visible>System.HasAddon(plugin.video.redlight)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=simkl.simkl_authenticate)</onclick>
+					</item>   
 					<item>
-						<label>TMDB</label>
-						<visible>true</visible>
+						<label>TMDB Finder</label>
+						<visible>System.HasAddon(plugin.video.finder)</visible>
 						<onclick>Dialog.Close(1111)</onclick>
 						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=tmdblist_api.authenticate)</onclick>
 					</item>
 					<item>
-						<label>All-Debrid</label>
-						<visible>!Skin.HasSetting(AuthNoAllDebrid)</visible>
+						<label>TMDB RedLight</label>
+						<visible>System.HasAddon(plugin.video.redlight)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=tmdblist_api.authenticate)</onclick>
+					</item>
+					<item>
+						<label>Trakt Finder</label>
+						<visible>System.HasAddon(plugin.video.finder)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=trakt.trakt_authenticate)</onclick>
+					</item>
+					<item>
+						<label>Trakt RedLight</label>
+						<visible>System.HasAddon(plugin.video.redlight)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=trakt.trakt_authenticate)</onclick>
+					</item>
+					<item>
+						<label>All-Debrid Finder</label>
+						<visible>System.HasAddon(plugin.video.finder)</visible>
 						<onclick>Dialog.Close(1111)</onclick>
 						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=alldebrid.authenticate)</onclick>
 					</item>
 					<item>
-						<label>Premiumize</label>
-						<visible>!Skin.HasSetting(AuthNoPremiumize)</visible>
+						<label>All-Debrid RedLight</label>
+						<visible>System.HasAddon(plugin.video.redlight)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=alldebrid.authenticate)</onclick>
+					</item>
+					<item>
+						<label>Premiumize Finder</label>
+						<visible>System.HasAddon(plugin.video.finder)</visible>
 						<onclick>Dialog.Close(1111)</onclick>
 						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=premiumize.authenticate)</onclick>
 					</item>
 					<item>
-						<label>Real-Debrid</label>
-						<visible>!Skin.HasSetting(AuthNoRealDebrid)</visible>
+						<label>Premiumize RedLight</label>
+						<visible>System.HasAddon(plugin.video.redlight)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=premiumize.authenticate)</onclick>
+					</item>
+					<item>
+						<label>Real-Debrid Finder</label>
+						<visible>System.HasAddon(plugin.video.finder)</visible>
 						<onclick>Dialog.Close(1111)</onclick>
 						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=real_debrid.authenticate)</onclick>
 					</item>
 					<item>
-						<label>Torbox</label>
-						<visible>!Skin.HasSetting(AuthNoTorbox)</visible>
+						<label>Real-Debrid RedLight</label>
+						<visible>System.HasAddon(plugin.video.redlight)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=real_debrid.authenticate)</onclick>
+					</item>
+					<item>
+						<label>Set Skin MDbList API Key</label>
+						<visible>!Skin.HasSetting(AuthNoSkinMDBList)</visible>
+						<onclick>RunScript(script.finder.helper,mode=set_api_key)</onclick>
+					</item>
+					<item>
+						<label>Torbox Finder</label>
+						<visible>System.HasAddon(plugin.video.finder)</visible>
 						<onclick>Dialog.Close(1111)</onclick>
 						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=torbox.authenticate)</onclick>
+					</item>
+					<item>
+						<label>Torbox RedLight</label>
+						<visible>System.HasAddon(plugin.video.redlight)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=torbox.authenticate)</onclick>
 					</item>
 				</content>
 			</control>

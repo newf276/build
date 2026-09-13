@@ -22,22 +22,22 @@
 				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1106),true)">ClearProperty(Finder.DirectDialog1106,home)</onback>
 				<onback condition="!String.IsEqual(Window(Home).Property(Finder.DirectDialog1106),true)">Dialog.Close(1106)</onback>
 				<content>
-                    <item>
-						<label>Pre-Made Configs</label>
-						<onclick>Dialog.Close(1106)</onclick>
-						<onclick condition="System.AddonIsEnabled(plugin.video.finder)">ActivateWindow(1159)</onclick>
-						<onclick condition="System.HasAddon(plugin.video.finder) + !System.AddonIsEnabled(plugin.video.finder)">EnableAddon(plugin.video.finder)</onclick>
-						<onclick condition="!System.HasAddon(plugin.video.finder)">InstallAddon(plugin.video.finder)</onclick>
+					<item>
+    				    <label>Pre-Made Configs</label>
+    				    <visible>[System.HasAddon(plugin.video.themoviedb.helper) | System.HasAddon(plugin.video.fenlight) | System.HasAddon(plugin.video.umbrella) | System.HasAddon(plugin.video.pov) | System.HasAddon(plugin.video.finder) | System.HasAddon(plugin.video.redlight)] + !Skin.HasSetting(Enable.PreMadeConfigs)</visible>
+    				    <onclick>Dialog.Close(1106)</onclick>
+    				    <onclick>RunScript(script.finder.helper,mode=pre_config)</onclick>
 					</item>
+					<item>
+						<label>Authorize Services</label>
+						<visible>[System.HasAddon(plugin.video.themoviedb.helper) | System.HasAddon(plugin.video.fenlight) | System.HasAddon(plugin.video.umbrella) | System.HasAddon(plugin.video.pov) | System.HasAddon(plugin.video.finder) | System.HasAddon(plugin.video.redlight) | System.HasAddon(script.module.resolveurl) | System.HasAddon(plugin.video.youtube)] + !Skin.HasSetting(ToolsNoAuthorizeServices)</visible>
+						<onclick>Dialog.Close(1106)</onclick>
+						<onclick>ActivateWindow(1111)</onclick>
+					</item>                  
                     <item>
                         <label>Reload Skin</label>
                         <onclick>Dialog.Close(all)</onclick>
                         <onclick>ReloadSkin()</onclick>
-                    </item>
-                    <item>
-                        <label>Authorize Services</label>
-                        <onclick>Dialog.Close(all)</onclick>
-                        <onclick>ActivateWindow(1111)</onclick>
                     </item>
                     <item>
                         <label>Network Speed Test</label>
@@ -52,6 +52,13 @@
 					</item>
                     <item>
                         <label>Clear Finder Cache</label>
+                        <visible>[System.HasAddon(plugin.video.finder)</visible>
+                        <onclick>Dialog.Close(all)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=clear_all_cache)</onclick>
+                    </item>
+                    <item>
+                        <label>Clear RedLight Cache</label>
+                        <visible>[System.HasAddon(plugin.video.redlight)</visible>
                         <onclick>Dialog.Close(all)</onclick>
 						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=clear_all_cache)</onclick>
                     </item>

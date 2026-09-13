@@ -849,42 +849,42 @@
 					<include>DefaultSettingButton</include>
 					<selected>!Skin.HasSetting(ToolsNoAuthorizeServices)</selected>
 					<onclick>Skin.ToggleSetting(ToolsNoAuthorizeServices)</onclick>
-					<visible>Skin.HasSetting(Enable.MaintenanceTools) + [System.HasAddon(plugin.video.themoviedb.helper) | System.HasAddon(plugin.video.fenlight) | System.HasAddon(plugin.video.umbrella) | System.HasAddon(plugin.video.pov) | System.HasAddon(plugin.video.gears) | System.HasAddon(plugin.video.finder) | System.HasAddon(script.module.resolveurl) | System.HasAddon(plugin.video.youtube)]</visible>
+					<visible>Skin.HasSetting(Enable.MaintenanceTools) + [System.HasAddon(plugin.video.themoviedb.helper) | System.HasAddon(plugin.video.redlight) | System.HasAddon(plugin.video.umbrella) | System.HasAddon(plugin.video.pov) | System.HasAddon(plugin.video.gears) | System.HasAddon(plugin.video.finder) | System.HasAddon(script.module.resolveurl) | System.HasAddon(plugin.video.youtube)]</visible>
 				</control>
 				<control type="radiobutton" id="63810">
 					<label>      - Trakt</label>
 					<include>DefaultSettingButton</include>
 					<selected>!Skin.HasSetting(AuthNoTrakt)</selected>
 					<onclick>Skin.ToggleSetting(AuthNoTrakt)</onclick>
-					<visible>Skin.HasSetting(Enable.MaintenanceTools) + [System.HasAddon(plugin.video.themoviedb.helper) | System.HasAddon(plugin.video.fenlight) | System.HasAddon(plugin.video.umbrella) | System.HasAddon(plugin.video.pov) | System.HasAddon(plugin.video.gears) | System.HasAddon(plugin.video.finder)] + !Skin.HasSetting(ToolsNoAuthorizeServices)</visible>
+					<visible>Skin.HasSetting(Enable.MaintenanceTools) + [System.HasAddon(plugin.video.themoviedb.helper) | System.HasAddon(plugin.video.redlight) | System.HasAddon(plugin.video.umbrella) | System.HasAddon(plugin.video.pov) | System.HasAddon(plugin.video.gears) | System.HasAddon(plugin.video.finder)] + !Skin.HasSetting(ToolsNoAuthorizeServices)</visible>
 				</control>
 				<control type="radiobutton" id="63811">
 					<label>      - Real-Debrid</label>
 					<include>DefaultSettingButton</include>
 					<selected>!Skin.HasSetting(AuthNoRealDebrid)</selected>
 					<onclick>Skin.ToggleSetting(AuthNoRealDebrid)</onclick>
-					<visible>Skin.HasSetting(Enable.MaintenanceTools) + [System.HasAddon(plugin.video.fenlight) | System.HasAddon(plugin.video.umbrella) | System.HasAddon(plugin.video.pov) | System.HasAddon(plugin.video.gears) | System.HasAddon(plugin.video.finder) | System.HasAddon(script.module.resolveurl)] + !Skin.HasSetting(ToolsNoAuthorizeServices)</visible>
+					<visible>Skin.HasSetting(Enable.MaintenanceTools) + [System.HasAddon(plugin.video.redlight) | System.HasAddon(plugin.video.umbrella) | System.HasAddon(plugin.video.pov) | System.HasAddon(plugin.video.gears) | System.HasAddon(plugin.video.finder) | System.HasAddon(script.module.resolveurl)] + !Skin.HasSetting(ToolsNoAuthorizeServices)</visible>
 				</control>
 				<control type="radiobutton" id="63812">
 					<label>      - Premiumize</label>
 					<include>DefaultSettingButton</include>
 					<selected>!Skin.HasSetting(AuthNoPremiumize)</selected>
 					<onclick>Skin.ToggleSetting(AuthNoPremiumize)</onclick>
-					<visible>Skin.HasSetting(Enable.MaintenanceTools) + [System.HasAddon(plugin.video.fenlight) | System.HasAddon(plugin.video.umbrella) | System.HasAddon(plugin.video.pov) | System.HasAddon(plugin.video.gears) | System.HasAddon(plugin.video.finder) | System.HasAddon(script.module.resolveurl)] + !Skin.HasSetting(ToolsNoAuthorizeServices)</visible>
+					<visible>Skin.HasSetting(Enable.MaintenanceTools) + [System.HasAddon(plugin.video.redlight) | System.HasAddon(plugin.video.umbrella) | System.HasAddon(plugin.video.pov) | System.HasAddon(plugin.video.gears) | System.HasAddon(plugin.video.finder) | System.HasAddon(script.module.resolveurl)] + !Skin.HasSetting(ToolsNoAuthorizeServices)</visible>
 				</control>
 				<control type="radiobutton" id="63813">
 					<label>      - All-Debrid</label>
 					<include>DefaultSettingButton</include>
 					<selected>!Skin.HasSetting(AuthNoAllDebrid)</selected>
 					<onclick>Skin.ToggleSetting(AuthNoAllDebrid)</onclick>
-					<visible>Skin.HasSetting(Enable.MaintenanceTools) + [System.HasAddon(plugin.video.fenlight) | System.HasAddon(plugin.video.umbrella) | System.HasAddon(plugin.video.pov) | System.HasAddon(plugin.video.gears) | System.HasAddon(plugin.video.finder) | System.HasAddon(script.module.resolveurl)] + !Skin.HasSetting(ToolsNoAuthorizeServices)</visible>
+					<visible>Skin.HasSetting(Enable.MaintenanceTools) + [System.HasAddon(plugin.video.redlight) | System.HasAddon(plugin.video.umbrella) | System.HasAddon(plugin.video.pov) | System.HasAddon(plugin.video.gears) | System.HasAddon(plugin.video.finder) | System.HasAddon(script.module.resolveurl)] + !Skin.HasSetting(ToolsNoAuthorizeServices)</visible>
 				</control>
 				<control type="radiobutton" id="63814">
 					<label>      - Torbox</label>
 					<include>DefaultSettingButton</include>
 					<selected>!Skin.HasSetting(AuthNoTorbox)</selected>
 					<onclick>Skin.ToggleSetting(AuthNoTorbox)</onclick>
-					<visible>Skin.HasSetting(Enable.MaintenanceTools) + [System.HasAddon(plugin.video.fenlight) | System.HasAddon(plugin.video.umbrella) | System.HasAddon(plugin.video.pov) | System.HasAddon(plugin.video.gears) | System.HasAddon(plugin.video.finder) | System.HasAddon(script.module.resolveurl)] + !Skin.HasSetting(ToolsNoAuthorizeServices)</visible>
+					<visible>Skin.HasSetting(Enable.MaintenanceTools) + [System.HasAddon(plugin.video.redlight) | System.HasAddon(plugin.video.umbrella) | System.HasAddon(plugin.video.pov) | System.HasAddon(plugin.video.gears) | System.HasAddon(plugin.video.finder) | System.HasAddon(script.module.resolveurl)] + !Skin.HasSetting(ToolsNoAuthorizeServices)</visible>
 				</control>
 				<control type="radiobutton" id="63815">
 					<label>      - Offcloud</label>
@@ -934,7 +934,7 @@
 					<include>DefaultSettingButton</include>
 					<selected>!Skin.HasSetting(Enable.PreMadeConfigs)</selected>
 					<onclick>Skin.ToggleSetting(Enable.PreMadeConfigs)</onclick>
-					<visible>Skin.HasSetting(Enable.MaintenanceTools) + [System.HasAddon(plugin.video.themoviedb.helper) | System.HasAddon(plugin.video.fenlight) | System.HasAddon(plugin.video.umbrella) | System.HasAddon(plugin.video.pov) | System.HasAddon(plugin.video.gears) | System.HasAddon(plugin.video.finder)]</visible>
+					<visible>Skin.HasSetting(Enable.MaintenanceTools) + [System.HasAddon(plugin.video.themoviedb.helper) | System.HasAddon(plugin.video.redlight) | System.HasAddon(plugin.video.umbrella) | System.HasAddon(plugin.video.pov) | System.HasAddon(plugin.video.gears) | System.HasAddon(plugin.video.finder)]</visible>
 				</control>
 				<control type="radiobutton" id="63822">
 					<label>   - Backup &amp; Restore</label>
