@@ -25,7 +25,7 @@
 				<content>
 					<item>
 						<label>Reset Artwork &amp; Color</label>
-						<onclick condition="String.IsEqual(Skin.String(Finder.PendingLookFeel),fenplus)">RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=fenplus&amp;keep_artwork=false&amp;keep_color=false)</onclick>
+						<onclick condition="String.IsEqual(Skin.String(Finder.PendingLookFeel),finderplus)">RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=finderplus&amp;keep_artwork=false&amp;keep_color=false)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(Finder.PendingLookFeel),hybrid)">RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=hybrid&amp;keep_artwork=false&amp;keep_color=false)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(Finder.PendingLookFeel),cinema)">RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=cinema&amp;keep_artwork=false&amp;keep_color=false)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(Finder.PendingLookFeel),classic)">RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=classic&amp;keep_artwork=false&amp;keep_color=false)</onclick>
@@ -35,7 +35,7 @@
 					</item>
 					<item>
 						<label>Keep Current Artwork</label>
-						<onclick condition="String.IsEqual(Skin.String(Finder.PendingLookFeel),fenplus)">RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=fenplus&amp;keep_artwork=true&amp;keep_color=false)</onclick>
+						<onclick condition="String.IsEqual(Skin.String(Finder.PendingLookFeel),finderplus)">RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=finderplus&amp;keep_artwork=true&amp;keep_color=false)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(Finder.PendingLookFeel),hybrid)">RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=hybrid&amp;keep_artwork=true&amp;keep_color=false)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(Finder.PendingLookFeel),cinema)">RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=cinema&amp;keep_artwork=true&amp;keep_color=false)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(Finder.PendingLookFeel),classic)">RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=classic&amp;keep_artwork=true&amp;keep_color=false)</onclick>
@@ -45,7 +45,7 @@
 					</item>
 					<item>
 						<label>Keep Current Color</label>
-						<onclick condition="String.IsEqual(Skin.String(Finder.PendingLookFeel),fenplus)">RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=fenplus&amp;keep_artwork=false&amp;keep_color=true)</onclick>
+						<onclick condition="String.IsEqual(Skin.String(Finder.PendingLookFeel),finderplus)">RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=finderplus&amp;keep_artwork=false&amp;keep_color=true)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(Finder.PendingLookFeel),hybrid)">RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=hybrid&amp;keep_artwork=false&amp;keep_color=true)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(Finder.PendingLookFeel),cinema)">RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=cinema&amp;keep_artwork=false&amp;keep_color=true)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(Finder.PendingLookFeel),classic)">RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=classic&amp;keep_artwork=false&amp;keep_color=true)</onclick>
@@ -55,7 +55,7 @@
 					</item>
 					<item>
 						<label>Keep Current Artwork &amp; Color</label>
-						<onclick condition="String.IsEqual(Skin.String(Finder.PendingLookFeel),fenplus)">RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=fenplus&amp;keep_artwork=true&amp;keep_color=true)</onclick>
+						<onclick condition="String.IsEqual(Skin.String(Finder.PendingLookFeel),finderplus)">RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=finderplus&amp;keep_artwork=true&amp;keep_color=true)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(Finder.PendingLookFeel),hybrid)">RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=hybrid&amp;keep_artwork=true&amp;keep_color=true)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(Finder.PendingLookFeel),cinema)">RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=cinema&amp;keep_artwork=true&amp;keep_color=true)</onclick>
 						<onclick condition="String.IsEqual(Skin.String(Finder.PendingLookFeel),classic)">RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=classic&amp;keep_artwork=true&amp;keep_color=true)</onclick>

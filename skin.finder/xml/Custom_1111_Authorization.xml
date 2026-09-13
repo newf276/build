@@ -101,11 +101,6 @@
 						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=real_debrid.authenticate)</onclick>
 					</item>
 					<item>
-						<label>Set Skin MDbList API Key</label>
-						<visible>!Skin.HasSetting(AuthNoSkinMDBList)</visible>
-						<onclick>RunScript(script.finder.helper,mode=set_api_key)</onclick>
-					</item>
-					<item>
 						<label>Torbox Finder</label>
 						<visible>System.HasAddon(plugin.video.finder)</visible>
 						<onclick>Dialog.Close(1111)</onclick>
@@ -115,7 +110,7 @@
 						<label>Torbox RedLight</label>
 						<visible>System.HasAddon(plugin.video.redlight)</visible>
 						<onclick>Dialog.Close(1111)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=torbox.authenticate)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=torbox.authenticate)</onclick>
 					</item>
 				</content>
 			</control>

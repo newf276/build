@@ -190,11 +190,11 @@ class SPaths:
     def change_search_provider(self):
         providers = [
             ('0', 'TMDb Helper', 'plugin.video.themoviedb.helper'),
-            ('1', 'RedLight', 'plugin.video.redlight'),
+            ('1', 'Finder', 'plugin.video.finder'),
             ('2', 'Umbrella', 'plugin.video.umbrella'),
             ('3', 'POV', 'plugin.video.pov'),
-            ('4', 'The Gears', 'plugin.video.gears'),
-            ('5', 'Finder', 'plugin.video.finder'),
+            ('4', 'Fen Light', 'plugin.video.fenlight'),
+            ('5', 'RedLight', 'plugin.video.redlight'),
         ]
 
         installed = [

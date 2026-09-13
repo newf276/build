@@ -140,9 +140,9 @@
 - Added user config import/export functions to tools menu. Users can now export and easy share their configs with other users.
 - Added a setting to limit the search history list to 5, 10, 15, or 20 items
 - Updated search results window artwork
-- Added The Gears add-on to the list of supported add-ons. This is a Fen Light fork with no external player block and an updated set of external scrapers.
-- Added a Pre-Config for The Gears add-on
-- Fixed Fen Light/The Gears Anime widget
+- Added The Fenlight add-on to the list of supported add-ons. This is a Fen Light fork with no external player block and an updated set of external scrapers.
+- Added a Pre-Config for The Fenlight add-on
+- Fixed Fen Light/The Finder Anime widget
 - Other minor changes/fixes
 
 [B][COLOR accent_color]Version 100.0.26[/COLOR][/B]

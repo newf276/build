@@ -34,11 +34,11 @@ fav_file = 'favourites.xml'
 dst_cfg = xbmcvfs.translatePath('special://skin/xml/')
 dst_db = os.path.join(addon_data, 'script.finder.helper/')
 
-finder_mdblist_library_cfg = os.path.join(skin_path, 'resources/pre_configs/Finder_MDBlist_Library/menus_widgets/')
-finder_mdblist_library_db = os.path.join(skin_path, 'resources/pre_configs/Finder_MDBlist_Library/database/')
+# finder_mdblist_library_cfg = os.path.join(skin_path, 'resources/pre_configs/Finder_MDBlist_Library/menus_widgets/')
+# finder_mdblist_library_db = os.path.join(skin_path, 'resources/pre_configs/Finder_MDBlist_Library/database/')
 
-finder_mdblist_watchlist_cfg = os.path.join(skin_path, 'resources/pre_configs/Finder_MDBlist_Watchlist/menus_widgets/')
-finder_mdblist_watchlist_db = os.path.join(skin_path, 'resources/pre_configs/Finder_MDBlist_Watchlist/database/')
+# finder_mdblist_watchlist_cfg = os.path.join(skin_path, 'resources/pre_configs/Finder_MDBlist_Watchlist/menus_widgets/')
+# finder_mdblist_watchlist_db = os.path.join(skin_path, 'resources/pre_configs/Finder_MDBlist_Watchlist/database/')
 
 finder_tmdb_watchlist_cfg = os.path.join(skin_path, 'resources/pre_configs/Finder_TMDB_Watchlist/menus_widgets/')
 finder_tmdb_watchlist_db = os.path.join(skin_path, 'resources/pre_configs/Finder_TMDB_Watchlist/database/')
@@ -709,8 +709,8 @@ def run_pre_config_mode(config):
     config = str(config or "").strip().lower()
 
     configs = {
-        "finder_mdblist_library":   {"label": "Finder MDBlist Library",    "cfg": finder_mdblist_library_cfg, "db": finder_mdblist_library_db, "search_provider": "5"},
-        "finder_mdblist_watchlist":   {"label": "Finder MDBlist Watchlist",    "cfg": finder_mdblist_watchlist_cfg, "db": finder_mdblist_watchlist_db, "search_provider": "5"},
+    #    "finder_mdblist_library":   {"label": "Finder MDBlist Library",    "cfg": finder_mdblist_library_cfg, "db": finder_mdblist_library_db, "search_provider": "5"},
+  #      "finder_mdblist_watchlist":   {"label": "Finder MDBlist Watchlist",    "cfg": finder_mdblist_watchlist_cfg, "db": finder_mdblist_watchlist_db, "search_provider": "5"},
         "finder_tmdb_watchlist":   {"label": "Finder TMDB Watchlist",    "cfg": finder_tmdb_watchlist_cfg, "db": finder_tmdb_watchlist_db,    "search_provider": "5"},
         "finder_trakt_library":   {"label": "Finder Trakt Library",    "cfg": finder_trakt_library_cfg, "db": finder_trakt_library_db,       "search_provider": "5"},
         "finder_trakt_watchlist":   {"label": "Finder Trakt Watchlist",    "cfg": finder_trakt_watchlist_cfg, "db": finder_trakt_watchlist_db,       "search_provider": "5"},

@@ -22,7 +22,7 @@
 				<onback>Dialog.Close(1152)</onback>
 				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1152),true)">ActivateWindow(1170)</onback>
 				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1152),true)">ClearProperty(Finder.DirectDialog1152,home)</onback>
-				<content>                    
+				<content>
 					<item>
 						<label>Classic Finder</label>
 						<onclick>Skin.SetString(Finder.PendingLookFeel,classic)</onclick>
@@ -31,7 +31,7 @@
 					</item>
 					<item>
 						<label>Finder Plus</label>
-						<onclick>Skin.SetString(Finder.PendingLookFeel,fenplus)</onclick>
+						<onclick>Skin.SetString(Finder.PendingLookFeel,finderplus)</onclick>
 						<onclick>Dialog.Close(1152)</onclick>
 						<onclick>ActivateWindow(1153)</onclick>
 					</item>
