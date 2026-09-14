@@ -27,6 +27,8 @@
 				<content>
 					<item>
 						<label>Finder</label>
+                        <onclick condition="System.HasAddon(plugin.video.finder) + !System.AddonIsEnabled(plugin.video.finder)">EnableAddon(plugin.video.finder)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.finder)">InstallAddon(plugin.video.finder)</onclick>
 						<onclick condition="System.HasAddon(plugin.video.finder)">Skin.SetString(SelectedPreConfigAddon,finder)</onclick>
 						<onclick condition="System.HasAddon(plugin.video.finder)">Dialog.Close(1158)</onclick>
 						<onclick condition="System.HasAddon(plugin.video.finder)">ActivateWindow(1159)</onclick>
@@ -34,6 +36,8 @@
 					</item>
 					<item>
 						<label>Red Light</label>
+                        <onclick condition="System.HasAddon(plugin.video.redlight) + !System.AddonIsEnabled(plugin.video.redlight)">EnableAddon(plugin.video.redlight)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.redlight)">InstallAddon(plugin.video.redlight)</onclick>
 						<onclick condition="System.HasAddon(plugin.video.redlight)">Skin.SetString(SelectedPreConfigAddon,redlight)</onclick>
 						<onclick condition="System.HasAddon(plugin.video.redlight)">Dialog.Close(1158)</onclick>
 						<onclick condition="System.HasAddon(plugin.video.redlight)">ActivateWindow(1159)</onclick>

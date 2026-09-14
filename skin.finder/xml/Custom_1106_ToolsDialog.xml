@@ -24,7 +24,7 @@
 				<content>
 					<item>
     				    <label>Pre-Made Configs</label>
-    				    <visible>[System.HasAddon(plugin.video.themoviedb.helper) | System.HasAddon(plugin.video.redlight) | System.HasAddon(plugin.video.umbrella) | System.HasAddon(plugin.video.pov) | System.HasAddon(plugin.video.fenlight) | System.HasAddon(plugin.video.finder)] + !Skin.HasSetting(Enable.PreMadeConfigs)</visible>
+    				    <visible>True</visible>
     				    <onclick>Dialog.Close(1106)</onclick>
     				<onclick>RunScript(script.finder.helper,mode=pre_config)</onclick>
 					</item>                   
@@ -65,14 +65,14 @@
                         <onclick>RunScript(script.finder.helper,mode=clear_thumbnails)</onclick>
                     </item>
                     <item>
-                        <label>Backup & Restore</label>
-                        <onclick>Dialog.Close(all)</onclick>
-                        <onclick>ActivateWindow(10001,"plugin://plugin.program.cleaner/?description=Backup+and+Restore+Build&kodi&mode=12&name=Backup/Restore Build&name2&url&version",return)</onclick>
-                    </item>
-                    <item>
                         <label>Newf's Wizard</label>
                         <onclick>Dialog.Close(all)</onclick>
                         <onclick>ActivateWindow(10001,"plugin://plugin.program.cleaner",return)</onclick>
+                    </item>
+                    <item>
+                        <label>Backup & Restore</label>
+                        <onclick>Dialog.Close(all)</onclick>
+                        <onclick>ActivateWindow(10001,"plugin://plugin.program.cleaner/?description=Backup+and+Restore+Build&kodi&mode=12&name=Backup/Restore Build&name2&url&version",return)</onclick>
                     </item>
 				</content>
 			</control>

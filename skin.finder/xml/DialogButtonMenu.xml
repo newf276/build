@@ -51,9 +51,9 @@
                     <item>
 						<label>[COLOR ffff4500]Force Close Kodi[/COLOR]</label>
 						<onclick>Dialog.Close(all)</onclick>
-						<onclick condition="System.AddonIsEnabled(plugin.program.cleaner)">RunPlugin(plugin://plugin.program.cleaner/?mode=18)</onclick>
                         <onclick condition="System.HasAddon(plugin.program.cleaner) + !System.AddonIsEnabled(plugin.program.cleaner)">EnableAddon(plugin.program.cleaner)</onclick>
 						<onclick condition="!System.HasAddon(plugin.program.cleaner)">InstallAddon(plugin.program.cleaner)</onclick>
+						<onclick condition="System.AddonIsEnabled(plugin.program.cleaner)">RunPlugin(plugin://plugin.program.cleaner/?mode=18)</onclick>
 					</item>
 				</content>
 			</control>

@@ -23,37 +23,37 @@
 				<onback condition="String.IsEqual(Window(Home).Property(FinderDirectDialog1111),true)">ClearProperty(FinderDirectDialog1111,home)</onback>
 				<content>
 					<item>
-						<label>TMDB Finder</label>
+						<label>TMDB</label>
 						<visible>System.HasAddon(plugin.video.finder)</visible>
 						<onclick>Dialog.Close(1111)</onclick>
 						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=tmdblist_api.authenticate)</onclick>
 					</item>
 					<item>
-						<label>Trakt Finder</label>
+						<label>Trakt</label>
 						<visible>System.HasAddon(plugin.video.finder)</visible>
 						<onclick>Dialog.Close(1111)</onclick>
 						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=trakt.trakt_authenticate)</onclick>
 					</item>
 					<item>
-						<label>All-Debrid Finder</label>
+						<label>All-Debrid</label>
 						<visible>System.HasAddon(plugin.video.finder)</visible>
 						<onclick>Dialog.Close(1111)</onclick>
 						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=alldebrid.authenticate)</onclick>
 					</item>
 					<item>
-						<label>Premiumize Finder</label>
+						<label>Premiumize</label>
 						<visible>System.HasAddon(plugin.video.finder)</visible>
 						<onclick>Dialog.Close(1111)</onclick>
 						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=premiumize.authenticate)</onclick>
 					</item>
 					<item>
-						<label>Real-Debrid Finder</label>
+						<label>Real-Debrid</label>
 						<visible>System.HasAddon(plugin.video.finder)</visible>
 						<onclick>Dialog.Close(1111)</onclick>
 						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=real_debrid.authenticate)</onclick>
 					</item>
 					<item>
-						<label>Torbox Finder</label>
+						<label>Torbox</label>
 						<visible>System.HasAddon(plugin.video.finder)</visible>
 						<onclick>Dialog.Close(1111)</onclick>
 						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=torbox.authenticate)</onclick>
