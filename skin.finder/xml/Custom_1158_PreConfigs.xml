@@ -33,11 +33,11 @@
 						<onclick condition="!System.HasAddon(plugin.video.finder)">RunScript(script.finder.helper,mode=addon_not_installed&amp;addon=Finder)</onclick>
 					</item>
 					<item>
-						<label>RedLight</label>
+						<label>Red Light</label>
 						<onclick condition="System.HasAddon(plugin.video.redlight)">Skin.SetString(SelectedPreConfigAddon,redlight)</onclick>
 						<onclick condition="System.HasAddon(plugin.video.redlight)">Dialog.Close(1158)</onclick>
 						<onclick condition="System.HasAddon(plugin.video.redlight)">ActivateWindow(1159)</onclick>
-						<onclick condition="!System.HasAddon(plugin.video.redlight)">RunScript(script.finder.helper,mode=addon_not_installed&amp;addon=RedLight)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.redlight)">RunScript(script.finder.helper,mode=addon_not_installed&amp;addon=Red Light)</onclick>
 					</item>
 				</content>
 			</control>
