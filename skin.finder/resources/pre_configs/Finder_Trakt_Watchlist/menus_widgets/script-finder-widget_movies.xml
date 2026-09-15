@@ -15,7 +15,7 @@
         </include>
         <include condition="System.HasAddon(plugin.video.finder)" content="WidgetListBigEpisodes">
             <param name="content_path" value="plugin://plugin.video.finder/?action=trakt_watchlist&category_name=Movies+Watchlist&mode=build_movie_list"/>
-            <param name="widget_header" value="My Movie WatchList"/>
+            <param name="widget_header" value="My Trakt Movie WatchList"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="19013"/>
         </include>

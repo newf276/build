@@ -20,7 +20,7 @@
     <setting id="locale.charset" default="true">DEFAULT</setting>
     <setting id="locale.keyboardlayouts" default="true">English QWERTY</setting>
     <setting id="locale.activekeyboardlayout" default="true">English QWERTY</setting>
-    <setting id="locale.country" default="true">CA</setting>
+    <setting id="locale.country" default="true">USA (12h)</setting>
     <setting id="locale.shortdateformat" default="true">regional</setting>
     <setting id="locale.longdateformat" default="true">regional</setting>
     <setting id="locale.timeformat" default="true">regional</setting>
