@@ -20,7 +20,7 @@
             <param name="list_id" value="19013"/>
         </include>
         <include condition="System.HasAddon(plugin.video.finder)" content="WidgetListBigEpisodes">
-            <param name="content_path" value="plugin://plugin.video.finder/?action=trakt_watchlist&category_name=Movies+Watchlist&mode=build_movie_list"/>
+            <param name="content_path" value="plugin://plugin.video.finder/?name=Popular+Today&amp;mode=build_movie_list&amp;action=tmdb_movies_popular_today&amp;random_support=true&amp;iconImage=popular_today"/>
             <param name="widget_header" value="Popular Today"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="19014"/>
