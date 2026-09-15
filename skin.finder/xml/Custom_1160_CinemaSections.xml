@@ -22,18 +22,18 @@
 				</include>
 				<content>
 					<item>
-						<label>Movies</label>
-						<onclick>SetProperty(finder.cinema_section,movies,home)</onclick>
-						<onclick>Dialog.Close(1160)</onclick>
-						<onclick>SetFocus(19000)</onclick>
-						<visible>!Skin.HasSetting(HomeMenuNoMoviesButton) + Skin.HasSetting(CinemaMoviesHasWidgets)</visible>
-					</item>
-					<item>
 						<label>TV Shows</label>
 						<onclick>SetProperty(finder.cinema_section,tvshows,home)</onclick>
 						<onclick>Dialog.Close(1160)</onclick>
 						<onclick>SetFocus(22000)</onclick>
 						<visible>!Skin.HasSetting(HomeMenuNoTVShowsButton) + Skin.HasSetting(CinemaTVShowsHasWidgets)</visible>
+					</item>
+					<item>
+						<label>Movies</label>
+						<onclick>SetProperty(finder.cinema_section,movies,home)</onclick>
+						<onclick>Dialog.Close(1160)</onclick>
+						<onclick>SetFocus(19000)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoMoviesButton) + Skin.HasSetting(CinemaMoviesHasWidgets)</visible>
 					</item>
 					<item>
 						<label>$VAR[MenuCustom1ToggleLabelVar]</label>

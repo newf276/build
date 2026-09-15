@@ -1,13 +1,13 @@
 <settings>
-    <setting id="osdautoclose" type="bool">false</setting>
+    <setting id="osdautoclose" type="bool">true</setting>
     <setting id="trailerplaying" type="bool">false</setting>
-    <setting id="no_slide_animations" type="bool">false</setting>
-    <setting id="seekbarbottom" type="bool">false</setting>
+    <setting id="no_slide_animations" type="bool">true</setting>
+    <setting id="seekbarbottom" type="bool">true</setting>
     <setting id="touchmode" type="bool">false</setting>
-    <setting id="showvideoinfoonpause" type="bool">false</setting>
+    <setting id="showvideoinfoonpause" type="bool">true</setting>
     <setting id="stockestuaryvideoosd" type="bool">false</setting>
     <setting id="enable.fullscreenwidgets" type="bool">false</setting>
-    <setting id="cinemalookfeel" type="bool">false</setting>
+    <setting id="cinemalookfeel" type="bool">true</setting>
     <setting id="homeaddonsnovideoaddons" type="bool">false</setting>
     <setting id="homeaddonsnoprogramaddons" type="bool">false</setting>
     <setting id="circle_rating" type="bool">false</setting>
@@ -37,8 +37,8 @@
     <setting id="homevideosnoplaylists" type="bool">false</setting>
     <setting id="hometvnocategories" type="bool">false</setting>
     <setting id="hometvnolastplayedchannels" type="bool">false</setting>
-    <setting id="hometvnorecordings" type="bool">false</setting>
-    <setting id="hometvnotimers" type="bool">false</setting>
+    <setting id="hometvnorecordings" type="bool">true</setting>
+    <setting id="hometvnotimers" type="bool">true</setting>
     <setting id="hometvnoguide" type="bool">false</setting>
     <setting id="hometvnosearch" type="bool">false</setting>
     <setting id="homeradionocategories" type="bool">false</setting>
@@ -79,10 +79,10 @@
     <setting id="show_profilename" type="bool">false</setting>
     <setting id="show_profileboth" type="bool">false</setting>
     <setting id="show_profileavatar" type="bool">false</setting>
-    <setting id="show_weatherinfo" type="bool">false</setting>
+    <setting id="show_weatherinfo" type="bool">true</setting>
     <setting id="homenosearchbutton" type="bool">false</setting>
-    <setting id="enable.favourites" type="bool">false</setting>
-    <setting id="enable.addonbrowser" type="bool">false</setting>
+    <setting id="enable.favourites" type="bool">true</setting>
+    <setting id="enable.addonbrowser" type="bool">true</setting>
     <setting id="enable.maintenancetools" type="bool">true</setting>
     <setting id="enable.addoninfopanel" type="bool">false</setting>
     <setting id="enable.addoncategorysideblade" type="bool">false</setting>
@@ -101,24 +101,24 @@
     <setting id="homemenunoweatherbutton" type="bool">false</setting>
     <setting id="enable.topbarcustommenu" type="bool">false</setting>
     <setting id="enable.alternateinfo" type="bool">false</setting>
-    <setting id="autoscroll" type="bool">false</setting>
+    <setting id="autoscroll" type="bool">true</setting>
     <setting id="enable.alternateaddoninfo" type="bool">false</setting>
     <setting id="defaults.initialized" type="bool">true</setting>
     <setting id="firsttimerun" type="bool">false</setting>
     <setting id="enable.oneclicktrailers" type="bool">false</setting>
     <setting id="osdautoclosetime" type="string"></setting>
-    <setting id="current_search_provider" type="string">0</setting>
+    <setting id="current_search_provider" type="string">4</setting>
     <setting id="searchhistory.limit" type="string">5</setting>
-    <setting id="widgetitemlimit" type="string">20</setting>
-    <setting id="categorywidgetitemlimit" type="string">20</setting>
+    <setting id="widgetitemlimit" type="string">130</setting>
+    <setting id="categorywidgetitemlimit" type="string">130</setting>
     <setting id="stackedwidgetitemlimit" type="string">20</setting>
-    <setting id="defaultbackgroundbrightness" type="string">Medium</setting>
+    <setting id="defaultbackgroundbrightness" type="string">Low</setting>
     <setting id="defaultfanartbrightness" type="string">Medium</setting>
     <setting id="defaultraindropbrightness" type="string">Medium</setting>
     <setting id="backup_directory" type="string">special://home/backups/Finder_Plus/</setting>
     <setting id="osdaudiobuttonmode" type="string">Next audio stream</setting>
     <setting id="osdsubtitlebuttonmode" type="string">Subtitle settings</setting>
-    <setting id="mdblist_api_key" type="string"></setting>
+    <setting id="mdblist_api_key" type="string">HlszBCBeVr8lT0KgPjM26UjIy1iHS8IQ4QlMK0M4</setting>
     <setting id="custombackground" type="string"></setting>
     <setting id="defaultbackgrounddiffusebrightness" type="string"></setting>
     <setting id="MovieGenreFanart.path" type="string"></setting>
@@ -136,7 +136,7 @@
     <setting id="customlogo" type="string"></setting>
     <setting id="currentskincolor" type="string"></setting>
     <setting id="topbarcustommenuicon" type="string">icons/system.png</setting>
-    <setting id="installed_version" type="string">100.0.32b</setting>
+    <setting id="installed_version" type="string">276.0.06</setting>
     <setting id="MenuMovieLabelDB" type="string">Movies</setting>
     <setting id="MenuTVShowLabelDB" type="string">TV Shows</setting>
     <setting id="MenuCustom1LabelDB" type="string">Custom 1</setting>

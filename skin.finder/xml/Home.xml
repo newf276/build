@@ -15,7 +15,7 @@
 	<onload condition="String.IsEmpty(Window(Home).Property(finder.starting_widgets))">SetProperty(finder.starting_widgets,true)</onload>
 	<onload>RunScript(script.finder.helper,mode=modify_keymap)</onload>
 	<onload>RunScript(script.finder.helper,mode=fix_black_screen)</onload>
-	<onload condition="Skin.HasSetting(CinemaLookFeel) + String.IsEmpty(Window(Home).Property(finder.cinema_section))">SetProperty(finder.cinema_section,movies,home)</onload>
+	<onload condition="Skin.HasSetting(CinemaLookFeel) + String.IsEmpty(Window(Home).Property(finder.cinema_section))">SetProperty(finder.cinema_section,tvshows,home)</onload>
 	<onload condition="Skin.HasSetting(CinemaLookFeel)">SetFocus(1700)</onload>
 	<controls>
 		<include>DefaultBackground</include>
