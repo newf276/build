@@ -943,14 +943,14 @@
 					<param name="onclick" value="ActivateWindow(favouritesbrowser)"/>
 					<param name="icon" value="icons/favourites.png"/>
 					<param name="label" value="Favourites"/>
-					<param name="visible" value="Skin.HasSetting(Enable.Favourites)"/>
+					<param name="visible" value="True"/>
 				</include>
 				<include content="IconButton">
 					<param name="control_id" value="1806"/>
 					<param name="onclick" value="ActivateWindow(1100)"/>
 					<param name="icon" value="icons/addons.png"/>
 					<param name="label" value="Add-ons"/>
-					<param name="visible" value="Skin.HasSetting(Enable.AddonBrowser)"/>
+					<param name="visible" value="True"/>
 				</include>
 				<include content="IconButton">
 					<param name="control_id" value="1807"/>
