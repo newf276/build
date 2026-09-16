@@ -381,7 +381,7 @@ def choose_color():
 def apply_lookfeel(lookfeel, keep_artwork=False, keep_color=False):
 	lookfeel = str(lookfeel or '').strip().lower()
 
-	if lookfeel == 'fenplus':
+	if lookfeel == 'finderplus':
 		if not keep_artwork:
 			xbmc.executebuiltin('Skin.SetString(homecustombackground,special://skin/extras/backgrounds/redblur.jpg)')
 			xbmc.executebuiltin('Skin.SetString(custombackground,special://skin/extras/backgrounds/redblur.jpg)')
