@@ -1027,7 +1027,7 @@
 		<value condition="System.HasAddon(plugin.video.themoviedb.helper)">
 			Skin.SetString(current_search_provider,0)
 		</value>
-		<!-- Else Fenlight -->
+		<!-- Else Fen -->
 		<value condition="System.HasAddon(plugin.video.fenlight)">
 			Skin.SetString(current_search_provider,1)
 		</value>

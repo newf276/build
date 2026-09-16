@@ -23,34 +23,34 @@
 				<onback condition="!String.IsEqual(Window(Home).Property(Finder.DirectDialog1106),true)">Dialog.Close(1106)</onback>
 				<content>
 					<item>
-    				    <label>Pre-Made Configs</label>
+    				    <label>Newf's Pre-Made Configs</label>
     				    <visible>True</visible>
     				    <onclick>Dialog.Close(1106)</onclick>
     				<onclick>RunScript(script.finder.helper,mode=pre_config)</onclick>
-					</item>                   
+					</item> 
+                    <item>
+                        <label>Newf's Authorize Services</label>
+                        <onclick>Dialog.Close(all)</onclick>
+                        <onclick>ActivateWindow(1111)</onclick>
+                    </item>
                     <item>
                         <label>Reload Skin</label>
                         <onclick>Dialog.Close(all)</onclick>
                         <onclick>ReloadSkin()</onclick>
                     </item>
-                    <item>
-                        <label>Authorize Services</label>
-                        <onclick>Dialog.Close(all)</onclick>
-                        <onclick>ActivateWindow(1111)</onclick>
-                    </item>
-                    <item>
-                        <label>Network Speed Test</label>
-                        <onclick>Dialog.Close(all)</onclick>
-                        <onclick>RunPlugin(plugin://plugin.program.cleaner/?mode=28)</onclick>
-                    </item>
 					<item>
-						<label>Video Cache Config</label>
+						<label>Video Cache Configs</label>
 						<visible>!Skin.HasSetting(ToolsNoVideoCacheConfig)</visible>
 						<onclick>Dialog.Close(all)</onclick>
 						<onclick>RunScript(script.finder.helper,mode=advanced_set)</onclick>
 					</item>
                     <item>
-                        <label>Clear Finder Cache</label>
+                        <label>Network Speed Test</label>
+                        <onclick>Dialog.Close(all)</onclick>
+                        <onclick>RunPlugin(plugin://plugin.program.cleaner/?mode=28)</onclick>
+                    </item>
+                    <item>
+                        <label>Clear Finder Caches</label>
                         <onclick>Dialog.Close(all)</onclick>
 						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=clear_all_cache)</onclick>
                     </item>
@@ -70,7 +70,7 @@
                         <onclick>ActivateWindow(10001,"plugin://plugin.program.cleaner",return)</onclick>
                     </item>
                     <item>
-                        <label>Backup & Restore</label>
+                        <label>Backup/Restore Local Newf's Builds</label>
                         <onclick>Dialog.Close(all)</onclick>
                         <onclick>ActivateWindow(10001,"plugin://plugin.program.cleaner/?description=Backup+and+Restore+Build&kodi&mode=12&name=Backup/Restore Build&name2&url&version",return)</onclick>
                     </item>

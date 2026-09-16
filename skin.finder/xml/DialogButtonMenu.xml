@@ -49,12 +49,10 @@
 						<visible>System.HasShutdown + System.IdleShutdownInhibited</visible>
 					</item>
                     <item>
-						<label>[COLOR ffff4500]Force Close Kodi[/COLOR]</label>
-						<onclick>Dialog.Close(all)</onclick>
-                        <onclick condition="System.HasAddon(plugin.program.cleaner) + !System.AddonIsEnabled(plugin.program.cleaner)">EnableAddon(plugin.program.cleaner)</onclick>
-						<onclick condition="!System.HasAddon(plugin.program.cleaner)">InstallAddon(plugin.program.cleaner)</onclick>
-						<onclick condition="System.AddonIsEnabled(plugin.program.cleaner)">RunPlugin(plugin://plugin.program.cleaner/?mode=18)</onclick>
-					</item>
+                        <label>[COLOR red]Force Close Kodi[/COLOR]</label>
+                        <onclick>Dialog.Close(all)</onclick>
+                        <onclick>RunScript(script.finder.helper,mode=force_close)</onclick>
+                    </item>
 				</content>
 			</control>
 			<include content="UpDownArrows">

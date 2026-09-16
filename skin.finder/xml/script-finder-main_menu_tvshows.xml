@@ -3,7 +3,7 @@
     <include name="TVShowsMainMenu">
         <item>
             <label>TV Shows</label>
-            <onclick>ActivateWindow(Videos,plugin://plugin.video.finder/?iconImage=/Users/ian/Library/Application Support/Kodi/addons/plugin.video.finder/resources/media/icons/tmdb.png&list_id=watchlist&list_name=TV Show Watchlist&media_type=tv&mode=tmdblist.build_tmdb_list,return)</onclick>
+            <onclick>ActivateWindow(Videos,plugin://plugin.video.finder/?action=trakt_collection&category_name=TV+Shows+Collection&mode=build_tvshow_list,return)</onclick>
             <property name="menu_id">$NUMBER[22000]</property>
             <thumb>icons/sidemenu/tv.png</thumb>
             <property name="id">tvshows</property>
