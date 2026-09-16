@@ -16,15 +16,19 @@
 			<onclick>ActivateWindow(Videos,plugin://plugin.video.finder/?mode=navigator.trakt_lists_personal&amp;iconImage=%2FUsers%2Fian%2FLibrary%2FApplication+Support%2FKodi%2Faddons%2Fplugin.video.finder%2Fresources%2Fmedia%2Ficons%2Ftrakt.png,return)</onclick>
 		</item>
 		<item>
-			<label>Custom Configs</label>
-			<onclick>SetProperty(Finder.DirectDialog1126,true,home)</onclick>
-			<onclick>Dialog.Close(1170)</onclick>
-			<onclick>ActivateWindow(1126)</onclick>
+			<label>My TMDb Lists</label>
+			<onclick>Dialog.Close(all)</onclick>
+			<onclick>ActivateWindow(Videos,plugin://plugin.video.finder/?mode=navigator.tmdb_lists_personal&amp;iconImage=%2FUsers%2Fian%2FLibrary%2FApplication+Support%2FKodi%2Faddons%2Fplugin.video.finder%2Fresources%2Fmedia%2Ficons%2Ftmdb.png,return)</onclick>
 		</item>
 		<item>
-			<label>Force Close Kodi</label>
+			<label>Trakts Trending User Lists</label>
 			<onclick>Dialog.Close(all)</onclick>
-			<onclick>RunScript(script.finder.helper,mode=force_close)</onclick>
+			<onclick>ActivateWindow(Videos,plugin://plugin.video.finder/?mode=trakt.list.get_trakt_user_lists&amp;list_type=trending&amp;category_name=Trending+User+Lists&amp;iconImage=%2FUsers%2Fian%2FLibrary%2FApplication+Support%2FKodi%2Faddons%2Fplugin.video.finder%2Fresources%2Fmedia%2Ficons%2Ftrakt.png,return)</onclick>
+		</item>
+		<item>
+			<label>Trakts Popular User Lists</label>
+			<onclick>Dialog.Close(all)</onclick>
+			<onclick>ActivateWindow(Videos,plugin://plugin.video.finder/?mode=trakt.list.get_trakt_user_lists&amp;list_type=popular&amp;category_name=Popular+User+Lists&amp;iconImage=%2FUsers%2Fian%2FLibrary%2FApplication+Support%2FKodi%2Faddons%2Fplugin.video.finder%2Fresources%2Fmedia%2Ficons%2Ftrakt.png,return)</onclick>
 		</item>
 	</include>
 </includes>

@@ -5,7 +5,7 @@
 	<onload>RunScript(script.finder.helper,mode=check_for_update&amp;skin_id=skin.finder)</onload>
 	<onload condition="String.IsEmpty(Skin.String(PowerButtonMode))">Skin.SetString(PowerButtonMode,Show Shutdown Menu)</onload>
 	<onload condition="String.IsEmpty(Skin.String(SearchBehavior))">Skin.SetString(SearchBehavior,1)</onload>
-	<onload condition="String.IsEmpty(Skin.String(TopBarCustomMenuIcon))">Skin.SetString(TopBarCustomMenuIcon,icons/system.png)</onload>
+    <onload>Skin.SetString(TopBarCustomMenuIcon,icons/system.png)</onload>
 	<onload condition="!Skin.HasSetting(Defaults.Initialized)">Skin.SetBool(Enable.MaintenanceTools)</onload>
 	<onload condition="!Skin.HasSetting(Defaults.Initialized)">Skin.SetBool(NoIconMainMenu)</onload>
 	<onload condition="!Skin.HasSetting(Defaults.Initialized)">Skin.SetBool(Defaults.Initialized)</onload>
