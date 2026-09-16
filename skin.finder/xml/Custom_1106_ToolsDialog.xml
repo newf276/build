@@ -70,6 +70,26 @@
                         <onclick>ActivateWindow(10001,"plugin://plugin.program.cleaner",return)</onclick>
                     </item>
                     <item>
+                        <label>Backup Configuration</label>
+                        <onclick>Dialog.Close(all)</onclick>
+                        <onclick>RunScript(script.finder.helper,mode=backup_config)</onclick>
+                    </item>
+                    <item>
+                        <label>Restore Configuration</label>
+                        <onclick>Dialog.Close(all)</onclick>
+                        <onclick>RunScript(script.finder.helper,mode=restore_config)</onclick>
+                    </item>
+                    <item>
+                        <label>Import Configuration</label>
+                        <onclick>Dialog.Close(all)</onclick>
+                        <onclick>RunScript(script.finder.helper,mode=import_config)</onclick>
+                    </item>
+                    <item>
+                        <label>Export Configuration</label>
+                        <onclick>Dialog.Close(all)</onclick>
+                        <onclick>RunScript(script.finder.helper,mode=export_config)</onclick>
+                    </item>
+                    <item>
                         <label>Backup/Restore Local Newf's Builds</label>
                         <onclick>Dialog.Close(all)</onclick>
                         <onclick>ActivateWindow(10001,"plugin://plugin.program.cleaner/?description=Backup+and+Restore+Build&kodi&mode=12&name=Backup/Restore Build&name2&url&version",return)</onclick>
