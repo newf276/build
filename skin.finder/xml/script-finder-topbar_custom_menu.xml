@@ -21,34 +21,14 @@
 			<onclick>ActivateWindow(Videos,plugin://plugin.video.finder/?mode=navigator.tmdb_lists_personal&amp;iconImage=%2FUsers%2Fian%2FLibrary%2FApplication+Support%2FKodi%2Faddons%2Fplugin.video.finder%2Fresources%2Fmedia%2Ficons%2Ftmdb.png,return)</onclick>
 		</item>
 		<item>
-			<label>Trending User Lists</label>
+			<label>Trakts Trending User Lists</label>
 			<onclick>Dialog.Close(all)</onclick>
 			<onclick>ActivateWindow(Videos,plugin://plugin.video.finder/?mode=trakt.list.get_trakt_user_lists&amp;list_type=trending&amp;category_name=Trending+User+Lists&amp;iconImage=%2FUsers%2Fian%2FLibrary%2FApplication+Support%2FKodi%2Faddons%2Fplugin.video.finder%2Fresources%2Fmedia%2Ficons%2Ftrakt.png,return)</onclick>
 		</item>
 		<item>
-			<label>Popular User Lists</label>
+			<label>Trakts Popular User Lists</label>
 			<onclick>Dialog.Close(all)</onclick>
 			<onclick>ActivateWindow(Videos,plugin://plugin.video.finder/?mode=trakt.list.get_trakt_user_lists&amp;list_type=popular&amp;category_name=Popular+User+Lists&amp;iconImage=%2FUsers%2Fian%2FLibrary%2FApplication+Support%2FKodi%2Faddons%2Fplugin.video.finder%2Fresources%2Fmedia%2Ficons%2Ftrakt.png,return)</onclick>
-		</item>
-		<item>
-			<label>Youtube Trending</label>
-			<onclick>Dialog.Close(all)</onclick>
-			<onclick>ActivateWindow(Videos,plugin://plugin.video.youtube/special/popular_right_now?category_label=Trending,return)</onclick>
-		</item>
-		<item>
-			<label>Backup Configuration</label>
-			<onclick>Dialog.Close(all)</onclick>
-			<onclick>RunScript(script.finder.helper,mode=backup_config)</onclick>
-		</item>
-		<item>
-			<label>Restore Configuration</label>
-			<onclick>Dialog.Close(all)</onclick>
-			<onclick>RunScript(script.finder.helper,mode=restore_config)</onclick>
-		</item>
-		<item>
-			<label>Export Configuration</label>
-			<onclick>Dialog.Close(all)</onclick>
-			<onclick>RunScript(script.finder.helper,mode=export_config)</onclick>
 		</item>
 	</include>
 </includes>
