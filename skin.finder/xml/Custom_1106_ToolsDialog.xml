@@ -26,7 +26,7 @@
     				    <label>Step 1. Select Pre-Config</label>
     				    <visible>True</visible>
     				    <onclick>Dialog.Close(1106)</onclick>
-    				<onclick>RunScript(script.finder.helper,mode=pre_config)</onclick>
+    				    <onclick>ActivateWindow(1159)</onclick>
 					</item>
                     <item>
                         <label>Step 2. Select Look/Feel</label>
@@ -36,10 +36,10 @@
                     <item>
                         <label>Step 3. Authorize Services</label>
                         <onclick>Dialog.Close(all)</onclick>
-                        <onclick>ActivateWindow(1111)</onclick>
+                        <onclick>ActivateWindow(1108)</onclick>
                     </item>
                     <item>
-                        <label>Newf's Wizard for Builds</label>
+                        <label>[COLOR dodgerblue]Newf's Wizard[/COLOR]</label>
                         <onclick>Dialog.Close(all)</onclick>
                         <onclick>ActivateWindow(10001,"plugin://plugin.program.cleaner",return)</onclick>
                     </item>
@@ -60,29 +60,19 @@
                         <onclick>RunPlugin(plugin://plugin.program.cleaner/?mode=28)</onclick>
                     </item>
                     <item>
-                        <label>Clear Finder Caches</label>
-                        <onclick>Dialog.Close(all)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=clear_all_cache)</onclick>
-                    </item>
-                    <item>
-                        <label>Clear Redlight Caches</label>
-                        <onclick>Dialog.Close(all)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=clear_all_cache)</onclick>
-                    </item>
-                    <item>
                         <label>Clear Kodi Caches</label>
                         <onclick>Dialog.Close(all)</onclick>
                         <onclick>RunPlugin(plugin://plugin.program.cleaner?mode=33)</onclick>
                     </item>
                     <item>
-                        <label>Clear Thumbnails</label>
+                        <label>Clear Newf's Finder Caches</label>
                         <onclick>Dialog.Close(all)</onclick>
-                        <onclick>RunScript(script.finder.helper,mode=clear_thumbnails)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=clear_all_cache)</onclick>
                     </item>
                     <item>
-                        <label>Backup/Restore Local Newf's Builds</label>
+                        <label>Clear Thumbnails + Force Close</label>
                         <onclick>Dialog.Close(all)</onclick>
-                        <onclick>ActivateWindow(10001,"plugin://plugin.program.cleaner/?description=Backup+and+Restore+Build&kodi&mode=12&name=Backup/Restore Build&name2&url&version",return)</onclick>
+                        <onclick>RunScript(script.finder.helper,mode=clear_thumbnails)</onclick>
                     </item>
 				</content>
 			</control>

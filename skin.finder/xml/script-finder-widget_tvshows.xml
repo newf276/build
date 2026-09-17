@@ -20,8 +20,8 @@
             <param name="list_id" value="22013"/>
         </include>
         <include condition="System.HasAddon(plugin.video.finder)" content="WidgetListBigEpisodes">
-            <param name="content_path" value="plugin://plugin.video.finder/?action=trakt_collection&category_name=TV+Shows+Library&mode=build_tvshow_list"/>
-            <param name="widget_header" value="My Trakt Show Collection"/>
+            <param name="content_path" value="plugin://plugin.video.finder/?list_id=watchlist&list_name=TV+Show+Watchlist&media_type=tv&mode=tmdblist.build_tmdb_list"/>
+            <param name="widget_header" value="My TMDB Show WatchList"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="22014"/>
         </include>
