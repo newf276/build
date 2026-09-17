@@ -103,7 +103,7 @@
 						<onclick>SetProperty(finder.cinema_section,livetv,home)</onclick>
 						<onclick>Dialog.Close(1160)</onclick>
 						<onclick>SetFocus(12000)</onclick>
-						<visible>!Skin.HasSetting(HomeMenuNoTVButton)</visible>
+						<visible>True</visible>
 					</item>
 					<item>
 						<label>$LOCALIZE[19021]</label>
@@ -152,7 +152,7 @@
 						<onclick>SetProperty(finder.cinema_section,weather,home)</onclick>
 						<onclick>Dialog.Close(1160)</onclick>
 						<onclick>SetFocus(15000)</onclick>
-						<visible>!Skin.HasSetting(HomeMenuNoWeatherButton)</visible>
+						<visible>True</visible>
 					</item>
 				</content>
 			</control>
