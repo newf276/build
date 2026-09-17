@@ -193,8 +193,8 @@ class SPaths:
             ('1', 'Fen Light', 'plugin.video.fenlight'),
             ('2', 'Umbrella', 'plugin.video.umbrella'),
             ('3', 'POV', 'plugin.video.pov'),
-            ('4', 'Finder', 'plugin.video.finder'),
-            ('5', 'Red Light', 'plugin.video.redlight'),
+            ('4', 'The Gears', 'plugin.video.gears'),
+            ('5', 'Finder', 'plugin.video.finder'),
         ]
 
         installed = [

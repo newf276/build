@@ -18,8 +18,8 @@ submenu_types = ("movie", "tvshow", "custom1", "custom2", "custom3", "custom4", 
 submenu_include_names = {item: "%sSubmenu" % item.capitalize() for item in submenu_types}
 submenu_xml_names = {item: "script-finder-submenu_%s" % item for item in submenu_types}
 
-settings_path = xbmcvfs.translatePath("special://home/addons/skin.finder/")
-database_path = xbmcvfs.translatePath("special://home/addons/skin.finder/resources/pre-configs/Finder_Trakt_Library/database/cpath_cache.db")
+settings_path = xbmcvfs.translatePath("special://profile/addon_data/script.finder.helper/")
+database_path = xbmcvfs.translatePath("special://profile/addon_data/script.finder.helper/cpath_cache.db")
 (
     movies_widgets_xml,
     tvshows_widgets_xml,

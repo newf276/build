@@ -12,7 +12,6 @@
 </onload>
 	<onload condition="String.IsEmpty(Skin.String(OSDAudioButtonMode))">Skin.SetString(OSDAudioButtonMode,Next audio stream)</onload>
 	<onload condition="String.IsEmpty(Skin.String(OSDSubtitleButtonMode))">Skin.SetString(OSDSubtitleButtonMode,Subtitle settings)</onload>
-	<onload>Skin.ToggleSetting(Enable.TopBarCustomMenu)</onload>
 	<onload>ReplaceWindow($INFO[System.StartupWindow])</onload>
 	<controls/>
 </window>

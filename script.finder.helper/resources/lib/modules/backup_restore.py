@@ -34,12 +34,6 @@ fav_file = 'favourites.xml'
 dst_cfg = xbmcvfs.translatePath('special://skin/xml/')
 dst_db = os.path.join(addon_data, 'script.finder.helper/')
 
-# finder_mdblist_library_cfg = os.path.join(skin_path, 'resources/pre_configs/Finder_MDBlist_Library/menus_widgets/')
-# finder_mdblist_library_db = os.path.join(skin_path, 'resources/pre_configs/Finder_MDBlist_Library/database/')
-
-# finder_mdblist_watchlist_cfg = os.path.join(skin_path, 'resources/pre_configs/Finder_MDBlist_Watchlist/menus_widgets/')
-# finder_mdblist_watchlist_db = os.path.join(skin_path, 'resources/pre_configs/Finder_MDBlist_Watchlist/database/')
-
 finder_tmdb_watchlist_cfg = os.path.join(skin_path, 'resources/pre_configs/Finder_TMDB_Watchlist/menus_widgets/')
 finder_tmdb_watchlist_db = os.path.join(skin_path, 'resources/pre_configs/Finder_TMDB_Watchlist/database/')
 
@@ -49,23 +43,6 @@ finder_trakt_library_db = os.path.join(skin_path, 'resources/pre_configs/Finder_
 finder_trakt_watchlist_cfg = os.path.join(skin_path, 'resources/pre_configs/Finder_Trakt_Watchlist/menus_widgets/')
 finder_trakt_watchlist_db = os.path.join(skin_path, 'resources/pre_configs/Finder_Trakt_Watchlist/database/')
 
-redlight_mdblist_library_cfg = os.path.join(skin_path, 'resources/pre_configs/Red_Light_MDBlist_Library/menus_widgets/')
-redlight_mdblist_library_db = os.path.join(skin_path, 'resources/pre_configs/Red_Light_MDBlist_Library/database/')
-
-redlight_mdblist_watchlist_cfg = os.path.join(skin_path, 'resources/pre_configs/Red_Light_MDBlist_Watchlist/menus_widgets/')
-redlight_mdblist_watchlist_db = os.path.join(skin_path, 'resources/pre_configs/Red_Light_MDBlist_Watchlist/database/')
-
-redlight_simkl_watchlist_cfg = os.path.join(skin_path, 'resources/pre_configs/Red_Light_Simkl_Watchlist/menus_widgets/')
-redlight_simkl_watchlist_db = os.path.join(skin_path, 'resources/pre_configs/Red_Light_Simkl_Watchlist/database/')
-
-redlight_tmdb_watchlist_cfg = os.path.join(skin_path, 'resources/pre_configs/Red_Light_TMDB_Watchlist/menus_widgets/')
-redlight_tmdb_watchlist_db = os.path.join(skin_path, 'resources/pre_configs/Red_Light_TMDB_Watchlist/database/')
-
-redlight_trakt_library_cfg = os.path.join(skin_path, 'resources/pre_configs/Red_Light_Trakt_Library/menus_widgets/')
-redlight_trakt_library_db = os.path.join(skin_path, 'resources/pre_configs/Red_Light_Trakt_Library/database/')
-
-redlight_trakt_watchlist_cfg = os.path.join(skin_path, 'resources/pre_configs/Red_Light_Trakt_Watchlist/menus_widgets/')
-redlight_trakt_watchlist_db = os.path.join(skin_path, 'resources/pre_configs/Red_Light_Trakt_Watchlist/database/')
 
 
 # -------------------------------------------------
@@ -709,17 +686,9 @@ def run_pre_config_mode(config):
     config = str(config or "").strip().lower()
 
     configs = {
-    #    "finder_mdblist_library":   {"label": "Finder MDBlist Library",    "cfg": finder_mdblist_library_cfg, "db": finder_mdblist_library_db, "search_provider": "5"},
-  #      "finder_mdblist_watchlist":   {"label": "Finder MDBlist Watchlist",    "cfg": finder_mdblist_watchlist_cfg, "db": finder_mdblist_watchlist_db, "search_provider": "5"},
-        "finder_tmdb_watchlist":   {"label": "Finder TMDB Watchlist",    "cfg": finder_tmdb_watchlist_cfg, "db": finder_tmdb_watchlist_db,    "search_provider": "5"},
-        "finder_trakt_library":   {"label": "Finder Trakt Library",    "cfg": finder_trakt_library_cfg, "db": finder_trakt_library_db,       "search_provider": "5"},
-        "finder_trakt_watchlist":   {"label": "Finder Trakt Watchlist",    "cfg": finder_trakt_watchlist_cfg, "db": finder_trakt_watchlist_db,       "search_provider": "5"},
-        "redlight_mdblist_library":   {"label": "RedLight MDBlist Library",    "cfg": redlight_mdblist_library_cfg, "db": redlight_mdblist_library_db, "search_provider": "1"},
-        "redlight_mdblist_watchlist":   {"label": "RedLight MDBlist Watchlist",    "cfg": redlight_mdblist_watchlist_cfg, "db": redlight_mdblist_watchlist_db, "search_provider": "1"},
-        "redlight_simkl_watchlist":   {"label": "RedLight Simkl Watchlist",    "cfg": redlight_simkl_watchlist_cfg, "db": redlight_simkl_watchlist_db,       "search_provider": "1"},
-        "redlight_tmdb_watchlist":   {"label": "RedLight TMDB Watchlist",    "cfg": redlight_tmdb_watchlist_cfg, "db": finder_tmdb_watchlist_db,    "search_provider": "1"},
-        "redlight_trakt_library":   {"label": "RedLight Trakt Library",    "cfg": redlight_trakt_library_cfg, "db": redlight_trakt_library_db,       "search_provider": "1"},
-        "redlight_trakt_watchlist":   {"label": "RedLight Trakt Watchlist",    "cfg": redlight_trakt_watchlist_cfg, "db": redlight_trakt_watchlist_db,       "search_provider": "1"},
+        "finder_tmdb_watchlist":   {"label": "Finder TMDB Watchlist",    "cfg": finder_tmdb_watchlist_cfg,    "db": finder_tmdb_watchlist_db,    "search_provider": "5"},
+        "finder_trakt_library":   {"label": "Finder Trakt Library",    "cfg": finder_trakt_library_cfg,       "db": finder_trakt_library_db,       "search_provider": "5"},
+        "finder_trakt_watchlist":   {"label": "Finder Trakt Watchlist",    "cfg": finder_trakt_watchlist_cfg,       "db": finder_trakt_watchlist_db,       "search_provider": "5"},
     }
 
     selected = configs.get(config)

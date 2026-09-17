@@ -532,14 +532,14 @@ def focus_cinema_section():
 	}
 	menu_id = menu_ids.get(section_id)
 	if not menu_id:
-		xbmc.executebuiltin('SetFocus(1700)')
+		xbmc.executebuiltin('SetFocus(17000)')
 		return False
 
 	xbmc.executebuiltin('SetFocus(%s)' % menu_id)
 	xbmc.sleep(150)
 	if not xbmc.getCondVisibility('ControlGroup(%s).HasFocus' % menu_id):
 		dialog.notification('Cinema', 'This section has no available widgets.', xbmcgui.NOTIFICATION_INFO, 3000)
-		xbmc.executebuiltin('SetFocus(1700)')
+		xbmc.executebuiltin('SetFocus(17000)')
 		return False
 	return True
 
