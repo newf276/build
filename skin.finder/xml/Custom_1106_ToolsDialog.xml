@@ -25,7 +25,7 @@
 					<item>
     				    <label>Step 1. Select Pre-Config</label>
     				    <visible>True</visible>
-    				    <onclick>Dialog.Close(1106)</onclick>
+    				    <onclick>Dialog.Close(all)</onclick>
     				    <onclick>ActivateWindow(1159)</onclick>
 					</item>
                     <item>

@@ -19,13 +19,18 @@
 				<include>ButtonMenuList_dialog</include>
 				<onback>Dialog.Close(1159)</onback>
 				<onback condition="!String.IsEqual(Window(Home).Property(Finder.DirectDialog1158),true)">ActivateWindow(1106)</onback>
-				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1159),true)">ClearProperty(Finder.DirectDialog1159,home)</onback>
 				<content>
 					<item>
 						<label>[COLOR dodgerblue]Trakt Collection[/COLOR] (Recommended)</label>
-						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
-						<onclick>Dialog.Close(1159)</onclick>
+						<onclick>Dialog.Close(All)</onclick>
 						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_trakt_library)</onclick>
+					</item>
+					<item>
+						<label>Basic</label>
+						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),fenlight)</visible>
+						<onclick>ClearProperty(FENtastic.DirectDialog1158,home)</onclick>
+						<onclick>Dialog.Close(1159)</onclick>
+						<onclick>RunScript(script.fentastic.helper,mode=apply_pre_config&amp;config=fenlight_basic)</onclick>
 					</item>
 					<item>
 						<label>Trakt Watchlist</label>

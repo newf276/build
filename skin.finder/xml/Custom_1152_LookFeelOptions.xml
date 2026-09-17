@@ -20,7 +20,7 @@
 					<param name="panel_height" value="350" />
 				</include>
 				<onback>Dialog.Close(1152)</onback>
-				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1152),true)">ActivateWindow(1170)</onback>
+				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1152),true)">ActivateWindow(1106)</onback>
 				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1152),true)">ClearProperty(Finder.DirectDialog1152,home)</onback>
 				<content>
 					<item>
