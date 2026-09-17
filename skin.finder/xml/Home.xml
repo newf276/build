@@ -9,8 +9,6 @@
 	<onload condition="!Skin.HasSetting(Defaults.Initialized)">Skin.SetBool(Enable.MaintenanceTools)</onload>
 	<onload condition="!Skin.HasSetting(Defaults.Initialized)">Skin.SetBool(NoIconMainMenu)</onload>
 	<onload condition="!Skin.HasSetting(Defaults.Initialized)">Skin.SetBool(Defaults.Initialized)</onload>
-	<onload condition="!Skin.HasSetting(firsttimerun)">ActivateWindow(1112)</onload>
-	<onload>RunScript(script.finder.helper,mode=check_for_profile_change&amp;skin_id=skin.finder)</onload>
 	<onload condition="String.IsEmpty(Window(Home).Property(finder.starting_widgets))">RunScript(script.finder.helper,mode=starting_widgets)</onload>
 	<onload condition="String.IsEmpty(Window(Home).Property(finder.starting_widgets))">SetProperty(finder.starting_widgets,true)</onload>
 	<onload>RunScript(script.finder.helper,mode=modify_keymap)</onload>
@@ -67,7 +65,7 @@
 					<control type="grouplist" id="19001">
 						<include>WidgetGroupListCommon</include>
 						<pagecontrol>19099</pagecontrol>
-						<include content="MovieWidgets" condition="!Skin.HasSetting(HomeMenuNoMoviesButton)"/>
+						<include content="MovieWidgets "/>
 					</control>
 					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
 						<param name="scrollbar_id" value="19099"/>
@@ -82,7 +80,7 @@
 					<control type="grouplist" id="22001">
 						<include>WidgetGroupListCommon</include>
 						<pagecontrol>22099</pagecontrol>
-						<include content="TVShowWidgets" condition="!Skin.HasSetting(HomeMenuNoTVShowsButton)"/>
+						<include content="TVShowWidgets"/>
 					</control>
 					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
 						<param name="scrollbar_id" value="22099"/>

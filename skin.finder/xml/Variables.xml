@@ -1395,12 +1395,12 @@
 	</variable>
 	<!-- Pre-Config Add-ons -->
 	<variable name="SelectedPreConfigAddonLabelVar">
-		<value condition="String.IsEqual(Skin.String(SelectedPreConfigAddon),tmdbh)">TMDb Helper</value>
 		<value condition="String.IsEqual(Skin.String(SelectedPreConfigAddon),fenlight)">Fen Light</value>
+		<value condition="String.IsEqual(Skin.String(SelectedPreConfigAddon),redlight)">Red Light</value>
 		<value condition="String.IsEqual(Skin.String(SelectedPreConfigAddon),pov)">POV</value>
 		<value condition="String.IsEqual(Skin.String(SelectedPreConfigAddon),umbrella)">Umbrella</value>
 		<value condition="String.IsEqual(Skin.String(SelectedPreConfigAddon),finder)">Finder</value>
-		<value condition="String.IsEqual(Skin.String(SelectedPreConfigAddon),redlight)">Red Light</value>
+		<value condition="String.IsEqual(Skin.String(SelectedPreConfigAddon),tmdbh)">TMDb Helper</value>
 		<value>Pre-Made Configuration</value>
 	</variable>
 	<!-- Dialog Heights 1-8 items -->

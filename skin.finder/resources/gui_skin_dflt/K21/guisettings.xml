@@ -1,4 +1,4 @@
-<settings version="4">
+<settings version="2">
     <setting id="gamesgeneral.enable" default="true">true</setting>
     <setting id="gamesgeneral.showosdhelp" default="true">true</setting>
     <setting id="gamesgeneral.enableautosave" default="true">true</setting>
@@ -10,7 +10,7 @@
     <setting id="gamesachievements.loggedin" default="true">false</setting>
     <setting id="lookandfeel.skin">skin.finder</setting>
     <setting id="lookandfeel.skintheme" default="true">SKINDEFAULT</setting>
-    <setting id="lookandfeel.skincolors">Classic Finder.xml</setting>
+    <setting id="lookandfeel.skincolors" default="true">SKINDEFAULT</setting>
     <setting id="lookandfeel.font" default="true">Default</setting>
     <setting id="lookandfeel.skinzoom" default="true">0</setting>
     <setting id="lookandfeel.stereostrength" default="true">5</setting>
@@ -20,14 +20,16 @@
     <setting id="locale.charset" default="true">DEFAULT</setting>
     <setting id="locale.keyboardlayouts" default="true">English QWERTY</setting>
     <setting id="locale.activekeyboardlayout" default="true">English QWERTY</setting>
-    <setting id="locale.country">Canada</setting>
+    <setting id="locale.country" default="true">USA (12h)</setting>
+    <setting id="locale.timezonecountry" default="true">default</setting>
+    <setting id="locale.timezone" default="true">default</setting>
     <setting id="locale.shortdateformat" default="true">regional</setting>
     <setting id="locale.longdateformat" default="true">regional</setting>
     <setting id="locale.timeformat" default="true">regional</setting>
     <setting id="locale.use24hourclock" default="true">regional</setting>
     <setting id="locale.temperatureunit" default="true">regional</setting>
     <setting id="locale.speedunit" default="true">regional</setting>
-    <setting id="screensaver.mode">screensaver.weather</setting>
+    <setting id="screensaver.mode" default="true">screensaver.xbmc.builtin.dim</setting>
     <setting id="screensaver.time" default="true">3</setting>
     <setting id="screensaver.disableforaudio" default="true">true</setting>
     <setting id="screensaver.usedimonpause" default="true">true</setting>
@@ -37,10 +39,11 @@
     <setting id="lookandfeel.startupwindow" default="true">10000</setting>
     <setting id="window.width" default="true">720</setting>
     <setting id="window.height" default="true">480</setting>
+    <setting id="window.top" default="true">0</setting>
+    <setting id="window.left" default="true">0</setting>
     <setting id="videolibrary.updateonstartup" default="true">false</setting>
     <setting id="videolibrary.backgroundupdate" default="true">false</setting>
-    <setting id="videolibrary.similarvideoaction" default="true">0</setting>
-    <setting id="videolibrary.newversionsaredefault" default="true">true</setting>
+    <setting id="videolibrary.ignorevideoversions" default="true">true</setting>
     <setting id="videolibrary.ignorevideoextras" default="true">true</setting>
     <setting id="musiclibrary.updateonstartup" default="true">false</setting>
     <setting id="musiclibrary.backgroundupdate" default="true">false</setting>
@@ -51,14 +54,14 @@
     <setting id="musiclibrary.exportoverwrite" default="true">false</setting>
     <setting id="musiclibrary.exportartwork" default="true">false</setting>
     <setting id="musiclibrary.exportskipnfo" default="true">false</setting>
-    <setting id="filelists.showparentdiritems">false</setting>
+    <setting id="filelists.showparentdiritems" default="true">true</setting>
     <setting id="filelists.ignorethewhensorting" default="true">true</setting>
     <setting id="filelists.showextensions" default="true">true</setting>
     <setting id="filelists.showaddsourcebuttons" default="true">true</setting>
-    <setting id="filelists.showhidden">true</setting>
-    <setting id="filelists.allowfiledeletion">true</setting>
-    <setting id="filelists.confirmfiledeletion" default="true">true</setting>
-    <setting id="myvideos.selectaction" default="true">8</setting>
+    <setting id="filelists.showhidden" default="true">false</setting>
+    <setting id="filelists.allowfiledeletion" default="true">false</setting>
+    <setting id="myvideos.selectaction" default="true">1</setting>
+    <setting id="myvideos.selectdefaultversion" default="true">false</setting>
     <setting id="myvideos.playaction" default="true">1</setting>
     <setting id="myvideos.usetags" default="true">false</setting>
     <setting id="myvideos.extractflags" default="true">true</setting>
@@ -69,8 +72,8 @@
     <setting id="videolibrary.showunwatchedplots" default="true">0,1,2</setting>
     <setting id="videolibrary.groupmoviesets" default="true">false</setting>
     <setting id="videolibrary.groupsingleitemsets" default="true">false</setting>
+    <setting id="videolibrary.showvideoversionsasfolder" default="true">false</setting>
     <setting id="myvideos.flatten" default="true">false</setting>
-    <setting id="videolibrary.flattenversions" default="true">false</setting>
     <setting id="videolibrary.flattentvshows" default="true">1</setting>
     <setting id="videolibrary.showemptytvshows" default="true">true</setting>
     <setting id="videolibrary.tvshowsselectfirstunwatcheditem" default="true">0</setting>
@@ -84,7 +87,6 @@
     <setting id="videolibrary.musicvideoartwhitelist" default="true" />
     <setting id="videolibrary.actorthumbs" default="true">true</setting>
     <setting id="myvideos.extractthumb" default="true">true</setting>
-    <setting id="videolibrary.artretrievaltiming" default="true">1</setting>
     <setting id="musiclibrary.showallitems" default="true">true</setting>
     <setting id="musiclibrary.showcompilationartists" default="true">true</setting>
     <setting id="musiclibrary.showdiscs" default="true">true</setting>
@@ -120,26 +122,21 @@
     <setting id="videoplayer.autoplaynextitem" default="true" />
     <setting id="videoplayer.seeksteps" default="true">-600,-300,-180,-60,-30,-10,10,30,60,180,300,600</setting>
     <setting id="videoplayer.seekdelay" default="true">750</setting>
-    <setting id="videoplayer.adjustrefreshrate" default="true">2</setting>
+    <setting id="videoplayer.adjustrefreshrate" default="true">0</setting>
     <setting id="winsystem.ishdrdisplay" default="true">true</setting>
     <setting id="videoplayer.usedisplayasclock" default="true">false</setting>
     <setting id="videoplayer.errorinaspect" default="true">0</setting>
     <setting id="videoplayer.stretch43" default="true">0</setting>
-    <setting id="videoplayer.maxsmoothff" default="true">4</setting>
     <setting id="videoplayer.rendermethod" default="true">0</setting>
     <setting id="videoplayer.hqscalers" default="true">20</setting>
-    <setting id="videoplayer.hqscalerprecision" default="true">10</setting>
     <setting id="videoplayer.usesuperresolution" default="true">false</setting>
     <setting id="videoplayer.usemediacodecsurface" default="true">true</setting>
     <setting id="videoplayer.usemediacodec" default="true">true</setting>
-    <setting id="videoplayer.usedecoderfilter" default="true">true</setting>
     <setting id="videoplayer.usedxva2" default="true">true</setting>
     <setting id="videoplayer.usevtb" default="true">true</setting>
     <setting id="videoplayer.highprecision" default="true">true</setting>
     <setting id="videoplayer.convertdovi" default="true">false</setting>
     <setting id="videoplayer.allowedhdrformats" default="true">0,1</setting>
-    <setting id="videoplayer.dovizerolevel5" default="true">false</setting>
-    <setting id="videoplayer.usepictureinpicture" default="true">true</setting>
     <setting id="videoplayer.stereoscopicplaybackmode" default="true">0</setting>
     <setting id="videoplayer.quitstereomodeonstop" default="true">true</setting>
     <setting id="videoplayer.teletextenabled" default="true">true</setting>
@@ -152,10 +149,10 @@
     <setting id="musicplayer.crossfadealbumtracks" default="true">true</setting>
     <setting id="musicplayer.visualisation" default="true" />
     <setting id="musicplayer.replaygaintype" default="true">1</setting>
-    <setting id="musicplayer.replaygainpreampdb" default="true">0</setting>
-    <setting id="musicplayer.replaygainnogainpreampdb" default="true">0</setting>
+    <setting id="musicplayer.replaygainpreamp" default="true">89</setting>
+    <setting id="musicplayer.replaygainnogainpreamp" default="true">89</setting>
     <setting id="musicplayer.replaygainavoidclipping" default="true">false</setting>
-    <setting id="dvds.autoaction" default="true">0</setting>
+    <setting id="dvds.autorun" default="true">false</setting>
     <setting id="dvds.playerregion" default="true">0</setting>
     <setting id="dvds.automenu" default="true">false</setting>
     <setting id="bluray.playerregion" default="true">1</setting>
@@ -170,14 +167,12 @@
     <setting id="slideshow.displayeffects" default="true">true</setting>
     <setting id="slideshow.shuffle" default="true">false</setting>
     <setting id="slideshow.highqualitydownscaling" default="true">false</setting>
-    <setting id="locale.audiolanguage">default</setting>
-    <setting id="videoplayer.preferdefaultflag">false</setting>
-    <setting id="locale.subtitlelanguage">default</setting>
-    <setting id="subtitles.hidesameaudiolanguage" default="true">false</setting>
+    <setting id="locale.audiolanguage" default="true">mediadefault</setting>
+    <setting id="videoplayer.preferdefaultflag" default="true">true</setting>
+    <setting id="locale.subtitlelanguage" default="true">original</setting>
     <setting id="accessibility.audiovisual" default="true">false</setting>
     <setting id="accessibility.audiohearing" default="true">false</setting>
     <setting id="accessibility.subhearing" default="true">false</setting>
-    <setting id="subtitles.captionsimpaired" default="true">false</setting>
     <setting id="subtitles.align" default="true">2</setting>
     <setting id="subtitles.fontname" default="true">DEFAULT</setting>
     <setting id="subtitles.fontsize" default="true">42</setting>
@@ -187,7 +182,6 @@
     <setting id="subtitles.bordersize" default="true">25</setting>
     <setting id="subtitles.bordercolorpick" default="true">FF000000</setting>
     <setting id="subtitles.blur" default="true">0</setting>
-    <setting id="subtitles.linespacing" default="true">12</setting>
     <setting id="subtitles.backgroundtype" default="true">0</setting>
     <setting id="subtitles.bgcolorpick" default="true">FF000000</setting>
     <setting id="subtitles.bgopacity" default="true">80</setting>
@@ -206,11 +200,8 @@
     <setting id="subtitles.custompath" default="true" />
     <setting id="subtitles.pauseonsearch" default="true">true</setting>
     <setting id="subtitles.downloadfirst" default="true">false</setting>
-    <setting id="subtitles.tv">service.subtitles.a4ksubtitles</setting>
-    <setting id="subtitles.movie">service.subtitles.a4ksubtitles</setting>
-    <setting id="videoplayer.filestreamdisplayorder" default="true">0</setting>
-    <setting id="videoplayer.queuetimesize" default="true">40</setting>
-    <setting id="videoplayer.queuedatasize" default="true">256</setting>
+    <setting id="subtitles.tv" default="true" />
+    <setting id="subtitles.movie" default="true" />
     <setting id="pvrmanager.backendchannelgroupsorder" default="true">true</setting>
     <setting id="pvrmanager.backendchannelorder" default="true">true</setting>
     <setting id="pvrmanager.usebackendchannelnumbersalways" default="true">false</setting>
@@ -219,7 +210,7 @@
     <setting id="pvrmenu.iconpath" default="true" />
     <setting id="epg.pastdaystodisplay" default="true">1</setting>
     <setting id="epg.futuredaystodisplay" default="true">3</setting>
-    <setting id="epg.selectaction">1</setting>
+    <setting id="epg.selectaction" default="true">2</setting>
     <setting id="epg.hidenoinfoavailable" default="true">true</setting>
     <setting id="epg.epgupdate" default="true">120</setting>
     <setting id="epg.preventupdateswhileplayingtv" default="true">false</setting>
@@ -241,7 +232,6 @@
     <setting id="pvrrecord.marginstart" default="true">0</setting>
     <setting id="pvrrecord.marginend" default="true">0</setting>
     <setting id="pvrrecord.timernotifications" default="true">true</setting>
-    <setting id="pvrrecord.deleteafterwatch" default="true">0</setting>
     <setting id="pvrrecord.grouprecordings" default="true">true</setting>
     <setting id="pvrreminders.autoclosedelay" default="true">10</setting>
     <setting id="pvrreminders.autorecord" default="true">true</setting>
@@ -257,8 +247,8 @@
     <setting id="pvrparental.duration" default="true">300</setting>
     <setting id="pvrtimers.hidedisabledtimers" default="true">false</setting>
     <setting id="services.devicename" default="true">Kodi</setting>
-    <setting id="services.zeroconf" default="true">true</setting>
-    <setting id="services.deviceuuid">0d214952-a7d1-4cdf-ac66-6c9a619b61c8</setting>
+    <setting id="services.zeroconf" default="true">false</setting>
+    <setting id="services.deviceuuid">72b570fb-8197-4aa4-9d41-1986864c94e2</setting>
     <setting id="services.webserver" default="true">false</setting>
     <setting id="services.webserverport" default="true">8080</setting>
     <setting id="services.webserverauthentication" default="true">true</setting>
@@ -287,7 +277,7 @@
     <setting id="services.airplaypassword" default="true" />
     <setting id="smb.workgroup" default="true">WORKGROUP</setting>
     <setting id="smb.winsserver" default="true">0.0.0.0</setting>
-    <setting id="smb.minprotocol" default="true">21</setting>
+    <setting id="smb.minprotocol" default="true">0</setting>
     <setting id="smb.maxprotocol" default="true">3</setting>
     <setting id="smb.legacysecurity" default="true">false</setting>
     <setting id="services.wsdiscovery" default="true">true</setting>
@@ -295,21 +285,21 @@
     <setting id="nfs.version" default="true">3</setting>
     <setting id="nfs.chunksize" default="true">128</setting>
     <setting id="filecache.buffermode" default="true">4</setting>
-    <setting id="filecache.memorysize">128</setting>
-    <setting id="filecache.readfactor" default="true">0</setting>
+    <setting id="filecache.memorysize" default="true">20</setting>
+    <setting id="filecache.readfactor" default="true">400</setting>
     <setting id="filecache.chunksize" default="true">131072</setting>
     <setting id="weather.currentlocation" default="true">1</setting>
-    <setting id="weather.addon">weather.multi</setting>
+    <setting id="weather.addon" default="true" />
     <setting id="videoscreen.monitor" default="true">Default</setting>
     <setting id="videoscreen.screen" default="true">0</setting>
-    <setting id="videoscreen.resolution">17</setting>
+    <setting id="videoscreen.resolution">38</setting>
     <setting id="videoscreen.screenmode" default="true">DESKTOP</setting>
     <setting id="videoscreen.fakefullscreen" default="true">true</setting>
     <setting id="videoscreen.blankdisplays" default="true">false</setting>
     <setting id="videoscreen.delayrefreshchange" default="true">0</setting>
     <setting id="videoscreen.10bitsurfaces" default="true">0</setting>
     <setting id="videoscreen.dither" default="true">false</setting>
-    <setting id="videoscreen.ditherdepth" default="true">0</setting>
+    <setting id="videoscreen.ditherdepth" default="true">8</setting>
     <setting id="videoscreen.cmsenabled" default="true">false</setting>
     <setting id="videoscreen.cmsmode" default="true">0</setting>
     <setting id="videoscreen.cms3dlut" default="true" />
@@ -319,7 +309,7 @@
     <setting id="videoscreen.cmsgammamode" default="true">0</setting>
     <setting id="videoscreen.cmsgamma" default="true">220</setting>
     <setting id="videoscreen.cmslutsize" default="true">6</setting>
-    <setting id="videoscreen.limitgui" default="true">0</setting>
+    <setting id="videoscreen.limitedrange" default="true">false</setting>
     <setting id="videoscreen.usesystemsdrpeakluminance" default="true">true</setting>
     <setting id="videoscreen.guipeakluminance" default="true">40</setting>
     <setting id="videoscreen.whitelist" default="true" />
@@ -328,30 +318,28 @@
     <setting id="videoscreen.stereoscopicmode" default="true">0</setting>
     <setting id="videoscreen.preferedstereoscopicmode" default="true">100</setting>
     <setting id="videoscreen.noofbuffers" default="true">3</setting>
-    <setting id="audiooutput.audiodevice">AUDIOTRACK:AudioTrack (IEC)|Kodi IEC packer (recommended)</setting>
+    <setting id="audiooutput.audiodevice" default="true">DIRECTSOUND:default</setting>
     <setting id="audiooutput.channels" default="true">1</setting>
     <setting id="audiooutput.config" default="true">2</setting>
     <setting id="audiooutput.volumesteps" default="true">90</setting>
     <setting id="audiooutput.maintainoriginalvolume" default="true">true</setting>
     <setting id="audiooutput.stereoupmix" default="true">false</setting>
-    <setting id="audiooutput.lowlatency" default="true">true</setting>
     <setting id="audiooutput.processquality" default="true">30</setting>
     <setting id="audiooutput.atempothreshold" default="true">2</setting>
     <setting id="audiooutput.samplerate" default="true">48000</setting>
     <setting id="audiooutput.streamsilence" default="true">1</setting>
     <setting id="audiooutput.streamnoise" default="true">true</setting>
-    <setting id="audiooutput.mixsublevel" default="true">0</setting>
-    <setting id="audiooutput.guisoundmode">0</setting>
+    <setting id="audiooutput.guisoundmode" default="true">1</setting>
     <setting id="audiooutput.guisoundvolume" default="true">100</setting>
     <setting id="lookandfeel.soundskin" default="true">resource.uisounds.kodi</setting>
     <setting id="audiooutput.passthrough" default="true">false</setting>
-    <setting id="audiooutput.passthroughdevice">AUDIOTRACK:AudioTrack (IEC)|Kodi IEC packer (recommended)</setting>
+    <setting id="audiooutput.passthroughdevice" default="true">DIRECTSOUND:default</setting>
     <setting id="audiooutput.ac3passthrough" default="true">true</setting>
     <setting id="audiooutput.ac3transcode" default="true">false</setting>
-    <setting id="audiooutput.eac3passthrough" default="true">true</setting>
-    <setting id="audiooutput.dtspassthrough" default="true">true</setting>
-    <setting id="audiooutput.truehdpassthrough" default="true">true</setting>
-    <setting id="audiooutput.dtshdpassthrough" default="true">true</setting>
+    <setting id="audiooutput.eac3passthrough" default="true">false</setting>
+    <setting id="audiooutput.dtspassthrough" default="true">false</setting>
+    <setting id="audiooutput.truehdpassthrough" default="true">false</setting>
+    <setting id="audiooutput.dtshdpassthrough" default="true">false</setting>
     <setting id="audiooutput.dtshdcorefallback" default="true">true</setting>
     <setting id="input.enablemouse" default="true">true</setting>
     <setting id="input.enablejoystick" default="true">true</setting>
@@ -366,20 +354,19 @@
     <setting id="network.httpproxypassword" default="true" />
     <setting id="network.bandwidth" default="true">0</setting>
     <setting id="powermanagement.displaysoff" default="true">0</setting>
-    <setting id="powermanagement.restartplayer" default="true">true</setting>
     <setting id="powermanagement.shutdowntime" default="true">0</setting>
     <setting id="powermanagement.shutdownstate" default="true">0</setting>
     <setting id="powermanagement.waitfornetwork" default="true">0</setting>
     <setting id="powermanagement.wakeonaccess" default="true">false</setting>
     <setting id="general.addonupdates" default="true">0</setting>
-    <setting id="general.addonnotifications">true</setting>
+    <setting id="general.addonnotifications" default="true">false</setting>
     <setting id="addons.unknownsources">true</setting>
-    <setting id="addons.updatemode">1</setting>
+    <setting id="addons.updatemode" default="true">0</setting>
     <setting id="debug.showloginfo" default="true">false</setting>
     <setting id="debug.extralogging" default="true">false</setting>
     <setting id="debug.setextraloglevel" default="true" />
     <setting id="debug.screenshotpath" default="true" />
-    <setting id="eventlog.enabled">false</setting>
+    <setting id="eventlog.enabled" default="true">true</setting>
     <setting id="eventlog.enablednotifications" default="true">false</setting>
     <setting id="cache.harddisk" default="true">256</setting>
     <setting id="cachevideo.dvdrom" default="true">2048</setting>
@@ -394,6 +381,66 @@
     <setting id="system.playlistspath">special://profile/playlists/</setting>
     <setting id="general.addonforeignfilter" default="true">false</setting>
     <setting id="general.addonbrokenfilter" default="true">true</setting>
+    <audio>
+        <mute>false</mute>
+        <fvolumelevel>1.000000</fvolumelevel>
+    </audio>
+    <resolutions />
+    <general>
+        <systemtotaluptime>1</systemtotaluptime>
+        <settinglevel>1</settinglevel>
+        <eventlog>
+            <level>0</level>
+            <showhigherlevels>true</showhigherlevels>
+        </eventlog>
+    </general>
+    <defaultvideosettings>
+        <interlacemethod>1</interlacemethod>
+        <scalingmethod>1</scalingmethod>
+        <noisereduction>0.000000</noisereduction>
+        <postprocess>false</postprocess>
+        <sharpness>0.000000</sharpness>
+        <viewmode>0</viewmode>
+        <zoomamount>1.000000</zoomamount>
+        <pixelratio>1.000000</pixelratio>
+        <verticalshift>0.000000</verticalshift>
+        <volumeamplification>0.000000</volumeamplification>
+        <showsubtitles>true</showsubtitles>
+        <brightness>50.000000</brightness>
+        <contrast>50.000000</contrast>
+        <gamma>20.000000</gamma>
+        <audiodelay>0.000000</audiodelay>
+        <subtitledelay>0.000000</subtitledelay>
+        <nonlinstretch>false</nonlinstretch>
+        <stereomode>0</stereomode>
+        <centermixlevel>0</centermixlevel>
+        <tonemapmethod>1</tonemapmethod>
+        <tonemapparam>1.000000</tonemapparam>
+    </defaultvideosettings>
+    <defaultaudiosettings />
+    <defaultgamesettings>
+        <videofilter></videofilter>
+        <stretchmode>normal</stretchmode>
+        <rotation>0</rotation>
+    </defaultgamesettings>
+    <mymusic>
+        <playlist>
+            <repeat>false</repeat>
+            <shuffle>false</shuffle>
+        </playlist>
+        <needsupdate>0</needsupdate>
+    </mymusic>
+    <myvideos>
+        <watchmodemovies>0</watchmodemovies>
+        <watchmodetvshows>0</watchmodetvshows>
+        <watchmodemusicvideos>0</watchmodemusicvideos>
+        <watchmoderecordings>0</watchmoderecordings>
+        <playlist>
+            <repeat>false</repeat>
+            <shuffle>false</shuffle>
+        </playlist>
+        <needsupdate>0</needsupdate>
+    </myvideos>
     <viewstates>
         <games>
             <viewmode>720896</viewmode>
@@ -455,24 +502,12 @@
             <sortorder>1</sortorder>
             <sortattributes>0</sortattributes>
         </videonavactors>
-        <videonavassets>
-            <viewmode>65536</viewmode>
-            <sortmethod>1</sortmethod>
-            <sortorder>1</sortorder>
-            <sortattributes>0</sortattributes>
-        </videonavassets>
         <videonavepisodes>
             <viewmode>720896</viewmode>
             <sortmethod>23</sortmethod>
             <sortorder>1</sortorder>
             <sortattributes>0</sortattributes>
         </videonavepisodes>
-        <videonavextras>
-            <viewmode>65536</viewmode>
-            <sortmethod>1</sortmethod>
-            <sortorder>1</sortorder>
-            <sortattributes>0</sortattributes>
-        </videonavextras>
         <videonavgenres>
             <viewmode>65536</viewmode>
             <sortmethod>1</sortmethod>
@@ -503,12 +538,6 @@
             <sortorder>1</sortorder>
             <sortattributes>0</sortattributes>
         </videonavtvshows>
-        <videonavversions>
-            <viewmode>65536</viewmode>
-            <sortmethod>1</sortmethod>
-            <sortorder>1</sortorder>
-            <sortattributes>0</sortattributes>
-        </videonavversions>
         <videonavyears>
             <viewmode>65536</viewmode>
             <sortmethod>1</sortmethod>
@@ -516,64 +545,4 @@
             <sortattributes>0</sortattributes>
         </videonavyears>
     </viewstates>
-    <general>
-        <settinglevel>3</settinglevel>
-        <eventlog>
-            <level>0</level>
-            <showhigherlevels>true</showhigherlevels>
-        </eventlog>
-        <systemtotaluptime>308</systemtotaluptime>
-    </general>
-    <resolutions />
-    <defaultvideosettings>
-        <interlacemethod>1</interlacemethod>
-        <scalingmethod>1</scalingmethod>
-        <noisereduction>0.000000</noisereduction>
-        <postprocess>false</postprocess>
-        <sharpness>0.000000</sharpness>
-        <viewmode>0</viewmode>
-        <zoomamount>1.000000</zoomamount>
-        <pixelratio>1.000000</pixelratio>
-        <verticalshift>0.000000</verticalshift>
-        <volumeamplification>0.000000</volumeamplification>
-        <showsubtitles>true</showsubtitles>
-        <brightness>50.000000</brightness>
-        <contrast>50.000000</contrast>
-        <gamma>20.000000</gamma>
-        <audiodelay>0.000000</audiodelay>
-        <subtitledelay>0.000000</subtitledelay>
-        <nonlinstretch>false</nonlinstretch>
-        <stereomode>0</stereomode>
-        <centermixlevel>0</centermixlevel>
-        <tonemapmethod>0</tonemapmethod>
-        <tonemapparam>1.000000</tonemapparam>
-    </defaultvideosettings>
-    <defaultaudiosettings />
-    <defaultgamesettings>
-        <videofilter></videofilter>
-        <stretchmode>normal</stretchmode>
-        <rotation>0</rotation>
-    </defaultgamesettings>
-    <mymusic>
-        <playlist>
-            <repeat>false</repeat>
-            <shuffle>false</shuffle>
-        </playlist>
-        <needsupdate>0</needsupdate>
-    </mymusic>
-    <myvideos>
-        <watchmodemovies>0</watchmodemovies>
-        <watchmodetvshows>0</watchmodetvshows>
-        <watchmodemusicvideos>0</watchmodemusicvideos>
-        <watchmoderecordings>0</watchmoderecordings>
-        <playlist>
-            <repeat>false</repeat>
-            <shuffle>false</shuffle>
-        </playlist>
-        <needsupdate>0</needsupdate>
-    </myvideos>
-    <audio>
-        <mute>false</mute>
-        <fvolumelevel>1.000000</fvolumelevel>
-    </audio>
 </settings>

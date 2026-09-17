@@ -23,15 +23,25 @@
 				<onback condition="!String.IsEqual(Window(Home).Property(Finder.DirectDialog1106),true)">Dialog.Close(1106)</onback>
 				<content>
 					<item>
-    				    <label>Newf's Pre-Made Configs</label>
+    				    <label>Step 1. Select Pre-Config</label>
     				    <visible>True</visible>
     				    <onclick>Dialog.Close(1106)</onclick>
     				<onclick>RunScript(script.finder.helper,mode=pre_config)</onclick>
-					</item> 
+					</item>
                     <item>
-                        <label>Newf's Authorize Services</label>
+                        <label>Step 2. Select Look/Feel</label>
+                        <onclick>Dialog.Close(all)</onclick>
+                        <onclick>ActivateWindow(1152)</onclick>
+                    </item>
+                    <item>
+                        <label>Step 3. Authorize Services</label>
                         <onclick>Dialog.Close(all)</onclick>
                         <onclick>ActivateWindow(1111)</onclick>
+                    </item>
+                    <item>
+                        <label>Newf's Wizard for Builds</label>
+                        <onclick>Dialog.Close(all)</onclick>
+                        <onclick>ActivateWindow(10001,"plugin://plugin.program.cleaner",return)</onclick>
                     </item>
                     <item>
                         <label>Reload Skin</label>
@@ -55,6 +65,11 @@
 						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=clear_all_cache)</onclick>
                     </item>
                     <item>
+                        <label>Clear Redlight Caches</label>
+                        <onclick>Dialog.Close(all)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=clear_all_cache)</onclick>
+                    </item>
+                    <item>
                         <label>Clear Kodi Caches</label>
                         <onclick>Dialog.Close(all)</onclick>
                         <onclick>RunPlugin(plugin://plugin.program.cleaner?mode=33)</onclick>
@@ -63,31 +78,6 @@
                         <label>Clear Thumbnails</label>
                         <onclick>Dialog.Close(all)</onclick>
                         <onclick>RunScript(script.finder.helper,mode=clear_thumbnails)</onclick>
-                    </item>
-                    <item>
-                        <label>Newf's Wizard</label>
-                        <onclick>Dialog.Close(all)</onclick>
-                        <onclick>ActivateWindow(10001,"plugin://plugin.program.cleaner",return)</onclick>
-                    </item>
-                    <item>
-                        <label>Backup Configuration</label>
-                        <onclick>Dialog.Close(all)</onclick>
-                        <onclick>RunScript(script.finder.helper,mode=backup_config)</onclick>
-                    </item>
-                    <item>
-                        <label>Restore Configuration</label>
-                        <onclick>Dialog.Close(all)</onclick>
-                        <onclick>RunScript(script.finder.helper,mode=restore_config)</onclick>
-                    </item>
-                    <item>
-                        <label>Import Configuration</label>
-                        <onclick>Dialog.Close(all)</onclick>
-                        <onclick>RunScript(script.finder.helper,mode=import_config)</onclick>
-                    </item>
-                    <item>
-                        <label>Export Configuration</label>
-                        <onclick>Dialog.Close(all)</onclick>
-                        <onclick>RunScript(script.finder.helper,mode=export_config)</onclick>
                     </item>
                     <item>
                         <label>Backup/Restore Local Newf's Builds</label>

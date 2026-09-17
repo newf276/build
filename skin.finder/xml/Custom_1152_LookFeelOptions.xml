@@ -36,12 +36,6 @@
 						<onclick>ActivateWindow(1153)</onclick>
 					</item>
 					<item>
-						<label>Newf's Finder Plus</label>
-						<onclick>Skin.SetString(Finder.PendingLookFeel,finderplus)</onclick>
-						<onclick>Dialog.Close(1152)</onclick>
-						<onclick>ActivateWindow(1153)</onclick>
-					</item>
-					<item>
 						<label>Newf's Finder Hybrid</label>
 						<onclick>Skin.SetString(Finder.PendingLookFeel,hybrid)</onclick>
 						<onclick>Dialog.Close(1152)</onclick>
