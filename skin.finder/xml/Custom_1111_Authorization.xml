@@ -17,9 +17,8 @@
 			</include>
 			<control type="panel" id="9000">
 				<include>ButtonMenuList_dialog</include>
-				<onback>Dialog.Close(1108)</onback>
+				<onback>Dialog.Close(1111)</onback>
 				<onback condition="!String.IsEqual(Window(Home).Property(FinderDirectDialog1111),true)">ActivateWindow(1106)</onback>
-				<onback condition="String.IsEqual(Window(Home).Property(FinderDirectDialog1111),true)">ActivateWindow(1170)</onback>
 				<onback condition="String.IsEqual(Window(Home).Property(FinderDirectDialog1111),true)">ClearProperty(FinderDirectDialog1111,home)</onback>
 				<content>
 					<item>

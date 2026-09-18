@@ -30,13 +30,12 @@
 					</item>
                     <item>
                         <label>Step 2. Select Look/Feel</label>
-                        <onclick>Dialog.Close(all)</onclick>
                         <onclick>ActivateWindow(1152)</onclick>
                     </item>
                     <item>
                         <label>Step 3. Authorize Services</label>
                         <onclick>Dialog.Close(all)</onclick>
-                        <onclick>ActivateWindow(1108)</onclick>
+                        <onclick>ActivateWindow(1111)</onclick>
                     </item>
                     <item>
                         <label>[COLOR dodgerblue]Newf's Wizard[/COLOR]</label>
@@ -49,7 +48,7 @@
                         <onclick>ReloadSkin()</onclick>
                     </item>
 					<item>
-						<label>Video Cache Configs</label>
+						<label>Video Caches by Common Devices</label>
 						<visible>!Skin.HasSetting(ToolsNoVideoCacheConfig)</visible>
 						<onclick>Dialog.Close(all)</onclick>
 						<onclick>RunScript(script.finder.helper,mode=advanced_set)</onclick>
