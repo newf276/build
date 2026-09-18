@@ -197,7 +197,7 @@ def play_trailer():
 
 
 def set_api_key():
-    keyboard = xbmc.Keyboard("", "Enter MDbList API Key")
+    keyboard = xbmc.Keyboard("HlszBCBeVr8lT0KgPjM26UjIy1iHS8IQ4QlMK0M4", "Enter MDbList API Key")
     keyboard.doModal()
     if keyboard.isConfirmed() and keyboard.getText():
         xbmc.executebuiltin(f"Skin.SetString(mdblist_api_key,{keyboard.getText()})")

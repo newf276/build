@@ -32,7 +32,7 @@
 						<onclick condition="String.IsEqual(Skin.String(Finder.PendingLookFeel),estuary)">RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=estuary&amp;keep_artwork=false&amp;keep_color=false)</onclick>
 						<onclick>ClearProperty(Finder.DirectDialog1152,home)</onclick>
 						<onclick>Dialog.Close(1153)</onclick>
-                        <onclick>ActivateWindow(1122)</onclick>
+                        <onback>ActivateWindow(1106)</onback>
 					</item>
 					<item>
 						<label>Keep Current Artwork</label>
@@ -43,6 +43,7 @@
 						<onclick condition="String.IsEqual(Skin.String(Finder.PendingLookFeel),estuary)">RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=estuary&amp;keep_artwork=true&amp;keep_color=false)</onclick>
 						<onclick>ClearProperty(Finder.DirectDialog1152,home)</onclick>
 						<onclick>Dialog.Close(1153)</onclick>
+                        <onback>ActivateWindow(1106)</onback>
 					</item>
 					<item>
 						<label>Keep Current Color</label>
@@ -53,6 +54,7 @@
 						<onclick condition="String.IsEqual(Skin.String(Finder.PendingLookFeel),estuary)">RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=estuary&amp;keep_artwork=false&amp;keep_color=true)</onclick>
 						<onclick>ClearProperty(Finder.DirectDialog1152,home)</onclick>
 						<onclick>Dialog.Close(1153)</onclick>
+                        <onback>ActivateWindow(1106)</onback>
 					</item>
 					<item>
 						<label>Keep Current Artwork &amp; Color</label>
@@ -63,6 +65,7 @@
 						<onclick condition="String.IsEqual(Skin.String(Finder.PendingLookFeel),estuary)">RunScript(script.finder.helper,mode=apply_lookfeel&amp;lookfeel=estuary&amp;keep_artwork=true&amp;keep_color=true)</onclick>
 						<onclick>ClearProperty(Finder.DirectDialog1152,home)</onclick>
 						<onclick>Dialog.Close(1153)</onclick>
+                        <onback>ActivateWindow(1106)</onback>
 					</item>
 				</content>
 			</control>

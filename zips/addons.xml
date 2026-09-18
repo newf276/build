@@ -24,10 +24,10 @@
     </extension>
 </addon>
 
-<addon id="skin.finder"  name="[B]Newf's Finder Plus Skin[/B]"  version="276.0.13"  provider-name="newf276">
+<addon id="skin.finder"  name="[B]Newf's Finder Plus Skin[/B]"  version="276.0.20"  provider-name="newf276">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0" />
-		<import addon="script.finder.helper" version="276.0.13" />
+		<import addon="script.finder.helper" version="276.0.20" />
 	</requires>
 	<extension point="xbmc.gui.skin" debugging="false">
 		<res width="1920" height="1440" aspect="4:3" default="false" folder="xml" />
@@ -151,7 +151,7 @@
     </extension>
 </addon>
 
-<addon id="script.finder.helper" name="[B]Newf's Finder Plus Helper[/B]" version="276.0.13" provider-name="newf276">
+<addon id="script.finder.helper" name="[B]Newf's Finder Plus Helper[/B]" version="276.0.20" provider-name="newf276">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.requests" version="2.19.1"/>

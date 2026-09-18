@@ -17,26 +17,46 @@
 			</include>
 			<control type="panel" id="9000">
 				<include>ButtonMenuList_dialog</include>
-				<onback>Dialog.Close(1111)</onback>
+				<onback>Dialog.Close(1108)</onback>
 				<onback condition="!String.IsEqual(Window(Home).Property(FinderDirectDialog1111),true)">ActivateWindow(1106)</onback>
 				<onback condition="String.IsEqual(Window(Home).Property(FinderDirectDialog1111),true)">ActivateWindow(1170)</onback>
 				<onback condition="String.IsEqual(Window(Home).Property(FinderDirectDialog1111),true)">ClearProperty(FinderDirectDialog1111,home)</onback>
 				<content>
 					<item>
-						<label>Finder</label>
-                        <onclick condition="System.HasAddon(plugin.video.finder) + !System.AddonIsEnabled(plugin.video.finder)">EnableAddon(plugin.video.finder)</onclick>
-						<onclick condition="!System.HasAddon(plugin.video.finder)">InstallAddon(plugin.video.finder)</onclick>
-						<onclick condition="System.HasAddon(plugin.video.finder)">Skin.SetString(SelectedPreConfigAddon,finder)</onclick>
-						<onclick condition="System.HasAddon(plugin.video.finder)">Dialog.Close(1111)</onclick>
-						<onclick condition="System.HasAddon(plugin.video.finder)">ActivateWindow(1108)</onclick>
+						<label>Trakt</label>
+						<visible>System.HasAddon(plugin.video.finder)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=trakt.trakt_authenticate)</onclick>
 					</item>
 					<item>
-						<label>RedLight</label>
-                        <onclick condition="System.HasAddon(plugin.video.redlight) + !System.AddonIsEnabled(plugin.video.redlight)">EnableAddon(plugin.video.redlight)</onclick>
-						<onclick condition="!System.HasAddon(plugin.video.redlight)">InstallAddon(plugin.video.redlight)</onclick>
-						<onclick condition="System.HasAddon(plugin.video.redlight)">Skin.SetString(SelectedPreConfigAddon,redlight)</onclick>
-						<onclick condition="System.HasAddon(plugin.video.redlight)">Dialog.Close(1111)</onclick>
-						<onclick condition="System.HasAddon(plugin.video.redlight)">ActivateWindow(1113)</onclick>
+						<label>TMDB</label>
+						<visible>System.HasAddon(plugin.video.finder)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=tmdblist_api.authenticate)</onclick>
+					</item>
+					<item>
+						<label>Set Newf's Skin MDbList Key</label>
+						<visible>!Skin.HasSetting(AuthNoSkinMDBList)</visible>
+                        <onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=set_api_key)</onclick>
+					</item>
+					<item>
+						<label>All-Debrid</label>
+						<visible>System.HasAddon(plugin.video.finder)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=alldebrid.authenticate)</onclick>
+					</item>
+					<item>
+						<label>Premiumize</label>
+						<visible>System.HasAddon(plugin.video.finder)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=premiumize.authenticate)</onclick>
+					</item>
+					<item>
+						<label>Torbox</label>
+						<visible>System.HasAddon(plugin.video.finder)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=torbox.authenticate)</onclick>
 					</item>                   
 				</content>
 			</control>

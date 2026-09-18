@@ -24,7 +24,7 @@
 				<content>
 					<item>
 						<label>RedLight</label>
-						<visible>System.HasAddon(plugin.video.finder)</visible>
+						<visible>System.HasAddon(plugin.video.redlight)</visible>
 						<onclick>Dialog.Close(1122)</onclick>
 						<onclick>ActivateWindow(10025,"plugin://plugin.video.redlight/?mode=navigator.maintenance",return)</onclick>
 					</item>
