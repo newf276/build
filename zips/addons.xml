@@ -24,6 +24,41 @@
     </extension>
 </addon>
 
+<addon id="skin.finder"  name="[B]Newf's Finder Plus Skin[/B]"  version="276.0.20"  provider-name="newf276">
+	<requires>
+		<import addon="xbmc.gui" version="5.17.0" />
+		<import addon="script.finder.helper" version="276.0.20" />
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1920" height="1440" aspect="4:3" default="false" folder="xml" />
+		<res width="1920" height="1280" aspect="3:2" default="false" folder="xml" />
+		<res width="1920" height="1200" aspect="16:10" default="false" folder="xml" />
+		<res width="2040" height="1080" aspect="17:9" default="false" folder="xml" />
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
+		<res width="2560" height="1080" aspect="21:9" default="false" folder="xml" />
+		<res width="2338" height="1080" aspect="19.5:9" default="false" folder="xml" />
+		<res width="2160" height="1080" aspect="18:9" default="false" folder="xml" />
+	</extension>
+	<extension point="xbmc.addon.metadata">
+        <disclaimer lang="en_GB">This Addon contains no content</disclaimer>
+		<language>en</language>
+		<platform>all</platform>
+		<license>GPL-2.0-or-later</license>
+        <source>https://github.com/newf276/build/tree/master/zips</source>
+		<description>Newf's Finder Plus Skin is a modified version of the default Estuary skin for Kodi. It is intended for use with Newf's Finder Addon ONLY.</description>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+            <screenshot>resources/screenshot-01.jpg</screenshot>
+            <screenshot>resources/screenshot-02.jpg</screenshot>
+            <screenshot>resources/screenshot-03.jpg</screenshot>
+            <screenshot>resources/screenshot-04.jpg</screenshot>
+            <screenshot>resources/screenshot-05.jpg</screenshot>
+            <screenshot>resources/screenshot-06.jpg</screenshot>
+        </assets>
+    </extension>
+</addon>
+
 <addon id="script.module.newfsscrapers" name="[B]Newf's Scrapers[/B]" version="276.0.06" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
@@ -112,6 +147,26 @@
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
             <clearlogo>clearlogo.png</clearlogo>
+        </assets>
+    </extension>
+</addon>
+
+<addon id="script.finder.helper" name="[B]Newf's Finder Plus Helper[/B]" version="276.0.20" provider-name="newf276">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.module.requests" version="2.19.1"/>
+    </requires>
+    <extension point="xbmc.python.library" library="resources/lib/default.py"/>
+    <extension point="xbmc.service" library="resources/lib/service.py" start="startup" />
+    <extension point="xbmc.addon.metadata">
+		<disclaimer lang="en_GB">This Addon contains no content</disclaimer>
+		<language>en</language>
+		<platform>all</platform>
+		<license>GPL-2.0-or-later</license>
+        <source>https://github.com/newf276/build/tree/master/zips</source>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
 </addon>
