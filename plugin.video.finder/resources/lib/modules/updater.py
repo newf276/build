@@ -15,12 +15,12 @@ logger = kodi_utils.logger
 def get_location(insert=""):
 	# raw.githubusercontent resolves without GitHub Pages and dodges Pages CDN caching;
 	# packages/ lives at the dist-repo root, so no branch subfolder beyond /main/.
-	return "https://raw.githubusercontent.com/%s/%s/main/packages/%s" % (get_setting("finder.update.username"), get_setting("finder.update.location"), insert)
+	return "https://raw.githubusercontent.com/%s/%s/main/packages/%s" % (get_setting("redlight.update.username"), get_setting("redlight.update.location"), insert)
 
 
 def get_versions():
 	try:
-		result = requests.get(get_location("finder_version"), timeout=TIMEOUT_STANDARD)
+		result = requests.get(get_location("redlight_version"), timeout=TIMEOUT_STANDARD)
 		if result.status_code != 200:
 			return None, None
 		online_version = result.text.replace("\n", "")
@@ -36,10 +36,10 @@ def get_changes(online_version=None):
 			current_version, online_version = get_versions()
 			if not version_check(current_version, online_version):
 				return kodi_utils.ok_dialog(
-					heading="Finder Updater", text="You are running the current version of Finder.[CR][CR]There is no new version changelog to view."
+					heading="redlight Updater", text="You are running the current version of redlight.[CR][CR]There is no new version changelog to view."
 				)
 		kodi_utils.show_busy_dialog()
-		result = requests.get(get_location("finder_changes"), timeout=TIMEOUT_STANDARD)
+		result = requests.get(get_location("redlight_changes"), timeout=TIMEOUT_STANDARD)
 		kodi_utils.hide_busy_dialog()
 		if result.status_code != 200:
 			return kodi_utils.notification("Error", icon=kodi_utils.get_icon("downloads"))
@@ -64,13 +64,13 @@ def update_check(action=4):
 	if not version_check(current_version, online_version):
 		if action == 4:
 			return kodi_utils.ok_dialog(
-				heading="Finder Updater",
+				heading="redlight Updater",
 				text="Installed Version: [B]%s[/B][CR]Online Version: [B]%s[/B][CR][CR] %s" % (current_version, online_version, "[B]No Update Available[/B]"),
 			)
 		return
 	if action in (0, 4):
 		if not kodi_utils.confirm_dialog(
-			heading="Finder Updater",
+			heading="redlight Updater",
 			text="Installed Version: [B]%s[/B][CR]Online Version: [B]%s[/B][CR][CR] %s"
 			% (current_version, online_version, "[B]An Update is Available[/B][CR]Perform Update?"),
 			ok_label="Yes",
@@ -78,35 +78,35 @@ def update_check(action=4):
 		):
 			return
 		if kodi_utils.confirm_dialog(
-			heading="Finder Updater", text="Do you want to view the changelog for the new release before installing?", ok_label="Yes", cancel_label="No"
+			heading="redlight Updater", text="Do you want to view the changelog for the new release before installing?", ok_label="Yes", cancel_label="No"
 		):
 			get_changes(online_version)
-			if not kodi_utils.confirm_dialog(heading="Finder Updater", text="Continue with Update After Viewing Changes?", ok_label="Yes", cancel_label="No"):
+			if not kodi_utils.confirm_dialog(heading="redlight Updater", text="Continue with Update After Viewing Changes?", ok_label="Yes", cancel_label="No"):
 				return
 			show_after_action = False
 	if action == 1:
-		kodi_utils.notification("Finder Update Occuring", icon=kodi_utils.get_icon("downloads"))
+		kodi_utils.notification("redlight Update Occuring", icon=kodi_utils.get_icon("downloads"))
 	elif action == 2:
-		return kodi_utils.notification("Finder Update Available", icon=kodi_utils.get_icon("downloads"))
+		return kodi_utils.notification("redlight Update Available", icon=kodi_utils.get_icon("downloads"))
 	return update_addon(online_version, action, show_after_action)
 
 
 def rollback_check():
 	current_version = get_versions()[0]
-	url = "https://api.github.com/repos/%s/%s/contents/packages" % (get_setting("finder.update.username"), get_setting("finder.update.location"))
+	url = "https://api.github.com/repos/%s/%s/contents/packages" % (get_setting("redlight.update.username"), get_setting("redlight.update.location"))
 	kodi_utils.show_busy_dialog()
 	results = requests.get(url, timeout=TIMEOUT_STANDARD)
 	kodi_utils.hide_busy_dialog()
 	if results.status_code != 200:
-		return kodi_utils.ok_dialog(heading="Finder Updater", text="Error rolling back.[CR]Please install rollback manually")
+		return kodi_utils.ok_dialog(heading="redlight Updater", text="Error rolling back.[CR]Please install rollback manually")
 	results = results.json()
 	results = [
 		i["name"].split("-")[1].replace(".zip", "")
 		for i in results
-		if "plugin.video.finder" in i["name"] and not i["name"].split("-")[1].replace(".zip", "") == current_version
+		if "plugin.video.redlight" in i["name"] and not i["name"].split("-")[1].replace(".zip", "") == current_version
 	]
 	if not results:
-		return kodi_utils.ok_dialog(heading="Finder Updater", text="No previous versions found.[CR]Please install rollback manually")
+		return kodi_utils.ok_dialog(heading="redlight Updater", text="No previous versions found.[CR]Please install rollback manually")
 	results.sort(reverse=True)
 	list_items = [{"line1": item, "icon": kodi_utils.get_icon("downloads")} for item in results]
 	kwargs = {"items": json.dumps(list_items), "heading": "Choose Rollback Version"}
@@ -114,8 +114,8 @@ def rollback_check():
 	if rollback_version == None:
 		return
 	if not kodi_utils.confirm_dialog(
-		heading="Finder Updater",
-		text="Are you sure?[CR]Version [B]%s[/B] will overwrite your current installed version.[CR]Finder will set your update action to [B]OFF[/B] if rollback is successful"
+		heading="redlight Updater",
+		text="Are you sure?[CR]Version [B]%s[/B] will overwrite your current installed version.[CR]redlight will set your update action to [B]OFF[/B] if rollback is successful"
 		% rollback_version,
 	):
 		return
@@ -125,31 +125,31 @@ def rollback_check():
 def update_addon(new_version, action, show_after_action=True):
 	kodi_utils.close_all_dialog()
 	kodi_utils.execute_builtin("ActivateWindow(Home)", True)
-	kodi_utils.notification("Finder Performing Rollback" if action == 5 else "Finder Performing Update", icon=kodi_utils.get_icon("downloads"))
-	zip_name = "plugin.video.finder-%s.zip" % new_version
+	kodi_utils.notification("redlight Performing Rollback" if action == 5 else "redlight Performing Update", icon=kodi_utils.get_icon("downloads"))
+	zip_name = "plugin.video.redlight-%s.zip" % new_version
 	url = get_location("%s") % zip_name
 	kodi_utils.show_busy_dialog()
 	result = requests.get(url, stream=True, timeout=TIMEOUT_LONG)
 	kodi_utils.hide_busy_dialog()
 	if result.status_code != 200:
-		return kodi_utils.ok_dialog(heading="Finder Updater", text="Error Updating.[CR]Please install new update manually")
+		return kodi_utils.ok_dialog(heading="redlight Updater", text="Error Updating.[CR]Please install new update manually")
 	zip_location = path.join(kodi_utils.translate_path("special://home/addons/packages/"), zip_name)
 	with open(zip_location, "wb") as f:
 		shutil.copyfileobj(result.raw, f)
-	shutil.rmtree(path.join(kodi_utils.translate_path("special://home/addons/"), "plugin.video.finder"))
-	success = unzip(zip_location, kodi_utils.translate_path("special://home/addons/"), kodi_utils.translate_path("special://home/addons/plugin.video.finder/"))
+	shutil.rmtree(path.join(kodi_utils.translate_path("special://home/addons/"), "plugin.video.redlight"))
+	success = unzip(zip_location, kodi_utils.translate_path("special://home/addons/"), kodi_utils.translate_path("special://home/addons/plugin.video.redlight/"))
 	kodi_utils.delete_file(zip_location)
 	if not success:
-		return kodi_utils.ok_dialog(heading="Finder Updater", text="Error Updating.[CR]Please install new update manually")
+		return kodi_utils.ok_dialog(heading="redlight Updater", text="Error Updating.[CR]Please install new update manually")
 	if action == 5:
 		set_setting("update.action", "3")
-		kodi_utils.ok_dialog(heading="Finder Updater", text="[CR]Success.[CR]Finder rolled back to version [B]%s[/B]" % new_version)
+		kodi_utils.ok_dialog(heading="redlight Updater", text="[CR]Success.[CR]redlight rolled back to version [B]%s[/B]" % new_version)
 	elif action in (0, 4):
 		if show_after_action:
 			if (
 				kodi_utils.confirm_dialog(
-					heading="Finder Updater",
-					text="[CR]Success.[CR]Finder updated to version [B]%s[/B]" % new_version,
+					heading="redlight Updater",
+					text="[CR]Success.[CR]redlight updated to version [B]%s[/B]" % new_version,
 					ok_label="Changelog",
 					cancel_label="Exit",
 					default_control=10,
@@ -157,10 +157,10 @@ def update_addon(new_version, action, show_after_action=True):
 				!= False
 			):
 				kodi_utils.show_text(
-					"Changelog", file=kodi_utils.translate_path("special://home/addons/plugin.video.finder/resources/text/changelog.txt"), font_size="large"
+					"Changelog", file=kodi_utils.translate_path("special://home/addons/plugin.video.redlight/resources/text/changelog.txt"), font_size="large"
 				)
 		else:
-			kodi_utils.ok_dialog(heading="Finder Updater", text="[CR]Success.[CR]Finder updated to version [B]%s[/B]" % new_version)
+			kodi_utils.ok_dialog(heading="redlight Updater", text="[CR]Success.[CR]redlight updated to version [B]%s[/B]" % new_version)
 	kodi_utils.update_local_addons()
 	kodi_utils.disable_enable_addon()
 	kodi_utils.update_kodi_addons_db()

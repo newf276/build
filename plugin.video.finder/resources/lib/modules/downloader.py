@@ -69,8 +69,8 @@ def download_threads_manager(multi_downloads, image):
 		item[0].start()
 		started_downloads_append(item)
 		remaining_downloads = [x[1] for x in multi_downloads if x not in started_downloads]
-		kodi_utils.set_property("finder.active_queued_downloads", json.dumps(remaining_downloads))
-	kodi_utils.clear_property("finder.active_queued_downloads")
+		kodi_utils.set_property("redlight.active_queued_downloads", json.dumps(remaining_downloads))
+	kodi_utils.clear_property("redlight.active_queued_downloads")
 
 
 def select_pack_item(pack_choices, icon):
@@ -148,14 +148,14 @@ class Downloader:
 		self.start_download()
 
 	def get_active_downloads(self):
-		return json.loads(kodi_utils.get_property("finder.active_downloads") or "[]")
+		return json.loads(kodi_utils.get_property("redlight.active_downloads") or "[]")
 
 	def add_active_download(self):
 		if self.action == "image":
 			return
 		active_downloads = self.get_active_downloads()
 		active_downloads.append(self.final_name)
-		kodi_utils.set_property("finder.active_downloads", json.dumps(active_downloads))
+		kodi_utils.set_property("redlight.active_downloads", json.dumps(active_downloads))
 
 	def remove_active_download(self):
 		if self.action == "image":
@@ -166,20 +166,20 @@ class Downloader:
 		except:
 			pass
 		if active_downloads:
-			kodi_utils.set_property("finder.active_downloads", json.dumps(active_downloads))
+			kodi_utils.set_property("redlight.active_downloads", json.dumps(active_downloads))
 		else:
 			self.clear_active_downloads()
 
 	def clear_active_downloads(self):
-		kodi_utils.clear_property("finder.active_downloads")
+		kodi_utils.clear_property("redlight.active_downloads")
 
 	def set_percent_property(self, percent):
-		kodi_utils.set_property("finder.%s" % self.final_name, str(percent))
+		kodi_utils.set_property("redlight.%s" % self.final_name, str(percent))
 
 	def check_status(self):
-		status = kodi_utils.get_property("finder.download_status.%s" % self.final_name)
+		status = kodi_utils.get_property("redlight.download_status.%s" % self.final_name)
 		if status in ("unpaused", "cancelled"):
-			kodi_utils.clear_property("finder.download_status.%s" % self.final_name)
+			kodi_utils.clear_property("redlight.download_status.%s" % self.final_name)
 		return status
 
 	def get_url_and_headers(self):

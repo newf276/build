@@ -267,7 +267,7 @@ def make_alias_dict(meta, title):
 
 
 def internal_results(provider, sources):
-	set_property("finder.internal_results.%s" % provider, json.dumps(sources))
+	set_property("redlight.internal_results.%s" % provider, json.dumps(sources))
 
 
 def normalize(title):
@@ -795,8 +795,8 @@ def get_external_cache_status(debrid, unchecked_hashes, data, active_debrid):
 		results = []
 		imdb_id = data["imdb"]
 		debrid_name, services, token = {
-			"Real-Debrid": ("realdebrid", ["torrentio"], get_setting("finder.rd.token")),
-			"AllDebrid": ("alldebrid", ["mediafusion"], get_setting("finder.ad.token")),
+			"Real-Debrid": ("realdebrid", ["torrentio"], get_setting("redlight.rd.token")),
+			"AllDebrid": ("alldebrid", ["mediafusion"], get_setting("redlight.ad.token")),
 		}[debrid]
 		threads = [Thread(target=_process, args=(item, unchecked_hashes)) for item in services]
 		[i.start() for i in threads]

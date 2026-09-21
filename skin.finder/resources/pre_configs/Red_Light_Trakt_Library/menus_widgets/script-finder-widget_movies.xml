@@ -13,23 +13,29 @@
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="19012"/>
         </include>
-        <include condition="System.HasAddon(plugin.video.redlight)" content="WidgetListBigPoster">
-            <param name="content_path" value="plugin://plugin.video.redlight/?name=Popular+Today&amp;mode=build_movie_list&amp;action=tmdb_movies_popular_today&amp;random_support=true&amp;iconImage=popular_today"/>
-            <param name="widget_header" value="Popular Today"/>
+        <include condition="System.HasAddon(plugin.video.redlight)" content="WidgetListBigEpisodes">
+            <param name="content_path" value="plugin://plugin.video.redlight/?action=trakt_collection&category_name=Movies+Library&mode=build_movie_list"/>
+            <param name="widget_header" value="My Trakt Movie Collection"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="19013"/>
         </include>
-        <include condition="System.HasAddon(plugin.video.redlight)" content="WidgetListBigPoster">
+        <include condition="System.HasAddon(plugin.video.redlight)" content="WidgetListBigEpisodes">
+            <param name="content_path" value="plugin://plugin.video.redlight/?name=Popular+Today&amp;mode=build_movie_list&amp;action=tmdb_movies_popular_today&amp;random_support=true&amp;iconImage=popular_today"/>
+            <param name="widget_header" value="Popular Today"/>
+            <param name="widget_target" value="videos"/>
+            <param name="list_id" value="19014"/>
+        </include>
+        <include condition="System.HasAddon(plugin.video.redlight)" content="WidgetListBigEpisodes">
             <param name="content_path" value="plugin://plugin.video.redlight/?name=Latest+Releases&amp;mode=build_movie_list&amp;action=tmdb_movies_latest_releases&amp;random_support=true&amp;iconImage=dvd"/>
             <param name="widget_header" value="Latest Releases"/>
             <param name="widget_target" value="videos"/>
-            <param name="list_id" value="19014"/>
+            <param name="list_id" value="19015"/>
         </include>
         <include condition="System.HasAddon(plugin.video.redlight)" content="WidgetListCategory">
             <param name="content_path" value="plugin://plugin.video.redlight/?name=Providers&amp;mode=navigator.providers&amp;menu_type=movie&amp;random_support=true&amp;iconImage=providers"/>
             <param name="widget_header" value="Providers"/>
             <param name="widget_target" value="videos"/>
-            <param name="list_id" value="19015"/>
+            <param name="list_id" value="19016"/>
         </include>
     </include>
 </includes>

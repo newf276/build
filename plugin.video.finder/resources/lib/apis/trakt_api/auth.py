@@ -126,5 +126,5 @@ def trakt_revoke_authentication(dummy=""):
 	CLIENT_SECRET = settings.trakt_secret()
 	if CLIENT_SECRET in (None, "empty_setting", ""):
 		return no_secret_key()
-	data = {"token": settings_cache.get_setting("finder.trakt.token"), "client_id": CLIENT_ID, "client_secret": CLIENT_SECRET}
+	data = {"token": settings_cache.get_setting("redlight.trakt.token"), "client_id": CLIENT_ID, "client_secret": CLIENT_SECRET}
 	call_trakt("oauth/revoke", data=data, with_auth=False)

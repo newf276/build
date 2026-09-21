@@ -86,9 +86,9 @@ def resolve_easynews(params):
 	resolved_link = EasyNews.resolve_easynews(params["url_dl"], use_non_seekable)
 	if not direct_play:
 		return resolved_link
-	from modules.player import FinderPlayer
+	from modules.player import redlightPlayer
 
-	FinderPlayer().run(resolved_link, "video")
+	redlightPlayer().run(resolved_link, "video")
 
 
 def account_info(params):

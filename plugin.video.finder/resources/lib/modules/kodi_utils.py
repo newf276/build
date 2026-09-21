@@ -324,34 +324,34 @@ def kodi_dialog() -> "xbmcgui.Dialog":
 
 
 def addon_info(info):
-	return xbmcaddon.Addon("plugin.video.finder").getAddonInfo(info)
+	return xbmcaddon.Addon("plugin.video.redlight").getAddonInfo(info)
 
 
 def addon_version():
-	return get_property("finder.addon_version") or addon_info("version")
+	return get_property("redlight.addon_version") or addon_info("version")
 
 
 def addon_path():
-	return get_property("finder.addon_path") or addon_info("path")
+	return get_property("redlight.addon_path") or addon_info("path")
 
 
 def addon_profile():
-	return get_property("finder.addon_profile") or translate_path(addon_info("profile"))
+	return get_property("redlight.addon_profile") or translate_path(addon_info("profile"))
 
 
 def addon_icon():
-	return get_property("finder.addon_icon") or translate_path(addon_info("icon"))
+	return get_property("redlight.addon_icon") or translate_path(addon_info("icon"))
 
 
 def addon_icon_mini():
-	return get_property("finder.addon_icon_mini") or os.path.join(
+	return get_property("redlight.addon_icon_mini") or os.path.join(
 		addon_info("path"), "resources", "media", "addon_icons", "minis", os.path.basename(translate_path(addon_info("icon")))
 	)
 
 
 def addon_fanart() -> str:
-	"""Return the absolute filesystem path to Finder's fanart image."""
-	return get_property("finder.addon_fanart") or translate_path(addon_info("fanart"))
+	"""Return the absolute filesystem path to redlight's fanart image."""
+	return get_property("redlight.addon_fanart") or translate_path(addon_info("fanart"))
 
 
 def get_icon(image_name: str, image_folder: str = "icons", image_type: str = "png") -> str:
@@ -364,8 +364,8 @@ def get_addon_fanart():
 
 
 def build_url(url_params) -> str:
-	"""Encode a params dict into a `plugin://plugin.video.finder/?…` URL."""
-	return "plugin://plugin.video.finder/?%s" % urlencode(url_params)
+	"""Encode a params dict into a `plugin://plugin.video.redlight/?…` URL."""
+	return "plugin://plugin.video.redlight/?%s" % urlencode(url_params)
 
 
 def add_dir(handle, url_params, list_name, icon_image="folder", fanart_image=None, isFolder=True):
@@ -407,13 +407,13 @@ def end_directory(handle: int, cacheToDisc: bool = True) -> None:
 
 
 def set_view_mode(view_type, content="files", is_external=None):
-	if not get_property("finder.use_viewtypes") == "true":
+	if not get_property("redlight.use_viewtypes") == "true":
 		return
 	if is_external == None:
 		is_external = external()
 	if is_external:
 		return
-	view_id = get_property("finder.%s" % view_type) or None
+	view_id = get_property("redlight.%s" % view_type) or None
 	if not view_id:
 		return
 	try:
@@ -476,7 +476,7 @@ def clear_all_properties():
 	return kodi_window().clearProperties()
 
 
-def addon(addon_id="plugin.video.finder"):
+def addon(addon_id="plugin.video.redlight"):
 	return xbmcaddon.Addon(id=addon_id)
 
 
@@ -573,7 +573,7 @@ def current_window_object():
 	try:
 		return xbmcgui.Window(win_id)
 	except Exception as e:
-		logger("Finder", "current_window_object: stale window id %s (%s)" % (win_id, e))
+		logger("redlight", "current_window_object: stale window id %s (%s)" % (win_id, e))
 		return None
 
 
@@ -604,12 +604,12 @@ def close_all_dialog():
 	execute_builtin("Dialog.Close(all,true)")
 
 
-def run_addon(addon="plugin.video.finder", block=False):
+def run_addon(addon="plugin.video.redlight", block=False):
 	return execute_builtin("RunAddon(%s)" % addon, block)
 
 
 def external():
-	return "finder" not in get_infolabel("Container.PluginName")
+	return "redlight" not in get_infolabel("Container.PluginName")
 
 
 def home():
@@ -619,25 +619,25 @@ def home():
 def widgets_refresh_safe() -> bool:
 	"""True when it's safe to emit the home-widget reload announcement.
 
-	"Safe" = settled on Home/skin with no Finder window transition in flight, so the
+	"Safe" = settled on Home/skin with no redlight window transition in flight, so the
 	UpdateLibrary scan's deferred Home update (see reload_home_widgets) can't collide
 	with a Back-to-Home transition. Mirrors the WidgetRefresher service's gate: active
-	container is not a plugin directory, nothing playing, services not paused, no Finder
+	container is not a plugin directory, nothing playing, services not paused, no redlight
 	custom window open, and no window stack.
 	"""
 	if "plugin" in get_infolabel("Container.PluginName"):
 		return False
 	if kodi_player().isPlayingVideo():
 		return False
-	if get_property("finder.pause_services") == "true":
+	if get_property("redlight.pause_services") == "true":
 		return False
-	if get_property("finder.window_loaded") == "true":
+	if get_property("redlight.window_loaded") == "true":
 		return False
 	# base_window only ever stores '' (cleared/settled) or json.dumps(stack); any
-	# non-empty value — including '[]' from a just-closed window — means a Finder
+	# non-empty value — including '[]' from a just-closed window — means a redlight
 	# window is open or a transition is in flight, so the truthiness test stands in
 	# for the old json.loads() decode.
-	if get_property("finder.window_stack"):
+	if get_property("redlight.window_stack"):
 		return False
 	return True
 
@@ -666,7 +666,7 @@ def kodi_refresh() -> None:
 
 
 def reload_home_widgets():
-	"""Clear Finder's random-widget cache and emit the library-update announcement
+	"""Clear redlight's random-widget cache and emit the library-update announcement
 	that makes skins reload their plugin-backed home widgets.
 
 	SAFETY CONTRACT: the UpdateLibrary builtin kicks off the VideoLibrary scanner,
@@ -683,7 +683,7 @@ def reload_home_widgets():
 
 	RandomWidgets().delete_like("random_list.%")
 	execute_builtin("UpdateLibrary(video,special://skin/foo)")
-	if get_setting("finder.widget_refresh_notification", "true") == "true":
+	if get_setting("redlight.widget_refresh_notification", "true") == "true":
 		notification("Widgets Refreshed", 2500)
 
 
@@ -691,7 +691,7 @@ def request_widget_reload(announce=False):
 	"""Reload home widgets — immediately if it's currently safe, otherwise deferred.
 
 	Fires reload_home_widgets() now when settled on Home (widgets_refresh_safe());
-	otherwise sets the finder.widget_reload_pending flag for the WidgetRefresher service
+	otherwise sets the redlight.widget_reload_pending flag for the WidgetRefresher service
 	to consume on its next safe tick (<=10s). This keeps the home-widget reload off the
 	crash-prone Back-to-Home transition (see reload_home_widgets).
 
@@ -701,15 +701,15 @@ def request_widget_reload(announce=False):
 	"""
 	if widgets_refresh_safe():
 		# Drop any stale pending flag so the service doesn't fire a duplicate reload.
-		clear_property("finder.widget_reload_pending")
+		clear_property("redlight.widget_reload_pending")
 		return reload_home_widgets()
 	from time import time
 
-	set_property("finder.widget_reload_pending", str(time()))
+	set_property("redlight.widget_reload_pending", str(time()))
 	if announce:
 		from caches.settings_cache import get_setting
 
-		if get_setting("finder.widget_refresh_notification", "true") == "true":
+		if get_setting("redlight.widget_refresh_notification", "true") == "true":
 			notification("Refreshing Widgets", 2000)
 
 
@@ -737,7 +737,7 @@ def refresh_after_action(member_path=None, *, refresh_when_internal=False):
 	  queue the home-widget reload too.
 
 	request_widget_reload() is crash-safe from inside the plugin: it just sets the
-	deferred finder.widget_reload_pending flag (no UpdateLibrary) which the
+	deferred redlight.widget_reload_pending flag (no UpdateLibrary) which the
 	WidgetRefresher service services on its next safe tick. Repeated mutations all
 	collapse onto that one flag, so returning to Home triggers a single reload.
 	"""
@@ -783,7 +783,7 @@ def replace_window(params, block=False):
 	return execute_builtin("ReplaceWindow(Videos,%s)" % params, block)
 
 
-def disable_enable_addon(addon_name="plugin.video.finder"):
+def disable_enable_addon(addon_name="plugin.video.redlight"):
 	import json
 
 	try:
@@ -798,7 +798,7 @@ def update_local_addons():
 	sleep(2500)
 
 
-def update_kodi_addons_db(addon_name="plugin.video.finder"):
+def update_kodi_addons_db(addon_name="plugin.video.redlight"):
 	import sqlite3 as database
 	import time
 
@@ -852,7 +852,7 @@ def open_settings():
 
 def external_scraper_settings():
 	try:
-		external = get_property("finder.external_scraper.module")
+		external = get_property("redlight.external_scraper.module")
 		if external in ("empty_setting", ""):
 			return
 		execute_builtin("Addon.OpenSettings(%s)" % external)
@@ -861,7 +861,7 @@ def external_scraper_settings():
 
 
 def progress_dialog(heading: str = "", icon=None):
-	"""Open Finder's custom progress window and start its run-loop on a daemon thread."""
+	"""Open redlight's custom progress window and start its run-loop on a daemon thread."""
 	from threading import Thread
 
 	from windows.base_window import create_window
@@ -917,7 +917,7 @@ def show_text(heading, text=None, file=None, font_size="small", kodi_log=False):
 
 def notification(line1: str, time: int = 5000, icon=None) -> None:
 	"""Show a transient toast notification at the bottom of the screen for `time` ms."""
-	kodi_dialog().notification("Finder", line1, icon or addon_icon(), time)
+	kodi_dialog().notification("redlight", line1, icon or addon_icon(), time)
 
 
 def player_check(mode, params):
@@ -928,9 +928,9 @@ def player_check(mode, params):
 
 		Sources().playback_prep(params)
 	elif mode == "playback.video":
-		from modules.player import FinderPlayer
+		from modules.player import redlightPlayer
 
-		FinderPlayer().run(params.get("url", None), params.get("obj", None))
+		redlightPlayer().run(params.get("url", None), params.get("obj", None))
 	elif mode == "playback.media":
 		# Sanctioned keyless entry point for external addons (e.g. TMDBHelper). Inject the
 		# current playback_key so the downstream external_playback_check passes; the
@@ -971,11 +971,11 @@ def timeIt(func):
 def volume_checker():
 	# 0% == -60db, 100% == 0db
 	try:
-		if get_property("finder.playback.volumecheck_enabled") == "false" or get_visibility("Player.Muted"):
+		if get_property("redlight.playback.volumecheck_enabled") == "false" or get_visibility("Player.Muted"):
 			return
 		from modules.utils import string_alphanum_to_num
 
-		max_volume = min(int(get_property("finder.playback.volumecheck_percent") or "50"), 100)
+		max_volume = min(int(get_property("redlight.playback.volumecheck_percent") or "50"), 100)
 		if int(100 - (float(string_alphanum_to_num(get_infolabel("Player.Volume").split(".")[0])) / 60) * 100) > max_volume:
 			execute_builtin("SetVolume(%d)" % max_volume)
 	except:

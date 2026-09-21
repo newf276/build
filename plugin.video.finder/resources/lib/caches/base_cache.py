@@ -154,7 +154,7 @@ def get_max_cache_rows():
 	from caches.settings_cache import get_setting
 
 	try:
-		return int(get_setting("finder.cache.max_rows", "10000"))
+		return int(get_setting("redlight.cache.max_rows", "10000"))
 	except (ValueError, TypeError):
 		return 10000
 

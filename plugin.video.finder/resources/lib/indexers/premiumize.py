@@ -119,7 +119,7 @@ def pm_transfers():
 
 
 def pm_rename(file_type, file_id, current_name):
-	new_name = kodi_utils.kodi_dialog().input("Finder", defaultt=current_name)
+	new_name = kodi_utils.kodi_dialog().input("redlight", defaultt=current_name)
 	if not new_name:
 		return
 	result = Premiumize.rename_cache_item(file_type, file_id, new_name)

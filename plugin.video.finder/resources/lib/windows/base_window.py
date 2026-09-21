@@ -42,17 +42,17 @@ def create_window(import_info, skin_xml, **kwargs):
 def window_manager(obj):
 	def close():
 		obj.close()
-		kodi_utils.clear_property("finder.window_loaded")
-		kodi_utils.clear_property("finder.window_stack")
+		kodi_utils.clear_property("redlight.window_loaded")
+		kodi_utils.clear_property("redlight.window_stack")
 
 	def monitor():
 		timer = 0
-		while not kodi_utils.get_property("finder.window_loaded") == "true" and timer <= 5:
+		while not kodi_utils.get_property("redlight.window_loaded") == "true" and timer <= 5:
 			kodi_utils.sleep(50)
 			timer += 0.05
 		kodi_utils.hide_busy_dialog()
 		obj.close()
-		kodi_utils.clear_property("finder.window_loaded")
+		kodi_utils.clear_property("redlight.window_loaded")
 
 	def runner(params):
 		try:
@@ -72,23 +72,23 @@ def window_manager(obj):
 
 	def get_stack():
 		try:
-			window_stack = json.loads(kodi_utils.get_property("finder.window_stack"))
+			window_stack = json.loads(kodi_utils.get_property("redlight.window_stack"))
 		except:
 			window_stack = []
 		return window_stack
 
 	def add_to_stack(params):
 		window_stack.append(params)
-		kodi_utils.set_property("finder.window_stack", json.dumps(window_stack))
+		kodi_utils.set_property("redlight.window_stack", json.dumps(window_stack))
 
 	def remove_from_stack():
 		previous_params = window_stack.pop()
-		kodi_utils.set_property("finder.window_stack", json.dumps(window_stack))
+		kodi_utils.set_property("redlight.window_stack", json.dumps(window_stack))
 		return previous_params
 
 	kodi_utils.show_busy_dialog()
 	try:
-		kodi_utils.clear_property("finder.window_loaded")
+		kodi_utils.clear_property("redlight.window_loaded")
 		current_params = obj.current_params
 		new_params = obj.new_params
 		window_stack = get_stack()
@@ -112,12 +112,12 @@ def window_manager(obj):
 def window_player(obj):
 	def monitor():
 		timer = 0
-		while not kodi_utils.get_property("finder.window_loaded") == "true" and timer <= 5:
+		while not kodi_utils.get_property("redlight.window_loaded") == "true" and timer <= 5:
 			kodi_utils.sleep(50)
 			timer += 0.05
 		kodi_utils.hide_busy_dialog()
 		obj.close()
-		kodi_utils.clear_property("finder.window_loaded")
+		kodi_utils.clear_property("redlight.window_loaded")
 
 	def runner(params):
 		try:
@@ -138,7 +138,7 @@ def window_player(obj):
 		if "plugin.video.youtube" in window_player_url:
 			if not kodi_utils.addon_installed("plugin.video.youtube") or not kodi_utils.addon_enabled("plugin.video.youtube"):
 				return kodi_utils.notification("Youtube Plugin needed for playback")
-		kodi_utils.clear_property("finder.window_loaded")
+		kodi_utils.clear_property("redlight.window_loaded")
 		current_params = obj.current_params
 		player = kodi_utils.kodi_player()
 		player.play(window_player_url)
@@ -249,13 +249,13 @@ class BaseDialog(xbmcgui.WindowXMLDialog):
 		return kodi_utils.translate_path(path)
 
 	def set_home_property(self, prop, value):
-		kodi_utils.set_property("finder.%s" % prop, value)
+		kodi_utils.set_property("redlight.%s" % prop, value)
 
 	def get_home_property(self, prop):
-		return kodi_utils.get_property("finder.%s" % prop)
+		return kodi_utils.get_property("redlight.%s" % prop)
 
 	def clear_home_property(self, prop):
-		return kodi_utils.clear_property("finder.%s" % prop)
+		return kodi_utils.clear_property("redlight.%s" % prop)
 
 	def get_attribute(self, obj, attribute):
 		return getattr(obj, attribute)
@@ -295,9 +295,9 @@ class FontUtils:
 		for item in ((21, False, "font10"), (26, False, "font12"), (30, False, "font13"), (33, False, "font14"), (38, False, "font16"), (60, True, "font60")):
 			replacement_values_append(self.match_font(*item))
 		if not skin_files:
-			kodi_utils.set_property("finder.current_skin", self.current_skin)
-			kodi_utils.set_property("finder.current_font", self.current_font)
-		skin_files = skin_files or kodi_utils.list_dirs(kodi_utils.translate_path("special://home/addons/plugin.video.finder/resources/skins/Default/1080i/"))[1]
+			kodi_utils.set_property("redlight.current_skin", self.current_skin)
+			kodi_utils.set_property("redlight.current_font", self.current_font)
+		skin_files = skin_files or kodi_utils.list_dirs(kodi_utils.translate_path("special://home/addons/plugin.video.redlight/resources/skins/Default/1080i/"))[1]
 		for item in skin_files:
 			self.replace_font(item, replacement_values)
 
@@ -320,12 +320,12 @@ class FontUtils:
 
 	def skin_change_check(self):
 		self.current_skin, self.current_font = kodi_utils.current_skin(), kodi_utils.jsonrpc_get_system_setting("lookandfeel.font", "Default")
-		if self.current_skin != kodi_utils.get_property("finder.current_skin") or self.current_font != kodi_utils.get_property("finder.current_font"):
+		if self.current_skin != kodi_utils.get_property("redlight.current_skin") or self.current_font != kodi_utils.get_property("redlight.current_font"):
 			return True
 		return False
 
 	def match_font(self, size, bold, fallback):
-		font_tag = "Finder_%s%s" % (size, "_BOLD" if bold else "")
+		font_tag = "redlight_%s%s" % (size, "_BOLD" if bold else "")
 		size_range = range(int(size * 0.75), int(size * 1.25))
 		compatibility_range = range(int(size * 0.50), int(size * 1.50))
 		compatibility_fonts = [i["name"] for i in self.skin_font_info if i["name"] == fallback and i["size"] in compatibility_range]
@@ -379,7 +379,7 @@ class FontUtils:
 		return results
 
 	def replace_font(self, window, replacement_values):
-		file = kodi_utils.translate_path("special://home/addons/plugin.video.finder/resources/skins/Default/1080i/" + window)
+		file = kodi_utils.translate_path("special://home/addons/plugin.video.redlight/resources/skins/Default/1080i/" + window)
 		with kodi_utils.open_file(file) as f:
 			content = f.read()
 		for item in replacement_values:
@@ -497,7 +497,7 @@ class ExtrasUtils:
 	def run(self):
 		finished_templates = []
 		skin_file = "extras.xml"
-		file = kodi_utils.translate_path("special://home/addons/plugin.video.finder/resources/skins/Default/1080i/%s" % skin_file)
+		file = kodi_utils.translate_path("special://home/addons/plugin.video.redlight/resources/skins/Default/1080i/%s" % skin_file)
 		media_list = [i for i in settings.extras_order() if i in self.extras_items]
 		media_list_length = len(media_list)
 		first_container = media_list[0]
@@ -532,7 +532,7 @@ class ExtrasUtils:
 				        <control type="label">
 				            <width min="30" max="1160">auto</width>
 				            <height>20</height>
-				            <font>font14</font> <!-- Finder_33 -->
+				            <font>font14</font> <!-- redlight_33 -->
 				            <textcolor>FFCCCCCC</textcolor>
 				            <label>{heading_label}</label>
 				            <visible>!Control.HasFocus({container_no})</visible>
@@ -540,7 +540,7 @@ class ExtrasUtils:
 				        <control type="label">
 				            <width min="30" max="1160">auto</width>
 				            <height>20</height>
-				            <font>font14</font> <!-- Finder_33 -->
+				            <font>font14</font> <!-- redlight_33 -->
 				            <textcolor>FFCCCCCC</textcolor>
 				            <label>{highlight_label}</label>
 				            <visible>Control.HasFocus({container_no})</visible>
@@ -565,7 +565,7 @@ class ExtrasUtils:
 				                    <height max="344">auto</height>
 				                    <width max="220">auto</width>
 				                    <aspectratio>keep</aspectratio>
-				                    <texture diffuse="finder_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
+				                    <texture diffuse="redlight_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
 				                </control>
 				            </itemlayout>
 				            <focusedlayout height="360" width="236">
@@ -579,7 +579,7 @@ class ExtrasUtils:
 				                    <top>5</top>
 				                    <height>350</height>
 				                    <width>236</width>
-				                    <texture colordiffuse="FFCCCCCC">finder_diffuse/poster-50.png</texture>
+				                    <texture colordiffuse="FFCCCCCC">redlight_diffuse/poster-50.png</texture>
 				                    <visible>Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})</visible>
 				                </control>
 				                <control type="image">
@@ -588,7 +588,7 @@ class ExtrasUtils:
 				                    <height max="344">auto</height>
 				                    <width max="220">auto</width>
 				                    <aspectratio>keep</aspectratio>
-				                    <texture diffuse="finder_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
+				                    <texture diffuse="redlight_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
 				                </control>
 				            </focusedlayout>
 				        </control>
@@ -599,9 +599,9 @@ class ExtrasUtils:
 				            <height>15</height>
 				            <onup>{container_no}</onup>
 				            <ondown>{n_container_no}</ondown>
-				            <texturesliderbackground colordiffuse="FF1F2020">finder_common/white.png</texturesliderbackground>
-				            <texturesliderbar colordiffuse="FF555556">finder_common/white.png</texturesliderbar>
-				            <texturesliderbarfocus colordiffuse="FFCCCCCC">finder_common/white.png</texturesliderbarfocus>
+				            <texturesliderbackground colordiffuse="FF1F2020">redlight_common/white.png</texturesliderbackground>
+				            <texturesliderbar colordiffuse="FF555556">redlight_common/white.png</texturesliderbar>
+				            <texturesliderbarfocus colordiffuse="FFCCCCCC">redlight_common/white.png</texturesliderbarfocus>
 				            <showonepage>false</showonepage>
 				            <orientation>Horizontal</orientation>
 				            <visible>String.IsEqual(Window.Property(enable_scrollbars),true) + [Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})]</visible>
@@ -611,7 +611,7 @@ class ExtrasUtils:
 				            <left>20</left>
 				            <width>25</width>
 				            <height>25</height>
-				            <texture colordiffuse="CCCCCCCC" background="true">finder_common/arrow_left.png</texture>
+				            <texture colordiffuse="CCCCCCCC" background="true">redlight_common/arrow_left.png</texture>
 				            <visible>[Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})] + Container({container_no}).HasPrevious</visible>
 				        </control>
 				        <control type="image">
@@ -619,7 +619,7 @@ class ExtrasUtils:
 				            <left>1135</left>
 				            <width>25</width>
 				            <height>25</height>
-				            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">finder_common/arrow_left.png</texture>
+				            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">redlight_common/arrow_left.png</texture>
 				            <visible>[Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})] + Container({container_no}).HasNext</visible>
 				        </control>
 				    </control>
@@ -635,7 +635,7 @@ class ExtrasUtils:
 				        <control type="label">
 				            <width max="1160">auto</width>
 				            <height>20</height>
-				            <font>font14</font> <!-- Finder_33 -->
+				            <font>font14</font> <!-- redlight_33 -->
 				            <textcolor>FFCCCCCC</textcolor>
 				            <align>left</align>
 				            <aligny>bottom</aligny>
@@ -654,14 +654,14 @@ class ExtrasUtils:
 				                <control type="image">
 				                    <height>360</height>
 				                    <width>580</width>
-				                    <texture colordiffuse="$INFO[Window(10000).Property(finder.window_theme.extras)]" border="30">finder_common/circle.png</texture>
+				                    <texture colordiffuse="$INFO[Window(10000).Property(redlight.window_theme.extras)]" border="30">redlight_common/circle.png</texture>
 				                </control>
 				                <control type="textbox">
 				                    <top>15</top>
 				                    <left>20</left>
 				                    <width>540</width>
 				                    <height>308</height>
-				                    <font>font12</font> <!-- Finder_26 -->
+				                    <font>font12</font> <!-- redlight_26 -->
 				                    <align>center</align>
 				                    <aligny>top</aligny>
 				                    <textcolor>FFCCCCCC</textcolor>
@@ -673,14 +673,14 @@ class ExtrasUtils:
 				                <control type="image">
 				                    <height>360</height>
 				                    <width>580</width>
-				                    <texture colordiffuse="FFCCCCCC" border="30">finder_common/circle.png</texture>
+				                    <texture colordiffuse="FFCCCCCC" border="30">redlight_common/circle.png</texture>
 				                </control>
 				                <control type="textbox">
 				                    <top>15</top>
 				                    <left>20</left>
 				                    <width>540</width>
 				                    <height>308</height>
-				                    <font>font12</font> <!-- Finder_26 -->
+				                    <font>font12</font> <!-- redlight_26 -->
 				                    <align>center</align>
 				                    <aligny>top</aligny>
 				                    <textcolor>FF1F2020</textcolor>
@@ -695,9 +695,9 @@ class ExtrasUtils:
 				            <height>15</height>
 				            <onup>{container_no}</onup>
 				            <ondown>{n_container_no}</ondown>
-				            <texturesliderbackground colordiffuse="FF1F2020">finder_common/white.png</texturesliderbackground>
-				            <texturesliderbar colordiffuse="FF555556">finder_common/white.png</texturesliderbar>
-				            <texturesliderbarfocus colordiffuse="FFCCCCCC">finder_common/white.png</texturesliderbarfocus>
+				            <texturesliderbackground colordiffuse="FF1F2020">redlight_common/white.png</texturesliderbackground>
+				            <texturesliderbar colordiffuse="FF555556">redlight_common/white.png</texturesliderbar>
+				            <texturesliderbarfocus colordiffuse="FFCCCCCC">redlight_common/white.png</texturesliderbarfocus>
 				            <showonepage>false</showonepage>
 				            <orientation>Horizontal</orientation>
 				            <visible>String.IsEqual(Window.Property(enable_scrollbars),true) + [Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})]</visible>
@@ -707,7 +707,7 @@ class ExtrasUtils:
 				            <left>20</left>
 				            <width>25</width>
 				            <height>25</height>
-				            <texture colordiffuse="CCCCCCCC" background="true">finder_common/arrow_left.png</texture>
+				            <texture colordiffuse="CCCCCCCC" background="true">redlight_common/arrow_left.png</texture>
 				            <visible>[Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})] + Container({container_no}).HasPrevious</visible>
 				        </control>
 				        <control type="image">
@@ -715,7 +715,7 @@ class ExtrasUtils:
 				            <left>1125</left>
 				            <width>25</width>
 				            <height>25</height>
-				            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">finder_common/arrow_left.png</texture>
+				            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">redlight_common/arrow_left.png</texture>
 				            <visible>[Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})] + Container({container_no}).HasNext</visible>
 				        </control>
 				    </control>
@@ -731,7 +731,7 @@ class ExtrasUtils:
                         <control type="label">
                             <width max="1160">auto</width>
                             <height>20</height>
-                            <font>font14</font> <!-- Finder_33 -->
+                            <font>font14</font> <!-- redlight_33 -->
                             <textcolor>FFCCCCCC</textcolor>
                             <align>left</align>
                             <aligny>bottom</aligny>
@@ -743,15 +743,15 @@ class ExtrasUtils:
                             <height>390</height>
                             <onup>{p_container_no}</onup>
                             <ondown>{n_container_no}</ondown>
-                            <texturefocus colordiffuse="FFCCCCCC" border="30">finder_common/circle.png</texturefocus>
-                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(finder.window_theme.extras)]" border="30">finder_common/circle.png</texturenofocus>
+                            <texturefocus colordiffuse="FFCCCCCC" border="30">redlight_common/circle.png</texturefocus>
+                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(redlight.window_theme.extras)]" border="30">redlight_common/circle.png</texturenofocus>
                         </control>
                         <control type="textbox">
                             <top>65</top>
                             <left>15</left>
                             <width>1150</width>
                             <height>340</height>
-                            <font>font13</font> <!-- Finder_30 -->
+                            <font>font13</font> <!-- redlight_30 -->
                             <align>center</align>
                             <aligny>center</aligny>
                             <textcolor>FFCCCCCC</textcolor>
@@ -764,7 +764,7 @@ class ExtrasUtils:
                             <left>15</left>
                             <width>1150</width>
                             <height>340</height>
-                            <font>font13</font> <!-- Finder_30 -->
+                            <font>font13</font> <!-- redlight_30 -->
                             <align>center</align>
                             <aligny>center</aligny>
                             <textcolor>FF1F2020</textcolor>
@@ -786,7 +786,7 @@ class ExtrasUtils:
             <width>1920</width>
             <height>1080</height>
             <control type="image">
-                <texture colordiffuse="FF000000">finder_common/white.png</texture>
+                <texture colordiffuse="FF000000">redlight_common/white.png</texture>
             </control>
             <control type="image" id="202">
                 <aspectratio>scale</aspectratio>
@@ -802,7 +802,7 @@ class ExtrasUtils:
                     <width>100</width>
                     <height>100</height>
                     <aspectratio aligny="top">keep</aspectratio>
-                    <texture>$INFO[Window(10000).Property(finder.addon_icon_mini)]</texture>
+                    <texture>$INFO[Window(10000).Property(redlight.addon_icon_mini)]</texture>
                 </control>
                 <control type="group">
                     <visible>String.IsEqual(ListItem.Property(info_alert),)</visible>
@@ -811,7 +811,7 @@ class ExtrasUtils:
                         <left>1590</left>
                         <width max="300">auto</width>
                         <height>20</height>
-                        <font>font37</font> <!-- Finder_38 -->
+                        <font>font37</font> <!-- redlight_38 -->
                         <textcolor>FFCCCCCC</textcolor>
                         <align>right</align>
                         <aligny>center</aligny>
@@ -822,7 +822,7 @@ class ExtrasUtils:
                         <left>1540</left>
                         <width max="350">auto</width>
                         <height>20</height>
-                        <font>font10</font> <!-- Finder_21 -->
+                        <font>font10</font> <!-- redlight_21 -->
                         <textcolor>FFCCCCCC</textcolor>
                         <align>right</align>
                         <aligny>center</aligny>
@@ -838,13 +838,13 @@ class ExtrasUtils:
                         <width>35</width>
                         <height>35</height>
                         <aspectratio>keep</aspectratio>
-                        <texture>finder_common/info.png</texture>
+                        <texture>redlight_common/info.png</texture>
                         <visible>!String.IsEqual(ListItem.Property(info_alert),)</visible>
                     </control>
                     <control type="label">
                         <width max="600">auto</width>
                         <height>20</height>
-                        <font>font10</font> <!-- Finder_21 -->
+                        <font>font10</font> <!-- redlight_21 -->
                         <textcolor>FFCCCCCC</textcolor>
                         <align>right</align>
                         <aligny>bottom</aligny>
@@ -860,7 +860,7 @@ class ExtrasUtils:
                     <width>650</width>
                     <height>1000</height>
                     <aspectratio>keep</aspectratio>
-                    <texture diffuse="finder_diffuse/poster-50.png" background="true" />
+                    <texture diffuse="redlight_diffuse/poster-50.png" background="true" />
                 </control>
                 <control type="group">
                     <control type="image" id="201">
@@ -877,7 +877,7 @@ class ExtrasUtils:
                         <left>70</left>
                         <width max="1130">auto</width>
                         <height>30</height>
-                        <font>font60</font> <!-- Finder_60_BOLD -->
+                        <font>font60</font> <!-- redlight_60_BOLD -->
                         <textcolor>FFCCCCCC</textcolor>
                         <align>center</align>
                         <aligny>bottom</aligny>
@@ -895,7 +895,7 @@ class ExtrasUtils:
                     <control type="label">
                         <width max="1150">auto</width>
                         <height>25</height>
-                        <font>font14</font> <!-- Finder_33 -->
+                        <font>font14</font> <!-- redlight_33 -->
                         <textcolor>FFCCCCCC</textcolor>
                         <align>center</align>
                         <label>[I]$INFO[Window.Property(genre)][/I]</label>
@@ -916,7 +916,7 @@ class ExtrasUtils:
                         <control type="label" id="2001">
                             <width max="1026">auto</width>
                             <height>32</height>
-                            <font>font13</font> <!-- Finder_30 -->
+                            <font>font13</font> <!-- redlight_30 -->
                             <textcolor>FFCCCCCC</textcolor>
                             <align>left</align>
                         </control>
@@ -925,7 +925,7 @@ class ExtrasUtils:
                         <top>105</top>
                         <width max="1150">auto</width>
                         <height>25</height>
-                        <font>font14</font> <!-- Finder_33 -->
+                        <font>font14</font> <!-- redlight_33 -->
                         <textcolor>FFCCCCCC</textcolor>
                         <align>center</align>
                     </control>
@@ -951,7 +951,7 @@ class ExtrasUtils:
                             <control type="label" id="4001">
                                 <width max="75">auto</width>
                                 <height>32</height>
-                                <font>font13</font> <!-- Finder_30 -->
+                                <font>font13</font> <!-- redlight_30 -->
                                 <textcolor>FFCCCCCC</textcolor>
                                 <align>left</align>
                                 <aligny>center</aligny>
@@ -973,7 +973,7 @@ class ExtrasUtils:
                             <control type="label" id="4002">
                                 <width max="75">auto</width>
                                 <height>32</height>
-                                <font>font13</font> <!-- Finder_30 -->
+                                <font>font13</font> <!-- redlight_30 -->
                                 <textcolor>FFCCCCCC</textcolor>
                                 <align>left</align>
                                 <aligny>center</aligny>
@@ -995,7 +995,7 @@ class ExtrasUtils:
                             <control type="label" id="4003">
                                 <width max="75">auto</width>
                                 <height>32</height>
-                                <font>font13</font> <!-- Finder_30 -->
+                                <font>font13</font> <!-- redlight_30 -->
                                 <textcolor>FFCCCCCC</textcolor>
                                 <align>left</align>
                                 <aligny>center</aligny>
@@ -1017,7 +1017,7 @@ class ExtrasUtils:
                             <control type="label" id="4004">
                                 <width max="75">auto</width>
                                 <height>32</height>
-                                <font>font13</font> <!-- Finder_30 -->
+                                <font>font13</font> <!-- redlight_30 -->
                                 <textcolor>FFCCCCCC</textcolor>
                                 <align>left</align>
                                 <aligny>center</aligny>
@@ -1039,7 +1039,7 @@ class ExtrasUtils:
                             <control type="label" id="4005">
                                 <width max="75">auto</width>
                                 <height>32</height>
-                                <font>font13</font> <!-- Finder_30 -->
+                                <font>font13</font> <!-- redlight_30 -->
                                 <textcolor>FFCCCCCC</textcolor>
                                 <align>left</align>
                                 <aligny>center</aligny>
@@ -1069,11 +1069,11 @@ class ExtrasUtils:
                             <onup>{last_container}</onup>
                             <ondown>14</ondown>
                             <label>$INFO[Window.Property(button10.label)]</label>
-                            <font>font13</font> <!-- Finder_30 -->
+                            <font>font13</font> <!-- redlight_30 -->
                             <textcolor>FFCCCCCC</textcolor>
                             <focusedcolor>FF1F2020</focusedcolor>
-                            <texturefocus colordiffuse="FFCCCCCC" border="30">finder_common/circle.png</texturefocus>
-                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(finder.window_theme.extras)]" border="30">finder_common/circle.png</texturenofocus>
+                            <texturefocus colordiffuse="FFCCCCCC" border="30">redlight_common/circle.png</texturefocus>
+                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(redlight.window_theme.extras)]" border="30">redlight_common/circle.png</texturenofocus>
                             <align>center</align>
                             <aligny>center</aligny>
                         </control>
@@ -1086,11 +1086,11 @@ class ExtrasUtils:
                             <onup>{last_container}</onup>
                             <ondown>15</ondown>
                             <label>$INFO[Window.Property(button11.label)]</label>
-                            <font>font13</font> <!-- Finder_30 -->
+                            <font>font13</font> <!-- redlight_30 -->
                             <textcolor>FFCCCCCC</textcolor>
                             <focusedcolor>FF1F2020</focusedcolor>
-                            <texturefocus colordiffuse="FFCCCCCC" border="30">finder_common/circle.png</texturefocus>
-                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(finder.window_theme.extras)]" border="30">finder_common/circle.png</texturenofocus>  
+                            <texturefocus colordiffuse="FFCCCCCC" border="30">redlight_common/circle.png</texturefocus>
+                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(redlight.window_theme.extras)]" border="30">redlight_common/circle.png</texturenofocus>  
                             <align>center</align>
                             <aligny>center</aligny>
                         </control>
@@ -1103,11 +1103,11 @@ class ExtrasUtils:
                             <onup>{last_container}</onup>
                             <ondown>16</ondown>
                             <label>$INFO[Window.Property(button12.label)]</label>
-                            <font>font13</font> <!-- Finder_30 -->
+                            <font>font13</font> <!-- redlight_30 -->
                             <textcolor>FFCCCCCC</textcolor>
                             <focusedcolor>FF1F2020</focusedcolor>
-                            <texturefocus colordiffuse="FFCCCCCC" border="30">finder_common/circle.png</texturefocus>
-                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(finder.window_theme.extras)]" border="30">finder_common/circle.png</texturenofocus>  
+                            <texturefocus colordiffuse="FFCCCCCC" border="30">redlight_common/circle.png</texturefocus>
+                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(redlight.window_theme.extras)]" border="30">redlight_common/circle.png</texturenofocus>  
                             <align>center</align>
                             <aligny>center</aligny>
                         </control>
@@ -1120,11 +1120,11 @@ class ExtrasUtils:
                             <onup>{last_container}</onup>
                             <ondown>17</ondown>
                             <label>$INFO[Window.Property(button13.label)]</label>
-                            <font>font13</font> <!-- Finder_30 -->
+                            <font>font13</font> <!-- redlight_30 -->
                             <textcolor>FFCCCCCC</textcolor>
                             <focusedcolor>FF1F2020</focusedcolor>
-                            <texturefocus colordiffuse="FFCCCCCC" border="30">finder_common/circle.png</texturefocus>
-                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(finder.window_theme.extras)]" border="30">finder_common/circle.png</texturenofocus>  
+                            <texturefocus colordiffuse="FFCCCCCC" border="30">redlight_common/circle.png</texturefocus>
+                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(redlight.window_theme.extras)]" border="30">redlight_common/circle.png</texturenofocus>  
                             <align>center</align>
                             <aligny>center</aligny>
                         </control>
@@ -1139,11 +1139,11 @@ class ExtrasUtils:
                             <onup>10</onup>
                             <ondown>{first_container}</ondown>
                             <label>$INFO[Window.Property(button14.label)]</label>
-                            <font>font13</font> <!-- Finder_30 -->
+                            <font>font13</font> <!-- redlight_30 -->
                             <textcolor>FFCCCCCC</textcolor>
                             <focusedcolor>FF1F2020</focusedcolor>
-                            <texturefocus colordiffuse="FFCCCCCC" border="30">finder_common/circle.png</texturefocus>
-                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(finder.window_theme.extras)]" border="30">finder_common/circle.png</texturenofocus> 
+                            <texturefocus colordiffuse="FFCCCCCC" border="30">redlight_common/circle.png</texturefocus>
+                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(redlight.window_theme.extras)]" border="30">redlight_common/circle.png</texturenofocus> 
                             <align>center</align>
                             <aligny>center</aligny>
                         </control>
@@ -1156,11 +1156,11 @@ class ExtrasUtils:
                             <onup>11</onup>
                             <ondown>{first_container}</ondown>
                             <label>$INFO[Window.Property(button15.label)]</label>
-                            <font>font13</font> <!-- Finder_30 -->
+                            <font>font13</font> <!-- redlight_30 -->
                             <textcolor>FFCCCCCC</textcolor>
                             <focusedcolor>FF1F2020</focusedcolor>
-                            <texturefocus colordiffuse="FFCCCCCC" border="30">finder_common/circle.png</texturefocus>
-                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(finder.window_theme.extras)]" border="30">finder_common/circle.png</texturenofocus>                         <align>center</align>
+                            <texturefocus colordiffuse="FFCCCCCC" border="30">redlight_common/circle.png</texturefocus>
+                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(redlight.window_theme.extras)]" border="30">redlight_common/circle.png</texturenofocus>                         <align>center</align>
                             <aligny>center</aligny>
                         </control>
                         <control type="button" id="16">
@@ -1172,11 +1172,11 @@ class ExtrasUtils:
                             <onup>12</onup>
                             <ondown>{first_container}</ondown>
                             <label>$INFO[Window.Property(button16.label)]</label>
-                            <font>font13</font> <!-- Finder_30 -->
+                            <font>font13</font> <!-- redlight_30 -->
                             <textcolor>FFCCCCCC</textcolor>
                             <focusedcolor>FF1F2020</focusedcolor>
-                            <texturefocus colordiffuse="FFCCCCCC" border="30">finder_common/circle.png</texturefocus>
-                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(finder.window_theme.extras)]" border="30">finder_common/circle.png</texturenofocus>
+                            <texturefocus colordiffuse="FFCCCCCC" border="30">redlight_common/circle.png</texturefocus>
+                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(redlight.window_theme.extras)]" border="30">redlight_common/circle.png</texturenofocus>
                             <align>center</align>
                             <aligny>center</aligny>
                         </control>
@@ -1189,11 +1189,11 @@ class ExtrasUtils:
                             <onright>14</onright>
                             <ondown>{first_container}</ondown>
                             <label>$INFO[Window.Property(button17.label)]</label>
-                            <font>font13</font> <!-- Finder_30 -->
+                            <font>font13</font> <!-- redlight_30 -->
                             <textcolor>FFCCCCCC</textcolor>
                             <focusedcolor>FF1F2020</focusedcolor>
-                            <texturefocus colordiffuse="FFCCCCCC" border="30">finder_common/circle.png</texturefocus>
-                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(finder.window_theme.extras)]" border="30">finder_common/circle.png</texturenofocus>
+                            <texturefocus colordiffuse="FFCCCCCC" border="30">redlight_common/circle.png</texturefocus>
+                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(redlight.window_theme.extras)]" border="30">redlight_common/circle.png</texturenofocus>
                             <align>center</align>
                             <aligny>center</aligny>
                         </control>
@@ -1220,7 +1220,7 @@ class ExtrasUtils:
                         <control type="label">
                             <width min="30" max="1160">auto</width>
                             <height>20</height>
-                            <font>font14</font> <!-- Finder_33 -->
+                            <font>font14</font> <!-- redlight_33 -->
                             <textcolor>FFCCCCCC</textcolor>
                             <label>[B]$INFO[Window.Property(more_from_collection.name)] $INFO[Window.Property(more_from_collection.number)][/B]</label>
                             <visible>!Control.HasFocus({container_no})</visible>
@@ -1228,7 +1228,7 @@ class ExtrasUtils:
                         <control type="label">
                             <width min="30" max="1160">auto</width>
                             <height>20</height>
-                            <font>font14</font> <!-- Finder_33 -->
+                            <font>font14</font> <!-- redlight_33 -->
                             <textcolor>FFCCCCCC</textcolor>
                             <label>[B]$INFO[Window.Property(more_from_collection.name)] | [/B]$INFO[ListItem.Property(name)]$INFO[ListItem.Property(release_date), • ]$INFO[ListItem.Property(vote_average), • ]</label>
                             <visible>Control.HasFocus({container_no})</visible>
@@ -1238,13 +1238,13 @@ class ExtrasUtils:
                             <control type="image">
                                 <height>360</height>
                                 <width>933</width>
-                                    <texture colordiffuse="$INFO[Window(10000).Property(finder.window_theme.extras)]" border="30">finder_common/circle.png</texture>
+                                    <texture colordiffuse="$INFO[Window(10000).Property(redlight.window_theme.extras)]" border="30">redlight_common/circle.png</texture>
                                 <visible>Integer.IsGreater(Container({container_no}).NumItems,1)</visible>
                             </control>
                             <control type="image">
                                 <height>360</height>
                                 <width>1169</width>
-                                    <texture colordiffuse="$INFO[Window(10000).Property(finder.window_theme.extras)]" border="30">finder_common/circle.png</texture>
+                                    <texture colordiffuse="$INFO[Window(10000).Property(redlight.window_theme.extras)]" border="30">redlight_common/circle.png</texture>
                                 <visible>Integer.IsGreater(Container({container_no}).NumItems,2)</visible>
                             </control>
                             <control type="image">
@@ -1253,14 +1253,14 @@ class ExtrasUtils:
                                 <width>224</width>
                                 <height>348</height>
                                 <aspectratio>keep</aspectratio>
-                                <texture diffuse="finder_diffuse/poster-50.png" background="true">$INFO[Window.Property(more_from_collection.poster)]</texture>
+                                <texture diffuse="redlight_diffuse/poster-50.png" background="true">$INFO[Window.Property(more_from_collection.poster)]</texture>
                             </control>
                             <control type="textbox">
                                 <left>235</left>
                                 <top>6</top>
                                 <width>218</width>
                                 <height>348</height>
-                                <font>font12</font> <!-- Finder_26 -->
+                                <font>font12</font> <!-- redlight_26 -->
                                 <align>center</align>
                                 <aligny>center</aligny>
                                 <textcolor>FFCCCCCC</textcolor>
@@ -1288,7 +1288,7 @@ class ExtrasUtils:
                                     <height max="344">auto</height>
                                     <width max="220">auto</width>
                                     <aspectratio>keep</aspectratio>
-                                    <texture diffuse="finder_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
+                                    <texture diffuse="redlight_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
                                 </control>
                             </itemlayout>
                             <focusedlayout height="360" width="236">
@@ -1302,7 +1302,7 @@ class ExtrasUtils:
                                     <top>5</top>
                                     <height>350</height>
                                     <width>236</width>
-                                    <texture colordiffuse="FFCCCCCC">finder_diffuse/poster-50.png</texture>
+                                    <texture colordiffuse="FFCCCCCC">redlight_diffuse/poster-50.png</texture>
                                     <visible>Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})</visible>
                                 </control>
                                 <control type="image">
@@ -1311,7 +1311,7 @@ class ExtrasUtils:
                                     <height max="344">auto</height>
                                     <width max="220">auto</width>
                                     <aspectratio>keep</aspectratio>
-                                    <texture diffuse="finder_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
+                                    <texture diffuse="redlight_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
                                 </control>
                             </focusedlayout>
                         </control>
@@ -1321,9 +1321,9 @@ class ExtrasUtils:
                             <height>15</height>
                             <onup>{container_no}</onup>
                             <ondown>{n_container_no}</ondown>
-                            <texturesliderbackground colordiffuse="FF1F2020">finder_common/white.png</texturesliderbackground>
-                            <texturesliderbar colordiffuse="FF555556">finder_common/white.png</texturesliderbar>
-                            <texturesliderbarfocus colordiffuse="FFCCCCCC">finder_common/white.png</texturesliderbarfocus>
+                            <texturesliderbackground colordiffuse="FF1F2020">redlight_common/white.png</texturesliderbackground>
+                            <texturesliderbar colordiffuse="FF555556">redlight_common/white.png</texturesliderbar>
+                            <texturesliderbarfocus colordiffuse="FFCCCCCC">redlight_common/white.png</texturesliderbarfocus>
                             <showonepage>false</showonepage>
                             <orientation>Horizontal</orientation>
                             <visible>String.IsEqual(Window.Property(enable_scrollbars),true) + [Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})]</visible>
@@ -1333,7 +1333,7 @@ class ExtrasUtils:
                             <left>480</left>
                             <width>25</width>
                             <height>25</height>
-                            <texture colordiffuse="CCCCCCCC" background="true">finder_common/arrow_left.png</texture>
+                            <texture colordiffuse="CCCCCCCC" background="true">redlight_common/arrow_left.png</texture>
                             <visible>[Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})] + Container({container_no}).HasPrevious</visible>
                         </control>
                         <control type="image">
@@ -1341,7 +1341,7 @@ class ExtrasUtils:
                             <left>1120</left>
                             <width>25</width>
                             <height>25</height>
-                            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">finder_common/arrow_left.png</texture>
+                            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">redlight_common/arrow_left.png</texture>
                             <visible>[Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})] + Container({container_no}).HasNext</visible>
                         </control>
                     </control>
@@ -1357,7 +1357,7 @@ class ExtrasUtils:
                         <control type="label">
                             <width min="30" max="1160">auto</width>
                             <height>20</height>
-                            <font>font14</font> <!-- Finder_33 -->
+                            <font>font14</font> <!-- redlight_33 -->
                             <textcolor>FFCCCCCC</textcolor>
                             <label>{heading_label}</label>
                             <visible>!Control.HasFocus({container_no})</visible>
@@ -1365,7 +1365,7 @@ class ExtrasUtils:
                         <control type="label">
                             <width min="30" max="1160">auto</width>
                             <height>20</height>
-                            <font>font14</font> <!-- Finder_33 -->
+                            <font>font14</font> <!-- redlight_33 -->
                             <textcolor>FFCCCCCC</textcolor>
                             <label>{highlight_label}</label>
                             <visible>Control.HasFocus({container_no})</visible>
@@ -1389,7 +1389,7 @@ class ExtrasUtils:
                                     <height max="344">auto</height>
                                     <width max="376">auto</width>
                                     <aspectratio>keep</aspectratio>
-                                    <texture diffuse="finder_diffuse/landscape.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
+                                    <texture diffuse="redlight_diffuse/landscape.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
                                 </control>
                             </itemlayout>
                             <focusedlayout height="360" width="392">
@@ -1403,7 +1403,7 @@ class ExtrasUtils:
                                     <top>32</top>
                                     <height>296</height>
                                     <width>393</width>
-                                    <texture colordiffuse="FFCCCCCC">finder_diffuse/landscape.png</texture>
+                                    <texture colordiffuse="FFCCCCCC">redlight_diffuse/landscape.png</texture>
                                     <visible>Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})</visible>
                                 </control>
                                 <control type="image">
@@ -1412,7 +1412,7 @@ class ExtrasUtils:
                                     <height max="344">auto</height>
                                     <width max="376">auto</width>
                                     <aspectratio>keep</aspectratio>
-                                    <texture diffuse="finder_diffuse/landscape.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
+                                    <texture diffuse="redlight_diffuse/landscape.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
                                 </control>
                             </focusedlayout>
                         </control>
@@ -1423,9 +1423,9 @@ class ExtrasUtils:
                             <height>15</height>
                             <onup>{container_no}</onup>
                             <ondown>{n_container_no}</ondown>
-                            <texturesliderbackground colordiffuse="FF1F2020">finder_common/white.png</texturesliderbackground>
-                            <texturesliderbar colordiffuse="FF555556">finder_common/white.png</texturesliderbar>
-                            <texturesliderbarfocus colordiffuse="FFCCCCCC">finder_common/white.png</texturesliderbarfocus>
+                            <texturesliderbackground colordiffuse="FF1F2020">redlight_common/white.png</texturesliderbackground>
+                            <texturesliderbar colordiffuse="FF555556">redlight_common/white.png</texturesliderbar>
+                            <texturesliderbarfocus colordiffuse="FFCCCCCC">redlight_common/white.png</texturesliderbarfocus>
                             <showonepage>false</showonepage>
                             <orientation>Horizontal</orientation>
                             <visible>String.IsEqual(Window.Property(enable_scrollbars),true) + [Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})]</visible>
@@ -1435,7 +1435,7 @@ class ExtrasUtils:
                             <left>20</left>
                             <width>25</width>
                             <height>25</height>
-                            <texture colordiffuse="CCCCCCCC" background="true">finder_common/arrow_left.png</texture>
+                            <texture colordiffuse="CCCCCCCC" background="true">redlight_common/arrow_left.png</texture>
                             <visible>[Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})] + Container({container_no}).HasPrevious</visible>
                         </control>
                         <control type="image">
@@ -1443,7 +1443,7 @@ class ExtrasUtils:
                             <left>1125</left>
                             <width>25</width>
                             <height>25</height>
-                            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">finder_common/arrow_left.png</texture>
+                            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">redlight_common/arrow_left.png</texture>
                             <visible>[Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})] + Container({container_no}).HasNext</visible>
                         </control>
                     </control>
@@ -1459,7 +1459,7 @@ class ExtrasUtils:
                         <control type="label">
                             <width max="1160">auto</width>
                             <height>20</height>
-                            <font>font14</font> <!-- Finder_33 -->
+                            <font>font14</font> <!-- redlight_33 -->
                             <textcolor>FFCCCCCC</textcolor>
                             <align>left</align>
                             <aligny>bottom</aligny>
@@ -1482,7 +1482,7 @@ class ExtrasUtils:
                                 <control type="image">
                                     <height>360</height>
                                     <width>230</width>
-                                    <texture colordiffuse="$INFO[Window(10000).Property(finder.window_theme.extras)]" border="30">finder_common/circle.png</texture>
+                                    <texture colordiffuse="$INFO[Window(10000).Property(redlight.window_theme.extras)]" border="30">redlight_common/circle.png</texture>
                                 </control>
                                 <control type="image">
                                     <left>-35</left>
@@ -1499,7 +1499,7 @@ class ExtrasUtils:
                                     <top>10</top>
                                     <width>220</width>
                                     <height>340</height>
-                                    <font>font12</font> <!-- Finder_26 -->
+                                    <font>font12</font> <!-- redlight_26 -->
                                     <align>center</align>
                                     <aligny>center</aligny>
                                     <textcolor>FFCCCCCC</textcolor>
@@ -1511,7 +1511,7 @@ class ExtrasUtils:
                                     <left>90</left>
                                     <width>50</width>
                                     <aspectratio>keep</aspectratio>
-                                    <texture colordiffuse="red">finder_common/overlay_selected.png</texture>
+                                    <texture colordiffuse="red">redlight_common/overlay_selected.png</texture>
                                     <visible>String.IsEqual(ListItem.Property(liked_status),true)</visible>
                                 </control>
                             </itemlayout>
@@ -1519,14 +1519,14 @@ class ExtrasUtils:
                                 <control type="image">
                                     <width>230</width>
                                     <height>360</height>
-                                    <texture colordiffuse="FFCCCCCC" border="30">finder_common/circle.png</texture>
+                                    <texture colordiffuse="FFCCCCCC" border="30">redlight_common/circle.png</texture>
                                     <visible>Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})</visible>
                                     <animation effect="fade" start="100" end="60" condition="Control.HasFocus({scrollbar_no})">Conditional</animation>
                                 </control>
                                 <control type="image">
                                     <height>360</height>
                                     <width>230</width>
-                                    <texture colordiffuse="$INFO[Window(10000).Property(finder.window_theme.extras)]" border="30">finder_common/circle.png</texture>
+                                    <texture colordiffuse="$INFO[Window(10000).Property(redlight.window_theme.extras)]" border="30">redlight_common/circle.png</texture>
                                     <visible>![Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})]</visible>
                                 </control>
                                 <control type="image">
@@ -1544,7 +1544,7 @@ class ExtrasUtils:
                                     <top>10</top>
                                     <width>220</width>
                                     <height>340</height>
-                                    <font>font12</font> <!-- Finder_26 -->
+                                    <font>font12</font> <!-- redlight_26 -->
                                     <align>center</align>
                                     <aligny>center</aligny>
                                     <textcolor>FF1F2020</textcolor>
@@ -1557,7 +1557,7 @@ class ExtrasUtils:
                                     <top>10</top>
                                     <width>220</width>
                                     <height>340</height>
-                                    <font>font12</font> <!-- Finder_26 -->
+                                    <font>font12</font> <!-- redlight_26 -->
                                     <align>center</align>
                                     <aligny>center</aligny>
                                     <textcolor>FFCCCCCC</textcolor>
@@ -1570,7 +1570,7 @@ class ExtrasUtils:
                                     <left>90</left>
                                     <width>50</width>
                                     <aspectratio>keep</aspectratio>
-                                    <texture colordiffuse="red">finder_common/overlay_selected.png</texture>
+                                    <texture colordiffuse="red">redlight_common/overlay_selected.png</texture>
                                     <visible>String.IsEqual(ListItem.Property(liked_status),true)</visible>
                                 </control>
                             </focusedlayout>
@@ -1582,9 +1582,9 @@ class ExtrasUtils:
                             <height>15</height>
                             <onup>{container_no}</onup>
                             <ondown>{n_container_no}</ondown>
-                            <texturesliderbackground colordiffuse="FF1F2020">finder_common/white.png</texturesliderbackground>
-                            <texturesliderbar colordiffuse="FF555556">finder_common/white.png</texturesliderbar>
-                            <texturesliderbarfocus colordiffuse="FFCCCCCC">finder_common/white.png</texturesliderbarfocus>
+                            <texturesliderbackground colordiffuse="FF1F2020">redlight_common/white.png</texturesliderbackground>
+                            <texturesliderbar colordiffuse="FF555556">redlight_common/white.png</texturesliderbar>
+                            <texturesliderbarfocus colordiffuse="FFCCCCCC">redlight_common/white.png</texturesliderbarfocus>
                             <showonepage>false</showonepage>
                             <orientation>Horizontal</orientation>
                             <visible>String.IsEqual(Window.Property(enable_scrollbars),true) + [Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})]</visible>
@@ -1594,7 +1594,7 @@ class ExtrasUtils:
                             <left>20</left>
                             <width>25</width>
                             <height>25</height>
-                            <texture colordiffuse="CCCCCCCC" background="true">finder_common/arrow_left.png</texture>
+                            <texture colordiffuse="CCCCCCCC" background="true">redlight_common/arrow_left.png</texture>
                             <visible>[Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})] + Container({container_no}).HasPrevious</visible>
                         </control>
                         <control type="image">
@@ -1602,7 +1602,7 @@ class ExtrasUtils:
                             <left>1135</left>
                             <width>25</width>
                             <height>25</height>
-                            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">finder_common/arrow_left.png</texture>
+                            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">redlight_common/arrow_left.png</texture>
                             <visible>[Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})] + Container({container_no}).HasNext</visible>
                         </control>
                     </control>
@@ -1618,7 +1618,7 @@ class ExtrasUtils:
                         <control type="label">
                             <width max="1160">auto</width>
                             <height>20</height>
-                            <font>font14</font> <!-- Finder_33 -->
+                            <font>font14</font> <!-- redlight_33 -->
                             <textcolor>FFCCCCCC</textcolor>
                             <align>left</align>
                             <aligny>bottom</aligny>
@@ -1636,7 +1636,7 @@ class ExtrasUtils:
                                 <control type="image">
                                     <height>360</height>
                                     <width>230</width>
-                                    <texture colordiffuse="$INFO[Window(10000).Property(finder.window_theme.extras)]" border="30">finder_common/circle.png</texture>
+                                    <texture colordiffuse="$INFO[Window(10000).Property(redlight.window_theme.extras)]" border="30">redlight_common/circle.png</texture>
                                 </control>
                                 <control type="image">
                                     <left>6</left>
@@ -1651,7 +1651,7 @@ class ExtrasUtils:
                                     <top>6</top>
                                     <width>224</width>
                                     <height>75</height>
-                                    <font>font12</font> <!-- Finder_26 -->
+                                    <font>font12</font> <!-- redlight_26 -->
                                     <align>center</align>
                                     <aligny>center</aligny>
                                     <textcolor>FFCCCCCC</textcolor>
@@ -1663,7 +1663,7 @@ class ExtrasUtils:
                                     <top>280</top>
                                     <width>224</width>
                                     <height>75</height>
-                                    <font>font12</font> <!-- Finder_26 -->
+                                    <font>font12</font> <!-- redlight_26 -->
                                     <align>center</align>
                                     <aligny>center</aligny>
                                     <textcolor>FFCCCCCC</textcolor>
@@ -1675,7 +1675,7 @@ class ExtrasUtils:
                                 <control type="image">
                                     <width>230</width>
                                     <height>360</height>
-                                    <texture colordiffuse="FFCCCCCC" border="30">finder_common/circle.png</texture>
+                                    <texture colordiffuse="FFCCCCCC" border="30">redlight_common/circle.png</texture>
                                 </control>
                                 <control type="image">
                                     <left>6</left>
@@ -1690,7 +1690,7 @@ class ExtrasUtils:
                                     <top>6</top>
                                     <width>224</width>
                                     <height>75</height>
-                                    <font>font12</font> <!-- Finder_26 -->
+                                    <font>font12</font> <!-- redlight_26 -->
                                     <align>center</align>
                                     <aligny>center</aligny>
                                     <textcolor>FF1F2020</textcolor>
@@ -1702,7 +1702,7 @@ class ExtrasUtils:
                                     <top>280</top>
                                     <width>224</width>
                                     <height>75</height>
-                                    <font>font12</font> <!-- Finder_26 -->
+                                    <font>font12</font> <!-- redlight_26 -->
                                     <align>center</align>
                                     <aligny>center</aligny>
                                     <textcolor>FF1F2020</textcolor>

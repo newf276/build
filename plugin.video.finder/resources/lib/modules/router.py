@@ -8,7 +8,7 @@ from xbmc import getInfoLabel
 
 
 def sys_exit_check():
-	if get_property("finder.reuse_language_invoker") == "false":
+	if get_property("redlight.reuse_language_invoker") == "false":
 		return False
 	return external()
 

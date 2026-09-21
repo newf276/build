@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 """TMDBHelper integration helpers.
 
-Finder exposes a keyless ``playback.media`` mode (see ``kodi_utils.player_check``) so external
+redlight exposes a keyless ``playback.media`` mode (see ``kodi_utils.player_check``) so external
 addons such as TMDBHelper (``plugin.video.themoviedb.helper``) can drive playback. This module
 installs the matching TMDBHelper *player* config files into TMDBHelper's userdata folder so the
-"Play with..." dialog offers Finder.
+"Play with..." dialog offers redlight.
 """
 
 import os
@@ -13,11 +13,11 @@ from modules import kodi_utils
 
 TMDBHELPER_ID = "plugin.video.themoviedb.helper"
 PLAYERS_DIR = "special://profile/addon_data/%s/players/" % TMDBHELPER_ID
-PLAYER_FILES = ("finder.auto.json", "finder.select.json")
+PLAYER_FILES = ("redlight.auto.json", "redlight.select.json")
 
 
 def install_player():
-	"""Copy the bundled Finder player configs into TMDBHelper's players folder."""
+	"""Copy the bundled redlight player configs into TMDBHelper's players folder."""
 	if not kodi_utils.get_visibility("System.HasAddon(%s)" % TMDBHELPER_ID):
 		kodi_utils.ok_dialog(
 			"TMDBHelper Not Found",
@@ -37,6 +37,6 @@ def install_player():
 		if kodi_utils.copy_file(source, destination):
 			copied.append(name)
 	if len(copied) == len(PLAYER_FILES):
-		kodi_utils.notification("TMDBHelper Player Installed — restart Kodi to use Finder")
+		kodi_utils.notification("TMDBHelper Player Installed — restart Kodi to use redlight")
 	else:
 		kodi_utils.notification("TMDBHelper Player Install Failed")

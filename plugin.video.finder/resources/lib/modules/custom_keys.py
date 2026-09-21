@@ -100,7 +100,7 @@ def quick_add():
 
 def get_params(param_name):
 	try:
-		params = dict(parse_qsl(get_infolabel("ListItem.Property(finder.%s)" % param_name).split("plugin://plugin.video.finder/?")[1], keep_blank_values=True))
+		params = dict(parse_qsl(get_infolabel("ListItem.Property(redlight.%s)" % param_name).split("plugin://plugin.video.redlight/?")[1], keep_blank_values=True))
 	except:
 		params = None
 	return params

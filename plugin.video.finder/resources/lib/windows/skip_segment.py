@@ -8,7 +8,7 @@ class SkipSegment(BaseDialog):
 	"""Netflix-style Skip button overlay shown during an intro/recap/outro.
 
 	A focusable modal (``doModal``) with a single Skip button, launched in a
-	Thread by ``FinderPlayer`` — the same proven pattern as ``NextEpisode``. It
+	Thread by ``redlightPlayer`` — the same proven pattern as ``NextEpisode``. It
 	auto-dismisses after ``duration`` seconds if the user doesn't act. ``run``
 	returns ``"skip"`` (button pressed) or ``"dismiss"`` (timed out / closed); the
 	player does the actual ``seekTime``/next-episode work so seeks stay off this

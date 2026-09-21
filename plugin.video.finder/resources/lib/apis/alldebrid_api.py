@@ -17,10 +17,10 @@ from modules.utils import copy2clip, launch_browser, make_qrcode
 
 class AllDebridAPI:
 	def __init__(self):
-		self.token = get_setting("finder.ad.token", "empty_setting")
+		self.token = get_setting("redlight.ad.token", "empty_setting")
 		self.break_auth_loop = False
 		self.base_url = "https://api.alldebrid.com/v4/"
-		self.user_agent = "Finder for Kodi"
+		self.user_agent = "redlight for Kodi"
 
 	def auth(self):
 		self.token = ""

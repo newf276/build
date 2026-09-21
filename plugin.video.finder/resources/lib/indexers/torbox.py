@@ -105,9 +105,9 @@ def resolve_tb(params):
 		resolved_link = TorBox.unrestrict_usenet(file_id)
 	if params.get("play", "false") != "true":
 		return resolved_link
-	from modules.player import FinderPlayer
+	from modules.player import redlightPlayer
 
-	FinderPlayer().run(resolved_link, "video")
+	redlightPlayer().run(resolved_link, "video")
 
 
 def tb_account_info():

@@ -231,7 +231,7 @@ class NavigatorCache:
 			self.set_list(list_name, "default", list_contents)
 
 	def _get_list_prop(self, list_type):
-		return {"default": "finder_%s_default", "edited": "finder_%s_edited", "shortcut_folder": "finder_%s_shortcut_folder"}[list_type]
+		return {"default": "redlight_%s_default", "edited": "redlight_%s_edited", "shortcut_folder": "redlight_%s_shortcut_folder"}[list_type]
 
 	def random_movie_lists(self):
 		m_list = NavigatorCache.movie_list

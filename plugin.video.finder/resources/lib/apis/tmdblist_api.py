@@ -108,7 +108,7 @@ class TMDbListAPI:
 
 		# Best-effort remote delete of the *user's* access token (the v4 endpoint; the v3 path 404s).
 		# Wrapped so a network/JSON error can't abort the local cleanup below.
-		access_token = get_setting("finder.tmdb.token")
+		access_token = get_setting("redlight.tmdb.token")
 		if access_token and access_token != "empty_setting":
 			headers = {"accept": "application/json", "content-type": "application/json", "Authorization": "Bearer %s" % self.read_access_token}
 			try:
@@ -142,7 +142,7 @@ class TMDbListAPI:
 				[i.join() for i in threads]
 			return results
 
-		account_id = get_setting("finder.tmdb.account_id")
+		account_id = get_setting("redlight.tmdb.account_id")
 		string = "get_user_lists"
 		url = "%s/account/%s/lists?page=%s"
 		results = []
@@ -174,7 +174,7 @@ class TMDbListAPI:
 				[i.join() for i in threads]
 			return results
 
-		account_id = get_setting("finder.tmdb.account_id")
+		account_id = get_setting("redlight.tmdb.account_id")
 		string = "get_watchfavrecs_list_details_%s_%s" % (list_id, media_type)
 		url = "%s/account/%s/%s/%s?page=%s"
 		if list_id == "recommendations":
@@ -249,7 +249,7 @@ class TMDbListAPI:
 		return self.request_data(url, params={"media_type": media_type, "media_id": int(media_id)})
 
 	def request_data(self, url, params=None, data=None, method="get"):
-		headers = {"accept": "application/json", "content-type": "application/json", "Authorization": "Bearer %s" % get_setting("finder.tmdb.token")}
+		headers = {"accept": "application/json", "content-type": "application/json", "Authorization": "Bearer %s" % get_setting("redlight.tmdb.token")}
 		try:
 			result = session.request(method, url, params=params, json=data, headers=headers, timeout=90).json()
 		except:

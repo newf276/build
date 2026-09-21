@@ -16,7 +16,7 @@ from threading import Thread
 from caches.episode_groups_cache import episode_groups_cache
 from caches.settings_cache import get_setting
 from modules import kodi_utils, metadata, settings, watched_status
-from modules.player import FinderPlayer
+from modules.player import redlightPlayer
 from modules.utils import clean_file_name, manual_function_import
 from windows.base_window import create_window, open_window
 
@@ -53,8 +53,8 @@ class PlaybackOrchestrator:
 			params_get("disable_autoplay_next_episode", "false") == "true",
 		)
 		self.disabled_ext_ignored = params_get("disabled_ext_ignored", self.disabled_ext_ignored) == "true"
-		self.folders_ignore_filters = get_setting("finder.results.folders_ignore_filters", "false") == "true"
-		self.filter_size_method = int(get_setting("finder.results.filter_size_method", "0"))
+		self.folders_ignore_filters = get_setting("redlight.results.folders_ignore_filters", "false") == "true"
+		self.filter_size_method = int(get_setting("redlight.results.filter_size_method", "0"))
 		self.media_type, self.tmdb_id = params_get("media_type"), params_get("tmdb_id")
 		self.custom_title, self.custom_year = params_get("custom_title", None), params_get("custom_year", None)
 		self.episode_group_label, self.episode_id = params_get("episode_group_label", ""), params_get("episode_id", None)
@@ -76,7 +76,7 @@ class PlaybackOrchestrator:
 		self.limit_resolve = settings.limit_resolve()
 		self.weight_size = settings.size_sort_weighted()
 		self.sort_function, self.quality_filter = settings.results_sort_order(), self._quality_filter()
-		self.include_unknown_size = get_setting("finder.results.size_unknown", "false") == "true"
+		self.include_unknown_size = get_setting("redlight.results.size_unknown", "false") == "true"
 		self.make_search_info()
 		if self.autoscrape:
 			self.autoscrape_nextep_handler()
@@ -168,7 +168,7 @@ class PlaybackOrchestrator:
 		link = self.resolve_internal(debrid_info, chosen_result["link"], "")
 		name = chosen_result["filename"]
 		self._kill_progress_dialog()
-		return FinderPlayer().run(link, "video")
+		return redlightPlayer().run(link, "video")
 
 	def play_file(self, results, source={}):
 		self.playback_successful, self.cancel_all_playback = None, False
@@ -232,7 +232,7 @@ class PlaybackOrchestrator:
 					url, self.playback_successful, self.cancel_all_playback = None, None, False
 					self.playing_filename = item["name"]
 					self.playing_item = item
-					player = FinderPlayer()
+					player = redlightPlayer()
 					try:
 						if self.progress_dialog.iscanceled() or monitor.abortRequested():
 							break

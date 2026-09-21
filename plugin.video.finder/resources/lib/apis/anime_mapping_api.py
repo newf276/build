@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """IMDB / TVDB / TMDB → MAL id mapping for AniSkip.
 
-AniSkip is keyed on MAL ids, but Finder only ever holds TMDB/TVDB/IMDB ids at
+AniSkip is keyed on MAL ids, but redlight only ever holds TMDB/TVDB/IMDB ids at
 play time. Fribb's ``anime-lists`` project publishes a single JSON that maps all
 of those id spaces to MAL; we fetch it once, reduce it to a minimal lookup index,
 and cache the **parsed index** long-term so the multi-MB file is never re-fetched
@@ -16,7 +16,7 @@ so the file carries per-entry season numbers — that lets us key the TMDB/TVDB
 indices on ``(id, season)`` and resolve a specific cours rather than guessing
 (MAL splits long shows into per-season entries; Risk #4).
 
-Resolution order is **tmdb+season → tvdb+season → imdb (season 1 only)**: Finder's
+Resolution order is **tmdb+season → tvdb+season → imdb (season 1 only)**: redlight's
 episode season/episode numbers come from TMDB, so ``themoviedb_id.tv`` +
 ``season.tmdb`` is the most internally-consistent key, and both season-aware
 lookups are tried before the season-blind imdb one. (The original plan said
@@ -41,12 +41,12 @@ _FAIL_TTL_HOURS = 3  # negative cache: don't re-pull the multi-MB file every pla
 
 
 def get_mal_id(tmdb_id=None, tvdb_id=None, imdb_id=None, season=1):
-	"""Resolve a MAL id from the ids Finder holds, or ``None`` if unmapped.
+	"""Resolve a MAL id from the ids redlight holds, or ``None`` if unmapped.
 
 	Tries the two **season-aware** keys first — ``tmdb_id``+season, then
 	``tvdb_id``+season — since MAL splits a show into per-cours entries and only a
 	season-keyed match lands on the right cours. ``imdb_id`` is consulted **last and
-	only for season 1**: the source isn't imdb-season-keyed and Finder holds the
+	only for season 1**: the source isn't imdb-season-keyed and redlight holds the
 	*series-level* imdb (which Fribb attaches to the first cours), so trusting it for
 	a later season would return the wrong cours' MAL id and mistime the skip buttons.
 

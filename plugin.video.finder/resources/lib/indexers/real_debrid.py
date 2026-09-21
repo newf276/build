@@ -144,9 +144,9 @@ def resolve_rd(params):
 	resolved_link = RealDebrid.unrestrict_link(url)
 	if params.get("play", "false") != "true":
 		return resolved_link
-	from modules.player import FinderPlayer
+	from modules.player import redlightPlayer
 
-	FinderPlayer().run(resolved_link, "video")
+	redlightPlayer().run(resolved_link, "video")
 
 
 def rd_account_info():

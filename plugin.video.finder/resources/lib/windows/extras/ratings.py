@@ -52,7 +52,7 @@ class RatingsMixin:
 		for item in final_ratings:
 			self.setProperty("%s_rating" % item["prop"], "true")
 			self.set_label(win_prop + item["_id"], item["rating"])
-			self.set_image(win_prop + 100 + item["_id"], "finder_flags/ratings/%s" % item["icon"])
+			self.set_image(win_prop + 100 + item["_id"], "redlight_flags/ratings/%s" % item["icon"])
 
 	def get_omdb_ratings(self):
 		if not self.display_extra_ratings:
@@ -73,7 +73,7 @@ class RatingsMixin:
 			self.set_image(203, "")
 		else:
 			data = rating_data or self.single_rating_data
-			rating, image = data["rating"], "finder_flags/ratings/%s" % data["icon"]
+			rating, image = data["rating"], "redlight_flags/ratings/%s" % data["icon"]
 			if rating:
 				self.set_image(203, image)
 		self.set_label(

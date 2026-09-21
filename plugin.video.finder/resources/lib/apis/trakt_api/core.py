@@ -28,7 +28,7 @@ __all__ = [
 ]
 
 # E5: serializes the read-expiry / refresh-token dance across plugin and
-# service threads. Replaces the previous `finder.trakt_refreshing_token` window
+# service threads. Replaces the previous `redlight.trakt_refreshing_token` window
 # property latch, which was both racy (the expiry read happened outside the
 # latch, so two callers could both observe a lapsed token before either set
 # the flag) and prone to leaking "true" across plugin invocations on a crash.
@@ -112,12 +112,12 @@ def call_trakt(path, params=None, data=None, is_delete=False, with_auth=True, me
 			# previous holder already updated it.
 			with _refresh_lock:
 				try:
-					expires_at = float(settings_cache.get_setting("finder.trakt.expires"))
+					expires_at = float(settings_cache.get_setting("redlight.trakt.expires"))
 				except (ValueError, TypeError):
 					expires_at = 0.0
 				if time.time() > expires_at:
 					_refresh_token_locked()
-			token = settings_cache.get_setting("finder.trakt.token")
+			token = settings_cache.get_setting("redlight.trakt.token")
 			if token:
 				req_headers["Authorization"] = "Bearer " + token
 		try:
@@ -225,7 +225,7 @@ def _refresh_token_locked():
 			"client_secret": CLIENT_SECRET,
 			"redirect_uri": "urn:ietf:wg:oauth:2.0:oob",
 			"grant_type": "refresh_token",
-			"refresh_token": settings_cache.get_setting("finder.trakt.refresh"),
+			"refresh_token": settings_cache.get_setting("redlight.trakt.refresh"),
 		}
 		response = call_trakt("oauth/token", data=data, with_auth=False)
 		if response:
