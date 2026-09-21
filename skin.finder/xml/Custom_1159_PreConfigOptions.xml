@@ -20,17 +20,31 @@
 				<onback>Dialog.Close(1159)</onback>
 				<onback condition="!String.IsEqual(Window(Home).Property(Finder.DirectDialog1158),true)">ActivateWindow(1106)</onback>
 				<content>
+					<!-- Red Light -->
 					<item>
-						<label>[COLOR dodgerblue]Trakt Collection[/COLOR] (Recommended)</label>
-						<onclick>Dialog.Close(All)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_trakt_library)</onclick>
+						<label>Trakt Library</label>
+						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
+						<onclick>Dialog.Close(1159)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=red_light_trakt_library)</onclick>
 					</item>
 					<item>
-						<label>Basic</label>
-						<visible>String.IsEqual(Skin.String(SelectedPreConfigAddon),fenlight)</visible>
-						<onclick>ClearProperty(FENtastic.DirectDialog1158,home)</onclick>
+						<label>Trakt Watchlist</label>
+						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
 						<onclick>Dialog.Close(1159)</onclick>
-						<onclick>RunScript(script.fentastic.helper,mode=apply_pre_config&amp;config=fenlight_basic)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=red_light_trakt_watchlist)</onclick>
+					</item>
+					<item>
+						<label>TMDB Watchlist + Trakt as Tracker</label>
+						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
+						<onclick>Dialog.Close(1159)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=red_light_tmdb_watchlist)</onclick>
+					</item>
+					<!-- The Finder -->
+					<item>
+						<label>Trakt Library</label>
+						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
+						<onclick>Dialog.Close(1159)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_trakt_library)</onclick>
 					</item>
 					<item>
 						<label>Trakt Watchlist</label>
@@ -43,12 +57,6 @@
 						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
 						<onclick>Dialog.Close(1159)</onclick>
 						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_tmdb_watchlist)</onclick>
-					</item>
-					<item>
-						<label>TMDB Addon Only</label>
-						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
-						<onclick>Dialog.Close(1159)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_tmdbaddon)</onclick>
 					</item>
 				</content>
 			</control>

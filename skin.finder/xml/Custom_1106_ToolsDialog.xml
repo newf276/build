@@ -26,7 +26,7 @@
     				    <label>Step 1. Select Pre-Config</label>
     				    <visible>True</visible>
     				    <onclick>Dialog.Close(all)</onclick>
-    				    <onclick>ActivateWindow(1159)</onclick>
+    				    <onclick>ActivateWindow(1158)</onclick>
 					</item>
                     <item>
                         <label>Step 2. Select Look/Feel</label>
@@ -65,6 +65,11 @@
                     </item>
                     <item>
                         <label>Clear Newf's Finder Caches</label>
+                        <onclick>Dialog.Close(all)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=clear_all_cache)</onclick>
+                    </item>
+                    <item>
+                        <label>Clear RedLight Caches</label>
                         <onclick>Dialog.Close(all)</onclick>
 						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=clear_all_cache)</onclick>
                     </item>
