@@ -22,16 +22,16 @@
 				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1106),true)">ClearProperty(Finder.DirectDialog1106,home)</onback>
 				<onback condition="!String.IsEqual(Window(Home).Property(Finder.DirectDialog1106),true)">Dialog.Close(1106)</onback>
 				<content>
+                    <item>
+                        <label>Step 1. Select Look/Feel (recommend Cinema)</label>
+                        <onclick>ActivateWindow(1152)</onclick>
+                    </item>
 					<item>
-    				    <label>Step 1. Select Pre-Config</label>
+    				    <label>Step 2. Select Pre-Config</label>
     				    <visible>True</visible>
     				    <onclick>Dialog.Close(all)</onclick>
     				    <onclick>ActivateWindow(1159)</onclick>
 					</item>
-                    <item>
-                        <label>Step 2. Select Look/Feel</label>
-                        <onclick>ActivateWindow(1152)</onclick>
-                    </item>
                     <item>
                         <label>Step 3. Authorize Services</label>
                         <onclick>Dialog.Close(all)</onclick>
