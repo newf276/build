@@ -20,63 +20,73 @@
 				<onback>Dialog.Close(1159)</onback>
 				<onback condition="!String.IsEqual(Window(Home).Property(Finder.DirectDialog1158),true)">ActivateWindow(1106)</onback>
 				<content>
-					<!-- Red Light -->
-					<item>
-						<label>Red Light: MDBlist Collection</label>
-                        <visible>System.HasAddon(plugin.video.redlight)</visible>
-						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
-						<onclick>Dialog.Close(All)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=red_light_mdblist_library)</onclick>
-					</item>
-					<item>
-						<label>Red Light:MDBlist Watchlist</label>
-                        <visible>System.HasAddon(plugin.video.redlight)</visible>
-						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
-						<onclick>Dialog.Close(1159)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=red_light_mdblist_watchlist)</onclick>
-					</item>
-					<item>
-						<label>Red Light:Trakt Library</label>
-                        <visible>System.HasAddon(plugin.video.redlight)</visible>
-						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
-						<onclick>Dialog.Close(1159)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=red_light_trakt_library)</onclick>
-					</item>
-					<item>
-						<label>Red Light:Trakt Watchlist</label>
-                        <visible>System.HasAddon(plugin.video.redlight)</visible>
-						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
-						<onclick>Dialog.Close(1159)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=red_light_trakt_watchlist)</onclick>
-					</item>
-					<item>
-						<label>Red Light:TMDB Watchlist + Trakt as Tracker</label>
-                        <visible>System.HasAddon(plugin.video.redlight)</visible>
-						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
-						<onclick>Dialog.Close(1159)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=red_light_tmdb_watchlist)</onclick>
-					</item>
 					<!-- The Finder -->
 					<item>
 						<label>Finder: Trakt Library</label>
-                        <visible>System.HasAddon(plugin.video.finder)</visible>
 						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
 						<onclick>Dialog.Close(1159)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_trakt_library)</onclick>
+						<onclick condition="System.AddonIsEnabled(plugin.video.finder)">RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_trakt_library),return)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.finder) + !System.AddonIsEnabled(plugin.video.finder)">EnableAddon(plugin.video.finder)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.finder)">InstallAddon(plugin.video.finder)</onclick>
 					</item>
 					<item>
-						<label>Finder:Trakt Watchlist</label>
-                        <visible>System.HasAddon(plugin.video.finder)</visible>
+						<label>Finder: Trakt Watchlist</label>
 						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
 						<onclick>Dialog.Close(1159)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_trakt_watchlist)</onclick>
+						<onclick condition="System.AddonIsEnabled(plugin.video.finder)">RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_trakt_watchlist)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.finder) + !System.AddonIsEnabled(plugin.video.finder)">EnableAddon(plugin.video.finder)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.finder)">InstallAddon(plugin.video.finder)</onclick>
+					</item>
+
+					<item>
+						<label>Finder: TMDB Watchlist + Trakt</label>
+						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
+						<onclick>Dialog.Close(1159)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.finder)">InstallAddon(plugin.video.finder)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.finder) + !System.AddonIsEnabled(plugin.video.finder)">EnableAddon(plugin.video.finder)</onclick>
+						<onclick condition="System.AddonIsEnabled(plugin.video.finder)">RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_tmdb_watchlist)</onclick>
+					</item>
+					<!-- Red Light -->
+					<item>
+						<label>Red Light: MDBlist Collection</label>
+						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
+						<onclick>Dialog.Close(1159)</onclick>
+						<onclick condition="System.AddonIsEnabled(plugin.video.redlight)">RunScript(script.finder.helper,mode=apply_pre_config&amp;config=red_light_mdblist_library)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.redlight) + !System.AddonIsEnabled(plugin.video.redlight)">EnableAddon(plugin.video.redlight)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.redlight)">InstallAddon(plugin.video.redlight)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=red_light_mdblist_library)</onclick>
 					</item>
 					<item>
-						<label>Finder:TMDB Watchlist + Trakt as Tracker</label>
-                        <visible>System.HasAddon(plugin.video.finder)</visible>
+						<label>Red Light: MDBlist Watchlist</label>
 						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
 						<onclick>Dialog.Close(1159)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_tmdb_watchlist)</onclick>
+						<onclick condition="System.AddonIsEnabled(plugin.video.redlight)">RunScript(script.finder.helper,mode=apply_pre_config&amp;config=red_light_mdblist_watchlist)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.redlight) + !System.AddonIsEnabled(plugin.video.redlight)">EnableAddon(plugin.video.redlight)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.redlight)">InstallAddon(plugin.video.redlight)</onclick>
+					</item>
+					<item>
+						<label>Red Light: Trakt Library</label>
+						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
+						<onclick>Dialog.Close(1159)</onclick>
+						<onclick condition="System.AddonIsEnabled(plugin.video.redlight)">RunScript(script.finder.helper,mode=apply_pre_config&amp;config=red_light_trakt_library)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.redlight) + !System.AddonIsEnabled(plugin.video.redlight)">EnableAddon(plugin.video.redlight)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.redlight)">InstallAddon(plugin.video.redlight)</onclick>
+					</item>
+					<item>
+						<label>Red Light: Trakt Watchlist</label>
+						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
+						<onclick>Dialog.Close(1159)</onclick>
+						<onclick condition="System.AddonIsEnabled(plugin.video.redlight)">RunScript(script.finder.helper,mode=apply_pre_config&amp;config=red_light_trakt_watchlist)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.redlight) + !System.AddonIsEnabled(plugin.video.redlight)">EnableAddon(plugin.video.redlight)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.redlight)">InstallAddon(plugin.video.redlight)</onclick>
+					</item>
+					<item>
+						<label>Red Light: TMDB Watchlist + Trakt</label>
+						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
+						<onclick>Dialog.Close(1159)</onclick>
+						<onclick condition="System.AddonIsEnabled(plugin.video.redlight)">RunScript(script.finder.helper,mode=apply_pre_config&amp;config=red_light_tmdb_watchlist),return)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.redlight) + !System.AddonIsEnabled(plugin.video.redlight)">EnableAddon(plugin.video.redlight)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.redlight)">InstallAddon(plugin.video.redlight)</onclick>
 					</item>
 				</content>
 			</control>
