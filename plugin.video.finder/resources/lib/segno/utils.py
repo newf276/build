@@ -154,7 +154,7 @@ def matrix_iter_verbose(matrix, matrix_size, scale=1, border=None):
     the border and the scaling factor.
 
     This iterator / generator returns different values for dark / light modules
-    and therefor the different parts (like the redlight patterns, alignment patterns etc.)
+    and therefor the different parts (like the finder patterns, alignment patterns etc.)
     are distinguishable. If this information isn't necessary, use the
     :py:func:`matrix_iter()` function because it is much cheaper and faster.
 
@@ -204,11 +204,11 @@ def matrix_iter_verbose(matrix, matrix_size, scale=1, border=None):
             if (i == 8 and (j < 9 or (not is_micro and j > width - 10))) \
                     or (j == 8 and (i < 8 or (not is_micro and i > height - 9))):
                 return (consts.TYPE_FORMAT_LIGHT, consts.TYPE_FORMAT_DARK)[val]
-            # redlight pattern
+            # Finder pattern
             # top left             top right
             if (i < 7 and (j < 7 or (not is_micro and j > width - 8))) \
                     or (not is_micro and i > height - 8 and j < 7):  # bottom left
-                return (consts.TYPE_redlight_PATTERN_LIGHT, consts.TYPE_redlight_PATTERN_DARK)[val]
+                return (consts.TYPE_FINDER_PATTERN_LIGHT, consts.TYPE_FINDER_PATTERN_DARK)[val]
             # Separator
             # top left              top right
             if (i < 8 and (j < 8 or (not is_micro and j > width - 9))) \

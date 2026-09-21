@@ -4,7 +4,7 @@
 A single context-menu item toggles the current movie/show in/out of **one
 pre-configured list target** with no intermediate dialog. The target is stored
 as a compact token (see ``encode_target``/``parse_target``); when unset it falls
-back to the Trakt watchlist (if Trakt is connected) or the local redlight
+back to the Trakt watchlist (if Trakt is connected) or the local Finder
 favorites. Each supported provider/list is one entry in ``REGISTRY`` — adding a
 future integration means adding one descriptor plus its thin adapter fns here.
 
@@ -18,7 +18,7 @@ from urllib.parse import quote, unquote
 
 # Static target kinds carry no extra fields; dynamic kinds (personal/custom
 # lists) carry the identifiers needed to address one specific list.
-STATIC_KINDS = ("trakt_watchlist", "trakt_collection", "tmdb_watchlist", "tmdb_favorites", "redlight_favorites")
+STATIC_KINDS = ("trakt_watchlist", "trakt_collection", "tmdb_watchlist", "tmdb_favorites", "finder_favorites")
 _UNSET = (None, "", "empty_setting")
 
 
@@ -32,8 +32,8 @@ def encode_target(kind, **fields):
 		return "trakt_list:%s:%s" % (quote(str(fields["user"]), safe=""), quote(str(fields["slug"]), safe=""))
 	if kind == "tmdb_list":
 		return "tmdb_list:%s" % quote(str(fields["list_id"]), safe="")
-	if kind == "redlight_list":
-		return "redlight_list:%s:%s" % (quote(str(fields["name"]), safe=""), quote(str(fields["author"]), safe=""))
+	if kind == "finder_list":
+		return "finder_list:%s:%s" % (quote(str(fields["name"]), safe=""), quote(str(fields["author"]), safe=""))
 	raise ValueError("unknown quick-add kind: %s" % kind)
 
 
@@ -50,10 +50,10 @@ def parse_target(token):
 		user, _, slug = rest.partition(":")
 		if user and slug:
 			return ("trakt_list", {"user": unquote(user), "slug": unquote(slug)})
-	if head == "redlight_list":
+	if head == "finder_list":
 		name, _, author = rest.partition(":")
 		if name and author:
-			return ("redlight_list", {"name": unquote(name), "author": unquote(author)})
+			return ("finder_list", {"name": unquote(name), "author": unquote(author)})
 	return (None, {})
 
 
@@ -61,14 +61,14 @@ def resolve_target(token):
 	"""Decode ``token``, substituting the fallback target when it's unset/invalid.
 
 	Fallback: Trakt watchlist when Trakt is connected, otherwise the always-local
-	redlight favorites. This is the single source of truth for "what does Quick Add
+	Finder favorites. This is the single source of truth for "what does Quick Add
 	act on" — both the engine and the context-menu label use it.
 	"""
 	kind, fields = parse_target(token)
 	if kind is None:
 		if _resolve("modules.settings.trakt_user_active")():
 			return ("trakt_watchlist", {})
-		return ("redlight_favorites", {})
+		return ("finder_favorites", {})
 	return (kind, fields)
 
 
@@ -91,7 +91,7 @@ def _provider_name(kind):
 		return "Trakt"
 	if kind.startswith("tmdb"):
 		return "TMDb"
-	return "redlight"
+	return "Finder"
 
 
 # --------------------------------------------------------------------------- #
@@ -244,27 +244,27 @@ def _tmdb_list_remove(ctx):
 
 
 # --------------------------------------------------------------------------- #
-# redlight (local) adapters
+# Finder (local) adapters
 # --------------------------------------------------------------------------- #
-def _redlight_fav_member(ctx):
+def _finder_fav_member(ctx):
 	from caches.favorites_cache import favorites_cache
 
 	return any(i["tmdb_id"] == str(ctx["tmdb_id"]) for i in favorites_cache.get_favorites(ctx["media_type"]))
 
 
-def _redlight_fav_add(ctx):
+def _finder_fav_add(ctx):
 	from caches.favorites_cache import favorites_cache
 
 	return favorites_cache.set_favourite(ctx["media_type"], ctx["tmdb_id"], ctx["title"])
 
 
-def _redlight_fav_remove(ctx):
+def _finder_fav_remove(ctx):
 	from caches.favorites_cache import favorites_cache
 
 	return favorites_cache.delete_favourite(ctx["media_type"], ctx["tmdb_id"], ctx["title"])
 
 
-def _redlight_list_member(ctx):
+def _finder_list_member(ctx):
 	from caches.personal_lists_cache import personal_lists_cache
 
 	fields = ctx["token_fields"]
@@ -272,7 +272,7 @@ def _redlight_list_member(ctx):
 	return any(str(i.get("media_id")) == str(ctx["tmdb_id"]) for i in contents)
 
 
-def _redlight_list_add(ctx):
+def _finder_list_add(ctx):
 	from caches.personal_lists_cache import personal_lists_cache
 
 	fields = ctx["token_fields"]
@@ -286,7 +286,7 @@ def _redlight_list_add(ctx):
 	return personal_lists_cache.add_remove_list_item(fields["name"], fields["author"], "add", new_contents) == "Success"
 
 
-def _redlight_list_remove(ctx):
+def _finder_list_remove(ctx):
 	from caches.personal_lists_cache import personal_lists_cache
 
 	fields = ctx["token_fields"]
@@ -297,7 +297,7 @@ def _redlight_list_remove(ctx):
 # Membership listings — the full set of tmdb_ids currently in a target, fetched
 # once per directory render so the context-menu label can read "Add to" vs
 # "Remove from" without an API call per item. Every underlying fetch is cached
-# (Trakt object cache / TMDb lists cache) or local (redlight), so this is one
+# (Trakt object cache / TMDb lists cache) or local (Finder), so this is one
 # (usually cached) read per render, not one per item.
 # --------------------------------------------------------------------------- #
 def _ids_from(items, getter):
@@ -340,13 +340,13 @@ def _tmdb_list_ids(media_type, fields):
 	return _ids_from(tmdb_list_api.get_list_details(fields["list_id"]), lambda i: i.get("id"))
 
 
-def _redlight_fav_ids(media_type, fields):
+def _finder_fav_ids(media_type, fields):
 	from caches.favorites_cache import favorites_cache
 
 	return _ids_from(favorites_cache.get_favorites(media_type), lambda i: i.get("tmdb_id"))
 
 
-def _redlight_list_ids(media_type, fields):
+def _finder_list_ids(media_type, fields):
 	from caches.personal_lists_cache import personal_lists_cache
 
 	return _ids_from(personal_lists_cache.get_list(fields["name"], fields["author"]), lambda i: i.get("media_id"))
@@ -426,25 +426,25 @@ REGISTRY = {
 		"notifies": False,
 		"needs": ("tmdb_id",),
 	},
-	"redlight_favorites": {
-		"friendly": "redlight Favorites",
+	"finder_favorites": {
+		"friendly": "Finder Favorites",
 		"media_type": lambda mt: mt,
 		"auth": None,
-		"is_member": _redlight_fav_member,
-		"add": _redlight_fav_add,
-		"remove": _redlight_fav_remove,
-		"member_ids": _redlight_fav_ids,
+		"is_member": _finder_fav_member,
+		"add": _finder_fav_add,
+		"remove": _finder_fav_remove,
+		"member_ids": _finder_fav_ids,
 		"notifies": False,
 		"needs": ("tmdb_id", "title"),
 	},
-	"redlight_list": {
-		"friendly": "redlight List",
+	"finder_list": {
+		"friendly": "Finder List",
 		"media_type": lambda mt: mt,
 		"auth": None,
-		"is_member": _redlight_list_member,
-		"add": _redlight_list_add,
-		"remove": _redlight_list_remove,
-		"member_ids": _redlight_list_ids,
+		"is_member": _finder_list_member,
+		"add": _finder_list_add,
+		"remove": _finder_list_remove,
+		"member_ids": _finder_list_ids,
 		"notifies": False,
 		"needs": ("tmdb_id", "title", "premiered", "current_time"),
 	},
@@ -468,10 +468,10 @@ def cm_context(media_type_raw):
 	verb. Call this once in the list builder, then ``cm_item_label`` per item.
 	"""
 	get_setting = _resolve("caches.settings_cache.get_setting")
-	token = get_setting("redlight.context_menu.quick_add_target", "empty_setting")
+	token = get_setting("finder.context_menu.quick_add_target", "empty_setting")
 	kind, fields = resolve_target(token)
 	descriptor = REGISTRY[kind]
-	name = get_setting("redlight.context_menu.quick_add_target_label", "") or descriptor["friendly"]
+	name = get_setting("finder.context_menu.quick_add_target_label", "") or descriptor["friendly"]
 	auth = descriptor.get("auth")
 	if auth and not _resolve(auth)():
 		return name, None
@@ -494,7 +494,7 @@ def _refresh_hint(kind, fields):
 		{
 			"tmdb_watchlist": "watchlist",
 			"tmdb_favorites": "favorites",
-			"redlight_favorites": "favorites",
+			"finder_favorites": "favorites",
 		}.get(kind)
 		or fields.get("list_id")
 		or fields.get("name")
@@ -513,7 +513,7 @@ def run_toggle(params):
 	if media_type_raw in ("people", "person"):
 		return _notify("Quick Add is not available for people", 3000)
 	get_setting = _resolve("caches.settings_cache.get_setting")
-	token = get_setting("redlight.context_menu.quick_add_target", "empty_setting")
+	token = get_setting("finder.context_menu.quick_add_target", "empty_setting")
 	kind, fields = resolve_target(token)
 	descriptor = REGISTRY[kind]
 	auth = descriptor.get("auth")
@@ -537,7 +537,7 @@ def run_toggle(params):
 		return
 	# Prefer the friendly name captured when the target was picked (e.g. a TMDb list's
 	# name rather than its numeric id); fall back to the kind's generic label.
-	label = get_setting("redlight.context_menu.quick_add_target_label", "")
+	label = get_setting("finder.context_menu.quick_add_target_label", "")
 	display = label or (target_friendly(token) if kind in STATIC_KINDS else descriptor["friendly"])
 	if success:
 		_notify("%s %s" % ("Removed from" if member else "Added to", display), 3000)

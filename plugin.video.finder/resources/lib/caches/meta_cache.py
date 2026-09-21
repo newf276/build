@@ -97,7 +97,7 @@ class MetaCache:
 	def get_memory_cache(self, media_type, id_type, media_id, current_time):
 		result = None
 		try:
-			prop_string = "redlight.%s_%s_%s" % (media_type, id_type, media_id)
+			prop_string = "finder.%s_%s_%s" % (media_type, id_type, media_id)
 			cachedata = _decode(get_property(prop_string))
 			if cachedata[0] > current_time:
 				result = cachedata[1]
@@ -108,7 +108,7 @@ class MetaCache:
 	def get_memory_cache_season(self, prop_string, current_time):
 		result = None
 		try:
-			cachedata = _decode(get_property("redlight.meta_season_%s" % prop_string))
+			cachedata = _decode(get_property("finder.meta_season_%s" % prop_string))
 			if cachedata[0] > current_time:
 				result = cachedata[1]
 		except Exception:
@@ -117,7 +117,7 @@ class MetaCache:
 
 	def set_memory_cache(self, media_type, id_type, meta, expires, media_id):
 		try:
-			cachedata, prop_string = [expires, meta], "redlight.%s_%s_%s" % (media_type, id_type, media_id)
+			cachedata, prop_string = [expires, meta], "finder.%s_%s_%s" % (media_type, id_type, media_id)
 			set_property(prop_string, json.dumps(cachedata))
 		except Exception:
 			pass
@@ -125,19 +125,19 @@ class MetaCache:
 	def set_memory_cache_season(self, prop_string, meta, expires):
 		try:
 			cachedata = [expires, meta]
-			set_property("redlight.meta_season_%s" % prop_string, json.dumps(cachedata))
+			set_property("finder.meta_season_%s" % prop_string, json.dumps(cachedata))
 		except Exception:
 			pass
 
 	def delete_memory_cache(self, media_type, id_type, media_id):
 		try:
-			clear_property("redlight.%s_%s_%s" % (media_type, id_type, media_id))
+			clear_property("finder.%s_%s_%s" % (media_type, id_type, media_id))
 		except Exception:
 			pass
 
 	def delete_memory_cache_season(self, prop_string):
 		try:
-			clear_property("redlight.meta_season_%s" % prop_string)
+			clear_property("finder.meta_season_%s" % prop_string)
 		except Exception:
 			pass
 

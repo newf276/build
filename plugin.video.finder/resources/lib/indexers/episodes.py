@@ -199,10 +199,10 @@ def build_episode_list(params):
 				set_properties(
 					{
 						"episode_type": episode_type,
-						"redlight.extras_params": extras_params,
-						"redlight.options_params": options_params,
-						"redlight.playback_options_params": playback_options_params,
-						"redlight.quick_add_params": quick_add_params,
+						"finder.extras_params": extras_params,
+						"finder.options_params": options_params,
+						"finder.playback_options_params": playback_options_params,
+						"finder.quick_add_params": quick_add_params,
 					}
 				)
 				yield (play_params, listitem, False)
@@ -300,7 +300,7 @@ def build_single_episode(list_type, params={}):
 				"episode.progress": "In Progress Episodes",
 				"episode.recently_watched": "Recently Watched Episodes",
 				"episode.next_trakt": "Next Episodes",
-				"episode.next_redlight": "Next Episodes",
+				"episode.next_finder": "Next Episodes",
 				"episode.trakt": {"true": "Recently Aired Episodes", None: "Trakt Calendar"},
 			}[list_type]
 			if isinstance(cat_name, dict):
@@ -650,10 +650,10 @@ def build_single_episode(list_type, params={}):
 			set_properties(
 				{
 					"episode_type": episode_type,
-					"redlight.extras_params": extras_params,
-					"redlight.options_params": options_params,
-					"redlight.playback_options_params": playback_options_params,
-					"redlight.quick_add_params": quick_add_params,
+					"finder.extras_params": extras_params,
+					"finder.options_params": options_params,
+					"finder.playback_options_params": playback_options_params,
+					"finder.quick_add_params": quick_add_params,
 				}
 			)
 			item_list_append(
@@ -707,7 +707,7 @@ def build_single_episode(list_type, params={}):
 		if watched_indicators == 1:
 			resformat, resinsert, list_type = "%Y-%m-%dT%H:%M:%S.%fZ", "2000-01-01T00:00:00.000Z", "episode.next_trakt"
 		else:
-			resformat, resinsert, list_type = "%Y-%m-%d %H:%M:%S", "2000-01-01 00:00:00", "episode.next_redlight"
+			resformat, resinsert, list_type = "%Y-%m-%d %H:%M:%S", "2000-01-01 00:00:00", "episode.next_finder"
 		if include_unwatched != 0:
 			if include_unwatched in (1, 3):
 				from apis.trakt_api import trakt_watchlist

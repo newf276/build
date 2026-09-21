@@ -6,7 +6,7 @@
     "_section": "General"
   },
   {
-    "setting_id": "auto_start_redlight",
+    "setting_id": "auto_start_finder",
     "setting_type": "boolean",
     "setting_default": "false"
   },
@@ -88,7 +88,7 @@
     "setting_type": "action",
     "setting_default": "1",
     "settings_options": {
-      "0": "redlight",
+      "0": "Finder",
       "1": "Trakt"
     }
   },
@@ -123,25 +123,25 @@
   {
     "setting_id": "movie_download_directory",
     "setting_type": "path",
-    "setting_default": "special://profile/addon_data/plugin.video.redlight/Movies Downloads/",
+    "setting_default": "special://profile/addon_data/plugin.video.finder/Movies Downloads/",
     "browse_mode": "0"
   },
   {
     "setting_id": "tvshow_download_directory",
     "setting_type": "path",
-    "setting_default": "special://profile/addon_data/plugin.video.redlight/TV Show Downloads/",
+    "setting_default": "special://profile/addon_data/plugin.video.finder/TV Show Downloads/",
     "browse_mode": "0"
   },
   {
     "setting_id": "premium_download_directory",
     "setting_type": "path",
-    "setting_default": "special://profile/addon_data/plugin.video.redlight/Premium Downloads/",
+    "setting_default": "special://profile/addon_data/plugin.video.finder/Premium Downloads/",
     "browse_mode": "0"
   },
   {
     "setting_id": "image_download_directory",
     "setting_type": "path",
-    "setting_default": "special://profile/addon_data/plugin.video.redlight/Image Downloads/",
+    "setting_default": "special://profile/addon_data/plugin.video.finder/Image Downloads/",
     "browse_mode": "0"
   },
   {

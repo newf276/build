@@ -162,9 +162,9 @@ def resolve_ad(params):
 	resolved_link = AllDebrid.unrestrict_link(url)
 	if params.get("play", "false") != "true":
 		return resolved_link
-	from modules.player import redlightPlayer
+	from modules.player import FinderPlayer
 
-	redlightPlayer().run(resolved_link, "video")
+	FinderPlayer().run(resolved_link, "video")
 
 
 def ad_delete(file_id):

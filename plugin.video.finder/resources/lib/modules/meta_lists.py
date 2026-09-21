@@ -281,7 +281,7 @@ def mixed_brands():
 	#                  get_icon(..., "network_icons")), matched on the brand's first network id.
 	#   logo         - the TMDb watch-provider image path, matched on the first provider id that
 	#                  has one (movie preferred over TV). A brand's canonical base provider id may
-	#                  be absent from redlight's data subset while a channel-variant id still has a logo.
+	#                  be absent from Finder's data subset while a channel-variant id still has a logo.
 	# All are None/absent when nothing resolves; the menu then falls back to a generic icon.
 	wp = _load("watch_providers")
 	logos = {}

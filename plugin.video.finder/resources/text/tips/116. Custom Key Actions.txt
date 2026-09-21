@@ -1,5 +1,5 @@
 
-With redlight, you can assign a button on your remote/keyboard, via Kodi's keymap, to enact a context menu item from redlight automatically.
+With Finder, you can assign a button on your remote/keyboard, via Kodi's keymap, to enact a context menu item from Finder automatically.
 
 Your choices for the mode parameter are:
 
@@ -18,7 +18,7 @@ custom_key.favorites_manager
 
 Your command in the keymap would look like this:
 
-RunPlugin(plugin://plugin.video.redlight/?mode=[CHOSEN OPTION FROM ABOVE])
+RunPlugin(plugin://plugin.video.finder/?mode=[CHOSEN OPTION FROM ABOVE])
 
 You replace [CHOSEN OPTION FROM ABOVE] with your chosen mode from above.
 

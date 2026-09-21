@@ -70,7 +70,7 @@ class source:
 		except Exception as e:
 			from modules.kodi_utils import logger
 
-			logger("redlight folders scraper Exception", str(e))
+			logger("Finder folders scraper Exception", str(e))
 		source_utils.internal_results(self.scraper_name, self.sources)
 		return self.sources
 

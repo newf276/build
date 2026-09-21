@@ -419,7 +419,7 @@ class RandomLists:
 			self.list_items = self.function(self.params).worker()
 			self.category_name = list_name
 		except:
-			kodi_utils.clear_property("redlight.random_because_you_watched")
+			kodi_utils.clear_property("finder.random_because_you_watched")
 		self.make_directory()
 
 	def random_trakt_lists(self):
@@ -626,9 +626,9 @@ class RandomLists:
 		kodi_utils.end_directory(self.handle, cacheToDisc=False if self.is_external else True)
 		if self.is_external:
 			if self.folder_name:
-				kodi_utils.set_property("redlight.%s" % self.folder_name, self.category_name)
+				kodi_utils.set_property("finder.%s" % self.folder_name, self.category_name)
 			else:
-				kodi_utils.set_property("redlight.%s" % self.base_list_name, self.category_name)
+				kodi_utils.set_property("finder.%s" % self.base_list_name, self.category_name)
 		else:
 			kodi_utils.set_view_mode(self.view_mode, self.content_type, self.is_external)
 
@@ -660,7 +660,7 @@ def random_shortcut_folders(folder_name, random_results):
 	menu_type = random_check[random_list["mode"]]
 	list_name = random_list.get("list_name", None) or random_list.get("name", None) or "Random"
 	if is_external:
-		kodi_utils.set_property("redlight.%s" % folder_name, list_name)
+		kodi_utils.set_property("finder.%s" % folder_name, list_name)
 	if menu_type == "movie":
 		return Movies(random_list).fetch_list()
 	if menu_type == "tvshow":

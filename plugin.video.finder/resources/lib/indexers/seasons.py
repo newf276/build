@@ -111,8 +111,8 @@ def build_season_list(params):
 					{
 						"totalepisodes": str(aired_eps),
 						"watchedprogress": str(visible_progress),
-						"redlight.extras_params": extras_params,
-						"redlight.options_params": options_params,
+						"finder.extras_params": extras_params,
+						"finder.options_params": options_params,
 					}
 				)
 				if is_external:

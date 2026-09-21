@@ -55,13 +55,13 @@ def writable(file_or_path, mode, encoding=None):
 def colorful(dark, light):
     def decorate(f):
         @functools.wraps(f)
-        def wrapper(matrix, matrix_size, out, dark=dark, light=light, redlight_dark=False, redlight_light=False,
+        def wrapper(matrix, matrix_size, out, dark=dark, light=light, finder_dark=False, finder_light=False,
                     data_dark=False, data_light=False, version_dark=False, version_light=False,
                     format_dark=False, format_light=False, alignment_dark=False, alignment_light=False,
                     timing_dark=False, timing_light=False, separator=False, dark_module=False,
                     quiet_zone=False, **kw):
-            cm = _make_colormap(*matrix_size, dark=dark, light=light, redlight_dark=redlight_dark,
-                                redlight_light=redlight_light, data_dark=data_dark,
+            cm = _make_colormap(*matrix_size, dark=dark, light=light, finder_dark=finder_dark,
+                                finder_light=finder_light, data_dark=data_dark,
                                 data_light=data_light, version_dark=version_dark,
                                 version_light=version_light, format_dark=format_dark,
                                 format_light=format_light, alignment_dark=alignment_dark,
@@ -338,7 +338,7 @@ def write_png(matrix, matrix_size, out, colormap, scale=1, border=None, compress
     black = (0, 0, 0)
     white = (255, 255, 255)
     transparent = (-1, -1, -1, -1)  # Invalid placeholder for transparent color
-    dark_idx = consts.TYPE_redlight_PATTERN_DARK
+    dark_idx = consts.TYPE_FINDER_PATTERN_DARK
     qz_idx = consts.TYPE_QUIET_ZONE
     clr_map = {k: png_color(colormap[k]) for k in colormap}
     # Creating a palette here regardless of the image type (greyscale vs. index-colors)
@@ -1000,7 +1000,7 @@ _NAME2RGB = {
 
 
 def _make_colormap(matrix_width, matrix_height, dark, light,
-                   redlight_dark=False, redlight_light=False,
+                   finder_dark=False, finder_light=False,
                    data_dark=False, data_light=False,
                    version_dark=False, version_light=False,
                    format_dark=False, format_light=False,
@@ -1021,8 +1021,8 @@ def _make_colormap(matrix_width, matrix_height, dark, light,
                                 consts.TYPE_ALIGNMENT_PATTERN_DARK,
                                 consts.TYPE_ALIGNMENT_PATTERN_LIGHT])
     mt2color = {
-        consts.TYPE_redlight_PATTERN_DARK: redlight_dark if redlight_dark is not False else dark,
-        consts.TYPE_redlight_PATTERN_LIGHT: redlight_light if redlight_light is not False else light,
+        consts.TYPE_FINDER_PATTERN_DARK: finder_dark if finder_dark is not False else dark,
+        consts.TYPE_FINDER_PATTERN_LIGHT: finder_light if finder_light is not False else light,
         consts.TYPE_DATA_DARK: data_dark if data_dark is not False else dark,
         consts.TYPE_DATA_LIGHT: data_light if data_light is not False else light,
         consts.TYPE_VERSION_DARK: version_dark if version_dark is not False else dark,

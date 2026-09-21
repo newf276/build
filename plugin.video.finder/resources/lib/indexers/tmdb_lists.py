@@ -112,20 +112,20 @@ def get_tmdb_lists(params):
 	random, shuffle_lists = params.get("random", "false") == "true", params.get("shuffle", "false") == "true"
 	returning_to_list = False
 	try:
-		data = get_all_tmdb_lists(get_setting("redlight.tmdblist.list_sort", "0"))
+		data = get_all_tmdb_lists(get_setting("finder.tmdblist.list_sort", "0"))
 		if data:
 			if shuffle_lists:
 				returning_to_list = "build_tmdb_lists_contents" in kodi_utils.folder_path()
 				if returning_to_list:
 					try:
-						data = json.loads(kodi_utils.get_property("redlight.tmdb.lists.order"))
+						data = json.loads(kodi_utils.get_property("finder.tmdb.lists.order"))
 					except:
 						pass
 				else:
 					shuffle(data)
-					kodi_utils.set_property("redlight.tmdb.lists.order", json.dumps(data))
+					kodi_utils.set_property("finder.tmdb.lists.order", json.dumps(data))
 			else:
-				kodi_utils.clear_property("redlight.tmdb.lists.order")
+				kodi_utils.clear_property("finder.tmdb.lists.order")
 			result = list(_process())
 		else:
 			result = list(_new_process())
@@ -177,7 +177,7 @@ def build_tmdb_list(params):
 			"sort_order": sort_order,
 		}
 		if page_no == 1 and not is_external:
-			kodi_utils.set_property("redlight.exit_params", kodi_utils.folder_path())
+			kodi_utils.set_property("finder.exit_params", kodi_utils.folder_path())
 		if use_result:
 			result = params.get("result", [])
 		else:
@@ -476,7 +476,7 @@ def normalize_tmdb_list_titles(contents):
 
 
 def sort_tmdb_list_contents(contents, sort_order):
-	# Apply a redlight "Contents sort order" value to a normalized TMDb list. Shared with the Mixed My
+	# Apply a Finder "Contents sort order" value to a normalized TMDb list. Shared with the Mixed My
 	# Lists handler so a list and its mixed counterpart order identically. Items must carry
 	# "original_order"/"release_date"/"title" (see normalize_tmdb_list_titles).
 	if sort_order:

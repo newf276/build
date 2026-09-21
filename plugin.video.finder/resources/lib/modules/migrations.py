@@ -3,7 +3,7 @@
 
 Pure orchestration with no Kodi (`xbmc.*`) imports so it stays unit-testable —
 `service.py` itself can't be imported in tests because it runs
-`redlightMonitor().waitForAbort()` at module load. The migration callables and the
+`FinderMonitor().waitForAbort()` at module load. The migration callables and the
 ordered ``MIGRATIONS`` registry live in `service.py`; this module is handed the
 registry plus dependency-injected ``run``/``stamp``/``log`` seams.
 

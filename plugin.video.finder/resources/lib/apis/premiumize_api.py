@@ -18,7 +18,7 @@ from modules.utils import copy2clip, launch_browser, make_qrcode
 
 class PremiumizeAPI:
 	def __init__(self):
-		self.token = get_setting("redlight.pm.token", "empty_setting")
+		self.token = get_setting("finder.pm.token", "empty_setting")
 
 	def auth(self):
 		self.token = ""
@@ -219,7 +219,7 @@ class PremiumizeAPI:
 		return url + "|" + urlencode(self.headers())
 
 	def headers(self):
-		return {"User-Agent": "redlight for Kodi", "Authorization": "Bearer %s" % self.token}
+		return {"User-Agent": "Finder for Kodi", "Authorization": "Bearer %s" % self.token}
 
 	def _get(self, url, data={}):
 		if self.token in ("empty_setting", ""):

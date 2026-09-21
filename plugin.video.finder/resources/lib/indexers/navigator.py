@@ -13,7 +13,7 @@ class Navigator:
 	def __init__(self, params):
 		self.params = params
 		self.params_get = self.params.get
-		self.category_name = self.params_get("name", "redlight")
+		self.category_name = self.params_get("name", "Finder")
 		self.list_name = self.params_get("action", "RootList")
 		self.is_external = k.external()
 		self.make_listitem = k.make_listitem
@@ -290,10 +290,10 @@ class Navigator:
 
 	def tools(self):
 		self.add({"mode": "open_settings", "isFolder": "false"}, "Settings", "settings")
-		if get_setting("redlight.external_scraper.module") not in ("empty_setting", ""):
+		if get_setting("finder.external_scraper.module") not in ("empty_setting", ""):
 			self.add({"mode": "open_external_scraper_settings", "isFolder": "false"}, "External Scraper Settings", "settings")
 		self.add({"mode": "navigator.tips"}, "Tips for Use", "settings2")
-		if get_setting("redlight.use_viewtypes", "true") == "true" and not get_setting("redlight.manual_viewtypes", "false") == "true":
+		if get_setting("finder.use_viewtypes", "true") == "true" and not get_setting("finder.manual_viewtypes", "false") == "true":
 			self.add({"mode": "navigator.set_view_modes"}, "Set Views", "settings2")
 		self.add({"mode": "navigator.changelog_utils"}, "Changelog & Log Utils", "settings2")
 		self.add({"mode": "build_next_episode_manager"}, "TV Shows Progress Manager", "settings2")
@@ -350,8 +350,8 @@ class Navigator:
 
 	def changelog_utils(self):
 		log_loc, old_log_loc = k.translate_path("special://logpath/kodi.log"), k.translate_path("special://logpath/kodi.old.log")
-		redlight_clogpath = k.translate_path("special://home/addons/plugin.video.redlight/resources/text/changelog.txt")
-		self.add({"mode": "show_text", "heading": "Changelog", "file": redlight_clogpath, "font_size": "large", "isFolder": "false"}, "Changelog", "lists")
+		finder_clogpath = k.translate_path("special://home/addons/plugin.video.finder/resources/text/changelog.txt")
+		self.add({"mode": "show_text", "heading": "Changelog", "file": finder_clogpath, "font_size": "large", "isFolder": "false"}, "Changelog", "lists")
 		self.add({"mode": "show_text", "heading": "Kodi Log Viewer", "file": log_loc, "kodi_log": "true", "isFolder": "false"}, "Kodi Log Viewer", "lists")
 		self.add(
 			{"mode": "show_text", "heading": "Kodi Log Viewer (Old)", "file": old_log_loc, "kodi_log": "true", "isFolder": "false"},
@@ -627,7 +627,7 @@ class Navigator:
 				iconImage = item_get("iconImage", None)
 				icon = iconImage
 				if iconImage:
-					if iconImage.startswith("http") or "plugin.video.redlight" in iconImage:
+					if iconImage.startswith("http") or "plugin.video.finder" in iconImage:
 						original_image = True
 					else:
 						original_image = False
@@ -705,12 +705,12 @@ class Navigator:
 			k.container_refresh()
 
 	def exit_media_menu(self):
-		params = k.get_property("redlight.exit_params")
+		params = k.get_property("finder.exit_params")
 		if params:
 			return k.container_refresh_input(params)
 
 	def tips(self):
-		tips_location = "special://home/addons/plugin.video.redlight/resources/text/tips"
+		tips_location = "special://home/addons/plugin.video.finder/resources/text/tips"
 		files = sorted(k.list_dirs(tips_location)[1])
 		tips_location += "/%s"
 		tips_list = []
@@ -803,11 +803,11 @@ class Navigator:
 		# Build phases run sequentially, not on their own threads. Crash investigation
 		# (kodi_crashlog 2026-06-13, AV in python3.8.dll pymalloc free-block pop, RVA
 		# 0x109516) traced repeated access violations to CPython allocator corruption
-		# under redlight's nested thread fan-out: this handler spawned fetch/build threads
+		# under Finder's nested thread fan-out: this handler spawned fetch/build threads
 		# that each fan out further capped TaskPool threads, running concurrently with the
 		# other home-screen widget scripts. Removing this handler's own thread layer keeps
 		# the inner (joined, capped) pools while halving the script's peak concurrency.
-		# See docs/ai-docs/changes-from-redlight.md.
+		# See docs/ai-docs/changes-from-finder.md.
 		from indexers.episodes import build_single_episode
 		from indexers.movies import Movies
 		from modules import settings as _settings
@@ -820,11 +820,11 @@ class Navigator:
 		except (TypeError, ValueError):
 			page_no = 1
 		per_type = 20
-		# redlight.exit_params drives the context-menu "Exit … List" action only (Navigator.exit_media_menu);
+		# finder.exit_params drives the context-menu "Exit … List" action only (Navigator.exit_media_menu);
 		# plain back navigation does not consume it, so stale values are harmless across visits.
 		if page_no == 1 and not self.is_external:
-			k.set_property("redlight.exit_params", k.folder_path())
-		k.logger("redlight", "in_progress_mixed: page=%s start" % page_no)
+			k.set_property("finder.exit_params", k.folder_path())
+		k.logger("Finder", "in_progress_mixed: page=%s start" % page_no)
 
 		movie_data, episode_data = [], []
 
@@ -832,13 +832,13 @@ class Navigator:
 			try:
 				movie_data.extend(get_in_progress_movies("movie", 1) or [])
 			except Exception as e:
-				k.logger("redlight", "in_progress_mixed._fetch_movies: %s" % e)
+				k.logger("Finder", "in_progress_mixed._fetch_movies: %s" % e)
 
 		def _fetch_episodes():
 			try:
 				episode_data.extend(get_in_progress_episodes() or [])
 			except Exception as e:
-				k.logger("redlight", "in_progress_mixed._fetch_episodes: %s" % e)
+				k.logger("Finder", "in_progress_mixed._fetch_episodes: %s" % e)
 
 		_fetch_movies()
 		_fetch_episodes()
@@ -850,7 +850,7 @@ class Navigator:
 			if anime_show_ids:
 				before = len(episode_data)
 				episode_data[:] = [e for e in episode_data if e.get("media_ids", {}).get("tmdb") not in anime_show_ids]
-				k.logger("redlight", "in_progress_mixed: dropped %s anime episode(s)" % (before - len(episode_data)))
+				k.logger("Finder", "in_progress_mixed: dropped %s anime episode(s)" % (before - len(episode_data)))
 
 		movie_data.sort(key=lambda x: x.get("last_played") or 0, reverse=True)
 		episode_data.sort(key=lambda x: x.get("date") or 0, reverse=True)
@@ -883,7 +883,7 @@ class Navigator:
 				params = {"list": movie_items, "custom_order": "true", "id_type": "tmdb_id", "menu_type": "movie", "action": "in_progress_movies"}
 				results["movies"] = Movies(params).worker() or []
 			except Exception as e:
-				k.logger("redlight", "in_progress_mixed._build_movies: %s" % e)
+				k.logger("Finder", "in_progress_mixed._build_movies: %s" % e)
 
 		def _build_episodes():
 			# build_single_episode falls through to the "params is a list" escape hatch
@@ -894,7 +894,7 @@ class Navigator:
 			try:
 				results["episodes"] = build_single_episode("episode.mixed_in_progress", episode_items) or []
 			except Exception as e:
-				k.logger("redlight", "in_progress_mixed._build_episodes: %s" % e)
+				k.logger("Finder", "in_progress_mixed._build_episodes: %s" % e)
 
 		_build_movies()
 		_build_episodes()
@@ -921,7 +921,7 @@ class Navigator:
 		if not self.is_external:
 			view_key = "view.episodes_single" if content_type == "episodes" else "view.movies"
 			k.set_view_mode(view_key, content_type, self.is_external)
-		k.logger("redlight", "in_progress_mixed: page=%s done (movies=%s episodes=%s)" % (page_no, len(movie_items), len(episode_items)))
+		k.logger("Finder", "in_progress_mixed: page=%s done (movies=%s episodes=%s)" % (page_no, len(movie_items), len(episode_items)))
 
 	def _finish_mixed_directory(self, handle, combined, n_movies, n_shows, label, next_page_params=None, next_page=None, shuffle_if_random=False):
 		# Shared render tail for the Mixed * handlers (mixed_list, mixed_keyed_list, mixed_my_list,
@@ -963,7 +963,7 @@ class Navigator:
 		action = self.params_get("action", "")
 		sources = MIXED_LIST_SOURCES.get(action)
 		if not sources:
-			k.logger("redlight", "mixed_list: unknown action %s" % action)
+			k.logger("Finder", "mixed_list: unknown action %s" % action)
 			k.end_directory(handle)
 			return
 		try:
@@ -971,9 +971,9 @@ class Navigator:
 		except (TypeError, ValueError):
 			page_no = 1
 		if page_no == 1 and not self.is_external:
-			k.set_property("redlight.exit_params", k.folder_path())
+			k.set_property("finder.exit_params", k.folder_path())
 		label = next((entry[0] for entry in MIXED_LIST_MENU if entry[1] == action), "Mixed")
-		k.logger("redlight", "mixed_list: action=%s page=%s start" % (action, page_no))
+		k.logger("Finder", "mixed_list: action=%s page=%s start" % (action, page_no))
 
 		include_anime = _settings.mixed_include_anime()
 		is_trakt = sources["api"] == "trakt"
@@ -991,7 +991,7 @@ class Navigator:
 				else:
 					target.extend((raw or {}).get("results", []) or [])
 			except Exception as e:
-				k.logger("redlight", "mixed_list._fetch %s: %s" % (getattr(fn, "__name__", "?"), e))
+				k.logger("Finder", "mixed_list._fetch %s: %s" % (getattr(fn, "__name__", "?"), e))
 
 		fetch_threads = [Thread(target=_fetch, args=(movie_raw, movie_fn)), Thread(target=_fetch, args=(show_raw, tv_fn))]
 		if anime_fn is not None:
@@ -1019,7 +1019,7 @@ class Navigator:
 				params = {"list": ids, "id_type": id_type, "menu_type": menu_type, "action": action}
 				results[bucket_key] = builder_cls(params).worker() or []
 			except Exception as e:
-				k.logger("redlight", "mixed_list._build %s: %s" % (bucket_key, e))
+				k.logger("Finder", "mixed_list._build %s: %s" % (bucket_key, e))
 
 		build_threads = [
 			Thread(target=_build, args=("movies", Movies, movie_ids, "movie")),
@@ -1041,7 +1041,7 @@ class Navigator:
 			next_page=page_no + 1,
 		)
 		k.logger(
-			"redlight",
+			"Finder",
 			"mixed_list: action=%s page=%s done (movies=%s shows=%s anime=%s)"
 			% (action, page_no, len(results["movies"]), len(results["shows"]), len(results["anime"])),
 		)
@@ -1062,7 +1062,7 @@ class Navigator:
 		action = self.params_get("action", "")
 		sources = MIXED_KEYED_SOURCES.get(action)
 		if not sources:
-			k.logger("redlight", "mixed_keyed_list: unknown action %s" % action)
+			k.logger("Finder", "mixed_keyed_list: unknown action %s" % action)
 			k.end_directory(handle)
 			return
 		# Mixed Providers passes a single key_id (same id for both types); Mixed Genres passes
@@ -1071,7 +1071,7 @@ class Navigator:
 		tv_key = self.params_get("tv_key") or self.params_get("key_id")
 		anime_key = tv_key
 		if not movie_key or not tv_key:
-			k.logger("redlight", "mixed_keyed_list: missing key for action %s" % action)
+			k.logger("Finder", "mixed_keyed_list: missing key for action %s" % action)
 			k.end_directory(handle)
 			return
 		try:
@@ -1079,9 +1079,9 @@ class Navigator:
 		except (TypeError, ValueError):
 			page_no = 1
 		if page_no == 1 and not self.is_external:
-			k.set_property("redlight.exit_params", k.folder_path())
+			k.set_property("finder.exit_params", k.folder_path())
 		label = self.params_get("name", "Mixed")
-		k.logger("redlight", "mixed_keyed_list: action=%s page=%s start" % (action, page_no))
+		k.logger("Finder", "mixed_keyed_list: action=%s page=%s start" % (action, page_no))
 
 		include_anime = _settings.mixed_include_anime()
 		movie_fn = manual_function_import(*sources["movie"])
@@ -1095,7 +1095,7 @@ class Navigator:
 				raw = fn(key, page_no)
 				target.extend((raw or {}).get("results", []) or [])
 			except Exception as e:
-				k.logger("redlight", "mixed_keyed_list._fetch %s: %s" % (getattr(fn, "__name__", "?"), e))
+				k.logger("Finder", "mixed_keyed_list._fetch %s: %s" % (getattr(fn, "__name__", "?"), e))
 
 		fetch_threads = [Thread(target=_fetch, args=(movie_raw, movie_fn, movie_key)), Thread(target=_fetch, args=(show_raw, tv_fn, tv_key))]
 		if anime_fn is not None:
@@ -1116,7 +1116,7 @@ class Navigator:
 				params = {"list": ids, "id_type": "tmdb_id", "menu_type": menu_type, "action": action}
 				results[bucket_key] = builder_cls(params).worker() or []
 			except Exception as e:
-				k.logger("redlight", "mixed_keyed_list._build %s: %s" % (bucket_key, e))
+				k.logger("Finder", "mixed_keyed_list._build %s: %s" % (bucket_key, e))
 
 		build_threads = [
 			Thread(target=_build, args=("movies", Movies, movie_ids, "movie")),
@@ -1142,7 +1142,7 @@ class Navigator:
 			shuffle_if_random=True,
 		)
 		k.logger(
-			"redlight",
+			"Finder",
 			"mixed_keyed_list: action=%s page=%s done (movies=%s shows=%s anime=%s)"
 			% (action, page_no, len(results["movies"]), len(results["shows"]), len(results["anime"])),
 		)
@@ -1174,13 +1174,13 @@ class Navigator:
 		action = self.params_get("action", "")
 		sources = MIXED_MY_LIST_SOURCES.get(action)
 		if not sources:
-			k.logger("redlight", "mixed_my_list: unknown action %s" % action)
+			k.logger("Finder", "mixed_my_list: unknown action %s" % action)
 			k.end_directory(handle)
 			return
 		if not self.is_external:
-			k.set_property("redlight.exit_params", k.folder_path())
+			k.set_property("finder.exit_params", k.folder_path())
 		label, id_field = sources["label"], sources["id_field"]
-		k.logger("redlight", "mixed_my_list: action=%s start" % action)
+		k.logger("Finder", "mixed_my_list: action=%s start" % action)
 
 		movie_raw, show_raw = [], []
 
@@ -1195,7 +1195,7 @@ class Navigator:
 					raw = get_tmdb_list({"list_id": sources["list_id"], "media_type": media_type})
 				target.extend([i[id_field] for i in (raw or []) if i.get(id_field)])
 			except Exception as e:
-				k.logger("redlight", "mixed_my_list._fetch %s/%s: %s" % (action, media_type, e))
+				k.logger("Finder", "mixed_my_list._fetch %s/%s: %s" % (action, media_type, e))
 
 		fetch_threads = [Thread(target=_fetch, args=(movie_raw, "movie")), Thread(target=_fetch, args=(show_raw, sources["tv_media_type"]))]
 		[t.start() for t in fetch_threads]
@@ -1211,7 +1211,7 @@ class Navigator:
 				params = {"list": ids, "id_type": id_type, "menu_type": menu_type, "action": action}
 				results[bucket_key] = builder_cls(params).worker() or []
 			except Exception as e:
-				k.logger("redlight", "mixed_my_list._build %s: %s" % (bucket_key, e))
+				k.logger("Finder", "mixed_my_list._build %s: %s" % (bucket_key, e))
 
 		build_threads = [
 			Thread(target=_build, args=("movies", Movies, movie_raw, "movie")),
@@ -1222,7 +1222,7 @@ class Navigator:
 
 		combined = interleave_buckets(results["movies"], results["shows"])
 		self._finish_mixed_directory(handle, combined, len(results["movies"]), len(results["shows"]), label, shuffle_if_random=True)
-		k.logger("redlight", "mixed_my_list: action=%s done (movies=%s shows=%s)" % (action, len(results["movies"]), len(results["shows"])))
+		k.logger("Finder", "mixed_my_list: action=%s done (movies=%s shows=%s)" % (action, len(results["movies"]), len(results["shows"])))
 
 	def mixed_brands(self):
 		# Menu of curated streaming "brands" (Mixed Channels). Each row carries pipe-joined provider
@@ -1254,7 +1254,7 @@ class Navigator:
 		providers = self.params_get("providers", "")
 		networks = self.params_get("networks", "")
 		if not providers and not networks:
-			k.logger("redlight", "mixed_brand_list: no providers/networks")
+			k.logger("Finder", "mixed_brand_list: no providers/networks")
 			k.end_directory(handle)
 			return
 		try:
@@ -1262,9 +1262,9 @@ class Navigator:
 		except (TypeError, ValueError):
 			page_no = 1
 		if page_no == 1 and not self.is_external:
-			k.set_property("redlight.exit_params", k.folder_path())
+			k.set_property("finder.exit_params", k.folder_path())
 		label = self.params_get("name", "Mixed")
-		k.logger("redlight", "mixed_brand_list: name=%s page=%s start" % (label, page_no))
+		k.logger("Finder", "mixed_brand_list: name=%s page=%s start" % (label, page_no))
 
 		include_anime = _settings.mixed_include_anime()
 		movie_raw, tv_provider_raw, tv_network_raw, anime_raw = [], [], [], []
@@ -1274,7 +1274,7 @@ class Navigator:
 				raw = fn(key, page_no)
 				target.extend((raw or {}).get("results", []) or [])
 			except Exception as e:
-				k.logger("redlight", "mixed_brand_list._fetch %s: %s" % (getattr(fn, "__name__", "?"), e))
+				k.logger("Finder", "mixed_brand_list._fetch %s: %s" % (getattr(fn, "__name__", "?"), e))
 
 		fetch_threads = []
 		if providers:
@@ -1305,7 +1305,7 @@ class Navigator:
 				params = {"list": ids, "id_type": "tmdb_id", "menu_type": menu_type, "action": "mixed_brands"}
 				results[bucket_key] = builder_cls(params).worker() or []
 			except Exception as e:
-				k.logger("redlight", "mixed_brand_list._build %s: %s" % (bucket_key, e))
+				k.logger("Finder", "mixed_brand_list._build %s: %s" % (bucket_key, e))
 
 		build_threads = [
 			Thread(target=_build, args=("movies", Movies, movie_ids, "movie")),
@@ -1330,7 +1330,7 @@ class Navigator:
 			shuffle_if_random=True,
 		)
 		k.logger(
-			"redlight",
+			"Finder",
 			"mixed_brand_list: name=%s page=%s done (movies=%s shows=%s anime=%s)"
 			% (label, page_no, len(results["movies"]), len(results["shows"]), len(results["anime"])),
 		)

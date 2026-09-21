@@ -16,7 +16,7 @@ def window_theme_choice(params):
 		if choice == None:
 			return
 		window_theme, window_theme_contrast, window_theme_name = choice["value"][0][2:], choice["value"][1], choice["name"]
-		window_theme_opacity = get_setting("redlight.window_theme_opacity", "CC")
+		window_theme_opacity = get_setting("finder.window_theme_opacity", "CC")
 		set_setting("window_theme_name", window_theme_name)
 	else:
 		choices = kodi_utils.addon_themes_opacity()
@@ -26,8 +26,8 @@ def window_theme_choice(params):
 		if choice == None:
 			return
 		window_theme_opacity, window_theme_opacity_name = choice["value"], choice["name"]
-		window_theme = get_setting("redlight.window_theme", "FF1F2020")[2:]
-		window_theme_contrast = get_setting("redlight.window_theme_contrast", "FF4a4347")
+		window_theme = get_setting("finder.window_theme", "FF1F2020")[2:]
+		window_theme_contrast = get_setting("finder.window_theme_contrast", "FF4a4347")
 		set_setting("window_theme_opacity", window_theme_opacity)
 		set_setting("window_theme_opacity_name", window_theme_opacity_name)
 	set_setting("window_theme", window_theme_opacity + window_theme)
@@ -88,7 +88,7 @@ def language_invoker_choice(params):
 	from xml.dom.minidom import parse as mdParse
 
 	kodi_utils.close_all_dialog()
-	addon_xml = kodi_utils.translate_path("special://home/addons/plugin.video.redlight/addon.xml")
+	addon_xml = kodi_utils.translate_path("special://home/addons/plugin.video.finder/addon.xml")
 	root = mdParse(addon_xml)
 	invoker_instance = root.getElementsByTagName("reuselanguageinvoker")[0].firstChild
 	current_invoker_setting = invoker_instance.data
@@ -236,7 +236,7 @@ def personallists_manager_choice(params):
 
 	icon = params.get("icon", None) or kodi_utils.get_icon("lists")
 	list_type = params["list_type"]
-	all_lists = get_all_personal_lists(get_setting("redlight.personal_list.list_sort", "0"))
+	all_lists = get_all_personal_lists(get_setting("finder.personal_list.list_sort", "0"))
 	choices = []
 	if not all_lists:
 		action = "add_new"
@@ -399,10 +399,10 @@ def quick_add_target_choice(params):
 		("Trakt Collection", "trakt_collection"),
 		("TMDb Watchlist", "tmdb_watchlist"),
 		("TMDb Favorites", "tmdb_favorites"),
-		("redlight Favorites", "redlight_favorites"),
+		("Finder Favorites", "finder_favorites"),
 		("Trakt Personal List...", "pick_trakt_list"),
 		("TMDb List...", "pick_tmdb_list"),
-		("redlight Personal List...", "pick_redlight_list"),
+		("Finder Personal List...", "pick_finder_list"),
 	]
 	list_items = [{"line1": item[0], "icon": icon} for item in kinds]
 	kwargs = {"items": json.dumps(list_items), "heading": "Quick Add Target"}
@@ -436,14 +436,14 @@ def quick_add_target_choice(params):
 	else:
 		from indexers.personal_lists import get_all_personal_lists
 
-		all_lists = get_all_personal_lists(get_setting("redlight.personal_list.list_sort", "0"))
+		all_lists = get_all_personal_lists(get_setting("finder.personal_list.list_sort", "0"))
 		if not all_lists:
 			return kodi_utils.notification("No Personal Lists Found", 3500)
 		choices = [("%s [I](x%02d)[/I]" % (i["name"], i["total"]), (i["name"], i["author"])) for i in all_lists]
 		selection = kodi_utils.select_dialog([i[1] for i in choices], **{"items": json.dumps([{"line1": i[0]} for i in choices]), "narrow_window": "true"})
 		if not selection:
 			return
-		token, label = quick_add.encode_target("redlight_list", name=selection[0], author=selection[1]), selection[0]
+		token, label = quick_add.encode_target("finder_list", name=selection[0], author=selection[1]), selection[0]
 	set_setting("context_menu.quick_add_target", token)
 	set_setting("context_menu.quick_add_target_label", label)
 	kodi_utils.notification("Quick Add Target: %s" % label, 3000)
@@ -1104,7 +1104,7 @@ def set_quality_choice(params):
 	icon = params.get("icon", None) or ""
 	dl = ["Include 4K", "Include 1080p", "Include 720p", "Include SD"]
 	fl = ["4K", "1080p", "720p", "SD"]
-	q_setting = get_setting("redlight.%s" % quality_setting).split(", ")
+	q_setting = get_setting("finder.%s" % quality_setting).split(", ")
 	try:
 		preselect = [fl.index(i) for i in q_setting]
 	except:
@@ -1129,11 +1129,11 @@ def extras_buttons_choice(params):
 			for item in range(10, 18):
 				setting_id = "extras.%s.button%s" % (_type, item)
 				try:
-					button_action = get_setting("redlight.%s" % setting_id)
+					button_action = get_setting("finder.%s" % setting_id)
 					button_label = extras_button_label_values[_type][button_action]
 				except:
-					set_setting(setting_id.replace("redlight.", ""), default_setting_values(setting_id)["setting_default"])
-					button_action = get_setting("redlight.%s" % setting_id)
+					set_setting(setting_id.replace("finder.", ""), default_setting_values(setting_id)["setting_default"])
+					button_action = get_setting("finder.%s" % setting_id)
 					button_label = extras_button_label_values[_type][button_action]
 				button_dict[setting_id] = {"button_action": button_action, "button_label": button_label, "button_name": "Button %s" % str(item - 9)}
 				orig_button_dict[setting_id] = {"button_action": button_action, "button_label": button_label, "button_name": "Button %s" % str(item - 9)}
@@ -1194,7 +1194,7 @@ def extras_ratings_choice(params={}):
 		("IMDb", "IMDb", "imdb.png"),
 		("TMDb", "TMDb", "tmdb.png"),
 	]
-	list_items = [{"line1": i[0], "icon": "redlight_flags/ratings/%s" % i[2]} for i in choices]
+	list_items = [{"line1": i[0], "icon": "finder_flags/ratings/%s" % i[2]} for i in choices]
 	current_settings = settings.extras_enabled_ratings()
 	try:
 		preselect = [choices.index(i) for i in choices if i[1] in current_settings]
@@ -1218,7 +1218,7 @@ def set_language_filter_choice(params):
 	if include_none == "false":
 		lang_choices.pop("None")
 	dl, fl = list(lang_choices.keys()), list(lang_choices.values())
-	set_filter = get_setting("redlight.%s" % filter_setting_id).split(", ")
+	set_filter = get_setting("finder.%s" % filter_setting_id).split(", ")
 	try:
 		preselect = [fl.index(i) for i in set_filter]
 	except:
@@ -1238,7 +1238,7 @@ def set_language_filter_choice(params):
 
 
 def enable_scrapers_choice(params={}):
-	icon = params.get("icon", None) or kodi_utils.get_icon("redlight")
+	icon = params.get("icon", None) or kodi_utils.get_icon("finder")
 	scrapers = ["external", "easynews", "rd_cloud", "pm_cloud", "ad_cloud", "tb_cloud", "folders"]
 	cloud_scrapers = {"rd_cloud": "rd.enabled", "pm_cloud": "pm.enabled", "ad_cloud": "ad.enabled", "tb_cloud": "tb.enabled"}
 	scraper_names = ["EXTERNAL SCRAPERS", "EASYNEWS", "RD CLOUD", "PM CLOUD", "AD CLOUD", "TB CLOUD", "FOLDERS 1-5"]
@@ -1310,7 +1310,7 @@ def clear_favorites_choice(params):
 
 def scraper_color_choice(params):
 	setting = params.get("setting_id")
-	current_setting, original_highlight = get_setting("redlight.%s" % setting), default_setting_values(setting)["setting_default"]
+	current_setting, original_highlight = get_setting("finder.%s" % setting), default_setting_values(setting)["setting_default"]
 	if current_setting != original_highlight:
 		action = kodi_utils.confirm_dialog(
 			text="Set new Highlight or Restore Default Highlight?", ok_label="Set New", cancel_label="Restore Default", default_control=10
@@ -1326,7 +1326,7 @@ def scraper_color_choice(params):
 
 def personal_list_unseen_color_choice(params):
 	setting = "personal_list.unseen_highlight"
-	current_setting, original_highlight = get_setting("redlight.%s" % setting), default_setting_values(setting)["setting_default"]
+	current_setting, original_highlight = get_setting("finder.%s" % setting), default_setting_values(setting)["setting_default"]
 	if current_setting != original_highlight:
 		action = kodi_utils.confirm_dialog(
 			text="Set new Highlight or Restore Default Highlight?", ok_label="Set New", cancel_label="Restore Default", default_control=10
@@ -1398,7 +1398,7 @@ def options_menu_choice(params, meta=None):
 		"episode.progress",
 		"episode.recently_watched",
 		"episode.next_trakt",
-		"episode.next_redlight",
+		"episode.next_finder",
 		"episode.trakt_recently_aired",
 		"episode.trakt_calendar",
 	)

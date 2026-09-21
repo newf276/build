@@ -6,7 +6,7 @@
             <width>1920</width>
             <height>1080</height>
             <control type="image">
-                <texture colordiffuse="FF000000">redlight_common/white.png</texture>
+                <texture colordiffuse="FF000000">finder_common/white.png</texture>
             </control>
             <control type="image" id="202">
                 <aspectratio>scale</aspectratio>
@@ -22,7 +22,7 @@
                     <width>100</width>
                     <height>100</height>
                     <aspectratio aligny="top">keep</aspectratio>
-                    <texture>$INFO[Window(10000).Property(redlight.addon_icon_mini)]</texture>
+                    <texture>$INFO[Window(10000).Property(finder.addon_icon_mini)]</texture>
                 </control>
                 <control type="group">
                     <visible>String.IsEqual(ListItem.Property(info_alert),)</visible>
@@ -31,7 +31,7 @@
                         <left>1590</left>
                         <width max="300">auto</width>
                         <height>20</height>
-                        <font>font37</font> <!-- redlight_38 -->
+                        <font>font37</font> <!-- Finder_38 -->
                         <textcolor>FFCCCCCC</textcolor>
                         <align>right</align>
                         <aligny>center</aligny>
@@ -42,7 +42,7 @@
                         <left>1540</left>
                         <width max="350">auto</width>
                         <height>20</height>
-                        <font>font10</font> <!-- redlight_21 -->
+                        <font>font10</font> <!-- Finder_21 -->
                         <textcolor>FFCCCCCC</textcolor>
                         <align>right</align>
                         <aligny>center</aligny>
@@ -58,13 +58,13 @@
                         <width>35</width>
                         <height>35</height>
                         <aspectratio>keep</aspectratio>
-                        <texture>redlight_common/info.png</texture>
+                        <texture>finder_common/info.png</texture>
                         <visible>!String.IsEqual(ListItem.Property(info_alert),)</visible>
                     </control>
                     <control type="label">
                         <width max="600">auto</width>
                         <height>20</height>
-                        <font>font10</font> <!-- redlight_21 -->
+                        <font>font10</font> <!-- Finder_21 -->
                         <textcolor>FFCCCCCC</textcolor>
                         <align>right</align>
                         <aligny>bottom</aligny>
@@ -80,7 +80,7 @@
                     <width>650</width>
                     <height>1000</height>
                     <aspectratio>keep</aspectratio>
-                    <texture diffuse="redlight_diffuse/poster-50.png" background="true" />
+                    <texture diffuse="finder_diffuse/poster-50.png" background="true" />
                 </control>
                 <control type="group">
                     <control type="image" id="201">
@@ -97,7 +97,7 @@
                         <left>70</left>
                         <width max="1130">auto</width>
                         <height>30</height>
-                        <font>font60</font> <!-- redlight_60_BOLD -->
+                        <font>font60</font> <!-- Finder_60_BOLD -->
                         <textcolor>FFCCCCCC</textcolor>
                         <align>center</align>
                         <aligny>bottom</aligny>
@@ -115,7 +115,7 @@
                     <control type="label">
                         <width max="1150">auto</width>
                         <height>25</height>
-                        <font>font14</font> <!-- redlight_33 -->
+                        <font>font14</font> <!-- Finder_33 -->
                         <textcolor>FFCCCCCC</textcolor>
                         <align>center</align>
                         <label>[I]$INFO[Window.Property(genre)][/I]</label>
@@ -136,7 +136,7 @@
                         <control type="label" id="2001">
                             <width max="1026">auto</width>
                             <height>32</height>
-                            <font>font13</font> <!-- redlight_30 -->
+                            <font>font13</font> <!-- Finder_30 -->
                             <textcolor>FFCCCCCC</textcolor>
                             <align>left</align>
                         </control>
@@ -145,7 +145,7 @@
                         <top>105</top>
                         <width max="1150">auto</width>
                         <height>25</height>
-                        <font>font14</font> <!-- redlight_33 -->
+                        <font>font14</font> <!-- Finder_33 -->
                         <textcolor>FFCCCCCC</textcolor>
                         <align>center</align>
                     </control>
@@ -171,7 +171,7 @@
                             <control type="label" id="4001">
                                 <width max="75">auto</width>
                                 <height>32</height>
-                                <font>font13</font> <!-- redlight_30 -->
+                                <font>font13</font> <!-- Finder_30 -->
                                 <textcolor>FFCCCCCC</textcolor>
                                 <align>left</align>
                                 <aligny>center</aligny>
@@ -193,7 +193,7 @@
                             <control type="label" id="4002">
                                 <width max="75">auto</width>
                                 <height>32</height>
-                                <font>font13</font> <!-- redlight_30 -->
+                                <font>font13</font> <!-- Finder_30 -->
                                 <textcolor>FFCCCCCC</textcolor>
                                 <align>left</align>
                                 <aligny>center</aligny>
@@ -215,7 +215,7 @@
                             <control type="label" id="4003">
                                 <width max="75">auto</width>
                                 <height>32</height>
-                                <font>font13</font> <!-- redlight_30 -->
+                                <font>font13</font> <!-- Finder_30 -->
                                 <textcolor>FFCCCCCC</textcolor>
                                 <align>left</align>
                                 <aligny>center</aligny>
@@ -237,7 +237,7 @@
                             <control type="label" id="4004">
                                 <width max="75">auto</width>
                                 <height>32</height>
-                                <font>font13</font> <!-- redlight_30 -->
+                                <font>font13</font> <!-- Finder_30 -->
                                 <textcolor>FFCCCCCC</textcolor>
                                 <align>left</align>
                                 <aligny>center</aligny>
@@ -259,7 +259,7 @@
                             <control type="label" id="4005">
                                 <width max="75">auto</width>
                                 <height>32</height>
-                                <font>font13</font> <!-- redlight_30 -->
+                                <font>font13</font> <!-- Finder_30 -->
                                 <textcolor>FFCCCCCC</textcolor>
                                 <align>left</align>
                                 <aligny>center</aligny>
@@ -289,11 +289,11 @@
                             <onup>2066</onup>
                             <ondown>14</ondown>
                             <label>$INFO[Window.Property(button10.label)]</label>
-                            <font>font13</font> <!-- redlight_30 -->
+                            <font>font13</font> <!-- Finder_30 -->
                             <textcolor>FFCCCCCC</textcolor>
                             <focusedcolor>FF1F2020</focusedcolor>
-                            <texturefocus colordiffuse="FFCCCCCC" border="30">redlight_common/circle.png</texturefocus>
-                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(redlight.window_theme.extras)]" border="30">redlight_common/circle.png</texturenofocus>
+                            <texturefocus colordiffuse="FFCCCCCC" border="30">finder_common/circle.png</texturefocus>
+                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(finder.window_theme.extras)]" border="30">finder_common/circle.png</texturenofocus>
                             <align>center</align>
                             <aligny>center</aligny>
                         </control>
@@ -306,11 +306,11 @@
                             <onup>2066</onup>
                             <ondown>15</ondown>
                             <label>$INFO[Window.Property(button11.label)]</label>
-                            <font>font13</font> <!-- redlight_30 -->
+                            <font>font13</font> <!-- Finder_30 -->
                             <textcolor>FFCCCCCC</textcolor>
                             <focusedcolor>FF1F2020</focusedcolor>
-                            <texturefocus colordiffuse="FFCCCCCC" border="30">redlight_common/circle.png</texturefocus>
-                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(redlight.window_theme.extras)]" border="30">redlight_common/circle.png</texturenofocus>  
+                            <texturefocus colordiffuse="FFCCCCCC" border="30">finder_common/circle.png</texturefocus>
+                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(finder.window_theme.extras)]" border="30">finder_common/circle.png</texturenofocus>  
                             <align>center</align>
                             <aligny>center</aligny>
                         </control>
@@ -323,11 +323,11 @@
                             <onup>2066</onup>
                             <ondown>16</ondown>
                             <label>$INFO[Window.Property(button12.label)]</label>
-                            <font>font13</font> <!-- redlight_30 -->
+                            <font>font13</font> <!-- Finder_30 -->
                             <textcolor>FFCCCCCC</textcolor>
                             <focusedcolor>FF1F2020</focusedcolor>
-                            <texturefocus colordiffuse="FFCCCCCC" border="30">redlight_common/circle.png</texturefocus>
-                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(redlight.window_theme.extras)]" border="30">redlight_common/circle.png</texturenofocus>  
+                            <texturefocus colordiffuse="FFCCCCCC" border="30">finder_common/circle.png</texturefocus>
+                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(finder.window_theme.extras)]" border="30">finder_common/circle.png</texturenofocus>  
                             <align>center</align>
                             <aligny>center</aligny>
                         </control>
@@ -340,11 +340,11 @@
                             <onup>2066</onup>
                             <ondown>17</ondown>
                             <label>$INFO[Window.Property(button13.label)]</label>
-                            <font>font13</font> <!-- redlight_30 -->
+                            <font>font13</font> <!-- Finder_30 -->
                             <textcolor>FFCCCCCC</textcolor>
                             <focusedcolor>FF1F2020</focusedcolor>
-                            <texturefocus colordiffuse="FFCCCCCC" border="30">redlight_common/circle.png</texturefocus>
-                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(redlight.window_theme.extras)]" border="30">redlight_common/circle.png</texturenofocus>  
+                            <texturefocus colordiffuse="FFCCCCCC" border="30">finder_common/circle.png</texturefocus>
+                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(finder.window_theme.extras)]" border="30">finder_common/circle.png</texturenofocus>  
                             <align>center</align>
                             <aligny>center</aligny>
                         </control>
@@ -359,11 +359,11 @@
                             <onup>10</onup>
                             <ondown>2050</ondown>
                             <label>$INFO[Window.Property(button14.label)]</label>
-                            <font>font13</font> <!-- redlight_30 -->
+                            <font>font13</font> <!-- Finder_30 -->
                             <textcolor>FFCCCCCC</textcolor>
                             <focusedcolor>FF1F2020</focusedcolor>
-                            <texturefocus colordiffuse="FFCCCCCC" border="30">redlight_common/circle.png</texturefocus>
-                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(redlight.window_theme.extras)]" border="30">redlight_common/circle.png</texturenofocus> 
+                            <texturefocus colordiffuse="FFCCCCCC" border="30">finder_common/circle.png</texturefocus>
+                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(finder.window_theme.extras)]" border="30">finder_common/circle.png</texturenofocus> 
                             <align>center</align>
                             <aligny>center</aligny>
                         </control>
@@ -376,11 +376,11 @@
                             <onup>11</onup>
                             <ondown>2050</ondown>
                             <label>$INFO[Window.Property(button15.label)]</label>
-                            <font>font13</font> <!-- redlight_30 -->
+                            <font>font13</font> <!-- Finder_30 -->
                             <textcolor>FFCCCCCC</textcolor>
                             <focusedcolor>FF1F2020</focusedcolor>
-                            <texturefocus colordiffuse="FFCCCCCC" border="30">redlight_common/circle.png</texturefocus>
-                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(redlight.window_theme.extras)]" border="30">redlight_common/circle.png</texturenofocus>                         <align>center</align>
+                            <texturefocus colordiffuse="FFCCCCCC" border="30">finder_common/circle.png</texturefocus>
+                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(finder.window_theme.extras)]" border="30">finder_common/circle.png</texturenofocus>                         <align>center</align>
                             <aligny>center</aligny>
                         </control>
                         <control type="button" id="16">
@@ -392,11 +392,11 @@
                             <onup>12</onup>
                             <ondown>2050</ondown>
                             <label>$INFO[Window.Property(button16.label)]</label>
-                            <font>font13</font> <!-- redlight_30 -->
+                            <font>font13</font> <!-- Finder_30 -->
                             <textcolor>FFCCCCCC</textcolor>
                             <focusedcolor>FF1F2020</focusedcolor>
-                            <texturefocus colordiffuse="FFCCCCCC" border="30">redlight_common/circle.png</texturefocus>
-                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(redlight.window_theme.extras)]" border="30">redlight_common/circle.png</texturenofocus>
+                            <texturefocus colordiffuse="FFCCCCCC" border="30">finder_common/circle.png</texturefocus>
+                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(finder.window_theme.extras)]" border="30">finder_common/circle.png</texturenofocus>
                             <align>center</align>
                             <aligny>center</aligny>
                         </control>
@@ -409,11 +409,11 @@
                             <onright>14</onright>
                             <ondown>2050</ondown>
                             <label>$INFO[Window.Property(button17.label)]</label>
-                            <font>font13</font> <!-- redlight_30 -->
+                            <font>font13</font> <!-- Finder_30 -->
                             <textcolor>FFCCCCCC</textcolor>
                             <focusedcolor>FF1F2020</focusedcolor>
-                            <texturefocus colordiffuse="FFCCCCCC" border="30">redlight_common/circle.png</texturefocus>
-                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(redlight.window_theme.extras)]" border="30">redlight_common/circle.png</texturenofocus>
+                            <texturefocus colordiffuse="FFCCCCCC" border="30">finder_common/circle.png</texturefocus>
+                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(finder.window_theme.extras)]" border="30">finder_common/circle.png</texturenofocus>
                             <align>center</align>
                             <aligny>center</aligny>
                         </control>
@@ -427,7 +427,7 @@
                         <control type="label">
                             <width max="1160">auto</width>
                             <height>20</height>
-                            <font>font14</font> <!-- redlight_33 -->
+                            <font>font14</font> <!-- Finder_33 -->
                             <textcolor>FFCCCCCC</textcolor>
                             <align>left</align>
                             <aligny>bottom</aligny>
@@ -439,15 +439,15 @@
                             <height>390</height>
                             <onup>14</onup>
                             <ondown>2051</ondown>
-                            <texturefocus colordiffuse="FFCCCCCC" border="30">redlight_common/circle.png</texturefocus>
-                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(redlight.window_theme.extras)]" border="30">redlight_common/circle.png</texturenofocus>
+                            <texturefocus colordiffuse="FFCCCCCC" border="30">finder_common/circle.png</texturefocus>
+                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(finder.window_theme.extras)]" border="30">finder_common/circle.png</texturenofocus>
                         </control>
                         <control type="textbox">
                             <top>65</top>
                             <left>15</left>
                             <width>1150</width>
                             <height>340</height>
-                            <font>font13</font> <!-- redlight_30 -->
+                            <font>font13</font> <!-- Finder_30 -->
                             <align>center</align>
                             <aligny>center</aligny>
                             <textcolor>FFCCCCCC</textcolor>
@@ -460,7 +460,7 @@
                             <left>15</left>
                             <width>1150</width>
                             <height>340</height>
-                            <font>font13</font> <!-- redlight_30 -->
+                            <font>font13</font> <!-- Finder_30 -->
                             <align>center</align>
                             <aligny>center</aligny>
                             <textcolor>FF1F2020</textcolor>
@@ -477,7 +477,7 @@
 				        <control type="label">
 				            <width min="30" max="1160">auto</width>
 				            <height>20</height>
-				            <font>font14</font> <!-- redlight_33 -->
+				            <font>font14</font> <!-- Finder_33 -->
 				            <textcolor>FFCCCCCC</textcolor>
 				            <label>[B]Cast $INFO[Window.Property(cast.number)][/B]</label>
 				            <visible>!Control.HasFocus(2051)</visible>
@@ -485,7 +485,7 @@
 				        <control type="label">
 				            <width min="30" max="1160">auto</width>
 				            <height>20</height>
-				            <font>font14</font> <!-- redlight_33 -->
+				            <font>font14</font> <!-- Finder_33 -->
 				            <textcolor>FFCCCCCC</textcolor>
 				            <label>[B]Cast | [/B]$INFO[ListItem.Property(name)]$INFO[ListItem.Property(release_date), • ]$INFO[ListItem.Property(vote_average), • ]</label>
 				            <visible>Control.HasFocus(2051)</visible>
@@ -510,7 +510,7 @@
 				                    <height max="344">auto</height>
 				                    <width max="220">auto</width>
 				                    <aspectratio>keep</aspectratio>
-				                    <texture diffuse="redlight_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
+				                    <texture diffuse="finder_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
 				                </control>
 				            </itemlayout>
 				            <focusedlayout height="360" width="236">
@@ -524,7 +524,7 @@
 				                    <top>5</top>
 				                    <height>350</height>
 				                    <width>236</width>
-				                    <texture colordiffuse="FFCCCCCC">redlight_diffuse/poster-50.png</texture>
+				                    <texture colordiffuse="FFCCCCCC">finder_diffuse/poster-50.png</texture>
 				                    <visible>Control.HasFocus(2051) | Control.HasFocus(4051)</visible>
 				                </control>
 				                <control type="image">
@@ -533,7 +533,7 @@
 				                    <height max="344">auto</height>
 				                    <width max="220">auto</width>
 				                    <aspectratio>keep</aspectratio>
-				                    <texture diffuse="redlight_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
+				                    <texture diffuse="finder_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
 				                </control>
 				            </focusedlayout>
 				        </control>
@@ -544,9 +544,9 @@
 				            <height>15</height>
 				            <onup>2051</onup>
 				            <ondown>2052</ondown>
-				            <texturesliderbackground colordiffuse="FF1F2020">redlight_common/white.png</texturesliderbackground>
-				            <texturesliderbar colordiffuse="FF555556">redlight_common/white.png</texturesliderbar>
-				            <texturesliderbarfocus colordiffuse="FFCCCCCC">redlight_common/white.png</texturesliderbarfocus>
+				            <texturesliderbackground colordiffuse="FF1F2020">finder_common/white.png</texturesliderbackground>
+				            <texturesliderbar colordiffuse="FF555556">finder_common/white.png</texturesliderbar>
+				            <texturesliderbarfocus colordiffuse="FFCCCCCC">finder_common/white.png</texturesliderbarfocus>
 				            <showonepage>false</showonepage>
 				            <orientation>Horizontal</orientation>
 				            <visible>String.IsEqual(Window.Property(enable_scrollbars),true) + [Control.HasFocus(2051) | Control.HasFocus(4051)]</visible>
@@ -556,7 +556,7 @@
 				            <left>20</left>
 				            <width>25</width>
 				            <height>25</height>
-				            <texture colordiffuse="CCCCCCCC" background="true">redlight_common/arrow_left.png</texture>
+				            <texture colordiffuse="CCCCCCCC" background="true">finder_common/arrow_left.png</texture>
 				            <visible>[Control.HasFocus(2051) | Control.HasFocus(4051)] + Container(2051).HasPrevious</visible>
 				        </control>
 				        <control type="image">
@@ -564,7 +564,7 @@
 				            <left>1135</left>
 				            <width>25</width>
 				            <height>25</height>
-				            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">redlight_common/arrow_left.png</texture>
+				            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">finder_common/arrow_left.png</texture>
 				            <visible>[Control.HasFocus(2051) | Control.HasFocus(4051)] + Container(2051).HasNext</visible>
 				        </control>
 				    </control>
@@ -576,7 +576,7 @@
 				        <control type="label">
 				            <width min="30" max="1160">auto</width>
 				            <height>20</height>
-				            <font>font14</font> <!-- redlight_33 -->
+				            <font>font14</font> <!-- Finder_33 -->
 				            <textcolor>FFCCCCCC</textcolor>
 				            <label>[B]Recommended $INFO[Window.Property(recommended.number)][/B]</label>
 				            <visible>!Control.HasFocus(2052)</visible>
@@ -584,7 +584,7 @@
 				        <control type="label">
 				            <width min="30" max="1160">auto</width>
 				            <height>20</height>
-				            <font>font14</font> <!-- redlight_33 -->
+				            <font>font14</font> <!-- Finder_33 -->
 				            <textcolor>FFCCCCCC</textcolor>
 				            <label>[B]Recommended | [/B]$INFO[ListItem.Property(name)]$INFO[ListItem.Property(release_date), • ]$INFO[ListItem.Property(vote_average), • ]</label>
 				            <visible>Control.HasFocus(2052)</visible>
@@ -609,7 +609,7 @@
 				                    <height max="344">auto</height>
 				                    <width max="220">auto</width>
 				                    <aspectratio>keep</aspectratio>
-				                    <texture diffuse="redlight_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
+				                    <texture diffuse="finder_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
 				                </control>
 				            </itemlayout>
 				            <focusedlayout height="360" width="236">
@@ -623,7 +623,7 @@
 				                    <top>5</top>
 				                    <height>350</height>
 				                    <width>236</width>
-				                    <texture colordiffuse="FFCCCCCC">redlight_diffuse/poster-50.png</texture>
+				                    <texture colordiffuse="FFCCCCCC">finder_diffuse/poster-50.png</texture>
 				                    <visible>Control.HasFocus(2052) | Control.HasFocus(4052)</visible>
 				                </control>
 				                <control type="image">
@@ -632,7 +632,7 @@
 				                    <height max="344">auto</height>
 				                    <width max="220">auto</width>
 				                    <aspectratio>keep</aspectratio>
-				                    <texture diffuse="redlight_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
+				                    <texture diffuse="finder_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
 				                </control>
 				            </focusedlayout>
 				        </control>
@@ -643,9 +643,9 @@
 				            <height>15</height>
 				            <onup>2052</onup>
 				            <ondown>2053</ondown>
-				            <texturesliderbackground colordiffuse="FF1F2020">redlight_common/white.png</texturesliderbackground>
-				            <texturesliderbar colordiffuse="FF555556">redlight_common/white.png</texturesliderbar>
-				            <texturesliderbarfocus colordiffuse="FFCCCCCC">redlight_common/white.png</texturesliderbarfocus>
+				            <texturesliderbackground colordiffuse="FF1F2020">finder_common/white.png</texturesliderbackground>
+				            <texturesliderbar colordiffuse="FF555556">finder_common/white.png</texturesliderbar>
+				            <texturesliderbarfocus colordiffuse="FFCCCCCC">finder_common/white.png</texturesliderbarfocus>
 				            <showonepage>false</showonepage>
 				            <orientation>Horizontal</orientation>
 				            <visible>String.IsEqual(Window.Property(enable_scrollbars),true) + [Control.HasFocus(2052) | Control.HasFocus(4052)]</visible>
@@ -655,7 +655,7 @@
 				            <left>20</left>
 				            <width>25</width>
 				            <height>25</height>
-				            <texture colordiffuse="CCCCCCCC" background="true">redlight_common/arrow_left.png</texture>
+				            <texture colordiffuse="CCCCCCCC" background="true">finder_common/arrow_left.png</texture>
 				            <visible>[Control.HasFocus(2052) | Control.HasFocus(4052)] + Container(2052).HasPrevious</visible>
 				        </control>
 				        <control type="image">
@@ -663,7 +663,7 @@
 				            <left>1135</left>
 				            <width>25</width>
 				            <height>25</height>
-				            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">redlight_common/arrow_left.png</texture>
+				            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">finder_common/arrow_left.png</texture>
 				            <visible>[Control.HasFocus(2052) | Control.HasFocus(4052)] + Container(2052).HasNext</visible>
 				        </control>
 				    </control>
@@ -675,7 +675,7 @@
 				        <control type="label">
 				            <width min="30" max="1160">auto</width>
 				            <height>20</height>
-				            <font>font14</font> <!-- redlight_33 -->
+				            <font>font14</font> <!-- Finder_33 -->
 				            <textcolor>FFCCCCCC</textcolor>
 				            <label>[B]Related $INFO[Window.Property(related.number)][/B]</label>
 				            <visible>!Control.HasFocus(2053)</visible>
@@ -683,7 +683,7 @@
 				        <control type="label">
 				            <width min="30" max="1160">auto</width>
 				            <height>20</height>
-				            <font>font14</font> <!-- redlight_33 -->
+				            <font>font14</font> <!-- Finder_33 -->
 				            <textcolor>FFCCCCCC</textcolor>
 				            <label>[B]Related | [/B]$INFO[ListItem.Property(name)]$INFO[ListItem.Property(release_date), • ]$INFO[ListItem.Property(vote_average), • ]</label>
 				            <visible>Control.HasFocus(2053)</visible>
@@ -708,7 +708,7 @@
 				                    <height max="344">auto</height>
 				                    <width max="220">auto</width>
 				                    <aspectratio>keep</aspectratio>
-				                    <texture diffuse="redlight_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
+				                    <texture diffuse="finder_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
 				                </control>
 				            </itemlayout>
 				            <focusedlayout height="360" width="236">
@@ -722,7 +722,7 @@
 				                    <top>5</top>
 				                    <height>350</height>
 				                    <width>236</width>
-				                    <texture colordiffuse="FFCCCCCC">redlight_diffuse/poster-50.png</texture>
+				                    <texture colordiffuse="FFCCCCCC">finder_diffuse/poster-50.png</texture>
 				                    <visible>Control.HasFocus(2053) | Control.HasFocus(4053)</visible>
 				                </control>
 				                <control type="image">
@@ -731,7 +731,7 @@
 				                    <height max="344">auto</height>
 				                    <width max="220">auto</width>
 				                    <aspectratio>keep</aspectratio>
-				                    <texture diffuse="redlight_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
+				                    <texture diffuse="finder_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
 				                </control>
 				            </focusedlayout>
 				        </control>
@@ -742,9 +742,9 @@
 				            <height>15</height>
 				            <onup>2053</onup>
 				            <ondown>2054</ondown>
-				            <texturesliderbackground colordiffuse="FF1F2020">redlight_common/white.png</texturesliderbackground>
-				            <texturesliderbar colordiffuse="FF555556">redlight_common/white.png</texturesliderbar>
-				            <texturesliderbarfocus colordiffuse="FFCCCCCC">redlight_common/white.png</texturesliderbarfocus>
+				            <texturesliderbackground colordiffuse="FF1F2020">finder_common/white.png</texturesliderbackground>
+				            <texturesliderbar colordiffuse="FF555556">finder_common/white.png</texturesliderbar>
+				            <texturesliderbarfocus colordiffuse="FFCCCCCC">finder_common/white.png</texturesliderbarfocus>
 				            <showonepage>false</showonepage>
 				            <orientation>Horizontal</orientation>
 				            <visible>String.IsEqual(Window.Property(enable_scrollbars),true) + [Control.HasFocus(2053) | Control.HasFocus(4053)]</visible>
@@ -754,7 +754,7 @@
 				            <left>20</left>
 				            <width>25</width>
 				            <height>25</height>
-				            <texture colordiffuse="CCCCCCCC" background="true">redlight_common/arrow_left.png</texture>
+				            <texture colordiffuse="CCCCCCCC" background="true">finder_common/arrow_left.png</texture>
 				            <visible>[Control.HasFocus(2053) | Control.HasFocus(4053)] + Container(2053).HasPrevious</visible>
 				        </control>
 				        <control type="image">
@@ -762,7 +762,7 @@
 				            <left>1135</left>
 				            <width>25</width>
 				            <height>25</height>
-				            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">redlight_common/arrow_left.png</texture>
+				            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">finder_common/arrow_left.png</texture>
 				            <visible>[Control.HasFocus(2053) | Control.HasFocus(4053)] + Container(2053).HasNext</visible>
 				        </control>
 				    </control>
@@ -774,7 +774,7 @@
 				        <control type="label">
 				            <width min="30" max="1160">auto</width>
 				            <height>20</height>
-				            <font>font14</font> <!-- redlight_33 -->
+				            <font>font14</font> <!-- Finder_33 -->
 				            <textcolor>FFCCCCCC</textcolor>
 				            <label>[B]More Like This $INFO[Window.Property(more_like_this.number)][/B]</label>
 				            <visible>!Control.HasFocus(2054)</visible>
@@ -782,7 +782,7 @@
 				        <control type="label">
 				            <width min="30" max="1160">auto</width>
 				            <height>20</height>
-				            <font>font14</font> <!-- redlight_33 -->
+				            <font>font14</font> <!-- Finder_33 -->
 				            <textcolor>FFCCCCCC</textcolor>
 				            <label>[B]More Like This | [/B]$INFO[ListItem.Property(name)]$INFO[ListItem.Property(release_date), • ]$INFO[ListItem.Property(vote_average), • ]</label>
 				            <visible>Control.HasFocus(2054)</visible>
@@ -807,7 +807,7 @@
 				                    <height max="344">auto</height>
 				                    <width max="220">auto</width>
 				                    <aspectratio>keep</aspectratio>
-				                    <texture diffuse="redlight_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
+				                    <texture diffuse="finder_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
 				                </control>
 				            </itemlayout>
 				            <focusedlayout height="360" width="236">
@@ -821,7 +821,7 @@
 				                    <top>5</top>
 				                    <height>350</height>
 				                    <width>236</width>
-				                    <texture colordiffuse="FFCCCCCC">redlight_diffuse/poster-50.png</texture>
+				                    <texture colordiffuse="FFCCCCCC">finder_diffuse/poster-50.png</texture>
 				                    <visible>Control.HasFocus(2054) | Control.HasFocus(4054)</visible>
 				                </control>
 				                <control type="image">
@@ -830,7 +830,7 @@
 				                    <height max="344">auto</height>
 				                    <width max="220">auto</width>
 				                    <aspectratio>keep</aspectratio>
-				                    <texture diffuse="redlight_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
+				                    <texture diffuse="finder_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
 				                </control>
 				            </focusedlayout>
 				        </control>
@@ -841,9 +841,9 @@
 				            <height>15</height>
 				            <onup>2054</onup>
 				            <ondown>2056</ondown>
-				            <texturesliderbackground colordiffuse="FF1F2020">redlight_common/white.png</texturesliderbackground>
-				            <texturesliderbar colordiffuse="FF555556">redlight_common/white.png</texturesliderbar>
-				            <texturesliderbarfocus colordiffuse="FFCCCCCC">redlight_common/white.png</texturesliderbarfocus>
+				            <texturesliderbackground colordiffuse="FF1F2020">finder_common/white.png</texturesliderbackground>
+				            <texturesliderbar colordiffuse="FF555556">finder_common/white.png</texturesliderbar>
+				            <texturesliderbarfocus colordiffuse="FFCCCCCC">finder_common/white.png</texturesliderbarfocus>
 				            <showonepage>false</showonepage>
 				            <orientation>Horizontal</orientation>
 				            <visible>String.IsEqual(Window.Property(enable_scrollbars),true) + [Control.HasFocus(2054) | Control.HasFocus(4054)]</visible>
@@ -853,7 +853,7 @@
 				            <left>20</left>
 				            <width>25</width>
 				            <height>25</height>
-				            <texture colordiffuse="CCCCCCCC" background="true">redlight_common/arrow_left.png</texture>
+				            <texture colordiffuse="CCCCCCCC" background="true">finder_common/arrow_left.png</texture>
 				            <visible>[Control.HasFocus(2054) | Control.HasFocus(4054)] + Container(2054).HasPrevious</visible>
 				        </control>
 				        <control type="image">
@@ -861,7 +861,7 @@
 				            <left>1135</left>
 				            <width>25</width>
 				            <height>25</height>
-				            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">redlight_common/arrow_left.png</texture>
+				            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">finder_common/arrow_left.png</texture>
 				            <visible>[Control.HasFocus(2054) | Control.HasFocus(4054)] + Container(2054).HasNext</visible>
 				        </control>
 				    </control>
@@ -873,7 +873,7 @@
 				        <control type="label">
 				            <width max="1160">auto</width>
 				            <height>20</height>
-				            <font>font14</font> <!-- redlight_33 -->
+				            <font>font14</font> <!-- Finder_33 -->
 				            <textcolor>FFCCCCCC</textcolor>
 				            <align>left</align>
 				            <aligny>bottom</aligny>
@@ -892,14 +892,14 @@
 				                <control type="image">
 				                    <height>360</height>
 				                    <width>580</width>
-				                    <texture colordiffuse="$INFO[Window(10000).Property(redlight.window_theme.extras)]" border="30">redlight_common/circle.png</texture>
+				                    <texture colordiffuse="$INFO[Window(10000).Property(finder.window_theme.extras)]" border="30">finder_common/circle.png</texture>
 				                </control>
 				                <control type="textbox">
 				                    <top>15</top>
 				                    <left>20</left>
 				                    <width>540</width>
 				                    <height>308</height>
-				                    <font>font12</font> <!-- redlight_26 -->
+				                    <font>font12</font> <!-- Finder_26 -->
 				                    <align>center</align>
 				                    <aligny>top</aligny>
 				                    <textcolor>FFCCCCCC</textcolor>
@@ -911,14 +911,14 @@
 				                <control type="image">
 				                    <height>360</height>
 				                    <width>580</width>
-				                    <texture colordiffuse="FFCCCCCC" border="30">redlight_common/circle.png</texture>
+				                    <texture colordiffuse="FFCCCCCC" border="30">finder_common/circle.png</texture>
 				                </control>
 				                <control type="textbox">
 				                    <top>15</top>
 				                    <left>20</left>
 				                    <width>540</width>
 				                    <height>308</height>
-				                    <font>font12</font> <!-- redlight_26 -->
+				                    <font>font12</font> <!-- Finder_26 -->
 				                    <align>center</align>
 				                    <aligny>top</aligny>
 				                    <textcolor>FF1F2020</textcolor>
@@ -933,9 +933,9 @@
 				            <height>15</height>
 				            <onup>2056</onup>
 				            <ondown>2057</ondown>
-				            <texturesliderbackground colordiffuse="FF1F2020">redlight_common/white.png</texturesliderbackground>
-				            <texturesliderbar colordiffuse="FF555556">redlight_common/white.png</texturesliderbar>
-				            <texturesliderbarfocus colordiffuse="FFCCCCCC">redlight_common/white.png</texturesliderbarfocus>
+				            <texturesliderbackground colordiffuse="FF1F2020">finder_common/white.png</texturesliderbackground>
+				            <texturesliderbar colordiffuse="FF555556">finder_common/white.png</texturesliderbar>
+				            <texturesliderbarfocus colordiffuse="FFCCCCCC">finder_common/white.png</texturesliderbarfocus>
 				            <showonepage>false</showonepage>
 				            <orientation>Horizontal</orientation>
 				            <visible>String.IsEqual(Window.Property(enable_scrollbars),true) + [Control.HasFocus(2056) | Control.HasFocus(4056)]</visible>
@@ -945,7 +945,7 @@
 				            <left>20</left>
 				            <width>25</width>
 				            <height>25</height>
-				            <texture colordiffuse="CCCCCCCC" background="true">redlight_common/arrow_left.png</texture>
+				            <texture colordiffuse="CCCCCCCC" background="true">finder_common/arrow_left.png</texture>
 				            <visible>[Control.HasFocus(2056) | Control.HasFocus(4056)] + Container(2056).HasPrevious</visible>
 				        </control>
 				        <control type="image">
@@ -953,7 +953,7 @@
 				            <left>1125</left>
 				            <width>25</width>
 				            <height>25</height>
-				            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">redlight_common/arrow_left.png</texture>
+				            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">finder_common/arrow_left.png</texture>
 				            <visible>[Control.HasFocus(2056) | Control.HasFocus(4056)] + Container(2056).HasNext</visible>
 				        </control>
 				    </control>
@@ -965,7 +965,7 @@
 				        <control type="label">
 				            <width max="1160">auto</width>
 				            <height>20</height>
-				            <font>font14</font> <!-- redlight_33 -->
+				            <font>font14</font> <!-- Finder_33 -->
 				            <textcolor>FFCCCCCC</textcolor>
 				            <align>left</align>
 				            <aligny>bottom</aligny>
@@ -984,14 +984,14 @@
 				                <control type="image">
 				                    <height>360</height>
 				                    <width>580</width>
-				                    <texture colordiffuse="$INFO[Window(10000).Property(redlight.window_theme.extras)]" border="30">redlight_common/circle.png</texture>
+				                    <texture colordiffuse="$INFO[Window(10000).Property(finder.window_theme.extras)]" border="30">finder_common/circle.png</texture>
 				                </control>
 				                <control type="textbox">
 				                    <top>15</top>
 				                    <left>20</left>
 				                    <width>540</width>
 				                    <height>308</height>
-				                    <font>font12</font> <!-- redlight_26 -->
+				                    <font>font12</font> <!-- Finder_26 -->
 				                    <align>center</align>
 				                    <aligny>top</aligny>
 				                    <textcolor>FFCCCCCC</textcolor>
@@ -1003,14 +1003,14 @@
 				                <control type="image">
 				                    <height>360</height>
 				                    <width>580</width>
-				                    <texture colordiffuse="FFCCCCCC" border="30">redlight_common/circle.png</texture>
+				                    <texture colordiffuse="FFCCCCCC" border="30">finder_common/circle.png</texture>
 				                </control>
 				                <control type="textbox">
 				                    <top>15</top>
 				                    <left>20</left>
 				                    <width>540</width>
 				                    <height>308</height>
-				                    <font>font12</font> <!-- redlight_26 -->
+				                    <font>font12</font> <!-- Finder_26 -->
 				                    <align>center</align>
 				                    <aligny>top</aligny>
 				                    <textcolor>FF1F2020</textcolor>
@@ -1025,9 +1025,9 @@
 				            <height>15</height>
 				            <onup>2057</onup>
 				            <ondown>2058</ondown>
-				            <texturesliderbackground colordiffuse="FF1F2020">redlight_common/white.png</texturesliderbackground>
-				            <texturesliderbar colordiffuse="FF555556">redlight_common/white.png</texturesliderbar>
-				            <texturesliderbarfocus colordiffuse="FFCCCCCC">redlight_common/white.png</texturesliderbarfocus>
+				            <texturesliderbackground colordiffuse="FF1F2020">finder_common/white.png</texturesliderbackground>
+				            <texturesliderbar colordiffuse="FF555556">finder_common/white.png</texturesliderbar>
+				            <texturesliderbarfocus colordiffuse="FFCCCCCC">finder_common/white.png</texturesliderbarfocus>
 				            <showonepage>false</showonepage>
 				            <orientation>Horizontal</orientation>
 				            <visible>String.IsEqual(Window.Property(enable_scrollbars),true) + [Control.HasFocus(2057) | Control.HasFocus(4057)]</visible>
@@ -1037,7 +1037,7 @@
 				            <left>20</left>
 				            <width>25</width>
 				            <height>25</height>
-				            <texture colordiffuse="CCCCCCCC" background="true">redlight_common/arrow_left.png</texture>
+				            <texture colordiffuse="CCCCCCCC" background="true">finder_common/arrow_left.png</texture>
 				            <visible>[Control.HasFocus(2057) | Control.HasFocus(4057)] + Container(2057).HasPrevious</visible>
 				        </control>
 				        <control type="image">
@@ -1045,7 +1045,7 @@
 				            <left>1125</left>
 				            <width>25</width>
 				            <height>25</height>
-				            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">redlight_common/arrow_left.png</texture>
+				            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">finder_common/arrow_left.png</texture>
 				            <visible>[Control.HasFocus(2057) | Control.HasFocus(4057)] + Container(2057).HasNext</visible>
 				        </control>
 				    </control>
@@ -1057,7 +1057,7 @@
 				        <control type="label">
 				            <width max="1160">auto</width>
 				            <height>20</height>
-				            <font>font14</font> <!-- redlight_33 -->
+				            <font>font14</font> <!-- Finder_33 -->
 				            <textcolor>FFCCCCCC</textcolor>
 				            <align>left</align>
 				            <aligny>bottom</aligny>
@@ -1076,14 +1076,14 @@
 				                <control type="image">
 				                    <height>360</height>
 				                    <width>580</width>
-				                    <texture colordiffuse="$INFO[Window(10000).Property(redlight.window_theme.extras)]" border="30">redlight_common/circle.png</texture>
+				                    <texture colordiffuse="$INFO[Window(10000).Property(finder.window_theme.extras)]" border="30">finder_common/circle.png</texture>
 				                </control>
 				                <control type="textbox">
 				                    <top>15</top>
 				                    <left>20</left>
 				                    <width>540</width>
 				                    <height>308</height>
-				                    <font>font12</font> <!-- redlight_26 -->
+				                    <font>font12</font> <!-- Finder_26 -->
 				                    <align>center</align>
 				                    <aligny>top</aligny>
 				                    <textcolor>FFCCCCCC</textcolor>
@@ -1095,14 +1095,14 @@
 				                <control type="image">
 				                    <height>360</height>
 				                    <width>580</width>
-				                    <texture colordiffuse="FFCCCCCC" border="30">redlight_common/circle.png</texture>
+				                    <texture colordiffuse="FFCCCCCC" border="30">finder_common/circle.png</texture>
 				                </control>
 				                <control type="textbox">
 				                    <top>15</top>
 				                    <left>20</left>
 				                    <width>540</width>
 				                    <height>308</height>
-				                    <font>font12</font> <!-- redlight_26 -->
+				                    <font>font12</font> <!-- Finder_26 -->
 				                    <align>center</align>
 				                    <aligny>top</aligny>
 				                    <textcolor>FF1F2020</textcolor>
@@ -1117,9 +1117,9 @@
 				            <height>15</height>
 				            <onup>2058</onup>
 				            <ondown>2059</ondown>
-				            <texturesliderbackground colordiffuse="FF1F2020">redlight_common/white.png</texturesliderbackground>
-				            <texturesliderbar colordiffuse="FF555556">redlight_common/white.png</texturesliderbar>
-				            <texturesliderbarfocus colordiffuse="FFCCCCCC">redlight_common/white.png</texturesliderbarfocus>
+				            <texturesliderbackground colordiffuse="FF1F2020">finder_common/white.png</texturesliderbackground>
+				            <texturesliderbar colordiffuse="FF555556">finder_common/white.png</texturesliderbar>
+				            <texturesliderbarfocus colordiffuse="FFCCCCCC">finder_common/white.png</texturesliderbarfocus>
 				            <showonepage>false</showonepage>
 				            <orientation>Horizontal</orientation>
 				            <visible>String.IsEqual(Window.Property(enable_scrollbars),true) + [Control.HasFocus(2058) | Control.HasFocus(4058)]</visible>
@@ -1129,7 +1129,7 @@
 				            <left>20</left>
 				            <width>25</width>
 				            <height>25</height>
-				            <texture colordiffuse="CCCCCCCC" background="true">redlight_common/arrow_left.png</texture>
+				            <texture colordiffuse="CCCCCCCC" background="true">finder_common/arrow_left.png</texture>
 				            <visible>[Control.HasFocus(2058) | Control.HasFocus(4058)] + Container(2058).HasPrevious</visible>
 				        </control>
 				        <control type="image">
@@ -1137,7 +1137,7 @@
 				            <left>1125</left>
 				            <width>25</width>
 				            <height>25</height>
-				            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">redlight_common/arrow_left.png</texture>
+				            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">finder_common/arrow_left.png</texture>
 				            <visible>[Control.HasFocus(2058) | Control.HasFocus(4058)] + Container(2058).HasNext</visible>
 				        </control>
 				    </control>
@@ -1149,7 +1149,7 @@
 				        <control type="label">
 				            <width max="1160">auto</width>
 				            <height>20</height>
-				            <font>font14</font> <!-- redlight_33 -->
+				            <font>font14</font> <!-- Finder_33 -->
 				            <textcolor>FFCCCCCC</textcolor>
 				            <align>left</align>
 				            <aligny>bottom</aligny>
@@ -1168,14 +1168,14 @@
 				                <control type="image">
 				                    <height>360</height>
 				                    <width>580</width>
-				                    <texture colordiffuse="$INFO[Window(10000).Property(redlight.window_theme.extras)]" border="30">redlight_common/circle.png</texture>
+				                    <texture colordiffuse="$INFO[Window(10000).Property(finder.window_theme.extras)]" border="30">finder_common/circle.png</texture>
 				                </control>
 				                <control type="textbox">
 				                    <top>15</top>
 				                    <left>20</left>
 				                    <width>540</width>
 				                    <height>308</height>
-				                    <font>font12</font> <!-- redlight_26 -->
+				                    <font>font12</font> <!-- Finder_26 -->
 				                    <align>center</align>
 				                    <aligny>top</aligny>
 				                    <textcolor>FFCCCCCC</textcolor>
@@ -1187,14 +1187,14 @@
 				                <control type="image">
 				                    <height>360</height>
 				                    <width>580</width>
-				                    <texture colordiffuse="FFCCCCCC" border="30">redlight_common/circle.png</texture>
+				                    <texture colordiffuse="FFCCCCCC" border="30">finder_common/circle.png</texture>
 				                </control>
 				                <control type="textbox">
 				                    <top>15</top>
 				                    <left>20</left>
 				                    <width>540</width>
 				                    <height>308</height>
-				                    <font>font12</font> <!-- redlight_26 -->
+				                    <font>font12</font> <!-- Finder_26 -->
 				                    <align>center</align>
 				                    <aligny>top</aligny>
 				                    <textcolor>FF1F2020</textcolor>
@@ -1209,9 +1209,9 @@
 				            <height>15</height>
 				            <onup>2059</onup>
 				            <ondown>2060</ondown>
-				            <texturesliderbackground colordiffuse="FF1F2020">redlight_common/white.png</texturesliderbackground>
-				            <texturesliderbar colordiffuse="FF555556">redlight_common/white.png</texturesliderbar>
-				            <texturesliderbarfocus colordiffuse="FFCCCCCC">redlight_common/white.png</texturesliderbarfocus>
+				            <texturesliderbackground colordiffuse="FF1F2020">finder_common/white.png</texturesliderbackground>
+				            <texturesliderbar colordiffuse="FF555556">finder_common/white.png</texturesliderbar>
+				            <texturesliderbarfocus colordiffuse="FFCCCCCC">finder_common/white.png</texturesliderbarfocus>
 				            <showonepage>false</showonepage>
 				            <orientation>Horizontal</orientation>
 				            <visible>String.IsEqual(Window.Property(enable_scrollbars),true) + [Control.HasFocus(2059) | Control.HasFocus(4059)]</visible>
@@ -1221,7 +1221,7 @@
 				            <left>20</left>
 				            <width>25</width>
 				            <height>25</height>
-				            <texture colordiffuse="CCCCCCCC" background="true">redlight_common/arrow_left.png</texture>
+				            <texture colordiffuse="CCCCCCCC" background="true">finder_common/arrow_left.png</texture>
 				            <visible>[Control.HasFocus(2059) | Control.HasFocus(4059)] + Container(2059).HasPrevious</visible>
 				        </control>
 				        <control type="image">
@@ -1229,7 +1229,7 @@
 				            <left>1125</left>
 				            <width>25</width>
 				            <height>25</height>
-				            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">redlight_common/arrow_left.png</texture>
+				            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">finder_common/arrow_left.png</texture>
 				            <visible>[Control.HasFocus(2059) | Control.HasFocus(4059)] + Container(2059).HasNext</visible>
 				        </control>
 				    </control>
@@ -1241,7 +1241,7 @@
                         <control type="label">
                             <width max="1160">auto</width>
                             <height>20</height>
-                            <font>font14</font> <!-- redlight_33 -->
+                            <font>font14</font> <!-- Finder_33 -->
                             <textcolor>FFCCCCCC</textcolor>
                             <align>left</align>
                             <aligny>bottom</aligny>
@@ -1259,7 +1259,7 @@
                                 <control type="image">
                                     <height>360</height>
                                     <width>230</width>
-                                    <texture colordiffuse="$INFO[Window(10000).Property(redlight.window_theme.extras)]" border="30">redlight_common/circle.png</texture>
+                                    <texture colordiffuse="$INFO[Window(10000).Property(finder.window_theme.extras)]" border="30">finder_common/circle.png</texture>
                                 </control>
                                 <control type="image">
                                     <left>6</left>
@@ -1274,7 +1274,7 @@
                                     <top>6</top>
                                     <width>224</width>
                                     <height>75</height>
-                                    <font>font12</font> <!-- redlight_26 -->
+                                    <font>font12</font> <!-- Finder_26 -->
                                     <align>center</align>
                                     <aligny>center</aligny>
                                     <textcolor>FFCCCCCC</textcolor>
@@ -1286,7 +1286,7 @@
                                     <top>280</top>
                                     <width>224</width>
                                     <height>75</height>
-                                    <font>font12</font> <!-- redlight_26 -->
+                                    <font>font12</font> <!-- Finder_26 -->
                                     <align>center</align>
                                     <aligny>center</aligny>
                                     <textcolor>FFCCCCCC</textcolor>
@@ -1298,7 +1298,7 @@
                                 <control type="image">
                                     <width>230</width>
                                     <height>360</height>
-                                    <texture colordiffuse="FFCCCCCC" border="30">redlight_common/circle.png</texture>
+                                    <texture colordiffuse="FFCCCCCC" border="30">finder_common/circle.png</texture>
                                 </control>
                                 <control type="image">
                                     <left>6</left>
@@ -1313,7 +1313,7 @@
                                     <top>6</top>
                                     <width>224</width>
                                     <height>75</height>
-                                    <font>font12</font> <!-- redlight_26 -->
+                                    <font>font12</font> <!-- Finder_26 -->
                                     <align>center</align>
                                     <aligny>center</aligny>
                                     <textcolor>FF1F2020</textcolor>
@@ -1325,7 +1325,7 @@
                                     <top>280</top>
                                     <width>224</width>
                                     <height>75</height>
-                                    <font>font12</font> <!-- redlight_26 -->
+                                    <font>font12</font> <!-- Finder_26 -->
                                     <align>center</align>
                                     <aligny>center</aligny>
                                     <textcolor>FF1F2020</textcolor>
@@ -1343,7 +1343,7 @@
                         <control type="label">
                             <width max="1160">auto</width>
                             <height>20</height>
-                            <font>font14</font> <!-- redlight_33 -->
+                            <font>font14</font> <!-- Finder_33 -->
                             <textcolor>FFCCCCCC</textcolor>
                             <align>left</align>
                             <aligny>bottom</aligny>
@@ -1366,7 +1366,7 @@
                                 <control type="image">
                                     <height>360</height>
                                     <width>230</width>
-                                    <texture colordiffuse="$INFO[Window(10000).Property(redlight.window_theme.extras)]" border="30">redlight_common/circle.png</texture>
+                                    <texture colordiffuse="$INFO[Window(10000).Property(finder.window_theme.extras)]" border="30">finder_common/circle.png</texture>
                                 </control>
                                 <control type="image">
                                     <left>-35</left>
@@ -1383,7 +1383,7 @@
                                     <top>10</top>
                                     <width>220</width>
                                     <height>340</height>
-                                    <font>font12</font> <!-- redlight_26 -->
+                                    <font>font12</font> <!-- Finder_26 -->
                                     <align>center</align>
                                     <aligny>center</aligny>
                                     <textcolor>FFCCCCCC</textcolor>
@@ -1395,7 +1395,7 @@
                                     <left>90</left>
                                     <width>50</width>
                                     <aspectratio>keep</aspectratio>
-                                    <texture colordiffuse="red">redlight_common/overlay_selected.png</texture>
+                                    <texture colordiffuse="red">finder_common/overlay_selected.png</texture>
                                     <visible>String.IsEqual(ListItem.Property(liked_status),true)</visible>
                                 </control>
                             </itemlayout>
@@ -1403,14 +1403,14 @@
                                 <control type="image">
                                     <width>230</width>
                                     <height>360</height>
-                                    <texture colordiffuse="FFCCCCCC" border="30">redlight_common/circle.png</texture>
+                                    <texture colordiffuse="FFCCCCCC" border="30">finder_common/circle.png</texture>
                                     <visible>Control.HasFocus(2061) | Control.HasFocus(4061)</visible>
                                     <animation effect="fade" start="100" end="60" condition="Control.HasFocus(4061)">Conditional</animation>
                                 </control>
                                 <control type="image">
                                     <height>360</height>
                                     <width>230</width>
-                                    <texture colordiffuse="$INFO[Window(10000).Property(redlight.window_theme.extras)]" border="30">redlight_common/circle.png</texture>
+                                    <texture colordiffuse="$INFO[Window(10000).Property(finder.window_theme.extras)]" border="30">finder_common/circle.png</texture>
                                     <visible>![Control.HasFocus(2061) | Control.HasFocus(4061)]</visible>
                                 </control>
                                 <control type="image">
@@ -1428,7 +1428,7 @@
                                     <top>10</top>
                                     <width>220</width>
                                     <height>340</height>
-                                    <font>font12</font> <!-- redlight_26 -->
+                                    <font>font12</font> <!-- Finder_26 -->
                                     <align>center</align>
                                     <aligny>center</aligny>
                                     <textcolor>FF1F2020</textcolor>
@@ -1441,7 +1441,7 @@
                                     <top>10</top>
                                     <width>220</width>
                                     <height>340</height>
-                                    <font>font12</font> <!-- redlight_26 -->
+                                    <font>font12</font> <!-- Finder_26 -->
                                     <align>center</align>
                                     <aligny>center</aligny>
                                     <textcolor>FFCCCCCC</textcolor>
@@ -1454,7 +1454,7 @@
                                     <left>90</left>
                                     <width>50</width>
                                     <aspectratio>keep</aspectratio>
-                                    <texture colordiffuse="red">redlight_common/overlay_selected.png</texture>
+                                    <texture colordiffuse="red">finder_common/overlay_selected.png</texture>
                                     <visible>String.IsEqual(ListItem.Property(liked_status),true)</visible>
                                 </control>
                             </focusedlayout>
@@ -1466,9 +1466,9 @@
                             <height>15</height>
                             <onup>2061</onup>
                             <ondown>2062</ondown>
-                            <texturesliderbackground colordiffuse="FF1F2020">redlight_common/white.png</texturesliderbackground>
-                            <texturesliderbar colordiffuse="FF555556">redlight_common/white.png</texturesliderbar>
-                            <texturesliderbarfocus colordiffuse="FFCCCCCC">redlight_common/white.png</texturesliderbarfocus>
+                            <texturesliderbackground colordiffuse="FF1F2020">finder_common/white.png</texturesliderbackground>
+                            <texturesliderbar colordiffuse="FF555556">finder_common/white.png</texturesliderbar>
+                            <texturesliderbarfocus colordiffuse="FFCCCCCC">finder_common/white.png</texturesliderbarfocus>
                             <showonepage>false</showonepage>
                             <orientation>Horizontal</orientation>
                             <visible>String.IsEqual(Window.Property(enable_scrollbars),true) + [Control.HasFocus(2061) | Control.HasFocus(4061)]</visible>
@@ -1478,7 +1478,7 @@
                             <left>20</left>
                             <width>25</width>
                             <height>25</height>
-                            <texture colordiffuse="CCCCCCCC" background="true">redlight_common/arrow_left.png</texture>
+                            <texture colordiffuse="CCCCCCCC" background="true">finder_common/arrow_left.png</texture>
                             <visible>[Control.HasFocus(2061) | Control.HasFocus(4061)] + Container(2061).HasPrevious</visible>
                         </control>
                         <control type="image">
@@ -1486,7 +1486,7 @@
                             <left>1135</left>
                             <width>25</width>
                             <height>25</height>
-                            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">redlight_common/arrow_left.png</texture>
+                            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">finder_common/arrow_left.png</texture>
                             <visible>[Control.HasFocus(2061) | Control.HasFocus(4061)] + Container(2061).HasNext</visible>
                         </control>
                     </control>
@@ -1498,7 +1498,7 @@
                         <control type="label">
                             <width min="30" max="1160">auto</width>
                             <height>20</height>
-                            <font>font14</font> <!-- redlight_33 -->
+                            <font>font14</font> <!-- Finder_33 -->
                             <textcolor>FFCCCCCC</textcolor>
                             <label>[B]Videos $INFO[Window.Property(youtube_videos.number)][/B]</label>
                             <visible>!Control.HasFocus(2062)</visible>
@@ -1506,7 +1506,7 @@
                         <control type="label">
                             <width min="30" max="1160">auto</width>
                             <height>20</height>
-                            <font>font14</font> <!-- redlight_33 -->
+                            <font>font14</font> <!-- Finder_33 -->
                             <textcolor>FFCCCCCC</textcolor>
                             <label>[B]Videos | [/B]$INFO[ListItem.Property(name)]</label>
                             <visible>Control.HasFocus(2062)</visible>
@@ -1530,7 +1530,7 @@
                                     <height max="344">auto</height>
                                     <width max="376">auto</width>
                                     <aspectratio>keep</aspectratio>
-                                    <texture diffuse="redlight_diffuse/landscape.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
+                                    <texture diffuse="finder_diffuse/landscape.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
                                 </control>
                             </itemlayout>
                             <focusedlayout height="360" width="392">
@@ -1544,7 +1544,7 @@
                                     <top>32</top>
                                     <height>296</height>
                                     <width>393</width>
-                                    <texture colordiffuse="FFCCCCCC">redlight_diffuse/landscape.png</texture>
+                                    <texture colordiffuse="FFCCCCCC">finder_diffuse/landscape.png</texture>
                                     <visible>Control.HasFocus(2062) | Control.HasFocus(4062)</visible>
                                 </control>
                                 <control type="image">
@@ -1553,7 +1553,7 @@
                                     <height max="344">auto</height>
                                     <width max="376">auto</width>
                                     <aspectratio>keep</aspectratio>
-                                    <texture diffuse="redlight_diffuse/landscape.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
+                                    <texture diffuse="finder_diffuse/landscape.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
                                 </control>
                             </focusedlayout>
                         </control>
@@ -1564,9 +1564,9 @@
                             <height>15</height>
                             <onup>2062</onup>
                             <ondown>2063</ondown>
-                            <texturesliderbackground colordiffuse="FF1F2020">redlight_common/white.png</texturesliderbackground>
-                            <texturesliderbar colordiffuse="FF555556">redlight_common/white.png</texturesliderbar>
-                            <texturesliderbarfocus colordiffuse="FFCCCCCC">redlight_common/white.png</texturesliderbarfocus>
+                            <texturesliderbackground colordiffuse="FF1F2020">finder_common/white.png</texturesliderbackground>
+                            <texturesliderbar colordiffuse="FF555556">finder_common/white.png</texturesliderbar>
+                            <texturesliderbarfocus colordiffuse="FFCCCCCC">finder_common/white.png</texturesliderbarfocus>
                             <showonepage>false</showonepage>
                             <orientation>Horizontal</orientation>
                             <visible>String.IsEqual(Window.Property(enable_scrollbars),true) + [Control.HasFocus(2062) | Control.HasFocus(4062)]</visible>
@@ -1576,7 +1576,7 @@
                             <left>20</left>
                             <width>25</width>
                             <height>25</height>
-                            <texture colordiffuse="CCCCCCCC" background="true">redlight_common/arrow_left.png</texture>
+                            <texture colordiffuse="CCCCCCCC" background="true">finder_common/arrow_left.png</texture>
                             <visible>[Control.HasFocus(2062) | Control.HasFocus(4062)] + Container(2062).HasPrevious</visible>
                         </control>
                         <control type="image">
@@ -1584,7 +1584,7 @@
                             <left>1125</left>
                             <width>25</width>
                             <height>25</height>
-                            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">redlight_common/arrow_left.png</texture>
+                            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">finder_common/arrow_left.png</texture>
                             <visible>[Control.HasFocus(2062) | Control.HasFocus(4062)] + Container(2062).HasNext</visible>
                         </control>
                     </control>
@@ -1596,7 +1596,7 @@
 				        <control type="label">
 				            <width min="30" max="1160">auto</width>
 				            <height>20</height>
-				            <font>font14</font> <!-- redlight_33 -->
+				            <font>font14</font> <!-- Finder_33 -->
 				            <textcolor>FFCCCCCC</textcolor>
 				            <label>[B]More from Year $INFO[Window.Property(more_from_year.number)][/B]</label>
 				            <visible>!Control.HasFocus(2063)</visible>
@@ -1604,7 +1604,7 @@
 				        <control type="label">
 				            <width min="30" max="1160">auto</width>
 				            <height>20</height>
-				            <font>font14</font> <!-- redlight_33 -->
+				            <font>font14</font> <!-- Finder_33 -->
 				            <textcolor>FFCCCCCC</textcolor>
 				            <label>[B]More from Year | [/B]$INFO[ListItem.Property(name)]$INFO[ListItem.Property(release_date), • ]$INFO[ListItem.Property(vote_average), • ]</label>
 				            <visible>Control.HasFocus(2063)</visible>
@@ -1629,7 +1629,7 @@
 				                    <height max="344">auto</height>
 				                    <width max="220">auto</width>
 				                    <aspectratio>keep</aspectratio>
-				                    <texture diffuse="redlight_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
+				                    <texture diffuse="finder_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
 				                </control>
 				            </itemlayout>
 				            <focusedlayout height="360" width="236">
@@ -1643,7 +1643,7 @@
 				                    <top>5</top>
 				                    <height>350</height>
 				                    <width>236</width>
-				                    <texture colordiffuse="FFCCCCCC">redlight_diffuse/poster-50.png</texture>
+				                    <texture colordiffuse="FFCCCCCC">finder_diffuse/poster-50.png</texture>
 				                    <visible>Control.HasFocus(2063) | Control.HasFocus(4063)</visible>
 				                </control>
 				                <control type="image">
@@ -1652,7 +1652,7 @@
 				                    <height max="344">auto</height>
 				                    <width max="220">auto</width>
 				                    <aspectratio>keep</aspectratio>
-				                    <texture diffuse="redlight_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
+				                    <texture diffuse="finder_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
 				                </control>
 				            </focusedlayout>
 				        </control>
@@ -1663,9 +1663,9 @@
 				            <height>15</height>
 				            <onup>2063</onup>
 				            <ondown>2064</ondown>
-				            <texturesliderbackground colordiffuse="FF1F2020">redlight_common/white.png</texturesliderbackground>
-				            <texturesliderbar colordiffuse="FF555556">redlight_common/white.png</texturesliderbar>
-				            <texturesliderbarfocus colordiffuse="FFCCCCCC">redlight_common/white.png</texturesliderbarfocus>
+				            <texturesliderbackground colordiffuse="FF1F2020">finder_common/white.png</texturesliderbackground>
+				            <texturesliderbar colordiffuse="FF555556">finder_common/white.png</texturesliderbar>
+				            <texturesliderbarfocus colordiffuse="FFCCCCCC">finder_common/white.png</texturesliderbarfocus>
 				            <showonepage>false</showonepage>
 				            <orientation>Horizontal</orientation>
 				            <visible>String.IsEqual(Window.Property(enable_scrollbars),true) + [Control.HasFocus(2063) | Control.HasFocus(4063)]</visible>
@@ -1675,7 +1675,7 @@
 				            <left>20</left>
 				            <width>25</width>
 				            <height>25</height>
-				            <texture colordiffuse="CCCCCCCC" background="true">redlight_common/arrow_left.png</texture>
+				            <texture colordiffuse="CCCCCCCC" background="true">finder_common/arrow_left.png</texture>
 				            <visible>[Control.HasFocus(2063) | Control.HasFocus(4063)] + Container(2063).HasPrevious</visible>
 				        </control>
 				        <control type="image">
@@ -1683,7 +1683,7 @@
 				            <left>1135</left>
 				            <width>25</width>
 				            <height>25</height>
-				            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">redlight_common/arrow_left.png</texture>
+				            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">finder_common/arrow_left.png</texture>
 				            <visible>[Control.HasFocus(2063) | Control.HasFocus(4063)] + Container(2063).HasNext</visible>
 				        </control>
 				    </control>
@@ -1695,7 +1695,7 @@
 				        <control type="label">
 				            <width min="30" max="1160">auto</width>
 				            <height>20</height>
-				            <font>font14</font> <!-- redlight_33 -->
+				            <font>font14</font> <!-- Finder_33 -->
 				            <textcolor>FFCCCCCC</textcolor>
 				            <label>[B]More from Genres $INFO[Window.Property(more_from_genres.number)][/B]</label>
 				            <visible>!Control.HasFocus(2064)</visible>
@@ -1703,7 +1703,7 @@
 				        <control type="label">
 				            <width min="30" max="1160">auto</width>
 				            <height>20</height>
-				            <font>font14</font> <!-- redlight_33 -->
+				            <font>font14</font> <!-- Finder_33 -->
 				            <textcolor>FFCCCCCC</textcolor>
 				            <label>[B]More from Genres | [/B]$INFO[ListItem.Property(name)]$INFO[ListItem.Property(release_date), • ]$INFO[ListItem.Property(vote_average), • ]</label>
 				            <visible>Control.HasFocus(2064)</visible>
@@ -1728,7 +1728,7 @@
 				                    <height max="344">auto</height>
 				                    <width max="220">auto</width>
 				                    <aspectratio>keep</aspectratio>
-				                    <texture diffuse="redlight_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
+				                    <texture diffuse="finder_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
 				                </control>
 				            </itemlayout>
 				            <focusedlayout height="360" width="236">
@@ -1742,7 +1742,7 @@
 				                    <top>5</top>
 				                    <height>350</height>
 				                    <width>236</width>
-				                    <texture colordiffuse="FFCCCCCC">redlight_diffuse/poster-50.png</texture>
+				                    <texture colordiffuse="FFCCCCCC">finder_diffuse/poster-50.png</texture>
 				                    <visible>Control.HasFocus(2064) | Control.HasFocus(4064)</visible>
 				                </control>
 				                <control type="image">
@@ -1751,7 +1751,7 @@
 				                    <height max="344">auto</height>
 				                    <width max="220">auto</width>
 				                    <aspectratio>keep</aspectratio>
-				                    <texture diffuse="redlight_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
+				                    <texture diffuse="finder_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
 				                </control>
 				            </focusedlayout>
 				        </control>
@@ -1762,9 +1762,9 @@
 				            <height>15</height>
 				            <onup>2064</onup>
 				            <ondown>2065</ondown>
-				            <texturesliderbackground colordiffuse="FF1F2020">redlight_common/white.png</texturesliderbackground>
-				            <texturesliderbar colordiffuse="FF555556">redlight_common/white.png</texturesliderbar>
-				            <texturesliderbarfocus colordiffuse="FFCCCCCC">redlight_common/white.png</texturesliderbarfocus>
+				            <texturesliderbackground colordiffuse="FF1F2020">finder_common/white.png</texturesliderbackground>
+				            <texturesliderbar colordiffuse="FF555556">finder_common/white.png</texturesliderbar>
+				            <texturesliderbarfocus colordiffuse="FFCCCCCC">finder_common/white.png</texturesliderbarfocus>
 				            <showonepage>false</showonepage>
 				            <orientation>Horizontal</orientation>
 				            <visible>String.IsEqual(Window.Property(enable_scrollbars),true) + [Control.HasFocus(2064) | Control.HasFocus(4064)]</visible>
@@ -1774,7 +1774,7 @@
 				            <left>20</left>
 				            <width>25</width>
 				            <height>25</height>
-				            <texture colordiffuse="CCCCCCCC" background="true">redlight_common/arrow_left.png</texture>
+				            <texture colordiffuse="CCCCCCCC" background="true">finder_common/arrow_left.png</texture>
 				            <visible>[Control.HasFocus(2064) | Control.HasFocus(4064)] + Container(2064).HasPrevious</visible>
 				        </control>
 				        <control type="image">
@@ -1782,7 +1782,7 @@
 				            <left>1135</left>
 				            <width>25</width>
 				            <height>25</height>
-				            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">redlight_common/arrow_left.png</texture>
+				            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">finder_common/arrow_left.png</texture>
 				            <visible>[Control.HasFocus(2064) | Control.HasFocus(4064)] + Container(2064).HasNext</visible>
 				        </control>
 				    </control>
@@ -1794,7 +1794,7 @@
 				        <control type="label">
 				            <width min="30" max="1160">auto</width>
 				            <height>20</height>
-				            <font>font14</font> <!-- redlight_33 -->
+				            <font>font14</font> <!-- Finder_33 -->
 				            <textcolor>FFCCCCCC</textcolor>
 				            <label>[B]More from Networks $INFO[Window.Property(more_from_networks.number)][/B]</label>
 				            <visible>!Control.HasFocus(2065)</visible>
@@ -1802,7 +1802,7 @@
 				        <control type="label">
 				            <width min="30" max="1160">auto</width>
 				            <height>20</height>
-				            <font>font14</font> <!-- redlight_33 -->
+				            <font>font14</font> <!-- Finder_33 -->
 				            <textcolor>FFCCCCCC</textcolor>
 				            <label>[B]More from Networks | [/B]$INFO[ListItem.Property(name)]$INFO[ListItem.Property(release_date), • ]$INFO[ListItem.Property(vote_average), • ]</label>
 				            <visible>Control.HasFocus(2065)</visible>
@@ -1827,7 +1827,7 @@
 				                    <height max="344">auto</height>
 				                    <width max="220">auto</width>
 				                    <aspectratio>keep</aspectratio>
-				                    <texture diffuse="redlight_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
+				                    <texture diffuse="finder_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
 				                </control>
 				            </itemlayout>
 				            <focusedlayout height="360" width="236">
@@ -1841,7 +1841,7 @@
 				                    <top>5</top>
 				                    <height>350</height>
 				                    <width>236</width>
-				                    <texture colordiffuse="FFCCCCCC">redlight_diffuse/poster-50.png</texture>
+				                    <texture colordiffuse="FFCCCCCC">finder_diffuse/poster-50.png</texture>
 				                    <visible>Control.HasFocus(2065) | Control.HasFocus(4065)</visible>
 				                </control>
 				                <control type="image">
@@ -1850,7 +1850,7 @@
 				                    <height max="344">auto</height>
 				                    <width max="220">auto</width>
 				                    <aspectratio>keep</aspectratio>
-				                    <texture diffuse="redlight_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
+				                    <texture diffuse="finder_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
 				                </control>
 				            </focusedlayout>
 				        </control>
@@ -1861,9 +1861,9 @@
 				            <height>15</height>
 				            <onup>2065</onup>
 				            <ondown>2066</ondown>
-				            <texturesliderbackground colordiffuse="FF1F2020">redlight_common/white.png</texturesliderbackground>
-				            <texturesliderbar colordiffuse="FF555556">redlight_common/white.png</texturesliderbar>
-				            <texturesliderbarfocus colordiffuse="FFCCCCCC">redlight_common/white.png</texturesliderbarfocus>
+				            <texturesliderbackground colordiffuse="FF1F2020">finder_common/white.png</texturesliderbackground>
+				            <texturesliderbar colordiffuse="FF555556">finder_common/white.png</texturesliderbar>
+				            <texturesliderbarfocus colordiffuse="FFCCCCCC">finder_common/white.png</texturesliderbarfocus>
 				            <showonepage>false</showonepage>
 				            <orientation>Horizontal</orientation>
 				            <visible>String.IsEqual(Window.Property(enable_scrollbars),true) + [Control.HasFocus(2065) | Control.HasFocus(4065)]</visible>
@@ -1873,7 +1873,7 @@
 				            <left>20</left>
 				            <width>25</width>
 				            <height>25</height>
-				            <texture colordiffuse="CCCCCCCC" background="true">redlight_common/arrow_left.png</texture>
+				            <texture colordiffuse="CCCCCCCC" background="true">finder_common/arrow_left.png</texture>
 				            <visible>[Control.HasFocus(2065) | Control.HasFocus(4065)] + Container(2065).HasPrevious</visible>
 				        </control>
 				        <control type="image">
@@ -1881,7 +1881,7 @@
 				            <left>1135</left>
 				            <width>25</width>
 				            <height>25</height>
-				            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">redlight_common/arrow_left.png</texture>
+				            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">finder_common/arrow_left.png</texture>
 				            <visible>[Control.HasFocus(2065) | Control.HasFocus(4065)] + Container(2065).HasNext</visible>
 				        </control>
 				    </control>
@@ -1893,7 +1893,7 @@
                         <control type="label">
                             <width min="30" max="1160">auto</width>
                             <height>20</height>
-                            <font>font14</font> <!-- redlight_33 -->
+                            <font>font14</font> <!-- Finder_33 -->
                             <textcolor>FFCCCCCC</textcolor>
                             <label>[B]$INFO[Window.Property(more_from_collection.name)] $INFO[Window.Property(more_from_collection.number)][/B]</label>
                             <visible>!Control.HasFocus(2066)</visible>
@@ -1901,7 +1901,7 @@
                         <control type="label">
                             <width min="30" max="1160">auto</width>
                             <height>20</height>
-                            <font>font14</font> <!-- redlight_33 -->
+                            <font>font14</font> <!-- Finder_33 -->
                             <textcolor>FFCCCCCC</textcolor>
                             <label>[B]$INFO[Window.Property(more_from_collection.name)] | [/B]$INFO[ListItem.Property(name)]$INFO[ListItem.Property(release_date), • ]$INFO[ListItem.Property(vote_average), • ]</label>
                             <visible>Control.HasFocus(2066)</visible>
@@ -1911,13 +1911,13 @@
                             <control type="image">
                                 <height>360</height>
                                 <width>933</width>
-                                    <texture colordiffuse="$INFO[Window(10000).Property(redlight.window_theme.extras)]" border="30">redlight_common/circle.png</texture>
+                                    <texture colordiffuse="$INFO[Window(10000).Property(finder.window_theme.extras)]" border="30">finder_common/circle.png</texture>
                                 <visible>Integer.IsGreater(Container(2066).NumItems,1)</visible>
                             </control>
                             <control type="image">
                                 <height>360</height>
                                 <width>1169</width>
-                                    <texture colordiffuse="$INFO[Window(10000).Property(redlight.window_theme.extras)]" border="30">redlight_common/circle.png</texture>
+                                    <texture colordiffuse="$INFO[Window(10000).Property(finder.window_theme.extras)]" border="30">finder_common/circle.png</texture>
                                 <visible>Integer.IsGreater(Container(2066).NumItems,2)</visible>
                             </control>
                             <control type="image">
@@ -1926,14 +1926,14 @@
                                 <width>224</width>
                                 <height>348</height>
                                 <aspectratio>keep</aspectratio>
-                                <texture diffuse="redlight_diffuse/poster-50.png" background="true">$INFO[Window.Property(more_from_collection.poster)]</texture>
+                                <texture diffuse="finder_diffuse/poster-50.png" background="true">$INFO[Window.Property(more_from_collection.poster)]</texture>
                             </control>
                             <control type="textbox">
                                 <left>235</left>
                                 <top>6</top>
                                 <width>218</width>
                                 <height>348</height>
-                                <font>font12</font> <!-- redlight_26 -->
+                                <font>font12</font> <!-- Finder_26 -->
                                 <align>center</align>
                                 <aligny>center</aligny>
                                 <textcolor>FFCCCCCC</textcolor>
@@ -1961,7 +1961,7 @@
                                     <height max="344">auto</height>
                                     <width max="220">auto</width>
                                     <aspectratio>keep</aspectratio>
-                                    <texture diffuse="redlight_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
+                                    <texture diffuse="finder_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
                                 </control>
                             </itemlayout>
                             <focusedlayout height="360" width="236">
@@ -1975,7 +1975,7 @@
                                     <top>5</top>
                                     <height>350</height>
                                     <width>236</width>
-                                    <texture colordiffuse="FFCCCCCC">redlight_diffuse/poster-50.png</texture>
+                                    <texture colordiffuse="FFCCCCCC">finder_diffuse/poster-50.png</texture>
                                     <visible>Control.HasFocus(2066) | Control.HasFocus(4066)</visible>
                                 </control>
                                 <control type="image">
@@ -1984,7 +1984,7 @@
                                     <height max="344">auto</height>
                                     <width max="220">auto</width>
                                     <aspectratio>keep</aspectratio>
-                                    <texture diffuse="redlight_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
+                                    <texture diffuse="finder_diffuse/poster-50.png" background="true">$INFO[ListItem.Property(thumbnail)]</texture>
                                 </control>
                             </focusedlayout>
                         </control>
@@ -1994,9 +1994,9 @@
                             <height>15</height>
                             <onup>2066</onup>
                             <ondown>10</ondown>
-                            <texturesliderbackground colordiffuse="FF1F2020">redlight_common/white.png</texturesliderbackground>
-                            <texturesliderbar colordiffuse="FF555556">redlight_common/white.png</texturesliderbar>
-                            <texturesliderbarfocus colordiffuse="FFCCCCCC">redlight_common/white.png</texturesliderbarfocus>
+                            <texturesliderbackground colordiffuse="FF1F2020">finder_common/white.png</texturesliderbackground>
+                            <texturesliderbar colordiffuse="FF555556">finder_common/white.png</texturesliderbar>
+                            <texturesliderbarfocus colordiffuse="FFCCCCCC">finder_common/white.png</texturesliderbarfocus>
                             <showonepage>false</showonepage>
                             <orientation>Horizontal</orientation>
                             <visible>String.IsEqual(Window.Property(enable_scrollbars),true) + [Control.HasFocus(2066) | Control.HasFocus(4066)]</visible>
@@ -2006,7 +2006,7 @@
                             <left>480</left>
                             <width>25</width>
                             <height>25</height>
-                            <texture colordiffuse="CCCCCCCC" background="true">redlight_common/arrow_left.png</texture>
+                            <texture colordiffuse="CCCCCCCC" background="true">finder_common/arrow_left.png</texture>
                             <visible>[Control.HasFocus(2066) | Control.HasFocus(4066)] + Container(2066).HasPrevious</visible>
                         </control>
                         <control type="image">
@@ -2014,7 +2014,7 @@
                             <left>1120</left>
                             <width>25</width>
                             <height>25</height>
-                            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">redlight_common/arrow_left.png</texture>
+                            <texture colordiffuse="CCCCCCCC" background="true" flipx="true">finder_common/arrow_left.png</texture>
                             <visible>[Control.HasFocus(2066) | Control.HasFocus(4066)] + Container(2066).HasNext</visible>
                         </control>
                     </control>

@@ -17,7 +17,7 @@ class SettingsCache:
 	def get(self, setting_id):
 		try:
 			dbcon = connect_database("settings_db")
-			setting_id = setting_id.replace("redlight.", "")
+			setting_id = setting_id.replace("finder.", "")
 			setting_value = dbcon.execute("SELECT setting_value from settings WHERE setting_id = ?", (setting_id,)).fetchone()[0]
 			self.set_memory_cache(setting_id, setting_value)
 		except:
@@ -70,10 +70,10 @@ class SettingsCache:
 			self.set_memory_cache(item[0], item[3] or item[2])
 
 	def set_memory_cache(self, setting_id, setting_value):
-		kodi_utils.set_property("redlight.%s" % setting_id, setting_value)
+		kodi_utils.set_property("finder.%s" % setting_id, setting_value)
 
 	def delete_memory_cache(self, setting_id):
-		kodi_utils.clear_property("redlight.%s" % setting_id)
+		kodi_utils.clear_property("finder.%s" % setting_id)
 
 	def setting_info(self, setting_id):
 		d_settings = default_settings()
@@ -114,7 +114,7 @@ def sync_settings(params={}):
 	# version and skips migrations instead of running them against already-
 	# correct fresh state. Per-boot window prop; cleared by ClearStaleProperties.
 	if not currentsettings:
-		kodi_utils.set_property("redlight.fresh_install", "true")
+		kodi_utils.set_property("finder.fresh_install", "true")
 	d_settings = default_settings()
 	defaultsettings_ids = [i["setting_id"] for i in d_settings]
 	defaultsettings_names = [i["setting_id"] for i in d_settings if "settings_options" in i]
@@ -163,11 +163,11 @@ def set_default(setting_ids):
 def set_boolean(params):
 	boolean_dict = {"true": "false", "false": "true"}
 	setting = params["setting_id"]
-	set_setting(setting, boolean_dict[get_setting("redlight.%s" % setting)])
+	set_setting(setting, boolean_dict[get_setting("finder.%s" % setting)])
 
 
 def set_string(params):
-	current_value = get_setting("redlight.%s" % params["setting_id"])
+	current_value = get_setting("finder.%s" % params["setting_id"])
 	current_value = current_value.replace("empty_setting", "")
 	new_value = kodi_utils.kodi_dialog().input("", defaultt=current_value)
 	if not new_value and not kodi_utils.confirm_dialog(text="Enter Blank Value?", ok_label="Yes", cancel_label="Re-Enter Value", default_control=11):
@@ -202,7 +202,7 @@ def set_numeric(params):
 def set_path(params):
 	setting_id = params["setting_id"]
 	browse_mode = int(default_setting_values(setting_id)["browse_mode"])
-	new_value = kodi_utils.kodi_dialog().browse(browse_mode, "", "", defaultt=get_setting("redlight.%s" % setting_id))
+	new_value = kodi_utils.kodi_dialog().browse(browse_mode, "", "", defaultt=get_setting("finder.%s" % setting_id))
 	set_setting(setting_id, new_value)
 
 
@@ -219,7 +219,7 @@ def set_from_list(params):
 
 def set_source_folder_path(params):
 	setting_id = params["setting_id"]
-	current_setting = get_setting("redlight.%s" % setting_id)
+	current_setting = get_setting("finder.%s" % setting_id)
 	if current_setting not in (None, "None", ""):
 		if kodi_utils.confirm_dialog(text="Enter Blank Value?", ok_label="Yes", cancel_label="Re-Enter Value", default_control=11):
 			return set_setting(setting_id, "None")
@@ -240,14 +240,14 @@ def restore_setting_default(params):
 
 
 def default_setting_values(setting_id):
-	if "redlight." in setting_id:
-		setting_id = setting_id.replace("redlight.", "")
+	if "finder." in setting_id:
+		setting_id = setting_id.replace("finder.", "")
 	d_settings = default_settings()
 	return next((i for i in d_settings if i["setting_id"] == setting_id), None)
 
 
 def default_settings():
-	"""Return the canonical schema of every redlight setting.
+	"""Return the canonical schema of every Finder setting.
 
 	The schema is declared in ``resources/data/settings_schema.json``; this
 	loader strips section markers (``{"_section": "..."}`` entries kept for

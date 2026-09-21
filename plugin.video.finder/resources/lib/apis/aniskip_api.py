@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 """HTTP client for AniSkip (https://api.aniskip.com).
 
-Free, no API key. Keyed on **MAL id + episode number** (resolved from redlight's
+Free, no API key. Keyed on **MAL id + episode number** (resolved from Finder's
 TMDB/TVDB/IMDB ids by ``apis/anime_mapping_api.py``). AniSkip has far richer
 coverage of anime openings/endings than IntroDB, so the resolver prefers it for
 anime episodes. Thin HTTP only: no caching or selection logic.
 
 Like the IntroDB client (and unlike the older bare-``except:`` clients), this
-catches the targeted ``requests.RequestException`` per the redlight hard rule, still
+catches the targeted ``requests.RequestException`` per the Finder hard rule, still
 returning ``None`` on any failure so callers can short-circuit to IntroDB.
 
 The v2 response shape (verified live)::

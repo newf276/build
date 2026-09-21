@@ -206,8 +206,8 @@ def _encode(segments, error, version, mask, eci, boost_error, sa_info=None):
     width = calc_matrix_size(version)
     height = width
     matrix = make_matrix(width, height)
-    # ISO/IEC 18004:2015 -- 6.3.3 redlight pattern (page 16)
-    add_redlight_patterns(matrix, width, height)
+    # ISO/IEC 18004:2015 -- 6.3.3 Finder pattern (page 16)
+    add_finder_patterns(matrix, width, height)
     # ISO/IEC 18004:2015 -- 6.3.6 Alignment patterns (page 17)
     add_alignment_patterns(matrix, width, height)
     # ISO/IEC 18004:2015 -- 7.7 Codeword placement in matrix (page 46)
@@ -279,8 +279,8 @@ def write_pad_codewords(buff, version, capacity, length):
             write(pad_codewords[i % 2])
 
 
-# redlight pattern (includes separator around each side!)
-_redlight_PATTERN = ((0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0),
+# Finder pattern (includes separator around each side!)
+_FINDER_PATTERN = ((0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0),
                    (0x0, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x0),
                    (0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x1, 0x0),
                    (0x0, 0x1, 0x0, 0x1, 0x1, 0x1, 0x0, 0x1, 0x0),
@@ -291,17 +291,17 @@ _redlight_PATTERN = ((0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0),
                    (0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0))
 
 
-def add_redlight_patterns(matrix, width, height):
+def add_finder_patterns(matrix, width, height):
     is_square = width == height
     corners = ((0, 0), (0, len(matrix) - 8), (-8, 0))  # Upper left, upper right, bottom left
     if is_square and width < 21:
         corners = ((0, 0),)
-    redlight_range = range(8)
+    finder_range = range(8)
     for i, j in corners:
         offset = 1 if i == 0 else 0
         sepoffset = 0 if j != 0 else 1
-        for r in redlight_range:
-            matrix[i + r][j:j + 8] = _redlight_PATTERN[offset + r][sepoffset:sepoffset + 8]
+        for r in finder_range:
+            matrix[i + r][j:j + 8] = _FINDER_PATTERN[offset + r][sepoffset:sepoffset + 8]
 
 
 def add_timing_pattern(matrix, is_micro):
@@ -328,9 +328,9 @@ def add_alignment_patterns(matrix, width, height):
     alignment_range = range(5)
     min_pos = positions[0]
     max_pos = positions[-1]
-    redlight_positions = ((min_pos, min_pos), (min_pos, max_pos), (max_pos, min_pos))
+    finder_positions = ((min_pos, min_pos), (min_pos, max_pos), (max_pos, min_pos))
     for x, y in product(positions, repeat=2):
-        if (x, y) in redlight_positions:
+        if (x, y) in finder_positions:
             continue
         # The x and y values represent the center of the alignment pattern
         i, j = x - 2, y - 2
@@ -433,7 +433,7 @@ def find_and_apply_best_mask(matrix, width, height, proposed_mask=None):
     # Matrix to check if a module belongs to the encoding region
     # or to the function patterns
     function_matrix = make_matrix(width, height)
-    add_redlight_patterns(function_matrix, width, height)
+    add_finder_patterns(function_matrix, width, height)
     add_alignment_patterns(function_matrix, width, height)
     if not is_micro:
         function_matrix[-8][8] = 0x1

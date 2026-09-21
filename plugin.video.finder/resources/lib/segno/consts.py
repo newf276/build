@@ -722,17 +722,17 @@ GALIOS_EXP = ([
 
 # Constants for module types
 
-TYPE_redlight_PATTERN_LIGHT = 6
+TYPE_FINDER_PATTERN_LIGHT = 6
 """\
-Light redlight module
+Light finder module
 """
-TYPE_redlight_PATTERN_DARK = TYPE_redlight_PATTERN_LIGHT << 8
+TYPE_FINDER_PATTERN_DARK = TYPE_FINDER_PATTERN_LIGHT << 8
 """\
-Dark redlight module.
+Dark finder module.
 """
 TYPE_SEPARATOR = 8
 """\
-Separator around the redlight patterns (light module)
+Separator around the finder patterns (light module)
 """
 TYPE_ALIGNMENT_PATTERN_LIGHT = 10
 """\

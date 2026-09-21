@@ -225,14 +225,14 @@ def get_trakt_lists(params):
 				returning_to_list = "build_trakt_lists_contents" in kodi_utils.folder_path()
 				if returning_to_list:
 					try:
-						data = json.loads(kodi_utils.get_property("redlight.trakt.lists.order"))
+						data = json.loads(kodi_utils.get_property("finder.trakt.lists.order"))
 					except:
 						pass
 				else:
 					shuffle(data)
-					kodi_utils.set_property("redlight.trakt.lists.order", json.dumps(data))
+					kodi_utils.set_property("finder.trakt.lists.order", json.dumps(data))
 			else:
-				kodi_utils.clear_property("redlight.trakt.lists.order")
+				kodi_utils.clear_property("finder.trakt.lists.order")
 				data.sort(key=lambda k: k["name"])
 			result = list(_process())
 		else:
@@ -393,7 +393,7 @@ def build_trakt_list(params):
 		use_result = "result" in params
 		page_no, paginate_start = int(params.get("new_page", "1")), int(params.get("paginate_start", "0"))
 		if page_no == 1 and not is_external:
-			kodi_utils.set_property("redlight.exit_params", kodi_utils.folder_path())
+			kodi_utils.set_property("finder.exit_params", kodi_utils.folder_path())
 		if use_result:
 			result = params.get("result", [])
 		else:

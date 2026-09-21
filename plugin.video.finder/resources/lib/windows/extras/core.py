@@ -360,14 +360,14 @@ class Extras(SectionsMixin, RatingsMixin, ActionsMixin, BaseDialog):
 		self.set_label(3001, line2)
 
 	def assign_buttons(self):
-		setting_id_base = "redlight.extras.%s.button" % self.media_type
+		setting_id_base = "finder.extras.%s.button" % self.media_type
 		for item in self.button_ids[:-1]:
 			setting_id = setting_id_base + str(item)
 			try:
 				button_action = self.get_setting(setting_id)
 				button_label = self.button_label_values[self.media_type][button_action]
 			except:
-				self.restore_setting_default({"setting_id": setting_id.replace("redlight.", ""), "silent": "true"})
+				self.restore_setting_default({"setting_id": setting_id.replace("finder.", ""), "silent": "true"})
 				button_action = self.get_setting(setting_id)
 				button_label = self.button_label_values[self.media_type][button_action]
 			self.setProperty("button%s.label" % item, button_label)
@@ -444,5 +444,5 @@ class Extras(SectionsMixin, RatingsMixin, ActionsMixin, BaseDialog):
 		self.setProperty("display_extra_ratings", "true" if self.display_extra_ratings else "false")
 
 	def close_all(self):
-		kodi_utils.clear_property("redlight.window_stack")
+		kodi_utils.clear_property("finder.window_stack")
 		kodi_utils.close_all_dialog()

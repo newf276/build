@@ -76,7 +76,7 @@ def trakt_watched_status_mark(action, media, media_id, tvdb_id=0, season=None, e
 			data = {"shows": [{"ids": {key: media_id}, "seasons": [{"number": int(season)}]}]}  # season
 	result = call_trakt(url, data=data)
 	# `call_trakt` returns None/"" on a network or auth failure; subscripting that
-	# threw TypeError and surfaced as the branded "redlight" error when marking. Treat
+	# threw TypeError and surfaced as the branded "Finder" error when marking. Treat
 	# any unreadable response as "not marked" so the caller can fall back / notify.
 	try:
 		success = result[result_key][success_key] > 0
@@ -308,8 +308,8 @@ def trakt_calendar_days(recently_aired, current_date):
 	if recently_aired:
 		start, finish = (current_date - timedelta(days=14)).strftime("%Y-%m-%d"), "14"
 	else:
-		previous_days = int(settings_cache.get_setting("redlight.trakt.calendar_previous_days", "0"))
-		future_days = int(settings_cache.get_setting("redlight.trakt.calendar_future_days", "7"))
+		previous_days = int(settings_cache.get_setting("finder.trakt.calendar_previous_days", "0"))
+		future_days = int(settings_cache.get_setting("finder.trakt.calendar_future_days", "7"))
 		start = (current_date - timedelta(days=previous_days)).strftime("%Y-%m-%d")
 		finish = str(previous_days + future_days)
 	return start, finish
@@ -323,9 +323,9 @@ def trakt_get_activity():
 def trakt_sync_activities(force_update=False):
 	def refresh_token_check():
 		current_time = time.time()
-		sync_interval = int(settings_cache.get_setting("redlight.trakt.sync_interval", "60")) * 60
+		sync_interval = int(settings_cache.get_setting("finder.trakt.sync_interval", "60")) * 60
 		try:
-			expires_at = float(settings_cache.get_setting("redlight.trakt.expires"))
+			expires_at = float(settings_cache.get_setting("finder.trakt.expires"))
 		except (ValueError, TypeError):
 			expires_at = 0.0
 		if current_time + sync_interval >= expires_at:
@@ -346,7 +346,7 @@ def trakt_sync_activities(force_update=False):
 		return result
 
 	def _check_daily_expiry():
-		return int(time.time()) >= int(settings_cache.get_setting("redlight.trakt.next_daily_clear", "0"))
+		return int(time.time()) >= int(settings_cache.get_setting("finder.trakt.next_daily_clear", "0"))
 
 	if refresh_token_check():
 		trakt_refresh_token()

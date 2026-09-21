@@ -2,7 +2,7 @@
 <settings>
 	<!-- General -->
 	<category label="General">
-		<setting label="redlight uses it's own settings window." type="text" enable="false" />
-		<setting label="Open redlight Settings..." type="action" option="close" action="RunPlugin(plugin://plugin.video.redlight/?mode=open_settings)" />
+		<setting label="Finder uses it's own settings window." type="text" enable="false" />
+		<setting label="Open Finder Settings..." type="action" option="close" action="RunPlugin(plugin://plugin.video.finder/?mode=open_settings)" />
 	</category>
 </settings>

@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 """HTTP client for IntroDB (https://api.introdb.app).
 
-Free, no API key. Keyed on IMDB id + season + episode — exactly the ids redlight
+Free, no API key. Keyed on IMDB id + season + episode — exactly the ids Finder
 holds at play time — and returns intro/recap/outro segments. Thin HTTP only: no
 caching or UI/selection logic (those live in ``caches/intro_outro_cache.py`` and
 ``modules/skip_markers.py``).
 
 Unlike the older clients (bare ``except:`` returning ``None``), this one catches
-the targeted ``requests.RequestException`` per the redlight hard rule, still
+the targeted ``requests.RequestException`` per the Finder hard rule, still
 returning ``None`` on any failure so callers can short-circuit.
 """
 

@@ -13,7 +13,7 @@ from modules import watched_status as ws
 # logger = ku.logger
 
 
-class redlightPlayer(xbmc.Player):
+class FinderPlayer(xbmc.Player):
 	def __init__(self):
 		xbmc.Player.__init__(self)
 
@@ -239,7 +239,7 @@ class redlightPlayer(xbmc.Player):
 				}
 				Thread(target=self.run_media_progress, args=(watched_function, watched_params)).start()
 			else:
-				ku.clear_property("redlightpisode_history")
+				ku.clear_property("finderpisode_history")
 				if self.current_point >= 5:
 					progress_params = {
 						"media_type": self.media_type,
@@ -299,7 +299,7 @@ class redlightPlayer(xbmc.Player):
 		try:
 			self.skip_segments = skip_markers.resolve_segments(self.meta, self._await_total_time())
 		except Exception as error:
-			ku.logger("redlight.player", "skip segment resolve failed: %s" % error)
+			ku.logger("Finder.player", "skip segment resolve failed: %s" % error)
 			self.skip_segments = []
 
 	def _await_total_time(self, attempts=40, interval_ms=250):
@@ -341,7 +341,7 @@ class redlightPlayer(xbmc.Player):
 			else:
 				self.seekTime(float(seg["end"]))
 		except Exception as error:
-			ku.logger("redlight.player", "skip button failed: %s" % error)
+			ku.logger("Finder.player", "skip button failed: %s" % error)
 
 	def set_resume_point(self, listitem):
 		if self.playback_percent > 0.0:
@@ -411,7 +411,7 @@ class redlightPlayer(xbmc.Player):
 			pass
 
 	def clear_playback_properties(self):
-		ku.clear_property("redlightndow_stack")
+		ku.clear_property("finderndow_stack")
 		ku.clear_property("script.trakt.ids")
 		ku.clear_property("subs.player_filename")
 

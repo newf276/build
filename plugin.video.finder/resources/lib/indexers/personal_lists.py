@@ -110,20 +110,20 @@ def get_personal_lists(params):
 	random, shuffle_lists = params.get("random", "false") == "true", params.get("shuffle", "false") == "true"
 	handle = int(sys.argv[1])
 	try:
-		data = get_all_personal_lists(get_setting("redlight.personal_list.list_sort", "0"))
+		data = get_all_personal_lists(get_setting("finder.personal_list.list_sort", "0"))
 		if data:
 			if shuffle_lists:
 				returning_to_list = "build_personal_lists_contents" in kodi_utils.folder_path()
 				if returning_to_list:
 					try:
-						data = json.loads(kodi_utils.get_property("redlight.personal.lists.order"))
+						data = json.loads(kodi_utils.get_property("finder.personal.lists.order"))
 					except:
 						pass
 				else:
 					shuffle(data)
-					kodi_utils.set_property("redlight.personal.lists.order", json.dumps(data))
+					kodi_utils.set_property("finder.personal.lists.order", json.dumps(data))
 			else:
-				kodi_utils.clear_property("redlight.personal.lists.order")
+				kodi_utils.clear_property("finder.personal.lists.order")
 			result = list(_process())
 		else:
 			result = list(_new_process())
@@ -172,7 +172,7 @@ def build_personal_list(params):
 			"paginate_start": paginate_start,
 		}
 		if page_no == 1 and not is_external:
-			kodi_utils.set_property("redlight.exit_params", kodi_utils.folder_path())
+			kodi_utils.set_property("finder.exit_params", kodi_utils.folder_path())
 		if use_result:
 			result = params.get("result", [])
 		else:
@@ -311,7 +311,7 @@ def make_new_personal_list(params):
 		suggested_author = chosen_list.get("user")
 		params.update({"suggested_list_name": suggested_list_name, "suggested_author": suggested_author, "chosen_list": chosen_list})
 		if suggested_author in ("Collection", "Watchlist"):
-			suggested_author = get_setting("redlight.trakt.user")
+			suggested_author = get_setting("finder.trakt.user")
 	list_name = personal_list_name(suggested_list_name)
 	if list_name == None:
 		return None, None

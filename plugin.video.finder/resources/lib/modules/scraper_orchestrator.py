@@ -169,14 +169,14 @@ class ScraperOrchestrator:
 			folder_results = []
 		results = [i for i in results if i["quality"] in self.quality_filter]
 		if self.filter_size_method:
-			min_size = string_to_float(get_setting("redlight.results.%s_size_min" % self.media_type, "0"), "0") / 1000
+			min_size = string_to_float(get_setting("finder.results.%s_size_min" % self.media_type, "0"), "0") / 1000
 			if min_size == 0.0 and not self.include_unknown_size:
 				min_size = 0.02
 			if self.filter_size_method == 1:
 				duration = self.meta["duration"] or (5400 if self.media_type == "movie" else 2400)
 				max_size = ((0.125 * (0.90 * string_to_float(get_setting("results.line_speed", "25"), "25"))) * duration) / 1000
 			elif self.filter_size_method == 2:
-				max_size = string_to_float(get_setting("redlight.results.%s_size_max" % self.media_type, "10000"), "10000") / 1000
+				max_size = string_to_float(get_setting("finder.results.%s_size_max" % self.media_type, "10000"), "10000") / 1000
 			results = [i for i in results if i["scrape_provider"] == "folders" or min_size <= i["size"] <= max_size]
 		results += folder_results
 		return results
@@ -188,7 +188,7 @@ class ScraperOrchestrator:
 	def special_filter(self, results, file_type):
 		enable_setting, key = settings.filter_status(file_type), self.filter_keys[file_type]
 		if key == "HEVC" and enable_setting == 0:
-			hevc_max_quality = self._get_quality_rank(get_setting("redlight.filter.hevc.%s" % ("max_autoplay_quality" if self.autoplay else "max_quality"), "4K"))
+			hevc_max_quality = self._get_quality_rank(get_setting("finder.filter.hevc.%s" % ("max_autoplay_quality" if self.autoplay else "max_quality"), "4K"))
 			results = [i for i in results if key not in i["extraInfo"] or i["quality_rank"] >= hevc_max_quality]
 		if enable_setting == 1:
 			if key in ("D/VISION", "HDR"):
@@ -360,7 +360,7 @@ class ScraperOrchestrator:
 
 	def get_folderscraper_info(self):
 		folder_info = [
-			(get_setting("redlight.%s.display_name" % i), i, settings.source_folders_directory(self.media_type, i))
+			(get_setting("finder.%s.display_name" % i), i, settings.source_folders_directory(self.media_type, i))
 			for i in ("folder1", "folder2", "folder3", "folder4", "folder5")
 		]
 		return [i for i in folder_info if i[0] not in (None, "None", "") and i[2]]
@@ -542,14 +542,14 @@ class ScraperOrchestrator:
 
 	def _process_internal_results(self):
 		for i in self.internal_scrapers:
-			win_property = kodi_utils.get_property("redlight.internal_results.%s" % i)
+			win_property = kodi_utils.get_property("finder.internal_results.%s" % i)
 			if win_property in ("checked", "", None):
 				continue
 			try:
 				sources = json.loads(win_property)
 			except json.JSONDecodeError:
 				continue
-			kodi_utils.set_property("redlight.internal_results.%s" % i, "checked")
+			kodi_utils.set_property("finder.internal_results.%s" % i, "checked")
 			self._sources_quality_count(sources)
 
 	def _sources_quality_count(self, sources):
@@ -647,10 +647,10 @@ class ScraperOrchestrator:
 	def _clear_properties(self):
 		def_internal = self.default_internal_scrapers
 		for item in def_internal:
-			kodi_utils.clear_property("redlight.internal_results.%s" % item)
+			kodi_utils.clear_property("finder.internal_results.%s" % item)
 		if self.active_folders:
 			for item in self.folder_info:
-				kodi_utils.clear_property("redlight.internal_results.%s" % item[0])
+				kodi_utils.clear_property("finder.internal_results.%s" % item[0])
 
 	def _quality_length(self, items, quality):
 		return source_utils.quality_length(items, quality)

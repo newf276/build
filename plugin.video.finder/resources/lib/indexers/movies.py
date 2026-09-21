@@ -83,7 +83,7 @@ class Movies:
 			except:
 				pass
 			if page_no == 1 and not self.is_external:
-				kodi_utils.set_property("redlight.exit_params", kodi_utils.folder_path())
+				kodi_utils.set_property("finder.exit_params", kodi_utils.folder_path())
 			if self.action in self.main:
 				data = function(page_no)
 				results = data["results"]
@@ -401,19 +401,19 @@ class Movies:
 			set_properties(
 				{
 					"belongs_to_collection": belongs_to_movieset,
-					"redlight.extras_params": extras_params,
-					"redlight.options_params": options_params,
-					"redlight.playback_options_params": playback_options_params,
-					"redlight.browse_movie_set_params": browse_movie_set_params,
-					"redlight.browse_recommended_params": browse_recommended_params,
-					"redlight.browse_related_params": browse_related_params,
-					"redlight.browse_more_like_this_params": browse_more_like_this_params,
-					"redlight.browse_in_trakt_list_params": browse_in_trakt_list_params,
-					"redlight.trakt_manager_params": trakt_manager_params,
-					"redlight.personal_manager_params": personal_manager_params,
-					"redlight.tmdb_manager_params": tmdb_manager_params,
-					"redlight.favorites_manager_params": favorites_manager_params,
-					"redlight.quick_add_params": quick_add_params,
+					"finder.extras_params": extras_params,
+					"finder.options_params": options_params,
+					"finder.playback_options_params": playback_options_params,
+					"finder.browse_movie_set_params": browse_movie_set_params,
+					"finder.browse_recommended_params": browse_recommended_params,
+					"finder.browse_related_params": browse_related_params,
+					"finder.browse_more_like_this_params": browse_more_like_this_params,
+					"finder.browse_in_trakt_list_params": browse_in_trakt_list_params,
+					"finder.trakt_manager_params": trakt_manager_params,
+					"finder.personal_manager_params": personal_manager_params,
+					"finder.tmdb_manager_params": tmdb_manager_params,
+					"finder.favorites_manager_params": favorites_manager_params,
+					"finder.quick_add_params": quick_add_params,
 				}
 			)
 			self.append(((url_params, listitem, False), _position))

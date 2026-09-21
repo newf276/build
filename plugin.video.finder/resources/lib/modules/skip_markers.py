@@ -3,7 +3,7 @@
 normalized intro/recap/outro segments the player can offer to skip.
 
 Data path: for anime episodes, AniSkip (richer op/ed/recap coverage, keyed on a
-MAL id resolved from redlight's TMDB/TVDB/IMDB ids) is tried first; everything else
+MAL id resolved from Finder's TMDB/TVDB/IMDB ids) is tried first; everything else
 (and any anime miss) falls through to IntroDB (crowd-sourced, no API key) with an
 opt-in Kodi chapter fallback. IntroDB is consumed read-only (no submit-back).
 
@@ -79,15 +79,15 @@ def resolve_segments(meta, episode_length=None):
 		# uncached so the next play retries instead of going dark for the miss TTL.
 		if responded or raw:
 			intro_outro_cache.set(key, raw, expiration=_HIT_TTL_HOURS if raw else _MISS_TTL_HOURS)
-			logger("redlight.skip_markers", "%s: %s raw segment(s) (responded=%s)" % (key, len(raw), responded))
+			logger("Finder.skip_markers", "%s: %s raw segment(s) (responded=%s)" % (key, len(raw), responded))
 		return _filter_enabled(apply_threshold(raw))
 	except Exception as error:
-		logger("redlight.skip_markers", "resolve_segments failed: %s" % error)
+		logger("Finder.skip_markers", "resolve_segments failed: %s" % error)
 		return []
 
 
 def is_anime(meta):
-	"""True when ``meta`` is an anime title, reusing redlight's canonical test
+	"""True when ``meta`` is an anime title, reusing Finder's canonical test
 	(``metadata.is_anime_check`` — the TMDB keyword ``210024``). Prefers the
 	keywords already on ``meta``; otherwise looks the show up by ``tmdb_id`` in the
 	meta cache. Imported lazily so this module stays importable off-device."""
@@ -98,12 +98,12 @@ def is_anime(meta):
 			return is_anime_check(meta)
 		return is_anime_check(tmdb_id=meta.get("tmdb_id"))
 	except Exception as error:
-		logger("redlight.skip_markers", "is_anime failed: %s" % error)
+		logger("Finder.skip_markers", "is_anime failed: %s" % error)
 		return False
 
 
 def _resolve_aniskip(meta, episode_length):
-	"""Map redlight's ids → MAL id, then fetch + normalize AniSkip skip times. Returns
+	"""Map Finder's ids → MAL id, then fetch + normalize AniSkip skip times. Returns
 	``[]`` (never raises) when the title isn't mapped or AniSkip has no coverage, so
 	the caller cleanly falls through to IntroDB. AniSkip scales its intervals to the
 	episode length, so prefer the real runtime over the (often rounded) meta
@@ -123,7 +123,7 @@ def _resolve_aniskip(meta, episode_length):
 		payload = aniskip_api.get_skip_times(mal_id, meta.get("episode"), length)
 		return aniskip_api.parse_skip_times(payload)
 	except Exception as error:
-		logger("redlight.skip_markers", "_resolve_aniskip failed: %s" % error)
+		logger("Finder.skip_markers", "_resolve_aniskip failed: %s" % error)
 		return []
 
 
@@ -174,7 +174,7 @@ def chapter_fallback(meta):
 		chapters_csv = ku.get_infolabel("Player.Chapters")
 		return _chapter_candidates(chapters_csv, duration, st.skip_markers_types())
 	except Exception as error:
-		logger("redlight.skip_markers", "chapter_fallback failed: %s" % error)
+		logger("Finder.skip_markers", "chapter_fallback failed: %s" % error)
 		return []
 
 

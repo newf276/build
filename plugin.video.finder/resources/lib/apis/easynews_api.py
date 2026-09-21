@@ -22,8 +22,8 @@ class EasyNewsAPI:
 		self.search_link = "/2.0/search/solr-search/advanced"
 		self.account_link = "https://account.easynews.com/editinfo.php"
 		self.usage_link = "https://account.easynews.com/usageview.php"
-		self.username = get_setting("redlight.easynews.username", "empty_setting")
-		self.password = get_setting("redlight.easynews.password", "empty_setting")
+		self.username = get_setting("finder.easynews.username", "empty_setting")
+		self.password = get_setting("finder.easynews.password", "empty_setting")
 		self.auth = self._get_auth()
 		self.auth_quoted = quote(self.auth)
 		self.base_process = self._process_files
@@ -251,16 +251,16 @@ class EasyNewsAPI:
 		# debounced via a window property and re-armed by the next successful request.
 		from modules.kodi_utils import get_icon, get_property, notification, set_property
 
-		if get_property("redlight.easynews.auth_failed") == "true":
+		if get_property("finder.easynews.auth_failed") == "true":
 			return
-		set_property("redlight.easynews.auth_failed", "true")
+		set_property("finder.easynews.auth_failed", "true")
 		notification("Easynews: Login Failed - Check Your Username/Password", 6000, get_icon("easynews"))
 
 	def _auth_ok(self):
 		from modules.kodi_utils import clear_property, get_property
 
-		if get_property("redlight.easynews.auth_failed") == "true":
-			clear_property("redlight.easynews.auth_failed")
+		if get_property("finder.easynews.auth_failed") == "true":
+			clear_property("finder.easynews.auth_failed")
 
 
 EasyNews = EasyNewsAPI()

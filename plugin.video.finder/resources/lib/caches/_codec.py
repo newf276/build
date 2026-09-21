@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """Shared cache encode/decode helpers.
 
-redlight's SQLite caches and window-property memory caches were originally
-written with `repr()` for encoding and `eval()` for decoding (redlight
+Finder's SQLite caches and window-property memory caches were originally
+written with `repr()` for encoding and `eval()` for decoding (Finder
 heritage). Phase 3 (E1) migrated `trakt_cache` to JSON; E4 extends the
 same pattern to the rest: `meta_cache`, `external_cache`, `navigator_cache`,
 `personal_lists_cache`, `episode_groups_cache`, and `base_cache.BaseCache`.
