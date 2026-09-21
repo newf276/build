@@ -38,7 +38,7 @@
 						<label>Red Light</label>
                         <onclick condition="System.HasAddon(plugin.video.redlight) + !System.AddonIsEnabled(plugin.video.redlight)">EnableAddon(plugin.video.redlight)</onclick>
 						<onclick condition="!System.HasAddon(plugin.video.redlight)">InstallAddon(plugin.video.redlight)</onclick>
-						<onclick condition="System.HasAddon(plugin.video.redlight)">Skin.SetString(SelectedPreConfigAddon,redlight)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.redlight)">Skin.SetString(SelectedPreConfigAddon,red_light)</onclick>
 						<onclick condition="System.HasAddon(plugin.video.redlight)">Dialog.Close(1158)</onclick>
 						<onclick condition="System.HasAddon(plugin.video.redlight)">ActivateWindow(1159)</onclick>
 						<onclick condition="!System.HasAddon(plugin.video.redlight)">RunScript(script.finder.helper,mode=addon_not_installed&amp;addon=Red Light)</onclick>
