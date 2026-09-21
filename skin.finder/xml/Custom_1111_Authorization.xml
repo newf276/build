@@ -22,41 +22,83 @@
 				<onback condition="String.IsEqual(Window(Home).Property(FinderDirectDialog1111),true)">ClearProperty(FinderDirectDialog1111,home)</onback>
 				<content>
 					<item>
-						<label>Trakt</label>
+						<label>Finder Trakt</label>
 						<visible>System.HasAddon(plugin.video.finder)</visible>
 						<onclick>Dialog.Close(1111)</onclick>
 						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=trakt.trakt_authenticate)</onclick>
 					</item>
 					<item>
-						<label>TMDB</label>
+						<label>Finder TMDB</label>
 						<visible>System.HasAddon(plugin.video.finder)</visible>
 						<onclick>Dialog.Close(1111)</onclick>
 						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=tmdblist_api.authenticate)</onclick>
 					</item>
 					<item>
-						<label>Set Newf's Skin MDbList Key</label>
-						<visible>!Skin.HasSetting(AuthNoSkinMDBList)</visible>
-                        <onclick>Dialog.Close(1111)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=set_api_key)</onclick>
+						<label>RedLight Trakt</label>
+						<visible>System.HasAddon(plugin.video.redlight)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=trakt.trakt_authenticate)</onclick>
 					</item>
 					<item>
-						<label>All-Debrid</label>
+						<label>RedLight TMDB</label>
+						<visible>System.HasAddon(plugin.video.redlight)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=tmdblist_api.authenticate)</onclick>
+					</item>
+					<item>
+						<label>RedLight MDBlist</label>
+						<visible>System.HasAddon(plugin.video.redlight)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=mdblist.mdblist_authenticate)</onclick>
+					</item>
+					<item>
+						<label>RedLight Simkl</label>
+						<visible>System.HasAddon(plugin.video.redlight)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=simkl.simkl_authenticate)</onclick>
+					</item>
+					<item>
+						<label>Finder All-Debrid</label>
 						<visible>System.HasAddon(plugin.video.finder)</visible>
 						<onclick>Dialog.Close(1111)</onclick>
 						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=alldebrid.authenticate)</onclick>
 					</item>
 					<item>
-						<label>Premiumize</label>
+						<label>Finder Premiumize</label>
 						<visible>System.HasAddon(plugin.video.finder)</visible>
 						<onclick>Dialog.Close(1111)</onclick>
 						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=premiumize.authenticate)</onclick>
 					</item>
 					<item>
-						<label>Torbox</label>
+						<label>Finder Torbox</label>
 						<visible>System.HasAddon(plugin.video.finder)</visible>
 						<onclick>Dialog.Close(1111)</onclick>
 						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=torbox.authenticate)</onclick>
-					</item>                   
+					</item>
+					<item>
+						<label>RedLight All-Debrid</label>
+						<visible>System.HasAddon(plugin.video.redlight)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=alldebrid.authenticate)</onclick>
+					</item>
+					<item>
+						<label>RedLight Premiumize</label>
+						<visible>System.HasAddon(plugin.video.redlight)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=premiumize.authenticate)</onclick>
+					</item>
+					<item>
+						<label>RedLight Torbox</label>
+						<visible>System.HasAddon(plugin.video.redlight)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=torbox.authenticate)</onclick>
+					</item>
+					<item>
+						<label>RedLight Set Newf's Skin MDbList Key</label>
+						<visible>!Skin.HasSetting(AuthNoSkinMDBList)</visible>
+                        <onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=set_api_key)</onclick>
+					</item>
 				</content>
 			</control>
 			<include content="UpDownArrows">
@@ -68,3 +110,6 @@
 		</control>
 	</controls>
 </window>
+
+
+
