@@ -14,7 +14,7 @@
             <param name="list_id" value="19012"/>
         </include>
         <include condition="System.HasAddon(plugin.video.redlight)" content="WidgetListBigEpisodes">
-            <param name="content_path" value="plugin://plugin.video.redlight/?list_id=watchlist&list_name=Movie Watchlist&media_type=movie&mode=tmdblist.build_tmdb_list"/>
+            <param name="content_path" value="plugin://plugin.video.redlight/?list_id=watchlist&amp;list_name=Movie%20Watchlist&amp;media_type=movie&amp;mode=tmdblist.build_tmdb_listt"/>
             <param name="widget_header" value="My TMDB Movie WatchList"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="19013"/>
