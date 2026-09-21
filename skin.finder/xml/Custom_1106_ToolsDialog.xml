@@ -73,7 +73,7 @@
                         <label>Clear RedLight Caches</label>
                         <visible>System.HasAddon(plugin.video.redlight)</visible>
                         <onclick>Dialog.Close(all)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=clear_all_cache)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=clear_all_cache)</onclick>
                     </item>
                     <item>
                         <label>Clear Thumbnails + Force Close</label>
