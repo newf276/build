@@ -94,7 +94,7 @@
 						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=torbox.authenticate)</onclick>
 					</item>
 					<item>
-						<label>RedLight Set Newf's Skin MDbList Key</label>
+						<label>Set Newf's Skin MDbList Key</label>
 						<visible>!Skin.HasSetting(AuthNoSkinMDBList)</visible>
                         <onclick>Dialog.Close(1111)</onclick>
 						<onclick>RunScript(script.finder.helper,mode=set_api_key)</onclick>
