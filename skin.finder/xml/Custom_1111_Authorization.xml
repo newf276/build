@@ -21,6 +21,34 @@
 				<onback condition="!String.IsEqual(Window(Home).Property(FinderDirectDialog1111),true)">ActivateWindow(1106)</onback>
 				<onback condition="String.IsEqual(Window(Home).Property(FinderDirectDialog1111),true)">ClearProperty(FinderDirectDialog1111,home)</onback>
 				<content>
+                    
+                    <!-- TMDb Addon -->
+					<item>
+						<label>TMDbMovies TMDB</label>
+						<visible>System.HasAddon(plugin.video.tmdbmovies)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.tmdbmovies/?mode=tmdb_auth)</onclick>
+					</item>					
+					<item>
+						<label>TMDbMovies MDBlist</label>
+						<visible>System.HasAddon(plugin.video.tmdbmovies)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RRunPlugin(plugin://plugin.video.tmdbmovies/?mode=mdblist_auth)</onclick>
+					</item>
+					<item>
+						<label>TMDbMovies PunchPlay</label>
+						<visible>System.HasAddon(plugin.video.tmdbmovies)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.tmdbmovies/?mode=punchplay_auth)</onclick>
+					</item>
+                    <item>
+						<label>TMDbMovies Trakt</label>
+						<visible>System.HasAddon(plugin.video.tmdbmovies)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.tmdbmovies/?mode=trakt_auth)</onclick>
+					</item>
+					
+                    <!-- Newf's Finder -->
 					<item>
 						<label>Finder Trakt</label>
 						<visible>System.HasAddon(plugin.video.finder)</visible>
@@ -33,6 +61,26 @@
 						<onclick>Dialog.Close(1111)</onclick>
 						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=tmdblist_api.authenticate)</onclick>
 					</item>
+					<item>
+						<label>Finder All-Debrid</label>
+						<visible>System.HasAddon(plugin.video.finder)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=alldebrid.authenticate)</onclick>
+					</item>
+					<item>
+						<label>Finder Premiumize</label>
+						<visible>System.HasAddon(plugin.video.finder)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=premiumize.authenticate)</onclick>
+					</item>
+					<item>
+						<label>Finder Torbox</label>
+						<visible>System.HasAddon(plugin.video.finder)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=torbox.authenticate)</onclick>
+					</item>
+				
+                    <!-- RedLight -->
 					<item>
 						<label>RedLight Trakt</label>
 						<visible>System.HasAddon(plugin.video.redlight)</visible>
@@ -58,24 +106,6 @@
 						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=simkl.simkl_authenticate)</onclick>
 					</item>
 					<item>
-						<label>Finder All-Debrid</label>
-						<visible>System.HasAddon(plugin.video.finder)</visible>
-						<onclick>Dialog.Close(1111)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=alldebrid.authenticate)</onclick>
-					</item>
-					<item>
-						<label>Finder Premiumize</label>
-						<visible>System.HasAddon(plugin.video.finder)</visible>
-						<onclick>Dialog.Close(1111)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=premiumize.authenticate)</onclick>
-					</item>
-					<item>
-						<label>Finder Torbox</label>
-						<visible>System.HasAddon(plugin.video.finder)</visible>
-						<onclick>Dialog.Close(1111)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=torbox.authenticate)</onclick>
-					</item>
-					<item>
 						<label>RedLight All-Debrid</label>
 						<visible>System.HasAddon(plugin.video.redlight)</visible>
 						<onclick>Dialog.Close(1111)</onclick>
@@ -93,6 +123,9 @@
 						<onclick>Dialog.Close(1111)</onclick>
 						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=torbox.authenticate)</onclick>
 					</item>
+                    
+					<!-- Newf's Finder Skin -->
+                    
 					<item>
 						<label>Set Newf's Skin MDbList Key</label>
 						<visible>!Skin.HasSetting(AuthNoSkinMDBList)</visible>

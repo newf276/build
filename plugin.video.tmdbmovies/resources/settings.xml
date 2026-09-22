@@ -1,0 +1,507 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<settings>
+    <!-- 1. GENERAL -->
+    <category label="General">
+		<setting type="lsep" label="Plot"/>
+		<setting id="plot_language" type="text" label="[B]Language[/B] for plot, poster, logo, fanart (en, ro, enro, de, etc.)" default="enro"/>
+		<setting id="page_limit" type="enum" label="Items per page" values="20|40|60|80|100" default="0"/>
+		<setting id="personal_lists_sort" type="enum" label="Personal lists order (watchlist, favorites, collection)" values="Original|Alfabetic" default="0"/>
+		<setting type="lsep" label="Performance"/>
+		<setting id="reuse_language_invoker" type="bool" label="Reuse Language Invoker" default="true" visible="false"/>
+		<setting label="  Toggle [B][COLOR FFF70D1A]Reuse Language Invoker[/COLOR][/B]" type="action" action="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=toggle_language_invoker)"/>
+		<setting type="lsep" label="TV Shows Settings"/>
+		<setting id="auto_scrape_next_episode" type="bool" label="[B][COLOR FFCCCCFF]Auto-Play [COLOR FF33CCFF]Next Episode[/COLOR][/B]" default="true" />		
+		<setting id="skip_intro.enable" type="bool" label="[B][COLOR FFCCCCFF]Show [COLOR FFFF4444]Skip Intro[COLOR FFCCCCFF] dialog[/COLOR][/B]" default="true"/>
+		<setting id="upnext_show_future" type="bool" label="[B][COLOR FF33CCFF]Up Next:[/COLOR][/B] Show future episodes (over 7 days / TBA)" default="false"/>
+        <setting id="tmdb_upnext_show_unstarted" type="bool" label="[B][COLOR FFFF4444]UP NEXT:[/COLOR][/B] Show Unstarted Watchlist Shows" default="false"/>
+        <setting id="hide_unaired_episodes" type="bool" label="[B][COLOR FF33CCFF]TV Shows:[/COLOR][/B] Hide unaired episodes" default="false"/>
+		<setting id="show_specials" type="bool" label="[B][COLOR FF33CCFF]TV Shows:[/COLOR][/B] Show Specials" default="false"/>
+        <setting id="flatten_single_season" type="bool" label="[B][COLOR FF33CCFF]TV Shows:[/COLOR][/B] Flatten single-season shows" default="false"/>
+        <setting id="date_format" type="enum" label="Date format" values="European (13.09.2026)|US (09/13/2026)" default="0"/>
+        <setting id="timezone_override" type="enum" label="Timezone for air dates" values="Auto (device)|-12|-11|-10|-09|-08|-07|-06|-05|-04|-03|-02|-01|+00|+01|+02|+03|+04|+05|+06|+07|+08|+09|+10|+11|+12|+13|+14" default="0"/>
+        <setting id="episodes_art" type="enum" label="Episode Images (Icon + Background)" values="Thumb + Fanart (Hibrid)|Thumb + Thumb|Poster + Fanart|Poster + Thumb" default="0"/>
+		<setting id="skin_type" type="enum" label="Skin Compatibility (Fix Art/Thumbnails)" values="[B][COLOR FF6AFB92]Estuary (Standard)[/COLOR][/B]|[B][COLOR FF6AFB92]Arctic Fuse 3 (Modern)[/COLOR][/B]" default="0"/>
+		<setting id="show_motto_genre" type="bool" label="Show Motto + Genre above description" default="true"/>
+		<setting type="lsep" label="Select Action"/>
+		<setting id="select_ext_info" type="enum" label="[B][COLOR FF33CCFF]Open Extended Info[/COLOR][/B] when selecting" values="None|Movies|TV Shows|Episodes|Movies + TV Shows|Movies + Episodes|Movies + TV Shows + Episodes" default="0" onchange="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=clear_cache)"/>
+		<setting id="select_skip_inprogress" type="bool" label="  [B][COLOR FFFDBD01]Skip In Progress[/COLOR][/B] (Movies / TV Shows / Episodes: deschide direct sursele)" default="false" visible="!eq(-1,0)" onchange="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=clear_cache)"/>
+		<setting id="select_skip_upnext" type="bool" label="  [B][COLOR FFFDBD01]Skip Up Next[/COLOR][/B] (deschide direct sursele)" default="false" visible="!eq(-2,0)" onchange="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=clear_cache)"/>
+		
+		<setting type="lsep" label="AutoPlay [COLOR gray]Windows[/COLOR] vs [COLOR gray]Android[/COLOR]"/>
+		<setting id="auto_play" type="bool" label="Auto-play the most recommended source." default="false"/>
+        <setting id="autoplay_profile" type="enum" label="System and Quality" values="Windows 1080p|Android 4K|Android 1080p" default="0" visible="eq(-1,true)"/>
+		<setting type="lsep" label="Download"/>
+		<setting id="show_download_progress" type="bool" label="Show info panel (top-right) during download" default="true"/>
+		<setting type="lsep" label="Colors"/>
+		<setting id="source_theme" type="enum" label="Source window appearance" values="Multicolor|Simple|Mono|Custom" default="0"/>
+		<setting id="color_4k" type="action" label="  4K Color" subsetting="true" visible="eq(-1,3)" action="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=color_picker&amp;setting=color_4k)"/>
+		<setting id="color_1080p" type="action" label="  1080p Color" subsetting="true" visible="eq(-2,3)" action="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=color_picker&amp;setting=color_1080p)"/>
+		<setting id="color_720p" type="action" label="  720p Color" subsetting="true" visible="eq(-3,3)" action="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=color_picker&amp;setting=color_720p)"/>
+		<setting id="color_sd" type="action" label="  SD Color" subsetting="true" visible="eq(-4,3)" action="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=color_picker&amp;setting=color_sd)"/>
+    </category>
+    
+	<!-- 2. MENU -->
+    <category label="[B]Menu[/B]">
+        <setting type="lsep" label="Context Info"/>
+        <setting id="enable_global_context" type="bool" label="Enable Context Menu [B][COLOR FF6AFB92]TMDb INFO[/COLOR][/B]" default="true"/>
+        <setting id="enable_extended_context" type="bool" label="Enable Context Menu [B][COLOR FF33CCFF]TMDb Extended Info[/COLOR][/B]" default="true"/>
+        <setting id="enable_trailer_context" type="bool" label="Enable Context Menu [B][COLOR FF00CED1]TMDbM [COLOR FFF70D1A]Trailers[/COLOR][/B]" default="true"/>
+        <setting id="enable_library_context" type="bool" label="Enable Context Menu [B][COLOR yellow]Add to Library[/COLOR][/B]" default="true"/>
+		<setting type="lsep" label="Trailer Player"/>
+		<setting id="trailer_player" type="enum" label="Play trailers with" values="[B][COLOR FF00CED1]TMDbM[/COLOR] [COLOR FFF70D1A]Trailers[/COLOR][/B] (Default)|[B][COLOR FFCCCCFF]You[COLOR FFF70D1A]Tube [/COLOR][/B]Plugin" default="0"/>
+		<setting id="open_tmdbm_trailers_settings" type="action" label="  Open [B][COLOR FF00CED1]TMDbM [COLOR FFF70D1A]Trailers[/COLOR][/B] Settings[/COLOR]" subsetting="true" option="close" visible="eq(-1,0) + System.HasAddon(tmdbm.trailers)" action="RunScript(special://home/addons/plugin.video.tmdbmovies/resources/lib/trailer_settings_opener.py, tmdbm.trailers)"/>
+		<setting id="open_youtube_plugin_settings" type="action" label="  Open [B][COLOR FFCCCCFF]You[COLOR FFF70D1A]Tube [/COLOR][/B] Plugin Settings[/COLOR]" subsetting="true" option="close" visible="eq(-2,1) + System.HasAddon(plugin.video.youtube)" action="RunScript(special://home/addons/plugin.video.tmdbmovies/resources/lib/trailer_settings_opener.py, plugin.video.youtube)"/>
+		
+        <setting type="lsep" label="Main Menu"/>
+        <setting id="show_menu_trakt" type="bool" label="Show [B][COLOR pink]Trakt[/COLOR][/B] in main menu" default="true"/>
+        <setting id="show_menu_mdblist" type="bool" label="Show [B][COLOR lightskyblue]MDBList[/COLOR][/B] in main menu" default="true"/>
+        <setting id="show_menu_simkl" type="bool" label="Show [B][COLOR mediumpurple]Simkl[/COLOR][/B] in main menu" default="true"/>
+        <setting id="show_menu_punchplay" type="bool" label="Show [B][COLOR FFFF6600]PunchPlay[/COLOR][/B] in main menu" default="true"/>
+        <setting id="show_menu_tmdb_lists" type="bool" label="Show [B][COLOR FF00CED1]My TMDB Lists[/COLOR][/B] in main menu" default="true"/>
+        <setting id="show_menu_bollywood" type="bool" label="Show [B][COLOR FFCCCCFF]Bollywood[/COLOR][/B] in main menu" default="true"/>
+        <setting id="show_menu_romania" type="bool" label="Show [B][COLOR yellow]Romania[/COLOR][/B] in main menu" default="true"/>
+        <setting id="show_menu_actors" type="bool" label="Show [B][COLOR orange]Actors[/COLOR][/B] in main menu" default="true"/>
+
+        <setting type="lsep" label="Context Menu"/>
+        <setting id="show_cm_trakt" type="bool" label="Show [B][COLOR pink]My Trakt[/COLOR][/B] in context menu" default="true"/>
+        <setting id="show_cm_tmdb" type="bool" label="Show [B][COLOR FF00CED1]My TMDB[/COLOR][/B] in context menu" default="true"/>
+        <setting id="show_cm_mdblist" type="bool" label="Show [B][COLOR lightskyblue]My MDBList[/COLOR][/B] in context menu" default="true"/>
+        <setting id="show_cm_simkl" type="bool" label="Show [B][COLOR mediumpurple]My Simkl[/COLOR][/B] in context menu" default="true"/>
+        <setting id="show_cm_punchplay" type="bool" label="Show [B][COLOR FFFF6600]My PunchPlay[/COLOR][/B] in context menu" default="true"/>
+        <setting id="all_providers_menu" type="bool" label="Show [B][COLOR pink]All [/COLOR][COLOR FF00CED1]Pro[/COLOR][COLOR lightskyblue]vid[/COLOR][COLOR mediumpurple]ers[/COLOR][/B] in context menu (batch: TMDb + Trakt + MDBList + Simkl + PunchPlay)" default="false"/>
+        <setting id="show_cm_youtube" type="bool" label="Show [B][COLOR FFF70D1A]Search Youtube[/COLOR][/B] in context menu" default="true"/>
+        <setting id="youtube_autoplay" type="bool" label="   └─ [B][COLOR FFF70D1A]Youtube Autoplay[/COLOR][/B] (keep playing suggested videos)" default="false"/>
+        <setting id="show_cm_my_plays" type="bool" label="Show [B][COLOR FFFF69B4]My Plays[/COLOR][/B] in context menu" default="true"/>
+
+        <setting type="lsep" label="[B][COLOR FFFF69B4]My Plays[/COLOR][/B] (choose which players appear in menu)"/>
+        <setting id="use_pov" type="bool" label="Show [B][COLOR FFB041FF]POV[/COLOR][/B]" default="true"/>
+        <setting id="use_salts" type="bool" label="Show [B][COLOR gold]SALTS[/COLOR][/B]" default="true"/>
+        <setting id="use_fenlight" type="bool" label="Show [B][COLOR lightskyblue]Fen Light[/COLOR][/B]" default="true"/>
+        <setting id="use_redlight" type="bool" label="Show [B][COLOR FFFF2222]Red Light[/COLOR][/B]" default="true"/>
+        <setting id="use_fen" type="bool" label="Show [B][COLOR lightskyblue]Fen[/COLOR][/B]" default="true"/>
+        <setting id="use_magneto" type="bool" label="Show [B][COLOR red]Magneto[/COLOR][/B]" default="true"/>
+        <setting id="use_luckodi" type="bool" label="Show [B][COLOR ff00fa9a]luc_[/COLOR]Kodi[/B]" default="true"/>
+        <setting id="use_umbrella" type="bool" label="Show [B][COLOR FFE41B17]Umbrella[/COLOR][/B]" default="true"/>
+        <setting id="use_elementum" type="bool" label="Show [B][COLOR FF786D5F]Elementum[/COLOR][/B]" default="true"/>
+        <setting id="use_cinebox" type="bool" label="Show [B][COLOR FFA70D2A]CINEBOX[/COLOR][/B]" default="true"/>
+        <setting id="use_seren" type="bool" label="Show [B][COLOR FF00BFFF]Seren[/COLOR][/B]" default="true"/>
+        <setting id="use_mrsplite" type="bool" label="Show [B][COLOR orange]MRSP Lite[/COLOR][/B]" default="true"/>
+        <setting id="use_tmdbhelper" type="bool" label="Show [B][COLOR gold]TMDb Helper[/COLOR][/B]" default="true"/>
+
+        <setting type="lsep" label="TMDb Helper Integration"/>
+        <setting id="export_json_player" type="action" label="Export [B][COLOR yellow]Player JSON[/COLOR][/B] to [B][COLOR lightskyblue]TMDb Helper[/COLOR][/B]" option="close" action="RunScript(special://home/addons/plugin.video.tmdbmovies/resources/lib/json/export_player.py)" />
+    </category>
+
+	<!-- 3. PROVIDERS -->
+    <category label="HTTP Providers">
+		<setting type="lsep" label="Smart Cache"/>
+		<setting id="use_cache_sources" type="bool" label="[B][COLOR FFFFD700]Cache Sources (Smart Retry)[/COLOR][/B]" default="true"/>
+        <setting id="cache_sources_duration" type="slider" label="Cache Duration (Hours)" default="24" min="1" max="168" option="int" subsetting="true" visible="eq(-1,true)"/>
+		<setting id="scraper_timeout" type="slider" label="Max source wait time (Seconds)" default="25" range="10,5,60" />
+		
+		<setting type="lsep" label="HTTP Providers (Websites)"/>
+        <setting id="enable_http_scrapers" type="bool" label="[B][COLOR FF00FA9A]» ENABLE HTTP SCRAPERS (No Debrid)[/COLOR][/B]" default="true"/>
+        
+        <setting id="use_sooti" type="bool" label="   └─ Enable [B][COLOR FF00FA9A]Sootio[/COLOR][/B]" default="true" visible="eq(-1,true)"/>
+        <setting id="use_webstreamr" type="bool" label="   └─ Enable [B][COLOR FF00FA9A]Webstreamr[/COLOR][/B]" default="true" visible="eq(-2,true)"/>
+        <setting id="use_vidlink" type="bool" label="   └─ Enable [B][COLOR FF00FA9A]VidLink[/COLOR][/B]" default="true" visible="eq(-3,true)"/>
+        <setting id="use_vsembed" type="bool" label="   └─ Enable [B][COLOR FF00FA9A]VSEmbed[/COLOR][/B]" default="true" visible="eq(-4,true)"/>
+        <setting id="use_videasy" type="bool" label="   └─ Enable [B][COLOR FF00FA9A]VidEasy (Fmovies)[/COLOR][/B]" default="true" visible="eq(-5,true)"/>
+        <setting id="use_netmirror" type="bool" label="   └─ Enable [B][COLOR FF00FA9A]NetMirror[/COLOR][/B]" default="true" visible="eq(-6,true)"/>
+        <setting id="use_vidmody" type="bool" label="   └─ Enable [B][COLOR FF00FA9A]Vidmody[/COLOR][/B]" default="true" visible="eq(-7,true)"/>
+        <setting id="use_movieblast" type="bool" label="   └─ Enable [B][COLOR FF00FA9A]MovieBlast[/COLOR][/B]" default="true" visible="eq(-8,true)"/>
+        <setting id="use_moviebox" type="bool" label="   └─ Enable [B][COLOR FF00FA9A]MovieBox[/COLOR][/B]" default="true" visible="eq(-9,true)"/>
+        <setting id="use_onlykdrama" type="bool" label="   └─ Enable [B][COLOR FF00FA9A]OnlyKDrama[/COLOR][/B]" default="true" visible="eq(-10,true)"/>
+
+        <setting id="use_streamvix" type="bool" label="   └─ Enable [B][COLOR FF00FA9A]StreamVix[/COLOR][/B]" default="true" visible="eq(-11,true)"/>
+        <setting id="use_mkvcinemas" type="bool" label="   └─ Enable [B][COLOR FF00FA9A]MKVCinemas[/COLOR][/B]" default="false" visible="eq(-12,true)"/>
+        <setting id="use_moviesdrive" type="bool" label="   └─ Enable [B][COLOR FF00FA9A]MoviesDrive[/COLOR][/B]" default="true" visible="eq(-13,true)"/>
+        <setting id="use_hdhub4u" type="bool" label="   └─ Enable [B][COLOR FF00FA9A]HDHub4u[/COLOR][/B]" default="true" visible="eq(-14,true)"/>
+        <setting id="use_hdhub" type="bool" label="   └─ Enable [B][COLOR FF00FA9A]HDHub[/COLOR][/B]" default="true" visible="eq(-15,true)"/>
+        <setting id="use_primesrcme" type="bool" label="   └─ Enable [B][COLOR FF00FA9A]PrimeSrc.me (API)[/COLOR][/B]" default="true" visible="eq(-16,true)"/>
+        <setting id="use_vaplayer" type="bool" label="   └─ Enable [B][COLOR FF00FA9A]VAPlayer (PlayIMDB)[/COLOR][/B]" default="true" visible="eq(-17,true)"/>
+        <setting id="use_flixer" type="bool" label="   └─ Enable [B][COLOR FF00FA9A]Flixer[/COLOR][/B]" default="true" visible="eq(-18,true)"/>
+        <setting id="use_cineby" type="bool" label="   └─ Enable [B][COLOR FF00FA9A]Cineby[/COLOR][/B]" default="true" visible="eq(-19,true)"/>
+        <setting id="use_cinefreak" type="bool" label="   └─ Enable [B][COLOR FF00FA9A]CineFreak[/COLOR][/B]" default="true" visible="eq(-20,true)"/>
+        <setting id="use_fshdnet" type="bool" label="   └─ Enable [B][COLOR FF00FA9A]FSHDnet[/COLOR][/B]" default="true" visible="eq(-21,true)"/>
+		
+        <setting type="lsep" label="Exclusions"/>
+		<setting id="exclude_dv" type="bool" label="Exclude [B][COLOR FFFFCC00]Dolby Vision[/COLOR][/B] (DV-only files, keeps HDR + hybrids)" default="false"/>
+		<setting id="exclude_hdr" type="bool" label="Exclude [B][COLOR FF00FA9A]HDR[/COLOR][/B] (all HDR/DV/hybrid files)" default="false"/>
+		<setting id="exclude_4k" type="bool" label="Exclude [B][COLOR FFFF00FF]4K / 2160p[/COLOR][/B]" default="false"/>
+		<setting id="exclude_1080p" type="bool" label="Exclude [B][COLOR FFDAA520]1080p[/COLOR][/B]" default="false"/>
+		<setting id="exclude_720p" type="bool" label="Exclude [B][COLOR FF9932CC]720p[/COLOR][/B]" default="false"/>
+		<setting id="exclude_sd" type="bool" label="Exclude [B][COLOR FF6495ED]SD / 480p and below[/COLOR][/B]" default="false"/>
+		
+        <setting type="lsep" label="Source Filtering"/>
+		<setting id="filter_duplicate_urls" type="bool" label="Filter duplicate sources (same URL)" default="true"/>
+        <setting id="source_sorting" type="enum" label="Source Priority (Sorting)" values="[B][COLOR FF33CCFF]Mixed (Quality > Size)[/COLOR][/B]|[B][COLOR FF7B68EE]AIO[/COLOR] Original -> [COLOR cyan]Stremio[/COLOR] -> HTTP -> [COLOR gold]P2P[/COLOR][/B]|[B][COLOR FF7B68EE]AIO[/COLOR] Original -> [COLOR cyan]Stremio[/COLOR] -> [COLOR gold]P2P[/COLOR] -> HTTP[/B]|[B][COLOR FF7B68EE]AIO[/COLOR] [COLOR lime]Cached[/COLOR] -> [COLOR cyan]Stremio[/COLOR] [COLOR lime]Cached[/COLOR] -> HTTP -> [COLOR FF7B68EE]AIO[/COLOR] [COLOR orange]Uncached[/COLOR] -> [COLOR cyan]Stremio[/COLOR] [COLOR orange]Uncached[/COLOR] -> [COLOR gold]P2P[/COLOR][/B]|[B][COLOR FF7B68EE]AIO[/COLOR]+[COLOR cyan]Stremio[/COLOR] [COLOR lime]Cached[/COLOR] -> [COLOR gold]P2P[/COLOR] -> HTTP -> [COLOR FF7B68EE]AIO[/COLOR]+[COLOR cyan]Stremio[/COLOR] [COLOR orange]Uncached[/COLOR][/B]|[B][COLOR FF7B68EE]AIO[/COLOR]+[COLOR cyan]Stremio[/COLOR] [COLOR lime]Cached[/COLOR] -> HTTP -> [COLOR FF7B68EE]AIO[/COLOR]+[COLOR cyan]Stremio[/COLOR] [COLOR orange]Uncached[/COLOR] -> [COLOR gold]P2P[/COLOR][/B]|[B][COLOR cyan]Stremio[/COLOR] [COLOR lime]Cached[/COLOR] -> [COLOR FF7B68EE]AIO[/COLOR] [COLOR lime]Cached[/COLOR] -> HTTP -> [COLOR FF7B68EE]AIO[/COLOR]+[COLOR cyan]Stremio[/COLOR] [COLOR orange]Uncached[/COLOR] -> [COLOR gold]P2P[/COLOR][/B]|[B]HTTP -> [COLOR FF7B68EE]AIO[/COLOR]+[COLOR cyan]Stremio[/COLOR] [COLOR lime]Cached[/COLOR] -> [COLOR gold]P2P[/COLOR] -> [COLOR FF7B68EE]AIO[/COLOR]+[COLOR cyan]Stremio[/COLOR] [COLOR orange]Uncached[/COLOR][/B]|[B]HTTP -> [COLOR FF7B68EE]AIO[/COLOR]+[COLOR cyan]Stremio[/COLOR] [COLOR lime]Cached[/COLOR] -> [COLOR FF7B68EE]AIO[/COLOR]+[COLOR cyan]Stremio[/COLOR] [COLOR orange]Uncached[/COLOR] -> [COLOR gold]P2P[/COLOR][/B]|[B][COLOR gold]P2P[/COLOR] -> [COLOR FF7B68EE]AIO[/COLOR]+[COLOR cyan]Stremio[/COLOR] [COLOR lime]Cached[/COLOR] -> HTTP -> [COLOR FF7B68EE]AIO[/COLOR]+[COLOR cyan]Stremio[/COLOR] [COLOR orange]Uncached[/COLOR][/B]" default="0"/>
+    </category>
+
+	<!-- 4. AIO STREAMS -->
+    <category label="[B][COLOR FF7B68EE]AIO Streams[/COLOR][/B]">
+        <setting label="─── AIO Streams Configuration ───" type="lsep" />
+        <setting id="use_aiostreams" type="bool" label="Enable [B][COLOR FF7B68EE]AIO Streams[/COLOR][/B]" default="true"/>
+        <setting id="aiostreams_instance" type="enum" label="  Instance" default="0" subsetting="true" visible="eq(-1,true)"
+            values="Kuu-lection stable|Kuu-lection nightly|Viren070|Nhyira stable|Nhyira nightly|Midnight stable|Midnight nightly|Elfhosted|Custom" />
+
+        <!-- 0: Kuu-lection Stable -->
+        <setting id="aio_url.0" type="text" label="    URL" default="https://aiostreams.stremio.ru" enable="false" subsetting="true" visible="eq(-2,true) + eq(-1,0)" />
+        <setting id="aio_uuid.0" type="text" label="    UUID" default="" option="hidden" subsetting="true" visible="eq(-3,true) + eq(-2,0)" />
+        <setting id="aio_password.0" type="text" label="    Password" default="" option="hidden" subsetting="true" visible="eq(-4,true) + eq(-3,0)" />
+
+        <!-- 1: Kuu-lection-nightly -->
+        <setting id="aio_url.1" type="text" label="    URL" default="https://aiostreams-nightly.stremio.ru" enable="false" subsetting="true" visible="eq(-5,true) + eq(-4,1)" />
+        <setting id="aio_uuid.1" type="text" label="    UUID" default="" option="hidden" subsetting="true" visible="eq(-6,true) + eq(-5,1)" />
+        <setting id="aio_password.1" type="text" label="    Password" default="" option="hidden" subsetting="true" visible="eq(-7,true) + eq(-6,1)" />
+
+        <!-- 2: Viren070 -->
+        <setting id="aio_url.2" type="text" label="    URL" default="https://aiostreams.viren070.me" enable="false" subsetting="true" visible="eq(-8,true) + eq(-7,2)" />
+        <setting id="aio_uuid.2" type="text" label="    UUID" default="" option="hidden" subsetting="true" visible="eq(-9,true) + eq(-8,2)" />
+        <setting id="aio_password.2" type="text" label="    Password" default="" option="hidden" subsetting="true" visible="eq(-10,true) + eq(-9,2)" />
+
+        <!-- 3: Nhyira stable -->
+        <setting id="aio_url.3" type="text" label="    URL" default="https://aiostreams.fortheweak.cloud" enable="false" subsetting="true" visible="eq(-11,true) + eq(-10,3)" />
+        <setting id="aio_uuid.3" type="text" label="    UUID" default="" option="hidden" subsetting="true" visible="eq(-12,true) + eq(-11,3)" />
+        <setting id="aio_password.3" type="text" label="    Password" default="" option="hidden" subsetting="true" visible="eq(-13,true) + eq(-12,3)" />
+
+        <!-- 4: Nhyira nightly -->
+        <setting id="aio_url.4" type="text" label="    URL" default="https://aiostreams-nightly.fortheweak.cloud" enable="false" subsetting="true" visible="eq(-14,true) + eq(-13,4)" />
+        <setting id="aio_uuid.4" type="text" label="    UUID" default="" option="hidden" subsetting="true" visible="eq(-15,true) + eq(-14,4)" />
+        <setting id="aio_password.4" type="text" label="    Password" default="" option="hidden" subsetting="true" visible="eq(-16,true) + eq(-15,4)" />
+
+        <!-- 5: Midnight stable -->
+        <setting id="aio_url.5" type="text" label="    URL" default="https://aiostreamsfortheweebsstable.midnightignite.me" enable="false" subsetting="true" visible="eq(-17,true) + eq(-16,5)" />
+        <setting id="aio_uuid.5" type="text" label="    UUID" default="" option="hidden" subsetting="true" visible="eq(-18,true) + eq(-17,5)" />
+        <setting id="aio_password.5" type="text" label="    Password" default="" option="hidden" subsetting="true" visible="eq(-19,true) + eq(-18,5)" />
+
+        <!-- 6: Midnight nightly -->
+        <setting id="aio_url.6" type="text" label="    URL" default="https://aiostreamsfortheweebs.midnightignite.me" enable="false" subsetting="true" visible="eq(-20,true) + eq(-19,6)" />
+        <setting id="aio_uuid.6" type="text" label="    UUID" default="" option="hidden" subsetting="true" visible="eq(-21,true) + eq(-20,6)" />
+        <setting id="aio_password.6" type="text" label="    Password" default="" option="hidden" subsetting="true" visible="eq(-22,true) + eq(-21,6)" />
+
+        <!-- 7: Elfhosted -->
+        <setting id="aio_url.7" type="text" label="    URL" default="https://aiostreams.elfhosted.com" enable="false" subsetting="true" visible="eq(-23,true) + eq(-22,7)" />
+        <setting id="aio_uuid.7" type="text" label="    UUID" default="" option="hidden" subsetting="true" visible="eq(-24,true) + eq(-23,7)" />
+        <setting id="aio_password.7" type="text" label="    Password" default="" option="hidden" subsetting="true" visible="eq(-25,true) + eq(-24,7)" />
+
+        <!-- 8: Custom -->
+        <setting id="aio_url.8" type="text" label="    URL (custom)" default="" subsetting="true" visible="eq(-26,true) + eq(-25,8)" />
+        <setting id="aio_uuid.8" type="text" label="    UUID" default="" option="hidden" subsetting="true" visible="eq(-27,true) + eq(-26,8)" />
+        <setting id="aio_password.8" type="text" label="    Password" default="" option="hidden" subsetting="true" visible="eq(-28,true) + eq(-27,8)" />
+
+		<setting type="lsep" />
+		<setting id="show_aio_indexers" type="bool" label="AIO Streams: Show site names (Indexers)" default="true"/>
+		<setting id="show_seeders" type="bool" label="Show Seeder count" default="false"/>
+		<setting id="filter_web_sources" type="bool" label="Filter [B][COLOR FF00FA9A]WEB[/COLOR][COLOR gold] (RD ONLY)[/COLOR][/B] sources" default="false"/>
+		<setting id="aio_verify_links" type="bool" label="Verify AIO/Stremio links (fail fast)" default="true"/>
+		
+		<setting type="lsep" label="EasyNews"/>
+		<setting id="easynews_noseek" type="bool" label="EasyNews: Play Without Seek (Fixes startup errors)" default="false"/>
+    </category>
+	
+	<!-- 5. STREMIO -->
+    <category label="[B][COLOR cyan]Stremio[/COLOR][/B]">
+        <!-- Torrentio -->
+        <setting type="lsep" label="Torrentio"/>
+        <setting id="use_torrentio" type="bool" label="Enable [B][COLOR cyan]Torrentio[/COLOR][/B]" default="false"/>
+        <setting id="torrentio_instance" type="enum" label="  Instance" values="strem.fun" default="0" subsetting="true" visible="eq(-1,true)"/>
+        <setting id="torrentio_info_url.0" type="text" label="    Configure URL" default="https://torrentio.strem.fun/configure" enable="false" subsetting="true" visible="eq(-2,true) + eq(-1,0)"/>
+        <setting id="torrentio_manifest.0" type="text" label="    URL manifest.json" default="" subsetting="true" visible="eq(-3,true) + eq(-2,0)"/>
+        
+        <!-- Mediafusion -->
+        <setting type="lsep" label="Mediafusion"/>
+        <setting id="use_mediafusion" type="bool" label="Enable [B][COLOR cyan]Mediafusion[/COLOR][/B]" default="false"/>
+        <setting id="mediafusion_instance" type="enum" label="  Instance" values="Kuu's MediaFusion|Midnight's MediaFusion|Elfhosted's MediaFusion" default="0" subsetting="true" visible="eq(-1,true)"/>
+        
+        <!-- Manifest Kuu (0) -->
+        <setting id="mediafusion_info_url.0" type="text" label="    Configure URL (Kuu)" default="https://mediafusionfortheweebs.midnightignite.me/app" enable="false" subsetting="true" visible="eq(-2,true) + eq(-1,0)"/>
+        <setting id="mediafusion_manifest.0" type="text" label="    URL manifest.json (Kuu)" default="" subsetting="true" visible="eq(-3,true) + eq(-2,0)"/>
+        <!-- Manifest Midnight (1) -->
+        <setting id="mediafusion_info_url.1" type="text" label="    Configure URL (Midnight)" default="https://mediafusionfortheweebs.midnightignite.me/app" enable="false" subsetting="true" visible="eq(-4,true) + eq(-3,1)"/>
+        <setting id="mediafusion_manifest.1" type="text" label="    URL manifest.json (Midnight)" default="" subsetting="true" visible="eq(-5,true) + eq(-4,1)"/>
+        <!-- Manifest Elfhosted (2) -->
+        <setting id="mediafusion_info_url.2" type="text" label="    Configure URL (Elfhosted)" default="https://mediafusion.elfhosted.com/app" enable="false" subsetting="true" visible="eq(-6,true) + eq(-5,2)"/>
+        <setting id="mediafusion_manifest.2" type="text" label="    URL manifest.json ([B][COLOR cyan]Elfhosted[/COLOR][/B])" default="" subsetting="true" visible="eq(-7,true) + eq(-6,2)"/>
+
+        <!-- Comet -->
+        <setting type="lsep" label="Comet"/>
+        <setting id="use_comet" type="bool" label="Enable [B][COLOR cyan]Comet[/COLOR][/B]" default="false"/>
+        <setting id="comet_instance" type="enum" label="  Instance" values="Goldy's Comet|Elfhosted's Comet|Midnight's Comet|Kuu's Comet" default="0" subsetting="true" visible="eq(-1,true)"/>
+
+        <!-- Goldy (0) -->
+        <setting id="comet_info_url.0" type="text" label="    Configure URL (Goldy)" default="https://comet.feels.legal/configure" enable="false" subsetting="true" visible="eq(-2,true) + eq(-1,0)"/>
+        <setting id="comet_manifest.0" type="text" label="    URL manifest.json (Goldy)" default="" subsetting="true" visible="eq(-3,true) + eq(-2,0)"/>
+        <!-- Elfhosted (1) -->
+        <setting id="comet_info_url.1" type="text" label="    Configure URL (Elfhosted)" default="https://comet.elfhosted.com/configure" enable="false" subsetting="true" visible="eq(-4,true) + eq(-3,1)"/>
+        <setting id="comet_manifest.1" type="text" label="    URL manifest.json (Elfhosted)" default="" subsetting="true" visible="eq(-5,true) + eq(-4,1)"/>
+        <!-- Midnight (2) -->
+        <setting id="comet_info_url.2" type="text" label="    Configure URL (Midnight)" default="https://cometfortheweebs.midnightignite.me/configure" enable="false" subsetting="true" visible="eq(-6,true) + eq(-5,2)"/>
+        <setting id="comet_manifest.2" type="text" label="    URL manifest.json ([B][COLOR cyan]Midnight[/COLOR][/B])" default="" subsetting="true" visible="eq(-7,true) + eq(-6,2)"/>
+        <!-- Kuu (3) -->
+        <setting id="comet_info_url.3" type="text" label="    Configure URL (Kuu)" default="https://comet.stremio.ru/configure" enable="false" subsetting="true" visible="eq(-8,true) + eq(-7,3)"/>
+        <setting id="comet_manifest.3" type="text" label="    URL manifest.json (Kuu)" default="" subsetting="true" visible="eq(-9,true) + eq(-8,3)"/>
+
+        <!-- Meteor -->
+        <setting type="lsep" label="Meteor"/>
+        <setting id="use_meteor" type="bool" label="Enable [B][COLOR cyan]Meteor[/COLOR][/B]" default="false"/>
+        <setting id="meteor_instance" type="enum" label="  Instance" values="Midnight's Meteor" default="0" subsetting="true" visible="eq(-1,true)"/>
+        <setting id="meteor_info_url.0" type="text" label="    Configure URL (Midnight)" default="https://meteorfortheweebs.midnightignite.me/configure" enable="false" subsetting="true" visible="eq(-2,true) + eq(-1,0)"/>
+        <setting id="meteor_manifest.0" type="text" label="    URL manifest.json (Midnight)" default="" subsetting="true" visible="eq(-3,true) + eq(-2,0)"/>
+
+        <!-- StremThru Torz -->
+        <setting type="lsep" label="StremThru Torz"/>
+        <setting id="use_torz" type="bool" label="Enable [B][COLOR cyan]Torz[/COLOR][/B]" default="false"/>
+        <setting id="torz_instance" type="enum" label="  Instance" values="Midnight's Torz|Elfhosted's Torz|XYZ's Torz" default="0" subsetting="true" visible="eq(-1,true)"/>
+        <setting id="torz_info_url.0" type="text" label="    Configure URL (Midnight)" default="https://stremthrufortheweebs.midnightignite.me/stremio/torz/configure" enable="false" subsetting="true" visible="eq(-2,true) + eq(-1,0)"/>
+        <setting id="torz_manifest.0" type="text" label="    URL manifest.json (Midnight)" default="" subsetting="true" visible="eq(-3,true) + eq(-2,0)"/>
+        <setting id="torz_info_url.1" type="text" label="    Configure URL (Elfhosted)" default="https://stremthru.elfhosted.com/stremio/torz/configure" enable="false" subsetting="true" visible="eq(-4,true) + eq(-3,1)"/>
+        <setting id="torz_manifest.1" type="text" label="    URL manifest.json (Elfhosted)" default="" subsetting="true" visible="eq(-5,true) + eq(-4,1)"/>
+        <setting id="torz_info_url.2" type="text" label="    Configure URL (XYZ)" default="https://stremthru.13377001.xyz/stremio/torz/configure" enable="false" subsetting="true" visible="eq(-6,true) + eq(-5,2)"/>
+        <setting id="torz_manifest.2" type="text" label="    URL manifest.json (XYZ)" default="" subsetting="true" visible="eq(-7,true) + eq(-6,2)"/>
+        
+        <!-- Usenet (EasyNews) -->
+        <setting type="lsep" label="Usenet (EasyNews)"/>
+        <setting id="use_usenet" type="bool" label="Enable [B][COLOR FF00CED1]Usenet[/COLOR][/B]" default="false"/>
+        <setting id="usenet_manifest.0" type="text" label="  URL manifest.json" default="" subsetting="true" visible="eq(-1,true)"/>
+        
+        <!-- Custom Stremio Addons -->
+        <setting type="lsep" label="Custom Stremio Addons"/>
+        
+        <setting id="use_custom1" type="bool" label="Enable [B][COLOR cyan]Custom 1[/COLOR][/B]" default="false"/>
+        <setting id="custom1_name" type="text" label="  Name" default="" subsetting="true" visible="eq(-1,true)"/>
+        <setting id="custom1_manifest.0" type="text" label="  URL manifest.json" default="" subsetting="true" visible="eq(-2,true)"/>
+        <setting id="custom1_use_title" type="bool" label="  Use movie title as name" default="false" subsetting="true" visible="eq(-3,true)"/>
+        
+        <setting id="use_custom2" type="bool" label="Enable [B][COLOR cyan]Custom 2[/COLOR][/B]" default="false"/>
+        <setting id="custom2_name" type="text" label="  Name" default="" subsetting="true" visible="eq(-1,true)"/>
+        <setting id="custom2_manifest.0" type="text" label="  URL manifest.json" default="" subsetting="true" visible="eq(-2,true)"/>
+        <setting id="custom2_use_title" type="bool" label="  Use movie title as name" default="false" subsetting="true" visible="eq(-3,true)"/>
+        
+        <setting id="use_custom3" type="bool" label="Enable [B][COLOR cyan]Custom 3[/COLOR][/B]" default="false"/>
+        <setting id="custom3_name" type="text" label="  Name" default="" subsetting="true" visible="eq(-1,true)"/>
+        <setting id="custom3_manifest.0" type="text" label="  URL manifest.json" default="" subsetting="true" visible="eq(-2,true)"/>
+        <setting id="custom3_use_title" type="bool" label="  Use movie title as name" default="false" subsetting="true" visible="eq(-3,true)"/>
+        
+        <setting id="use_custom4" type="bool" label="Enable [B][COLOR cyan]Custom 4[/COLOR][/B]" default="false"/>
+        <setting id="custom4_name" type="text" label="  Name" default="" subsetting="true" visible="eq(-1,true)"/>
+        <setting id="custom4_manifest.0" type="text" label="  URL manifest.json" default="" subsetting="true" visible="eq(-2,true)"/>
+        <setting id="custom4_use_title" type="bool" label="  Use movie title as name" default="false" subsetting="true" visible="eq(-3,true)"/>
+        
+        <setting id="use_custom5" type="bool" label="Enable [B][COLOR cyan]Custom 5[/COLOR][/B]" default="false"/>
+        <setting id="custom5_name" type="text" label="  Name" default="" subsetting="true" visible="eq(-1,true)"/>
+        <setting id="custom5_manifest.0" type="text" label="  URL manifest.json" default="" subsetting="true" visible="eq(-2,true)"/>
+        <setting id="custom5_use_title" type="bool" label="  Use movie title as name" default="false" subsetting="true" visible="eq(-3,true)"/>
+    </category>
+
+	<!-- 6. P2P PROVIDERS -->
+    <category label="[B][COLOR FFFF8C00]P2P Providers[/COLOR][/B]">
+		<setting type="lsep" label="─── TorrServer Configuration ───"/>
+		<setting id="torrserver_mode" type="enum" label="  TorrServer Mode" values="Local|Custom" default="0"/>
+		<setting id="torrserver_local_host" type="text" label="    Host (Local)" default="127.0.0.1" visible="eq(-1,0)"/>
+		<setting id="torrserver_local_port" type="number" label="    Port" default="8090" visible="eq(-2,0)"/>
+		<setting id="torrserver_custom_url" type="text" label="    Custom URL" default="http://" visible="eq(-3,1)"/>
+		<setting id="torrserver_user" type="text" label="  Username" default="" option="hidden"/>
+		<setting id="torrserver_pass" type="text" label="  Password" default="" option="hidden"/>
+   		<setting type="lsep3" label="Download [B][COLOR FF6AFB92]'TorrServe Client APK'[/COLOR][/B] for [B]Android[/B]: [B][COLOR yellow]https://cutt.ly/torran[/COLOR][/B]" />
+   		<setting type="lsep3" label="Install [B][COLOR FF6AFB92]TorrServer[/COLOR][/B] for [B]Windows[/B] and [B]Linux[/B] from [B][COLOR FFC45AEC]Angelitto Repository[/COLOR][/B]" />
+
+		<setting type="lsep" label="[B][COLOR FFCCCCFF]─── P2P PROVIDERS ───[/COLOR][/B]"/>
+		<setting id="enable_p2p_providers" type="bool" label="[B][COLOR FFFF8C00]» ENABLE P2P PROVIDERS[/COLOR][/B]" default="false"/>
+		
+		<setting type="label" label="[B][COLOR yellow]                                 ─── P2P Public Trackers ───[/COLOR][/B]"/>
+		<setting id="use_p2p_yts" type="bool" label="[B][COLOR FFCCCCFF]└─ Enable [B][COLOR FFFF8C00]YTS[/COLOR][/B]" default="false" visible="eq(-2,true)"/>
+		<setting id="yts_custom_domain" type="text" label="      Custom Domain (e.g. yts.jt)" default="" visible="eq(-1,true) + eq(-3,true)"/>
+		<setting id="use_p2p_torrentio" type="bool" label="[B][COLOR FFCCCCFF]└─ Enable [B][COLOR FFFF8C00]Torrentio P2P[/COLOR][/B]" default="false" visible="eq(-4,true)"/>
+		<setting id="p2p_torrentio_manifest" type="text" label="      Custom Manifest URL (optional)" default="" visible="eq(-1,true) + eq(-5,true)"/>
+		<setting id="use_p2p_comet" type="bool" label="[B][COLOR FFCCCCFF]└─ Enable [B][COLOR FFFF8C00]Comet P2P[/COLOR][/B]" default="false" visible="eq(-6,true)"/>
+		<setting id="p2p_comet_manifest" type="text" label="      Custom Manifest URL (optional)" default="" visible="eq(-1,true) + eq(-7,true)"/>
+		<setting id="use_p2p_mediafusion" type="bool" label="[B][COLOR FFCCCCFF]└─ Enable [B][COLOR FFFF8C00]MediaFusion P2P[/COLOR][/B]" default="false" visible="eq(-8,true)"/>
+		<setting id="p2p_mediafusion_manifest" type="text" label="      Custom Manifest URL (optional)" default="" visible="eq(-1,true) + eq(-9,true)"/>
+		<setting id="use_p2p_knaben" type="bool" label="[B][COLOR FFCCCCFF]└─ Enable [B][COLOR FFFF8C00]Knaben[/COLOR][/B]" default="false" visible="eq(-10,true)"/>
+		<setting id="use_p2p_thepiratebay" type="bool" label="[B][COLOR FFCCCCFF]└─ Enable [B][COLOR FFFF8C00]The Pirate Bay[/COLOR][/B]" default="false" visible="eq(-11,true)"/>
+		
+		<setting type="label" label="[B][COLOR yellow]                                 ─── P2P Private Trackers ───[/COLOR][/B]"/>
+		<setting id="use_p2p_filelist" type="bool" label="[B][COLOR FFCCCCFF]└─ Enable [COLOR FFFF8C00]FileList[/COLOR][/B]" default="false" visible="eq(-13,true)"/>
+		<setting id="filelist_username" type="text" label="      Username" default="" visible="eq(-1,true) + eq(-14,true)"/>
+		<setting id="filelist_passkey" type="text" label="      Passkey" default="" option="hidden" visible="eq(-2,true) + eq(-15,true)"/>
+		<setting id="filelist_fallback_name" type="bool" label="      Fallback Search by Name" default="true" visible="eq(-3,true) + eq(-16,true)"/>
+		<setting id="use_p2p_speedapp" type="bool" label="[B][COLOR FFCCCCFF]└─ Enable [COLOR FFFF8C00]SpeedApp[/COLOR][/B]" default="false" visible="eq(-17,true)"/>
+		<setting id="speedapp_username" type="text" label="      Username" default="" visible="eq(-1,true) + eq(-18,true)"/>
+		<setting id="speedapp_password" type="text" label="      Password" default="" option="hidden" visible="eq(-2,true) + eq(-19,true)"/>
+		<setting id="speedapp_passkey" type="text" label="      Passkey (for .torrent download)" default="" option="hidden" visible="eq(-3,true) + eq(-20,true)"/>
+		<setting id="speedapp_fallback_name" type="bool" label="      Fallback Search by Name" default="true" visible="eq(-4,true) + eq(-21,true)"/>
+		<setting id="speedapp_use_api" type="bool" label="      Search via API (faster, all channels)" default="false" visible="eq(-5,true) + eq(-22,true)"/>
+		<setting id="use_p2p_seedpool" type="bool" label="[B][COLOR FFCCCCFF]└─ Enable [COLOR FFFF8C00]SeedPool[/COLOR][/B]" default="false" visible="eq(-23,true)"/>
+		<setting id="seedpool_username" type="text" label="      Username" default="" visible="eq(-1,true) + eq(-24,true)"/>
+		<setting id="seedpool_password" type="text" label="      Password" default="" option="hidden" visible="eq(-2,true) + eq(-25,true)"/>
+		<setting id="seedpool_fallback_name" type="bool" label="      Fallback Search by Name" default="true" visible="eq(-3,true) + eq(-26,true)"/>
+		
+		<setting type="label" label="[B][COLOR yellow]                          ─── P2P Custom Stremio Addons ───[/COLOR][/B]"/>
+		<setting id="use_p2p_custom1" type="bool" label="[B][COLOR FFCCCCFF]└─ Enable [B][COLOR FFFF8C00]P2P Custom 1[/COLOR][/B]" default="false" visible="eq(-28,true)"/>
+		<setting id="p2p_custom1_name" type="text" label="      Name" default="" subsetting="true" visible="eq(-1,true) + eq(-29,true)"/>
+		<setting id="p2p_custom1_manifest.0" type="text" label="      URL manifest.json" default="" subsetting="true" visible="eq(-2,true) + eq(-30,true)"/>
+		
+		<setting id="use_p2p_custom2" type="bool" label="[B][COLOR FFCCCCFF]└─ Enable [B][COLOR FFFF8C00]P2P Custom 2[/COLOR][/B]" default="false" visible="eq(-31,true)"/>
+		<setting id="p2p_custom2_name" type="text" label="      Name" default="" subsetting="true" visible="eq(-1,true) + eq(-32,true)"/>
+		<setting id="p2p_custom2_manifest.0" type="text" label="      URL manifest.json" default="" subsetting="true" visible="eq(-2,true) + eq(-33,true)"/>
+		
+		<setting id="use_p2p_custom3" type="bool" label="[B][COLOR FFCCCCFF]└─ Enable [B][COLOR FFFF8C00]P2P Custom 3[/COLOR][/B]" default="false" visible="eq(-34,true)"/>
+		<setting id="p2p_custom3_name" type="text" label="      Name" default="" subsetting="true" visible="eq(-1,true) + eq(-35,true)"/>
+		<setting id="p2p_custom3_manifest.0" type="text" label="      URL manifest.json" default="" subsetting="true" visible="eq(-2,true) + eq(-36,true)"/>
+		
+		<setting id="use_p2p_custom4" type="bool" label="[B][COLOR FFCCCCFF]└─ Enable [B][COLOR FFFF8C00]P2P Custom 4[/COLOR][/B]" default="false" visible="eq(-37,true)"/>
+		<setting id="p2p_custom4_name" type="text" label="      Name" default="" subsetting="true" visible="eq(-1,true) + eq(-38,true)"/>
+		<setting id="p2p_custom4_manifest.0" type="text" label="      URL manifest.json" default="" subsetting="true" visible="eq(-2,true) + eq(-39,true)"/>
+		
+		<setting id="use_p2p_custom5" type="bool" label="[B][COLOR FFCCCCFF]└─ Enable [B][COLOR FFFF8C00]P2P Custom 5[/COLOR][/B]" default="false" visible="eq(-40,true)"/>
+		<setting id="p2p_custom5_name" type="text" label="      Name" default="" subsetting="true" visible="eq(-1,true) + eq(-41,true)"/>
+		<setting id="p2p_custom5_manifest.0" type="text" label="      URL manifest.json" default="" subsetting="true" visible="eq(-2,true) + eq(-42,true)"/>
+    </category>
+
+    <!-- 7. ACCOUNTS -->
+    <category label="Accounts">
+        <setting type="lsep" label="Watched Status Provider"/>
+        <setting id="watched_status_provider" type="enum" label="[B][COLOR yellow]Active Provider[/COLOR][/B]" values="[B][COLOR pink]Trakt[/COLOR][/B]|[B][COLOR lightskyblue]MDBList[/COLOR][/B]|[B][COLOR mediumpurple]Simkl[/COLOR][/B]|[B][COLOR FFFF6600]PunchPlay[/COLOR][/B]" default="0" onchange="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=clear_provider_cache)"/>
+
+		<setting type="lsep" label="Watched"/>
+		<setting id="watched_mark_mode" type="enum" label="[B]Mark as watched on[/B]" values="Active provider|All providers|Custom selection" default="0"/>
+		<setting id="watched_mark_trakt" type="bool" label="  └─ Mark watched on [B][COLOR pink]Trakt[/COLOR][/B]" default="true" visible="eq(-1,2)"/>
+		<setting id="watched_mark_mdblist" type="bool" label="  └─ Mark watched on [B][COLOR lightskyblue]MDBList[/COLOR][/B]" default="true" visible="eq(-2,2)"/>
+		<setting id="watched_mark_simkl" type="bool" label="  └─ Mark watched on [B][COLOR mediumpurple]Simkl[/COLOR][/B]" default="true" visible="eq(-3,2)"/>
+		<setting id="watched_mark_punchplay" type="bool" label="  └─ Mark watched on [B][COLOR FFFF6600]PunchPlay[/COLOR][/B]" default="true" visible="eq(-4,2)"/>
+        
+        <setting type="lsep" label="Trakt Account"/>
+        <setting label="[B][COLOR pink]Connect Trakt[/COLOR][/B]" type="action" action="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=trakt_auth)"/>
+        <setting label="[B][COLOR red]Disconnect Trakt[/COLOR][/B]" type="action" action="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=trakt_revoke)"/>
+        <setting label="Status:" type="text" default="Disconnected" id="trakt_status" enable="false"/>
+		
+		<setting type="lsep" label="TMDb Account"/>
+        <setting label="[B][COLOR FF00CED1]Connect TMDb[/COLOR][/B]" type="action" action="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=tmdb_auth)"/>
+        <setting label="[B][COLOR red]Disconnect TMDb[/COLOR][/B]" type="action" action="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=tmdb_revoke)"/>
+        <setting label="Status:" type="text" default="Disconnected" id="tmdb_status" enable="false"/>
+		
+        <setting type="lsep" label="MDBList Account"/>
+        <setting id="mdblist_access_token" type="text" option="hidden" default="" visible="false"/>
+        <setting id="mdblist_refresh_token" type="text" option="hidden" default="" visible="false"/>
+        <setting id="mdblist_token_created" type="text" option="hidden" default="" visible="false"/>
+        <setting id="mdblist_token_expires" type="text" option="hidden" default="" visible="false"/>
+        <setting id="mdblist_username" type="text" option="hidden" default="" visible="false"/>
+        <setting id="mdblist_api" type="text" option="hidden" label="MDBList API Key (fallback)" default="" />
+        <setting label="[B][COLOR lightskyblue]Connect MDBList[/COLOR][/B]" type="action" action="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=mdblist_auth)"/>
+        <setting label="[B][COLOR red]Disconnect MDBList[/COLOR][/B]" type="action" action="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=mdblist_revoke)"/>
+        <setting label="Status:" type="text" default="Disconnected" id="mdblist_status" enable="false"/>
+
+        <setting type="lsep" label="Simkl Account"/>
+        <setting id="simkl_access_token" type="text" option="hidden" default="" visible="false"/>
+        <setting id="simkl_username" type="text" option="hidden" default="" visible="false"/>
+        <setting id="simkl_client_id" type="text" option="hidden" label="Simkl Client ID (override)" default="" visible="false"/>
+        <setting label="[B][COLOR mediumpurple]Connect Simkl[/COLOR][/B]" type="action" action="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=simkl_auth)"/>
+        <setting label="[B][COLOR red]Disconnect Simkl[/COLOR][/B]" type="action" action="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=simkl_revoke)"/>
+        <setting label="Status:" type="text" default="Disconnected" id="simkl_status" enable="false"/>
+
+        <setting type="lsep" label="PunchPlay Account"/>
+        <setting id="punchplay_access_token" type="text" option="hidden" default="" visible="false"/>
+        <setting id="punchplay_refresh_token" type="text" option="hidden" default="" visible="false"/>
+        <setting id="punchplay_token_expiry" type="text" option="hidden" default="" visible="false"/>
+        <setting id="punchplay_username" type="text" option="hidden" default="" visible="false"/>
+        <setting id="punchplay_client_id" type="text" option="hidden" label="PunchPlay Client ID (override)" default="" visible="false"/>
+        <setting label="[B][COLOR FFFF6600]Connect PunchPlay[/COLOR][/B]" type="action" action="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=punchplay_auth)"/>
+        <setting label="[B][COLOR red]Disconnect PunchPlay[/COLOR][/B]" type="action" action="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=punchplay_revoke)"/>
+        <setting label="Status:" type="text" default="Disconnected" id="punchplay_status" enable="false"/>
+		
+        <setting type="lsep" label="[B][COLOR FF33CCFF]TMDb[/COLOR][/B]/[B][COLOR pink]Trakt[/COLOR]/[COLOR lightskyblue]MDBList[/COLOR]/[COLOR mediumpurple]Simkl[/COLOR]/[COLOR FFFF6600]PunchPlay[/COLOR][/B] - [B][COLOR FFCCCCFF]CALENDAR[/COLOR][/B]"/>
+        <setting id="mdblist_cal_previous_days" type="enum" label="Past (days)" values="0|1|3|7|14|30" default="3"/>
+        <setting id="mdblist_cal_future_days" type="enum" label="Upcoming (days)" values="7|14|21|30|60|90" default="0"/>
+        <setting id="mdblist_cal_sort_order" type="enum" label="Sort order" values="Ascending|Descending" default="0"/>
+        <setting id="mdblist_cal_today_top" type="bool" label="Show today's on top" default="true"/>
+
+        <setting type="lsep" label="Sync"/>
+        <setting id="trakt_sync_delay" type="enum" label="Initial Sync Delay (prevent lag at startup)" values="5 seconds|1 minute|5 minutes|10 minutes|15 minutes|30 minutes" default="0"/>
+        <setting id="trakt_sync_refresh_widgets" type="bool" label="Refresh Widgets After Sync" default="false"/>
+        <setting label="[B][COLOR FF6AFB92]Smart Sync[/COLOR][/B]" type="action" action="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=trakt_sync_smart)"/>
+        <setting label="[B][COLOR FF6698FF]Force Full Sync[/COLOR][/B]" type="action" action="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=trakt_sync)"/>
+
+        <setting type="lsep" label="[B][COLOR pink]Trakt[/COLOR]/[COLOR lightskyblue]MDBList[/COLOR]/[COLOR FF00CED1]TMDb[/COLOR]/[COLOR mediumpurple]Simkl[/COLOR]/[COLOR FFFF6600]PunchPlay[/COLOR][/B] - [B][COLOR FFCCCCFF]IMPORT[/COLOR][/B]"/>
+        <setting id="import_what" type="enum" label="1. What to import" values="Watchlist Movies|Watchlist TV Shows|History|Ratings|Dropped TV Shows" default="0"/>
+        <setting id="import_dir_12" type="enum" label="2. Direction" values="[B][COLOR pink]Trakt[/COLOR][/B] -> [B][COLOR lightskyblue]MDBList[/COLOR][/B]|[B][COLOR lightskyblue]MDBList[/COLOR][/B] -> [B][COLOR pink]Trakt[/COLOR][/B]|[B][COLOR pink]Trakt[/COLOR][/B] -> [B][COLOR FF00CED1]TMDb[/COLOR][/B]|[B][COLOR FF00CED1]TMDb[/COLOR][/B] -> [B][COLOR pink]Trakt[/COLOR][/B]|[B][COLOR lightskyblue]MDBList[/COLOR][/B] -> [B][COLOR FF00CED1]TMDb[/COLOR][/B]|[B][COLOR FF00CED1]TMDb[/COLOR][/B] -> [B][COLOR lightskyblue]MDBList[/COLOR][/B]|[B][COLOR pink]Trakt[/COLOR][/B] -> [B][COLOR mediumpurple]Simkl[/COLOR][/B]|[B][COLOR mediumpurple]Simkl[/COLOR][/B] -> [B][COLOR pink]Trakt[/COLOR][/B]|[B][COLOR lightskyblue]MDBList[/COLOR][/B] -> [B][COLOR mediumpurple]Simkl[/COLOR][/B]|[B][COLOR mediumpurple]Simkl[/COLOR][/B] -> [B][COLOR lightskyblue]MDBList[/COLOR][/B]|[B][COLOR FF00CED1]TMDb[/COLOR][/B] -> [B][COLOR mediumpurple]Simkl[/COLOR][/B]|[B][COLOR mediumpurple]Simkl[/COLOR][/B] -> [B][COLOR FF00CED1]TMDb[/COLOR][/B]|[B][COLOR pink]Trakt[/COLOR][/B] -> [B][COLOR FFFF6600]PunchPlay[/COLOR][/B]|[B][COLOR FFFF6600]PunchPlay[/COLOR][/B] -> [B][COLOR pink]Trakt[/COLOR][/B]|[B][COLOR lightskyblue]MDBList[/COLOR][/B] -> [B][COLOR FFFF6600]PunchPlay[/COLOR][/B]|[B][COLOR FFFF6600]PunchPlay[/COLOR][/B] -> [B][COLOR lightskyblue]MDBList[/COLOR][/B]|[B][COLOR FF00CED1]TMDb[/COLOR][/B] -> [B][COLOR FFFF6600]PunchPlay[/COLOR][/B]|[B][COLOR FFFF6600]PunchPlay[/COLOR][/B] -> [B][COLOR FF00CED1]TMDb[/COLOR][/B]|[B][COLOR mediumpurple]Simkl[/COLOR][/B] -> [B][COLOR FFFF6600]PunchPlay[/COLOR][/B]|[B][COLOR FFFF6600]PunchPlay[/COLOR][/B] -> [B][COLOR mediumpurple]Simkl[/COLOR][/B]" default="0" visible="eq(-1,0)|eq(-1,1)"/>
+        <setting id="import_dir_6" type="enum" label="2. Direction" values="[B][COLOR pink]Trakt[/COLOR][/B] -> [B][COLOR lightskyblue]MDBList[/COLOR][/B]|[B][COLOR lightskyblue]MDBList[/COLOR][/B] -> [B][COLOR pink]Trakt[/COLOR][/B]|[B][COLOR pink]Trakt[/COLOR][/B] -> [B][COLOR mediumpurple]Simkl[/COLOR][/B]|[B][COLOR mediumpurple]Simkl[/COLOR][/B] -> [B][COLOR pink]Trakt[/COLOR][/B]|[B][COLOR lightskyblue]MDBList[/COLOR][/B] -> [B][COLOR mediumpurple]Simkl[/COLOR][/B]|[B][COLOR mediumpurple]Simkl[/COLOR][/B] -> [B][COLOR lightskyblue]MDBList[/COLOR][/B]|[B][COLOR pink]Trakt[/COLOR][/B] -> [B][COLOR FFFF6600]PunchPlay[/COLOR][/B]|[B][COLOR FFFF6600]PunchPlay[/COLOR][/B] -> [B][COLOR pink]Trakt[/COLOR][/B]|[B][COLOR lightskyblue]MDBList[/COLOR][/B] -> [B][COLOR FFFF6600]PunchPlay[/COLOR][/B]|[B][COLOR FFFF6600]PunchPlay[/COLOR][/B] -> [B][COLOR lightskyblue]MDBList[/COLOR][/B]|[B][COLOR mediumpurple]Simkl[/COLOR][/B] -> [B][COLOR FFFF6600]PunchPlay[/COLOR][/B]|[B][COLOR FFFF6600]PunchPlay[/COLOR][/B] -> [B][COLOR mediumpurple]Simkl[/COLOR][/B]" default="0" visible="eq(-2,2)|eq(-2,3)|eq(-2,4)"/>
+        <setting label="[B][COLOR FF6AFB92]Run Import[/COLOR][/B]" type="action" option="close" action="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=run_import)"/>
+
+		<setting type="lsep" label="Rating"/>
+		<setting id="trakt_rate_movies" type="bool" label="Show Rating window for Movies" default="true"/>
+		<setting id="trakt_rate_episodes" type="bool" label="Show Rating window for Episodes" default="true"/>
+		<setting id="rating_postwatch_mode" type="enum" label="[B]Post-watch rating sent to[/B]" values="Active provider|All providers|Custom selection" default="0"/>
+		<setting id="rating_postwatch_trakt" type="bool" label="  └─ Rate on [B][COLOR pink]Trakt[/COLOR][/B] after watching" default="true" visible="eq(-1,2)"/>
+		<setting id="rating_postwatch_mdblist" type="bool" label="  └─ Rate on [B][COLOR lightskyblue]MDBList[/COLOR][/B] after watching" default="true" visible="eq(-2,2)"/>
+		<setting id="rating_postwatch_simkl" type="bool" label="  └─ Rate on [B][COLOR mediumpurple]Simkl[/COLOR][/B] after watching  (Movies only)" default="true" visible="eq(-3,2)"/>
+		<setting id="rating_postwatch_tmdb" type="bool" label="  └─ Rate on [B][COLOR FF00CED1]TMDb[/COLOR][/B] after watching" default="true" visible="eq(-4,2)"/>
+		<setting id="rating_postwatch_punchplay" type="bool" label="  └─ Rate on [B][COLOR FFFF6600]PunchPlay[/COLOR][/B] after watching" default="true" visible="eq(-5,2)"/>
+
+		<setting type="lsep" label="Developer Options (optional)"/>
+		<setting id="trakt_client_id" type="text" label="Custom Trakt Client ID (leave empty for default)" default=""/>
+		<setting id="trakt_client_secret" type="text" label="Custom Trakt Client Secret (leave empty for default)" default=""/>
+		<setting id="mdblist_client_id" type="text" label="Custom MDBList Client ID (leave empty for default)" default=""/>
+    </category>
+
+	<!-- 8. LIBRARY -->
+    <category label="[B][COLOR FF6AFB92]Library[/COLOR][/B]">
+        <setting label="─── Library Export ───" type="lsep" />
+        <setting id="library_enabled" type="bool" label="Enable Library Export" default="false"/>
+        <setting id="library_dest_path" type="action" label="Destination Path (Library folder will be created inside)" default="special://profile/addon_data/plugin.video.tmdbmovies/" visible="eq(-1,true)" action="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=library_browse_dest)"/>
+        
+        <setting type="lsep" label="Sources"/>
+        <setting id="library_select_lists" type="action" label="[B][COLOR yellow]Select Lists to Export[/COLOR][/B]" action="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=library_select_lists)"/>
+        
+        <setting type="lsep" label="Actions"/>
+        <setting label="[B][COLOR FF6AFB92]Sync Kodi Library NOW[/COLOR][/B]" type="action" action="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=library_sync)"/>
+        <setting label="[B][COLOR red]Clear All Library Files[/COLOR][/B]" type="action" action="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=library_clear)"/>
+        
+        <setting type="lsep" label="Auto-Sync"/>
+		<setting id="library_auto_sync" type="bool" label="Enable Auto-Sync" default="false"/>
+		<setting id="library_auto_hour" type="enum" label="Sync Hour" values="00:00|01:00|02:00|03:00|04:00|05:00|06:00|07:00|08:00|09:00|10:00|11:00|12:00|13:00|14:00|15:00|16:00|17:00|18:00|19:00|20:00|21:00|22:00|23:00" default="2" subsetting="true" visible="eq(-1,true)"/>
+		<setting id="library_auto_interval" type="enum" label="Sync Interval" values="Daily|Weekly" default="0" subsetting="true" visible="eq(-2,true)"/>
+        <setting id="library_last_sync" type="text" label="Last Sync" default="Never" enable="false"/>
+        
+        <setting type="lsep" label="Advanced"/>
+        <setting id="library_ignore_folderchecking" type="bool" label="Ignore folder creation checks" default="false"/>
+        <setting id="library_alternative_nfo" type="bool" label="Use alternative .nfo filename" default="false"/>
+        <setting id="library_mirror_lists" type="bool" label="Mirror lists: remove deleted site items from Kodi library" default="false"/>
+    </category>
+
+    <!-- 9. SUBTITLES -->
+    <category label="Subtitles">
+		<setting type="lsep" label="Subtitles"/>
+        <setting id="use_osv3_subs" type="bool" label="Enable subtitle search" default="false"/>
+        <setting id="osv3_langs" type="text" label="Languages (comma separated, e.g. ro,en)" default="ro"/>
+    </category>
+
+    <!-- 10. MAINTENANCE -->
+    <category label="Maintenance">
+		<setting type="lsep" label="Troubleshooting"/>
+        <setting id="debug_enabled" type="bool" label="Enable Detailed Logging (Debug)" default="true"/>
+		<setting label="[B][COLOR FF87CEEB]Open Kodi Log File[/COLOR][/B]" type="action" action="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=view_kodi_log)"/>
+		<setting label="[B][COLOR FF7B68EE]Upload Kodi Log to Pastebin[/COLOR][/B]" type="action" action="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=upload_log)"/>
+		<setting type="lsep" label="Cache"/>
+        <setting label="Delete All Cache" type="action" action="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=clear_all_cache)"/>
+
+        <!-- === NEW BACKUP SECTION === -->
+        <setting type="lsep" label="Backup Trakt (History)"/>
+        <setting id="trakt_auto_backup" type="bool" label="Enable Auto Backup (Local)" default="false"/>
+        <setting id="trakt_backup_frequency" type="enum" label="  Backup Frequency" values="Weekly|Monthly" default="0" subsetting="true"/>
+        <setting label="[B][COLOR FF00CED1]Create Manual Backup Now[/COLOR][/B]" type="action" action="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=manual_trakt_backup)"/>
+        <!-- ============================ -->
+
+        <!-- === MDBLIST BACKUP SECTION === -->
+        <setting type="lsep" label="Backup MDBList (History)"/>
+        <setting id="mdblist_auto_backup" type="bool" label="Enable Auto Backup (Local)" default="false"/>
+        <setting id="mdblist_backup_frequency" type="enum" label="  Backup Frequency" values="Weekly|Monthly" default="0" subsetting="true"/>
+        <setting label="[B][COLOR lightskyblue]Create Manual Backup Now[/COLOR][/B]" type="action" action="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=manual_mdblist_backup)"/>
+        <!-- ============================ -->
+
+        <!-- NEW LOG & DONATIONS SECTION -->
+        <setting type="lsep" label="Support"/>
+        <setting label="[B][COLOR FF6AFB92]Support the Project (Donate)[/COLOR][/B]" type="action" action="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=show_donate)"/>
+        
+    </category>
+</settings>

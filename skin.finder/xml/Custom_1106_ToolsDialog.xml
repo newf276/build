@@ -64,6 +64,12 @@
                         <onclick>RunPlugin(plugin://plugin.program.cleaner?mode=33)</onclick>
                     </item>
                     <item>
+                        <label>Clear TMDbMovies Caches</label>
+                        <visible>System.HasAddon(plugin.video.tmdbmovies)</visible>
+                        <onclick>Dialog.Close(all)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.tmdbmovies/?mode=clear_all_cache)</onclick>
+                    </item>
+                    <item>
                         <label>Clear Newf's Finder Caches</label>
                         <visible>System.HasAddon(plugin.video.finder)</visible>
                         <onclick>Dialog.Close(all)</onclick>

@@ -20,7 +20,75 @@
 				<onback>Dialog.Close(1159)</onback>
 				<onback condition="!String.IsEqual(Window(Home).Property(Finder.DirectDialog1158),true)">ActivateWindow(1106)</onback>
 				<content>
-					<!-- The Finder -->
+                    
+					<!-- TMDb Addon -->
+                    <item>
+						<label>TMDb Addon: Kodi Library</label>
+						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
+						<onclick>Dialog.Close(1159)</onclick>
+						<onclick condition="System.AddonIsEnabled(plugin.video.tmdbmovies)">RunScript(script.finder.helper,mode=apply_pre_config&amp;config=tmdbaddon_kodi_library)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.tmdbmovies) + !System.AddonIsEnabled(plugin.video.tmdbmovies)">EnableAddon(plugin.video.tmdbmovies)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.tmdbmovies)">InstallAddon(plugin.video.tmdbmovies)</onclick>
+					</item>
+					<item>
+						<label>TMDb Addon: Trakt Collection</label>
+						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
+						<onclick>Dialog.Close(1159)</onclick>
+						<onclick condition="System.AddonIsEnabled(plugin.video.tmdbmovies)">RunScript(script.finder.helper,mode=apply_pre_config&amp;config=tmdbaddon_trakt_library)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.tmdbmovies) + !System.AddonIsEnabled(plugin.video.tmdbmovies)">EnableAddon(plugin.video.tmdbmovies)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.tmdbmovies)">InstallAddon(plugin.video.tmdbmovies)</onclick>
+					</item>
+					<item>
+						<label>TMDb Addon: Trakt Watchlist</label>
+						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
+						<onclick>Dialog.Close(1159)</onclick>
+						<onclick condition="System.AddonIsEnabled(plugin.video.tmdbmovies)">RunScript(script.finder.helper,mode=apply_pre_config&amp;config=tmdbaddon_trakt_watchlist)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.tmdbmovies) + !System.AddonIsEnabled(plugin.video.tmdbmovies)">EnableAddon(plugin.video.tmdbmovies)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.tmdbmovies)">InstallAddon(plugin.video.tmdbmovies)</onclick>
+					</item>
+					<item>
+						<label>TMDb Addon: TMDB Watchlist + Trakt</label>
+						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
+						<onclick>Dialog.Close(1159)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.tmdbmovies)">InstallAddon(plugin.video.tmdbmovies)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.tmdbmovies) + !System.AddonIsEnabled(plugin.video.tmdbmovies)">EnableAddon(plugin.video.tmdbmovies)</onclick>
+						<onclick condition="System.AddonIsEnabled(plugin.video.tmdbmovies)">RunScript(script.finder.helper,mode=apply_pre_config&amp;config=tmdbaddon_tmdb_watchlist)</onclick>
+					</item>
+					<item>
+						<label>TMDb Addon: MDBlist Collection</label>
+						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
+						<onclick>Dialog.Close(1159)</onclick>
+						<onclick condition="System.AddonIsEnabled(plugin.video.tmdbmovies)">RunScript(script.finder.helper,mode=apply_pre_config&amp;config=tmdbaddon_mdblist_library)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.tmdbmovies) + !System.AddonIsEnabled(plugin.video.tmdbmovies)">EnableAddon(plugin.video.tmdbmovies)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.tmdbmovies)">InstallAddon(plugin.video.tmdbmovies)</onclick>
+						<onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=tmdbaddon_mdblist_library)</onclick>
+					</item>
+					<item>
+						<label>TMDb Addon: MDBlist Watchlist</label>
+						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
+						<onclick>Dialog.Close(1159)</onclick>
+						<onclick condition="System.AddonIsEnabled(plugin.video.tmdbmovies)">RunScript(script.finder.helper,mode=apply_pre_config&amp;config=tmdbaddon_mdblist_watchlist)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.tmdbmovies) + !System.AddonIsEnabled(plugin.video.tmdbmovies)">EnableAddon(plugin.video.tmdbmovies)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.tmdbmovies)">InstallAddon(plugin.video.tmdbmovies)</onclick>
+					</item>
+					<item>
+						<label>TMDb Addon: PunchPlay Collection</label>
+						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
+						<onclick>Dialog.Close(1159)</onclick>
+						<onclick condition="System.AddonIsEnabled(plugin.video.tmdbmovies)">RunScript(script.finder.helper,mode=apply_pre_config&amp;config=punchplay_trakt_library)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.tmdbmovies) + !System.AddonIsEnabled(plugin.video.tmdbmovies)">EnableAddon(plugin.video.tmdbmovies)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.tmdbmovies)">InstallAddon(plugin.video.tmdbmovies)</onclick>
+					</item>
+					<item>
+						<label>TMDb Addon: PunchPlay Watchlist</label>
+						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
+						<onclick>Dialog.Close(1159)</onclick>
+						<onclick condition="System.AddonIsEnabled(plugin.video.tmdbmovies)">RunScript(script.finder.helper,mode=apply_pre_config&amp;config=punchplay_trakt_watchlist)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.tmdbmovies) + !System.AddonIsEnabled(plugin.video.tmdbmovies)">EnableAddon(plugin.video.tmdbmovies)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.tmdbmovies)">InstallAddon(plugin.video.tmdbmovies)</onclick>
+					</item>
+                    
+					<!-- Newf's Finder -->
 					<item>
 						<label>Finder: Trakt Collection</label>
 						<onclick>ClearProperty(Finder.DirectDialog1158,home)</onclick>
@@ -45,6 +113,8 @@
 						<onclick condition="System.HasAddon(plugin.video.finder) + !System.AddonIsEnabled(plugin.video.finder)">EnableAddon(plugin.video.finder)</onclick>
 						<onclick condition="System.AddonIsEnabled(plugin.video.finder)">RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_tmdb_watchlist)</onclick>
 					</item>
+                    
+                    
 					<!-- Red Light -->
 					<item>
 						<label>Red Light: MDBlist Collection</label>
