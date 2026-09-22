@@ -23,7 +23,7 @@
 				<onback condition="!String.IsEqual(Window(Home).Property(Finder.DirectDialog1106),true)">Dialog.Close(1106)</onback>
 				<content>
                     <item>
-                        <label>Step 1. Select Look/Feel (recommend Cinema)</label>
+                        <label>Step 1. Select Look/Feel</label>
                         <onclick>ActivateWindow(1152)</onclick>
                     </item>
 					<item>
@@ -79,7 +79,13 @@
                         <label>Clear Thumbnails + Force Close</label>
                         <onclick>Dialog.Close(all)</onclick>
                         <onclick>RunScript(script.finder.helper,mode=clear_thumbnails)</onclick>
-                    </item>  
+                    </item>
+                    <item>
+                        <label>Custom Configuration</label>
+    				    <visible>True</visible>
+    				    <onclick>Dialog.Close(all)</onclick>
+    				    <onclick>ActivateWindow(1126)</onclick>
+					</item>
 				</content>
 			</control>
 			<include content="UpDownArrows">
