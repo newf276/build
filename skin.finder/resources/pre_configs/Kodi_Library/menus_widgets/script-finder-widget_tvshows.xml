@@ -57,11 +57,5 @@
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="22019"/>
         </include>
-        <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListCategory">
-            <param name="content_path" value="plugin://plugin.video.tmdbmovies/?mode=navigator_networks&amp;menu_type=tv"/>
-            <param name="widget_header" value="Networks"/>
-            <param name="widget_target" value="videos"/>
-            <param name="list_id" value="22020"/>
-        </include>
     </include>
 </includes>

@@ -18,16 +18,13 @@
 			<control type="panel" id="9000">
 				<include>ButtonMenuList_dialog</include>
 				<onback>Dialog.Close(1159)</onback>
-				<onback condition="!String.IsEqual(Window(Home).Property(Finder.DirectDialog1158),true)">ActivateWindow(1106)</onback>
+				<onback>ActivateWindow(1106)</onback>
 				<content>
-                    
 					<!-- TMDb Addon -->
                     <item>
 						<label>TMDb Addon: Kodi Library</label>
 						<onclick>Dialog.Close(1159)</onclick>
 						<onclick condition="System.AddonIsEnabled(plugin.video.tmdbmovies)">RunScript(script.finder.helper,mode=apply_pre_config&amp;config=kodi_library)</onclick>
-						<onclick condition="System.HasAddon(plugin.video.tmdbmovies) + !System.AddonIsEnabled(plugin.video.tmdbmovies)">EnableAddon(plugin.video.tmdbmovies)</onclick>
-						<onclick condition="!System.HasAddon(plugin.video.tmdbmovies)">InstallAddon(plugin.video.tmdbmovies)</onclick>
 					</item>
 					<item>
 						<label>TMDb Addon: Trakt Collection</label>
