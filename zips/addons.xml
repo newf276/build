@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
+<addon id="repository.angelitto" name="[B][COLOR FFC45AEC]Angelitto Repository[/COLOR][/B]" version="1.0.2" provider-name="[B][COLOR FF6AFB92]angelitto[/COLOR][/B]">
+    <extension point="xbmc.addon.repository" name="Angelitto Repository">
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/angelitto2005/repository.angelitto/main/repo/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/angelitto2005/repository.angelitto/main/repo/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/angelitto2005/repository.angelitto/main/repo/zips/</datadir>
+        </dir>
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/angelitto2005/repository.angelitto/main/all/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/angelitto2005/repository.angelitto/main/all/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/angelitto2005/repository.angelitto/main/all/zips/</datadir>
+        </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>Welcome to Angelitto's Repo</summary>
+        <description>[B][COLOR FFEB5406]Angelitto's Kodi Repository[/COLOR][/B]</description>
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart></fanart>
+        </assets>
+    </extension>
+</addon>
+
 <addon id="plugin.program.cleaner" name="[B]Newf's Wizard[/B]" version="276.0.01" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0"/>
@@ -327,13 +351,13 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.finder" name="[B]Newf's Finder[/B]" provider-name="newf276" version="276.0.03">
+<addon id="plugin.video.finder" name="[B]Newf's Finder[/B]" provider-name="newf276" version="276.0.0">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.pil" version="1.1.7"/>
         <import addon="script.module.requests" version="2.19.1"/>
-		<import addon="script.module.newfsscrapers" version="276.0.06"/>
-		<import addon="plugin.video.youtube" version="7.4.4"/>
+		<import addon="script.module.newfsscrapers" version="276.0.0"/>
+		<import addon="plugin.video.youtube" version="276.0.0"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="resources/lib/finder.py">
         <provides>video</provides>

@@ -51,65 +51,72 @@
 					<control type="grouplist" id="5001">
 						<include>WidgetGroupListCommon</include>
 						<pagecontrol>5010</pagecontrol>
-        <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListCategories">
-            <param name="content_path" value="plugin://plugin.video.tmdbmovies/?mode=navigator_genres&amp;menu_type=movie"/>
+            <include content="WidgetListCategories" condition="!Skin.HasSetting(home_no_movies_categories_widget)">
+            <param name="content_path" value="plugin://plugin.video.finder/?name=Genres&amp;mode=navigator.genres&amp;menu_type=movie&amp;random_support=true&amp;iconImage=genres"/>
             <param name="widget_header" value="Genres"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="5900"/>
         </include>
-        <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListCategories">
+            <include content="WidgetListCategories" condition="!Skin.HasSetting(home_no_movies_categories_widget)">
+        <include condition="System.HasAddon(plugin.video.tmdbmovies)">
             <param name="content_path" value="plugin://plugin.video.tmdbmovies/?mode=movies_menu"/>
             <param name="widget_header" value="Categories"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="5100"/>
         </include>
-        <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListPoster">
+        <include content="WidgetListPoster" condition="!Skin.HasSetting(home_no_movies_categories_widget)">
+        <include condition="System.HasAddon(plugin.video.tmdbmovies)">
+            <include content="WidgetListPoster" condition="!Skin.HasSetting(home_no_movies_categories_widget)">
             <param name="content_path" value="special://skin/playlists/unwatched_movies.xsp"/>
             <param name="widget_header" value="Unwatched"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="5200"/>
         </include>
+        <include content="WidgetListPoster" condition="!Skin.HasSetting(home_no_movies_categories_widget)">
         <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListPoster">
             <param name="content_path" value="plugin://plugin.video.tmdbmovies/?mode=build_movie_list&amp;action=tmdb_movies_latest_releases"/>
             <param name="widget_header" value="Latest Releases"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="5300"/>
         </include>
-        <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListPoster">
+        <include content="WidgetListPoster" condition="!Skin.HasSetting(home_no_movies_categories_widget)">
+        <include condition="System.HasAddon(plugin.video.tmdbmovies)">
             <param name="content_path" value="plugin://plugin.video.tmdbmovies/?action=tmdb_movies_apple&amp;mode=build_movie_list"/>
             <param name="widget_header" value="Apple Plus"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="5400"/>
-        </include>                        
-        <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListPoster">
+        </include>
+        <include content="WidgetListPoster" condition="!Skin.HasSetting(home_no_movies_categories_widget)">
+        <include condition="System.HasAddon(plugin.video.tmdbmovies)">
             <param name="content_path" value="plugin://plugin.video.tmdbmovies/?mode=build_movie_list&amp;action=tmdb_movies_amazon"/>
             <param name="widget_header" value="Amazon Prime"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="5500"/>
-        </include>       
-        <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListPoster">
+        </include>
+            <include content="WidgetListPoster" condition="!Skin.HasSetting(home_no_movies_categories_widget)">
+        <include condition="System.HasAddon(plugin.video.tmdbmovies)">
             <param name="content_path" value="plugin://plugin.video.tmdbmovies/?mode=build_movie_list&amp;action=tmdb_movies_disney"/>
             <param name="widget_header" value="Disney Plus"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="5600"/>
-        </include>                     
-        <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListPoster">
+        </include>  
+        <include content="WidgetListPoster" condition="!Skin.HasSetting(home_no_movies_categories_widget)">
+        <include condition="System.HasAddon(plugin.video.tmdbmovies)" >
             <param name="content_path" value="plugin://plugin.video.tmdbmovies/?action=tmdb_movies_netflix&amp;mode=build_movie_list"/>
             <param name="widget_header" value="Netflix"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="5700"/>
         </include>
-            <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListCategories">
+            <include content="WidgetListCategories" condition="!Skin.HasSetting(home_no_movies_categories_widget)">
+            <include condition="System.HasAddon(plugin.video.tmdbmovies)">
             <param name="content_path" value="plugin://plugin.video.tmdbmovies/?menu_type=movie&amp;mode=navigator_providers"/>
             <param name="widget_header" value="Providers"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="5800"/>
         </include>                                            
-            </control>
         <include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
             <param name="scrollbar_id" value="5010"/>
         </include>
-            </control>
                 <control type="group" id="6000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),tvshows)</visible>
 					<include content="Visible_Right_Delayed">
@@ -118,25 +125,29 @@
 					<control type="grouplist" id="6001">
 						<include>WidgetGroupListCommon</include>
 						<pagecontrol>6010</pagecontrol>
-        <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListCategories">
+            <include content="WidgetListCategories" condition="!Skin.HasSetting(home_no_movies_categories_widget)">
+            <include condition="System.HasAddon(plugin.video.tmdbmovies)">
             <param name="content_path" value="plugin://plugin.video.tmdbmovies/?mode=navigator_genres&amp;menu_type=tv"/>
             <param name="widget_header" value="Genres"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="6900"/>
         </include>
-        <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListCategories">
+            <include content="WidgetListCategories" condition="!Skin.HasSetting(home_no_movies_categories_widget)">
+            <include condition="System.HasAddon(plugin.video.tmdbmovies)">
             <param name="content_path" value="plugin://plugin.video.tmdbmovies/?mode=tv_menu"/>
             <param name="widget_header" value="Categories"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="6100"/>
         </include>
-       <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListBigEpisodes">
+            <include content="WidgetListPoster" condition="!Skin.HasSetting(home_no_movies_categories_widget)">
+            <include condition="System.HasAddon(plugin.video.tmdbmovies)">
             <param name="content_path" value="plugin://plugin.video.tmdbmovies/?mode=next_episode&action=noop"/>
             <param name="widget_header" value="Up Next"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="6200"/>
         </include>
-        <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListPoster">
+            <include content="WidgetListPoster" condition="!Skin.HasSetting(home_no_movies_categories_widget)">
+            <include condition="System.HasAddon(plugin.video.tmdbmovies)">
             <param name="content_path" value="videodb://inprogresstvshows"/>
             <param name="sortby" value="lastplayed"/>
             <param name="sortorder" value="descending"/>
@@ -144,47 +155,52 @@
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="6300"/>
         </include>      
-        <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListPoster">
+            <include content="WidgetListPoster" condition="!Skin.HasSetting(home_no_movies_categories_widget)">
+            <include condition="System.HasAddon(plugin.video.tmdbmovies)">
             <param name="content_path" value="plugin://plugin.video.tmdbmovies/?mode=build_tvshow_list&amp;action=tmdb_tv_latest_releases"/>
             <param name="widget_header" value="Latest Releases"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="6400"/>
         </include>
-        <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListPoster">
+            <include content="WidgetListPoster" condition="!Skin.HasSetting(home_no_movies_categories_widget)">
+            <include condition="System.HasAddon(plugin.video.tmdbmovies)">
             <param name="content_path" value="plugin://plugin.video.tmdbmovies/?mode=build_tvshow_list&amp;action=tmdb_tv_amazon"/>
             <param name="widget_header" value="Amazon Prime"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="6500"/>
         </include> 
-        <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListPoster">
+            <include content="WidgetListPoster" condition="!Skin.HasSetting(home_no_movies_categories_widget)">
+            <include condition="System.HasAddon(plugin.video.tmdbmovies)">
             <param name="content_path" value="plugin://plugin.video.tmdbmovies/?action=tmdb_tv_apple&amp;mode=build_tvshow_list"/>
             <param name="widget_header" value="Apple Plus"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="6600"/>
         </include>                              
-        <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListPoster">
+            <include content="WidgetListPoster" condition="!Skin.HasSetting(home_no_movies_categories_widget)">
+            <include condition="System.HasAddon(plugin.video.tmdbmovies)">
             <param name="content_path" value="plugin://plugin.video.tmdbmovies/?action=tmdb_tv_disney&amp;mode=build_tvshow_list"/>
             <param name="widget_header" value="Disney Plus"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="6700"/>
         </include>                     
-        <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListPoster">
+            <include content="WidgetListPoster" condition="!Skin.HasSetting(home_no_movies_categories_widget)">
+            <include condition="System.HasAddon(plugin.video.tmdbmovies)">
             <param name="content_path" value="plugin://plugin.video.tmdbmovies/?action=tmdb_tv_netflix&amp;mode=build_tvshow_list"/>
             <param name="widget_header" value="Netflix"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="6800"/>
         </include>                        
-        <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListCategories">
+            <include content="WidgetListCategories" condition="!Skin.HasSetting(home_no_movies_categories_widget)">
+            <include condition="System.HasAddon(plugin.video.tmdbmovies)">
             <param name="content_path" value="plugin://plugin.video.tmdbmovies/?mode=navigator_networks&amp;menu_type=tv"/>
             <param name="widget_header" value="Networks"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="6900"/>
         </include>
-					</control>
-					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
-						<param name="scrollbar_id" value="6010"/>
-					</include>
-				</control>
+        <include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
+            <param name="scrollbar_id" value="6010"/>
+        </include>
+
 				<control type="group" id="7000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),music)</visible>
 					<include content="Visible_Right_Delayed">
