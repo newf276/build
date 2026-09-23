@@ -151,19 +151,19 @@
             <param name="list_id" value="6400"/>
         </include> 
         <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListPoster">
-            <param name="content_path" value="plugin://plugin.video.tmdbmovies/?mode=build_tvshow_list&amp;action=tmdb_tv_amazon"/>
+            <param name="content_path" value="plugin://plugin.video.tmdbmovies/?action=tmdb_tv_apple&amp;mode=build_tvshow_list"/>
             <param name="widget_header" value="Apple Plus"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="6500"/>
         </include>                              
         <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListPoster">
-            <param name="content_path" value="plugin://plugin.video.tmdbmovies/?mode=build_tvshow_list&amp;action=tmdb_tv_amazon"/>
+            <param name="content_path" value="plugin://plugin.video.tmdbmovies/?action=tmdb_tv_disney&amp;mode=build_tvshow_list"/>
             <param name="widget_header" value="Disney Plus"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="6600"/>
         </include>                     
         <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListPoster">
-            <param name="content_path" value="plugin://plugin.video.tmdbmovies/?mode=build_tvshow_list&amp;action=tmdb_tv_netflix"/>
+            <param name="content_path" value="plugin://plugin.video.tmdbmovies/?action=tmdb_tv_netflix&amp;mode=build_tvshow_list"/>
             <param name="widget_header" value="Netflix"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="6700"/>

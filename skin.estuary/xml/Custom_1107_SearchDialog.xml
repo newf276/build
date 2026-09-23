@@ -35,12 +35,60 @@
 					<item>
 						<label>Clear Search Hisory</label>
 						<onclick>Dialog.Close(all)</onclick>
-						<onclick>ActivateWindow(10025,"plugin://plugin.video.tmdbmovies/?mode=clear_search_history&amp;folder=False</onclick>
+                        <onclick>RunPlugin(plugin://plugin.video.tmdbmovies/?clear_search_history&amp;folder=False)</onclick>
 					</item>
                     <item>
                         <label>Maintenance</label>
                         <onclick>Dialog.Close(1107)</onclick>
                         <onclick>ActivateWindow(1106)</onclick>
+                    </item>
+                    <item>
+                        <label>Authorize Services</label>
+                        <onclick>Dialog.Close(all)</onclick>
+                        <onclick>ActivateWindow(1111)</onclick>
+                    </item>
+                    <item>
+                        <label>[COLOR dodgerblue]Newf's Wizard[/COLOR]</label>
+                        <onclick>Dialog.Close(all)</onclick>
+                        <onclick>ActivateWindow(10001,"plugin://plugin.program.cleaner",return)</onclick>
+                    </item>
+                    <item>
+                        <label>Reload Skin</label>
+                        <onclick>Dialog.Close(all)</onclick>
+                        <onclick>ReloadSkin()</onclick>
+                    </item>
+                    <item>
+                        <label>Network Speed Test</label>
+                        <onclick>Dialog.Close(all)</onclick>
+                        <onclick>RunPlugin(plugin://plugin.program.cleaner/?mode=28)</onclick>
+                    </item>
+                    <item>
+                        <label>Clear TMDbMovies Caches</label>
+                        <visible>System.HasAddon(plugin.video.tmdbmovies)</visible>
+                        <onclick>Dialog.Close(all)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.tmdbmovies/?mode=clear_all_cache)</onclick>
+                    </item>
+                    <item>
+                        <label>Clear Newf's Finder Caches</label>
+                        <visible>System.HasAddon(plugin.video.finder)</visible>
+                        <onclick>Dialog.Close(all)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=clear_all_cache)</onclick>
+                    </item>
+                    <item>
+                        <label>Clear RedLight Caches</label>
+                        <visible>System.HasAddon(plugin.video.redlight)</visible>
+                        <onclick>Dialog.Close(all)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=clear_all_cache)</onclick>
+                    </item>
+                    <item>
+                        <label>Clear Kodi Caches</label>
+                        <onclick>Dialog.Close(all)</onclick>
+                        <onclick>RunPlugin(plugin://plugin.program.cleaner/?mode=33)</onclick>
+                    </item>
+                    <item>
+                        <label>Clear Thumbnails</label>
+                        <onclick>Dialog.Close(all)</onclick>
+                        <onclick>RunPlugin(plugin://plugin.program.cleaner/?mode=7)</onclick>
                     </item>
 				</content>
 			</control>
