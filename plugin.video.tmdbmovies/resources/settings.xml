@@ -80,7 +80,7 @@
         <setting id="use_fenlight" type="bool" label="Show [B][COLOR lightskyblue]Fen Light[/COLOR][/B]" default="true"/>
         <setting id="use_redlight" type="bool" label="Show [B][COLOR FFFF2222]Red Light[/COLOR][/B]" default="true"/>
         <setting id="use_fen" type="bool" label="Show [B][COLOR lightskyblue]Fen[/COLOR][/B]" default="true"/>
-        <setting id="use_forge" type="bool" label="Show [B][COLOR FFCD853F]Forge[/COLOR][/B]" default="true"/>
+        <setting id="use_forge" type="bool" label="Show [B][COLOR FFCD853F]Finder[/COLOR][/B]" default="true"/>
         <setting id="use_magneto" type="bool" label="Show [B][COLOR red]Magneto[/COLOR][/B]" default="true"/>
         <setting id="use_luckodi" type="bool" label="Show [B][COLOR ff00fa9a]luc_[/COLOR]Kodi[/B]" default="true"/>
         <setting id="use_umbrella" type="bool" label="Show [B][COLOR FFE41B17]Umbrella[/COLOR][/B]" default="true"/>
@@ -364,7 +364,7 @@
     <!-- 7. ACCOUNTS -->
     <category label="Accounts">
         <setting type="lsep" label="Watched Status Provider"/>
-        <setting id="watched_status_provider" type="enum" label="[B][COLOR yellow]Active Provider[/COLOR][/B]" values="[B][COLOR pink]Trakt[/COLOR][/B]|[B][COLOR lightskyblue]MDBList[/COLOR][/B]|[B][COLOR mediumpurple]Simkl[/COLOR][/B]|[B][COLOR FFFF6600]PunchPlay[/COLOR][/B]" default="0" onchange="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=clear_provider_cache)"/>
+        <setting id="watched_status_provider" type="enum" label="[B][COLOR yellow]Active Provider[/COLOR][/B]" values="[B][COLOR pink]Trakt[/COLOR][/B]|[B][COLOR lightskyblue]MDBList[/COLOR][/B]|[B][COLOR mediumpurple]Simkl[/COLOR][/B]|[B][COLOR FFFF6600]PunchPlay[/COLOR][/B]|[B][COLOR FFF70D1A]Kodi (Local)[/COLOR][/B]" default="0" onchange="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=clear_provider_cache)"/>
 
 		<setting type="lsep" label="Watched"/>
 		<setting id="watched_mark_mode" type="enum" label="[B]Mark as watched on[/B]" values="Active provider|All providers|Custom selection" default="0"/>
@@ -372,6 +372,7 @@
 		<setting id="watched_mark_mdblist" type="bool" label="  └─ Mark watched on [B][COLOR lightskyblue]MDBList[/COLOR][/B]" default="true" visible="eq(-2,2)"/>
 		<setting id="watched_mark_simkl" type="bool" label="  └─ Mark watched on [B][COLOR mediumpurple]Simkl[/COLOR][/B]" default="true" visible="eq(-3,2)"/>
 		<setting id="watched_mark_punchplay" type="bool" label="  └─ Mark watched on [B][COLOR FFFF6600]PunchPlay[/COLOR][/B]" default="true" visible="eq(-4,2)"/>
+		<setting id="watched_mark_local" type="bool" label="  └─ Mark watched on [B][COLOR FFF70D1A]Kodi (Local)[/COLOR][/B]" default="true" visible="eq(-5,2)"/>
         
         <setting type="lsep" label="Trakt Account"/>
         <setting label="[B][COLOR pink]Connect Trakt[/COLOR][/B]" type="action" action="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=trakt_auth)"/>
@@ -450,7 +451,7 @@
     <category label="[B][COLOR FF6AFB92]Library[/COLOR][/B]">
         <setting label="─── Library Export ───" type="lsep" />
         <setting id="library_enabled" type="bool" label="Enable Library Export" default="false"/>
-        <setting id="library_dest_path" type="action" label="Destination Path (Library folder will be created inside)" default="special://profile/addon_data/plugin.video.tmdbmovies/" visible="eq(-1,true)" action="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=library_browse_dest)"/>
+        <setting id="library_dest_path" type="action" label="Destination Path (Library folder will be created inside)" default="/storage/emulated/0/Download/" visible="eq(-1,true)" action="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=library_browse_dest)"/>
         
         <setting type="lsep" label="Sources"/>
         <setting id="library_select_lists" type="action" label="[B][COLOR yellow]Select Lists to Export[/COLOR][/B]" action="RunPlugin(plugin://plugin.video.tmdbmovies/?mode=library_select_lists)"/>
