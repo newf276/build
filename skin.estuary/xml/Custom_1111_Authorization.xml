@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1111">
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<include>Animation_DialogPopupOpenClose</include>
+	<controls>
+		<control type="group">
+			<centerleft>50%</centerleft>
+			<width>600</width>
+			<centertop>60%</centertop>
+			<height>700</height>
+			<include content="DialogBackgroundCommons">
+				<param name="width" value="600" />
+				<param name="height" value="80" />
+				<param name="header_label" value="$LOCALIZE[137]" />
+				<param name="header_id" value="" />
+			</include>
+			<control type="panel" id="9000">
+				<include>ButtonMenuList</include>
+                <onback>Dialog.Close(1111)</onback>
+				<content>
+                    
+                    <!-- TMDb Addon -->
+					<item>
+						<label>TMDbMovies TMDB</label>
+						<visible>System.HasAddon(plugin.video.tmdbmovies)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.tmdbmovies/?mode=tmdb_auth)</onclick>
+					</item>					
+					<item>
+						<label>TMDbMovies MDBlist</label>
+						<visible>System.HasAddon(plugin.video.tmdbmovies)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.tmdbmovies/?mode=mdblist_auth)</onclick>
+					</item>
+					<item>
+						<label>TMDbMovies PunchPlay</label>
+						<visible>System.HasAddon(plugin.video.tmdbmovies)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.tmdbmovies/?mode=punchplay_auth)</onclick>
+					</item>
+                    <item>
+						<label>TMDbMovies Trakt</label>
+						<visible>System.HasAddon(plugin.video.tmdbmovies)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.tmdbmovies/?mode=trakt_auth)</onclick>
+					</item>
+					
+                    <!-- Newf's Finder -->
+					<item>
+						<label>Finder Trakt</label>
+						<visible>System.HasAddon(plugin.video.finder)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=trakt.trakt_authenticate)</onclick>
+					</item>
+					<item>
+						<label>Finder TMDB</label>
+						<visible>System.HasAddon(plugin.video.finder)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=tmdblist_api.authenticate)</onclick>
+					</item>
+					<item>
+						<label>Finder All-Debrid</label>
+						<visible>System.HasAddon(plugin.video.finder)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=alldebrid.authenticate)</onclick>
+					</item>
+					<item>
+						<label>Finder Premiumize</label>
+						<visible>System.HasAddon(plugin.video.finder)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=premiumize.authenticate)</onclick>
+					</item>
+					<item>
+						<label>Finder Torbox</label>
+						<visible>System.HasAddon(plugin.video.finder)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=torbox.authenticate)</onclick>
+					</item>
+				
+                    <!-- RedLight -->
+					<item>
+						<label>RedLight Trakt</label>
+						<visible>System.HasAddon(plugin.video.redlight)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=trakt.trakt_authenticate)</onclick>
+					</item>
+					<item>
+						<label>RedLight TMDB</label>
+						<visible>System.HasAddon(plugin.video.redlight)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=tmdblist_api.authenticate)</onclick>
+					</item>
+					<item>
+						<label>RedLight MDBlist</label>
+						<visible>System.HasAddon(plugin.video.redlight)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=mdblist.mdblist_authenticate)</onclick>
+					</item>
+					<item>
+						<label>RedLight Simkl</label>
+						<visible>System.HasAddon(plugin.video.redlight)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=simkl.simkl_authenticate)</onclick>
+					</item>
+					<item>
+						<label>RedLight All-Debrid</label>
+						<visible>System.HasAddon(plugin.video.redlight)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=alldebrid.authenticate)</onclick>
+					</item>
+					<item>
+						<label>RedLight Premiumize</label>
+						<visible>System.HasAddon(plugin.video.redlight)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=premiumize.authenticate)</onclick>
+					</item>
+					<item>
+						<label>RedLight Torbox</label>
+						<visible>System.HasAddon(plugin.video.redlight)</visible>
+						<onclick>Dialog.Close(1111)</onclick>
+						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=torbox.authenticate)</onclick>
+					</item>
+				</content>
+			</control>
+			<include content="UpDownArrows">
+				<param name="container_id" value="9000" />
+				<param name="posx" value="276" />
+				<param name="up_posy" value="-35" />
+				<param name="down_posy" value="360" />
+			</include>
+		</control>
+	</controls>
+</window>
+
+
+

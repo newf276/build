@@ -21,48 +21,22 @@
 					<item>
 						<label>Movies</label>
 						<onclick>Dialog.Close(all)</onclick>
-						<onclick >ActivateWindow(10025,"plugin://plugin.video.tmdbmovies/?folder=True&amp;mode=perform_search&amp;type=movie",return)</onclick>
+						<onclick>ActivateWindow(10025,"plugin://plugin.video.tmdbmovies/?folder=True&amp;mode=perform_search&amp;type=movie",return)</onclick>
 					</item>
 
 					<!-- TV SHOWS -->
 					<item>
 						<label>TV Shows</label>
 						<onclick>Dialog.Close(all)</onclick>
-						<onclick >ActivateWindow(10025,"plugin://plugin.video.tmdbmovies/?folder=True&amp;mode=perform_search&amp;type=tv",return)</onclick>
+						<onclick>ActivateWindow(10025,"plugin://plugin.video.tmdbmovies/?folder=True&amp;mode=perform_search&amp;type=tv",return)</onclick>
 					</item>
 
 					<!-- Clear Search Hisory -->
 					<item>
 						<label>Clear Search Hisory</label>
 						<onclick>Dialog.Close(all)</onclick>
-						<onclick >ActivateWindow(10025,"plugin://plugin.video.tmdbmovies/?mode=clear_search_history&amp;folder=False</onclick>
+						<onclick>ActivateWindow(10025,"plugin://plugin.video.tmdbmovies/?mode=clear_search_history&amp;folder=False</onclick>
 					</item>
-                    <item>
-                        <label>Authorize Services</label>
-                        <onclick>Dialog.Close(all)</onclick>
-                        <onclick>ActivateWindow(1111)</onclick>
-                    </item>
-                    <item>
-                        <label>[COLOR dodgerblue]Newf's Wizard[/COLOR]</label>
-                        <onclick>Dialog.Close(all)</onclick>
-                        <onclick>ActivateWindow(10001,"plugin://plugin.program.cleaner",return)</onclick>
-                    </item>
-                    <item>
-                        <label>Reload Skin</label>
-                        <onclick>Dialog.Close(all)</onclick>
-                        <onclick>ReloadSkin()</onclick>
-                    </item>
-                    <item>
-                        <label>Clear TMDbMovies Caches</label>
-                        <visible>System.HasAddon(plugin.video.tmdbmovies)</visible>
-                        <onclick>Dialog.Close(all)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.tmdbmovies/?mode=clear_all_cache)</onclick>
-                    </item>
-                    <item>
-                        <label>Clear Kodi Caches</label>
-                        <onclick>Dialog.Close(all)</onclick>
-                        <onclick>RunPlugin(plugin://plugin.program.cleaner?mode=33)</onclick>
-                    </item>
 				</content>
 			</control>
 		</control>
