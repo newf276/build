@@ -70,38 +70,38 @@
             <param name="list_id" value="5200"/>
         </include>
         <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListPoster">
-            <param name="content_path" value="plugin://plugin.video.tmdbmovies/?mode=build_tvshow_list&amp;action=tmdb_tv_latest_releases"/>
+            <param name="content_path" value="plugin://plugin.video.tmdbmovies/?mode=build_movie_list&amp;action=tmdb_movies_latest_releases"/>
             <param name="widget_header" value="Latest Releases"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="5300"/>
         </include>
         <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListPoster">
-            <param name="content_path" value="plugin://plugin.video.tmdbmovies/?mode=build_tvshow_list&amp;action=tmdb_tv_amazon"/>
-            <param name="widget_header" value="Amazon Prime"/>
-            <param name="widget_target" value="videos"/>
-            <param name="list_id" value="5400"/>
-        </include> 
-        <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListPoster">
-            <param name="content_path" value="plugin://plugin.video.tmdbmovies/?mode=build_tvshow_list&amp;action=tmdb_tv_amazon"/>
+            <param name="content_path" value="plugin://plugin.video.tmdbmovies/?action=tmdb_movies_apple&amp;mode=build_movie_list"/>
             <param name="widget_header" value="Apple Plus"/>
             <param name="widget_target" value="videos"/>
-            <param name="list_id" value="5500"/>
-        </include>                              
+            <param name="list_id" value="5400"/>
+        </include>                        
         <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListPoster">
-            <param name="content_path" value="plugin://plugin.video.tmdbmovies/?mode=build_tvshow_list&amp;action=tmdb_tv_amazon"/>
+            <param name="content_path" value="plugin://plugin.video.tmdbmovies/?mode=build_movie_list&amp;action=tmdb_movies_amazon"/>
+            <param name="widget_header" value="Amazon Prime"/>
+            <param name="widget_target" value="videos"/>
+            <param name="list_id" value="5500"/>
+        </include>       
+        <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListPoster">
+            <param name="content_path" value="plugin://plugin.video.tmdbmovies/?mode=build_movie_list&amp;action=tmdb_movies_disney"/>
             <param name="widget_header" value="Disney Plus"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="5600"/>
         </include>                     
         <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListPoster">
-            <param name="content_path" value="plugin://plugin.video.tmdbmovies/?mode=build_tvshow_list&amp;action=tmdb_tv_netflix"/>
+            <param name="content_path" value="plugin://plugin.video.tmdbmovies/?action=tmdb_movies_netflix&amp;mode=build_movie_list"/>
             <param name="widget_header" value="Netflix"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="5700"/>
-        </include>                        
-        <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListCategories">
-            <param name="content_path" value="plugin://plugin.video.tmdbmovies/?mode=navigator_networks&amp;menu_type=tv"/>
-            <param name="widget_header" value="Networks"/>
+        </include>
+            <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListCategories">
+            <param name="content_path" value="plugin://plugin.video.tmdbmovies/?menu_type=movie&amp;mode=navigator_providers"/>
+            <param name="widget_header" value="Providers"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="5800"/>
         </include>                                            
@@ -139,40 +139,37 @@
             <param name="list_id" value="6200"/>
         </include>      
         <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListPoster">
-            <param name="content_path" value="plugin://plugin.video.tmdbmovies/?mode=build_movie_list&amp;action=tmdb_movies_latest_releases"/>
+            <param name="content_path" value="plugin://plugin.video.tmdbmovies/?mode=build_tvshow_list&amp;action=tmdb_tv_latest_releases"/>
             <param name="widget_header" value="Latest Releases"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="6300"/>
         </include>
         <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListPoster">
-            <param name="content_path" value="plugin://plugin.video.tmdbmovies/?action=tmdb_movies_apple&amp;mode=build_movie_list"/>
-            <param name="widget_header" value="Apple Plus"/>
-            <param name="widget_target" value="videos"/>
-            <param name="list_id" value="6400"/>
-        </include>                        
-        <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListPoster">
-            <param name="content_path" value="plugin://plugin.video.tmdbmovies/?mode=build_movie_list&amp;action=tmdb_movies_amazon"/>
+            <param name="content_path" value="plugin://plugin.video.tmdbmovies/?mode=build_tvshow_list&amp;action=tmdb_tv_amazon"/>
             <param name="widget_header" value="Amazon Prime"/>
             <param name="widget_target" value="videos"/>
-            <param name="list_id" value="6500"/>
-        </include>       
+            <param name="list_id" value="6400"/>
+        </include> 
         <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListPoster">
-            <param name="content_path" value="plugin://plugin.video.tmdbmovies/?mode=build_movie_list&amp;action=tmdb_movies_disney"/>
+            <param name="content_path" value="plugin://plugin.video.tmdbmovies/?mode=build_tvshow_list&amp;action=tmdb_tv_amazon"/>
+            <param name="widget_header" value="Apple Plus"/>
+            <param name="widget_target" value="videos"/>
+            <param name="list_id" value="6500"/>
+        </include>                              
+        <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListPoster">
+            <param name="content_path" value="plugin://plugin.video.tmdbmovies/?mode=build_tvshow_list&amp;action=tmdb_tv_amazon"/>
             <param name="widget_header" value="Disney Plus"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="6600"/>
         </include>                     
         <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListPoster">
-            <param name="content_path" value="plugin://plugin.video.tmdbmovies/?mode=build_movie_list&amp;action=tmdb_movies_amazon"/>
+            <param name="content_path" value="plugin://plugin.video.tmdbmovies/?mode=build_tvshow_list&amp;action=tmdb_tv_netflix"/>
             <param name="widget_header" value="Netflix"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="6700"/>
-        </include>
-                        
-                        
-                        
+        </include>                        
         <include condition="System.HasAddon(plugin.video.tmdbmovies)" content="WidgetListCategories">
-            <param name="content_path" value="plugin://plugin.video.tmdbmovies/?name=Networks&amp;mode=navigator.networks&amp;menu_type=tvshow&amp;random_support=true&amp;iconImage=networks"/>
+            <param name="content_path" value="plugin://plugin.video.tmdbmovies/?mode=navigator_networks&amp;menu_type=tv"/>
             <param name="widget_header" value="Networks"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="6800"/>

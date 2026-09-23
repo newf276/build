@@ -17,23 +17,10 @@
 			</include>
 			<control type="panel" id="9000">
 				<include>ButtonMenuList_dialog</include>
-				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1106),true)">Dialog.Close(1106)</onback>
-				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1106),true)">ActivateWindow(1170)</onback>
-				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1106),true)">ClearProperty(Finder.DirectDialog1106,home)</onback>
-				<onback condition="!String.IsEqual(Window(Home).Property(Finder.DirectDialog1106),true)">Dialog.Close(1106)</onback>
-				<content>
+				<onback>Dialog.Close(1106)</onback>
+                <content>
                     <item>
-                        <label>Step 1. Select Look/Feel</label>
-                        <onclick>ActivateWindow(1152)</onclick>
-                    </item>
-					<item>
-    				    <label>Step 2. Select Pre-Config</label>
-    				    <visible>True</visible>
-    				    <onclick>Dialog.Close(all)</onclick>
-    				    <onclick>ActivateWindow(1159)</onclick>
-					</item>
-                    <item>
-                        <label>Step 3. Authorize Services</label>
+                        <label>Authorize Services</label>
                         <onclick>Dialog.Close(all)</onclick>
                         <onclick>ActivateWindow(1111)</onclick>
                     </item>
@@ -48,10 +35,10 @@
                         <onclick>ReloadSkin()</onclick>
                     </item>
 					<item>
-						<label>Video Caches by Common Devices</label>
+						<label>Set Video Cache Size</label>
 						<visible>!Skin.HasSetting(ToolsNoVideoCacheConfig)</visible>
 						<onclick>Dialog.Close(all)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=advanced_set)</onclick>
+						<onclick>RunPlugin(plugin://plugin.program.cleaner?mode=8)</onclick>
 					</item>
                     <item>
                         <label>Network Speed Test</label>
@@ -82,16 +69,15 @@
 						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=clear_all_cache)</onclick>
                     </item>
                     <item>
-                        <label>Clear Thumbnails + Force Close</label>
+                        <label>Clear Thumbnails</label>
                         <onclick>Dialog.Close(all)</onclick>
-                        <onclick>RunScript(script.finder.helper,mode=clear_thumbnails)</onclick>
+                        <onclick>RunPlugin(plugin://plugin.program.cleaner?mode=7)</onclick>
                     </item>
                     <item>
-                        <label>Custom Configuration</label>
-    				    <visible>True</visible>
-    				    <onclick>Dialog.Close(all)</onclick>
-    				    <onclick>ActivateWindow(1126)</onclick>
-					</item>
+                        <label>Backup/Restore</label>
+                        <onclick>Dialog.Close(all)</onclick>
+                        <onclick>RunPlugin(plugin://plugin.program.cleaner?mode=12)</onclick>
+                    </item>
 				</content>
 			</control>
 			<include content="UpDownArrows">

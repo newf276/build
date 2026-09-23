@@ -37,6 +37,11 @@
 						<onclick>Dialog.Close(all)</onclick>
 						<onclick>ActivateWindow(10025,"plugin://plugin.video.tmdbmovies/?mode=clear_search_history&amp;folder=False</onclick>
 					</item>
+                    <item>
+                        <label>Maintenance</label>
+                        <onclick>Dialog.Close(1107)</onclick>
+                        <onclick>ActivateWindow(1106)</onclick>
+                    </item>
 				</content>
 			</control>
 		</control>
