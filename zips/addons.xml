@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
+<addon id="plugin.video.youtube" version="276.0.17" name="[B]Newf's Trailers[/B]" provider-name="[B]newf276[/B]">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+        <import addon="script.module.requests" version="2.22.0" />
+    </requires>
+    <extension point="xbmc.python.script" library="resources/lib/default.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.python.pluginsource" library="resources/lib/default.py" />
+    <extension point="xbmc.addon.metadata">
+        <description lang="en"></description>
+        <summary lang="en"></summary>
+        <reuselanguageinvoker>true</reuselanguageinvoker>
+        <language />
+        <license>MIT</license>
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
+
 <addon id="plugin.program.cleaner" name="[B]Newf's Wizard[/B]" version="276.0.01" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0"/>
