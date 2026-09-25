@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <include name="MoviesMainMenu">
+        <item>
+            <label>Movies</label>
+            <onclick>ActivateWindow(Videos,plugin://plugin.video.redlight/?iconImage=%2fUsers%2fian%2fLibrary%2fApplication%20Support%2fKodi%2faddons%2fplugin.video.redlight%2fresources%2fmedia%2ficons%2ftmdb.png&amp;list_id=watchlist&amp;list_name=Movie%20Watchlist&amp;media_type=movie&amp;mode=tmdblist.build_tmdb_list,return)</onclick>
+            <property name="menu_id">$NUMBER[19000]</property>
+            <thumb>icons/sidemenu/movies.png</thumb>
+            <property name="id">movies</property>
+            <visible>!Skin.HasSetting(HomeMenuNoMoviesButton)</visible>
+        </item>
+    </include>
+</includes>
