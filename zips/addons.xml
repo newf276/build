@@ -23,6 +23,30 @@
     </extension>
 </addon>
 
+<addon id="repository.angelitto" name="[B]Angelitto Repository[/B]" version="1.0.2" provider-name="angelitto">
+    <extension point="xbmc.addon.repository" name="Angelitto Repository">
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/angelitto2005/repository.angelitto/main/repo/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/angelitto2005/repository.angelitto/main/repo/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/angelitto2005/repository.angelitto/main/repo/zips/</datadir>
+        </dir>
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/angelitto2005/repository.angelitto/main/all/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/angelitto2005/repository.angelitto/main/all/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/angelitto2005/repository.angelitto/main/all/zips/</datadir>
+        </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>Welcome to Angelitto's Repo</summary>
+        <description>Angelitto's Kodi Repository</description>
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart></fanart>
+        </assets>
+    </extension>
+</addon>
+
 <addon id="plugin.program.cleaner" name="[B]Newf's Wizard[/B]" version="276.0.01" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0"/>
@@ -47,7 +71,7 @@
     </extension>
 </addon>
 
-<addon id="skin.finder"  name="[B]Newf's Finder Plus Skin[/B]"  version="276.0.26"  provider-name="newf276">
+<addon id="skin.finder"  name="[B]Newf's Finder Plus Skin[/B]"  version="276.0.27"  provider-name="newf276">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0" />
 		<import addon="script.finder.helper" version="276.0.26" />
@@ -223,8 +247,8 @@
 		<forum>http://forum.kodi.tv/</forum>
 		<source>https://github.com/xbmc/skin.estuary/</source>
 		<assets>
-			<icon>resources/icon.png</icon>
-			<fanart>resources/fanart.jpg</fanart>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
 			<screenshot>resources/screenshot-01.jpg</screenshot>
 			<screenshot>resources/screenshot-02.jpg</screenshot>
 			<screenshot>resources/screenshot-03.jpg</screenshot>
@@ -421,11 +445,13 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.finder" name="[B]Finder[/B]" provider-name="newf276" version="276.0.26">
+<addon id="plugin.video.finder" name="[B]Newf's Finder[/B]" provider-name="newf276" version="276.0.27">
     <requires>
         <import addon="xbmc.python" version="3.0.1"/>
         <import addon="script.module.pil" version="1.1.7"/>
         <import addon="script.module.requests" version="2.19.1"/>
+		<import addon="script.module.newfsscrapers" version="276.0.06"/>
+        <import addon="plugin.video.youtube" version="276.0.17" optional="true"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="resources/lib/finder.py">
         <provides>video</provides>
@@ -434,17 +460,19 @@
     <extension point="xbmc.python.module" library="resources/lib/"/>
     <extension point="xbmc.addon.metadata">
         <reuselanguageinvoker>true</reuselanguageinvoker>
-        <summary lang="en">Access your content from Easynews and Debrid Clouds.</summary>
-        <description lang="en">Finder is a streamlined Kodi video addon for browsing and playing content from Easynews and your debrid services. Built around a modern, maintainable codebase with custom Discover, Search, and Lists windows. Intended for advanced Kodi users. You must own the content of any media you play through this addon.</description>
+        <summary lang="en">Access your content from premium cloud services.</summary>
+        <description lang="en">Finder is a streamlined Kodi video addon for browsing and playing content from your own services. Discover, Search, and browse media of interest. You must own the content of any media you play through this addon.</description>
         <platform>all</platform>
 		<disclaimer lang="en">The author of this addon does not host any of the content which is found and has no affiliation with any of the content providers.</disclaimer>
-        <license>GPL-3.0-or-later</license>
+		<language>en</language>
+		<platform>all</platform>
+		<license>GPL-2.0-or-later</license>
+        <source>https://github.com/newf276/build/tree/master/zips</source>
         <assets>
-            <icon>resources/media/addon_icons/finder_icon_01.png</icon>
-            <clearlogo>resources/media/addon_icons/finder_clearlogo.png</clearlogo>
-            <fanart>resources/media/finder_fanart.jpg</fanart>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+            <clearlogo>clearlogo.png</clearlogo>
         </assets>
-        <news>INFO: For latest changes see Changelog within Tools of add-on.</news>
     </extension>
 </addon>
 </addons>
