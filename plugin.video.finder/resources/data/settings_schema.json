@@ -694,7 +694,7 @@
   {
     "setting_id": "punchplay.client",
     "setting_type": "string",
-    "setting_default": "ppc_c7be5ef2efc017e958220e0"
+    "setting_default": "ppc_c7be5ef2efc017e958220e08"
   },
   {
     "setting_id": "punchplay.token",
