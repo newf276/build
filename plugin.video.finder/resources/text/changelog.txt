@@ -1,3 +1,7 @@
+1.0.04
+• Unified TV Networks and Movie/TV Provider menu artwork to Finder monochrome icons.
+• Removed full-colour TMDb provider-logo fallback from navigation menus.
+
 🗓️ Release History:
 
 • Initial Release: June 30, 2026 — Kodi (v22) Piers Beta 1 (Version 1.0.0)
