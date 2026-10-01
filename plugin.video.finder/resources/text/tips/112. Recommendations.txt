@@ -1,0 +1,10 @@
+Finder supports several recommendation methods. The current Recommendation Service choices are:
+
+- Recommended (TMDb)
+- More Like This (IMDb)
+- Similar (AI)
+- Related (Trakt)
+
+You can also choose how many recently watched items are used as the recommendation seed, from the last 1 through the last 10 watched items.
+
+The exact results will vary by service and by the available metadata/history, so changing the recommendation method can produce noticeably different lists.

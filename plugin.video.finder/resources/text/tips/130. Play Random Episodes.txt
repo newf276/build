@@ -1,0 +1,7 @@
+From a TV Show's context menu, choose Options -> Play Random to start random episode playback.
+
+The available choices are:
+- Single Random Play: plays one randomly selected episode.
+- Continual Random Play: continues selecting random episodes until playback is stopped.
+
+This is separate from the Random Lists/Random Shortcut Folder features used for widgets.

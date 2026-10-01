@@ -1,0 +1,15 @@
+Easynews playback can require special handling on some setups. Finder provides a Playback Method setting under the Easynews settings.
+
+NONE
+- Use the normal Easynews playback path.
+
+RETRY
+- Retry the Easynews link after a failed first attempt. This can be slower and may not suit every device.
+
+NO SEEK
+- Tell Kodi the stream is not seekable. This can make resolution faster and more reliable, but seeking outside the currently cached data is restricted.
+
+BOTH
+- Combine NO SEEK with a retry.
+
+Start with NONE and change the method only if Easynews playback on your device benefits from it.

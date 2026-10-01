@@ -1,0 +1,18 @@
+Finder can use one of three sources as its Primary Tracker: Finder, Trakt or PunchPlay.
+
+Your Primary Tracker controls the watched/progress database used by Finder for features such as watched indicators, In Progress and Next Episodes.
+
+FINDER
+- Uses Finder's local watched database.
+- No external tracker authorization is required.
+
+TRAKT
+- Uses your Trakt watched information.
+- Trakt authorization is required.
+
+PUNCHPLAY
+- Uses PunchPlay watched history.
+- PunchPlay authorization is required.
+- Finder rebuilds its PunchPlay watched database when needed and validates the available PunchPlay list data.
+
+Choose carefully when first setting up Finder. If you change tracker services later, allow Finder time to rebuild/synchronize the relevant data before judging the resulting progress lists.

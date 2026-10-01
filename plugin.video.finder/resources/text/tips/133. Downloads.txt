@@ -1,0 +1,5 @@
+Finder includes a Download Manager for downloaded Movies, TV Shows, Premium Files and Images.
+
+Download locations are configurable separately for movie downloads, TV show downloads, premium files and images. The Download Manager can then be opened from Finder's navigation.
+
+Make sure the configured destination is writable and has sufficient free space before starting large downloads.

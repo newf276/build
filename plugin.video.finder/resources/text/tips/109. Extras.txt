@@ -1,0 +1,5 @@
+Movies and TV Shows can open Finder's Extras window. Extras provides additional information and actions such as ratings, cast, similar/related media and other available metadata.
+
+Configure the feature under Settings -> Features -> Extras. You can control which ratings are shown and whether additional item-rating information and scrollbars are enabled.
+
+Extras can also be opened automatically through Special Open Actions; see that tip for details.

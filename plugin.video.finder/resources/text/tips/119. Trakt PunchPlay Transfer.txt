@@ -1,0 +1,16 @@
+Finder includes a manual Trakt <-> PunchPlay Transfer utility when both accounts are authorized. Open Tools -> Trakt ↔ PunchPlay Transfer.
+
+You can choose a scope:
+- Watchlist
+- Collection
+- Personal Lists
+- All Three
+
+You can then choose a direction:
+- Two-Way (Additive)
+- Trakt -> PunchPlay
+- PunchPlay -> Trakt
+
+Transfers are deliberately additive: Finder adds missing items to the destination and does not remove existing items. Existing content is preserved. Personal Lists can be created on the destination when needed.
+
+This is a manual transfer utility, not a background synchronization service.

@@ -1,0 +1,5 @@
+Finder can use RPDb rating posters for Movies, TV Shows or both.
+
+The RPDb setting determines whether posters are replaced/enhanced for the selected media types. An RPDb API key is required for the service.
+
+If you do not use RPDb, leave the feature disabled to keep the normal Finder artwork.

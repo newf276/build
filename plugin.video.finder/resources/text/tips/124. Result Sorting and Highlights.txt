@@ -1,0 +1,10 @@
+Finder provides separate controls for result sorting, filtering and visual highlights.
+
+Result highlights can be based on:
+- Provider
+- Quality
+- Single Color
+
+When Provider or Quality highlighting is selected, the relevant color settings become available.
+
+Sorting and Filtering also includes controls for preferred filters, quality/result limits, seeders for uncached results, prerelease handling and media attributes such as HEVC, HDR, Dolby Vision, AV1, 3D and enhanced/upscaled sources.

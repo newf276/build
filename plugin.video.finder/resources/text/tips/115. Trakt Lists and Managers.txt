@@ -1,0 +1,8 @@
+When Trakt is authorized, Finder can work with Trakt Watchlist, Collection and Personal Lists. Trakt list contents can be browsed from Finder and can be managed from the Trakt Manager context action where available.
+
+Trakt list sorting can be configured separately for Collection and Watchlist:
+- Title
+- Date Added
+- Release Date
+
+Trakt authorization is required for account-specific lists and actions.

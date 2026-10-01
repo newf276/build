@@ -1,0 +1,5 @@
+Finder is a customizable media browser for Movies, TV Shows, Seasons and Episodes.
+
+Use Tools -> Tips for Use at any time to return to this guide. Finder's menus, context actions, trackers, list managers, scraping controls and playback features are designed to be configured to suit your setup.
+
+The most important starting choice is your Primary Tracker. This determines which service Finder uses for watched/progress information and the related TV progress features. See the "Primary Tracker" tip before changing other tracking settings.

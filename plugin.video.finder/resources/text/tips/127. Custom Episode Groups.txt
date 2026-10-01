@@ -1,0 +1,5 @@
+Finder can assign a custom episode group to a TV Show. Episode groups may represent different episode orders such as Original Air Date, Absolute, DVD, Digital, Story Arc, Production or TV order.
+
+Use the show's context menu -> Options -> Assign an Episode Group to... when groups are available.
+
+The selected group is used when Finder builds playback/search information; it does not simply rearrange the show's normal episode display. This can be especially useful for anime or releases whose episode naming/order differs from the default metadata order.

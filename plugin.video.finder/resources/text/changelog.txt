@@ -8,6 +8,7 @@ Finder 1.0.04 (Fork of Forge 2.13)
 
 • Unified TV Networks and Movie/TV Provider menu artwork to Finder monochrome icons.
 • Removed full-colour TMDb provider-logo fallback from navigation menus.
+• Complete re-write of Tips for use, located in Tools, under Tips. 40 in total, please familarize your self with these.
 
 Finder 1.0.03 (Fork of Forge 2.13)
 
