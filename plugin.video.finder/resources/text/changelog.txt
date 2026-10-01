@@ -1,12 +1,13 @@
-1.0.04
-• Unified TV Networks and Movie/TV Provider menu artwork to Finder monochrome icons.
-• Removed full-colour TMDb provider-logo fallback from navigation menus.
-
 🗓️ Release History:
 
 • Initial Release: June 30, 2026 — Kodi (v22) Piers Beta 1 (Version 1.0.0)
 
 • Current Release: October 1, 2026 — Kodi (v22) Piers RC-1
+
+Finder 1.0.04 (Fork of Forge 2.13)
+
+• Unified TV Networks and Movie/TV Provider menu artwork to Finder monochrome icons.
+• Removed full-colour TMDb provider-logo fallback from navigation menus.
 
 Finder 1.0.03 (Fork of Forge 2.13)
 
