@@ -1,10 +1,10 @@
 Finder — Kodi 22 (Piers)
 
-Current Version: 1.0.04
+Current Version: 1.0.05
 Release Date: October 1, 2026
 
 
-Version 1.0.04 — Current Release
+Version 1.0.05 — Current Release
 
 • Unified TV Network and Movie/TV Provider menu artwork with Finder's monochrome icon style.
 • Removed the full-colour TMDb provider-logo fallback from navigation menus.
