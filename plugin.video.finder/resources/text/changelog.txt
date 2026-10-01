@@ -1,0 +1,47 @@
+Version 1.0.02-RC1 (Fork of Forge 2.13)
+
+🗓️ Release History:
+
+• Initial Release: June 30, 2026 — Kodi (v22) Piers Beta 1 (Version 1.0.0)
+
+• Current Release: October 1, 2026 — Kodi (v22) Piers RC-1
+
+🚀 Key Upgrades & Platform Support
+
+• Cross-Platform Compatibility: Fully compatible with all major platforms (including Google TV, Android TV, and LibreELEC). The add-on is officially optimized and ready for the final release of Kodi 22.
+
+• Repository-Driven Updates: Removed the built-in updater to eliminate conflicts with Kodi’s native repository installer. Future updates will now deliver seamlessly direct from my repo.
+PunchPlay Integration
+
+• Full List Support: Integrated PunchPlay as a primary tracker and lists provider. Watchlists, Collections, and Personal Lists are fully functional and hosted alongside TMDb and Trakt.
+
+• Database Repair Tool: Added a database repair utility under the maintenance tools. This ensures your movies and shows sync and render correctly if an initial scrape fails.
+
+• Quick Add Functionality: Easily add or remove movies and TV shows from your PunchPlay Watchlist.
+	• Setup: Navigate to Finder Addon > Content Section (at the bottom). Enable Quick Add in the context menu settings and adjust the order to your preference (recommended as 1st or 2nd priority).
+
+• Tracked Progress: The In Progress and Next Up shelves are dynamically tied to your actively selected tracker. Find them neatly organized at the bottom of the main TV Show menu.
+
+
+🛠️ Future Roadmap
+
+• Kodi Library Integration: Upcoming incremental updates will introduce two-way communication and library synchronization. This will sync tracking data with Trakt or PunchPlay, alongside list-only support for TMDb.
+
+• PunchPlay Manager: The dedicated PunchPlay Manager Context Menu will be finalized and rolled out in the next release to expand quick-action options.
+
+
+🛑 Features Deferred or Excluded
+
+• Simkl Integration: Excluded from current development. The implementation is currently too complex to justify the effort based on the core needs of my immediate users.
+
+• MDBlist.com Integration (On Hold): Development is paused until minor bugs are resolved and authentication methods improve. While the platform shows great promise and I continue to support Linas's excellent work, account security and interface limitations mean it will not be added until a future date.
+
+🔒 Configuration & Developer Notes
+
+• Custom API Keys: You can add your personal API keys for Trakt, TMDb, and PunchPlay by editing the settings_schema.json file located in resources/data/. My testing keys are included for initial functionality, but replacing them with your own is highly recommended for stability.
+
+• Scraper Recommendations: The fork supports most popular scrapers. Magneto is recommended and comes pre-configured in the settings.
+
+• Credits: Special thanks to silencebob2 for his work on Forge. The implementation of the JSON settings schema makes editing incredibly efficient and keeps the add-on feeling light and responsive.
+Note: This add-on was developed specifically to meet the needs of my family and friends rather than the broader public. It will not be cross-posted to Reddit or public forums. If you found it, enjoy it!
+— Newf276

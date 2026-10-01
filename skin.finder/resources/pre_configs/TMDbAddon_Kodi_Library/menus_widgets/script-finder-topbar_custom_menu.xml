@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="FinderTopBarCustomMenuButton">
+		<include content="IconButton">
+			<param name="control_id" value="811"/>
+			<param name="onclick" value="ActivateWindow(1170)"/>
+			<param name="icon" value="special://skin/extras/topbar/media.png"/>
+			<param name="label" value="$INFO[Skin.String(TopBarCustomMenuLabel)]"/>
+			<param name="visible" value="Skin.HasSetting(Enable.TopBarCustomMenu)"/>
+		</include>
+	</include>
+	<include name="TopBarCustomMenuItems">
+		<item>
+			<label>Anticipated Movies</label>
+			<onclick>Dialog.Close(all)</onclick>
+			<onclick>ActivateWindow(Videos,plugin://plugin.video.tmdbmovies/?mode=trakt_discovery_list&amp;list_type=anticipated&amp;media_type=movies,return)</onclick>
+		</item>
+		<item>
+			<label>Calendar</label>
+			<onclick>Dialog.Close(all)</onclick>
+			<onclick>ActivateWindow(Videos,plugin://plugin.video.tmdbmovies/?mode=mdblist_calendar,return)</onclick>
+		</item>
+		<item>
+			<label>MDBList Popular Lists</label>
+			<onclick>Dialog.Close(all)</onclick>
+			<onclick>ActivateWindow(Videos,plugin://plugin.video.tmdbmovies/?mode=mdblist_popular,return)</onclick>
+		</item>
+		<item>
+			<label>Trakt Trending User Lists</label>
+			<onclick>Dialog.Close(all)</onclick>
+			<onclick>ActivateWindow(Videos,plugin://plugin.video.tmdbmovies/?mode=trakt_public_lists&amp;list_type=trending,return)</onclick>
+		</item>
+	</include>
+</includes>
