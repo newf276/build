@@ -63,6 +63,11 @@
     }
   },
   {
+    "setting_id": "primary_tracker_selected",
+    "setting_type": "string",
+    "setting_default": "empty_setting"
+  },
+  {
     "_section": "+============= Trakt Cache"
   },
   {
@@ -501,7 +506,7 @@
   {
     "setting_id": "context_menu.enabled",
     "setting_type": "string",
-    "setting_default": "quick_add,play_trailer,mark_watched,extras,related,more_like_this,refresh,trakt_manager,tmdb_manager"
+    "setting_default": "quick_add,play_trailer,mark_watched,extras,related,more_like_this,refresh,trakt_manager,punchplay_manager,tmdb_manager"
   },
   {
     "setting_id": "punchplay.device_id",
@@ -511,7 +516,7 @@
   {
     "setting_id": "context_menu.order",
     "setting_type": "string",
-    "setting_default": "quick_add,mark_watched,extras,play_trailer,trakt_manager,tmdb_manager,options,playback_options,browse_movie_set,browse_seasons,browse_episodes,recommended,related,more_like_this,similar,in_trakt_list,personal_manager,favorites_manager,unmark_previous_episode,exit,refresh,reload"
+    "setting_default": "quick_add,mark_watched,extras,play_trailer,trakt_manager,punchplay_manager,tmdb_manager,options,playback_options,browse_movie_set,browse_seasons,browse_episodes,recommended,related,more_like_this,similar,in_trakt_list,personal_manager,favorites_manager,unmark_previous_episode,exit,refresh,reload"
   },
   {
     "setting_id": "context_menu.quick_add_target",
@@ -521,6 +526,7 @@
       "trakt_collection": "Trakt Collection",
       "trakt_watchlist": "Trakt Watchlist",
       "punchplay_watchlist": "PunchPlay Watchlist",
+      "punchplay_collection": "PunchPlay Collection",
       "tmdb_watchlist": "TMDb Watchlist",
       "tmdb_favorites": "TMDb Favorites",
       "finder_favorites": "Finder Favorites"
@@ -1259,13 +1265,13 @@
   {
     "setting_id": "results.movie_size_max",
     "setting_type": "action",
-    "setting_default": "30000",
+    "setting_default": "9500",
     "min_value": "1"
   },
   {
     "setting_id": "results.episode_size_max",
     "setting_type": "action",
-    "setting_default": "20000",
+    "setting_default": "2900",
     "min_value": "1"
   },
   {

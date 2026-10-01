@@ -1,10 +1,38 @@
-Version 1.0.02-RC1 (Fork of Forge 2.13)
-
 🗓️ Release History:
 
 • Initial Release: June 30, 2026 — Kodi (v22) Piers Beta 1 (Version 1.0.0)
 
 • Current Release: October 1, 2026 — Kodi (v22) Piers RC-1
+
+Finder 1.0.03 (Fork of Forge 2.13)
+
+    1) Fixed PunchPlay Collection add/remove endpoints to match the working PunchPlay API contract. Collection writes now use /collection and /collection/{item_id}; add payload includes format=digital.
+       
+    2) Added PunchPlay Collection and PunchPlay Personal List targets to Quick Add / Context Selection.
+       
+    3) Added one-time Primary Tracker selection (Finder, Trakt, PunchPlay) popup upon installation.
+       
+    4) PunchPlay primary selection rebuilds watched history and verifies Watchlist, Collection and Personal Lists.
+       
+    5) Added PunchPlay Lists Manager with Watchlist, Collection and Personal List actions to Context Menu.
+       
+    6) Added startup authorization validation and load notifications.
+
+Finder's new capabilities — successfully proven
+
+✅ PunchPlay Watchlist management
+✅ PunchPlay Collection management
+✅ PunchPlay Personal Lists
+✅ In-place Watchlist/Collection refresh
+✅ Trakt ↔ PunchPlay Watchlist transfer
+✅ Trakt ↔ PunchPlay Collection transfer
+✅ Trakt ↔ PunchPlay Personal List transfer
+✅ Movies and TV shows
+✅ Two-way additive transfers
+✅ Existing content preserved
+✅ No unwanted removals
+
+Version 1.0.02 (Fork of Forge 2.13)
 
 🚀 Key Upgrades & Platform Support
 
