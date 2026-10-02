@@ -3,7 +3,12 @@
     <include name="MoviesMainMenu">
         <item>
             <label>Movies</label>
-            <onclick>ActivateWindow(Videos,plugin://plugin.video.finder/?name=Movies&amp;iconImage=movies&amp;mode=navigator.main&amp;action=MovieList,return)</onclick>
+            <onclick condition="String.IsEqual(Skin.String(FinderHomePreset),punchplay_collection)">ActivateWindow(Videos,plugin://plugin.video.finder/?action=punchplay_collection&amp;category_name=PunchPlay+Movie+Collection&amp;mode=build_movie_list,return)</onclick>
+            <onclick condition="String.IsEqual(Skin.String(FinderHomePreset),punchplay_watchlist)">ActivateWindow(Videos,plugin://plugin.video.finder/?action=punchplay_watchlist&amp;category_name=PunchPlay+Movie+Watchlist&amp;mode=build_movie_list,return)</onclick>
+            <onclick condition="String.IsEqual(Skin.String(FinderHomePreset),tmdb_watchlist)">ActivateWindow(Videos,plugin://plugin.video.finder/?list_id=watchlist&amp;list_name=Movie+Watchlist&amp;media_type=movie&amp;mode=tmdblist.build_tmdb_list,return)</onclick>
+            <onclick condition="String.IsEqual(Skin.String(FinderHomePreset),trakt_collection)">ActivateWindow(Videos,plugin://plugin.video.finder/?action=trakt_collection&amp;category_name=Movies+Collection&amp;mode=build_movie_list,return)</onclick>
+            <onclick condition="String.IsEqual(Skin.String(FinderHomePreset),trakt_watchlist)">ActivateWindow(Videos,plugin://plugin.video.finder/?action=trakt_watchlist&amp;category_name=Movies+Watchlist&amp;mode=build_movie_list,return)</onclick>
+            <onclick condition="String.IsEmpty(Skin.String(FinderHomePreset))">ActivateWindow(Videos,plugin://plugin.video.finder/?name=Movies&amp;iconImage=movies&amp;mode=navigator.main&amp;action=MovieList,return)</onclick>
             <property name="menu_id">$NUMBER[19000]</property>
             <thumb>icons/sidemenu/movies.png</thumb>
             <property name="id">movies</property>

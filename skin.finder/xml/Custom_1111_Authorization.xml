@@ -21,88 +21,13 @@
 				<onback condition="!String.IsEqual(Window(Home).Property(FinderDirectDialog1111),true)">ActivateWindow(1106)</onback>
 				<onback condition="String.IsEqual(Window(Home).Property(FinderDirectDialog1111),true)">ClearProperty(FinderDirectDialog1111,home)</onback>
 				<content>
-					<!-- Finder Configurations (Hidden unless Finder video add-on is enabled) -->
-					<item>
-						<label>F-Trakt</label>
-						<visible>System.AddonIsEnabled(plugin.video.finder)</visible>
-						<onclick>Dialog.Close(1111)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=trakt.trakt_authenticate)</onclick>
-					</item>
-					<item>
-						<label>F-TMDB</label>
-						<visible>System.AddonIsEnabled(plugin.video.finder)</visible>
-						<onclick>Dialog.Close(1111)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=tmdblist_api.authenticate)</onclick>
-					</item>
-					<item>
-						<label>F-All-Debrid</label>
-						<visible>System.AddonIsEnabled(plugin.video.finder)</visible>
-						<onclick>Dialog.Close(1111)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=alldebrid.authenticate)</onclick>
-					</item>
-					<item>
-						<label>F-Premiumize</label>
-						<visible>System.AddonIsEnabled(plugin.video.finder)</visible>
-						<onclick>Dialog.Close(1111)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=premiumize.authenticate)</onclick>
-					</item>
-					<item>
-						<label>F-Torbox</label>
-						<visible>System.AddonIsEnabled(plugin.video.finder)</visible>
-						<onclick>Dialog.Close(1111)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.finder/?mode=torbox.authenticate)</onclick>
-					</item>
-					<!-- RedLight's Configurations (Hidden unless Redlight video add-on is enabled) -->
-					<item>
-						<label>R-Trakt</label>
-						<visible>System.AddonIsEnabled(plugin.video.redlight)</visible>
-						<onclick>Dialog.Close(1111)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=trakt.trakt_authenticate)</onclick>
-					</item>
-					<item>
-						<label>R-TMDB</label>
-						<visible>System.AddonIsEnabled(plugin.video.redlight)</visible>
-						<onclick>Dialog.Close(1111)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=tmdblist_api.authenticate)</onclick>
-					</item>
-					<item>
-						<label>R-All-Debrid</label>
-						<visible>System.AddonIsEnabled(plugin.video.redlight)</visible>
-						<onclick>Dialog.Close(1111)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=alldebrid.authenticate)</onclick>
-					</item>
-					<item>
-						<label>R-Premiumize</label>
-						<visible>System.AddonIsEnabled(plugin.video.redlight)</visible>
-						<onclick>Dialog.Close(1111)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=premiumize.authenticate)</onclick>
-					</item>
-					<item>
-						<label>R-Torbox</label>
-						<visible>System.AddonIsEnabled(plugin.video.redlight)</visible>
-						<onclick>Dialog.Close(1111)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.redlight/?mode=torbox.authenticate)</onclick>
-					</item>
-					<!-- TMDb Movies's Configurations (Hidden unless TMDb Movies video add-on is enabled) -->
-					<item>
-						<label>T-Trakt</label>
-						<visible>System.AddonIsEnabled(plugin.video.tmdbmovies)</visible>
-						<onclick>Dialog.Close(1111)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.tmdbmovies/?mode=trakt_auth)</onclick>
-					</item>
-					<item>
-						<label>T-TMDB</label>
-						<visible>System.AddonIsEnabled(plugin.video.tmdbmovies)</visible>
-						<onclick>Dialog.Close(1111)</onclick>
-						<onclick>RunPlugin(plugin://plugin.video.tmdbmovies/?mode=tmdb_auth)</onclick>
-					</item>
-<!-- Finder Skin's MDbList Key Input (This proivides ability to play trailers via IMDB by long press on pay or pause) -->
-					<item>
-						<label>Set Finder's Skin MDbList Key</label>
-						<visible>!Skin.HasSetting(AuthNoSkinMDBList)</visible>
-                        <onclick>Dialog.Close(1111)</onclick>
-						<onclick>RunScript(script.finder.helper,mode=set_api_key)</onclick>
-					</item>
+					<item><label>F-PunchPlay</label><visible>System.AddonIsEnabled(plugin.video.finder)</visible><onclick>Dialog.Close(1111)</onclick><onclick>RunPlugin(plugin://plugin.video.finder/?mode=punchplay.punchplay_authenticate)</onclick></item>
+					<item><label>F-Trakt</label><visible>System.AddonIsEnabled(plugin.video.finder)</visible><onclick>Dialog.Close(1111)</onclick><onclick>RunPlugin(plugin://plugin.video.finder/?mode=trakt.trakt_authenticate)</onclick></item>
+					<item><label>F-TMDB</label><visible>System.AddonIsEnabled(plugin.video.finder)</visible><onclick>Dialog.Close(1111)</onclick><onclick>RunPlugin(plugin://plugin.video.finder/?mode=tmdblist_api.authenticate)</onclick></item>
+					<item><label>F-All-Debrid</label><visible>System.AddonIsEnabled(plugin.video.finder)</visible><onclick>Dialog.Close(1111)</onclick><onclick>RunPlugin(plugin://plugin.video.finder/?mode=alldebrid.authenticate)</onclick></item>
+					<item><label>F-Premiumize</label><visible>System.AddonIsEnabled(plugin.video.finder)</visible><onclick>Dialog.Close(1111)</onclick><onclick>RunPlugin(plugin://plugin.video.finder/?mode=premiumize.authenticate)</onclick></item>
+					<item><label>F-Torbox</label><visible>System.AddonIsEnabled(plugin.video.finder)</visible><onclick>Dialog.Close(1111)</onclick><onclick>RunPlugin(plugin://plugin.video.finder/?mode=torbox.authenticate)</onclick></item>
+					<item><label>Set Finder's Skin MDbList Key</label><visible>!Skin.HasSetting(AuthNoSkinMDBList)</visible><onclick>Dialog.Close(1111)</onclick><onclick>Skin.SetString(mdblist_api_key)</onclick></item>
 				</content>
 			</control>
 			<include content="UpDownArrows">

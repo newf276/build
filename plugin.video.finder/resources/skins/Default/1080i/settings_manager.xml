@@ -1181,7 +1181,7 @@
                           <visible>Container(2000).HasFocus(30)</visible>
                           <property name="setting_label">Quick Add Target</property>
                           <property name="setting_type">action</property>
-                          <property name="setting_value">$INFO[Window(10000).Property(finder.context_menu.quick_add_target_label)]</property>
+                          <property name="setting_value">$INFO[Window(10000).Property(finder.context_menu.quick_add_target_name)]</property>
                           <property name="setting_description">Pick the single list/watchlist that the one-tap Quick Add context-menu item toggles items in and out of. Unset falls back to your Trakt Watchlist (or Finder Favorites if Trakt is not connected).</property>
                           <onclick>RunPlugin(plugin://plugin.video.finder/?mode=quick_add_target_choice)</onclick>
                       </item>

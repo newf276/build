@@ -2134,6 +2134,7 @@
 	<include name="WidgetListCommon">
 		<scrolltime tween="cubic" easing="out">500</scrolltime>
 		<orientation>horizontal</orientation>
+		<onleft condition="Window.IsActive(1121)">SetFocus(700)</onleft>
 		<onleft condition="[Skin.HasSetting(Enable.FullscreenWidgets) | Skin.HasSetting(CinemaLookFeel)] + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true)">$PARAM[list_id]</onleft>
 		<onleft condition="![[Skin.HasSetting(Enable.FullscreenWidgets) | Skin.HasSetting(CinemaLookFeel)] + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true)]">9000</onleft>
 		<onright>$PARAM[list_id]</onright>
@@ -2153,6 +2154,7 @@
 	<include name="WidgetListCommonStacked">
 		<scrolltime tween="cubic" easing="out">500</scrolltime>
 		<orientation>horizontal</orientation>
+		<onleft condition="Window.IsActive(1121)">SetFocus(700)</onleft>
 		<onleft condition="[Skin.HasSetting(Enable.FullscreenWidgets) | Skin.HasSetting(CinemaLookFeel)] + String.IsEqual(Window(Home).Property(finder.widget_focus),true)">$PARAM[list_id]</onleft>
 		<onleft condition="![[Skin.HasSetting(Enable.FullscreenWidgets) | Skin.HasSetting(CinemaLookFeel)] + String.IsEqual(Window(Home).Property(finder.widget_focus),true)]">9000</onleft>
 		<onright>$PARAM[list_id]</onright>
@@ -2161,8 +2163,7 @@
 		<onback condition="[Skin.HasSetting(Enable.FullscreenWidgets) | Skin.HasSetting(CinemaLookFeel)] + String.IsEqual(Window(Home).Property(finder.widget_focus),true)">ClearProperty(finder.widget_focus,home)</onback>
 		<onback condition="![[Skin.HasSetting(Enable.FullscreenWidgets) | Skin.HasSetting(CinemaLookFeel)] + String.IsEqual(Window(Home).Property(finder.widget_focus),true)]">9000</onback>
 		<onback condition="![[Skin.HasSetting(Enable.FullscreenWidgets) | Skin.HasSetting(CinemaLookFeel)] + String.IsEqual(Window(Home).Property(finder.widget_focus),true)]">SetFocus($PARAM[list_id],0,absolute)</onback>
-		<onfocus>RunScript(script.finder.helper,mode=widget_monitor&amp;list_id=$PARAM[list_id])</onfocus>
-		<onfocus>SetProperty(finder.widget_focus,true,home)</onfocus>
+				<onfocus>SetProperty(finder.widget_focus,true,home)</onfocus>
 		<onunfocus>ClearProperty(finder.widget_focus,home)</onunfocus>
 		<!-- <preloaditems>2</preloaditems> -->
 	</include>

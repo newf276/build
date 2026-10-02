@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<include name="Changelog">
-		<label>[B][COLOR accent_color]Version $INFO[System.AddonVersion(skin.finder)] by Zaxxon709[/COLOR][/B]
+		<label><![CDATA[[B][COLOR accent_color]Version $INFO[System.AddonVersion(skin.finder)] by Zaxxon709[/COLOR][/B]
 - Enhanced Look & Feel customization with independent background artwork, brightness controls, and color opacity options
 - Added Cinema Mode to the Look & Feel options, featuring a fullscreen, widget-focused Home layout with the standard main menu hidden
 - Added color preservation options to Look & Feel preset customization, allowing users to keep or reset their current artwork and color settings independently
@@ -425,7 +425,7 @@ Main changes from default Estuary include:
 - Custom Search options from Home window
 - PVR guide adjustments
 - Nexus themed startup video
-    </label>
+    ]]></label>
 	</include>
 	<include name="SetupGuide">
 		<label>[B][COLOR accent_color]Welcome to the Finder Setup Guide[/COLOR][/B]

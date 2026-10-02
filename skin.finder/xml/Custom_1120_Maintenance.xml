@@ -19,19 +19,11 @@
 				<include>ButtonMenuList_dialog</include>
 				<onback>Dialog.Close(1120)</onback>
 				<onback condition="!String.IsEqual(Window(Home).Property(Finder.DirectDialog1120),true)">ActivateWindow(1106)</onback>
-				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1120),true)">ActivateWindow(1170)</onback>
+				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1120),true)">ActivateWindow(1106)</onback>
 				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1120),true)">ClearProperty(Finder.DirectDialog1120,home)</onback>
 				<content>
-					<item>
-						<label>Clear Packages</label>
-						<onclick>RunScript(script.finder.helper,mode=clear_pkgs)</onclick>
-					</item>
-					<item>
-						<label>Clear Thumbnails</label>
-						<onclick>RunScript(script.finder.helper,mode=clear_thumbnails)</onclick>
-					</item>
-					<item>
-    						<visible>[System.HasAddon(plugin.video.finder) | System.HasAddon(plugin.video.umbrella) | System.HasAddon(plugin.video.pov) | System.HasAddon(plugin.video.fenlight) | System.HasAddon(plugin.video.finder)]</visible>
+<item>
+    						<visible>System.AddonIsEnabled(plugin.video.finder)</visible>
 						<label>Clear Add-on Cache</label>
 						<onclick>Dialog.Close(1120)</onclick>
 						<onclick>ActivateWindow(1122)</onclick>

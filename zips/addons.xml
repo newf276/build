@@ -94,10 +94,9 @@
     </extension>
 </addon>
 
-<addon id="skin.finder"  name="[B]Newf's Finder Plus Skin[/B]"  version="276.0.40"  provider-name="newf276">
+<addon id="skin.finder"  name="[B]Newf's Finder Plus Skin[/B]"  version="276.0.66"  provider-name="newf276">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0" />
-		<import addon="script.finder.helper" version="276.0.40" />
 	</requires>
 	<extension point="xbmc.gui.skin" debugging="false">
 		<res width="1920" height="1440" aspect="4:3" default="false" folder="xml" />
@@ -465,13 +464,14 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.finder" name="[B]Newf's Finder[/B]" provider-name="[B]Newf276[/B]" version="1.0.05">
+<addon id="plugin.video.finder" name="[B]Newf's Finder[/B]" provider-name="[B]Newf276[/B]" version="1.0.11">
     <requires>
         <import addon="xbmc.python" version="3.0.1"/>
         <import addon="script.module.pil" version="1.1.7"/>
         <import addon="script.module.requests" version="2.19.1"/>
 		<import addon="script.module.magneto" version="8.0.02"/>
 		<import addon="plugin.video.youtube" version="8.0.02" optional="true"/>
+        <addon id="skin.finder" optional="true" />
     </requires>
     <extension point="xbmc.python.pluginsource" library="resources/lib/finder.py">
         <provides>video</provides>

@@ -1,73 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog" id="1159">
-	<defaultcontrol always="true">9000</defaultcontrol>
-	<include>Animation_DialogPopupOpenClose</include>
-	<controls>
-		<control type="group">
-			<centerleft>50%</centerleft>
-			<width>600</width>
-			<centertop>50%</centertop>
-			<height>350</height>
-			<include content="DialogBackgroundCommons">
-				<param name="width" value="600" />
-				<param name="height" value="$VAR[DialogHeight3]" />
-				<param name="header_label" value="Newf's Pre-configs" />
-				<param name="header_id" value="" />
-				<param name="diffusetexture" value="masks/dialog-bg-squareish.png" />
-			</include>
-			<control type="panel" id="9000">
-				<include>ButtonMenuList_dialog</include>
-				<onback>Dialog.Close(1159)</onback>
-				<onback condition="!String.IsEqual(Window(Home).Property(Finder.DirectDialog1158),true)">ActivateWindow(1106)</onback>
-				<content>
-					<!-- Finder Configurations (Hidden unless Finder video add-on is installed) -->
-					<item>
-						<label>F-TMDB Watchlist + Trakt</label>
-						<visible>System.AddonIsEnabled(plugin.video.finder)</visible>
-						<onclick>ClearProperty(Finder.DirectDialog1159,home)</onclick>
-						<onclick>Dialog.Close(all)</onclick><onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_tmdb_watchlist)</onclick>
-					</item>
-					<item>
-						<label>F-Trakt Collection</label>
-						<visible>System.AddonIsEnabled(plugin.video.finder)</visible>
-						<onclick>ClearProperty(Finder.DirectDialog1159,home)</onclick>
-						<onclick>Dialog.Close(all)</onclick><onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_trakt_library)</onclick>
-					</item>
-					<item>
-						<label>F-Trakt Watchlist</label>
-						<visible>System.AddonIsEnabled(plugin.video.finder)</visible>
-						<onclick>ClearProperty(Finder.DirectDialog1159,home)</onclick>
-						<onclick>Dialog.Close(all)</onclick><onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=finder_trakt_watchlist)</onclick>
-					</item>
-                    
-					<!-- Red Light Configurations (Hidden unless Red Light video add-on is installed) -->
-					<item>
-						<label>R-TMDB Watchlist + Trakt</label>
-						<visible>System.AddonIsEnabled(plugin.video.redlight)</visible>
-						<onclick>ClearProperty(Finder.DirectDialog1159,home)</onclick>
-						<onclick>Dialog.Close(all)</onclick><onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=red_light_tmdb_watchlist)</onclick>
-					</item>
-					<item>
-						<label>R-Trakt Collection</label>
-						<visible>System.AddonIsEnabled(plugin.video.redlight)</visible>
-						<onclick>ClearProperty(Finder.DirectDialog1159,home)</onclick>
-						<onclick>Dialog.Close(all)</onclick><onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=red_light_trakt_library)</onclick>
-					</item>
-					<item>
-						<label>R-Trakt Watchlist</label>
-						<visible>System.AddonIsEnabled(plugin.video.redlight)</visible>
-						<onclick>ClearProperty(Finder.DirectDialog1159,home)</onclick>
-						<onclick>Dialog.Close(all)</onclick><onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=red_light_trakt_watchlist)</onclick>
-					</item>
-					<!-- TMDb Movies Configurations (Hidden unless Red Light video add-on is installed) -->
-					<item>
-						<label>T-TMDB Watchlist + Trakt</label>
-						<visible>System.AddonIsEnabled(plugin.video.tmdbmovies)</visible>
-						<onclick>ClearProperty(Finder.DirectDialog1159,home)</onclick>
-						<onclick>Dialog.Close(all)</onclick><onclick>RunScript(script.finder.helper,mode=apply_pre_config&amp;config=tmdbmovies_watchlist)</onclick>
-					</item>
-				</content>
-			</control>
-		</control>
-	</controls>
+    <defaultcontrol always="true">9000</defaultcontrol>
+    <include>Animation_DialogPopupOpenClose</include>
+    <controls>
+        <control type="group">
+            <centerleft>50%</centerleft>
+            <width>700</width>
+            <centertop>50%</centertop>
+            <height>560</height>
+            <include content="DialogBackgroundCommons">
+                <param name="width" value="700"/>
+                <param name="height" value="$VAR[DialogHeight6]"/>
+                <param name="header_label" value="Finder Pre-Config"/>
+                <param name="header_id" value=""/>
+                <param name="diffusetexture" value="masks/dialog-bg-squareish.png"/>
+            </include>
+            <control type="label">
+                <left>55</left>
+                <top>85</top>
+                <width>590</width>
+                <height>75</height>
+                <label>Choose where Movies and TV Shows open from the Finder main menu. Your Finder widgets remain the same.</label>
+                <font>font18</font>
+                <textcolor>unfocused_text</textcolor>
+                <align>center</align>
+                <aligny>center</aligny>
+                <wrapmultiline>true</wrapmultiline>
+            </control>
+            <control type="panel" id="9000">
+                <top>165</top>
+                <left>50</left>
+                <width>600</width>
+                <height>325</height>
+                <include>ButtonMenuList_dialog</include>
+                <onback>Dialog.Close(1159)</onback>
+                <content>
+                    <item>
+                        <label>Finder PunchPlay Collection</label>
+                        <onclick>Dialog.Close(1159)</onclick>
+                        <onclick>RunPlugin(plugin://plugin.video.finder/?mode=preconfig.apply&amp;preset=punchplay_collection)</onclick>
+                    </item>
+                    <item>
+                        <label>Finder PunchPlay Watchlist</label>
+                        <onclick>Dialog.Close(1159)</onclick>
+                        <onclick>RunPlugin(plugin://plugin.video.finder/?mode=preconfig.apply&amp;preset=punchplay_watchlist)</onclick>
+                    </item>
+                    <item>
+                        <label>Finder TMDB Watchlist</label>
+                        <onclick>Dialog.Close(1159)</onclick>
+                        <onclick>RunPlugin(plugin://plugin.video.finder/?mode=preconfig.apply&amp;preset=tmdb_watchlist)</onclick>
+                    </item>
+                    <item>
+                        <label>Finder Trakt Collection</label>
+                        <onclick>Dialog.Close(1159)</onclick>
+                        <onclick>RunPlugin(plugin://plugin.video.finder/?mode=preconfig.apply&amp;preset=trakt_collection)</onclick>
+                    </item>
+                    <item>
+                        <label>Finder Trakt Watchlist</label>
+                        <onclick>Dialog.Close(1159)</onclick>
+                        <onclick>RunPlugin(plugin://plugin.video.finder/?mode=preconfig.apply&amp;preset=trakt_watchlist)</onclick>
+                    </item>
+                </content>
+            </control>
+            <include content="UpDownArrows">
+                <param name="container_id" value="9000"/>
+                <param name="posx" value="326"/>
+                <param name="up_posy" value="145"/>
+                <param name="down_posy" value="510"/>
+            </include>
+        </control>
+    </controls>
 </window>

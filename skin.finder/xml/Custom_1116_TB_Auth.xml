@@ -19,7 +19,7 @@
 				<include>ButtonMenuList_dialog</include>
 				<onback>Dialog.Close(1116)</onback>
 				<onback condition="!String.IsEqual(Window(Home).Property(Finder.DirectDialog1116),true)">ActivateWindow(1111)</onback>
-				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1116),true)">ActivateWindow(1170)</onback>
+				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1116),true)">ActivateWindow(1106)</onback>
 				<onback condition="String.IsEqual(Window(Home).Property(Finder.DirectDialog1116),true)">ClearProperty(Finder.DirectDialog1116,home)</onback>
 				<content>
 					<item>

@@ -234,4 +234,5 @@
     <setting id="SearchHistory.11" type="string"></setting>
     <setting id="stackedwidgetitemlimit" type="string">20</setting>
     <setting id="MovieGenreFanart.ext" type="string"></setting>
+    <setting id="FinderHomePreset" type="string"></setting>
 </settings>

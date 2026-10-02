@@ -51,7 +51,7 @@
                     <item>
                         <label>[COLOR red]Force Close Kodi[/COLOR]</label>
                         <onclick>Dialog.Close(all)</onclick>
-                        <onclick>RunScript(script.finder.helper,mode=force_close)</onclick>
+                        <onclick>RunPlugin(plugin://plugin.program.cleaner/?mode=18)</onclick>
                     </item>
 				</content>
 			</control>

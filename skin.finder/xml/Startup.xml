@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<onload>Skin.SetString(current_search_provider,4)</onload>
 	<onload condition="String.IsEmpty(Skin.String(searchhistory.limit))">Skin.SetString(searchhistory.limit,5)</onload>
 	<onload condition="String.IsEmpty(Skin.String(WidgetItemLimit))">Skin.SetString(WidgetItemLimit,130)</onload>
 	<onload condition="String.IsEmpty(Skin.String(CategoryWidgetItemLimit))">Skin.SetString(CategoryWidgetItemLimit,130)</onload>
@@ -12,7 +11,11 @@
 </onload>
 	<onload condition="String.IsEmpty(Skin.String(OSDAudioButtonMode))">Skin.SetString(OSDAudioButtonMode,Next audio stream)</onload>
 	<onload condition="String.IsEmpty(Skin.String(OSDSubtitleButtonMode))">Skin.SetString(OSDSubtitleButtonMode,Subtitle settings)</onload>
-    <onload>Skin.ToggleSetting(Enable.TopBarCustomMenu)</onload>
+	<onload>Skin.Reset(FinderHybrid)</onload>
+	<onload>Skin.Reset(ClassicFinder)</onload>
+	<onload>Skin.Reset(EstuaryLookFeel)</onload>
+	<onload>Skin.Reset(CinemaLookFeel)</onload>
+	<onload condition="String.IsEmpty(Skin.String(FinderHomePreset))">ActivateWindow(1158)</onload>
 	<onload>ReplaceWindow($INFO[System.StartupWindow])</onload>
 	<controls/>
 </window>

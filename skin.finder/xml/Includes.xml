@@ -35,7 +35,6 @@
 	<include file="script-finder-widget_custom4.xml"/>
 	<include file="script-finder-widget_custom5.xml"/>
 	<include file="script-finder-widget_custom6.xml"/>
-	<include file="script-finder-topbar_custom_menu.xml"/>
 	<include file="script-finder-search_history.xml"/>
 	<include file="View_50_List.xml"/>
 	<include file="View_51_Poster.xml"/>
@@ -1969,38 +1968,5 @@
 				<visible>!Skin.HasSetting(Enable.AlternateInfo) + String.IsEqual(ListItem.DBtype,tvshow)</visible>
 			</control>
 		</control>
-	</include>
-	<include name="TopBarCustomMenuDialog">
-		<param name="height" default="350"/>
-		<param name="list_height" default="210"/>
-		<param name="down_posy" default="360"/>
-		<definition>
-			<control type="group">
-				<centerleft>50%</centerleft>
-				<width>600</width>
-				<centertop>50%</centertop>
-				<height>$PARAM[height]</height>
-				<include content="DialogBackgroundCommons">
-					<param name="width" value="600"/>
-					<param name="height" value="$PARAM[height]"/>
-					<param name="header_label" value="$INFO[Skin.String(TopBarCustomMenuLabel)]"/>
-					<param name="header_id" value=""/>
-					<param name="diffusetexture" value="masks/dialog-bg-squareish.png"/>
-				</include>
-				<control type="panel" id="9000">
-					<height>$PARAM[list_height]</height>
-					<include>ButtonMenuList_dialog</include>
-					<content>
-						<include content="TopBarCustomMenuItems"/>
-					</content>
-				</control>
-				<include content="UpDownArrows">
-					<param name="container_id" value="9000"/>
-					<param name="posx" value="276"/>
-					<param name="up_posy" value="-35"/>
-					<param name="down_posy" value="$PARAM[down_posy]"/>
-				</include>
-			</control>
-		</definition>
 	</include>
 </includes>

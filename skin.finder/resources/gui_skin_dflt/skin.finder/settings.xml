@@ -231,4 +231,5 @@
     <setting id="searchhistory.limit" type="string">5</setting>
     <setting id="category_widget_delay" type="string"></setting>
     <setting id="SearchInputTraktEncoded" type="string">Spiderman</setting>
+    <setting id="FinderHomePreset" type="string"></setting>
 </settings>
