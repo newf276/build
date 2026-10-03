@@ -1,52 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-<addon id="repository.angelitto" name="[B]Angelitto Repository[/B]" version="1.0.2" provider-name="angelitto">
-    <extension point="xbmc.addon.repository" name="Angelitto Repository">
-        <dir>
-            <info compressed="false">https://raw.githubusercontent.com/angelitto2005/repository.angelitto/main/repo/zips/addons.xml</info>
-            <checksum>https://raw.githubusercontent.com/angelitto2005/repository.angelitto/main/repo/zips/addons.xml.md5</checksum>
-            <datadir zip="true">https://raw.githubusercontent.com/angelitto2005/repository.angelitto/main/repo/zips/</datadir>
-        </dir>
-        <dir>
-            <info compressed="false">https://raw.githubusercontent.com/angelitto2005/repository.angelitto/main/all/zips/addons.xml</info>
-            <checksum>https://raw.githubusercontent.com/angelitto2005/repository.angelitto/main/all/zips/addons.xml.md5</checksum>
-            <datadir zip="true">https://raw.githubusercontent.com/angelitto2005/repository.angelitto/main/all/zips/</datadir>
-        </dir>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <summary>Welcome to Angelitto's Repo</summary>
-        <description>Angelitto's Kodi Repository</description>
-        <platform>all</platform>
-        <assets>
-            <icon>icon.png</icon>
-            <fanart></fanart>
-        </assets>
-    </extension>
-</addon>
-
-<addon id="script.module.magneto" version="8.0.02" name="Newf's Magneto Module" provider-name="Magneto, Newf276">
-	<requires>
-		<import addon="xbmc.python" version="3.0.0" />
-		<import addon="script.module.requests" />
-	</requires>
-	<extension point="xbmc.python.pluginsource" library="lib/router.py">
-		<provides>executable video</provides>
-	</extension>
-	<extension point="xbmc.service" library="lib/service.py" />
-	<extension point="xbmc.python.module" library="lib" />
-	<extension point="xbmc.addon.metadata">
-		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
-		<summary>Magneto Module</summary>
-		<description>A module to query magnet providers.[CR][CR]This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</description>
-		<disclaimer>The author does not host or own any content found within this addon. The author is not responsible for the content found using this addon. The author is not responsible for the use of this addon.</disclaimer>
-        <source>https://github.com/newf276/build/tree/master/zips</source>
-        <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
-        </assets>
-	</extension>
-</addon>
-
 <addon id="plugin.program.cleaner" name="[B]Newf's Wizard[/B]" version="276.0.39" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0"/>
@@ -105,7 +58,7 @@
     </extension>
 </addon>
 
-<addon id="repository.newf" name="[B]Newf's Builds Repo[/B]" version="276.0.0" provider-name="newf276">
+<addon id="repository.newf" name="[B]Newf's Builds Repo[/B]" version="276.0.01" provider-name="newf276">
     <extension point="xbmc.addon.repository" name="[B]Newfs Builds Repo[/B]">
         <dir><!--Newf's Main Repository-->
             <info compressed="false">https://raw.githubusercontent.com/newf276/build/master/zips/addons.xml</info>
@@ -127,6 +80,21 @@
             <info compressed="false">https://raw.githubusercontent.com/dobbelina/repository.dobbelina/master/addons.xml</info>
             <checksum>https://raw.githubusercontent.com/dobbelina/repository.dobbelina/master/addons.xml.md5</checksum>
             <datadir zip="true">https://raw.githubusercontent.com/dobbelina/repository.dobbelina/master/</datadir>
+        </dir>
+        <dir minversion="19.0.0"><!--Kodi Fitzwell's Main Repository-->
+            <info compressed="false">https://kodifitzwell.github.io/repo/packages/addons.xml</info>
+            <checksum>https://kodifitzwell.github.io/repo/packages/addons.xml.md5</checksum>
+            <datadir zip="true">https://kodifitzwell.github.io/repo/</datadir>
+        </dir>
+        <dir><!--Angelitto2005's Main Repository-->
+            <info compressed="false">https://raw.githubusercontent.com/angelitto2005/repository.angelitto/main/repo/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/angelitto2005/repository.angelitto/main/repo/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/angelitto2005/repository.angelitto/main/repo/zips/</datadir>
+        </dir>
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/angelitto2005/repository.angelitto/main/all/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/angelitto2005/repository.angelitto/main/all/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/angelitto2005/repository.angelitto/main/all/zips/</datadir>
         </dir>
     </extension>
     <extension point="xbmc.addon.metadata">
@@ -337,25 +305,6 @@
 	</extension>
 </addon>
 
-<addon id="repository.kodifitzwell" version="0.0.1" name="kodifitzwell repository" provider-name="kodifitzwell">
-    <extension point="xbmc.addon.repository" name="kodifitzwell repository">
-        <dir minversion="19.0.0">
-            <info compressed="false">https://kodiyashimaru.github.io/repo/packages/addons.xml</info>
-            <checksum>https://kodiyashimaru.github.io/repo/packages/addons.xml.md5</checksum>
-            <datadir zip="true">https://kodiyashimaru.github.io/repo/</datadir>
-        </dir>
-        <dir minversion="19.0.0">
-            <info compressed="false">https://kodifitzwell.github.io/repo/packages/addons.xml</info>
-            <checksum>https://kodifitzwell.github.io/repo/packages/addons.xml.md5</checksum>
-            <datadir zip="true">https://kodifitzwell.github.io/repo/</datadir>
-        </dir>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <description>kodifitzwell repository</description>
-        <assets><icon>icon.png</icon></assets>
-    </extension>
-</addon>
-
 <addon id="plugin.video.cbcgem" name="[B]CBC Gem[/B]" version="276.0.0" provider-name="newf276">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
@@ -386,7 +335,7 @@
         <import addon="xbmc.python" version="3.0.1"/>
         <import addon="script.module.pil" version="1.1.7"/>
         <import addon="script.module.requests" version="2.19.1"/>
-		<import addon="script.module.magneto" version="8.0.02"/>
+		<import addon="script.module.magneto" version="6.09.04"/>
         <import addon="skin.finder" version="1.0.05"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="resources/lib/finder.py">
