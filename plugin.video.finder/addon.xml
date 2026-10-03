@@ -4,7 +4,7 @@
         <import addon="script.module.pil" version="1.1.7"/>
         <import addon="script.module.requests" version="2.19.1"/>
 		<import addon="script.module.magneto" version="8.0.02"/>
-        <addon id="skin.finder" optional="true" />
+        <import addon="skin.finder" version="1.0.05"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="resources/lib/finder.py">
         <provides>video</provides>
