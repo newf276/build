@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="SearchResults" id="1121">
-	<!-- Maintain Finder Search Results history from the active search term.
-	     Keep the newest five entries and avoid duplicating the current search. -->
-	<onload condition="!String.IsEmpty(Skin.String(SearchInput)) + !String.IsEqual(Skin.String(SearchInput),Skin.String(SearchHistory.1))">Skin.SetString(SearchHistory.5,$INFO[Skin.String(SearchHistory.4)])</onload>
-	<onload condition="!String.IsEmpty(Skin.String(SearchInput)) + !String.IsEqual(Skin.String(SearchInput),Skin.String(SearchHistory.1))">Skin.SetString(SearchHistory.4,$INFO[Skin.String(SearchHistory.3)])</onload>
-	<onload condition="!String.IsEmpty(Skin.String(SearchInput)) + !String.IsEqual(Skin.String(SearchInput),Skin.String(SearchHistory.1))">Skin.SetString(SearchHistory.3,$INFO[Skin.String(SearchHistory.2)])</onload>
-	<onload condition="!String.IsEmpty(Skin.String(SearchInput)) + !String.IsEqual(Skin.String(SearchInput),Skin.String(SearchHistory.1))">Skin.SetString(SearchHistory.2,$INFO[Skin.String(SearchHistory.1)])</onload>
-	<onload condition="!String.IsEmpty(Skin.String(SearchInput)) + !String.IsEqual(Skin.String(SearchInput),Skin.String(SearchHistory.1))">Skin.SetString(SearchHistory.1,$INFO[Skin.String(SearchInput)])</onload>
-	<onload condition="!String.IsEmpty(Skin.String(SearchInput))">Skin.SetString(SearchHistoryCount,1)</onload>
+	<!-- Recent Searches are mirrored by Finder at keyboard-submit time.
+	     Do not update history from window onload; provider refreshes may abort. -->
 	<onunload>ClearProperty(finder.results)</onunload>
-	<defaultcontrol>2000</defaultcontrol>
+	<defaultcontrol>810</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
 	<controls>
 		<control type="group" id="70900">
@@ -54,6 +48,7 @@
 						  		<param name="widget_header" value="$LOCALIZE[342]"/>
 						  		<param name="widget_target" value="videos"/>
 								<param name="list_id" value="27011"/>
+								<param name="keep_alive" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
 								<param name="visible" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
 							</include>
 							<!-- ========================================================= -->
@@ -68,6 +63,7 @@
 						  		<param name="widget_header" value="TV Shows"/>
 						  		<param name="widget_target" value="videos"/>
 								<param name="list_id" value="27012"/>
+								<param name="keep_alive" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
 								<param name="visible" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
 							</include>
 							<!-- ========================================================= -->
@@ -79,6 +75,7 @@
 						  		<param name="widget_header" value="Anime"/>
 						  		<param name="widget_target" value="videos"/>
 								<param name="list_id" value="27013"/>
+								<param name="keep_alive" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
 								<param name="visible" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
 							</include>
 							<!-- ========================================================= -->
@@ -123,7 +120,8 @@
 					</include>
 					<!-- Persistent Search Results navigation. Poster rows always return here on Left. -->
 					<control type="grouplist" id="700">
-						<visible>true</visible>
+						<!-- Search controls belong to the left/search state only. Hide them while poster results own focus so Side Info and ratings have a clean FENtastic-style canvas. -->
+						<visible allowhiddenfocus="true">!ControlGroup(2000).HasFocus</visible>
 						<orientation>horizontal</orientation>
 						<itemgap>-50</itemgap>
 						<left>30</left>
@@ -131,7 +129,7 @@
 						<height>110</height>
 						<top>175</top>
 						<depth>DepthContentPopout</depth>
-						<onup>SetFocus(700)</onup>
+						<onup>SetFocus(9000,99,absolute)</onup>
 						<ondown>SetFocus(9000,0,absolute)</ondown>
 						<onright>SetFocus(2000)</onright>
 						<align>center</align>
@@ -140,15 +138,16 @@
 						<include content="IconButton"><param name="control_id" value="802"/><param name="onclick" value="SetFocus(9000)"/><param name="icon" value="icons/infodialogs/timer.png"/><param name="label" value="Search History"/></include>
 						<include content="IconButton"><param name="control_id" value="804"/><param name="onclick" value="RunPlugin(plugin://plugin.video.finder/?mode=search.get_key_id&amp;search_type=people&amp;isFolder=false)"/><param name="icon" value="icons/people.png"/><param name="label" value="Search Actors"/></include>
 						<include content="IconButton"><param name="control_id" value="813"/><param name="onclick" value="ActivateWindow(home)"/><param name="icon" value="icons/home.png"/><param name="label" value="Return Home"/></include>
-						<include content="IconButton"><param name="control_id" value="811"/><param name="onclick" value="RunPlugin(plugin://plugin.video.finder/?mode=search.clear_search);Skin.SetString(SearchHistory.1,);Skin.SetString(SearchHistory.2,);Skin.SetString(SearchHistory.3,);Skin.SetString(SearchHistory.4,);Skin.SetString(SearchHistory.5,);Skin.SetString(SearchHistoryCount,0)"/><param name="icon" value="icons/infodialogs/uninstall.png"/><param name="label" value="Clear Search History"/></include>
+						<include content="IconButton"><param name="control_id" value="811"/><param name="onclick" value="RunPlugin(plugin://plugin.video.finder/?mode=search.clear_all_history)"/><param name="onclick_2" value="Skin.SetString(SearchHistory.1,)"/><param name="onclick_3" value="Skin.SetString(SearchHistory.2,)"/><param name="onclick_4" value="Skin.SetString(SearchHistory.3,)"/><param name="onclick_5" value="Skin.SetString(SearchHistory.4,)"/><param name="onclick_6" value="Skin.SetString(SearchHistory.5,)"/><param name="onclick_7" value="Skin.SetString(SearchHistory.6,)"/><param name="onclick_8" value="Skin.SetString(SearchHistory.7,)"/><param name="onclick_9" value="Skin.SetString(SearchHistory.8,)"/><param name="onclick_10" value="Skin.SetString(SearchHistory.9,)"/><param name="onclick_11" value="Skin.SetString(SearchHistory.10,)"/><param name="onclick_12" value="Skin.SetString(SearchHistory.11,)"/><param name="onclick_13" value="Skin.SetString(SearchHistory.12,)"/><param name="onclick_14" value="Skin.SetString(SearchHistory.13,)"/><param name="onclick_15" value="Skin.SetString(SearchHistory.14,)"/><param name="onclick_16" value="Skin.SetString(SearchHistory.15,)"/><param name="onclick_17" value="Skin.SetString(SearchHistory.16,)"/><param name="onclick_18" value="Skin.SetString(SearchHistory.17,)"/><param name="onclick_19" value="Skin.SetString(SearchHistory.18,)"/><param name="onclick_20" value="Skin.SetString(SearchHistory.19,)"/><param name="onclick_21" value="Skin.SetString(SearchHistory.20,)"/><param name="onclick_22" value="Skin.SetString(SearchHistoryCount,0)"/><param name="onclick_23" value="SetFocus(700)"/><param name="icon" value="icons/infodialogs/uninstall.png"/><param name="label" value="Clear Search History"/></include>
 						<include content="IconButton"><param name="control_id" value="812"/><param name="onclick" value="Fullscreen"/><param name="icon" value="icons/now-playing/fullscreen.png"/><param name="label" value="$LOCALIZE[31000]"/><param name="visible" value="Player.HasMedia"/></include>
 					</control>
 					<control type="group">
 						<animation effect="slide" time="300" start="-492,0" end="0,0" tween="sine" easing="inout">VisibleChange</animation>
-						<visible allowhiddenfocus="true">true</visible>
+						<!-- Keep Search History in the left panel only. Hide its text layer while poster results own focus so history labels cannot bleed through Side Info. -->
+						<visible allowhiddenfocus="true">!ControlGroup(2000).HasFocus</visible>
 						<control type="fixedlist" id="9000">
 							<left>19</left>
-							<top>290</top>
+							<top>315</top>
 							<width>492</width>
 							<height>335</height>
 							<movement>7</movement>
@@ -326,12 +325,14 @@
 						<font>font27</font>
 						</control>
 					<control type="label">
-						<top>180</top>
+						<!-- Finder: keep this subordinate to the icon toolbar, using native skin typography. -->
+						<top>225</top>
 						<left>-25</left>
-						<width>1085</width>
+						<width>500</width>
 						<aligny>center</aligny>
-						<height>98</height>
-						<font>font36_title</font>
+						<height>55</height>
+						<font>font27</font>
+						<textcolor>unfocused_text</textcolor>
 						<label>Recent searches:</label>
 					</control>
 					<control type="label">

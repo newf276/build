@@ -1,5 +1,7 @@
 Finder provides Tools -> Database & Cache Maintenance for maintenance and troubleshooting.
 
-Available maintenance actions include checking for corrupt databases, cleaning databases, remaking the settings cache, clearing general caches, and clearing individual caches such as metadata, lists, TMDb lists, Trakt, IMDb, internal/external scrapers and debrid caches. Favorites can be handled separately.
+Available maintenance actions include checking for corrupt databases, cleaning databases, remaking the settings cache, clearing general caches, and clearing individual caches such as metadata, lists, TMDb lists, Trakt, IMDb, internal or external scrapers and debrid caches. Favorites can be handled separately.
 
-For PunchPlay users there is also "Repair PunchPlay Watched Database". Use this when PunchPlay watched/progress data needs to be rebuilt or when Finder reports that the PunchPlay watched database could not be loaded correctly.
+PunchPlay also has a Clear PunchPlay Cache action in Finder settings. This clears and rebuilds Finder's local PunchPlay watched-state cache from PunchPlay without revoking your PunchPlay authorization.
+
+For PunchPlay users there is also Repair PunchPlay Watched Database. Use this when PunchPlay watched or progress data needs to be rebuilt or when Finder reports that the PunchPlay watched database could not be loaded correctly.

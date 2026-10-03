@@ -531,6 +531,7 @@
 	</include>
 	<include name="WidgetListPoster">
 		<param name="onclick_condition">false</param>
+		<param name="keep_alive">false</param>
 		<definition>
 			<include content="CategoryLabel">
 				<param name="label">$PARAM[widget_header]</param>
@@ -544,9 +545,11 @@
 				<left>0</left>
 				<top>115</top>
 				<onright>$PARAM[list_id]</onright>
+				<onup>$PARAM[onup]</onup>
+				<ondown>$PARAM[ondown]</ondown>
 				<orientation>horizontal</orientation>
 				<movement>5</movement>
-				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating | $PARAM[keep_alive]</visible>
 				<width>2312</width>
 				<height>410</height>
 				<onclick condition="$PARAM[onclick_condition]">$PARAM[onclick_action]</onclick>
@@ -580,6 +583,7 @@
 	</include>
 	<include name="WidgetListBigPoster">
 		<param name="onclick_condition">false</param>
+		<param name="keep_alive">false</param>
 		<definition>
 			<include content="CategoryLabel">
 				<param name="label">$PARAM[widget_header]</param>
@@ -595,7 +599,7 @@
 				<onright>$PARAM[list_id]</onright>
 				<orientation>horizontal</orientation>
 				<movement>4</movement>
-				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating | $PARAM[keep_alive]</visible>
 				<width>2312</width>
 				<height>465</height>
 				<onclick condition="$PARAM[onclick_condition]">$PARAM[onclick_action]</onclick>
@@ -1169,11 +1173,12 @@
 		<param name="additional_movie_items">false</param>
 		<param name="additional_tvshow_items">false</param>
 		<param name="visible">true</param>
+		<param name="header_visible">true</param>
 		<definition>
 			<include content="CategoryLabel">
 				<param name="label">$PARAM[widget_header]</param>
 				<param name="list_id" value="$PARAM[list_id]"/>
-				<param name="visible" value="$PARAM[visible]"/>
+				<param name="visible" value="$PARAM[header_visible]"/>
 			</include>
 			<include content="BusyListSpinner">
 				<param name="list_id" value="$PARAM[list_id]"/>
@@ -1186,6 +1191,8 @@
 				<width>2312</width>
 				<height>195</height>
 				<onright>$PARAM[list_id]</onright>
+				<onup>$PARAM[onup]</onup>
+				<ondown>$PARAM[ondown]</ondown>
 				<movement>3</movement>
 				<onfocus>Control.Move($PARAM[list_id],-$INFO[Container($PARAM[list_id]).Position])</onfocus>
 				<onfocus>Control.Move($PARAM[list_id],$INFO[Window(home).Property(listposition)])</onfocus>
@@ -1281,7 +1288,7 @@
 							<width>254</width>
 							<height>70</height>
 							<label>$INFO[ListItem.Label]</label>
-							<textcolor>unfocused_text</textcolor>
+							<textcolor>white</textcolor>
 							<font>font25_narrow</font>
 							<shadowcolor>text_shadow</shadowcolor>
 							<align>center</align>
@@ -1295,7 +1302,7 @@
 							<width>254</width>
 							<height>70</height>
 							<label>$INFO[ListItem.Label] ($INFO[System.AddonUpdateCount])</label>
-							<textcolor>unfocused_text</textcolor>
+							<textcolor>white</textcolor>
 							<font>font25_narrow</font>
 							<shadowcolor>text_shadow</shadowcolor>
 							<align>center</align>
@@ -1401,7 +1408,7 @@
 							<width>254</width>
 							<height>70</height>
 							<label>$INFO[ListItem.Label]</label>
-							<textcolor>unfocused_text</textcolor>
+							<textcolor>white</textcolor>
 							<font>font25_narrow</font>
 							<shadowcolor>text_shadow</shadowcolor>
 							<align>center</align>
@@ -2265,14 +2272,6 @@
 				<visible>!Skin.HasSetting(FinderHybrid) + !Skin.HasSetting(ClassicFinder) + !Skin.HasSetting(EstuaryLookFeel)</visible>
 				<left>2</left>
 				<!-- Highlight BG -->
-				<control type="image">
-					<left>0</left>
-					<top>0</top>
-					<width>422</width>
-					<height>95</height>
-					<texture colordiffuse="button_focus">masks/banner.png</texture>
-					<visible>!Skin.HasSetting(NoHighlightMainMenu) + !ControlGroup(700).HasFocus</visible>
-				</control>
 				<!-- SideMenu Focused Icon Background Shading -->
 				<control type="image">
 					<left>0</left>
@@ -2302,7 +2301,7 @@
 					<font>font40</font>
 					<label>$INFO[ListItem.Label]</label>
 					<shadowcolor>text_shadow</shadowcolor>
-					<textcolor>focused_text</textcolor>
+					<textcolor>white</textcolor>
 					<visible>Skin.HasSetting(NoIconMainMenu) + !ControlGroup(700).HasFocus</visible>
 				</control>
 				<!-- Focused Label with Icons Disabled -->
@@ -2316,7 +2315,7 @@
 					<font>font45_title</font>
 					<label>$INFO[ListItem.Label]</label>
 					<shadowcolor>text_shadow</shadowcolor>
-					<textcolor>focused_text</textcolor>
+					<textcolor>white</textcolor>
 					<visible>!Skin.HasSetting(NoIconMainMenu) + !ControlGroup(700).HasFocus</visible>
 				</control>
 				<!-- Top bar fallback icon -->
@@ -2345,15 +2344,6 @@
 			<!-- Finder Hybrid focused layout -->
 			<control type="group">
 				<visible>Skin.HasSetting(FinderHybrid)</visible>
-				<control type="image">
-					<left>41</left>
-					<top>0</top>
-					<width>380</width>
-					<height>110</height>
-					<aspectratio>stretch</aspectratio>
-					<texture colordiffuse="button_focus">frame/mainframe.png</texture>
-					<visible>!ControlGroup(700).HasFocus + !Skin.HasSetting(NoHighlightMainMenu)</visible>
-				</control>
 				<control type="label">
 					<left>41</left>
 					<top>0</top>
@@ -2363,7 +2353,7 @@
 					<aligny>center</aligny>
 					<font>font45_title</font>
 					<label>$INFO[ListItem.Label]</label>
-					<textcolor>focused_text</textcolor>
+					<textcolor>white</textcolor>
 					<shadowcolor>text_shadow</shadowcolor>
 					<visible>!ControlGroup(700).HasFocus</visible>
 				</control>
@@ -2384,13 +2374,6 @@
 			<!-- Estuary focused layout -->
 			<control type="group">
 				<visible>!Skin.HasSetting(FinderHybrid) + Skin.HasSetting(EstuaryLookFeel)</visible>
-				<control type="image">
-					<left>0</left>
-					<width>450</width>
-					<height>108</height>
-					<texture colordiffuse="button_focus">colors/white.png</texture>
-					<visible>!Skin.HasSetting(NoHighlightMainMenu)</visible>
-				</control>
 				<control type="image">
 					<left>0</left>
 					<width>108</width>
@@ -2416,7 +2399,7 @@
 					<aligny>center</aligny>
 					<font>font45</font>
 					<label>$INFO[ListItem.Label]</label>
-					<textcolor>focused_text</textcolor>
+					<textcolor>white</textcolor>
 					<visible>Skin.HasSetting(NoIconMainMenu)</visible>
 				</control>
 				<!-- Focused label with icons disabled -->
@@ -2428,7 +2411,7 @@
 					<aligny>center</aligny>
 					<font>font45</font>
 					<label>$INFO[ListItem.Label]</label>
-					<textcolor>focused_text</textcolor>
+					<textcolor>white</textcolor>
 					<visible>!Skin.HasSetting(NoIconMainMenu)</visible>
 				</control>
 			</control>
@@ -2568,14 +2551,6 @@
 				<visible>!Skin.HasSetting(FinderHybrid) + !Skin.HasSetting(ClassicFinder) + !Skin.HasSetting(EstuaryLookFeel)</visible>
 				<left>2</left>
 				<!-- Highlight BG -->
-				<control type="image">
-					<left>0</left>
-					<top>0</top>
-					<width>422</width>
-					<height>95</height>
-					<texture colordiffuse="button_focus">masks/banner.png</texture>
-					<visible>Skin.HasSetting(NoIconMainMenu) + !Skin.HasSetting(NoHighlightMainMenu) + !String.IsEqual(Skin.String(CurrentSkinColor),Classic Finder) + !ControlGroup(700).HasFocus</visible>
-				</control>
 				<!-- SideMenu Focused Icon Background Shading -->
 				<control type="image">
 					<left>0</left>
@@ -2648,15 +2623,6 @@
 			<!-- Finder Hybrid focused layout -->
 			<control type="group">
 				<visible>Skin.HasSetting(FinderHybrid)</visible>
-				<control type="image">
-					<left>41</left>
-					<top>0</top>
-					<width>380</width>
-					<height>110</height>
-					<aspectratio>stretch</aspectratio>
-					<texture colordiffuse="button_focus">frame/mainframe.png</texture>
-					<visible>!ControlGroup(700).HasFocus + !Skin.HasSetting(NoHighlightMainMenu)</visible>
-				</control>
 				<control type="label">
 					<left>41</left>
 					<top>0</top>

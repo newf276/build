@@ -2,6 +2,8 @@
 <includes>
 	<include name="Changelog">
 		<label><![CDATA[[B][COLOR accent_color]Version $INFO[System.AddonVersion(skin.finder)] by Zaxxon709[/COLOR][/B]
+- Added Finder Skin Tips to Skin Settings > Extra info with concise guidance for the current Finder-integrated features
+- Replaced the inherited FENtastic Setup Guide with a Finder-specific setup guide for the current integrated architecture
 - Enhanced Look & Feel customization with independent background artwork, brightness controls, and color opacity options
 - Added Cinema Mode to the Look & Feel options, featuring a fullscreen, widget-focused Home layout with the standard main menu hidden
 - Added color preservation options to Look & Feel preset customization, allowing users to keep or reset their current artwork and color settings independently
@@ -428,28 +430,82 @@ Main changes from default Estuary include:
     ]]></label>
 	</include>
 	<include name="SetupGuide">
-		<label>[B][COLOR accent_color]Welcome to the Finder Setup Guide[/COLOR][/B]
+		<label><![CDATA[[B][COLOR accent_color]Finder Skin Setup Guide[/COLOR][/B]
 
-Finder Plus is a skin specifically designed for TMDbH, Fen Light, Umbrella and POV users. It can display movie, tvshow, and episode widgets as well as submenu widgets. It can also set paths for main menu items (more on this later). Here in this guide I will show you how these work and how to set them up.
+[B]1. Install the matched Finder components[/B]
+Finder Skin is designed to work directly with plugin.video.finder. For this Phase 2 release, the tested pair is Finder 1.0.05 and Finder Skin 1.0.05. No separate FENtastic/Finder helper is required for the integrated Search, TV widgets, or MDbList ratings features.
 
-On first install the home screen should be empty. This means that the Movie and Show sections should be missing from the main menu on the left.
+[B]2. Choose how Finder should operate[/B]
+Finder can be used in Finder + Finder Skin integrated mode or as Finder Standalone. When Finder Skin is active, open Finder's Interface Setup and choose Finder + Finder Skin to use the integrated skin experience. You can change this later from Finder's Tools menu.
 
-Now lets go set up the widgets.
-From this dialog screen click Back on your remote or Backspace if you are using a keyboard. Here you'll see a group of menu items on the left. Navigate up to Main menu items. Here is where we will set up the widgets. 
+[B]3. Select your Primary Tracker[/B]
+Choose the service that should provide watched-state behavior: Finder, Trakt, or PunchPlay. If Trakt or PunchPlay is selected, authorize that service in Finder. PunchPlay can synchronize watched history and its supported lists during setup. MDbList is not a Primary Tracker in this release; its current role is ratings display only.
 
-Click a menu item to toggle the display of a section on and off. This will show or hide the section on the home screen. Now toggle the Movie/Show section to 'on'. You'll see a couple of menu items drop down. They are set main menu path and set widgets.
+[B]4. Use Finder Pre-Config as your starting point[/B]
+Integrated setup opens the Finder Skin Pre-Config window. Choose the configuration that matches the Primary Tracker and layout you want. Pre-Config provides a sensible Finder-oriented starting point without requiring you to build every Home item manually.
 
-[B][COLOR deeppink]- Set main menu path[/COLOR][/B] is for setting up the path when clicking on the Movie/Show section in the main menu on the left side of the home screen. You can set this to whatever you path you like within FEN. I like to set mine to my Trakt movie/tvshow collection.
+[B]5. Review the Movies and TV Shows Home sections[/B]
+The Home menu and widgets use Finder-native paths. You can keep the Pre-Config arrangement or customize menu items and widgets later in Skin Settings. The finalized TV widget sequence includes Genres, Categories, In Progress, Popular Today, Recently Trending, Most Watched, Providers, and Networks. In Progress follows Finder's active tracker configuration.
 
-[B][COLOR deeppink]- Set widgets[/COLOR][/B] is for setting up the movie/tvshow widgets. These are the main widgets that you'll set up. You can configure up to 10 movie and 10 TV show widgets. After choosing a path you'll have the option to set the label and display type (Poster, Landscape, LandscapeInfo, and Category) for each widget. If you choose the Category display type, you'll have the option to set it up as a stacked widget. After that you can choose the display type for the stacked widget as well.
+[B]6. Finder Search is already integrated[/B]
+The Finder Search window supports Movies, TV Shows, and People. Submitted searches are stored in the five-item Recent Searches history. Search does not require a separate search-provider selection or helper add-on.
 
-[B][COLOR deeppink]- Set main menu icons[/COLOR][/B] is for setting custom main menu icons. Main menu icons are disabled by default but can be enabled in Skin Settings/Options. Once enabled you can either use the default provided icons or browse and choose your own custom icon.
+[B]7. Configure MDbList ratings if desired[/B]
+In the skin's Ratings/Trailers settings, enter your MDbList API key to enable supported rating displays. Finder retrieves and caches the rating data while Finder Skin presents it in the appropriate information areas. MDbList does not supply watched-state tracking in Phase 2.
 
-[B][COLOR accent_color]Stacked widgets[/COLOR][/B] contain a category widget and a normal widget beneath. The category widget "communicates" with the normal widget in order to load the new widget list according to the focused item in the category widget. If the stacked widget that you set up has 20 items in it, then that means you'll be able to have all 20 widgets available from just one widget on the home screen.
+[B]8. Trailers and Extras use Finder[/B]
+Finder handles supported trailer playback through its native trailer route, so a separate plugin.video.youtube installation is not required for Finder trailer playback. Finder Extras and information views provide related metadata and available video choices.
 
-That's it! You're all set to go. Enjoy the skin!
+[B]9. Customize the skin after setup[/B]
+Skin Settings remains the place to adjust Home menu visibility, widget presentation, artwork, view preferences, ratings/trailer options, and other appearance choices. Pre-Config is a starting point, not a restriction.
 
-If you would like to see a more detailed version of this Setup Guide, please visit my Github repo at https://github.com/ivarbrandt/skin.finder
-    </label>
+[B]10. Maintenance and troubleshooting[/B]
+Use Finder's own Tools and settings for Finder cache/database maintenance and tracker authorization. Skin maintenance options are separate. If an integrated feature behaves unexpectedly, first confirm Finder 1.0.05 and Finder Skin 1.0.05 are installed and that Finder is set to the intended interface mode.
+
+[B]11. More help[/B]
+For short feature explanations, open Finder Skin Tips in this Extra info section. Finder itself also contains a more detailed Tips library covering tracker behavior, Search, trailers, PunchPlay, cache maintenance, and other Finder features.]]></label>
+	</include>
+
+	<include name="FinderSkinTips">
+		<label><![CDATA[[B][COLOR accent_color]Finder Skin Tips[/COLOR][/B]
+
+[B]1. Finder Skin and Finder work together[/B]
+Finder Skin is designed to integrate directly with plugin.video.finder. The current Finder setup does not require a separate FENtastic/Finder helper for Search, TV widgets, or MDbList ratings.
+
+[B]2. Choose the Finder interface mode[/B]
+Finder can run as Finder + Finder Skin or Finder Standalone. When Finder Skin is active, use Finder's interface setup to select the integrated experience and open the skin Pre-Config options.
+
+[B]3. Primary Tracker controls watched-state behavior[/B]
+Finder currently supports Finder, Trakt, and PunchPlay as Primary Tracker choices. Choose the tracker that should provide watched-state and related tracker behavior.
+
+[B]4. MDbList currently provides ratings only[/B]
+The MDbList integration in this version is for ratings display and enrichment. It is not currently a watched provider, watched-state source, or Primary Tracker.
+
+[B]5. Configure MDbList in Ratings/Trailers[/B]
+Enter your MDbList API key in the skin's Ratings/Trailers settings. Finder retrieves and caches supported ratings and Finder Skin displays them in the appropriate information areas. A changed API key is recognized without requiring a skin reinstall.
+
+[B]6. Finder Search is built into the skin[/B]
+The dedicated Finder Search window searches Movies, TV Shows, and People. Submitted searches are also kept in the five-item Recent Searches history for quick reuse.
+
+[B]7. Search results remain usable while searching[/B]
+After a search is submitted, the result controls remain available while Finder is updating them, including searches that initially return no items. This avoids dropping focus back to the search field unnecessarily.
+
+[B]8. TV widgets use Finder-native paths[/B]
+The finalized TV widget sequence is Genres, Categories, In Progress, Popular Today, Recently Trending, Most Watched, Providers, and Networks. In Progress follows the active Finder tracker configuration.
+
+[B]9. Main Menu and widgets can be customized[/B]
+Use Skin Settings to configure the Home menu, widget presentation, artwork, and other appearance options. Pre-Config provides a convenient starting layout for Finder integration.
+
+[B]10. Native trailer playback belongs to Finder[/B]
+Trailer requests from Finder use Finder's native trailer playback route. A separate plugin.video.youtube installation is not required for Finder trailer playback.
+
+[B]11. Extras and information views expose more detail[/B]
+Finder's Extras and information views can provide ratings, cast and related metadata, and trailer access when the information is available for the selected title.
+
+[B]12. Keep Finder and Finder Skin paired[/B]
+For the tested Phase 2 configuration, use Finder 1.0.05 with Finder Skin 1.0.05. If troubleshooting an interface feature, confirm both components are installed and the intended Finder interface mode is selected.
+
+[B][COLOR accent_color]Tip[/COLOR][/B]
+Finder itself contains a more detailed Tips section covering tracker setup, PunchPlay, cache maintenance, native trailers, Search, MDbList ratings, and other add-on features.]]></label>
 	</include>
 </includes>

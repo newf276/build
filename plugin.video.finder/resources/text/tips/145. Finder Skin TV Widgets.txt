@@ -1,0 +1,5 @@
+Finder Skin's finalized TV Show widget set is designed around Finder's native lists and navigation.
+
+The default TV widget sequence is Genres, Categories, In Progress, Popular Today, Recently Trending, Most Watched, Providers and Networks. In Progress follows Finder's tracker-aware progress data, while the discovery widgets use Finder's existing TMDb or Trakt list actions.
+
+Providers and Networks use Finder's category navigation rather than maintaining a separate provider system in the skin. This keeps the Finder Skin widgets tied to the same menus and data paths used by Finder itself.

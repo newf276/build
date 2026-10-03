@@ -3,4 +3,4 @@ Finder no longer contains the old built-in self-updater. That functionality was 
 Finder updates are delivered through the Finder repository/build system associated with:
 https://github.com/newf276/build
 
-If Finder is installed from the repository, allow Kodi to handle available Finder updates through its normal add-on update mechanism. Do not look for the old "Update Utilities" or built-in self-update workflow described in older Finder tips.
+If Finder is installed from the repository, allow Kodi to handle available Finder updates through its normal add-on update mechanism. Do not look for the old Update Utilities or built-in self-update workflow described in older Finder versions.

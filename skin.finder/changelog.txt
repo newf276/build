@@ -1,13 +1,16 @@
-276.0.66
-- Corrected Search Results heading placement so “Search results for…” stays in the header area above the poster rows instead of overlapping result artwork.
-- Preserved the 276.0.65 direct Search History reuse behavior unchanged.
+1.0.05 — Phase 2 Finalization
 
-276.0.56
-- Search Results navigation now presents New Search, Search History, Search Actors, Return Home, and Clear Search History in a fixed order.
-- Corrected add-on version metadata to 276.0.56.
+- Finalized Finder-integrated TV widgets: Genres, Categories, In Progress, Popular Today, Recently Trending, Most Watched, Providers, and Networks.
+- Finalized integrated Finder Search behavior and retained stable Search History/result navigation.
+- Added Finder-native MDbList rating presentation for supported IMDb, IMDb Popular, Metacritic, Rotten Tomatoes critic/audience, and TMDb ratings.
+- MDbList support in this release is ratings display only; it is not a watched provider or Primary Tracker.
+- Retained Finder-only integration without a separate FENtastic/Finder helper add-on.
+- Added Finder Skin Tips and a Finder-specific Setup Guide under Extra Info.
+- Preserved accepted Finder home-menu appearance, category navigation, widget presentation, and Search information layout.
+- Public release numbering synchronized with Finder 1.0.05 for GitHub/repository continuity.
 
-276.0.49 — Finder Home menu cleanup, Tools cleanup, and atomic Pre-Config handling.
-
-- Continuous improvements.  Too many to mention.
+Credits
+- Thanks to Angelittoo for inspiration and ideas that helped inform Finder development.
+- Thanks to silentbob2 for the Forge fork and its contribution to Finder's development lineage.
 
 Enjoy!

@@ -1,0 +1,7 @@
+Finder plays Movie and TV Show trailers through its own native trailer resolver. The separate plugin.video.youtube add-on is not required for Finder trailer playback.
+
+Trailer playback is available through Finder's Play Trailer context action and through the Extras window, including the Extras Play Trailer action and available video selections. Finder resolves the selected trailer and supplies the stream to Kodi for playback.
+
+Finder also recognizes trailer URLs stored by older Finder versions that pointed to plugin.video.youtube and converts them to the native Finder route when the cached metadata is read. You do not need to clear the metadata cache simply to migrate to native trailer playback.
+
+InputStream Adaptive is used when Finder supplies an adaptive trailer stream. Availability of an individual trailer still depends on the source video being accessible.

@@ -1,5 +1,7 @@
-When PunchPlay is selected or used, Finder validates the PunchPlay account during startup. Finder can report authorization status and load the associated Watchlist, Collection and Personal List information.
+When PunchPlay is selected or used, Finder validates the PunchPlay account during startup. Finder can report authorization status and load the associated watched history, Watchlist, Collection and Personal List information.
 
-If PunchPlay authorization is incomplete, list-management features that require the account will not operate. If watched history cannot be loaded, use Repair PunchPlay Watched Database after confirming authorization.
+When PunchPlay is chosen as the Primary Tracker during first setup, Finder synchronizes the watched-state data needed for watched indicators and progress features and validates the available PunchPlay list data. Normal first-run setup should not require the Repair function.
+
+If PunchPlay authorization is incomplete, account-dependent list-management features will not operate. If watched history later becomes damaged or cannot be loaded, confirm authorization and then use Repair PunchPlay Watched Database.
 
 This validation is intended to make authorization problems visible early rather than allowing them to appear later as missing lists or progress data.

@@ -13,6 +13,7 @@ TRAKT
 PUNCHPLAY
 - Uses PunchPlay watched history.
 - PunchPlay authorization is required.
-- Finder rebuilds its PunchPlay watched database when needed and validates the available PunchPlay list data.
+- When PunchPlay is selected for first use, Finder synchronizes watched history and validates the available Watchlist, Collection and Personal List data.
+- Repair PunchPlay Watched Database remains available under maintenance tools if the local watched-state database ever needs rebuilding.
 
-Choose carefully when first setting up Finder. If you change tracker services later, allow Finder time to rebuild/synchronize the relevant data before judging the resulting progress lists.
+Choose carefully when first setting up Finder. If you change tracker services later, allow Finder time to rebuild or synchronize the relevant data before judging the resulting progress lists.

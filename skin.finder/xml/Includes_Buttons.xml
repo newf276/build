@@ -192,6 +192,27 @@
 				<aligny>center</aligny>
 				<onclick>$PARAM[onclick]</onclick>
 				<onclick>$PARAM[onclick_2]</onclick>
+				<onclick>$PARAM[onclick_3]</onclick>
+				<onclick>$PARAM[onclick_4]</onclick>
+				<onclick>$PARAM[onclick_5]</onclick>
+				<onclick>$PARAM[onclick_6]</onclick>
+				<onclick>$PARAM[onclick_7]</onclick>
+				<onclick>$PARAM[onclick_8]</onclick>
+				<onclick>$PARAM[onclick_9]</onclick>
+				<onclick>$PARAM[onclick_10]</onclick>
+				<onclick>$PARAM[onclick_11]</onclick>
+				<onclick>$PARAM[onclick_12]</onclick>
+				<onclick>$PARAM[onclick_13]</onclick>
+				<onclick>$PARAM[onclick_14]</onclick>
+				<onclick>$PARAM[onclick_15]</onclick>
+				<onclick>$PARAM[onclick_16]</onclick>
+				<onclick>$PARAM[onclick_17]</onclick>
+				<onclick>$PARAM[onclick_18]</onclick>
+				<onclick>$PARAM[onclick_19]</onclick>
+				<onclick>$PARAM[onclick_20]</onclick>
+				<onclick>$PARAM[onclick_21]</onclick>
+				<onclick>$PARAM[onclick_22]</onclick>
+				<onclick>$PARAM[onclick_23]</onclick>
 				<font/>
 				<label>$PARAM[label]</label>
 				<texturefocus colordiffuse="button_focus">buttons/roundbutton-fo.png</texturefocus>

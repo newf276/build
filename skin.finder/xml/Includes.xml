@@ -164,6 +164,15 @@
 			</control>
 		</definition>
 	</include>
+	<!-- Finder compatibility alias: View 57 references RatingCircle2. -->
+	<include name="RatingCircle2">
+		<param name="animation">False</param>
+		<definition>
+			<include content="RatingCircle">
+				<param name="animation" value="$PARAM[animation]"/>
+			</include>
+		</definition>
+	</include>
 	<include name="UserRatingContent">
 		<visible>!String.IsEmpty($PARAM[infolabel])</visible>
 		<control type="image">

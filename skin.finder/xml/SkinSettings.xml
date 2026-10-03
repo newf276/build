@@ -57,6 +57,45 @@
 					<selected>!Skin.HasSetting(HideMainMenuDivider)</selected>
 					<onclick>Skin.ToggleSetting(HideMainMenuDivider)</onclick>
 				</control>
+			</control>
+			<control type="grouplist" id="620">
+				<top>133</top><left>25</left><right>0</right><bottom>140</bottom>
+				<onleft>9000</onleft><onright>60</onright><onup>620</onup><pagecontrol>60</pagecontrol><ondown>620</ondown>
+				<visible>Container(9000).HasFocus(3)</visible>
+				<control type="label" id="62000">
+					<label>Category widget style: $INFO[Skin.String(CategoryWidgetStyle)]</label>
+					<include>DefaultSettingLabel</include>
+				</control>
+				<control type="button" id="62001">
+					<label>Text Only</label><include>DefaultSettingButton</include>
+					<onclick>Skin.SetBool(NoIconSilhouettes)</onclick>
+					<onclick>Skin.Reset(home_no_categories_label)</onclick>
+					<onclick>Skin.SetString(CategoryWidgetStyle,Text Only)</onclick>
+				</control>
+				<control type="button" id="62002">
+					<label>Icons + Text</label><include>DefaultSettingButton</include>
+					<onclick>Skin.Reset(NoIconSilhouettes)</onclick>
+					<onclick>Skin.Reset(home_no_categories_label)</onclick>
+					<onclick>Skin.SetString(CategoryWidgetStyle,Icons + Text)</onclick>
+				</control>
+				<control type="button" id="62003">
+					<label>Icons Only</label><include>DefaultSettingButton</include>
+					<onclick>Skin.Reset(NoIconSilhouettes)</onclick>
+					<onclick>Skin.SetBool(home_no_categories_label)</onclick>
+					<onclick>Skin.SetString(CategoryWidgetStyle,Icons Only)</onclick>
+				</control>
+			</control>
+			<control type="grouplist" id="647">
+				<top>133</top>
+				<left>25</left>
+				<right>0</right>
+				<bottom>140</bottom>
+				<onleft>9000</onleft>
+				<onright>60</onright>
+				<onup>647</onup>
+				<pagecontrol>60</pagecontrol>
+				<ondown>647</ondown>
+				<visible>Container(9000).HasFocus(4)</visible>
 				<!-- SEPARATOR -->
 				<control type="button" id="64702">
 					<label>Home search button behavior</label>
@@ -91,13 +130,6 @@
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(HideKeywordResults)</onclick>
 					<selected>!Skin.HasSetting(HideKeywordResults)</selected>
-					<visible>!Skin.HasSetting(HomeNoSearchButton) + !Skin.HasSetting(NoSearchResultsWindow)</visible>
-				</control>
-				<control type="radiobutton" id="64708">
-					<label>   - Trakt Lists</label>
-					<include>DefaultSettingButton</include>
-					<onclick>Skin.ToggleSetting(HideTraktResults)</onclick>
-					<selected>!Skin.HasSetting(HideTraktResults)</selected>
 					<visible>!Skin.HasSetting(HomeNoSearchButton) + !Skin.HasSetting(NoSearchResultsWindow)</visible>
 				</control>
 				<!-- TRAKT LISTS - TMDBH ONLY -->
@@ -719,6 +751,13 @@
 					<onclick>SetProperty(TextViewerHeader,[B]CHANGELOG: $INFO[System.AddonTitle(skin.finder)] v$INFO[System.AddonVersion(skin.finder)][/B],Home)</onclick>
 					<onclick>ActivateWindow(1119)</onclick>
 				</control>
+				<control type="button" id="6232">
+					<include>DefaultSettingButton</include>
+					<label>[B]Finder Skin Tips[/B]</label>
+					<onclick>SetProperty(FinderSkinTips,True)</onclick>
+					<onclick>SetProperty(TextViewerHeader,[B]Finder Skin Tips[/B],Home)</onclick>
+					<onclick>ActivateWindow(1123)</onclick>
+				</control>
 				<control type="button" id="6231">
 					<include>DefaultSettingButton</include>
 					<label>[B]Setup Guide[/B]</label>
@@ -798,18 +837,12 @@
 						<onclick>noop</onclick>
 					</item>
 					<item id="2"><label>Top Bar</label><visible>false</visible><onclick>noop</onclick></item>
-					<item id="3">
-						<label>Widgets</label>
-						<onclick>noop</onclick>
-					</item>
+					<item id="3"><label>Widgets</label><onclick>noop</onclick></item>
 					<item id="4">
 						<label>Search</label>
 						<onclick>noop</onclick>
 					</item>
-					<item id="5">
-						<label>General</label>
-						<onclick>noop</onclick>
-					</item>
+					<item id="5"><label>General</label><visible>false</visible><onclick>noop</onclick></item>
 					<item id="6">
 						<label>Artwork</label>
 						<onclick>noop</onclick>

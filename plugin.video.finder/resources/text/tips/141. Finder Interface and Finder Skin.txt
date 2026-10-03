@@ -1,0 +1,7 @@
+Finder supports two interface modes: Finder + Finder Skin and Finder Standalone.
+
+On first use Finder asks which mode you want. Finder + Finder Skin is available when skin.finder is the active Kodi skin. If Finder Skin is not active, Finder continues in Standalone mode.
+
+You can change the saved choice later from Tools -> Finder Interface Setup. Selecting the integrated mode opens Finder Skin's Pre-Config selector so the skin can be configured for the Finder setup you want to use.
+
+Finder Skin integration is optional. Finder does not require a separate FENtastic or Finder helper add-on for the integrated Search, widgets or MDbList rating service used by the current Finder setup.

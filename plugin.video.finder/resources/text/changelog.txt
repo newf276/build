@@ -1,99 +1,87 @@
 Finder — Kodi 22 (Piers)
 
 Current Version: 1.0.05
-Release Date: October 1, 2026
+Phase 2 Finalization: October 2026
 
 
-Version 1.0.05 — Current Release
+Version 1.0.05 — Phase 2 Finalization
 
+Finder Skin Integration
+
+• Added first-use interface selection between Finder + Finder Skin and Finder Standalone.
+• Added Finder Interface Setup under Tools so the saved interface mode can be changed later.
+• Finder only opens the Finder Skin Pre-Config selector when skin.finder is the active Kodi skin.
+• Finalized integrated Finder Skin Search behavior, including Recent Searches and stable result-control handling for submitted searches.
+• Finalized Finder Skin TV widgets using Finder-native Genres, Categories, In Progress, Popular Today, Recently Trending, Most Watched, Providers, and Networks.
+
+
+Native MDbList Ratings
+
+• Added Finder's native MDbList ratings-display service for Finder Skin.
+• Removed the need for a separate FENtastic/Finder helper add-on for MDbList ratings.
+• Supports available IMDb, IMDb Popular, Metacritic, Rotten Tomatoes critic and audience, and TMDb rating displays.
+• Added local MDbList rating caching and immediate use of an updated MDbList API key.
+• MDbList integration in Phase 2 is ratings display only; it is not a Primary Tracker or watched-state provider. Finder, Trakt, and PunchPlay remain the Primary Tracker choices.
+
+
+Native Trailer Playback
+
+• Added native Finder trailer playback for Movies and TV Shows.
+• Play Trailer from the Finder context menu now routes directly through Finder.
+• Extras Play Trailer and Extras video selections now use Finder's native trailer resolver.
+• Removed Finder's dependency on plugin.video.youtube for trailer playback.
+• Added compatibility for metadata cached by older Finder versions so legacy plugin.video.youtube trailer URLs are converted to Finder's native route without requiring a metadata-cache clear.
+• Uses Kodi InputStream Adaptive when an adaptive trailer stream is supplied.
+
+
+PunchPlay and Tracker Improvements
+
+• Added PunchPlay as a Primary Tracker alongside Finder and Trakt.
+• First-run PunchPlay setup synchronizes watched history and validates Watchlist, Collection, and Personal List data.
+• Added PunchPlay Watchlist, Collection, and Personal List management.
+• Added PunchPlay Lists Manager and Quick Add integration.
+• Added Trakt and PunchPlay additive list-transfer tools while preserving existing content.
+• Added alphabetical sorting options for PunchPlay Watchlist and Collection.
+• Added Clear PunchPlay Cache in Finder settings to rebuild local PunchPlay watched-state data without revoking authorization.
+• Retained Repair PunchPlay Watched Database for recovery and troubleshooting.
+
+
+General Finder Improvements
+
+• Updated Finder for Kodi 22 (Piers) behavior and compatibility.
+• Removed the old built-in Finder updater; updates are delivered through Kodi's repository update system.
+• Updated menu, provider, network, and PunchPlay artwork to a consistent monochrome Finder style.
+• Reworked Tools -> Tips for Use so the guide reflects Finder's current tracker, skin-integration, cache, ratings, widget, Search, and trailer features.
+
+
+Version 1.0.05
+
+• Reworked the Kodi changelog display and documentation formatting.
 • Unified TV Network and Movie/TV Provider menu artwork with Finder's monochrome icon style.
 • Removed the full-colour TMDb provider-logo fallback from navigation menus.
-• Completely Rewritten Tips System, located under Tools > Tips, with 40 updated tips covering Finder's current features and operation.
+• Rewrote Finder's Tips system to match the current feature set at that stage of development.
 
 
 Version 1.0.03
 
 PunchPlay Integration
 
-• Fixed PunchPlay Collection Add and Remove Endpoints to match the working PunchPlay API contract.
-• Collection writes now use the /collection and /collection/{item_id} endpoints.
-• Collection Add requests now include format=digital.
-• Added PunchPlay Collection and PunchPlay Personal List targets to Quick Add and Context Selection.
-• Added a one-time Primary Tracker Selection prompt during installation, allowing Finder, Trakt, or PunchPlay to be selected.
-• Selecting PunchPlay as the Primary Tracker rebuilds watched history and verifies Watchlist, Collection, and Personal Lists.
-• Added the PunchPlay Lists Manager with Watchlist, Collection, and Personal List actions to the Context Menu.
-• Added startup authorization validation and load notifications.
-
-
-PunchPlay Features Successfully Implemented
-
-• PunchPlay Watchlist Management
-• PunchPlay Collection Management
-• PunchPlay Personal Lists
-• In-Place Watchlist and Collection Refresh
-• Trakt to PunchPlay Watchlist Transfer
-• PunchPlay to Trakt Watchlist Transfer
-• Trakt to PunchPlay Collection Transfer
-• PunchPlay to Trakt Collection Transfer
-• Trakt to PunchPlay Personal List Transfer
-• PunchPlay to Trakt Personal List Transfer
-• Movies and TV Shows
-• Two-Way Additive Transfers
-• Existing Content Preserved
-• No Unwanted Removals
+• Corrected PunchPlay Collection add and remove endpoints.
+• Added PunchPlay Collection and Personal List targets to Quick Add and context selection.
+• Added Primary Tracker selection for Finder, Trakt, or PunchPlay.
+• Added PunchPlay Watchlist, Collection, Personal Lists, startup validation, and list-management actions.
+• Added additive Trakt/PunchPlay transfers for supported Watchlists, Collections, and Personal Lists.
 
 
 Version 1.0.02
 
-Core Improvements and Platform Support
+Core Improvements
 
-• Cross-Platform Compatibility: Compatible with major Kodi platforms, including Google TV, Android TV, and LibreELEC.
-• Kodi 22 Support: Optimized for Kodi 22 (Piers).
-• Repository-Driven Updates: Removed the built-in updater. Finder updates are now delivered directly through the Finder repository using Kodi's native repository update system.
-
-
-PunchPlay Integration
-
-• Added PunchPlay as a Primary Tracker and Lists Provider.
-• PunchPlay Watchlists, Collections, and Personal Lists are supported alongside TMDb and Trakt.
-• Added a Database Repair Tool under the Maintenance Tools to help restore correct movie and TV show synchronization and rendering when an initial scrape fails.
-• Added Quick Add functionality for adding or removing movies and TV shows from the PunchPlay Watchlist.
-• Quick Add can be enabled under Finder Addon > Content Section and its position can be adjusted in the Context Menu settings.
-• Added Tracked Progress support. The In Progress and Next Up shelves follow the currently selected Primary Tracker and are displayed at the bottom of the Main TV Show Menu.
-
-
-Current Finder Capabilities
-
-• TMDb Support
-• Trakt Support
-• PunchPlay Support
-• Watchlist Management
-• Collection Management
-• Personal List Management
-• Quick Add
-• Context Menu Integration
-• In Progress and Next Up Shelves
-• Database Repair
-• Watchlist and Collection Refresh
-• Trakt and PunchPlay List Transfers
-• Movies and TV Shows
-• Two-Way Additive Transfers
-• Existing Content Preserved
-• No Unwanted Removals
-• Cross-Platform Kodi 22 Support
-
-
-Deferred or Excluded Features
-
-• Simkl Integration: Excluded from current development.
-• MDBList.com Integration: Development is currently on hold pending resolution of minor bugs and improvements to authentication methods.
-
-
-Configuration and Developer Notes
-
-• Custom API Keys: Personal API keys for Trakt, TMDb, and PunchPlay can be added by editing settings_schema.json in the resources/data/ directory. Testing keys are included for initial functionality. Replacing them with personal API keys is recommended for long-term stability.
-• Scraper Support: Finder supports most popular scrapers. Magneto is recommended and is included as the pre-configured scraper.
-• Credits: Special thanks to silencebob2 for his work on Forge. Finder retains the efficient JSON settings schema approach used to keep the add-on lightweight and responsive.
+• Added PunchPlay support alongside TMDb and Trakt.
+• Added tracked progress support for In Progress and Next Episodes using the selected Primary Tracker.
+• Added PunchPlay database repair tools and Quick Add support.
+• Removed the built-in updater in favor of repository-driven Kodi updates.
+• Continued Kodi 22 platform compatibility work.
 
 
 About Finder

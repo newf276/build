@@ -1,5 +1,7 @@
-Movies and TV Shows can open Finder's Extras window. Extras provides additional information and actions such as ratings, cast, similar/related media and other available metadata.
+Movies and TV Shows can open Finder's Extras window. Extras provides additional information and actions such as ratings, cast, similar or related media, available videos and other metadata.
 
 Configure the feature under Settings -> Features -> Extras. You can control which ratings are shown and whether additional item-rating information and scrollbars are enabled.
+
+Finder now handles trailer playback natively. The Extras Play Trailer action and available trailer/video selections no longer require the separate plugin.video.youtube add-on. See the Native Trailer Playback tip for details.
 
 Extras can also be opened automatically through Special Open Actions; see that tip for details.

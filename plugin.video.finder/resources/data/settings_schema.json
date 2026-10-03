@@ -6,6 +6,14 @@
     "_section": "General"
   },
   {
+    "_section": "Finder Interface"
+  },
+  {
+    "setting_id": "interface_mode",
+    "setting_type": "string",
+    "setting_default": "empty_setting"
+  },
+  {
     "setting_id": "auto_start_finder",
     "setting_type": "boolean",
     "setting_default": "false"
