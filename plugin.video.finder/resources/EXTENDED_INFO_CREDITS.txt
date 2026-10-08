@@ -1,0 +1,10 @@
+Finder ExtendedInfo
+
+Layout and window navigation adapted from Angelitto's TMDbMovies 1.1.308
+ExtendedInfo component (extended_info_mod.py and ext_* layouts/assets).
+Finder supplies playback, options, tracker sync, watched status, metadata cache,
+and trailer playback. No TMDbMovies provider services or API keys are included.
+
+Angelitto directly confirmed permission on 2026-10-04 to newf276 to reuse and
+adapt these modules in Finder for the use described to him. Attribution is
+retained. This permission record does not assert a general upstream license.

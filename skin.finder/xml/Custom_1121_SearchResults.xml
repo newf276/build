@@ -1,0 +1,409 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<window type="SearchResults" id="1121">
+	<!-- Recent Searches are mirrored by Finder at keyboard-submit time.
+	     Do not update history from window onload; provider refreshes may abort. -->
+	<onunload>ClearProperty(finder.results)</onunload>
+	<defaultcontrol>810</defaultcontrol>
+	<backgroundcolor>background</backgroundcolor>
+	<controls>
+		<control type="group" id="70900">
+			<visible>!String.IsEqual(Skin.String(SearchBusy),1)</visible>
+			<include>DefaultBackground</include>
+			<control type="multiimage">
+				<depth>DepthBackground</depth>
+				<include>FullScreenDimensions</include>
+				<aspectratio>scale</aspectratio>
+				<fadetime>600</fadetime>
+				<animation effect="zoom" center="auto" end="102,102" time="0" condition="Integer.IsGreater(System.StereoscopicMode,0)">conditional</animation>
+				<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
+				<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+				<animation effect="fade" time="400">VisibleChange</animation>
+				<imagepath background="true" colordiffuse="bg_overlay">$VAR[HomeFanartVar]</imagepath>
+				<visible>!Player.HasMedia</visible>
+			</control>
+			<control type="group">
+				<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
+				<!-- WIDGETS GROUP -->
+				<control type="group" id="2000">
+					<left>600</left>
+					<include>OpenClose_Right</include>
+					<!-- SEARCH RESULTS -->
+					<control type="group" id="27000">
+						<include content="Visible_Right_Delayed">
+							<param name="id" value="movies"/>
+						</include>
+						<control type="grouplist" id="27001">
+							<visible allowhiddenfocus="true">!String.IsEmpty(Skin.String(SearchInput))</visible>
+							<include>WidgetGroupListCommon</include>
+							<pagecontrol>27099</pagecontrol>
+							<!-- ========================================================= -->
+							<!-- MOVIES -->
+							<!-- ========================================================= -->
+							<!-- Movies – Finder -->
+							<include content="WidgetListBigPoster" condition="!Skin.HasSetting(HideMovieResults)                         + System.AddonIsEnabled(plugin.video.finder)">
+								<param name="content_path" value="plugin://plugin.video.finder/?mode=build_movie_list&amp;action=tmdb_movies_search&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
+						  		<param name="onleft" value="SetFocus(700)"/>
+						  		<param name="widget_header" value="$LOCALIZE[342]"/>
+						  		<param name="widget_target" value="videos"/>
+								<param name="list_id" value="27011"/>
+								<param name="keep_alive" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
+								<param name="visible" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
+							</include>
+							<!-- ========================================================= -->
+							<!-- TV SHOWS -->
+							<!-- ========================================================= -->
+							<!-- TV – Finder -->
+							<include content="WidgetListBigPoster" condition="!Skin.HasSetting(HideTVShowResults)                         + System.AddonIsEnabled(plugin.video.finder)">
+								<param name="content_path" value="plugin://plugin.video.finder/?mode=build_tvshow_list&amp;action=tmdb_tv_search&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
+						  		<param name="onleft" value="SetFocus(700)"/>
+						  		<param name="widget_header" value="TV Shows"/>
+						  		<param name="widget_target" value="videos"/>
+								<param name="list_id" value="27012"/>
+								<param name="keep_alive" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
+								<param name="visible" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
+							</include>
+							<!-- ========================================================= -->
+							<!-- ANIME (The Finder) -->
+							<!-- ========================================================= -->
+							<include content="WidgetListPoster" condition="!Skin.HasSetting(HideAnimeResults) + System.AddonIsEnabled(plugin.video.finder)">
+								<param name="content_path" value="plugin://plugin.video.finder/?mode=build_tvshow_list&amp;action=tmdb_tv_search&amp;is_anime_list=true&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
+						  		<param name="onleft" value="SetFocus(700)"/>
+						  		<param name="widget_header" value="Anime"/>
+						  		<param name="widget_target" value="videos"/>
+								<param name="list_id" value="27013"/>
+								<param name="keep_alive" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
+								<param name="visible" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
+							</include>
+							<!-- ========================================================= -->
+
+							<!-- ========================================================= -->
+							<!-- TRAKT LISTS -->
+							<!-- ========================================================= -->
+							<!-- TRAKT – Finder -->
+							<include content="WidgetListCategoryStacked" condition="!Skin.HasSetting(HideTraktResults)                         + System.AddonIsEnabled(plugin.video.finder)">
+								<param name="content_path" value="plugin://plugin.video.finder/?mode=trakt.list.search_trakt_lists&amp;query=$INFO[Skin.String(SearchInputTraktEncoded)]"/>
+						  		<param name="onleft" value="SetFocus(700)"/>
+						  		<param name="widget_header" value="Trakt Lists"/>
+						  		<param name="widget_target" value="videos"/>
+								<param name="list_id" value="27017"/>
+								<param name="visible" value="!String.IsEmpty(Skin.String(SearchInputEncoded))"/>
+							</include>
+							<include content="WidgetListBigPosterStacked" condition="!Skin.HasSetting(HideTraktResults)                         + System.AddonIsEnabled(plugin.video.finder)">
+								<param name="content_path" value="$INFO[Window(1121).Property(finder.27017.path)]"/>
+								<param name="widget_header" value="$INFO[Window(1121).Property(finder.27017.label)]"/>
+								<param name="widget_target" value="videos"/>
+								<param name="list_id" value="270171"/>
+							</include>
+						</control>
+						<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
+							<param name="scrollbar_id" value="27099"/>
+						</include>
+					</control>
+				</control>
+				<include content="TopBar">
+					<param name="breadcrumbs_label" value=""/>
+				</include>
+				<include>BottomBar</include>
+				<control type="group">
+					<depth>DepthContentPanel</depth>
+					<include>OpenClose_Left</include>
+					<include content="ContentPanel">
+						<param name="width" value="540"/>
+					</include>
+					<!-- Persistent Search Results navigation. Poster rows always return here on Left. -->
+					<control type="grouplist" id="700">
+						<!-- Search controls belong to the left/search state only. Hide them while poster results own focus so Side Info and ratings have a clean FENtastic-style canvas. -->
+						<visible allowhiddenfocus="true">!ControlGroup(2000).HasFocus</visible>
+						<orientation>horizontal</orientation>
+						<itemgap>-50</itemgap>
+						<left>30</left>
+						<width>520</width>
+						<height>110</height>
+						<top>175</top>
+						<depth>DepthContentPopout</depth>
+						<onup>SetFocus(9000,99,absolute)</onup>
+						<ondown>SetFocus(9000,0,absolute)</ondown>
+						<onright>SetFocus(2000)</onright>
+						<align>center</align>
+						<!-- Finder Search Results navigation: fixed five-option order -->
+						<include content="IconButton"><param name="control_id" value="810"/><param name="onclick" value="RunPlugin(plugin://plugin.video.finder/?mode=search.get_key_id&amp;search_type=media_title&amp;combined_results=true)"/><param name="icon" value="icons/search.png"/><param name="label" value="New Search"/></include>
+						<include content="IconButton"><param name="control_id" value="802"/><param name="onclick" value="SetFocus(9000)"/><param name="icon" value="icons/infodialogs/timer.png"/><param name="label" value="Search History"/></include>
+						<include content="IconButton"><param name="control_id" value="804"/><param name="onclick" value="RunPlugin(plugin://plugin.video.finder/?mode=search.get_key_id&amp;search_type=people&amp;isFolder=false)"/><param name="icon" value="icons/people.png"/><param name="label" value="Search Actors"/></include>
+						<include content="IconButton"><param name="control_id" value="813"/><param name="onclick" value="ActivateWindow(home)"/><param name="icon" value="icons/home.png"/><param name="label" value="Return Home"/></include>
+						<include content="IconButton"><param name="control_id" value="811"/><param name="onclick" value="RunPlugin(plugin://plugin.video.finder/?mode=search.clear_all_history)"/><param name="onclick_2" value="Skin.SetString(SearchHistory.1,)"/><param name="onclick_3" value="Skin.SetString(SearchHistory.2,)"/><param name="onclick_4" value="Skin.SetString(SearchHistory.3,)"/><param name="onclick_5" value="Skin.SetString(SearchHistory.4,)"/><param name="onclick_6" value="Skin.SetString(SearchHistory.5,)"/><param name="onclick_7" value="Skin.SetString(SearchHistory.6,)"/><param name="onclick_8" value="Skin.SetString(SearchHistory.7,)"/><param name="onclick_9" value="Skin.SetString(SearchHistory.8,)"/><param name="onclick_10" value="Skin.SetString(SearchHistory.9,)"/><param name="onclick_11" value="Skin.SetString(SearchHistory.10,)"/><param name="onclick_12" value="Skin.SetString(SearchHistory.11,)"/><param name="onclick_13" value="Skin.SetString(SearchHistory.12,)"/><param name="onclick_14" value="Skin.SetString(SearchHistory.13,)"/><param name="onclick_15" value="Skin.SetString(SearchHistory.14,)"/><param name="onclick_16" value="Skin.SetString(SearchHistory.15,)"/><param name="onclick_17" value="Skin.SetString(SearchHistory.16,)"/><param name="onclick_18" value="Skin.SetString(SearchHistory.17,)"/><param name="onclick_19" value="Skin.SetString(SearchHistory.18,)"/><param name="onclick_20" value="Skin.SetString(SearchHistory.19,)"/><param name="onclick_21" value="Skin.SetString(SearchHistory.20,)"/><param name="onclick_22" value="Skin.SetString(SearchHistoryCount,0)"/><param name="onclick_23" value="SetFocus(700)"/><param name="icon" value="icons/infodialogs/uninstall.png"/><param name="label" value="Clear Search History"/></include>
+						<include content="IconButton"><param name="control_id" value="812"/><param name="onclick" value="Fullscreen"/><param name="icon" value="icons/now-playing/fullscreen.png"/><param name="label" value="$LOCALIZE[31000]"/><param name="visible" value="Player.HasMedia"/></include>
+					</control>
+					<control type="group">
+						<animation effect="slide" time="300" start="-492,0" end="0,0" tween="sine" easing="inout">VisibleChange</animation>
+						<!-- Keep Search History in the left panel only. Hide its text layer while poster results own focus so history labels cannot bleed through Side Info. -->
+						<visible allowhiddenfocus="true">!ControlGroup(2000).HasFocus</visible>
+						<control type="fixedlist" id="9000">
+							<left>19</left>
+							<top>315</top>
+							<width>492</width>
+							<height>335</height>
+							<movement>7</movement>
+							<focusposition>0</focusposition>
+							<onfocus>ClearProperty(listposition,home)</onfocus>
+							<!-- Reuse the current Search Results window directly; do not invoke Finder's keyboard workflow. -->
+							<onclick>Skin.SetString(SearchInput,$INFO[ListItem.Label])</onclick>
+							<onclick>Skin.SetString(SearchInputEncoded,$ESCINFO[ListItem.Label])</onclick>
+							<onclick>Skin.SetString(SearchInputTraktEncoded,$ESCINFO[ListItem.Label])</onclick>
+							<onclick>Container.Refresh</onclick>
+							<onclick>SetFocus(2000)</onclick>
+							<onright condition="!String.IsEmpty(Skin.String(SearchInput))">SetFocus(2000)</onright>
+							<onup>700</onup>
+							<ondown>700</ondown>
+							<scrolltime tween="cubic" easing="out">500</scrolltime>
+							<focusedlayout height="63">
+								<control type="group">
+									<animation effect="fade" start="100" end="0" time="0">UnFocus</animation>
+								</control>
+								<control type="label">
+									<include>FocusBounce</include>
+									<left>45</left>
+									<top>0</top>
+									<height>83</height>
+									<width>355</width>
+									<aligny>center</aligny>
+									<font>font32</font>
+									<label>$INFO[ListItem.Label]</label>
+									<textcolor>unfocused_text</textcolor>
+									<shadowcolor>text_shadow</shadowcolor>
+									<scroll>$PARAM[focused]</scroll>
+									<visible>ControlGroup(700).HasFocus</visible>
+								</control>
+								<control type="label">
+									<include>FocusBounce</include>
+									<left>45</left>
+									<top>0</top>
+									<height>83</height>
+									<width>355</width>
+									<aligny>center</aligny>
+									<font>font45_title</font>
+									<label>$INFO[ListItem.Label]</label>
+									<shadowcolor>text_shadow</shadowcolor>
+									<scroll>$PARAM[focused]</scroll>
+									<visible>!ControlGroup(700).HasFocus</visible>
+								</control>
+							</focusedlayout>
+							<itemlayout height="63">
+								<control type="label">
+									<left>45</left>
+									<top>0</top>
+									<height>83</height>
+									<width>355</width>
+									<aligny>center</aligny>
+									<font>font32</font>
+									<label>$INFO[ListItem.Label]</label>
+									<textcolor>darkgrey</textcolor>
+									<shadowcolor>text_shadow</shadowcolor>
+								</control>
+							</itemlayout>
+							<content>
+								<!-- SEARCH HISTORY -->
+								<include content="SearchHistory"/>
+							</content>
+						</control>
+						
+					</control>
+					<control type="group">
+						<animation effect="slide" time="300" start="-492,0" end="0,0" tween="sine" easing="inout">VisibleChange</animation>
+						<width>550</width>
+						<visible allowhiddenfocus="true">[String.IsEqual(ListItem.DBtype,movie) | String.IsEqual(ListItem.DBtype,tvshow) | String.IsEqual(ListItem.DBtype,season) | String.IsEqual(ListItem.DBtype,episode)]</visible>
+						<control type="image">
+							<left>30</left>
+							<top>50</top>
+							<width>395</width>
+							<height>153</height>
+							<texture background="true">$VAR[ClearlogoVar]</texture>
+							<aspectratio align="center">keep</aspectratio>
+						</control>
+						<control type="textbox">
+							<top>75</top>
+							<left>30</left>
+							<width>430</width>
+							<aligny>center</aligny>
+							<height>98</height>
+							<font>font36_title</font>
+							<label>$INFO[ListItem.Label]</label>
+							<visible>String.IsEmpty(ListItem.Art(clearlogo))</visible>
+						</control>
+						<control type="textbox">
+							<left>30</left>
+							<top>239</top>
+							<width>410</width>
+							<bottom>60</bottom>
+							<label>$VAR[InfoPanel]</label>
+							<textcolor>unfocused_text</textcolor>
+							<autoscroll delay="10000" time="3000" repeat="10000">Skin.HasSetting(autoscroll)</autoscroll>
+							<visible>Skin.HasSetting(Disable.RatingsINF) | String.IsEmpty(Skin.String(mdblist_api_key))</visible>
+						</control>
+						<include condition="![Skin.HasSetting(Disable.RatingsINF) | String.IsEmpty(Skin.String(mdblist_api_key))]" content="RatingsInfoPanel">
+							<param name="left" value="30"/>
+							<param name="width" value="410"/>
+							<param name="top" value="239"/>
+							<param name="ratings_spacing" value="7"/>
+							<param name="height_noalt" value="460"/>
+							<param name="height_alt_movie" value="330"/>
+							<param name="height_alt_tvshow" value="290"/>
+						</include>
+						<!-- <control type="textbox">
+						<left>30</left>
+						<top>467</top>
+						<width>530</width>
+						<height>413</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>font27</font>
+						<textcolor>80FFFFFF</textcolor>
+						<label>$LOCALIZE[19055]</label>
+						<visible>String.IsEmpty(Listitem.Plot) + String.IsEmpty(Listitem.Tagline) + !ListItem.IsCollection + !ListItem.IsParentFolder</visible>
+					</control> -->
+					</control>
+				</control>
+				<control type="group">
+					<depth>DepthBars</depth>
+					<bottom>0</bottom>
+					<height>70</height>
+					<animation effect="fade" start="0" end="100" time="300" delay="300">WindowOpen</animation>
+					<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+					<include condition="!Skin.HasSetting(hide_mediaflags)" content="MediaFlags">
+						<param name="infolabel_prefix" value="Container."/>
+						<param name="resolution_var" value="$VAR[ContainerResolutionFlagVar]"/>
+					</include>
+					<control type="rss">
+						<animation effect="slide" end="0,90" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>
+						<left>0</left>
+						<bottom>0</bottom>
+						<height>39</height>
+						<width>100%</width>
+						<font>font12</font>
+						<urlset>1</urlset>
+						<hitrect x="-100" y="0" w="1" h="1"/>
+						<titlecolor>button_focus</titlecolor>
+						<textcolor>button_focus</textcolor>
+						<shadowcolor>text_shadow</shadowcolor>
+						<headlinecolor>FFC0C0C0</headlinecolor>
+						<visible>Skin.HasSetting(hide_mediaflags) | !ControlGroup(2000).HasFocus</visible>
+						<animation effect="fade" time="300">VisibleChange</animation>
+					</control>
+				</control>
+				<control type="group">
+					<animation effect="slide" time="300" start="-492,0" end="0,0" tween="sine" easing="inout">VisibleChange</animation>
+					<include>OpenClose_Left</include>
+					<visible allowhiddenfocus="true">Integer.IsGreater(Skin.String(SearchHistoryCount),0) + ![String.IsEqual(ListItem.DBtype,movie) | String.IsEqual(ListItem.DBtype,tvshow) | String.IsEqual(ListItem.DBtype,season) | String.IsEqual(ListItem.DBtype,episode)]</visible>
+					<depth>DepthBars</depth>
+					<animation effect="slide" end="0,-90" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>
+					<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
+					<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+					<top>30</top>
+					<left>90</left>
+					<control type="image">
+						<visible>!Skin.HasSetting(show_search_help)</visible>
+						<left>-23</left>
+						<top>840</top>
+						<aspectratio>keep</aspectratio>
+						<width>350</width>
+						<height>144</height>
+						<texture colordiffuse="grey">special://skin/media/logos/search_results_logo.png</texture>
+					</control>
+					<control type="label">
+						<top>65</top>
+						<left>-23</left>
+						<width>1085</width>
+						<aligny>center</aligny>
+						<height>98</height>
+						<font>font27</font>
+						</control>
+					<control type="label">
+						<!-- Finder: keep this subordinate to the icon toolbar, using native skin typography. -->
+						<top>225</top>
+						<left>-25</left>
+						<width>500</width>
+						<aligny>center</aligny>
+						<height>55</height>
+						<font>font27</font>
+						<textcolor>unfocused_text</textcolor>
+						<label>Recent searches:</label>
+					</control>
+					<control type="label">
+						<visible>Skin.HasSetting(DefaultSearchWindowBehavior) + Integer.IsGreater(Skin.String(SearchHistoryCount),0) + !String.IsEqual(Window(1121).Property(finder.results),1)</visible>
+						<top>500</top>
+						<left>650</left>
+						<width>1085</width>
+						<aligny>center</aligny>
+						<align>center</align>
+						<height>225</height>
+						<font>font14</font>
+						<textcolor>unfocused_text</textcolor>
+						<wrapmultiline>true</wrapmultiline>
+						<label>What you can do here:[CR][CR]Explore your past searches on the left, open Trakt Lists, search for actors/actresses, start a new search, or clear your recent search history.</label>
+					</control>
+					<control type="label">
+						<visible>Skin.GetBool(show_search_help) + !Skin.HasSetting(DefaultSearchWindowBehavior)</visible>
+						<top>635</top>
+						<left>-25</left>
+						<width>1085</width>
+						<aligny>center</aligny>
+						<height>98</height>
+						<font>font36_title</font>
+						<label>What you can do here:</label>
+					</control>
+					<control type="label">
+						<visible>Skin.HasSetting(show_search_help) + !Skin.HasSetting(DefaultSearchWindowBehavior)</visible>
+						<top>675</top>
+						<left>-25</left>
+						<width>450</width>
+						<height>350</height>
+						<aligny>center</aligny>
+						<font>font12</font>
+						<textcolor>unfocused_text</textcolor>
+						<wrapmultiline>true</wrapmultiline>
+						<label>1. Explore your past searches[CR]2. Open Trakt Lists[CR]3. Search for actors/actresses[CR]4. Start a new Movie/TV search[CR]5. Clear your recent search history</label>
+					</control>
+				</control>
+				<control type="group">
+					<include>OpenClose_Right</include>
+					<animation effect="slide" time="300" start="-492,0" end="0,0" tween="sine" easing="inout">VisibleChange</animation>
+					<animation effect="slide" end="0,-90" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>
+					<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
+					<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+					<control type="label">
+						<visible>!String.IsEmpty(Skin.String(SearchInput))</visible>
+						<top>5</top>
+						<left>0</left>
+						<width>1085</width>
+						<aligny>center</aligny>
+						<height>85</height>
+						<font>font37</font>
+						<textcolor>unfocused_text</textcolor>
+						<label>Search results for: [B]$INFO[Skin.String(SearchInput)][/B]</label>
+					</control>
+				</control>
+			</control>
+		</control>
+		<!-- SPINNER OVERLAY -->
+		<!-- <control type="group" id="99998">
+			<visible>String.IsEqual(Skin.String(SearchBusy),1)</visible>
+			<depth>999999</depth>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>1920</width>
+				<height>1080</height>
+				<texture colordiffuse="AA000000">black.png</texture>
+			</control>
+			<control type="multiimage">
+				<centerleft>960</centerleft>
+				<centertop>540</centertop>
+				<width>200</width>
+				<height>200</height>
+				<aspectratio>keep</aspectratio>
+				<imagepath>search_spinner/</imagepath>
+				<timeperimage>30</timeperimage>
+				<randomize>false</randomize>
+			</control>
+		</control> -->
+	</controls>
+</window>

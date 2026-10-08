@@ -1,0 +1,5 @@
+Finder can display your PunchPlay Personal Lists and open their Movie and TV Show contents.
+
+Personal Lists are separate from the PunchPlay Watchlist and Collection. They are useful for themed or purpose-specific groups that you create yourself.
+
+Finder also supports adding and removing individual media items from PunchPlay Personal Lists through the PunchPlay Lists Manager and Quick Add workflows when an authorized PunchPlay account is available.

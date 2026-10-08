@@ -1,0 +1,8 @@
+Finder can decide what to do when a normal scrape encounters conditions that may justify trying again. Rescrape controls cover cases such as ignored cache, IMDb year mismatch, "with all" searches, episode groups and ignored filters.
+
+Each rescrape condition can be set to:
+- Off
+- Auto
+- Prompt
+
+This lets you balance faster scraping against broader fallback searches when the first result set is incomplete.

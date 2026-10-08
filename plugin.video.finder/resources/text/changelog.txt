@@ -1,0 +1,210 @@
+Version 1.0.08.8 - First-Run Finder Skin Handoff and Persistence
+
+- Finalized the Finder + Finder Skin first-run experience from installation through the ready-to-use Home screen.
+- Finder now installs Finder Skin on demand when the integrated interface is selected, activates it, and continues directly into Finder Skin Pre-Config.
+- Serialized Pre-Config, Primary Tracker selection, account authorization and initial tracker synchronization so setup windows do not race one another.
+- After the selected tracker is ready, Finder persists skin.finder as Kodi's selected skin, performs the final Finder Skin load, allows the interface to settle, and opens a fresh Home screen.
+- The completed Home screen is now the end of first-run setup: users can begin using Finder immediately and do not need to back out of an Add-ons window, manually select Finder Skin, or exit/restart Kodi.
+- Finder Skin remains selected across subsequent Kodi restarts.
+- Preserved PunchPlay watched-history/list synchronization, In Progress widget refresh, Repair PunchPlay Watched Database, and the existing first-run authorization/rebuild logic.
+- Updated the Setup Guide and relevant Tips to describe the completed automatic first-run behavior.
+
+Version 1.0.08 - In Progress Ordering and Status Integration
+
+- Fixed TV-show In Progress ordering so recent resumable activity can move the parent show to the front immediately, rather than relying only on the most recent completed/watched episode timestamp.
+- Preserved watched-history ordering while also considering the newest resumable episode last-played timestamp.
+- Preserved the accepted first-run post-sync skin reload so Home widgets populate after tracker setup without requiring a Kodi restart or a visit to My Lists.
+- Matched Finder and Finder Skin repository versions at 1.0.08.
+- Updated setup guidance and watched-progress Tips for the revised In Progress behavior and Finder Skin status indicators.
+
+Version 1.0.07 - Safe Reset and Factory Reset
+
+- Added Reset Finder Settings to Defaults as the yellow warning-level reset.
+- Yellow reset restores Finder preferences while preserving authorized accounts, API credentials, tracker/setup state, watched data, personal lists and caches.
+- Preserved Finder interface mode so an established Finder + Finder Skin installation does not return to Welcome or Pre-Config after a yellow reset.
+- Added Factory Reset Finder as the red destructive reset with two-stage confirmation.
+- Factory reset wipes Finder data on the next full Kodi startup and returns Finder to the genuine first-run Welcome flow.
+- Added clear completion/startup messaging for both reset paths.
+- Kept Repair PunchPlay Watched Database available for targeted watched-history recovery.
+- Matched Finder and Finder Skin repository versions at 1.0.07.
+
+Version 1.0.06 - PunchPlay Setup and Reset Tools
+
+- Show an initial PunchPlay sync notice after authorization and watched-history movie/episode counts on completion.
+- Add yellow Reset Finder Settings to Defaults and red Factory Reset Finder in General / Danger Zone and at the bottom of Tools.
+- Defaults preserve accounts, API keys, tracker selection, watched data, lists and caches.
+- Both reset actions require confirmation. Factory reset runs before Finder services on the next full Kodi restart.
+- Keep Repair PunchPlay Watched Database available.
+
+Version 1.0.06 Test 3
+
+Trailer Availability Notifications
+
+- Show "Trailer restricted in your country" when YouTube explicitly reports a country or region restriction.
+- Show a separate unavailable message for other confirmed availability refusals.
+- Preserve alternate-trailer fallback; notify only if no alternative succeeds.
+- Log confirmed unavailability as a warning; retain error handling for unexpected failures.
+- Preserve MPEG-DASH playback, manifest probe fixes and the off switch.
+
+Version 1.0.06 Test 2
+
+DASH Manifest Probe Fix
+
+- Added HEAD support for Kodi's local DASH manifest checks.
+- Handled Kodi's MIME query suffix on manifest requests.
+- Read trailer resolution from Finder's settings cache with the existing automatic default.
+- Preserved fast DASH playback and the native MP4/HLS toggle.
+- ExtendedInfo return-route investigation remains separate from this proxy fix.
+
+Version 1.0.06 Test 1
+
+Optional MPEG-DASH Trailer Playback
+
+- Restored Angelitto's MPEG-DASH manifest and local proxy playback path.
+- Added Enable MPEG-DASH Trailers under Features > ExtendedInfo; enabled by default.
+- Kept native MP4/HLS playback when disabled or InputStream Adaptive is unavailable.
+- Kept the existing ExtendedInfo and trailer information-panel integration.
+- Test build for comparing trailer startup on TV and Fire TV.
+
+Development Build 1.0.09
+
+Finder Application Credentials
+
+- Set Newf's TMDb V3 API key and V4 read access token as configurable defaults.
+- Adopted new credential defaults on upgrade for old shared V3 keys and blank V4 settings, preserving personal entries.
+- Kept the V4 token editable and masked under Meta Accounts > TMDb API.
+- Updated Premiumize integration using the supplied Finder application file.
+
+Development Build 1.0.08
+
+TMDb Token Settings Layout Fix
+
+- Placed the editable V4 read token directly below the V3 API key in Meta Accounts > TMDb API.
+- Simplified token field visibility and kept its value hidden.
+
+Development Build 1.0.07
+
+Personal TMDb Application Token
+
+- Removed the embedded TMDb V4 read access token.
+- Added a masked Read Access Token (V4) field under Accounts > TMDb API in both Finder settings layouts.
+- Added a missing-token prompt before TMDb account authorization.
+- Kept application credentials separate from automatically saved account authorization.
+
+Version 1.0.06
+
+Finder and Finder Skin Matched Release
+
+- Replaced Extras with ExtendedInfo, adapted from Angelitto's TMDbMovies component with permission and attribution.
+- Added movie/TV details, cast biographies and credits, recommendations, collections/seasons, episodes, videos and artwork.
+- Connected Play/Browse, Options, Sync and Play Trailer to Finder's existing capabilities.
+- Routed Kodi Info to ExtendedInfo for Finder items in Finder Skin and corrected the hidden native-window handoff.
+- Fixed trailer playback behind information panels; MPEG-DASH is disabled, with progressive MP4 or HLS used instead.
+- Matched supported Finder popup windows to Finder Skin colors, textures and Kodi corner icons; adjusted posters and text spacing.
+- Added consistent authorization choices for TMDb, Trakt and PunchPlay in My Lists.
+- Added deferred recovery choices for connected account services; No is remembered across restarts and manual authorization can ask again.
+- Fixed TMDb list failures without caching partial results or treating failures as empty accounts.
+- Added Clear Progress for supported In Progress actions using Kodi JSON-RPC.
+- Added default-on navigation to the first aired unwatched episode while keeping other episodes available.
+- Updated Tips, setup documentation and contributor credits.
+
+Credits and Thanks
+
+Angelitto — TMDbMovies ExtendedInfo layout, navigation and assets, adapted with his direct permission. Finder connects the adapted windows to its own playback, trailers, trackers and list managers. TMDbMovies does not need to be installed.
+
+silentbob2 — Forge, the source project from which Finder development began.
+Tikipeter — Fen/Fen Light foundations and the work inherited through that lineage.
+ivarbrandt and Zaxxon709 — FENtastic skin foundations and subsequent skin work inherited by Finder Skin.
+Team Kodi — Kodi and the Estuary skin foundations.
+
+Existing upstream licenses and notices remain included. Thanks to the developers and community whose work made this project possible.
+
+Earlier Public Releases
+
+Version 1.0.05 — Phase 2 Finalization
+
+Finder Skin Integration
+
+• Added first-use interface selection between Finder + Finder Skin and Finder Standalone.
+• Added Finder Interface Setup under Tools so the saved interface mode can be changed later.
+• Finder only opens the Finder Skin Pre-Config selector when skin.finder is the active Kodi skin.
+• Finalized integrated Finder Skin Search behavior, including Recent Searches and stable result-control handling for submitted searches.
+• Finalized Finder Skin TV widgets using Finder-native Genres, Categories, In Progress, Popular Today, Recently Trending, Most Watched, Providers, and Networks.
+
+
+Native MDbList Ratings
+
+• Added Finder's native MDbList ratings-display service for Finder Skin.
+• Removed the need for a separate FENtastic/Finder helper add-on for MDbList ratings.
+• Supports available IMDb, IMDb Popular, Metacritic, Rotten Tomatoes critic and audience, and TMDb rating displays.
+• Added local MDbList rating caching and immediate use of an updated MDbList API key.
+• MDbList integration in Phase 2 is ratings display only; it is not a Primary Tracker or watched-state provider. Finder, Trakt, and PunchPlay remain the Primary Tracker choices.
+
+
+Native Trailer Playback
+
+• Added native Finder trailer playback for Movies and TV Shows.
+• Play Trailer from the Finder context menu now routes directly through Finder.
+• ExtendedInfo Play Trailer and ExtendedInfo video selections now use Finder's native trailer resolver.
+• Removed Finder's dependency on plugin.video.youtube for trailer playback.
+• Added compatibility for metadata cached by older Finder versions so legacy plugin.video.youtube trailer URLs are converted to Finder's native route without requiring a metadata-cache clear.
+• Uses Kodi InputStream Adaptive when an adaptive trailer stream is supplied.
+
+
+PunchPlay and Tracker Improvements
+
+• Added PunchPlay as a Primary Tracker alongside Finder and Trakt.
+• First-run PunchPlay setup synchronizes watched history and validates Watchlist, Collection, and Personal List data.
+• Added PunchPlay Watchlist, Collection, and Personal List management.
+• Added PunchPlay Lists Manager and Quick Add integration.
+• Added Trakt and PunchPlay additive list-transfer tools while preserving existing content.
+• Added alphabetical sorting options for PunchPlay Watchlist and Collection.
+• Added Clear PunchPlay Cache in Finder settings to rebuild local PunchPlay watched-state data without revoking authorization.
+• Retained Repair PunchPlay Watched Database for recovery and troubleshooting.
+
+
+General Finder Improvements
+
+• Updated Finder for Kodi 22 (Piers) behavior and compatibility.
+• Removed the old built-in Finder updater; updates are delivered through Kodi's repository update system.
+• Updated menu, provider, network, and PunchPlay artwork to a consistent monochrome Finder style.
+• Reworked Tools -> Tips for Use so the guide reflects Finder's current tracker, skin-integration, cache, ratings, widget, Search, and trailer features.
+
+
+Version 1.0.05
+
+• Reworked the Kodi changelog display and documentation formatting.
+• Unified TV Network and Movie/TV Provider menu artwork with Finder's monochrome icon style.
+• Removed the full-colour TMDb provider-logo fallback from navigation menus.
+• Rewrote Finder's Tips system to match the current feature set at that stage of development.
+
+
+Version 1.0.03
+
+PunchPlay Integration
+
+• Corrected PunchPlay Collection add and remove endpoints.
+• Added PunchPlay Collection and Personal List targets to Quick Add and context selection.
+• Added Primary Tracker selection for Finder, Trakt, or PunchPlay.
+• Added PunchPlay Watchlist, Collection, Personal Lists, startup validation, and list-management actions.
+• Added additive Trakt/PunchPlay transfers for supported Watchlists, Collections, and Personal Lists.
+
+
+Version 1.0.02
+
+Core Improvements
+
+• Added PunchPlay support alongside TMDb and Trakt.
+• Added tracked progress support for In Progress and Next Episodes using the selected Primary Tracker.
+• Added PunchPlay database repair tools and Quick Add support.
+• Removed the built-in updater in favor of repository-driven Kodi updates.
+• Continued Kodi 22 platform compatibility work.
+
+
+About Finder
+
+Finder was developed specifically to meet the needs of family and friends rather than the broader public. It is not intended to be cross-posted to Reddit or public forums.
+
+Enjoy Finder.
+
+— Newf276

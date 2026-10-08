@@ -1,0 +1,12 @@
+Finder can work with TMDb Watchlist and TMDb Favorites when the required TMDb account/list access is configured.
+
+TMDb Watchlist and Favorites each have their own sorting controls:
+- Title
+- Release Date ascending
+- Release Date descending
+- Shuffle
+- Default from TMDb
+
+These lists are separate from Trakt and PunchPlay lists. Use Quick Add or the appropriate manager/context action to work with them where supported.
+
+If TMDb is signed out, Finder -> My Lists shows Authorize TMDb. Select it and answer Yes to use the existing browser/QR sign-in flow, or No to decline. Authorized accounts show TMDb Lists instead, with an Authorize TMDb entry inside for manual reauthorization. Leave and reopen My Lists after sign-in to refresh its contents. The authorization site may still identify the inherited application as Forge until a Finder application registration is configured.

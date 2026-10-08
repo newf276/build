@@ -1,0 +1,5 @@
+Finder includes playback controls for skip markers such as intros, recaps and outros, plus stinger handling.
+
+Skip marker settings can be enabled separately for intro, recap and outro segments. Finder can use chapter information where available and can apply confidence/submission thresholds so weak markers are not automatically trusted. AnimeSkip support is also available as a source for anime episode skip data.
+
+Playback controls should be enabled gradually so you can confirm they behave as expected with your sources.

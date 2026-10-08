@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<window>
+    <defaultcontrol always="true">10</defaultcontrol>
+    <controls>
+        <control type="group">
+            <left>1500</left>
+            <top>910</top>
+            <width>360</width>
+            <height>80</height>
+            <control type="button" id="10">
+                <width>360</width>
+                <height>80</height>
+                <label>$INFO[Window.Property(skip.label)]</label>
+                <font>font14</font>
+                <!-- Finder_33 -->
+                <textcolor>unfocused_text</textcolor>
+                <focusedcolor>focused_text</focusedcolor>
+                <texturefocus colordiffuse="button_focus">special://skin/media/buttons/dfo.png</texturefocus>
+                <texturenofocus colordiffuse="button_focus2">special://skin/media/buttons/dnfo.png</texturenofocus>
+                <align>center</align>
+                <aligny>center</aligny>
+            </control>
+        </control>
+    </controls>
+</window>

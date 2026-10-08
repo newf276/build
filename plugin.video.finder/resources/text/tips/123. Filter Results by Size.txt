@@ -1,0 +1,12 @@
+Finder's current size filtering has three modes under Settings -> Results -> Sorting and Filtering:
+
+OFF
+- No size-based filtering is applied.
+
+USE LINE SPEED
+- Finder estimates an allowable file size from the configured internet speed and the duration of the movie or episode. Longer media therefore allows a larger calculated size.
+
+USE SIZE
+- Finder uses the configured maximum/minimum movie and episode sizes instead of calculating the limit from line speed.
+
+Additional controls can determine how unknown sizes are handled, how size affects sorting, and the sort direction. This replaces the older tip's simplified "line speed only" description.

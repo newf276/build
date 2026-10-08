@@ -1,0 +1,13 @@
+Special Open Actions control what Finder opens automatically when you select media.
+
+For Movies, the available choices are:
+- None
+- Open ExtendedInfo
+- Open Movie Set
+- Both
+
+For TV Shows, the available choices are:
+- None
+- Open ExtendedInfo
+
+These settings are useful if you normally want additional information immediately after selecting a movie or show.

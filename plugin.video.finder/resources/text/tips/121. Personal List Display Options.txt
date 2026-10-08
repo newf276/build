@@ -1,0 +1,3 @@
+Finder provides display options for Personal Lists. You can choose whether unseen items are moved toward the top, whether unseen items are highlighted, what highlight style is used, and whether the list author is shown.
+
+These options are presentation controls; they do not change the underlying list contents.

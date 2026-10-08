@@ -1,0 +1,66 @@
+Version 1.0.08
+
+Finder Watched and Progress Status Indicators
+
+- Added a four-state Finder status language across supported Home widgets and list views.
+- Untouched TV shows use a thin outlined circle with a small center dot.
+- Partially watched TV shows use a half-filled circle while retaining the watched/total episode count.
+- Movies or episodes with a genuine stored resume point use the eye indicator.
+- Fully watched items retain the existing circle-with-check indicator.
+- Removed the redundant thin progress stripe from the Finder TV-show Home status presentation and kept watched/total counts visible without focus.
+- Matched Finder Skin to Finder 1.0.08 and the revised In Progress ordering behavior.
+- Updated Setup Guide, README and release information.
+
+Version 1.0.07
+
+Finder Reset Tools and Tools Window
+
+- Added yellow Reset Finder Settings to Defaults and red Factory Reset Finder directly to the Finder Skin Tools menu.
+- Expanded the Tools dialog so all nine maintenance/setup actions are visible without scrolling.
+- Kept Reload Skin below the reset controls and retained the existing Tools actions.
+- Matched the skin to Finder 1.0.07 and the tested reset workflow.
+- Yellow reset preserves established Finder + Finder Skin setup; red Factory Reset intentionally returns Finder to first-run Welcome and Pre-Config setup.
+- Updated the in-skin Setup Guide and release information for 1.0.07.
+
+Version 1.0.06
+
+ExtendedInfo and Empty Submenu Fixes (Test 2)
+
+- Added hidden static entries to eight empty submenu definitions to prevent invalid-include and directory lookup errors.
+- Run Finder ExtendedInfo widget URLs as dialog commands instead of video playback requests.
+- Cover standard and stacked home widget layouts.
+- Preserve ordinary playback, browsing and the existing visual configuration.
+
+Finder Skin Matched Release
+
+- Enabled top-bar weather and WideInfoWall home widgets by default.
+- Added Artwork background choices: Default 1 (redblur.jpg, black), Default 2 (blueblur.jpg), or Select Your Own.
+- Kept only the two bundled backgrounds and added blue/greyscale Kodi logo choices.
+- Disabled media fanart backgrounds by default; users can still enable them.
+- Removed skin/weather/genre fanart-pack selection, pack rendering and raindrop backgrounds.
+- Included the shared MDbList ratings key automatically, with personal-key entry and a Restore Shared Key option.
+- Enabled OSD auto close (5 seconds), bottom seek bar, video info on pause and stream filename on pause.
+- Applied these revised defaults once on first startup; later user choices are preserved.
+
+- Preserved the accepted category pill dimensions, notification-style borders and translucent interiors.
+- Removed settings-menu icon entrance animations.
+- Added default WideInfoWall home media widgets; Search retains Poster View 54.
+- Kept movie/TV media lists at List View 50 and standard navigation menus at Wide List View 55.
+- Enabled default top-right weather information and a weather-service configuration shortcut.
+- Opened Finder ExtendedInfo from Kodi Info for Finder items without leaving the native information dialog underneath.
+- Shortened the Add-ons category label to Install From Repo without changing its action or pill geometry.
+- Updated the in-skin changelog, Setup Guide, Finder Skin Tips and credits.
+
+Credits and Thanks
+
+Angelitto — TMDbMovies ExtendedInfo layout, navigation and assets, adapted with his direct permission. Finder connects the adapted windows to its own playback, trailers, trackers and list managers. TMDbMovies does not need to be installed.
+
+silentbob2 — Forge, the source project from which Finder development began.
+Tikipeter — Fen/Fen Light foundations and the work inherited through that lineage.
+ivarbrandt and Zaxxon709 — FENtastic skin foundations and subsequent skin work inherited by Finder Skin.
+Team Kodi — Kodi and the Estuary skin foundations.
+
+Existing upstream licenses and notices remain included. Thanks to the developers and community whose work made this project possible.
+
+Version 1.0.05
+- Finder-integrated Search, TV widgets and MDbList ratings; Finder-specific setup and tips.

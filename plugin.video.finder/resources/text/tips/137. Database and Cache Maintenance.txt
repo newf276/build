@@ -1,0 +1,13 @@
+Finder provides Tools -> Database & Cache Maintenance for maintenance and troubleshooting.
+
+Available maintenance actions include checking for corrupt databases, cleaning databases, remaking the settings cache, clearing general caches, and clearing individual caches such as metadata, lists, TMDb lists, Trakt, IMDb, internal or external scrapers and debrid caches. Favorites can be handled separately.
+
+PunchPlay also has a Clear PunchPlay Cache action in Finder settings. This clears and rebuilds Finder's local PunchPlay watched-state cache from PunchPlay without revoking your PunchPlay authorization.
+
+For PunchPlay users there is also Repair PunchPlay Watched Database. Use this when PunchPlay watched or progress data needs to be rebuilt or when Finder reports that the PunchPlay watched database could not be loaded correctly.
+
+Finder also provides two reset levels:
+
+Reset Finder Settings to Defaults is the yellow warning-level option. It restores normal Finder preferences to defaults while preserving authorized accounts, API credentials, primary setup/interface state, watched data, personal lists and caches. It should not return an established Finder + Finder Skin installation to the Welcome or Pre-Config screens.
+
+Factory Reset Finder is the red destructive option. It requires confirmation, schedules the wipe for the next full Kodi startup, removes Finder settings and local data, and returns Finder to the first-run Welcome flow. Use it only when you intentionally want a clean Finder setup.

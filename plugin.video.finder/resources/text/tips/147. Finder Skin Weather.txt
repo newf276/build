@@ -1,0 +1,1 @@
+Skin Settings provides Show Weather in the Top-Right Corner and Configure Weather Service. Configure Kodi's weather service and location, then enable the display if wanted. Disable it to hide the weather information. The skin presents data supplied by the configured Kodi service.

@@ -1,0 +1,7 @@
+Finder supports five configurable Local Media Folder scrapers. Each folder scraper can be assigned a Movies directory, a TV Shows directory, or both.
+
+A conventional structure is:
+Movies / Movie Folder / movie file
+TV Shows / Show Folder / Season Folder / episode file
+
+Configure the folder locations in the Local Media Folders settings. You do not have to configure both Movies and TV Shows for every folder scraper; leave the unused side blank.

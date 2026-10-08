@@ -1,0 +1,3 @@
+Finder uses its own result window, and Settings -> Results -> Display lets you choose the result display format.
+
+The selected format affects how scraped sources are presented before playback. Combine the display choice with Result Sorting, Filtering and Color Highlights to create a result screen that is easy to scan on your setup.

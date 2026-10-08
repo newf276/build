@@ -1,0 +1,17 @@
+ExtendedInfo opens Finder’s detailed information panel for movies, TV shows, seasons and episodes.
+
+The layout includes cast, recommendations, movie collections or TV seasons, available videos, posters and backdrops. Select an actor to view their biography and credits; select a credit to open its information. Back or Escape returns through the information windows and closes ExtendedInfo at the starting item.
+
+The four media buttons are:
+- Play: Finder playback for movies and episodes; Browse for TV shows and seasons.
+- Options: Finder playback preferences and list managers, including PunchPlay and Trakt when authorized.
+- Sync: refresh the selected watched tracker (PunchPlay or Trakt), or refresh local watched status when Finder is selected.
+- Play Trailer: Finder's existing trailer action.
+
+Finder's watched-tracker choice, playback settings, season-name preference, specials preference and rating region remain in use. Trailer/video playback uses Finder's native trailer player. TMDbMovies does not need to be installed.
+
+The old configurable ExtendedInfo button/section layout is replaced by the fixed ExtendedInfo layout. Special Open Actions still controls automatic opening of ExtendedInfo.
+
+In Finder Skin, Kodi’s Info context item opens this same panel for Finder items. Other items retain Kodi’s standard Info window. Saved links using the previous Extras route remain compatible.
+
+Supported Finder popups follow Finder Skin colors and textures when skin.finder is active, with consistent Kodi header icons. Standalone mode keeps its bundled dialogs. ExtendedInfo layout and navigation are adapted from Angelitto's TMDbMovies with permission; see resources/CREDITS.txt.

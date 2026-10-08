@@ -1,0 +1,5 @@
+Finder's Main Menus can be customized from the context menu on Root, Movies and TV Shows menu items.
+
+Depending on the item, you can remove entries, change their position and add content from other Finder menus. This is useful for creating a simpler home screen or placing frequently used lists exactly where you want them.
+
+For larger custom arrangements, use Shortcut Folders. See the "Shortcut Folders" tip.

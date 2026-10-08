@@ -1,0 +1,7 @@
+Finder plays Movie and TV Show trailers through its own native trailer resolver. The separate plugin.video.youtube add-on is not required for Finder trailer playback.
+
+Trailer playback is available through Finder's Play Trailer context action and through the ExtendedInfo window, including the ExtendedInfo Play Trailer action and available video selections. Finder resolves the selected trailer and supplies the stream to Kodi for playback.
+
+Finder also recognizes trailer URLs stored by older Finder versions that pointed to plugin.video.youtube and converts them to the native Finder route when the cached metadata is read. You do not need to clear the metadata cache simply to migrate to native trailer playback.
+
+MPEG-DASH is disabled. Finder selects progressive MP4 or uses HLS when needed. ExtendedInfo closes for trailer playback and returns afterward. Availability depends on the selected video, including geographic restrictions; another available trailer may work.

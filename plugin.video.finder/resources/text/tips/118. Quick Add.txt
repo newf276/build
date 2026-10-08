@@ -1,0 +1,16 @@
+Quick Add is Finder's one-action add/remove shortcut for media. The selected Quick Add target determines which list or favorite collection Finder changes when Quick Add is used.
+
+Current Quick Add targets include:
+- Trakt Collection
+- Trakt Watchlist
+- PunchPlay Watchlist
+- PunchPlay Collection
+- TMDb Watchlist
+- TMDb Favorites
+- Finder Favorites
+
+For a PunchPlay Personal List, Quick Add can also be exposed for a specific list when that workflow is available.
+
+Quick Add is controlled from the Context Menu settings. The chosen target is shown using the configured target label, so you can tell at a glance what the action will affect.
+
+Account-based targets require the relevant service to be authorized.

@@ -1,0 +1,19 @@
+Finder can use one of three sources as its Primary Tracker: Finder, Trakt or PunchPlay.
+
+Your Primary Tracker controls the watched/progress database used by Finder for features such as watched indicators, In Progress and Next Episodes. During a fresh Finder + Finder Skin setup, the selected Pre-Config supplies the Primary Tracker choice and Finder waits for that tracker to be ready before completing the final Home-screen handoff.
+
+FINDER
+- Uses Finder's local watched database.
+- No external tracker authorization is required.
+
+TRAKT
+- Uses your Trakt watched information.
+- Trakt authorization is required.
+
+PUNCHPLAY
+- Uses PunchPlay watched history.
+- PunchPlay authorization is required.
+- When PunchPlay is selected for first use, Finder synchronizes watched history and validates the available Watchlist, Collection and Personal List data before first-run setup completes.
+- Repair PunchPlay Watched Database remains available under maintenance tools if the local watched-state database ever needs rebuilding.
+
+When the first-run Home screen appears, the selected tracker is ready and setup has completed. You do not need to exit or restart Kodi before using Finder. If you change tracker services later, allow Finder time to rebuild or synchronize the relevant data before judging the resulting progress lists.

@@ -1,0 +1,5 @@
+When episode autoplay is enabled, Finder can automatically continue to the next episode after the current episode finishes.
+
+Finder can also pre-scrape the next episode so the next result set is ready before playback ends. Settings control the alert style, default action, timing window, chapter behavior and whether Finder checks that you are still watching.
+
+This is built into Finder; an external UpNext add-on is not required for this feature.
