@@ -11,7 +11,7 @@
     <setting id="gamesachievements.loggedin" default="true">false</setting>
     <setting id="lookandfeel.skin">skin.finder</setting>
     <setting id="lookandfeel.skintheme" default="true">SKINDEFAULT</setting>
-    <setting id="lookandfeel.skincolors">Classic Finder.xml</setting>
+    <setting id="lookandfeel.skincolors">finder.xml</setting>
     <setting id="lookandfeel.font" default="true">Default</setting>
     <setting id="lookandfeel.skinzoom" default="true">0</setting>
     <setting id="lookandfeel.stereostrength" default="true">5</setting>

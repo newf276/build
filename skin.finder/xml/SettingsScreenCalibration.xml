@@ -3,6 +3,11 @@
 	<defaultcontrol>8</defaultcontrol>
 	<controls>
 		<include>DefaultBackground</include>
+        <control type="image">
+            <depth>DepthBackground</depth><include>FullScreenDimensions</include>
+            <texture colordiffuse="finder_charcoal">colors/white.png</texture>
+            <visible>!Player.HasMedia</visible>
+        </control>
 		<control type="mover" id="8">
 			<description>top left mover</description>
 			<left>0</left>

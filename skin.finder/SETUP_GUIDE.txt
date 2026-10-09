@@ -1,6 +1,6 @@
-Finder and Finder Skin Setup Guide — 1.0.08
+Finder and Finder Skin Setup Guide — Skin 1.1.03 / Add-on 1.0.08.12
 
-1. Install plugin.video.finder and skin.finder from Newf276's repository or the supplied ZIPs. Both public versions are 1.0.08. Existing higher-numbered test builds may need manual ZIP selection. Restart Kodi after installing; keep your settings and accounts.
+1. Install plugin.video.finder and skin.finder from Newf276's repository or the supplied ZIPs. For this supplied build use Skin 1.1.03 and Add-on 1.0.08.12; Existing higher-numbered test builds may need manual ZIP selection. Restart Kodi after installing; keep your settings and accounts.
 2. Activate Finder Skin, then choose Finder + Finder Skin from Tools -> Finder Interface Setup. Standalone Finder is also supported. The integrated features do not require a separate Finder/FENtastic helper.
 3. Choose Finder, Trakt or PunchPlay as Primary Tracker. Authorize the chosen service. PunchPlay first-run setup synchronizes watched history and supported lists; keep Repair PunchPlay Watched Database for repair when needed.
 4. In Finder -> My Lists, select Authorize TMDb, Authorize Trakt or Authorize PunchPlay for a signed-out account. Yes launches its existing sign-in flow. No suppresses automatic recovery reminders; a manual selection can ask again. Leave and reopen My Lists after signing in.
@@ -15,7 +15,7 @@ Finder and Finder Skin Setup Guide — 1.0.08
 13. Finder Skin uses four status indicators on supported Finder media views: outlined circle with center dot = untouched; half-filled circle = a TV show is partially watched; eye = that exact movie/episode has a stored resume point; circle with check = watched/completed. In Progress TV shows are ordered using recent watched activity and resumable episode activity, so a show you just resume can move to the front.
 14. Tools also provides two reset levels: yellow Reset Finder Settings to Defaults restores preferences while preserving accounts, API credentials, setup state, watched data, personal lists and caches; red Factory Reset Finder is destructive and returns Finder to the first-run Welcome flow after the next full Kodi restart.
 
-Credits: Angelitto (TMDbMovies ExtendedInfo, adapted with permission); silentbob2 (Forge); Tikipeter (Fen/Fen Light lineage); ivarbrandt and Zaxxon709 (skin lineage); Team Kodi (Kodi/Estuary). Existing licenses and notices remain included.
+Credits: Angelitto (TMDbMovies ExtendedInfo, adapted with permission); silencebob2 (Forge); Tikipeter (Fen/Fen Light lineage); ivarbrandt and Zaxxon709 (skin lineage); Team Kodi (Kodi/Estuary). Existing licenses and notices remain included.
 
 Artwork and Playback Defaults
 

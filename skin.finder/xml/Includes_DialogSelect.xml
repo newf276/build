@@ -6,12 +6,12 @@
 			<centerleft>50%</centerleft>
 			<height>750</height>
 			<width>1220</width>
-			<include content="DialogBackgroundCommons">
-				<param name="width" value="1220"/>
-				<param name="height" value="775"/>
-				<param name="header_label" value=""/>
-				<param name="header_id" value="1"/>
-				<param name="diffusetexture" value="masks/landscape-502.png"/>
+			<include content="FinderSettingsDialogBackground">
+				<param name="width" value="1220" />
+				<param name="height" value="775" />
+				<param name="header_label" value="" />
+				<param name="header_id" value="1" />
+				<param name="diffusetexture" value="masks/landscape-502.png" />
 			</include>
 			<control type="list" id="3">
 				<left>20</left>
@@ -24,10 +24,10 @@
 				<onright>61</onright>
 				<pagecontrol>61</pagecontrol>
 				<scrolltime>200</scrolltime>
-				<include content="DefaultSimpleListLayout">
-					<param name="width" value="880"/>
-					<param name="list_id" value="3"/>
-					<param name="diffuse" value="masks/focus-long.png"/>
+				<include content="FinderDialogSimpleListLayout">
+					<param name="width" value="880" />
+					<param name="list_id" value="3" />
+					<param name="diffuse" value="masks/focus-long.png" />
 				</include>
 			</control>
 			<control type="list" id="6">
@@ -43,10 +43,10 @@
 				<scrolltime>200</scrolltime>
 				<itemlayout height="125" width="880">
 					<control type="image">
-						<left>37</left>
-						<top>7</top>
-						<width>110</width>
-						<height>110</height>
+						<left>52</left>
+						<top>22</top>
+						<width>80</width>
+						<height>80</height>
 						<texture diffuse="masks/landscapeinfo.png">$VAR[InfoWallThumbVar]</texture>
 						<aspectratio>keep</aspectratio>
 						<visible>!ListItem.Property(PVR.IsRecordingTimer) + !ListItem.Property(PVR.IsRemindingTimer)</visible>
@@ -97,14 +97,14 @@
 						<top>0</top>
 						<right>25</right>
 						<bottom>0</bottom>
-						<texture colordiffuse="button_focus">masks/focus.png</texture>
+						<texture border="24">finder_focus/setting-long.png</texture>
 						<visible>Control.HasFocus(6)</visible>
 					</control>
 					<control type="image">
-						<left>37</left>
-						<top>7</top>
-						<width>110</width>
-						<height>110</height>
+						<left>52</left>
+						<top>22</top>
+						<width>80</width>
+						<height>80</height>
 						<texture diffuse="masks/landscapeinfo.png">$VAR[InfoWallThumbVar]</texture>
 						<aspectratio>keep</aspectratio>
 						<visible>!ListItem.Property(PVR.IsRecordingTimer) + !ListItem.Property(PVR.IsRemindingTimer)</visible>
@@ -138,7 +138,20 @@
 						<scroll>true</scroll>
 						<font>font14</font>
 						<label>$INFO[ListItem.Label]</label>
-						<textcolor>focused_text</textcolor>
+						<textcolor>white</textcolor>
+						<visible>Control.HasFocus(6)</visible>
+					</control>
+<control type="label">
+						<left>165</left>
+						<top>0</top>
+						<right>20</right>
+						<height>60</height>
+						<aligny>center</aligny>
+						<scroll>true</scroll>
+						<font>font14</font>
+						<label>$INFO[ListItem.Label]</label>
+						<textcolor>unfocused_text</textcolor>
+						<visible>!Control.HasFocus(6)</visible>
 					</control>
 					<control type="textbox">
 						<left>165</left>
@@ -147,7 +160,18 @@
 						<height>67</height>
 						<font>font12</font>
 						<label>$INFO[ListItem.Label2]</label>
-						<textcolor>focused_text</textcolor>
+						<textcolor>white</textcolor>
+						<visible>Control.HasFocus(6)</visible>
+					</control>
+<control type="textbox">
+						<left>165</left>
+						<top>50</top>
+						<right>20</right>
+						<height>67</height>
+						<font>font12</font>
+						<label>$INFO[ListItem.Label2]</label>
+						<textcolor>unfocused_text</textcolor>
+						<visible>!Control.HasFocus(6)</visible>
 					</control>
 				</focusedlayout>
 			</control>
@@ -178,16 +202,16 @@
 				<itemgap>dialogbuttons_itemgap</itemgap>
 				<onright>3</onright>
 				<include content="DefaultDialogButton">
-					<param name="id" value="5"/>
-					<param name="label" value=""/>
+					<param name="id" value="5" />
+					<param name="label" value="" />
 				</include>
 				<include content="DefaultDialogButton">
-					<param name="id" value="8"/>
-					<param name="label" value=""/>
+					<param name="id" value="8" />
+					<param name="label" value="" />
 				</include>
 				<include content="DefaultDialogButton">
-					<param name="id" value="7"/>
-					<param name="label" value="$LOCALIZE[222]"/>
+					<param name="id" value="7" />
+					<param name="label" value="$LOCALIZE[222]" />
 				</include>
 			</control>
 		</control>
@@ -199,11 +223,11 @@
 			<width>1639</width>
 			<height>919</height>
 			<include content="DialogBackgroundCommons">
-				<param name="width" value="1639"/>
-				<param name="height" value="919"/>
-				<param name="header_label" value="35260"/>
-				<param name="header_id" value="10820"/>
-				<param name="diffusetexture" value="masks/landscape-502.png"/>
+				<param name="width" value="1639" />
+				<param name="height" value="919" />
+				<param name="header_label" value="35260" />
+				<param name="header_id" value="10820" />
+				<param name="diffusetexture" value="masks/landscape-502.png" />
 			</include>
 			<control type="group">
 				<description>Content area</description>
@@ -313,12 +337,12 @@
 					<onleft>3</onleft>
 					<itemgap>dialogbuttons_itemgap</itemgap>
 					<include content="DefaultDialogButton">
-						<param name="id" value="10825"/>
-						<param name="label" value="$LOCALIZE[35261]"/>
+						<param name="id" value="10825" />
+						<param name="label" value="$LOCALIZE[35261]" />
 					</include>
 					<include content="DefaultDialogButton">
-						<param name="id" value="10826"/>
-						<param name="label" value="$LOCALIZE[222]"/>
+						<param name="id" value="10826" />
+						<param name="label" value="$LOCALIZE[222]" />
 					</include>
 				</control>
 				<control type="group">
@@ -398,8 +422,8 @@
 			<top>0</top>
 			<width>100%</width>
 			<bottom>540</bottom>
-			<texturefocus/>
-			<texturenofocus/>
+			<texturefocus />
+			<texturenofocus />
 			<onclick>Action(close)</onclick>
 		</control>
 		<control type="group">
@@ -504,8 +528,8 @@
 			<top>0</top>
 			<width>100%</width>
 			<bottom>410</bottom>
-			<texturefocus/>
-			<texturenofocus/>
+			<texturefocus />
+			<texturenofocus />
 			<onclick>Action(close)</onclick>
 		</control>
 		<control type="group">
@@ -599,8 +623,8 @@
 			<top>0</top>
 			<width>100%</width>
 			<bottom>540</bottom>
-			<texturefocus/>
-			<texturenofocus/>
+			<texturefocus />
+			<texturenofocus />
 			<onclick>Action(close)</onclick>
 		</control>
 		<control type="group">

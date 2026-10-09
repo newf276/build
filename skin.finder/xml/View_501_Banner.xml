@@ -30,8 +30,8 @@
 							<width>860</width>
 							<height>195</height>
 							<texture diffuse="masks/banner.png" fallback="dialogs/dialog-bg-nobo.png" background="true">$VAR[BannerArtVar]</texture>
-							<!-- <aspectratio aligny="center">scale</aspectratio> -->
-							<!-- <bordertexture border="21" infill="false">overlays/shadow.png</bordertexture> -->
+							
+							
 							<bordersize>20</bordersize>
 						</control>
 						<control type="label">
@@ -59,10 +59,10 @@
 							</include>
 						</control>
 						<include content="ProgressBar">
-							<!-- 20 -->
-							<param name="left" value="55"/>
-							<param name="top" value="150"/>
-							<param name="width" value="745"/>
+							
+							<param name="left" value="55" />
+							<param name="top" value="150" />
+							<param name="width" value="745" />
 						</include>
 					</control>
 				</itemlayout>
@@ -76,7 +76,7 @@
 							<top>13</top>
 							<width>834</width>
 							<height>169.5</height>
-							<texture border="8" colordiffuse="button_focus">masks/banner.png</texture>
+							<texture border="8" colordiffuse="white">masks/banner.png</texture>
 						</control>
 						<control type="image">
 							<left>0</left>
@@ -84,8 +84,7 @@
 							<width>860</width>
 							<height>195</height>
 							<texture diffuse="masks/banner.png" fallback="dialogs/dialog-bg-nobo.png" background="true">$VAR[BannerArtVar]</texture>
-							<!-- <aspectratio aligny="center">scale</aspectratio>
-							<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture> -->
+							
 							<bordersize>20</bordersize>
 						</control>
 						<control type="label">

@@ -56,7 +56,7 @@
 				<left>-4</left>
 				<width>288</width>
 				<height>288</height>
-				<texture diffuse="masks/addons.png" colordiffuse="button_focus">colors/grey.png</texture>
+				<texture diffuse="masks/addons.png" colordiffuse="white">colors/grey.png</texture>
 				<bordersize>19</bordersize>
 				<visible>$PARAM[focused] + [Control.IsVisible(54) | Control.IsVisible(500)]</visible>
 				<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
@@ -67,7 +67,7 @@
 				<left>-4</left>
 				<width>288</width>
 				<height>288</height>
-				<texture diffuse="masks/addons.png" colordiffuse="button_focus">colors/grey.png</texture>
+				<texture diffuse="masks/addons.png" colordiffuse="white">colors/grey.png</texture>
 				<bordersize>19</bordersize>
 				<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
 				<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
@@ -78,16 +78,16 @@
 				<left>-4</left>
 				<width>288</width>
 				<height>288</height>
-				<texture diffuse="masks/addons.png" colordiffuse="button_focus">colors/grey.png</texture>
+				<texture diffuse="masks/addons.png" colordiffuse="white">colors/grey.png</texture>
 				<bordersize>19</bordersize>
 				<visible>$PARAM[focused] + [Control.HasFocus(14100) | ControlGroup(400).HasFocus | Control.HasFocus(450)]</visible>
 				<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
 			</control>
 			<control type="image">
 				<top>0</top>
-				<!-- 316 -->
+				
 				<width>280</width>
-				<!-- 386 -->
+				
 				<height>280</height>
 				<texture diffuse="masks/addons.png" colordiffuse="button_focus2">dialogs/dialog-bg-nobo.png</texture>
 				<bordersize>20</bordersize>
@@ -152,9 +152,9 @@
 		<param name="focused">false</param>
 		<definition>
 			<include content="ProgressBar">
-				<param name="left" value="37"/>
-				<param name="top" value="245"/>
-				<param name="width" value="270"/>
+				<param name="left" value="37" />
+				<param name="top" value="245" />
+				<param name="width" value="270" />
 			</include>
 			<control type="image">
 				<top>10</top>
@@ -169,19 +169,19 @@
 				<left>-4</left>
 				<width>355</width>
 				<height>291</height>
-				<texture colordiffuse="button_focus">masks/landscapeinfo.png</texture>
+				<texture colordiffuse="white">masks/landscapeinfo.png</texture>
 				<bordersize>19</bordersize>
 				<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
 				<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
 			</control>
-			<!-- Widget Image -->
+			
 			<control type="image">
 				<visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)</visible>
 				<left>0</left>
 				<top>10</top>
-				<!-- 416 -->
+				
 				<width>347</width>
-				<!-- 234 -->
+				
 				<height>212</height>
 				<texture diffuse="masks/landscapeinfo-artwork.png" fallback="$PARAM[fallback_image]" background="true">$VAR[IconWallThumbVar]</texture>
 				<aspectratio>stretch</aspectratio>
@@ -201,7 +201,7 @@
 			<control type="image">
 				<visible>String.IsEqual(ListItem.DBType,episode)</visible>
 				<left>20</left>
-				<!-- 133 -->
+				
 				<top>133</top>
 				<width>307</width>
 				<height>70</height>
@@ -211,7 +211,7 @@
 			<control type="image">
 				<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id]) + String.IsEqual(ListItem.DBType,movie) + !Integer.IsEqual(Container($PARAM[id]).ListItem.Property(WatchedProgress),0)</visible>
 				<left>20</left>
-				<!-- 133 -->
+				
 				<top>133</top>
 				<width>307</width>
 				<height>70</height>
@@ -221,7 +221,7 @@
 			<control type="image">
 				<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id]) + String.IsEqual(ListItem.DBType,tvshow)</visible>
 				<left>20</left>
-				<!-- 133 -->
+				
 				<top>133</top>
 				<width>307</width>
 				<height>70</height>
@@ -424,9 +424,9 @@
 		<param name="focused">false</param>
 		<definition>
 			<include content="ProgressBar">
-				<param name="left" value="45"/>
-				<param name="top" value="305"/>
-				<param name="width" value="363"/>
+				<param name="left" value="45" />
+				<param name="top" value="305" />
+				<param name="width" value="363" />
 			</include>
 			<control type="image">
 				<top>10</top>
@@ -441,19 +441,19 @@
 				<left>-4</left>
 				<width>461</width>
 				<height>352</height>
-				<texture colordiffuse="button_focus">masks/landscapeinfo.png</texture>
+				<texture colordiffuse="white">masks/landscapeinfo.png</texture>
 				<bordersize>17</bordersize>
 				<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
 				<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
 			</control>
-			<!-- Widget Image -->
+			
 			<control type="image">
 				<visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)</visible>
 				<left>0</left>
 				<top>7</top>
-				<!-- 347 -->
+				
 				<width>453</width>
-				<!-- 212 -->
+				
 				<height>277</height>
 				<texture diffuse="masks/landscapeinfo-artwork.png" fallback="$PARAM[fallback_image]" background="true">$VAR[IconWallThumbVar]</texture>
 				<aspectratio>stretch</aspectratio>
@@ -473,7 +473,7 @@
 			<control type="image">
 				<visible>String.IsEqual(ListItem.DBType,episode)</visible>
 				<left>20</left>
-				<!-- 133 -->
+				
 				<top>173</top>
 				<width>413</width>
 				<height>91</height>
@@ -483,7 +483,7 @@
 			<control type="image">
 				<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id]) + String.IsEqual(ListItem.DBType,movie) + !Integer.IsEqual(Container($PARAM[id]).ListItem.Property(WatchedProgress),0)</visible>
 				<left>20</left>
-				<!-- 133 -->
+				
 				<top>173</top>
 				<width>413</width>
 				<height>91</height>
@@ -493,7 +493,7 @@
 			<control type="image">
 				<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id]) + String.IsEqual(ListItem.DBType,tvshow)</visible>
 				<left>20</left>
-				<!-- 133 -->
+				
 				<top>173</top>
 				<width>413</width>
 				<height>91</height>
@@ -664,7 +664,7 @@
 			</control>
 			<control type="label">
 				<left>54</left>
-				<!-- 173 -->
+				
 				<top>230</top>
 				<width>200</width>
 				<label>$INFO[ListItem.Property(WatchedProgress)]% watched</label>
@@ -694,9 +694,9 @@
 			<control type="group">
 				<visible>String.IsEmpty(ListItem.Art(poster))</visible>
 				<include content="ProgressBar">
-					<param name="left" value="35"/>
-					<param name="top" value="265.9"/>
-					<param name="width" value="165"/>
+					<param name="left" value="35" />
+					<param name="top" value="265.9" />
+					<param name="width" value="165" />
 				</include>
 				<control type="image">
 					<include>FocusBounce</include>
@@ -704,7 +704,7 @@
 					<top>-14</top>
 					<width>243</width>
 					<height>332</height>
-					<texture colordiffuse="button_focus">masks/poster.png</texture>
+					<texture colordiffuse="white">masks/poster.png</texture>
 					<bordersize>19</bordersize>
 					<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
@@ -715,7 +715,7 @@
 					<top>-14</top>
 					<width>243</width>
 					<height>332</height>
-					<texture colordiffuse="button_focus">masks/poster.png</texture>
+					<texture colordiffuse="white">masks/poster.png</texture>
 					<bordersize>19</bordersize>
 					<visible>$PARAM[focused] + [Control.IsVisible(54) | Control.IsVisible(500)]</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
@@ -769,9 +769,9 @@
 			<control type="group">
 				<visible>!String.IsEmpty(ListItem.Art(poster))</visible>
 				<include content="ProgressBar">
-					<param name="left" value="35"/>
-					<param name="top" value="266"/>
-					<param name="width" value="165"/>
+					<param name="left" value="35" />
+					<param name="top" value="266" />
+					<param name="width" value="165" />
 				</include>
 				<control type="image">
 					<include>FocusBounce</include>
@@ -779,7 +779,7 @@
 					<top>-14</top>
 					<width>243</width>
 					<height>332</height>
-					<texture colordiffuse="button_focus">masks/poster.png</texture>
+					<texture colordiffuse="white">masks/poster.png</texture>
 					<bordersize>19</bordersize>
 					<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
@@ -790,20 +790,20 @@
 					<top>-14</top>
 					<width>243</width>
 					<height>332</height>
-					<texture colordiffuse="button_focus">masks/poster.png</texture>
+					<texture colordiffuse="white">masks/poster.png</texture>
 					<bordersize>19</bordersize>
 					<visible>$PARAM[focused] + [Control.IsVisible(54) | Control.IsVisible(500)]</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
 				</control>
 				<control type="image">
-					<!-- <left>15</left> -->
+					
 					<top>-10</top>
-					<!-- 310 -->
+					
 					<width>235</width>
-					<!-- 427 -->
+					
 					<height>324</height>
 					<texture diffuse="masks/poster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
-					<!-- <aspectratio>scale</aspectratio> -->
+					
 					<bordersize>20</bordersize>
 				</control>
 				<control type="image">
@@ -949,9 +949,9 @@
 			<control type="group">
 				<visible>String.IsEmpty(ListItem.Art(poster))</visible>
 				<include content="ProgressBar">
-					<param name="left" value="35"/>
-					<param name="top" value="265.9"/>
-					<param name="width" value="165"/>
+					<param name="left" value="35" />
+					<param name="top" value="265.9" />
+					<param name="width" value="165" />
 				</include>
 				<control type="image">
 					<include>FocusBounce</include>
@@ -959,7 +959,7 @@
 					<top>-14</top>
 					<width>283</width>
 					<height>387</height>
-					<texture colordiffuse="button_focus">masks/poster.png</texture>
+					<texture colordiffuse="white">masks/poster.png</texture>
 					<bordersize>17</bordersize>
 					<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
@@ -970,7 +970,7 @@
 					<top>-14</top>
 					<width>283</width>
 					<height>387</height>
-					<texture colordiffuse="button_focus">masks/poster.png</texture>
+					<texture colordiffuse="white">masks/poster.png</texture>
 					<bordersize>17</bordersize>
 					<visible>$PARAM[focused] + [Control.IsVisible(54) | Control.IsVisible(500)]</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
@@ -1025,9 +1025,9 @@
 			<control type="group">
 				<visible>!String.IsEmpty(ListItem.Art(poster))</visible>
 				<include content="ProgressBar">
-					<param name="left" value="43"/>
-					<param name="top" value="323"/>
-					<param name="width" value="189"/>
+					<param name="left" value="43" />
+					<param name="top" value="323" />
+					<param name="width" value="189" />
 				</include>
 				<control type="image">
 					<include>FocusBounce</include>
@@ -1035,7 +1035,7 @@
 					<top>-14</top>
 					<width>283</width>
 					<height>387</height>
-					<texture colordiffuse="button_focus">masks/poster.png</texture>
+					<texture colordiffuse="white">masks/poster.png</texture>
 					<bordersize>17</bordersize>
 					<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
@@ -1046,20 +1046,20 @@
 					<top>-14</top>
 					<width>283</width>
 					<height>387</height>
-					<texture colordiffuse="button_focus">masks/poster.png</texture>
+					<texture colordiffuse="white">masks/poster.png</texture>
 					<bordersize>17</bordersize>
 					<visible>$PARAM[focused] + [Control.IsVisible(54) | Control.IsVisible(500)]</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
 				</control>
 				<control type="image">
-					<!-- <left>15</left> -->
+					
 					<top>-10</top>
-					<!-- 235 -->
+					
 					<width>275</width>
-					<!-- 324 -->
+					
 					<height>379</height>
 					<texture diffuse="masks/poster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
-					<!-- <aspectratio>scale</aspectratio> -->
+					
 					<bordersize>20</bordersize>
 				</control>
 				<control type="image">
@@ -1255,18 +1255,18 @@
 						<left>30</left>
 						<top>120</top>
 						<include content="BigInfoWallMovieLayout">
-							<param name="focused" value="true"/>
+							<param name="focused" value="true" />
 						</include>
 					</control>
 				</focusedlayout>
-				<!-- infowall spacing -->
+				
 				<itemlayout height="301" width="410" condition="Container.Content(episodes) | Container.Content(videos) | [Container.Content(musicvideos) + !Skin.HasSetting(show_musicvideoposter)]">
 					<control type="group">
 						<left>64</left>
 						<top>110</top>
 						<include content="BigInfoWallEpisodeLayout">
-							<param name="focused" value="false"/>
-							<param name="thumb_label" value="$INFO[ListItem.Label2]"/>
+							<param name="focused" value="false" />
+							<param name="thumb_label" value="$INFO[ListItem.Label2]" />
 						</include>
 					</control>
 				</itemlayout>
@@ -1276,8 +1276,8 @@
 						<left>64</left>
 						<top>110</top>
 						<include content="BigInfoWallEpisodeLayout">
-							<param name="focused" value="true"/>
-							<param name="thumb_label" value="$INFO[ListItem.Label2]"/>
+							<param name="focused" value="true" />
+							<param name="thumb_label" value="$INFO[ListItem.Label2]" />
 						</include>
 					</control>
 				</focusedlayout>
@@ -1294,7 +1294,7 @@
 						<top>150</top>
 						<left>40</left>
 						<include content="InfoWallMusicLayout">
-							<param name="focused" value="true"/>
+							<param name="focused" value="true" />
 						</include>
 					</control>
 				</focusedlayout>
@@ -1311,7 +1311,7 @@
 						<left>0</left>
 						<top>150</top>
 						<include content="InfoWallPictureLayout">
-							<param name="focused" value="true"/>
+							<param name="focused" value="true" />
 						</include>
 					</control>
 				</focusedlayout>

@@ -10,11 +10,11 @@
 			<centerleft>50%</centerleft>
 			<width>545</width>
 			<include content="DialogBackgroundCommons">
-				<param name="width" value="545"/>
-				<param name="height" value="660"/>
-				<param name="header_label" value="$LOCALIZE[31161]"/>
-				<param name="header_id" value=""/>
-				<param name="diffusetexture" value="masks/poster-50.png"/>
+				<param name="width" value="545" />
+				<param name="height" value="660" />
+				<param name="header_label" value="$LOCALIZE[31161]" />
+				<param name="header_id" value="" />
+				<param name="diffusetexture" value="masks/poster-50.png" />
 			</include>
 			<control type="image">
 				<left>44</left>
@@ -56,7 +56,7 @@
 					<font>font12</font>
 					<align>center</align>
 					<aligny>center</aligny>
-					<texturefocus border="20" colordiffuse="button_focus">buttons/dfo.png</texturefocus>
+					<texturefocus border="24">finder_focus/setting-short.png</texturefocus>
 					<texturenofocus colordiffuse="button_focus2" border="20">buttons/dnfo.png</texturenofocus>
 					<label>$LOCALIZE[20181]</label>
 					<onleft>13</onleft>
@@ -72,7 +72,7 @@
 					<font>font12</font>
 					<align>center</align>
 					<aligny>center</aligny>
-					<texturefocus border="40" colordiffuse="button_focus">buttons/dfo.png</texturefocus>
+					<texturefocus border="24">finder_focus/setting-short.png</texturefocus>
 					<texturenofocus colordiffuse="button_focus2" border="40">buttons/dnfo.png</texturenofocus>
 					<label>$LOCALIZE[20177]</label>
 					<angle>270</angle>
@@ -171,10 +171,10 @@
 						<width>125</width>
 						<height>125</height>
 						<texturefocus colordiffuse="button_focus">buttons/roundbutton-fo.png</texturefocus>
-						<texturenofocus/>
-						<textureradioonfocus colordiffuse="focused_text">icons/keyboard/arrowleft.png</textureradioonfocus>
+						<texturenofocus />
+						<textureradioonfocus colordiffuse="white">icons/keyboard/arrowleft.png</textureradioonfocus>
 						<textureradioonnofocus colordiffuse="unfocused_text">icons/keyboard/arrowleft.png</textureradioonnofocus>
-						<textureradioofffocus colordiffuse="focused_text">icons/keyboard/arrowleft.png</textureradioofffocus>
+						<textureradioofffocus colordiffuse="white">icons/keyboard/arrowleft.png</textureradioofffocus>
 						<textureradiooffnofocus colordiffuse="unfocused_text">icons/keyboard/arrowleft.png</textureradiooffnofocus>
 						<radioposx>40</radioposx>
 						<radiowidth>36</radiowidth>
@@ -194,10 +194,10 @@
 						<width>125</width>
 						<height>125</height>
 						<texturefocus colordiffuse="button_focus">buttons/roundbutton-fo.png</texturefocus>
-						<texturenofocus/>
-						<textureradioonfocus colordiffuse="focused_text">icons/keyboard/arrowright.png</textureradioonfocus>
+						<texturenofocus />
+						<textureradioonfocus colordiffuse="white">icons/keyboard/arrowright.png</textureradioonfocus>
 						<textureradioonnofocus colordiffuse="unfocused_text">icons/keyboard/arrowright.png</textureradioonnofocus>
-						<textureradioofffocus colordiffuse="focused_text">icons/keyboard/arrowright.png</textureradioofffocus>
+						<textureradioofffocus colordiffuse="white">icons/keyboard/arrowright.png</textureradioofffocus>
 						<textureradiooffnofocus colordiffuse="unfocused_text">icons/keyboard/arrowright.png</textureradiooffnofocus>
 						<radioposx>45</radioposx>
 						<radiowidth>36</radiowidth>

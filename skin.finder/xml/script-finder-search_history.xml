@@ -2,225 +2,35 @@
 <includes>
     <include name="SearchHistory">
 
-        <!-- Slot 1 -->
+        
         <item>
             <visible>!String.IsEmpty(Skin.String(SearchHistory.1))</visible>
             <label>$INFO[Skin.String(SearchHistory.1)]</label>
-                        <onclick>Skin.SetString(SearchInput,$INFO[Skin.String(SearchHistory.1)])</onclick>
-            <onclick>Skin.SetString(SearchInputEncoded,$ESCINFO[Skin.String(SearchHistory.1)])</onclick>
-            <onclick>Skin.SetString(SearchInputTraktEncoded,$ESCINFO[Skin.String(SearchHistory.1)])</onclick>
-            <onclick>Container.Refresh</onclick>
-            <onclick>SetFocus(2000)</onclick>
-        </item>
+                        <property name="finder.history.slot">1</property><onclick>RunPlugin(plugin://plugin.video.finder/?mode=search.replay_history&amp;slot=1)</onclick><onclick>RunScript(special://skin/resources/scripts/finder_search_navigation.py,reset)</onclick></item>
 
-        <!-- Slot 2 -->
+        
         <item>
             <visible>!String.IsEmpty(Skin.String(SearchHistory.2))</visible>
             <label>$INFO[Skin.String(SearchHistory.2)]</label>
-                        <onclick>Skin.SetString(SearchInput,$INFO[Skin.String(SearchHistory.2)])</onclick>
-            <onclick>Skin.SetString(SearchInputEncoded,$ESCINFO[Skin.String(SearchHistory.2)])</onclick>
-            <onclick>Skin.SetString(SearchInputTraktEncoded,$ESCINFO[Skin.String(SearchHistory.2)])</onclick>
-            <onclick>Container.Refresh</onclick>
-            <onclick>SetFocus(2000)</onclick>
-        </item>
+                        <property name="finder.history.slot">2</property><onclick>RunPlugin(plugin://plugin.video.finder/?mode=search.replay_history&amp;slot=2)</onclick><onclick>RunScript(special://skin/resources/scripts/finder_search_navigation.py,reset)</onclick></item>
 
-        <!-- Slot 3 -->
+        
         <item>
             <visible>!String.IsEmpty(Skin.String(SearchHistory.3))</visible>
             <label>$INFO[Skin.String(SearchHistory.3)]</label>
-                        <onclick>Skin.SetString(SearchInput,$INFO[Skin.String(SearchHistory.3)])</onclick>
-            <onclick>Skin.SetString(SearchInputEncoded,$ESCINFO[Skin.String(SearchHistory.3)])</onclick>
-            <onclick>Skin.SetString(SearchInputTraktEncoded,$ESCINFO[Skin.String(SearchHistory.3)])</onclick>
-            <onclick>Container.Refresh</onclick>
-            <onclick>SetFocus(2000)</onclick>
-        </item>
+                        <property name="finder.history.slot">3</property><onclick>RunPlugin(plugin://plugin.video.finder/?mode=search.replay_history&amp;slot=3)</onclick><onclick>RunScript(special://skin/resources/scripts/finder_search_navigation.py,reset)</onclick></item>
 
-        <!-- Slot 4 -->
+        
         <item>
             <visible>!String.IsEmpty(Skin.String(SearchHistory.4))</visible>
             <label>$INFO[Skin.String(SearchHistory.4)]</label>
-                        <onclick>Skin.SetString(SearchInput,$INFO[Skin.String(SearchHistory.4)])</onclick>
-            <onclick>Skin.SetString(SearchInputEncoded,$ESCINFO[Skin.String(SearchHistory.4)])</onclick>
-            <onclick>Skin.SetString(SearchInputTraktEncoded,$ESCINFO[Skin.String(SearchHistory.4)])</onclick>
-            <onclick>Container.Refresh</onclick>
-            <onclick>SetFocus(2000)</onclick>
-        </item>
+                        <property name="finder.history.slot">4</property><onclick>RunPlugin(plugin://plugin.video.finder/?mode=search.replay_history&amp;slot=4)</onclick><onclick>RunScript(special://skin/resources/scripts/finder_search_navigation.py,reset)</onclick></item>
 
-        <!-- Slot 5 -->
+        
         <item>
             <visible>!String.IsEmpty(Skin.String(SearchHistory.5))</visible>
             <label>$INFO[Skin.String(SearchHistory.5)]</label>
-                        <onclick>Skin.SetString(SearchInput,$INFO[Skin.String(SearchHistory.5)])</onclick>
-            <onclick>Skin.SetString(SearchInputEncoded,$ESCINFO[Skin.String(SearchHistory.5)])</onclick>
-            <onclick>Skin.SetString(SearchInputTraktEncoded,$ESCINFO[Skin.String(SearchHistory.5)])</onclick>
-            <onclick>Container.Refresh</onclick>
-            <onclick>SetFocus(2000)</onclick>
-        </item>
-
-        <!-- Slot 6 -->
-        <item>
-            <visible>!String.IsEmpty(Skin.String(SearchHistory.6))</visible>
-            <label>$INFO[Skin.String(SearchHistory.6)]</label>
-                        <onclick>Skin.SetString(SearchInput,$INFO[Skin.String(SearchHistory.6)])</onclick>
-            <onclick>Skin.SetString(SearchInputEncoded,$ESCINFO[Skin.String(SearchHistory.6)])</onclick>
-            <onclick>Skin.SetString(SearchInputTraktEncoded,$ESCINFO[Skin.String(SearchHistory.6)])</onclick>
-            <onclick>Container.Refresh</onclick>
-            <onclick>SetFocus(2000)</onclick>
-        </item>
-
-        <!-- Slot 7 -->
-        <item>
-            <visible>!String.IsEmpty(Skin.String(SearchHistory.7))</visible>
-            <label>$INFO[Skin.String(SearchHistory.7)]</label>
-                        <onclick>Skin.SetString(SearchInput,$INFO[Skin.String(SearchHistory.7)])</onclick>
-            <onclick>Skin.SetString(SearchInputEncoded,$ESCINFO[Skin.String(SearchHistory.7)])</onclick>
-            <onclick>Skin.SetString(SearchInputTraktEncoded,$ESCINFO[Skin.String(SearchHistory.7)])</onclick>
-            <onclick>Container.Refresh</onclick>
-            <onclick>SetFocus(2000)</onclick>
-        </item>
-
-        <!-- Slot 8 -->
-        <item>
-            <visible>!String.IsEmpty(Skin.String(SearchHistory.8))</visible>
-            <label>$INFO[Skin.String(SearchHistory.8)]</label>
-                        <onclick>Skin.SetString(SearchInput,$INFO[Skin.String(SearchHistory.8)])</onclick>
-            <onclick>Skin.SetString(SearchInputEncoded,$ESCINFO[Skin.String(SearchHistory.8)])</onclick>
-            <onclick>Skin.SetString(SearchInputTraktEncoded,$ESCINFO[Skin.String(SearchHistory.8)])</onclick>
-            <onclick>Container.Refresh</onclick>
-            <onclick>SetFocus(2000)</onclick>
-        </item>
-
-        <!-- Slot 9 -->
-        <item>
-            <visible>!String.IsEmpty(Skin.String(SearchHistory.9))</visible>
-            <label>$INFO[Skin.String(SearchHistory.9)]</label>
-                        <onclick>Skin.SetString(SearchInput,$INFO[Skin.String(SearchHistory.9)])</onclick>
-            <onclick>Skin.SetString(SearchInputEncoded,$ESCINFO[Skin.String(SearchHistory.9)])</onclick>
-            <onclick>Skin.SetString(SearchInputTraktEncoded,$ESCINFO[Skin.String(SearchHistory.9)])</onclick>
-            <onclick>Container.Refresh</onclick>
-            <onclick>SetFocus(2000)</onclick>
-        </item>
-
-        <!-- Slot 10 -->
-        <item>
-            <visible>!String.IsEmpty(Skin.String(SearchHistory.10))</visible>
-            <label>$INFO[Skin.String(SearchHistory.10)]</label>
-                        <onclick>Skin.SetString(SearchInput,$INFO[Skin.String(SearchHistory.10)])</onclick>
-            <onclick>Skin.SetString(SearchInputEncoded,$ESCINFO[Skin.String(SearchHistory.10)])</onclick>
-            <onclick>Skin.SetString(SearchInputTraktEncoded,$ESCINFO[Skin.String(SearchHistory.10)])</onclick>
-            <onclick>Container.Refresh</onclick>
-            <onclick>SetFocus(2000)</onclick>
-        </item>
-
-        <!-- Slot 11 -->
-        <item>
-            <visible>!String.IsEmpty(Skin.String(SearchHistory.11))</visible>
-            <label>$INFO[Skin.String(SearchHistory.11)]</label>
-                        <onclick>Skin.SetString(SearchInput,$INFO[Skin.String(SearchHistory.11)])</onclick>
-            <onclick>Skin.SetString(SearchInputEncoded,$ESCINFO[Skin.String(SearchHistory.11)])</onclick>
-            <onclick>Skin.SetString(SearchInputTraktEncoded,$ESCINFO[Skin.String(SearchHistory.11)])</onclick>
-            <onclick>Container.Refresh</onclick>
-            <onclick>SetFocus(2000)</onclick>
-        </item>
-
-        <!-- Slot 12 -->
-        <item>
-            <visible>!String.IsEmpty(Skin.String(SearchHistory.12))</visible>
-            <label>$INFO[Skin.String(SearchHistory.12)]</label>
-                        <onclick>Skin.SetString(SearchInput,$INFO[Skin.String(SearchHistory.12)])</onclick>
-            <onclick>Skin.SetString(SearchInputEncoded,$ESCINFO[Skin.String(SearchHistory.12)])</onclick>
-            <onclick>Skin.SetString(SearchInputTraktEncoded,$ESCINFO[Skin.String(SearchHistory.12)])</onclick>
-            <onclick>Container.Refresh</onclick>
-            <onclick>SetFocus(2000)</onclick>
-        </item>
-
-        <!-- Slot 13 -->
-        <item>
-            <visible>!String.IsEmpty(Skin.String(SearchHistory.13))</visible>
-            <label>$INFO[Skin.String(SearchHistory.13)]</label>
-                        <onclick>Skin.SetString(SearchInput,$INFO[Skin.String(SearchHistory.13)])</onclick>
-            <onclick>Skin.SetString(SearchInputEncoded,$ESCINFO[Skin.String(SearchHistory.13)])</onclick>
-            <onclick>Skin.SetString(SearchInputTraktEncoded,$ESCINFO[Skin.String(SearchHistory.13)])</onclick>
-            <onclick>Container.Refresh</onclick>
-            <onclick>SetFocus(2000)</onclick>
-        </item>
-
-        <!-- Slot 14 -->
-        <item>
-            <visible>!String.IsEmpty(Skin.String(SearchHistory.14))</visible>
-            <label>$INFO[Skin.String(SearchHistory.14)]</label>
-                        <onclick>Skin.SetString(SearchInput,$INFO[Skin.String(SearchHistory.14)])</onclick>
-            <onclick>Skin.SetString(SearchInputEncoded,$ESCINFO[Skin.String(SearchHistory.14)])</onclick>
-            <onclick>Skin.SetString(SearchInputTraktEncoded,$ESCINFO[Skin.String(SearchHistory.14)])</onclick>
-            <onclick>Container.Refresh</onclick>
-            <onclick>SetFocus(2000)</onclick>
-        </item>
-
-        <!-- Slot 15 -->
-        <item>
-            <visible>!String.IsEmpty(Skin.String(SearchHistory.15))</visible>
-            <label>$INFO[Skin.String(SearchHistory.15)]</label>
-                        <onclick>Skin.SetString(SearchInput,$INFO[Skin.String(SearchHistory.15)])</onclick>
-            <onclick>Skin.SetString(SearchInputEncoded,$ESCINFO[Skin.String(SearchHistory.15)])</onclick>
-            <onclick>Skin.SetString(SearchInputTraktEncoded,$ESCINFO[Skin.String(SearchHistory.15)])</onclick>
-            <onclick>Container.Refresh</onclick>
-            <onclick>SetFocus(2000)</onclick>
-        </item>
-
-        <!-- Slot 16 -->
-        <item>
-            <visible>!String.IsEmpty(Skin.String(SearchHistory.16))</visible>
-            <label>$INFO[Skin.String(SearchHistory.16)]</label>
-                        <onclick>Skin.SetString(SearchInput,$INFO[Skin.String(SearchHistory.16)])</onclick>
-            <onclick>Skin.SetString(SearchInputEncoded,$ESCINFO[Skin.String(SearchHistory.16)])</onclick>
-            <onclick>Skin.SetString(SearchInputTraktEncoded,$ESCINFO[Skin.String(SearchHistory.16)])</onclick>
-            <onclick>Container.Refresh</onclick>
-            <onclick>SetFocus(2000)</onclick>
-        </item>
-
-        <!-- Slot 17 -->
-        <item>
-            <visible>!String.IsEmpty(Skin.String(SearchHistory.17))</visible>
-            <label>$INFO[Skin.String(SearchHistory.17)]</label>
-                        <onclick>Skin.SetString(SearchInput,$INFO[Skin.String(SearchHistory.17)])</onclick>
-            <onclick>Skin.SetString(SearchInputEncoded,$ESCINFO[Skin.String(SearchHistory.17)])</onclick>
-            <onclick>Skin.SetString(SearchInputTraktEncoded,$ESCINFO[Skin.String(SearchHistory.17)])</onclick>
-            <onclick>Container.Refresh</onclick>
-            <onclick>SetFocus(2000)</onclick>
-        </item>
-
-        <!-- Slot 18 -->
-        <item>
-            <visible>!String.IsEmpty(Skin.String(SearchHistory.18))</visible>
-            <label>$INFO[Skin.String(SearchHistory.18)]</label>
-                        <onclick>Skin.SetString(SearchInput,$INFO[Skin.String(SearchHistory.18)])</onclick>
-            <onclick>Skin.SetString(SearchInputEncoded,$ESCINFO[Skin.String(SearchHistory.18)])</onclick>
-            <onclick>Skin.SetString(SearchInputTraktEncoded,$ESCINFO[Skin.String(SearchHistory.18)])</onclick>
-            <onclick>Container.Refresh</onclick>
-            <onclick>SetFocus(2000)</onclick>
-        </item>
-
-        <!-- Slot 19 -->
-        <item>
-            <visible>!String.IsEmpty(Skin.String(SearchHistory.19))</visible>
-            <label>$INFO[Skin.String(SearchHistory.19)]</label>
-                        <onclick>Skin.SetString(SearchInput,$INFO[Skin.String(SearchHistory.19)])</onclick>
-            <onclick>Skin.SetString(SearchInputEncoded,$ESCINFO[Skin.String(SearchHistory.19)])</onclick>
-            <onclick>Skin.SetString(SearchInputTraktEncoded,$ESCINFO[Skin.String(SearchHistory.19)])</onclick>
-            <onclick>Container.Refresh</onclick>
-            <onclick>SetFocus(2000)</onclick>
-        </item>
-
-        <!-- Slot 20 -->
-        <item>
-            <visible>!String.IsEmpty(Skin.String(SearchHistory.20))</visible>
-            <label>$INFO[Skin.String(SearchHistory.20)]</label>
-                        <onclick>Skin.SetString(SearchInput,$INFO[Skin.String(SearchHistory.20)])</onclick>
-            <onclick>Skin.SetString(SearchInputEncoded,$ESCINFO[Skin.String(SearchHistory.20)])</onclick>
-            <onclick>Skin.SetString(SearchInputTraktEncoded,$ESCINFO[Skin.String(SearchHistory.20)])</onclick>
-            <onclick>Container.Refresh</onclick>
-            <onclick>SetFocus(2000)</onclick>
-        </item>
+                        <property name="finder.history.slot">5</property><onclick>RunPlugin(plugin://plugin.video.finder/?mode=search.replay_history&amp;slot=5)</onclick><onclick>RunScript(special://skin/resources/scripts/finder_search_navigation.py,reset)</onclick></item>
 
     </include>
 </includes>

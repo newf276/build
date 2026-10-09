@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.finder"  name="[B][COLOR dodgerblue]Newf's[/COLOR] Finder Plus Skin[/B]"  version="1.0.08"  provider-name="Ivar Brandt, Zaxxon709, newf276">
+<?xml version='1.0' encoding='UTF-8'?>
+<addon id="skin.finder" name="[B][COLOR dodgerblue]Newf's[/COLOR] Finder Plus Skin[/B]" version="1.1.03" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0" />
 	</requires>
@@ -19,7 +19,7 @@
 		<platform>all</platform>
 		<license>GPL-2.0-or-later</license>
         <source>https://github.com/newf276/build/tree/master/zips</source>
-		<description>Newf's Finder Plus Skin is a modified version of the default Estuary skin for Kodi. It is intended for use with Newf's Finder Addon ONLY.</description>
+		<description>Search provider lifecycle repair build 028. Coordinated search positioning repair build 027. Coordinated window repair build 026. Coordinated window repair test22 (2026-10-09). Newf's Finder Plus Skin is a modified version of the default Estuary skin for Kodi. It is intended for use with Newf's Finder Addon ONLY. Search corrections build 023.</description>
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>

@@ -1,3 +1,5 @@
+Current supplied pair: Finder Skin 1.1.03 and Finder Add-on 1.0.08.12. The skin and add-on share the same charcoal/silver-white design. Keep an established interface configuration when upgrading; the first-run instructions below apply to a new setup.
+
 Finder supports two interface modes: Finder + Finder Skin and Finder Standalone.
 
 On first use Finder asks which mode you want. If Finder + Finder Skin is selected, Finder checks whether skin.finder is installed and can install it on demand. Finder then activates Finder Skin and continues directly into the Finder Skin Pre-Config selector; you do not need to activate the skin manually beforehand.

@@ -1,8 +1,8 @@
-# Finder Skin 1.0.08
+# Finder Skin 1.1.03
 
 Finder Skin is the companion skin for plugin.video.finder, with Finder-native menus, Search, widgets, ratings and information windows.
 
-Install the matched Finder 1.0.08 and Skin Finder 1.0.08 releases from [Newf276's repository](https://github.com/newf276/build). See [SETUP_GUIDE.txt](SETUP_GUIDE.txt), [CREDITS.txt](CREDITS.txt) and [changelog.txt](changelog.txt).
+Use the supplied Finder Add-on 1.0.08.12 with Finder Skin 1.1.03. Keep existing userdata and accounts when upgrading. See SETUP_GUIDE.txt and changelog.txt for current guidance; earlier release sections below are historical.
 
 Finder and Finder Skin Setup Guide — 1.0.08
 

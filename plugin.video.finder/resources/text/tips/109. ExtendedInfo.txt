@@ -1,3 +1,5 @@
+The integrated Finder information panels share charcoal backgrounds and clean silver-white focus. Selecting a search poster opens information for that selected title; actor panels keep biographies and artwork without the bundled robot fanart or added glow.
+
 ExtendedInfo opens Finder’s detailed information panel for movies, TV shows, seasons and episodes.
 
 The layout includes cast, recommendations, movie collections or TV seasons, available videos, posters and backdrops. Select an actor to view their biography and credits; select a credit to open its information. Back or Escape returns through the information windows and closes ExtendedInfo at the starting item.

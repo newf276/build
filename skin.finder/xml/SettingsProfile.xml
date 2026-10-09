@@ -4,6 +4,11 @@
 	<backgroundcolor>background</backgroundcolor>
 	<controls>
 		<include>DefaultBackground</include>
+        <control type="image">
+            <depth>DepthBackground</depth><include>FullScreenDimensions</include>
+            <texture colordiffuse="finder_charcoal">colors/white.png</texture>
+            <visible>!Player.HasMedia</visible>
+        </control>
 		<control type="group" id="9100">
 			<include>OpenClose_Right</include>
 			<left>472</left>
@@ -99,7 +104,7 @@
 							<top>5</top>
 							<width>320</width>
 							<height>380</height>
-							<texture colordiffuse="button_focus">masks/addons.png</texture>
+							<include>FinderThemeTileFocus</include>
 							<bordersize>20</bordersize>
 							<include>Animation_FocusTextureFade</include>
 						</control>
@@ -119,7 +124,7 @@
 							<align>center</align>
 							<aligny>top</aligny>
 							<label>$INFO[ListItem.Label]</label>
-							<textcolor>focused_text</textcolor>
+							<textcolor>white</textcolor>
 						</control>
 						<control type="label">
 							<left>10</left>
@@ -130,7 +135,7 @@
 							<align>center</align>
 							<aligny>top</aligny>
 							<label>$LOCALIZE[31029]:</label>
-							<textcolor>focused_text</textcolor>
+							<textcolor>white</textcolor>
 							<visible>!String.Contains(Listitem.Label,$LOCALIZE[20058])</visible>
 						</control>
 						<control type="label">
@@ -142,7 +147,7 @@
 							<align>center</align>
 							<aligny>top</aligny>
 							<label fallback="13170">$INFO[ListItem.Label2]</label>
-							<textcolor>focused_text</textcolor>
+							<textcolor>white</textcolor>
 							<visible>!String.Contains(Listitem.Label,$LOCALIZE[20058])</visible>
 						</control>
 					</control>
@@ -200,7 +205,7 @@
 					<control type="image">
 						<right>50</right>
 						<bottom>0</bottom>
-						<texture colordiffuse="button_focus">masks/focus.png</texture>
+						<include>FinderThemeRowFocus</include>
 						<animation effect="fade" start="100" end="50" time="40" condition="!Control.HasFocus(9000)">Conditional</animation>
 					</control>
 					<control type="label">
@@ -208,7 +213,7 @@
 						<right>30</right>
 						<bottom>0</bottom>
 						<label>$INFO[ListItem.Label]</label>
-						<textcolor>focused_text</textcolor>
+						<textcolor>white</textcolor>
 						<font>font37</font>
 						<aligny>center</aligny>
 					</control>

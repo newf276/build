@@ -2,7 +2,7 @@
 <window>
     <onload>SetFocus(2000,0,absolute)</onload>
     <controls>
-        <!-- Background -->
+        
         <control type="image">
             <left>0</left>
             <top>0</top>
@@ -13,7 +13,7 @@
         <control type="group">
             <left>100</left>
             <top>30</top>
-            <!-- Logo and Background-->
+            
             <control type="group">
                 <control type="image">
                     <width>1724</width>
@@ -42,7 +42,7 @@
                     <left>0</left>
                     <height>20</height>
                     <font>font12</font>
-                    <!-- Finder_26 -->
+                    
                     <textcolor>unfocused_text</textcolor>
                     <align>center</align>
                     <aligny>center</aligny>
@@ -73,7 +73,7 @@
                         <height>85</height>
                         <label>[UPPERCASE]$INFO[ListItem.Property(setting_label)][/UPPERCASE]</label>
                         <font>font12</font>
-                        <!-- Finder_26 -->
+                        
                         <textcolor>unfocused_text</textcolor>
                         <aligny>center</aligny>
                     </control>
@@ -83,7 +83,7 @@
                         <animation effect="fade" start="100" end="50" time="0" condition="!Control.HasFocus(2000)">Conditional</animation>
                         <height>85</height>
                         <width>470</width>
-                        <texture colordiffuse="button_focus">special://skin/media/masks/focus.png</texture>
+                        <texture border="24">special://skin/media/finder_focus/setting-long.png</texture>
                     </control>
                     <control type="label">
                         <left>40</left>
@@ -91,8 +91,8 @@
                         <height>85</height>
                         <label>[UPPERCASE]$INFO[ListItem.Property(setting_label)][/UPPERCASE]</label>
                         <font>font12</font>
-                        <!-- Finder_26 -->
-                        <textcolor>focused_text</textcolor>
+                        
+                        <textcolor>white</textcolor>
                         <aligny>center</aligny>
                         <scroll>Control.HasFocus(2000)</scroll>
                     </control>
@@ -142,7 +142,7 @@
                 <movement>4</movement>
                 <scrolltime tween="cubic" easing="out">500</scrolltime>
                 <itemlayout height="85" width="1160">
-                    <!-- SEPARATOR -->
+                    
                     <control type="group">
                         <visible>String.IsEqual(ListItem.Property(setting_type),separator)</visible>
                         <control type="label">
@@ -151,7 +151,7 @@
                             <height>85</height>
                             <label>[UPPERCASE]$INFO[ListItem.Property(setting_label)][/UPPERCASE]</label>
                             <font>font12</font>
-                            <!-- Finder_26 -->
+                            
                             <textcolor>unfocused_text</textcolor>
                             <aligny>center</aligny>
                             <align>center</align>
@@ -164,7 +164,7 @@
                             <texture colordiffuse="unfocused_text">finder_common/white.png</texture>
                         </control>
                     </control>
-                    <!-- INFO ICON -->
+                    
                     <control type="image">
                         <visible>String.IsEqual(ListItem.Property(setting_type),info) + Control.HasFocus(2100)</visible>
                         <top>27</top>
@@ -173,7 +173,7 @@
                         <height>30</height>
                         <texture colordiffuse="unfocused_text">finder_common/info.png</texture>
                     </control>
-                    <!-- LABEL -->
+                    
                     <control type="label">
                         <visible>!String.IsEqual(ListItem.Property(setting_type),separator)</visible>
                         <left>40</left>
@@ -181,12 +181,12 @@
                         <height>85</height>
                         <label>[UPPERCASE]$INFO[ListItem.Property(setting_label)][/UPPERCASE]</label>
                         <font>font12</font>
-                        <!-- Finder_26 -->
+                        
                         <textcolor>unfocused_text</textcolor>
                         <aligny>center</aligny>
                         <scroll>false</scroll>
                     </control>
-                    <!-- BOOLEAN -->
+                    
                     <control type="group">
                         <visible>String.IsEqual(ListItem.Property(setting_type),boolean)</visible>
                         <control type="image">
@@ -210,10 +210,10 @@
                             <texture colordiffuse="unfocused_text">finder_buttons/radio_button_on.png</texture>
                         </control>
                     </control>
-                    <!-- SETTING VALUE LABEL -->
+                    
                     <control type="group">
                         <visible>!String.IsEqual(ListItem.Property(setting_type),boolean)</visible>
-                        <!-- EMPTY LABEL -->
+                        
                         <control type="label">
                             <visible>String.IsEqual(ListItem.Property(setting_value),empty_setting)</visible>
                             <left>700</left>
@@ -221,13 +221,13 @@
                             <height>85</height>
                             <label>[B]...[/B]</label>
                             <font>font12</font>
-                            <!-- Finder_26 -->
+                            
                             <textcolor>unfocused_text</textcolor>
                             <align>right</align>
                             <aligny>center</aligny>
                             <scroll>Control.HasFocus(100)</scroll>
                         </control>
-                        <!-- LABEL -->
+                        
                         <control type="label">
                             <visible>!String.IsEqual(ListItem.Property(setting_value),empty_setting)</visible>
                             <left>700</left>
@@ -235,7 +235,7 @@
                             <height>85</height>
                             <label>[UPPERCASE][B]$INFO[ListItem.Property(setting_value)][/B][/UPPERCASE]</label>
                             <font>font12</font>
-                            <!-- Finder_26 -->
+                            
                             <textcolor>unfocused_text</textcolor>
                             <align>right</align>
                             <aligny>center</aligny>
@@ -244,14 +244,14 @@
                     </control>
                 </itemlayout>
                 <focusedlayout height="85" width="1160">
-                    <!-- HIGHLIGHT -->
+                    
                     <control type="image">
                         <visible>Control.HasFocus(2100) + !String.IsEqual(ListItem.Property(setting_type),separator)</visible>
                         <height>85</height>
                         <width>1160</width>
-                        <texture colordiffuse="button_focus">special://skin/media/masks/focus.png</texture>
+                        <texture border="24">special://skin/media/finder_focus/setting-long.png</texture>
                     </control>
-                    <!-- SEPARATOR -->
+                    
                     <control type="group">
                         <visible>String.IsEqual(ListItem.Property(setting_type),separator)</visible>
                         <control type="label">
@@ -260,7 +260,7 @@
                             <height>85</height>
                             <label>[UPPERCASE]$INFO[ListItem.Property(setting_label)][/UPPERCASE]</label>
                             <font>font12</font>
-                            <!-- Finder_26 -->
+                            
                             <textcolor>unfocused_text</textcolor>
                             <aligny>center</aligny>
                             <align>center</align>
@@ -273,7 +273,7 @@
                             <texture colordiffuse="unfocused_text">finder_common/white.png</texture>
                         </control>
                     </control>
-                    <!-- INFO ICON -->
+                    
                     <control type="image">
                         <visible>String.IsEqual(ListItem.Property(setting_type),info) + Control.HasFocus(2100)</visible>
                         <top>27</top>
@@ -282,7 +282,7 @@
                         <height>30</height>
                         <texture colordiffuse="focused_text">finder_common/info.png</texture>
                     </control>
-                    <!-- LABEL -->
+                    
                     <control type="group">
                         <visible>!String.IsEqual(ListItem.Property(setting_type),separator)</visible>
                         <control type="label">
@@ -292,8 +292,8 @@
                             <height>85</height>
                             <label>[UPPERCASE]$INFO[ListItem.Property(setting_label)][/UPPERCASE]</label>
                             <font>font12</font>
-                            <!-- Finder_26 -->
-                            <textcolor>focused_text</textcolor>
+                            
+                            <textcolor>white</textcolor>
                             <aligny>center</aligny>
                             <scroll>Control.HasFocus(2100)</scroll>
                         </control>
@@ -304,13 +304,13 @@
                             <height>85</height>
                             <label>[UPPERCASE]$INFO[ListItem.Property(setting_label)][/UPPERCASE]</label>
                             <font>font12</font>
-                            <!-- Finder_26 -->
+                            
                             <textcolor>unfocused_text</textcolor>
                             <aligny>center</aligny>
                             <scroll>false</scroll>
                         </control>
                     </control>
-                    <!-- BOOLEAN -->
+                    
                     <control type="group">
                         <visible>String.IsEqual(ListItem.Property(setting_type),boolean)</visible>
                         <control type="group">
@@ -360,10 +360,10 @@
                             </control>
                         </control>
                     </control>
-                    <!-- SETTING VALUE LABEL -->
+                    
                     <control type="group">
                         <visible>!String.IsEqual(ListItem.Property(setting_type),boolean)</visible>
-                        <!-- EMPTY LABEL -->
+                        
                         <control type="group">
                             <visible>String.IsEqual(ListItem.Property(setting_value),empty_setting)</visible>
                             <control type="label">
@@ -373,8 +373,8 @@
                                 <height>85</height>
                                 <label>[B]...[/B]</label>
                                 <font>font12</font>
-                                <!-- Finder_26 -->
-                                <textcolor>focused_text</textcolor>
+                                
+                                <textcolor>white</textcolor>
                                 <align>right</align>
                                 <aligny>center</aligny>
                                 <scroll>Control.HasFocus(2100)</scroll>
@@ -386,14 +386,14 @@
                                 <height>85</height>
                                 <label>[B]...[/B]</label>
                                 <font>font12</font>
-                                <!-- Finder_26 -->
+                                
                                 <textcolor>unfocused_text</textcolor>
                                 <align>right</align>
                                 <aligny>center</aligny>
                                 <scroll>false</scroll>
                             </control>
                         </control>
-                        <!-- SETTING VALUE LABEL -->
+                        
                         <control type="group">
                             <visible>!String.IsEqual(ListItem.Property(setting_value),empty_setting)</visible>
                             <control type="label">
@@ -403,8 +403,8 @@
                                 <height>85</height>
                                 <label>[UPPERCASE][B]$INFO[ListItem.Property(setting_value)][/B][/UPPERCASE]</label>
                                 <font>font12</font>
-                                <!-- Finder_26 -->
-                                <textcolor>focused_text</textcolor>
+                                
+                                <textcolor>white</textcolor>
                                 <align>right</align>
                                 <aligny>center</aligny>
                                 <scroll>Control.HasFocus(2100)</scroll>
@@ -416,7 +416,7 @@
                                 <height>85</height>
                                 <label>[UPPERCASE][B]$INFO[ListItem.Property(setting_value)][/B][/UPPERCASE]</label>
                                 <font>font12</font>
-                                <!-- Finder_26 -->
+                                
                                 <textcolor>unfocused_text</textcolor>
                                 <align>right</align>
                                 <aligny>center</aligny>
@@ -426,8 +426,8 @@
                     </control>
                 </focusedlayout>
                 <content>
-                    <!-- GENERAL 10-->
-                    <!-- General -->
+                    
+                    
                     <item>
                         <visible>Container(2000).HasFocus(10)</visible>
                         <property name="setting_label">General</property>
@@ -459,8 +459,8 @@
                         <property name="setting_description">Choose the maximum active concurrent threads Finder will be limited to</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_numeric&amp;setting_id=max_threads)</onclick>
                     </item>
-                    <!-- Window Theme -->
-                    <!-- Watched Indicators -->
+                    
+                    
                     <item>
                         <visible>Container(2000).HasFocus(10)</visible>
                         <property name="setting_label">Watched Indicators</property>
@@ -475,7 +475,7 @@
                         <property name="setting_description">Choose the provider that keeps track of the Movies and Episodes you have watched within Finder. Options are the built in method of Finder, your Trakt account, or PunchPlay</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_from_list&amp;setting_id=watched_indicators)</onclick>
                     </item>
-                    <!-- Trakt Cache -->
+                    
                     <item>
                         <visible>Container(2000).HasFocus(10)</visible>
                         <property name="setting_label">Trakt Cache</property>
@@ -500,7 +500,7 @@
                         <property name="setting_description">Enable this and Finder will refresh widgets after performing a Trakt Sync if there were any changes</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_boolean&amp;setting_id=trakt.refresh_widgets)</onclick>
                     </item>
-                    <!-- UTC Time Offset -->
+                    
                     <item>
                         <visible>Container(2000).HasFocus(10)</visible>
                         <property name="setting_label">UTC Time Offset</property>
@@ -515,7 +515,7 @@
                         <property name="setting_description">Choose the correct UTC offset based on your location</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_numeric&amp;setting_id=datetime.offset)</onclick>
                     </item>
-                    <!-- Downloads -->
+                    
                     <item>
                         <visible>Container(2000).HasFocus(10)</visible>
                         <property name="setting_label">Downloads</property>
@@ -557,8 +557,8 @@
                     <item><visible>Container(2000).HasFocus(10)</visible><property name="setting_label">Danger Zone</property><property name="setting_type">separator</property><onclick>noop</onclick></item>
 <item><visible>Container(2000).HasFocus(10)</visible><property name="setting_label">[COLOR yellow]Reset Finder Settings to Defaults[/COLOR]</property><property name="setting_type">action</property><property name="setting_description">Preserves accounts, keys, watched data, personal lists and caches.</property><onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.reset_settings_keep_accounts)</onclick></item>
 <item><visible>Container(2000).HasFocus(10)</visible><property name="setting_label">[COLOR red]Factory Reset Finder[/COLOR]</property><property name="setting_type">action</property><property name="setting_description">Wipes Finder addon data on the next full Kodi restart. Requires reauthorization.</property><onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.reset_addon_data)</onclick></item>
-<!-- FEATURES 20-->
-                    <!-- ExtendedInfo -->
+
+                    
                     <item>
                         <visible>Container(2000).HasFocus(20)</visible>
                         <property name="setting_label">ExtendedInfo</property>
@@ -580,7 +580,7 @@
                         <property name="setting_description">Use InputStream Adaptive for MPEG-DASH trailers. Enabled by default for TV testing. Disable if trailers fail on macOS, LibreELEC or another device. When disabled, Finder uses its native MP4/HLS playback. InputStream Adaptive must be installed and enabled for MPEG-DASH.</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_boolean&amp;setting_id=trailer_mpeg_dash)</onclick>
                     </item>
-<!-- Special Open Actions -->
+
                     <item>
                         <visible>Container(2000).HasFocus(20)</visible>
                         <property name="setting_label">Special Open Actions</property>
@@ -603,7 +603,7 @@
                         <property name="setting_description">Choose the Open Action when a TV Show is selected in Finder. Choices Are None or Open ExtendedInfo</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_from_list&amp;setting_id=media_open_action_tvshow)</onclick>
                     </item>
-                    <!-- RPDb Ratings Posters -->
+                    
                     <item>
                         <visible>Container(2000).HasFocus(20)</visible>
                         <property name="setting_label">Ratings Posters</property>
@@ -638,8 +638,8 @@
                         <property name="setting_description">Choose the format used for RPDb Posters. Choices are Default, Blocks or Rounded</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=rpdb_poster_format_choice)</onclick>
                     </item>
-                    <!-- CONTENT 30 -->
-                    <!-- General -->
+                    
+                    
                     <item>
                         <visible>Container(2000).HasFocus(30)</visible>
                         <property name="setting_label">General</property>
@@ -872,7 +872,7 @@
                         <property name="setting_description">Enter the Viewtype ID for Premium Files Content</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_numeric&amp;setting_id=view.premium&amp;min_value=1)</onclick>
                     </item>
-                    <!-- Contents Sort Order For Watched Progress -->
+                    
                     <item>
                         <visible>Container(2000).HasFocus(30)</visible>
                         <property name="setting_label">Contents Sort Order For Watched Progress</property>
@@ -895,7 +895,7 @@
                         <property name="setting_description">Choose the sort order for your Watched media</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_from_list&amp;setting_id=sort.watched)</onclick>
                     </item>
-                    <!-- Contents Sort Order For Trakt Lists -->
+                    
                     <item>
                         <visible>Container(2000).HasFocus(30)</visible>
                         <property name="setting_label">Contents Sort Order For Trakt Lists</property>
@@ -920,7 +920,7 @@
                         <property name="setting_description">Choose the sort order for your Trakt Watchlist media</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_from_list&amp;setting_id=sort.watchlist)</onclick>
                     </item>
-                    <!-- Contents Sort Order For PunchPlay Lists -->
+                    
                     <item>
                         <visible>Container(2000).HasFocus(30)</visible>
                         <visible>!String.IsEqual(Window(10000).Property(finder.punchplay.token),0)</visible>
@@ -949,7 +949,7 @@
                         <property name="setting_description">Choose the sort order for your PunchPlay Watchlist media</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_from_list&amp;setting_id=punchplaysort.watchlist)</onclick>
                     </item>
-                    <!-- Contents Sort Order For TMDb Lists -->
+                    
                     <item>
                         <visible>Container(2000).HasFocus(30)</visible>
                         <property name="setting_label">Contents Sort Order For TMDb Lists</property>
@@ -974,7 +974,7 @@
                     </item>
                     
                       
-                      <!-- TMDb Lists -->
+                      
                     <item>
                         <visible>Container(2000).HasFocus(30)</visible>
                         <property name="setting_label">TMDB Lists</property>
@@ -989,7 +989,7 @@
                         <property name="setting_description">Choose the order in which your TMDb lists are presented. This is not for the contents of the lists, but rather the lists themselves</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=list_display_order_choice&amp;list_type=tmdb)</onclick>
                     </item>
-                    <!-- Personal Lists -->
+                    
                     <item>
                         <visible>Container(2000).HasFocus(30)</visible>
                         <property name="setting_label">Personal Lists</property>
@@ -1037,7 +1037,7 @@
                         <property name="setting_description">Choose Unseen Personal Lists Highlight Color</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=personal_list_unseen_color_choice)</onclick>
                     </item>
-                    <!-- Widgets -->
+                    
                     <item>
                         <visible>Container(2000).HasFocus(30)</visible>
                         <property name="setting_label">Widgets</property>
@@ -1084,7 +1084,7 @@
                         <property name="setting_description">Enable this to add anime entries to the Mixed menu lists (Mixed Trending, Mixed Popular, etc.), the Random Mixed Lists, and In Progress [All]. When disabled, anime is omitted from these combined views</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_boolean&amp;setting_id=mixed_include_anime)</onclick>
                     </item>
-                    <!-- RPDb Ratings Posters -->
+                    
                     <item>
                         <visible>Container(2000).HasFocus(30)</visible>
                         <property name="setting_label">Ratings Posters</property>
@@ -1119,7 +1119,7 @@
                         <property name="setting_description">Choose the format used for RPDb Posters. Choices are Default, Blocks or Rounded</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=rpdb_poster_format_choice)</onclick>
                     </item>
-                    <!-- Context Menu -->
+                    
                     <item>
                         <visible>Container(2000).HasFocus(30)</visible>
                         <property name="setting_label">Context Menu</property>
@@ -1150,8 +1150,8 @@
                         <property name="setting_description">Pick the single list/watchlist that the one-tap Quick Add context-menu item toggles items in and out of. Unset falls back to your Trakt Watchlist (or Finder Favorites if Trakt is not connected).</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=quick_add_target_choice)</onclick>
                     </item>
-                    <!-- SINGLE EPISODE LISTS 40 -->
-                    <!-- General -->
+                    
+                    
                     <item>
                         <visible>Container(2000).HasFocus(40)</visible>
                         <property name="setting_label">General</property>
@@ -1182,7 +1182,7 @@
                         <property name="setting_description">Enable this to share with Kodi the number of unwatched episodes for the TV Show of each episode in single episode lists</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_boolean&amp;setting_id=single_ep_unwatched_episodes)</onclick>
                     </item>
-                    <!-- Next Episodes -->
+                    
                     <item>
                         <visible>Container(2000).HasFocus(40)</visible>
                         <property name="setting_label">Next Episodes</property>
@@ -1262,7 +1262,7 @@
                         <property name="setting_description">Enable this to include unaired episodes within Next Episodes. They will show with a RED highlight and become visible within 7 days of their airdate</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_boolean&amp;setting_id=nextep.include_unaired)</onclick>
                     </item>
-                    <!-- Trakt Calendar -->
+                    
                     <item>
                         <visible>Container(2000).HasFocus(40)</visible>
                         <property name="setting_label">Trakt Calendar</property>
@@ -1301,8 +1301,8 @@
                         <property name="setting_description">Choose how many future days will be shown within the Trakt Calendar</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_numeric&amp;setting_id=trakt.calendar_future_days)</onclick>
                     </item>
-                    <!-- META ACCOUNTS 50 -->
-                    <!-- Trakt -->
+                    
+                    
                     <item>
                         <visible>Container(2000).HasFocus(50)</visible>
                         <property name="setting_label">Trakt</property>
@@ -1362,7 +1362,7 @@
                         <property name="setting_description">Restore default Trakt Client Secret Key</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.restore_setting_default&amp;setting_id=trakt.secret)</onclick>
                     </item>
-                    <!-- PunchPlay -->
+                    
                     <item>
                         <visible>Container(2000).HasFocus(50)</visible>
                         <property name="setting_label">PunchPlay</property>
@@ -1421,7 +1421,7 @@
                         <property name="setting_description">Verify that Finder has a valid PunchPlay access token and can read the authenticated account.</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=punchplay.punchplay_check_authentication_dialog)</onclick>
                     </item>
-                    <!-- PunchPlay Cache -->
+                    
                     <item>
                         <visible>Container(2000).HasFocus(10)</visible>
                         <visible>!String.IsEqual(Window(10000).Property(finder.punchplay.token),0)</visible>
@@ -1432,7 +1432,7 @@
                         <property name="setting_description">Clear and rebuild Finder's local PunchPlay watched-state cache from PunchPlay. This does not revoke your PunchPlay authorization.</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=punchplay.clear_database)</onclick>
                     </item>
-                    <!-- TMDb API -->
+                    
                     <item>
                         <visible>Container(2000).HasFocus(50)</visible>
                         <property name="setting_label">TMDb API</property>
@@ -1473,7 +1473,7 @@
                         <property name="setting_description">Test if your TMDb API is activated and working</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=tmdb_api_check_choice)</onclick>
                     </item>
-                    <!-- TMDb Lists -->
+                    
                     <item>
                         <visible>Container(2000).HasFocus(50)</visible>
                         <property name="setting_label">TMDb Lists</property>
@@ -1498,7 +1498,7 @@
                         <property name="setting_description">Revoke authorization of your TMDb account</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=tmdblist_api.revoke_authentication)</onclick>
                     </item>
-                    <!-- OMDb -->
+                    
                     <item>
                         <visible>Container(2000).HasFocus(50)</visible>
                         <property name="setting_label">OMDb</property>
@@ -1513,7 +1513,7 @@
                         <property name="setting_description">Enter here your OMDb API key. This will allow you to utilize extra ratings information in Finder's ExtendedInfo window</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_string&amp;setting_id=omdb_api)</onclick>
                     </item>
-                    <!-- RPDb -->
+                    
                     <item>
                         <visible>Container(2000).HasFocus(50)</visible>
                         <property name="setting_label">RPDb (Ratings Posters)</property>
@@ -1537,8 +1537,8 @@
                         <property name="setting_description">Restore default RPDb API key</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.restore_setting_default&amp;setting_id=rpdb_api)</onclick>
                     </item>
-                    <!-- STREAMING ACCOUNTS 60 -->
-                    <!-- External Scrapers -->
+                    
+                    
                     <item>
                         <visible>Container(2000).HasFocus(60)</visible>
                         <property name="setting_label">External Scrapers</property>
@@ -1584,7 +1584,7 @@
                         <onclick>back</onclick>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=open_external_scraper_settings)</onclick>
                     </item>
-                    <!-- Easynews -->
+                    
                     <item>
                         <visible>Container(2000).HasFocus(60)</visible>
                         <property name="setting_label">Easynews</property>
@@ -1710,7 +1710,7 @@
                         <property name="setting_description">Choose the color used to highlight Easynews results</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=scraper_color_choice&amp;setting_id=provider.easynews_highlight)</onclick>
                     </item>
-                    <!-- Real Debrid -->
+                    
                     <item>
                         <visible>Container(2000).HasFocus(60)</visible>
                         <property name="setting_label">Real Debrid</property>
@@ -1830,7 +1830,7 @@
                         <property name="setting_description">Enable this and Finder will use an alternate base url for RD. This may circumvent any blocks being performed</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_boolean&amp;setting_id=rd.alternate_base_url)</onclick>
                     </item>
-                    <!-- Premiumize -->
+                    
                     <item>
                         <visible>Container(2000).HasFocus(60)</visible>
                         <property name="setting_label">Premiumize</property>
@@ -1940,7 +1940,7 @@
                         <property name="setting_description">Choose the order in which Premiumize results appear in relation to any other active accounts. The lower the number, the higher the sort order</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_numeric&amp;setting_id=pm.priority)</onclick>
                     </item>
-                    <!-- All Debrid -->
+                    
                     <item>
                         <visible>Container(2000).HasFocus(60)</visible>
                         <property name="setting_label">All Debrid</property>
@@ -2050,7 +2050,7 @@
                         <property name="setting_description">Choose the order in which All Debrid results appear in relation to any other active accounts. The lower the number, the higher the sort order</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_numeric&amp;setting_id=ad.priority)</onclick>
                     </item>
-                    <!-- TorBox -->
+                    
                     <item>
                         <visible>Container(2000).HasFocus(60)</visible>
                         <property name="setting_label">TorBox</property>
@@ -2160,7 +2160,7 @@
                         <property name="setting_description">Choose the order in which TorBox results appear in relation to any other active accounts. The lower the number, the higher the sort order</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_numeric&amp;setting_id=tb.priority)</onclick>
                     </item>
-                    <!-- Local Media Folders -->
+                    
                     <item>
                         <visible>Container(2000).HasFocus(60)</visible>
                         <property name="setting_label">Local Media Folders</property>
@@ -2239,8 +2239,8 @@
                         <property name="setting_description">Choose the order in which Media Folders results appear in relation to any other active accounts. The lower the number, the higher the sort order</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_numeric&amp;setting_id=folders.priority)</onclick>
                     </item>
-                    <!-- RESULTS 70 -->
-                    <!-- Display -->
+                    
+                    
                     <item>
                         <visible>Container(2000).HasFocus(70)</visible>
                         <property name="setting_label">Display</property>
@@ -2263,7 +2263,7 @@
                         <property name="setting_description">Choose the format in which Finder will display the results of a source search. Lists, Rows and WideList are provided</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=results_format_choice)</onclick>
                     </item>
-                    <!-- Rescrape -->
+                    
                     <item>
                         <visible>Container(2000).HasFocus(70)</visible>
                         <property name="setting_label">Rescrape Actions</property>
@@ -2278,7 +2278,7 @@
                         <property name="setting_description">Choose what Rescrape Options are used when there are no original results</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=rescrape_actions_choice)</onclick>
                     </item>
-                    <!-- Sorting and Filtering -->
+                    
                     <item>
                         <visible>Container(2000).HasFocus(70)</visible>
                         <property name="setting_label">Sorting and Filtering</property>
@@ -2494,7 +2494,7 @@
                         <property name="setting_description">Choose audio properties that will be filtered out of source results</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=audio_filters_choice)</onclick>
                     </item>
-                    <!-- Results Color Highlights -->
+                    
                     <item>
                         <visible>Container(2000).HasFocus(70)</visible>
                         <property name="setting_label">Results Color Highlights</property>
@@ -2626,8 +2626,8 @@
                         <property name="setting_description">Choose Single color for all results</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=scraper_color_choice&amp;setting_id=scraper_single_highlight)</onclick>
                     </item>
-                    <!-- PLAYBACK 80 -->
-                    <!-- Playback Movies -->
+                    
+                    
                     <item>
                         <visible>Container(2000).HasFocus(80)</visible>
                         <property name="setting_label">Movies</property>
@@ -2694,7 +2694,7 @@
                         <property name="setting_description">Enable this and Finder will attempt to use video file Chapter information to ascertain when to show the Credit Stingers Alert. If unsuccessful, then the percentage of playback value will be used instead</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_boolean&amp;setting_id=stinger_alert.use_chapters)</onclick>
                     </item>
-                    <!-- Playback Episodes -->
+                    
                     <item>
                         <visible>Container(2000).HasFocus(80)</visible>
                         <property name="setting_label">Episodes</property>
@@ -2826,7 +2826,7 @@
                         <property name="setting_description">Choose when Finder will automatically resume playback of an in-progress Episode</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_from_list&amp;setting_id=auto_resume_episode)</onclick>
                     </item>
-                    <!-- Skip Intro/Outro -->
+                    
                     <item>
                         <visible>Container(2000).HasFocus(80)</visible>
                         <property name="setting_label">Skip Intro / Outro</property>
@@ -2913,7 +2913,7 @@
                         <property name="setting_value">$INFO[Window(10000).Property(finder.skip_markers.aniskip)]</property>
                         <onclick>RunPlugin(plugin://plugin.video.finder/?mode=settings_manager.set_boolean&amp;setting_id=skip_markers.aniskip)</onclick>
                     </item>
-                    <!-- Playback Utilities -->
+                    
                     <item>
                         <visible>Container(2000).HasFocus(80)</visible>
                         <property name="setting_label">Playback Utilities</property>
@@ -2964,7 +2964,7 @@
                     <width>200</width>
                     <height>20</height>
                     <font>font12</font>
-                    <!-- Finder_26 -->
+                    
                     <textcolor>unfocused_text</textcolor>
                     <label>[UPPERCASE][B]INFO: [/B][/UPPERCASE]</label>
                     <align>left</align>
@@ -2977,7 +2977,7 @@
                     <height>70</height>
                     <control type="textbox">
                         <font>font12</font>
-                        <!-- Finder_26 -->
+                        
                         <align>left</align>
                         <aligny>center</aligny>
                         <textcolor>unfocused_text</textcolor>
@@ -2987,7 +2987,7 @@
                     </control>
                     <control type="textbox">
                         <font>font12</font>
-                        <!-- Finder_26 -->
+                        
                         <align>left</align>
                         <aligny>center</aligny>
                         <textcolor>unfocused_text</textcolor>

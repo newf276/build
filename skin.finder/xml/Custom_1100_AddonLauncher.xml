@@ -16,6 +16,7 @@
 			<imagepath background="true" colordiffuse="bg_overlay">$VAR[AddonsFanartVar]</imagepath>
 			<visible>!Player.HasMedia</visible>
 		</control>
+		<include>FinderThemeSurface</include>
 		<control type="group">
 			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
 			<control type="group" id="400">
@@ -141,7 +142,7 @@
 							<left>25</left>
 							<right>25</right>
 							<bottom>0</bottom>
-							<texture colordiffuse="button_focus">masks/focus.png</texture>
+							<include>FinderThemeRowFocus</include>
 							<animation effect="fade" start="100" end="0" time="0" condition="!Control.HasFocus(9000)">Conditional</animation>
 						</control>
 						<control type="label">
@@ -152,7 +153,7 @@
 							<aligny>center</aligny>
 							<font>font14</font>
 							<label>$INFO[ListItem.Label]</label>
-							<textcolor>focused_text</textcolor>
+							<textcolor>white</textcolor>
 							<shadowcolor>text_shadow</shadowcolor>
 						</control>
 					</focusedlayout>
@@ -263,15 +264,15 @@
 					<label/>
 					<textoffsetx>40</textoffsetx>
 					<textwidth>230</textwidth>
-					<texturefocus colordiffuse="button_focus">buttons/roundbutton-fo.png</texturefocus>
+					<texturefocus colordiffuse="FFFFFFFF">buttons/home-button-charcoal-focus.png</texturefocus>
 					<texturenofocus/>
 					<radioposx>39</radioposx>
 					<radioposy>0</radioposy>
 					<radiowidth>40</radiowidth>
 					<radioheight>40</radioheight>
-					<textureradioonfocus colordiffuse="focused_text">icons/submenu/add-ons.png</textureradioonfocus>
+					<textureradioonfocus colordiffuse="white">icons/submenu/add-ons.png</textureradioonfocus>
 					<textureradioonnofocus colordiffuse="unfocused_text">icons/submenu/add-ons.png</textureradioonnofocus>
-					<textureradioofffocus colordiffuse="focused_text">icons/submenu/add-ons.png</textureradioofffocus>
+					<textureradioofffocus colordiffuse="white">icons/submenu/add-ons.png</textureradioofffocus>
 					<textureradiooffnofocus colordiffuse="unfocused_text">icons/submenu/add-ons.png</textureradiooffnofocus>
 				</control>
 				<control type="radiobutton" id="802">
@@ -286,16 +287,16 @@
 					<label/>
 					<textoffsetx>40</textoffsetx>
 					<textwidth>230</textwidth>
-					<texturefocus border="30" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
+					<include>FinderThemeRowButton</include>
 					<texturenofocus/>
 					<radioposx>35</radioposx>
 					<radioposy>0</radioposy>
 					<radiowidth>40</radiowidth>
 					<radioheight>40</radioheight>
 					<enable>Integer.IsGreater(Container(8000).NumItems,0)</enable>
-					<textureradioonfocus colordiffuse="focused_text">icons/submenu/updatelibrary.png</textureradioonfocus>
+					<textureradioonfocus colordiffuse="white">icons/submenu/updatelibrary.png</textureradioonfocus>
 					<textureradioonnofocus colordiffuse="unfocused_text">icons/submenu/updatelibrary.png</textureradioonnofocus>
-					<textureradioofffocus colordiffuse="focused_text">icons/submenu/updatelibrary.png</textureradioofffocus>
+					<textureradioofffocus colordiffuse="white">icons/submenu/updatelibrary.png</textureradioofffocus>
 					<textureradiooffnofocus colordiffuse="unfocused_text">icons/submenu/updatelibrary.png</textureradiooffnofocus>
 					<textureradioondisabled colordiffuse="disabled">icons/submenu/updatelibrary.png</textureradioondisabled>
 					<textureradiooffdisabled colordiffuse="disabled">icons/submenu/updatelibrary.png</textureradiooffdisabled>
@@ -311,15 +312,15 @@
 					<label/>
 					<textoffsetx>40</textoffsetx>
 					<textwidth>230</textwidth>
-					<texturefocus colordiffuse="button_focus">buttons/roundbutton-fo.png</texturefocus>
+					<texturefocus colordiffuse="FFFFFFFF">buttons/home-button-charcoal-focus.png</texturefocus>
 					<texturenofocus/>
 					<radioposx>40</radioposx>
 					<radioposy>0</radioposy>
 					<radiowidth>40</radiowidth>
 					<radioheight>40</radioheight>
-					<textureradioonfocus colordiffuse="focused_text">icons/settings.png</textureradioonfocus>
+					<textureradioonfocus colordiffuse="white">icons/settings.png</textureradioonfocus>
 					<textureradioonnofocus colordiffuse="unfocused_text">icons/settings.png</textureradioonnofocus>
-					<textureradioofffocus colordiffuse="focused_text">icons/settings.png</textureradioofffocus>
+					<textureradioofffocus colordiffuse="white">icons/settings.png</textureradioofffocus>
 					<textureradiooffnofocus colordiffuse="unfocused_text">icons/settings.png</textureradiooffnofocus>
 				</control>
 				<control type="label" id="804">

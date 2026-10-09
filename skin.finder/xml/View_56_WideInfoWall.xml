@@ -9,16 +9,16 @@
 		<param name="focused">false</param>
 		<definition>
 			<include content="ProgressBar">
-				<param name="left" value="40"/>
-				<param name="top" value="248"/>
-				<param name="width" value="360"/>
+				<param name="left" value="40" />
+				<param name="top" value="248" />
+				<param name="width" value="360" />
 			</include>
 			<control type="image">
 				<top>10</top>
 				<width>416</width>
 				<height>286</height>
 				<texture colordiffuse="button_focus2">masks/landscapeinfo-unfocused.png</texture>
-				<!-- <bordertexture border="21" infill="false">overlays/shadow.png</bordertexture> -->
+				
 				<bordersize>20</bordersize>
 			</control>
 			<control type="image">
@@ -27,13 +27,13 @@
 				<left>-4</left>
 				<width>424</width>
 				<height>294</height>
-				<texture colordiffuse="button_focus">masks/landscapeinfo.png</texture>
-				<!-- <bordertexture border="21" infill="false">overlays/shadow.png</bordertexture> -->
+				<texture colordiffuse="white">masks/landscapeinfo.png</texture>
+				
 				<bordersize>19</bordersize>
 				<visible>$PARAM[focused]</visible>
 				<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
 			</control>
-			<!-- Widget Image -->
+			
 			<control type="image">
 				<left>0</left>
 				<top>10</top>
@@ -130,7 +130,8 @@
 	</include>
 	
 			<include name="WideInfoWallMovieLayout">
-    				<!-- Parameters required by the view -->
+        <param name="finder_tvshow_status">String.IsEqual(ListItem.DBType,tvshow)</param>
+    				
     				<param name="focused">false</param>
     				<param name="list_id">0</param>
     			<definition>
@@ -141,7 +142,7 @@
                 			<top>-14</top>
                 			<width>354</width>
                 			<height>230</height>
-                			<texture colordiffuse="button_focus">masks/landscape.png</texture>
+                			<texture colordiffuse="white">masks/landscape.png</texture>
                 			<bordersize>19</bordersize>
                 			<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
             			</control>
@@ -185,10 +186,10 @@
         	</control>
 			<control type="group">
 				<visible>!String.IsEmpty(ListItem.Art(poster))</visible>
-				<include content="ProgressBar" condition="!$PARAM[finder_tvshow_status]">
-					<param name="left" value="37"/>
-					<param name="top" value="164"/>
-					<param name="width" value="270"/>
+				<include content="ProgressBar" condition="!String.IsEqual(ListItem.DBType,tvshow)">
+					<param name="left" value="37" />
+					<param name="top" value="164" />
+					<param name="width" value="270" />
 				</include>
 				<control type="image">
 					<include>FocusBounce</include>
@@ -196,7 +197,7 @@
 					<top>-14</top>
           <width>354</width>
           <height>230</height>
-					<texture colordiffuse="button_focus">masks/landscape.png</texture>
+					<texture colordiffuse="white">masks/landscape.png</texture>
 					<bordersize>19</bordersize>
 					<visible>$PARAM[focused] + [Control.IsVisible(56) | Control.IsVisible(504)]</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
@@ -207,20 +208,20 @@
 					<top>-14</top>
           <width>354</width>
           <height>230</height>
-					<texture colordiffuse="button_focus">masks/landscape.png</texture>
+					<texture colordiffuse="white">masks/landscape.png</texture>
 					<bordersize>19</bordersize>
 					<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
 				</control>
 				<control type="image">
-					<!-- <left>15</left> -->
+					
 					<top>-10</top>
-					<!-- 435 -->
+					
 					<width>345</width>
-					<!-- 280 -->
+					
 					<height>222</height>
 					<texture diffuse="masks/landscape.png" background="true">$VAR[IconWallThumbVar]</texture>
-					<!-- <aspectratio aligny="center">keep</aspectratio> -->
+					
 					<bordersize>20</bordersize>
 				</control>
 				<control type="image">
@@ -232,7 +233,7 @@
 					<texture>overlays/overlayfade7.png</texture>
 					<visible>!ListItem.IsParentFolder</visible>
 				</control>
-				<!-- Episode Percent Progress -->
+				
 				<control type="label">
 					<left>55</left>
 					<top>160</top>
@@ -305,10 +306,9 @@
 					<height>80</height>
 					<texture colordiffuse="CCFFFFFF">overlays/overlayfade7.png</texture>
 					<visible>!String.IsEmpty(ListItem.Art(poster))</visible>
-					<visible>[$PARAM[finder_tvshow_status] + !String.IsEmpty(ListItem.Property(TotalEpisodes))] | [$PARAM[focused] + Control.HasFocus($PARAM[list_id])]</visible>
-					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+					<visible>!String.IsEmpty(ListItem.Property(TotalEpisodes))</visible>
 				</control>
-				<!-- 6 -->
+				
 				<control type="label">
           <left>130</left>
           <top>-158</top>
@@ -317,8 +317,7 @@
 					<font>font20_title</font>
 					<shadowcolor>text_shadow</shadowcolor>
 					<align>right</align>
-					<visible>[$PARAM[finder_tvshow_status] + !String.IsEmpty(ListItem.Property(TotalEpisodes))] | [$PARAM[focused] + Control.HasFocus($PARAM[list_id])]</visible>
-					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+					<visible>!String.IsEmpty(ListItem.Property(TotalEpisodes))</visible>
 				</control>
 				<control type="image">
           <left>291</left>
@@ -326,39 +325,7 @@
 					<width>24</width>
 					<height>24</height>
 					<texture>lists/played-total.png</texture>
-					<visible>[$PARAM[finder_tvshow_status] + !String.IsEmpty(ListItem.Property(TotalEpisodes))] | [$PARAM[focused] + Control.HasFocus($PARAM[list_id])]</visible>
-					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
-				</control>
-				<control type="image">
-					<left>19</left>
-					<top>-208</top>
-					<width>307</width>
-					<height>80</height>
-					<texture colordiffuse="CCFFFFFF">overlays/overlayfade7.png</texture>
-					<visible>!String.IsEmpty(ListItem.Art(poster))</visible>
-					<visible>[$PARAM[finder_tvshow_status] + !String.IsEmpty(ListItem.Property(TotalEpisodes))] | [$PARAM[focused] + [Control.IsVisible(56) | Control.IsVisible(504)]]</visible>
-					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
-				</control>
-				<!-- 6 -->
-				<control type="label">
-          <left>130</left>
-          <top>-158</top>
-					<width>154</width>
-					<label>$INFO[ListItem.Property(WatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,]</label>
-					<font>font20_title</font>
-					<shadowcolor>text_shadow</shadowcolor>
-					<align>right</align>
-					<visible>[$PARAM[finder_tvshow_status] + !String.IsEmpty(ListItem.Property(TotalEpisodes))] | [$PARAM[focused] + [Control.IsVisible(56) | Control.IsVisible(504)]]</visible>
-					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
-				</control>
-				<control type="image">
-          <left>291</left>
-          <top>-156</top>
-					<width>24</width>
-					<height>24</height>
-					<texture>lists/played-total.png</texture>
-					<visible>[$PARAM[finder_tvshow_status] + !String.IsEmpty(ListItem.Property(TotalEpisodes))] | [$PARAM[focused] + [Control.IsVisible(56) | Control.IsVisible(504)]]</visible>
-					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+					<visible>!String.IsEmpty(ListItem.Property(TotalEpisodes))</visible>
 				</control>
 			</control>
 			<control type="label">
@@ -416,7 +383,7 @@
                 			<top>-14</top>
                 			<width>462</width>
                 			<height>289</height>
-                			<texture colordiffuse="button_focus">masks/landscape.png</texture>
+                			<texture colordiffuse="white">masks/landscape.png</texture>
                 			<bordersize>17</bordersize>
                 			<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
             			</control>
@@ -461,9 +428,9 @@
 			<control type="group">
 				<visible>!String.IsEmpty(ListItem.Art(poster))</visible>
 				<include content="ProgressBar">
-					<param name="left" value="45"/>
-					<param name="top" value="225"/>
-					<param name="width" value="363"/>
+					<param name="left" value="45" />
+					<param name="top" value="225" />
+					<param name="width" value="363" />
 				</include>
 				<control type="image">
 					<include>FocusBounce</include>
@@ -471,7 +438,7 @@
 					<top>-14</top>
           <width>462</width>
           <height>289</height>
-					<texture colordiffuse="button_focus">masks/landscape.png</texture>
+					<texture colordiffuse="white">masks/landscape.png</texture>
 					<bordersize>17</bordersize>
 					<visible>$PARAM[focused] + [Control.IsVisible(56) | Control.IsVisible(504)]</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
@@ -482,20 +449,20 @@
 					<top>-14</top>
           <width>462</width>
           <height>289</height>
-					<texture colordiffuse="button_focus">masks/landscape.png</texture>
+					<texture colordiffuse="white">masks/landscape.png</texture>
 					<bordersize>17</bordersize>
 					<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
 				</control>
 				<control type="image">
-					<!-- <left>15</left> -->
+					
 					<top>-10</top>
-					<!-- 345 -->
+					
 					<width>453</width>
-					<!-- 222 -->
+					
 					<height>281</height>
 					<texture diffuse="masks/landscape.png" background="true">$VAR[IconWallThumbVar]</texture>
-					<!-- <aspectratio aligny="center">keep</aspectratio> -->
+					
 					<bordersize>20</bordersize>
 				</control>
 				<control type="image">
@@ -557,7 +524,7 @@
 					<visible>$PARAM[focused] + String.IsEqual(ListItem.DBtype,movie) + !String.IsEmpty(Container($PARAM[id]).ListItem.Property(WatchedProgress)) + !Integer.IsEqual(Container($PARAM[id]).ListItem.Property(WatchedProgress),0) + [Control.IsVisible(56) | Control.IsVisible(504)]</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
 				</control>
-				<!-- Episode Percent Progress -->
+				
 				<control type="label">
 					<left>60</left>
 					<top>215</top>
@@ -616,7 +583,7 @@
 					<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
 				</control>
-				<!-- 6 -->
+				
 				<control type="label">
           <left>229</left>
           <top>-102</top>
@@ -647,7 +614,7 @@
 					<visible>$PARAM[focused] + [Control.IsVisible(56) | Control.IsVisible(504)]</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
 				</control>
-				<!-- 6 -->
+				
 				<control type="label">
           <left>232</left>
           <top>-102</top>
@@ -705,7 +672,7 @@
 	<include name="View_56_WideInfoWall">
 		<control type="group">
 			<include>OpenClose_Right</include>
-			<!-- <left>100</left> -->
+			
 			<top>-15</top>
 			<visible>Control.IsVisible(56)</visible>
 			<include>Visible_Right</include>
@@ -729,7 +696,7 @@
 						<left>30</left>
 						<top>120</top>
 						<include content="BigWideInfoWallMovieLayout">
-						<param name="focused" value="false"/>
+						<param name="focused" value="false" />
 						</include>
 					</control>
 				</itemlayout>
@@ -739,18 +706,18 @@
 						<left>30</left>
 						<top>120</top>
 						<include content="BigWideInfoWallMovieLayout">
-							<param name="focused" value="true"/>
+							<param name="focused" value="true" />
 						</include>
 					</control>
 				</focusedlayout>
-				<!-- infowall spacing -->
+				
 				<itemlayout height="301" width="430" condition="Container.Content(episodes) | Container.Content(videos) | [Container.Content(musicvideos) + !Skin.HasSetting(show_musicvideoposter)]">
 					<control type="group">
 						<left>44</left>
 						<top>110</top>
 						<include content="WideInfoWallEpisodeLayout">
-							<param name="focused" value="false"/>
-							<param name="thumb_label" value="$INFO[ListItem.Label2]"/>
+							<param name="focused" value="false" />
+							<param name="thumb_label" value="$INFO[ListItem.Label2]" />
 						</include>
 					</control>
 				</itemlayout>
@@ -760,8 +727,8 @@
 						<left>44</left>
 						<top>110</top>
 						<include content="WideInfoWallEpisodeLayout">
-							<param name="focused" value="true"/>
-							<param name="thumb_label" value="$INFO[ListItem.Label2]"/>
+							<param name="focused" value="true" />
+							<param name="thumb_label" value="$INFO[ListItem.Label2]" />
 						</include>
 					</control>
 				</focusedlayout>

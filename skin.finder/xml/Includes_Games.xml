@@ -6,7 +6,7 @@
 			<centerleft>50%</centerleft>
 			<width>1820</width>
 			<height>870</height>
-			<include content="DialogBackgroundCommons">
+			<include content="FinderSettingsDialogBackground">
 				<param name="width" value="1820"/>
 				<param name="height" value="870"/>
 				<param name="header_label" value="$LOCALIZE[35058]"/>
@@ -52,7 +52,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font25_title</font>
-					<texturefocus colordiffuse="button_focus">masks/focus.png</texturefocus>
+					<include>FinderThemeRowButton</include>
 					<texturenofocus/>
 				</control>
 			</control>
@@ -102,7 +102,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font27</font>
-					<texturefocus colordiffuse="button_focus">masks/focus.png</texturefocus>
+					<include>FinderThemeRowButton</include>
 					<texturenofocus/>
 				</control>
 				<control type="label" id="8">
@@ -182,7 +182,7 @@
 			<centerleft>50%</centerleft>
 			<width>1820</width>
 			<height>830</height>
-			<include content="DialogBackgroundCommons">
+			<include content="FinderSettingsDialogBackground">
 				<param name="width" value="1820"/>
 				<param name="height" value="830"/>
 				<param name="header_label" value=""/>

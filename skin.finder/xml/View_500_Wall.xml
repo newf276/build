@@ -113,7 +113,7 @@
 					<control type="group">
 						<left>35</left>
 						<top>150</top>
-						<include content="InfoWallMusicLayout">
+						<include content="FinderThemeFavouriteLayout">
 							<param name="fallback_image" value="DefaultFavourites.png"/>
 						</include>
 					</control>
@@ -123,7 +123,7 @@
 						<depth>DepthContentPopout</depth>
 						<left>35</left>
 						<top>150</top>
-						<include content="InfoWallMusicLayout">
+						<include content="FinderThemeFavouriteLayout">
 							<param name="fallback_image" value="DefaultFavourites.png"/>
 							<param name="focused" value="true"/>
 						</include>

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <window>
     <controls>
-        <!-- Background -->
+        
         <control type="image">
             <left>0</left>
             <top>0</top>
@@ -9,7 +9,7 @@
             <height>1080</height>
             <texture colordiffuse="80000000">finder_common/white.png</texture>
         </control>
-        <!-- Colors Panel -->
+        
         <control type="group">
             <left>130</left>
             <top>70</top>
@@ -41,14 +41,14 @@
                     <width max="1650">auto</width>
                     <height>20</height>
                     <font>font14</font>
-                    <!-- Finder_33 -->
+                    
                     <textcolor>unfocused_text</textcolor>
                     <align>center</align>
                     <aligny>center</aligny>
                     <label>[B]Choose Highlight Color[/B]</label>
                 </control>
             </control>
-            <!-- Color picker panel -->
+            
             <control type="panel" id="2000">
                 <visible>!String.IsEqual(Window.Property(show_busy_dialog),true)</visible>
                 <left>30</left>
@@ -84,7 +84,7 @@
                     </control>
                 </focusedlayout>
             </control>
-            <!-- Buttons -->
+            
             <control type="group">
                 <visible>!String.IsEqual(Window.Property(show_busy_dialog),true)</visible>
                 <left>1405</left>
@@ -99,10 +99,10 @@
                     <onright>2000</onright>
                     <label>OK</label>
                     <font>font12</font>
-                    <!-- Finder_26 -->
+                    
                     <textcolor>unfocused_text</textcolor>
-                    <focusedcolor>focused_text</focusedcolor>
-                    <texturefocus colordiffuse="button_focus">special://skin/media/buttons/dfo.png</texturefocus>
+                    <focusedcolor>white</focusedcolor>
+                    <texturefocus border="24">special://skin/media/finder_focus/setting-short.png</texturefocus>
                     <texturenofocus colordiffuse="button_focus2">special://skin/media/buttons/dnfo.png</texturenofocus>
                     <align>center</align>
                     <aligny>center</aligny>
@@ -118,10 +118,10 @@
                     <onright>2000</onright>
                     <label>Cancel</label>
                     <font>font12</font>
-                    <!-- Finder_26 -->
+                    
                     <textcolor>unfocused_text</textcolor>
-                    <focusedcolor>focused_text</focusedcolor>
-                    <texturefocus colordiffuse="button_focus">special://skin/media/buttons/dfo.png</texturefocus>
+                    <focusedcolor>white</focusedcolor>
+                    <texturefocus border="24">special://skin/media/finder_focus/setting-short.png</texturefocus>
                     <texturenofocus colordiffuse="button_focus2">special://skin/media/buttons/dnfo.png</texturenofocus>
                     <align>center</align>
                     <aligny>center</aligny>
@@ -135,7 +135,7 @@
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <font>font12</font>
-                    <!-- Finder_26 -->
+                    
                     <label>[B]Enter Value[/B]</label>
                 </control>
                 <control type="button" id="12">
@@ -149,10 +149,10 @@
                     <onright>2000</onright>
                     <label>$INFO[Container(2000).ListItem.Property(highlight)]</label>
                     <font>font12</font>
-                    <!-- Finder_26 -->
+                    
                     <textcolor>unfocused_text</textcolor>
-                    <focusedcolor>focused_text</focusedcolor>
-                    <texturefocus colordiffuse="button_focus">special://skin/media/buttons/dfo.png</texturefocus>
+                    <focusedcolor>white</focusedcolor>
+                    <texturefocus border="24">special://skin/media/finder_focus/setting-short.png</texturefocus>
                     <texturenofocus colordiffuse="button_focus2">special://skin/media/buttons/dnfo.png</texturenofocus>
                     <align>center</align>
                     <aligny>center</aligny>

@@ -278,7 +278,7 @@
 			<control type="image">
 				<left>0</left>
 				<right>0</right>
-				<texture colordiffuse="button_focus">masks/focus-long.png</texture>
+				<texture colordiffuse="white">masks/focus-long.png</texture>
 				<visible>Control.hasFocus(55)</visible>
 			</control>
 			<control type="label">

@@ -16,6 +16,12 @@
 	<controls>
 		<include>DefaultBackground</include>
 		<include>FinderBackground</include>
+		<control type="image">
+            <depth>DepthBackground</depth>
+            <include>FullScreenDimensions</include>
+            <texture colordiffuse="finder_charcoal">colors/white.png</texture>
+            <visible>!Player.HasMedia</visible>
+        </control>
 		<control type="group">
 			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
 			<!-- WIDGETS GROUP -->
@@ -1584,6 +1590,9 @@
 						<!-- Force Close -->
 						<include content="IconButton">
 							<param name="control_id" value="801"/>
+							<param name="focus_texture" value="buttons/home-button-charcoal-focus.png"/>
+							<param name="focus_tint" value="FFFFFFFF"/>
+							<param name="icon_focus_tint" value="FFD3D3D3"/>
 							<param name="onclick" value="RunPlugin(plugin://plugin.program.cleaner/?mode=18)"/>
 							<param name="icon" value="icons/power.png"/>
 							<param name="label" value="$LOCALIZE[33060]"/>
@@ -1592,6 +1601,9 @@
 						<!-- Quit Kodi -->
 						<include content="IconButton">
 							<param name="control_id" value="802"/>
+							<param name="focus_texture" value="buttons/home-button-charcoal-focus.png"/>
+							<param name="focus_tint" value="FFFFFFFF"/>
+							<param name="icon_focus_tint" value="FFD3D3D3"/>
 							<param name="onclick" value="Quit()"/>
 							<param name="icon" value="icons/power.png"/>
 							<param name="label" value="$LOCALIZE[33060]"/>
@@ -1600,6 +1612,9 @@
 						<!-- Show Shutdown Menu -->
 						<include content="IconButton">
 							<param name="control_id" value="803"/>
+							<param name="focus_texture" value="buttons/home-button-charcoal-focus.png"/>
+							<param name="focus_tint" value="FFFFFFFF"/>
+							<param name="icon_focus_tint" value="FFD3D3D3"/>
 							<param name="onclick" value="ActivateWindow(shutdownmenu)"/>
 							<param name="icon" value="icons/power.png"/>
 							<param name="label" value="$LOCALIZE[33060]"/>
@@ -1608,6 +1623,9 @@
 						<!-- Search: Open Dialog -->
 						<include content="IconButton">
 							<param name="control_id" value="804"/>
+							<param name="focus_texture" value="buttons/home-button-charcoal-focus.png"/>
+							<param name="focus_tint" value="FFFFFFFF"/>
+							<param name="icon_focus_tint" value="FFD3D3D3"/>
 							<param name="onclick" value="ActivateWindow(1107)"/>
 							<param name="icon" value="icons/search.png"/>
 							<param name="label" value="$LOCALIZE[137]"/>
@@ -1616,6 +1634,9 @@
 						<!-- Search: Open Keyboard -->
 						<include content="IconButton">
 							<param name="control_id" value="805"/>
+							<param name="focus_texture" value="buttons/home-button-charcoal-focus.png"/>
+							<param name="focus_tint" value="FFFFFFFF"/>
+							<param name="icon_focus_tint" value="FFD3D3D3"/>
 							<param name="onclick" value="RunPlugin(plugin://plugin.video.finder/?mode=search.get_key_id&amp;search_type=media_title&amp;combined_results=true)"/>
 							<param name="icon" value="icons/search.png"/>
 							<param name="label" value="$LOCALIZE[137]"/>
@@ -1624,6 +1645,9 @@
 						<!-- Search: Open Search Window -->
 						<include content="IconButton">
 							<param name="control_id" value="806"/>
+							<param name="focus_texture" value="buttons/home-button-charcoal-focus.png"/>
+							<param name="focus_tint" value="FFFFFFFF"/>
+							<param name="icon_focus_tint" value="FFD3D3D3"/>
 							<param name="onclick" value="ActivateWindow(1107)"/>
 							<param name="icon" value="icons/search.png"/>
 							<param name="label" value="$LOCALIZE[137]"/>
@@ -1632,6 +1656,9 @@
 						<!-- Favourites -->
 						<include content="IconButton">
 							<param name="control_id" value="807"/>
+							<param name="focus_texture" value="buttons/home-button-charcoal-focus.png"/>
+							<param name="focus_tint" value="FFFFFFFF"/>
+							<param name="icon_focus_tint" value="FFD3D3D3"/>
 							<param name="onclick" value="ActivateWindow(favouritesbrowser)"/>
 							<param name="icon" value="icons/favourites.png"/>
 							<param name="label" value="$LOCALIZE[21417]"/>
@@ -1640,6 +1667,9 @@
 						<!-- Settings -->
 						<include content="IconButton">
 							<param name="control_id" value="808"/>
+							<param name="focus_texture" value="buttons/home-button-charcoal-focus.png"/>
+							<param name="focus_tint" value="FFFFFFFF"/>
+							<param name="icon_focus_tint" value="FFD3D3D3"/>
 							<param name="onclick" value="ActivateWindow(settings)"/>
 							<param name="icon" value="icons/settings.png"/>
 							<param name="label" value="$LOCALIZE[21417]"/>
@@ -1647,6 +1677,9 @@
 						<!-- Add-on Browser -->
 						<include content="IconButton">
 							<param name="control_id" value="809"/>
+							<param name="focus_texture" value="buttons/home-button-charcoal-focus.png"/>
+							<param name="focus_tint" value="FFFFFFFF"/>
+							<param name="icon_focus_tint" value="FFD3D3D3"/>
 							<param name="onclick" value="ActivateWindow(1100)"/>
 							<param name="icon" value="icons/addons.png"/>
 							<param name="label" value="$LOCALIZE[21417]"/>
@@ -1655,6 +1688,9 @@
 						<!-- Maintenance & Tools -->
 						<include content="IconButton">
 							<param name="control_id" value="810"/>
+							<param name="focus_texture" value="buttons/home-button-charcoal-focus.png"/>
+							<param name="focus_tint" value="FFFFFFFF"/>
+							<param name="icon_focus_tint" value="FFD3D3D3"/>
 							<param name="onclick" value="ActivateWindow(1106)"/>
 							<param name="icon" value="icons/settings/configure.png"/>
 							<param name="label" value="$LOCALIZE[21417]"/>

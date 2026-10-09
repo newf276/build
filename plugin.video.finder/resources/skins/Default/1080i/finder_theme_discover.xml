@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <window>
     <controls>
-        <!-- Background -->
+        
         <control type="image">
             <left>0</left>
             <top>0</top>
@@ -9,7 +9,7 @@
             <height>1080</height>
             <texture colordiffuse="80000000">finder_common/white.png</texture>
         </control>
-        <!-- Filter Window -->
+        
         <control type="group">
             <top>72</top>
             <left>92</left>
@@ -40,7 +40,7 @@
                 <left>30</left>
                 <height>20</height>
                 <font>font12</font>
-                <!-- Finder_26 -->
+                
                 <textcolor>unfocused_text</textcolor>
                 <shadowcolor>FF000000</shadowcolor>
                 <align>center</align>
@@ -54,7 +54,7 @@
                 <texture diffuse="finder_diffuse/poster-50.png" background="true">$INFO[Container(2100).ListItem.Property(icon)]</texture>
                 <fadetime>100</fadetime>
             </control>
-            <!-- Filter List -->
+            
             <control type="fixedlist" id="2100">
                 <pagecontrol>4100</pagecontrol>
                 <left>15</left>
@@ -78,7 +78,7 @@
                         <top>45</top>
                         <height>5</height>
                         <font>font12</font>
-                        <!-- Finder_26 -->
+                        
                         <textcolor>unfocused_text</textcolor>
                         <align>left</align>
                         <aligny>center</aligny>
@@ -90,7 +90,7 @@
                         <top>45</top>
                         <height>5</height>
                         <font>font12</font>
-                        <!-- Finder_26 -->
+                        
                         <textcolor>unfocused_text</textcolor>
                         <align>right</align>
                         <aligny>center</aligny>
@@ -101,7 +101,7 @@
                     <control type="image">
                         <animation effect="fade" start="100" end="50" time="0" condition="!Control.HasFocus(2100)">Conditional</animation>
                         <width>1242</width>
-                        <texture colordiffuse="button_focus">special://skin/media/masks/focus.png</texture>
+                        <texture border="24">special://skin/media/finder_focus/setting-long.png</texture>
                     </control>
                     <control type="label">
                         <left>15</left>
@@ -109,8 +109,8 @@
                         <height>5</height>
                         <width max="360">auto</width>
                         <font>font12</font>
-                        <!-- Finder_26 -->
-                        <textcolor>focused_text</textcolor>
+                        
+                        <textcolor>white</textcolor>
                         <align>left</align>
                         <aligny>center</aligny>
                         <label>[UPPERCASE]$INFO[ListItem.Property(label1)][/UPPERCASE]</label>
@@ -122,8 +122,8 @@
                         <top>45</top>
                         <height>5</height>
                         <font>font12</font>
-                        <!-- Finder_26 -->
-                        <textcolor>focused_text</textcolor>
+                        
+                        <textcolor>white</textcolor>
                         <align>right</align>
                         <aligny>center</aligny>
                         <label>[UPPERCASE]$INFO[ListItem.Property(label2)][/UPPERCASE]</label>
@@ -154,7 +154,7 @@
                     <width>1635</width>
                     <height>20</height>
                     <font>font12</font>
-                    <!-- Finder_26 -->
+                    
                     <textcolor>unfocused_text</textcolor>
                     <label>[UPPERCASE]$INFO[Window.Property(list_label)][/UPPERCASE]</label>
                     <align>center</align>
@@ -167,7 +167,7 @@
                     <width>1635</width>
                     <height>20</height>
                     <font>font10</font>
-                    <!-- Finder_21 -->
+                    
                     <textcolor>unfocused_text</textcolor>
                     <label>[UPPERCASE][I]$INFO[Window.Property(url_label)][/I][/UPPERCASE]</label>
                     <align>center</align>
@@ -188,10 +188,10 @@
                     <onright>2100</onright>
                     <label>Save and Exit</label>
                     <font>font12</font>
-                    <!-- Finder_26 -->
+                    
                     <textcolor>unfocused_text</textcolor>
-                    <focusedcolor>focused_text</focusedcolor>
-                    <texturefocus colordiffuse="button_focus">special://skin/media/buttons/dfo.png</texturefocus>
+                    <focusedcolor>white</focusedcolor>
+                    <texturefocus border="24">special://skin/media/finder_focus/setting-short.png</texturefocus>
                     <texturenofocus colordiffuse="button_focus2">special://skin/media/buttons/dnfo.png</texturenofocus>
                     <align>center</align>
                     <aligny>center</aligny>
@@ -209,10 +209,10 @@
                     <onright>2100</onright>
                     <label>Exit</label>
                     <font>font12</font>
-                    <!-- Finder_26 -->
+                    
                     <textcolor>unfocused_text</textcolor>
-                    <focusedcolor>focused_text</focusedcolor>
-                    <texturefocus colordiffuse="button_focus">special://skin/media/buttons/dfo.png</texturefocus>
+                    <focusedcolor>white</focusedcolor>
+                    <texturefocus border="24">special://skin/media/finder_focus/setting-short.png</texturefocus>
                     <texturenofocus colordiffuse="button_focus2">special://skin/media/buttons/dnfo.png</texturenofocus>
                     <align>center</align>
                     <aligny>center</aligny>

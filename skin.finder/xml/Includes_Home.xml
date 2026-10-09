@@ -530,6 +530,7 @@
 		</definition>
 	</include>
 	<include name="WidgetListPoster">
+		<param name="finder_tvshow_status">String.IsEqual(ListItem.DBType,tvshow)</param>
 		<param name="onclick_condition">false</param>
 		<param name="keep_alive">false</param>
 		<definition>
@@ -724,6 +725,7 @@
 		</definition>
 	</include>
 	<include name="WidgetListHomeWideInfo">
+		<param name="finder_tvshow_status">String.IsEqual(ListItem.DBType,tvshow)</param>
 		<param name="onclick_condition">false</param>
 		<definition>
 			<include content="CategoryLabel">
@@ -1319,19 +1321,19 @@
 							<visible>!Control.HasFocus($PARAM[list_id])</visible>
 						</control>
 						<control type="image">
-							<include>FocusBounce</include>
-							<width>347</width>
-							<height>120</height>
-							<texture colordiffuse="button_focus">masks/dialog-notification-border.png</texture>
-							<bordersize>17</bordersize>
-							<include>Animation_FocusTextureFade</include>
-							<visible>Control.HasFocus($PARAM[list_id])</visible>
-						</control>
-						<control type="image">
 							<width>347</width>
 							<height>120</height>
 							<texture colordiffuse="dialog_bg">masks/dialog-notification.png</texture>
 							<bordersize>20</bordersize>
+						</control>
+						<control type="image">
+							<include>FocusBounce</include>
+							<width>347</width>
+							<height>120</height>
+							<texture colordiffuse="FFFFFFFF">buttons/home-category-focus-outline.png</texture>
+							<bordersize>17</bordersize>
+							<include>Animation_FocusTextureFade</include>
+							<visible>Control.HasFocus($PARAM[list_id])</visible>
 						</control>
 						<control type="image">
 							<top>23</top>
@@ -1450,19 +1452,19 @@
 							<visible>!Control.HasFocus($PARAM[list_id])</visible>
 						</control>
 						<control type="image">
-							<include>FocusBounce</include>
-							<width>347</width>
-							<height>120</height>
-							<texture colordiffuse="button_focus">masks/dialog-notification-border.png</texture>
-							<bordersize>17</bordersize>
-							<include>Animation_FocusTextureFade</include>
-							<visible>Control.HasFocus($PARAM[list_id])</visible>
-						</control>
-						<control type="image">
 							<width>347</width>
 							<height>120</height>
 							<texture colordiffuse="dialog_bg">masks/dialog-notification.png</texture>
 							<bordersize>20</bordersize>
+						</control>
+						<control type="image">
+							<include>FocusBounce</include>
+							<width>347</width>
+							<height>120</height>
+							<texture colordiffuse="FFFFFFFF">buttons/home-category-focus-outline.png</texture>
+							<bordersize>17</bordersize>
+							<include>Animation_FocusTextureFade</include>
+							<visible>Control.HasFocus($PARAM[list_id])</visible>
 						</control>
 						<control type="image">
 							<top>23</top>
@@ -2348,14 +2350,7 @@
 				<left>2</left>
 				<!-- Highlight BG -->
 				<!-- SideMenu Focused Icon Background Shading -->
-				<control type="image">
-					<left>0</left>
-					<top>0</top>
-					<width>95</width>
-					<height>95</height>
-					<texture colordiffuse="51FFFFFF">masks/icon_mainmenu.png</texture>
-					<visible>Skin.HasSetting(NoIconMainMenu) + !Skin.HasSetting(NoHighlightMainMenu) + !Skin.HasSetting(FinderHybrid) + !Skin.HasSetting(ClassicFinder) + !Skin.HasSetting(EstuaryLookFeel) + !ControlGroup(700).HasFocus</visible>
-				</control>
+				
 				<!-- SideMenu Focused Icon -->
 				<control type="image">
 					<left>-8</left>
@@ -2449,13 +2444,7 @@
 			<!-- Estuary focused layout -->
 			<control type="group">
 				<visible>!Skin.HasSetting(FinderHybrid) + Skin.HasSetting(EstuaryLookFeel)</visible>
-				<control type="image">
-					<left>0</left>
-					<width>108</width>
-					<height>108</height>
-					<texture colordiffuse="primary_background">colors/white.png</texture>
-					<visible>Skin.HasSetting(NoIconMainMenu) + !Skin.HasSetting(NoHighlightMainMenu)</visible>
-				</control>
+				
 				<control type="image">
 					<left>-16</left>
 					<top>-16</top>
@@ -2627,14 +2616,7 @@
 				<left>2</left>
 				<!-- Highlight BG -->
 				<!-- SideMenu Focused Icon Background Shading -->
-				<control type="image">
-					<left>0</left>
-					<top>0</top>
-					<width>95</width>
-					<height>95</height>
-					<texture colordiffuse="51FFFFFF">masks/icon_mainmenu.png</texture>
-					<visible>Skin.HasSetting(NoIconMainMenu) + !Skin.HasSetting(NoHighlightMainMenu) + !Skin.HasSetting(FinderHybrid) + !Skin.HasSetting(ClassicFinder) + !Skin.HasSetting(EstuaryLookFeel) + !ControlGroup(700).HasFocus</visible>
-				</control>
+				
 				<!-- SideMenu Focused Icon -->
 				<control type="image">
 					<left>-8</left>
@@ -2655,7 +2637,7 @@
 					<font>font37</font>
 					<label>$INFO[ListItem.Label]</label>
 					<shadowcolor>text_shadow</shadowcolor>
-					<textcolor>focused_text</textcolor>
+					<textcolor>white</textcolor>
 					<visible>Skin.HasSetting(NoIconMainMenu) + !ControlGroup(700).HasFocus</visible>
 				</control>
 				<!-- Focused Label with Icons Disabled -->
@@ -2669,7 +2651,7 @@
 					<font>font45_title</font>
 					<label>$INFO[ListItem.Label]</label>
 					<shadowcolor>text_shadow</shadowcolor>
-					<textcolor>focused_text</textcolor>
+					<textcolor>white</textcolor>
 					<visible>!Skin.HasSetting(NoIconMainMenu) + !ControlGroup(700).HasFocus</visible>
 				</control>
 				<!-- Top bar fallback icon -->
@@ -2707,7 +2689,7 @@
 					<aligny>center</aligny>
 					<font>font45_title</font>
 					<label>$INFO[ListItem.Label]</label>
-					<textcolor>focused_text</textcolor>
+					<textcolor>white</textcolor>
 					<shadowcolor>text_shadow</shadowcolor>
 					<visible>!ControlGroup(700).HasFocus</visible>
 				</control>
@@ -2729,18 +2711,8 @@
 			<control type="group">
 				<visible>!Skin.HasSetting(FinderHybrid) + Skin.HasSetting(EstuaryLookFeel)</visible>
 				<!-- Uses the same geometry as the unfocused layout -->
-				<control type="image">
-					<left>0</left>
-					<width>450</width>
-					<height>108</height>
-					<texture colordiffuse="button_focus">colors/white.png</texture>
-				</control>
-				<control type="image">
-					<left>0</left>
-					<width>108</width>
-					<height>108</height>
-					<texture colordiffuse="primary_background">colors/white.png</texture>
-				</control>
+				
+				
 				<control type="image">
 					<left>-16</left>
 					<top>-16</top>
@@ -2756,7 +2728,7 @@
 					<aligny>center</aligny>
 					<font>font37</font>
 					<label>$INFO[ListItem.Label]</label>
-					<textcolor>focused_text</textcolor>
+					<textcolor>white</textcolor>
 				</control>
 			</control>
 			<!-- Classic Finder focused layout -->

@@ -24,7 +24,7 @@
     </extension>
 </addon>
 
-<addon id="skin.finder"  name="[B][COLOR dodgerblue]Newf's[/COLOR] Finder Plus Skin[/B]"  version="1.0.08"  provider-name="Ivar Brandt, Zaxxon709, newf276">
+<addon id="skin.finder" name="[B][COLOR dodgerblue]Newf's[/COLOR] Finder Plus Skin[/B]" version="1.1.03" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0" />
 	</requires>
@@ -44,7 +44,7 @@
 		<platform>all</platform>
 		<license>GPL-2.0-or-later</license>
         <source>https://github.com/newf276/build/tree/master/zips</source>
-		<description>Newf's Finder Plus Skin is a modified version of the default Estuary skin for Kodi. It is intended for use with Newf's Finder Addon ONLY.</description>
+		<description>Search provider lifecycle repair build 028. Coordinated search positioning repair build 027. Coordinated window repair build 026. Coordinated window repair test22 (2026-10-09). Newf's Finder Plus Skin is a modified version of the default Estuary skin for Kodi. It is intended for use with Newf's Finder Addon ONLY. Search corrections build 023.</description>
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
@@ -124,25 +124,25 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.finder" name="[B][COLOR dodgerblue]Newf's[/COLOR] Finder[/B]" provider-name="Forge Project,[B]Newf276[/B]" version="1.0.08.8">
+<addon id="plugin.video.finder" name="[B][COLOR dodgerblue]Newf's[/COLOR] Finder[/B]" provider-name="[B]Newf276[/B]" version="1.0.08.12">
     <requires>
-        <import addon="xbmc.python" version="3.0.1"/>
-        <import addon="script.module.pil" version="1.1.7"/>
-        <import addon="script.module.requests" version="2.19.1"/>
-		<import addon="script.module.magneto" version="6.04.09"/>
-        <import addon="skin.finder" version="1.0.08" optional="true"/>
+        <import addon="xbmc.python" version="3.0.1" />
+        <import addon="script.module.pil" version="1.1.7" />
+        <import addon="script.module.requests" version="2.19.1" />
+		<import addon="script.module.magneto" version="6.04.09" />
+        <import addon="skin.finder" version="1.1.03" optional="true" />
     </requires>
     <extension point="xbmc.python.pluginsource" library="resources/lib/finder.py">
         <provides>video</provides>
     </extension>
-    <extension point="xbmc.service" library="resources/lib/service.py"/>
-    <extension point="xbmc.python.module" library="resources/lib/"/>
+    <extension point="xbmc.service" library="resources/lib/service.py" />
+    <extension point="xbmc.python.module" library="resources/lib/" />
     <extension point="xbmc.addon.metadata">
         <reuselanguageinvoker>true</reuselanguageinvoker>
         <summary lang="en">Access your content from premium cloud services.</summary>
         <description lang="en">Finder is a streamlined Kodi video addon. Before using please read Tips under Tools. It is designed for browsing and playing content from your own services,. Discover, Search, and browse media of interest. You must own the content of any media you play through this addon.</description>
         <platform>all</platform>
-		<disclaimer lang="en">This Fork is of Forge 2.13 (credit to silencebob2) directly, not directly from FenlightAM. The author of this addon does not host any of the content which is found and has no affiliation with any of the content providers.</disclaimer>
+		<disclaimer lang="en">This Fork is of Forge 2.13 (credit to silencebob2) directly, and developers from FEN/FenLight lineage. The author of this addon does not host any of the content which is found and has no affiliation with any of the content providers.</disclaimer>
 		<language>en</language>
 		<platform>all</platform>
 		<license>GPL-2.0-or-later</license>

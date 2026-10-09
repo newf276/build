@@ -1,3 +1,5 @@
+Current Finder Skin keeps watched circles and episode counts on supported poster/wide widgets. The duplicate thin progress line has been removed. The video playback timeline remains a separate playback control.
+
 Finder's TV progress features depend on the selected Primary Tracker. In Progress and Next Episodes use the active tracking source rather than being permanently tied to one service.
 
 Next Episodes can be configured to use Last Aired or Last Watched as its starting method. Its sort can be based on Recently Watched, Airdate or Title, and additional options control watchlist/favorite inclusion, airing-today items and unaired episodes.

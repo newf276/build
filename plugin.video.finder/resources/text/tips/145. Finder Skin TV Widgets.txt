@@ -1,3 +1,5 @@
+Build 029 preserves the accepted Home layout and navigation, silver-white focus and supported episode counts. Watched circles remain; the duplicate thin progress line is removed.
+
 Finder Skin's finalized TV Show widget set is designed around Finder's native lists and navigation.
 
 The default TV widget sequence is Genres, Categories, In Progress, Popular Today, Recently Trending, Most Watched, Providers and Networks. In Progress follows Finder's tracker-aware progress data, while the discovery widgets use Finder's existing TMDb or Trakt list actions.

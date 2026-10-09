@@ -8,7 +8,7 @@
 			<centerleft>50%</centerleft>
 			<width>1820</width>
 			<include>Animation_DialogPopupVisible</include>
-			<include content="DialogBackgroundCommons">
+			<include content="FinderSettingsDialogBackground">
 				<param name="width" value="1820"/>
 				<param name="height" value="900"/>
 				<param name="header_label" value=""/>
@@ -36,7 +36,7 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<font>font25_title</font>
-				<texturefocus colordiffuse="button_focus">masks/categorywidget.png</texturefocus>
+				<include>FinderThemeRowButton</include>
 				<texturenofocus colordiffuse="button_focus2">masks/categorywidget-unfocused.png</texturenofocus>
 			</control>
 			<control type="grouplist" id="5">
@@ -129,8 +129,8 @@
 				<textoffsetx>100</textoffsetx>
 				<textoffsety>0</textoffsety>
 				<textcolor>unfocused_text</textcolor>
-				<focusedcolor>focused_text</focusedcolor>
-				<texturefocus colordiffuse="button_focus">masks/categorywidget.png</texturefocus>
+				<focusedcolor>white</focusedcolor>
+				<include>FinderThemeRowButton</include>
 				<texturenofocus/>
 				<radioposx>40</radioposx>
 				<radioposy>0</radioposy>
@@ -140,9 +140,9 @@
 				<onright>5</onright>
 				<onup>3</onup>
 				<ondown>3</ondown>
-				<textureradioonfocus colordiffuse="focused_text">icons/settings.png</textureradioonfocus>
+				<textureradioonfocus colordiffuse="white">icons/settings.png</textureradioonfocus>
 				<textureradioonnofocus colordiffuse="unfocused_text">icons/settings.png</textureradioonnofocus>
-				<textureradioofffocus colordiffuse="focused_text">icons/settings.png</textureradioofffocus>
+				<textureradioofffocus colordiffuse="white">icons/settings.png</textureradioofffocus>
 				<textureradiooffnofocus colordiffuse="unfocused_text">icons/settings.png</textureradiooffnofocus>
 			</control>
 			<control type="scrollbar" id="60">

@@ -1,4 +1,4 @@
-Finder and Finder Skin Setup Guide — 1.0.08.8
+Finder and Finder Skin Setup Guide — Current Versions
 
 1. Install plugin.video.finder from Newf276's repository or the supplied ZIP. If you choose Finder + Finder Skin during first-run setup, Finder checks for skin.finder and can install it for you when needed. You do not need to activate Finder Skin manually before beginning setup.
 2. On first use, choose Finder + Finder Skin for the integrated interface or Finder Standalone to use the add-on without Finder Skin. In integrated mode Finder activates Finder Skin and continues directly to its Pre-Config selector.

@@ -1,3 +1,18 @@
+Version 1.1.03 — Final coordinated theme and search repair
+
+Final build 029 — 9 October 2026 after live testing.
+
+- Shared appearance: charcoal windows, silver-white rounded focus, circular toolbar/playback highlights, no added poster glow. Home navigation and layout remain protected.
+
+- Search uses up to five recent entries with actor/media replay, separate populated result rows, directional navigation and bottom-to-first wrap. Rows depend on available provider results; not every search has every category.
+- Poster/wide widgets keep the existing watched circles and counts; the duplicate thin progress line is removed. The playback timeline remains available.
+
+- Live checks covered movie/TV/Anime row navigation, wrap with subsequent horizontal selection, media/actor history replay, Denzel poster opening and Global News Stop/Audio focus. 
+
+- Not exhaustively tested: all five entries across restart, multiple actor matches, empty/late/optional provider rows, rapid input, music OSD and every settings child window. These remain follow-up checks, not known failures.
+
+- Changes since 028: fixed XML row positioning, delayed focus transfer until row placement applies, and charcoal/white playback focus. Carries forward the coordinated settings/dialog theme, readable toggles, 80-pixel selection icons, five-slot history, protected Home layout and removal of duplicate poster progress lines.
+
 Version 1.0.08
 
 Finder Watched and Progress Status Indicators

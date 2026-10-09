@@ -26,10 +26,10 @@
 							<width>396</width>
 							<height>245</height>
 							<texture colordiffuse="button_focus2">masks/landscape-unfocused.png</texture>
-							<!-- <bordertexture border="21" infill="false">overlays/shadow.png</bordertexture> -->
+							
 							<bordersize>20</bordersize>
 						</control>
-						<!-- IMAGE CONTROL -->
+						
 						<control type="image">
 							<left>120</left>
 							<top>35</top>
@@ -60,7 +60,7 @@
 							<include>FocusBounce</include>
 							<width>396</width>
 							<height>245</height>
-							<texture colordiffuse="button_focus">masks/landscape.png</texture>
+							<texture colordiffuse="white">masks/landscape.png</texture>
 							<bordersize>15</bordersize>
 							<include>Animation_FocusTextureFade</include>
 						</control>
@@ -68,7 +68,7 @@
 							<width>396</width>
 							<height>245</height>
 							<texture colordiffuse="dialog_bg">masks/landscape-unfocused.png</texture>
-							<!-- <bordertexture border="21" infill="false">overlays/shadow.png</bordertexture> -->
+							
 							<bordersize>20</bordersize>
 						</control>
 						<control type="image">

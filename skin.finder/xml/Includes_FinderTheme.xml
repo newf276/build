@@ -1,0 +1,883 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<includes>
+<include name="FinderThemeSurface"><control type="image"><depth>DepthBackground</depth><include>FullScreenDimensions</include><texture colordiffuse="finder_charcoal">colors/white.png</texture><visible>!Player.HasMedia</visible></control></include>
+<include name="FinderThemeRowFocus"><texture border="24">finder_focus/setting-long.png</texture></include>
+<include name="FinderThemeTileFocus"><texture border="20">finder_focus/system-tile.png</texture></include>
+<include name="FinderThemeRowButton"><textureradioonfocus colordiffuse="white">buttons/radio-button-on.png</textureradioonfocus><textureradioofffocus colordiffuse="white">buttons/radio-button-off.png</textureradioofffocus><texturefocus border="24">finder_focus/setting-long.png</texturefocus><focusedcolor>white</focusedcolor></include>
+<include name="FinderThemeFavouriteLayout">
+<param name="list_id">500</param>
+		<param name="fallback_image">DefaultFolder.png</param>
+		<param name="main_label">$INFO[ListItem.Artist]</param>
+		<param name="sub_label">$INFO[ListItem.Title]</param>
+		<param name="single_label">$INFO[ListItem.Label]</param>
+		<param name="focused">false</param>
+		<definition>
+			<control type="image">
+				<include>FocusBounce</include>
+				<top>-4</top>
+				<left>-4</left>
+				<width>288</width>
+				<height>288</height>
+				<include>FinderThemeTileFocus</include>
+				<bordersize>19</bordersize>
+				<visible>$PARAM[focused] + [Control.IsVisible(54) | Control.IsVisible(500)]</visible>
+				<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+			</control>
+			<control type="image">
+				<include>FocusBounce</include>
+				<top>-4</top>
+				<left>-4</left>
+				<width>288</width>
+				<height>288</height>
+				<include>FinderThemeTileFocus</include>
+				<bordersize>19</bordersize>
+				<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
+				<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+			</control>
+			<control type="image">
+				<include>FocusBounce</include>
+				<top>-4</top>
+				<left>-4</left>
+				<width>288</width>
+				<height>288</height>
+				<include>FinderThemeTileFocus</include>
+				<bordersize>19</bordersize>
+				<visible>$PARAM[focused] + [Control.HasFocus(14100) | ControlGroup(400).HasFocus | Control.HasFocus(450)]</visible>
+				<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+			</control>
+			<control type="image">
+				<top>0</top>
+				
+				<width>280</width>
+				
+				<height>280</height>
+				<texture diffuse="masks/addons.png" colordiffuse="button_focus2">dialogs/dialog-bg-nobo.png</texture>
+				<bordersize>20</bordersize>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>280</width>
+				<height>280</height>
+				<texture diffuse="masks/addons.png" fallback="$PARAM[fallback_image]" background="true">$VAR[InfoWallThumbVar]</texture>
+				<aspectratio>keep</aspectratio>
+				<bordersize>20</bordersize>
+			</control>
+			<control type="textbox">
+				<left>28</left>
+				<top>257</top>
+				<width>226</width>
+				<height>80</height>
+				<font>font12</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$PARAM[single_label]</label>
+				<textcolor>unfocused_text</textcolor>
+				<visible>!String.IsEqual(ListItem.DBType,album)</visible>
+			</control>
+			<control type="group">
+				<visible>String.IsEqual(ListItem.DBType,album)</visible>
+				<control type="label">
+					<left>29</left>
+					<top>256</top>
+					<width>224</width>
+					<label>$PARAM[sub_label]</label>
+					<font>font10</font>
+					<shadowcolor>text_shadow</shadowcolor>
+					<scroll>$PARAM[focused]</scroll>
+					<align>center</align>
+				</control>
+				<control type="label">
+					<left>29</left>
+					<top>284</top>
+					<width>224</width>
+					<label>$PARAM[main_label]</label>
+					<font>font12</font>
+					<shadowcolor>text_shadow</shadowcolor>
+					<scroll>$PARAM[focused]</scroll>
+					<align>center</align>
+				</control>
+			</control>
+			<control type="group">
+				<left>133</left>
+				<top>2</top>
+				<include condition="Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_userrating)">RatingCircle</include>
+			</control>
+		</definition>
+	</include>
+<include name="FinderThemeAddonInfoButton">
+		
+		<param name="width">220</param>
+		<param name="onclick_1_condition">true</param>
+		<param name="onclick_2_condition">true</param>
+		<param name="onclick_3_condition">true</param>
+		<definition>
+			<control type="radiobutton" id="$PARAM[id]">
+				<include>FocusBounce</include>
+				<width>$PARAM[width]</width>
+				<height>130</height>
+				<align>center</align>
+				<aligny>top</aligny>
+				<textcolor>unfocused_text</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="24">finder_focus/setting-short.png</texturefocus>
+				<texturenofocus border="2" colordiffuse="button_focus2">masks/landscape-unfocused.png</texturenofocus>
+				<textoffsetx>22</textoffsetx>
+				<textoffsety>78</textoffsety>
+				<radioposx>87</radioposx>
+				<radioposy>16</radioposy>
+				<radiowidth>48</radiowidth>
+				<font>font12</font>
+				<textureradioonfocus colordiffuse="white">$PARAM[icon]</textureradioonfocus>
+				<textureradioonnofocus colordiffuse="unfocused_text">$PARAM[icon]</textureradioonnofocus>
+				<textureradioofffocus colordiffuse="white">$PARAM[icon]</textureradioofffocus>
+				<textureradiooffnofocus colordiffuse="unfocused_text">$PARAM[icon]</textureradiooffnofocus>
+				<textureradiooffdisabled colordiffuse="disabled">$PARAM[icon]</textureradiooffdisabled>
+				<textureradioondisabled colordiffuse="disabled">$PARAM[icon]</textureradioondisabled>
+				<label>$PARAM[label]</label>
+				<onclick condition="$PARAM[onclick_1_condition]">$PARAM[onclick_1]</onclick>
+				<onclick condition="$PARAM[onclick_2_condition]">$PARAM[onclick_2]</onclick>
+				<onclick condition="$PARAM[onclick_3_condition]">$PARAM[onclick_3]</onclick>
+				<visible>$PARAM[visible]</visible>
+				<animation effect="fade" start="100" end="0" time="300" delay="300">Hidden</animation>
+			</control>
+		</definition>
+	</include>
+	<include name="FinderThemeAddonInfoToggleButton">
+		<param name="width">220</param>
+		<definition>
+			<control type="radiobutton" id="$PARAM[id]">
+				<include>FocusBounce</include>
+				<width>$PARAM[width]</width>
+				<height>130</height>
+				<align>center</align>
+				<aligny>top</aligny>
+				<textcolor>unfocused_text</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="24">finder_focus/setting-short.png</texturefocus>
+				<texturenofocus border="2" colordiffuse="button_focus2">masks/landscape-unfocused.png</texturenofocus>
+				<textoffsetx>35</textoffsetx>
+				<textoffsety>78</textoffsety>
+				<radioposx>87</radioposx>
+				<radioposy>16</radioposy>
+				<radiowidth>48</radiowidth>
+				<font>font12</font>
+				<textureradioonfocus colordiffuse="white">$PARAM[icon_on]</textureradioonfocus>
+				<textureradioonnofocus colordiffuse="unfocused_text">$PARAM[icon_on]</textureradioonnofocus>
+				<textureradioofffocus colordiffuse="white">$PARAM[icon_off]</textureradioofffocus>
+				<textureradiooffnofocus colordiffuse="unfocused_text">$PARAM[icon_off]</textureradiooffnofocus>
+				<textureradiooffdisabled colordiffuse="disabled">$PARAM[icon_off]</textureradiooffdisabled>
+				<textureradioondisabled colordiffuse="disabled">$PARAM[icon_on]</textureradioondisabled>
+				<selected>$PARAM[selected]</selected>
+				<label>$PARAM[label]</label>
+				<onclick>$PARAM[onclick_1]</onclick>
+				<onclick>$PARAM[onclick_2]</onclick>
+				<visible>$PARAM[visible]</visible>
+			</control>
+		</definition>
+	</include>
+	<include name="FinderSearchWidgetListBigPoster">
+		<param name="onclick_condition">false</param>
+		<param name="keep_alive">false</param>
+		<definition>
+			<control type="group" id="$PARAM[list_id]90"><width>2312</width><height>580</height><include content="FinderSearchCategoryLabel">
+				<param name="label">$PARAM[widget_header]</param>
+				<param name="list_id" value="$PARAM[list_id]" />
+			</include>
+			<include content="BusyListSpinner">
+				<param name="list_id" value="$PARAM[list_id]" />
+				<param name="posy" value="240" />
+			</include>
+			<control type="fixedlist" id="$PARAM[list_id]">
+				<left>0</left>
+				<top>115</top>
+				<orientation>horizontal</orientation>
+				<movement>4</movement>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating | $PARAM[keep_alive]</visible>
+				<width>2312</width>
+				<height>465</height>
+				<onclick condition="$PARAM[onclick_condition]">$PARAM[onclick_action]</onclick>
+				<include content="FinderSearchWidgetListCommon">
+					<param name="list_id" value="$PARAM[list_id]" />
+				</include>
+				<itemlayout width="269" height="393">
+					<control type="group">
+						<left>68</left>
+						<top>15</top>
+						<include content="BigInfoWallMovieLayout">
+							<param name="focused" value="false" />
+							<param name="list_id" value="$PARAM[list_id]" />
+						</include>
+					</control>
+				</itemlayout>
+				<focusedlayout width="269" height="393">
+					<control type="group">
+						<depth>DepthContentPopout</depth>
+						<left>68</left>
+						<top>15</top>
+						<include content="BigInfoWallMovieLayout">
+							<param name="focused" value="true" />
+							<param name="list_id" value="$PARAM[list_id]" />
+						</include>
+					</control>
+				</focusedlayout>
+				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="$INFO[Skin.String(WidgetItemLimit)]">$PARAM[content_path]</content>
+			<onup>RunScript(special://skin/resources/scripts/finder_search_navigation.py,up,$PARAM[list_id])</onup><ondown>RunScript(special://skin/resources/scripts/finder_search_navigation.py,down,$PARAM[list_id])</ondown><onleft>SetFocus(700)</onleft><onright>$PARAM[list_id]</onright><onfocus>RunScript(special://skin/resources/scripts/finder_search_navigation.py,position,$PARAM[list_id])</onfocus></control>
+		<defaultcontrol always="true">$PARAM[list_id]</defaultcontrol><top>2000</top><animation effect="slide" start="0,0" end="0,-2000" time="0" condition="String.IsEqual(Window(1121).Property(finder.search.$PARAM[list_id].y),0)">Conditional</animation><animation effect="slide" start="0,0" end="0,-1695" time="0" condition="String.IsEqual(Window(1121).Property(finder.search.$PARAM[list_id].y),305)">Conditional</animation><animation effect="slide" start="0,0" end="0,-1420" time="0" condition="String.IsEqual(Window(1121).Property(finder.search.$PARAM[list_id].y),580)">Conditional</animation><animation effect="slide" start="0,0" end="0,-1390" time="0" condition="String.IsEqual(Window(1121).Property(finder.search.$PARAM[list_id].y),610)">Conditional</animation><animation effect="slide" start="0,0" end="0,-1115" time="0" condition="String.IsEqual(Window(1121).Property(finder.search.$PARAM[list_id].y),885)">Conditional</animation></control></definition>
+	</include>
+	<include name="FinderSearchWidgetListBigPosterStacked">
+		<definition>
+			<control type="group" id="$PARAM[list_id]90"><width>2312</width><height>580</height><include content="FinderSearchCategoryLabelWidget">
+				<param name="label">$PARAM[widget_header]</param>
+				<param name="list_id" value="$PARAM[list_id]" />
+			</include>
+			<include content="BusyListSpinnerWidget">
+				<param name="list_id" value="$PARAM[list_id]" />
+			</include>
+			<control type="fixedlist" id="$PARAM[list_id]">
+				<left>0</left>
+				<top>115</top>
+				<width>2312</width>
+				<height>465</height>
+				<orientation>horizontal</orientation>
+				<movement>4</movement>
+				<include content="FinderSearchWidgetListCommonStacked">
+					<param name="list_id" value="$PARAM[list_id]" />
+				</include>
+				<itemlayout width="269" height="393">
+					<control type="group">
+						<left>68</left>
+						<top>15</top>
+						<include content="BigInfoWallMovieLayout">
+							<param name="focused" value="false" />
+							<param name="list_id" value="$PARAM[list_id]" />
+						</include>
+					</control>
+				</itemlayout>
+				<focusedlayout width="269" height="393">
+					<control type="group">
+						<depth>DepthContentPopout</depth>
+						<left>68</left>
+						<top>15</top>
+						<include content="BigInfoWallMovieLayout">
+							<param name="focused" value="true" />
+							<param name="list_id" value="$PARAM[list_id]" />
+						</include>
+					</control>
+				</focusedlayout>
+				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" limit="$INFO[Skin.String(StackedWidgetItemLimit)]" target="$PARAM[widget_target]">$PARAM[content_path]</content>
+			<onup>RunScript(special://skin/resources/scripts/finder_search_navigation.py,up,$PARAM[list_id])</onup><ondown>RunScript(special://skin/resources/scripts/finder_search_navigation.py,down,$PARAM[list_id])</ondown><onleft>SetFocus(700)</onleft><onright>$PARAM[list_id]</onright><onfocus>RunScript(special://skin/resources/scripts/finder_search_navigation.py,position,$PARAM[list_id])</onfocus></control>
+		<defaultcontrol always="true">$PARAM[list_id]</defaultcontrol><top>2000</top><animation effect="slide" start="0,0" end="0,-2000" time="0" condition="String.IsEqual(Window(1121).Property(finder.search.$PARAM[list_id].y),0)">Conditional</animation><animation effect="slide" start="0,0" end="0,-1695" time="0" condition="String.IsEqual(Window(1121).Property(finder.search.$PARAM[list_id].y),305)">Conditional</animation><animation effect="slide" start="0,0" end="0,-1420" time="0" condition="String.IsEqual(Window(1121).Property(finder.search.$PARAM[list_id].y),580)">Conditional</animation><animation effect="slide" start="0,0" end="0,-1390" time="0" condition="String.IsEqual(Window(1121).Property(finder.search.$PARAM[list_id].y),610)">Conditional</animation><animation effect="slide" start="0,0" end="0,-1115" time="0" condition="String.IsEqual(Window(1121).Property(finder.search.$PARAM[list_id].y),885)">Conditional</animation></control></definition>
+	</include>
+	<include name="FinderSearchWidgetListCategoryStacked">
+		<param name="icon">$INFO[ListItem.Icon]</param>
+		<param name="icon_height">72</param>
+		<param name="additional_movie_items">false</param>
+		<param name="additional_tvshow_items">false</param>
+		<param name="visible">true</param>
+		<definition>
+			<control type="group" id="$PARAM[list_id]90"><width>2312</width><height>305</height><include content="FinderSearchCategoryLabelWidget">
+				<param name="label">$PARAM[widget_header]</param>
+				<param name="list_id" value="$PARAM[list_id]" />
+				<param name="visible" value="$PARAM[visible]" />
+			</include>
+			<include content="BusyListSpinnerWidget">
+				<param name="list_id" value="$PARAM[list_id]" />
+			</include>
+			<control type="fixedlist" id="$PARAM[list_id]">
+				<left>0</left>
+				<top>110</top>
+				<width>2312</width>
+				<height>195</height>
+				<include content="FinderSearchWidgetListCommonStacked">
+					<param name="list_id" value="$PARAM[list_id]" />
+				</include>
+				<movement>3</movement>
+				<onfocus>SetProperty(finder.category_widget_focus,true,home)</onfocus>
+				<onunfocus>ClearProperty(finder.category_widget_focus,home)</onunfocus>
+				<visible>$PARAM[visible]</visible>
+				<itemlayout width="337" height="340">
+					<control type="group">
+						<left>70</left>
+						<control type="image"><width>347</width><height>120</height><texture colordiffuse="30EAECED">masks/dialog-notification-border.png</texture><bordersize>17</bordersize></control>
+<control type="image">
+							<width>347</width>
+							<height>120</height>
+							<texture colordiffuse="dialog_bg">masks/dialog-notification.png</texture>
+							<bordersize>20</bordersize>
+						</control>
+						<control type="image">
+							<top>23</top>
+							<left>113.5</left>
+							<width>120</width>
+							<height>$PARAM[icon_height]</height>
+							<texture colordiffuse="FFFFFFFF" fallback="DefaultFolder.png">$PARAM[icon]</texture>
+							<aspectratio>scale</aspectratio>
+							<visible>!Skin.HasSetting(NoIconSilhouettes)</visible>
+						</control>
+						<control type="textbox">
+							<left>47</left>
+							<top>25</top>
+							<width>254</width>
+							<height>70</height>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>unfocused_text</textcolor>
+							<font>font25_narrow</font>
+							<shadowcolor>text_shadow</shadowcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+						</control>
+					</control>
+				</itemlayout>
+				<focusedlayout width="337" height="340">
+					<control type="group">
+						<depth>DepthContentPopout</depth>
+						<left>70</left>
+						<control type="image">
+							<width>347</width>
+							<height>120</height>
+							<texture colordiffuse="30EAECED">masks/dialog-notification-border.png</texture>
+							<bordersize>17</bordersize>
+							<visible>!Control.HasFocus($PARAM[list_id])</visible>
+						</control>
+						<control type="image">
+							<width>347</width>
+							<height>120</height>
+							<texture colordiffuse="dialog_bg">masks/dialog-notification.png</texture>
+							<bordersize>20</bordersize>
+						</control>
+						<control type="image">
+							<include>FocusBounce</include>
+							<width>347</width>
+							<height>120</height>
+							<texture colordiffuse="FFFFFFFF">buttons/home-category-focus-outline.png</texture>
+							<bordersize>17</bordersize>
+							<include>Animation_FocusTextureFade</include>
+							<visible>Control.HasFocus($PARAM[list_id])</visible>
+						</control>
+						<control type="image">
+							<top>23</top>
+							<left>113.5</left>
+							<width>120</width>
+							<height>$PARAM[icon_height]</height>
+							<texture colordiffuse="FFFFFFFF" fallback="DefaultFolder.png">$PARAM[icon]</texture>
+							<aspectratio>scale</aspectratio>
+							<visible>!Skin.HasSetting(NoIconSilhouettes)</visible>
+						</control>
+						<control type="textbox">
+							<left>47</left>
+							<top>25</top>
+							<width>254</width>
+							<height>70</height>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>white</textcolor>
+							<font>font25_narrow</font>
+							<shadowcolor>text_shadow</shadowcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<autoscroll delay="1300" time="1500" repeat="2000">$PARAM[focused]</autoscroll>
+						</control>
+					</control>
+				</focusedlayout>
+				<content target="$PARAM[widget_target]" sortby="$PARAM[list_id]" limit="$INFO[Skin.String(CategoryWidgetItemLimit)]">$PARAM[content_path]</content>
+			<onup>RunScript(special://skin/resources/scripts/finder_search_navigation.py,up,$PARAM[list_id])</onup><ondown>RunScript(special://skin/resources/scripts/finder_search_navigation.py,down,$PARAM[list_id])</ondown><onleft>SetFocus(700)</onleft><onright>$PARAM[list_id]</onright><onfocus>RunScript(special://skin/resources/scripts/finder_search_navigation.py,position,$PARAM[list_id])</onfocus></control>
+		<defaultcontrol always="true">$PARAM[list_id]</defaultcontrol><top>2000</top><animation effect="slide" start="0,0" end="0,-2000" time="0" condition="String.IsEqual(Window(1121).Property(finder.search.$PARAM[list_id].y),0)">Conditional</animation><animation effect="slide" start="0,0" end="0,-1695" time="0" condition="String.IsEqual(Window(1121).Property(finder.search.$PARAM[list_id].y),305)">Conditional</animation><animation effect="slide" start="0,0" end="0,-1420" time="0" condition="String.IsEqual(Window(1121).Property(finder.search.$PARAM[list_id].y),580)">Conditional</animation><animation effect="slide" start="0,0" end="0,-1390" time="0" condition="String.IsEqual(Window(1121).Property(finder.search.$PARAM[list_id].y),610)">Conditional</animation><animation effect="slide" start="0,0" end="0,-1115" time="0" condition="String.IsEqual(Window(1121).Property(finder.search.$PARAM[list_id].y),885)">Conditional</animation></control></definition>
+	</include>
+	<include name="FinderSearchCategoryLabel">
+		
+		<param name="visible">true</param>
+		<param name="item_treshold">0</param>
+		<param name="label_focus">$INFO[Container($PARAM[list_id]).ListItem.Title,[B] | [/B]]</param>
+		<param name="label_focus_episodes">$INFO[Container($PARAM[list_id]).ListItem.TVShowTitle,[B] | [/B]]$INFO[Container($PARAM[list_id]).ListItem.Title,[B] | [/B]]</param>
+		<param name="label_focus_collections">$INFO[Container($PARAM[list_id]).ListItem.Label,[B]| [/B]]</param>
+		<definition>
+			<control type="group" id="$PARAM[list_id]665">
+				<left>75</left>
+				<top>0</top>
+				<onback>SetFocus(9000)</onback>
+				<height>90</height>
+				<width>2237</width>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,$PARAM[item_treshold]) | [Container($PARAM[list_id]).IsUpdating + Integer.IsEqual(Container($PARAM[list_id]).NumItems,0)]</visible>
+				<visible>$PARAM[visible]</visible>
+				<control type="grouplist">
+					<width>2237</width>
+					<orientation>horizontal</orientation>
+					<itemgap>30</itemgap>
+					<control type="label">
+						<width max="2237">auto</width>
+						<label>$PARAM[label]</label>
+						<textcolor>unfocused_text</textcolor>
+						<shadowcolor>text_shadow</shadowcolor>
+						<scroll>true</scroll>
+						<visible>!Control.HasFocus($PARAM[list_id])</visible>
+					</control>
+					
+					<control type="label">
+						<width max="1200">auto</width>
+						<label>$PARAM[label]$PARAM[label_focus]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+						<scroll>true</scroll>
+						<scrollspeed>100</scrollspeed>
+						<visible>!String.IsEqual(ListItem.DBType,episode) + Control.HasFocus($PARAM[list_id])</visible>
+						<visible>![String.IsEmpty(Skin.String(mdblist_api_key)) | Skin.HasSetting(Disable.WidgetLabelRatings)]</visible>
+					</control>
+					<control type="label">
+						<width max="1200">auto</width>
+						<label>$PARAM[label]$PARAM[label_focus_episodes]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+						<scroll>true</scroll>
+						<scrollspeed>100</scrollspeed>
+						<visible>String.IsEqual(ListItem.DBType,episode) + Control.HasFocus($PARAM[list_id])</visible>
+						<visible>![String.IsEmpty(Skin.String(mdblist_api_key)) | Skin.HasSetting(Disable.WidgetLabelRatings)]</visible>
+					</control>
+					<control type="label">
+						<width max="2237">auto</width>
+						<label>$PARAM[label_focus_collections]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+						<scroll>true</scroll>
+						<scrollspeed>100</scrollspeed>
+						<visible>[String.IsEqual(ListItem.DBtype,movie) + String.IsEmpty(ListItem.Genre)] + Control.HasFocus($PARAM[list_id])</visible>
+						<visible>![String.IsEmpty(Skin.String(mdblist_api_key)) | Skin.HasSetting(Disable.WidgetLabelRatings)]</visible>
+					</control>
+					
+					<control type="label">
+						<width max="2237">auto</width>
+						<label>$PARAM[label]$PARAM[label_focus]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+						<scroll>true</scroll>
+						<scrollspeed>100</scrollspeed>
+						<visible>!String.IsEqual(ListItem.DBType,episode) + Control.HasFocus($PARAM[list_id])</visible>
+						<visible>[String.IsEmpty(Skin.String(mdblist_api_key)) | Skin.HasSetting(Disable.WidgetLabelRatings)]</visible>
+					</control>
+					<control type="label">
+						<width max="2237">auto</width>
+						<label>$PARAM[label]$PARAM[label_focus_episodes]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+						<scroll>true</scroll>
+						<scrollspeed>100</scrollspeed>
+						<visible>String.IsEqual(ListItem.DBType,episode) + Control.HasFocus($PARAM[list_id])</visible>
+						<visible>[String.IsEmpty(Skin.String(mdblist_api_key)) | Skin.HasSetting(Disable.WidgetLabelRatings)]</visible>
+					</control>
+					<control type="label">
+						<width max="2237">auto</width>
+						<label>$PARAM[label_focus_collections]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+						<scroll>true</scroll>
+						<scrollspeed>100</scrollspeed>
+						<visible>[String.IsEqual(ListItem.DBtype,movie) + String.IsEmpty(ListItem.Genre)] + Control.HasFocus($PARAM[list_id])</visible>
+						<visible>[String.IsEmpty(Skin.String(mdblist_api_key)) | Skin.HasSetting(Disable.WidgetLabelRatings)]</visible>
+					</control>
+					<control type="grouplist">
+						<visible>![String.IsEmpty(Skin.String(mdblist_api_key)) | Skin.HasSetting(Disable.WidgetLabelRatings) | Container($PARAM[list_id]).IsUpdating] + [String.IsEqual(ListItem.DBtype,movie) | String.IsEqual(ListItem.DBtype,tvshow) | String.IsEqual(ListItem.DBtype,season) | String.IsEqual(ListItem.DBtype,episode)] + !String.IsEmpty(ListItem.Genre) + Control.HasFocus($PARAM[list_id])</visible>
+						<orientation>horizontal</orientation>
+						<aligny>center</aligny>
+						<itemgap>25</itemgap>
+						<control type="grouplist">
+							<width>95</width>
+							<orientation>horizontal</orientation>
+							<itemgap>8</itemgap>
+							<align>left</align>
+							<visible>![String.IsEmpty(Window.Property(finder.metascore)) | Skin.HasSetting(Disable.MetacriticRating)]</visible>
+							<control type="image">
+								<top>45</top>
+								<width>35</width>
+								<aspectratio>keep</aspectratio>
+								<align>left</align>
+								<aligny>center</aligny>
+								<texture>$INFO[Window.Property(finder.metascoreImage)]</texture>
+							</control>
+							<control type="label">
+								<width max="60">auto</width>
+								<height>32</height>
+								<align>left</align>
+								<label>$INFO[Window.Property(finder.metascore)]</label>
+							</control>
+						</control>
+						<control type="grouplist">
+							<width>95</width>
+							<orientation>horizontal</orientation>
+							<itemgap>8</itemgap>
+							<align>left</align>
+							<visible>![String.IsEmpty(Window.Property(finder.tomatoMeter)) | Skin.HasSetting(Disable.RTCRating)]</visible>
+							<control type="image">
+								<top>45</top>
+								<width>35</width>
+								<aspectratio>keep</aspectratio>
+								<align>left</align>
+								<aligny>center</aligny>
+								<texture>$INFO[Window.Property(finder.tomatoImage)]</texture>
+							</control>
+							<control type="label">
+								<width max="60">auto</width>
+								<height>32</height>
+								<align>left</align>
+								<label>$INFO[Window.Property(finder.tomatoMeter)]</label>
+							</control>
+						</control>
+						<control type="grouplist">
+							<width>95</width>
+							<orientation>horizontal</orientation>
+							<itemgap>6</itemgap>
+							<align>left</align>
+							<visible>![String.IsEmpty(Window.Property(finder.tomatoUserMeter)) | Skin.HasSetting(Disable.RTARating)]</visible>
+							<control type="image">
+								<top>45</top>
+								<width>35</width>
+								<aspectratio>keep</aspectratio>
+								<align>left</align>
+								<aligny>center</aligny>
+								<texture>$INFO[Window.Property(finder.tomatoUserImage)]</texture>
+							</control>
+							<control type="label">
+								<width max="60">auto</width>
+								<height>32</height>
+								<align>left</align>
+								<label>$INFO[Window.Property(finder.tomatoUserMeter)]</label>
+							</control>
+						</control>
+						<control type="grouplist">
+							<width>112</width>
+							<orientation>horizontal</orientation>
+							<itemgap>8</itemgap>
+							<align>left</align>
+							<visible>![String.IsEmpty(Window.Property(finder.imdbRating)) | Skin.HasSetting(Disable.IMDbRating)]</visible>
+							<control type="image">
+								<top>45</top>
+								<width>52</width>
+								
+								<aspectratio>keep</aspectratio>
+								<align>left</align>
+								<aligny>center</aligny>
+								<texture>$INFO[Window.Property(finder.imdbImage)]</texture>
+							</control>
+							<control type="label">
+								<width max="60">auto</width>
+								<height>32</height>
+								<align>left</align>
+								<label>$INFO[Window.Property(finder.imdbRating)]</label>
+							</control>
+						</control>
+						<control type="grouplist">
+							<width>105</width>
+							<orientation>horizontal</orientation>
+							<itemgap>10</itemgap>
+							<align>left</align>
+							<visible>![String.IsEmpty(Window.Property(finder.popularRating)) | Skin.HasSetting(Disable.IMDbPopularRating)]</visible>
+							<control type="image">
+								<top>45</top>
+								<width>25</width>
+								
+								<aspectratio>keep</aspectratio>
+								<align>left</align>
+								<aligny>center</aligny>
+								<texture>$INFO[Window.Property(finder.popularImage)]</texture>
+							</control>
+							<control type="label">
+								<width max="70">auto</width>
+								<height>32</height>
+								<align>left</align>
+								<label>$INFO[Window.Property(finder.popularRating)]</label>
+							</control>
+						</control>
+						<control type="grouplist">
+							<width>93</width>
+							<orientation>horizontal</orientation>
+							<itemgap>8</itemgap>
+							<align>left</align>
+							<visible>![String.IsEmpty(Window.Property(finder.tmdbRating)) | Skin.HasSetting(Disable.TMDbRating)]</visible>
+							<control type="image">
+								<top>45</top>
+								<width>36</width>
+								<aspectratio>keep</aspectratio>
+								<align>left</align>
+								<aligny>center</aligny>
+								<texture>$INFO[Window.Property(finder.tmdbImage)]</texture>
+							</control>
+							<control type="label">
+								<width max="60">auto</width>
+								<height>32</height>
+								<align>left</align>
+								<label>$INFO[Window.Property(finder.tmdbRating)]</label>
+							</control>
+						</control>
+					</control>
+				</control>
+			</control>
+		</definition>
+	</include>
+	<include name="FinderSearchCategoryLabelWidget">
+		<param name="visible">true</param>
+		<param name="item_treshold">0</param>
+		<param name="label_focus">$INFO[Container($PARAM[list_id]).ListItem.Title,[B] | [/B]]</param>
+		<param name="label_focus_episodes">$INFO[Container($PARAM[list_id]).ListItem.TVShowTitle,[B] | [/B]]$INFO[Container($PARAM[list_id]).ListItem.Title,[B] | [/B]]</param>
+		<param name="label_focus_collections">$INFO[Container($PARAM[list_id]).ListItem.Label,[B]| [/B]]</param>
+		<definition>
+			<control type="group" id="$PARAM[list_id]665">
+				<left>75</left>
+				<top>0</top>
+				<onback>SetFocus(9000)</onback>
+				<height>90</height>
+				<width>2237</width>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,$PARAM[item_treshold]) | [Container($PARAM[list_id]).IsUpdating + Integer.IsEqual(Container($PARAM[list_id]).NumItems,0)]</visible>
+				<visible>$PARAM[visible]</visible>
+				<control type="grouplist">
+					<width>2237</width>
+					<orientation>horizontal</orientation>
+					<itemgap>30</itemgap>
+					<control type="label" id="$PARAM[list_id]666">
+						<visible>!Container($PARAM[list_id]).IsUpdating</visible>
+						<width max="2237">auto</width>
+						<label>$PARAM[label]</label>
+						<textcolor>unfocused_text</textcolor>
+						<shadowcolor>text_shadow</shadowcolor>
+						<scroll>true</scroll>
+						<scrollspeed>100</scrollspeed>
+						<visible>$PARAM[visible]</visible>
+						<visible>!Control.HasFocus($PARAM[list_id])</visible>
+					</control>
+					
+					<control type="label" id="$PARAM[list_id]667">
+						<visible>!Container($PARAM[list_id]).IsUpdating</visible>
+						<width max="1200">auto</width>
+						<label>$PARAM[label]$PARAM[label_focus]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+						<scroll>true</scroll>
+						<scrollspeed>100</scrollspeed>
+						<visible>$PARAM[visible]</visible>
+						<visible>!String.IsEqual(ListItem.DBType,episode) + Control.HasFocus($PARAM[list_id])</visible>
+						<visible>![String.IsEmpty(Skin.String(mdblist_api_key)) | Skin.HasSetting(Disable.WidgetLabelRatings)]</visible>
+					</control>
+					<control type="label" id="$PARAM[list_id]668">
+						<visible>!Container($PARAM[list_id]).IsUpdating</visible>
+						<width max="1200">auto</width>
+						<label>$PARAM[label]$PARAM[label_focus_episodes]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+						<visible>$PARAM[visible]</visible>
+						<scroll>true</scroll>
+						<scrollspeed>100</scrollspeed>
+						<visible>String.IsEqual(ListItem.DBType,episode) + Control.HasFocus($PARAM[list_id])</visible>
+						<visible>![String.IsEmpty(Skin.String(mdblist_api_key)) | Skin.HasSetting(Disable.WidgetLabelRatings)]</visible>
+					</control>
+					<control type="label" id="$PARAM[list_id]669">
+						<visible>!Container($PARAM[list_id]).IsUpdating</visible>
+						<width max="2237">auto</width>
+						<label>$PARAM[label_focus_collections]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+						<visible>$PARAM[visible]</visible>
+						<scroll>true</scroll>
+						<scrollspeed>100</scrollspeed>
+						<visible>[String.IsEqual(ListItem.DBtype,movie) + String.IsEmpty(ListItem.Genre)] + Control.HasFocus($PARAM[list_id])</visible>
+						<visible>![String.IsEmpty(Skin.String(mdblist_api_key)) | Skin.HasSetting(Disable.WidgetLabelRatings)]</visible>
+					</control>
+					
+					<control type="label" id="$PARAM[list_id]670">
+						<visible>!Container($PARAM[list_id]).IsUpdating</visible>
+						<width max="2237">auto</width>
+						<label>$PARAM[label]$PARAM[label_focus]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+						<scroll>true</scroll>
+						<scrollspeed>100</scrollspeed>
+						<visible>$PARAM[visible]</visible>
+						<visible>!String.IsEqual(ListItem.DBType,episode) + Control.HasFocus($PARAM[list_id])</visible>
+						<visible>[String.IsEmpty(Skin.String(mdblist_api_key)) | Skin.HasSetting(Disable.WidgetLabelRatings)]</visible>
+					</control>
+					<control type="label" id="$PARAM[list_id]671">
+						<visible>!Container($PARAM[list_id]).IsUpdating</visible>
+						<width max="2237">auto</width>
+						<label>$PARAM[label]$PARAM[label_focus_episodes]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+						<visible>$PARAM[visible]</visible>
+						<scroll>true</scroll>
+						<scrollspeed>100</scrollspeed>
+						<visible>String.IsEqual(ListItem.DBType,episode) + Control.HasFocus($PARAM[list_id])</visible>
+						<visible>[String.IsEmpty(Skin.String(mdblist_api_key)) | Skin.HasSetting(Disable.WidgetLabelRatings)]</visible>
+					</control>
+					<control type="label" id="$PARAM[list_id]672">
+						<visible>!Container($PARAM[list_id]).IsUpdating</visible>
+						<width max="2237">auto</width>
+						<label>$PARAM[label_focus_collections]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+						<visible>$PARAM[visible]</visible>
+						<scroll>true</scroll>
+						<scrollspeed>100</scrollspeed>
+						<visible>[String.IsEqual(ListItem.DBtype,movie) + String.IsEmpty(ListItem.Genre)] + Control.HasFocus($PARAM[list_id])</visible>
+						<visible>[String.IsEmpty(Skin.String(mdblist_api_key)) | Skin.HasSetting(Disable.WidgetLabelRatings)]</visible>
+					</control>
+					<control type="grouplist">
+						<visible>![String.IsEmpty(Skin.String(mdblist_api_key)) | Skin.HasSetting(Disable.WidgetLabelRatings) | Container($PARAM[list_id]).IsUpdating] + [String.IsEqual(ListItem.DBtype,movie) | String.IsEqual(ListItem.DBtype,tvshow) | String.IsEqual(ListItem.DBtype,season) | String.IsEqual(ListItem.DBtype,episode)] + !String.IsEmpty(ListItem.Genre) + Control.HasFocus($PARAM[list_id])</visible>
+						<orientation>horizontal</orientation>
+						<aligny>center</aligny>
+						<itemgap>25</itemgap>
+						<control type="grouplist">
+							<width>95</width>
+							<orientation>horizontal</orientation>
+							<itemgap>8</itemgap>
+							<align>left</align>
+							<visible>![String.IsEmpty(Window.Property(finder.metascore)) | Skin.HasSetting(Disable.MetacriticRating)]</visible>
+							<control type="image">
+								<top>45</top>
+								<width>35</width>
+								<aspectratio>keep</aspectratio>
+								<align>left</align>
+								<aligny>center</aligny>
+								<texture>$INFO[Window.Property(finder.metascoreImage)]</texture>
+							</control>
+							<control type="label">
+								<width max="60">auto</width>
+								<height>32</height>
+								<align>left</align>
+								<label>$INFO[Window.Property(finder.metascore)]</label>
+							</control>
+						</control>
+						<control type="grouplist">
+							<width>95</width>
+							<orientation>horizontal</orientation>
+							<itemgap>8</itemgap>
+							<align>left</align>
+							<visible>![String.IsEmpty(Window.Property(finder.tomatoMeter)) | Skin.HasSetting(Disable.RTCRating)]</visible>
+							<control type="image">
+								<top>45</top>
+								<width>35</width>
+								<aspectratio>keep</aspectratio>
+								<align>left</align>
+								<aligny>center</aligny>
+								<texture>$INFO[Window.Property(finder.tomatoImage)]</texture>
+							</control>
+							<control type="label">
+								<width max="60">auto</width>
+								<height>32</height>
+								<align>left</align>
+								<label>$INFO[Window.Property(finder.tomatoMeter)]</label>
+							</control>
+						</control>
+						<control type="grouplist">
+							<width>95</width>
+							<orientation>horizontal</orientation>
+							<itemgap>6</itemgap>
+							<align>left</align>
+							<visible>![String.IsEmpty(Window.Property(finder.tomatoUserMeter)) | Skin.HasSetting(Disable.RTARating)]</visible>
+							<control type="image">
+								<top>45</top>
+								<width>35</width>
+								<aspectratio>keep</aspectratio>
+								<align>left</align>
+								<aligny>center</aligny>
+								<texture>$INFO[Window.Property(finder.tomatoUserImage)]</texture>
+							</control>
+							<control type="label">
+								<width max="60">auto</width>
+								<height>32</height>
+								<align>left</align>
+								<label>$INFO[Window.Property(finder.tomatoUserMeter)]</label>
+							</control>
+						</control>
+						<control type="grouplist">
+							<width>112</width>
+							<orientation>horizontal</orientation>
+							<itemgap>8</itemgap>
+							<align>left</align>
+							<visible>![String.IsEmpty(Window.Property(finder.imdbRating)) | Skin.HasSetting(Disable.IMDbRating)]</visible>
+							<control type="image">
+								<top>45</top>
+								<width>52</width>
+								
+								<aspectratio>keep</aspectratio>
+								<align>left</align>
+								<aligny>center</aligny>
+								<texture>$INFO[Window.Property(finder.imdbImage)]</texture>
+							</control>
+							<control type="label">
+								<width max="60">auto</width>
+								<height>32</height>
+								<align>left</align>
+								<label>$INFO[Window.Property(finder.imdbRating)]</label>
+							</control>
+						</control>
+						<control type="grouplist">
+							<width>105</width>
+							<orientation>horizontal</orientation>
+							<itemgap>10</itemgap>
+							<align>left</align>
+							<visible>![String.IsEmpty(Window.Property(finder.popularRating)) | Skin.HasSetting(Disable.IMDbPopularRating)]</visible>
+							<control type="image">
+								<top>45</top>
+								<width>25</width>
+								
+								<aspectratio>keep</aspectratio>
+								<align>left</align>
+								<aligny>center</aligny>
+								<texture>$INFO[Window.Property(finder.popularImage)]</texture>
+							</control>
+							<control type="label">
+								<width max="70">auto</width>
+								<height>32</height>
+								<align>left</align>
+								<label>$INFO[Window.Property(finder.popularRating)]</label>
+							</control>
+						</control>
+						<control type="grouplist">
+							<width>93</width>
+							<orientation>horizontal</orientation>
+							<itemgap>8</itemgap>
+							<align>left</align>
+							<visible>![String.IsEmpty(Window.Property(finder.tmdbRating)) | Skin.HasSetting(Disable.TMDbRating)]</visible>
+							<control type="image">
+								<top>45</top>
+								<width>36</width>
+								<aspectratio>keep</aspectratio>
+								<align>left</align>
+								<aligny>center</aligny>
+								<texture>$INFO[Window.Property(finder.tmdbImage)]</texture>
+							</control>
+							<control type="label">
+								<width max="60">auto</width>
+								<height>32</height>
+								<align>left</align>
+								<label>$INFO[Window.Property(finder.tmdbRating)]</label>
+							</control>
+						</control>
+					</control>
+				</control>
+			</control>
+		</definition>
+	</include>
+	<include name="FinderSearchWidgetListCommon">
+		
+		<onclick condition="String.StartsWith(Container($PARAM[list_id]).ListItem.FileNameAndPath,plugin://plugin.video.finder/) + [String.Contains(Container($PARAM[list_id]).ListItem.FileNameAndPath,mode=extendedinfo_menu_choice) | String.Contains(Container($PARAM[list_id]).ListItem.FileNameAndPath,mode=extras_menu_choice)]">RunPlugin($INFO[Container($PARAM[list_id]).ListItem.FileNameAndPath])</onclick>
+		<scrolltime tween="cubic" easing="out">500</scrolltime>
+		<orientation>horizontal</orientation>
+		<onleft condition="Window.IsActive(1121)">SetFocus(700)</onleft>
+		<onleft condition="[Skin.HasSetting(Enable.FullscreenWidgets) | Skin.HasSetting(CinemaLookFeel)] + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true)">$PARAM[list_id]</onleft>
+		<onleft condition="![[Skin.HasSetting(Enable.FullscreenWidgets) | Skin.HasSetting(CinemaLookFeel)] + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true)]">9000</onleft>
+		<onright>$PARAM[list_id]</onright>
+		<onback condition="Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Window(Home).Property(finder.widget_focus),true)">SetFocus(1700)</onback>
+		<onback condition="[Skin.HasSetting(Enable.FullscreenWidgets) | Skin.HasSetting(CinemaLookFeel)] + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true) + !Skin.HasSetting(CinemaLookFeel)">SetFocus(9000)</onback>
+		<onback condition="[Skin.HasSetting(Enable.FullscreenWidgets) | Skin.HasSetting(CinemaLookFeel)] + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true)">ClearProperty(finder.widget_focus,home)</onback>
+		<onback condition="![[Skin.HasSetting(Enable.FullscreenWidgets) | Skin.HasSetting(CinemaLookFeel)] + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true)]">SetFocus($PARAM[list_id],0,absolute)</onback>
+		<onback condition="![[Skin.HasSetting(Enable.FullscreenWidgets) | Skin.HasSetting(CinemaLookFeel)] + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !String.IsEqual(Window(Home).Property(finder.disable_infopanel),true)]">9000</onback>
+		<onunfocus>SetProperty(listposition,$INFO[Container($PARAM[list_id]).Position],home)</onunfocus>
+		<onfocus condition="String.IsEqual(Container($PARAM[list_id]).ListItem.Property(IsFavouriteWidget),true)">SetProperty(finder.disable_infopanel,true,home)</onfocus>
+		<onfocus>SetProperty(finder.widget_focus,true,home)</onfocus>
+		<onunfocus>ClearProperty(finder.disable_infopanel,home)</onunfocus>
+		<onunfocus>ClearProperty(finder.widget_focus,home)</onunfocus>
+		
+	</include>
+	<include name="FinderSearchWidgetListCommonStacked">
+		
+		<onclick condition="String.StartsWith(Container($PARAM[list_id]).ListItem.FileNameAndPath,plugin://plugin.video.finder/) + [String.Contains(Container($PARAM[list_id]).ListItem.FileNameAndPath,mode=extendedinfo_menu_choice) | String.Contains(Container($PARAM[list_id]).ListItem.FileNameAndPath,mode=extras_menu_choice)]">RunPlugin($INFO[Container($PARAM[list_id]).ListItem.FileNameAndPath])</onclick>
+		<scrolltime tween="cubic" easing="out">500</scrolltime>
+		<orientation>horizontal</orientation>
+		<onleft condition="Window.IsActive(1121)">SetFocus(700)</onleft>
+		<onleft condition="[Skin.HasSetting(Enable.FullscreenWidgets) | Skin.HasSetting(CinemaLookFeel)] + String.IsEqual(Window(Home).Property(finder.widget_focus),true)">$PARAM[list_id]</onleft>
+		<onleft condition="![[Skin.HasSetting(Enable.FullscreenWidgets) | Skin.HasSetting(CinemaLookFeel)] + String.IsEqual(Window(Home).Property(finder.widget_focus),true)]">9000</onleft>
+		<onright>$PARAM[list_id]</onright>
+		<onback condition="Skin.HasSetting(CinemaLookFeel) + String.IsEqual(Window(Home).Property(finder.widget_focus),true)">SetFocus(1700)</onback>
+		<onback condition="[Skin.HasSetting(Enable.FullscreenWidgets) | Skin.HasSetting(CinemaLookFeel)] + String.IsEqual(Window(Home).Property(finder.widget_focus),true) + !Skin.HasSetting(CinemaLookFeel)">SetFocus(9000)</onback>
+		<onback condition="[Skin.HasSetting(Enable.FullscreenWidgets) | Skin.HasSetting(CinemaLookFeel)] + String.IsEqual(Window(Home).Property(finder.widget_focus),true)">ClearProperty(finder.widget_focus,home)</onback>
+		<onback condition="![[Skin.HasSetting(Enable.FullscreenWidgets) | Skin.HasSetting(CinemaLookFeel)] + String.IsEqual(Window(Home).Property(finder.widget_focus),true)]">9000</onback>
+		<onback condition="![[Skin.HasSetting(Enable.FullscreenWidgets) | Skin.HasSetting(CinemaLookFeel)] + String.IsEqual(Window(Home).Property(finder.widget_focus),true)]">SetFocus($PARAM[list_id],0,absolute)</onback>
+				<onfocus>SetProperty(finder.widget_focus,true,home)</onfocus>
+		<onunfocus>ClearProperty(finder.widget_focus,home)</onunfocus>
+		
+	</include>
+	</includes>

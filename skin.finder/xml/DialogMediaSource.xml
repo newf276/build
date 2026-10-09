@@ -9,11 +9,11 @@
 		<centerleft>50%</centerleft>
 		<width>1200</width>
 		<include content="DialogBackgroundCommons">
-			<param name="width" value="1200"/>
-			<param name="height" value="750"/>
-			<param name="header_label" value="$LOCALIZE[13406]"/>
-			<param name="header_id" value="2"/>
-			<param name="diffusetexture" value="masks/dialog-bg-squareish.png"/>
+			<param name="width" value="1200" />
+			<param name="height" value="750" />
+			<param name="header_label" value="$LOCALIZE[13406]" />
+			<param name="header_id" value="2" />
+			<param name="diffusetexture" value="masks/dialog-bg-squareish.png" />
 		</include>
 		<control type="label">
 			<description>path label</description>
@@ -56,7 +56,7 @@
 					<bottom>0</bottom>
 					<right>25</right>
 					<visible>Control.HasFocus(10)</visible>
-					<texture colordiffuse="button_focus">masks/focus-long.png</texture>
+					<texture border="24">finder_focus/setting-long.png</texture>
 				</control>
 				<control type="label">
 					<left>10</left>
@@ -65,7 +65,7 @@
 					<right>10</right>
 					<aligny>center</aligny>
 					<label>[B]$INFO[ListItem.Label][/B]</label>
-					<textcolor>focused_text</textcolor>
+					<textcolor>white</textcolor>
 				</control>
 			</focusedlayout>
 		</control>
@@ -87,16 +87,16 @@
 			<ondown>12</ondown>
 			<itemgap>dialogbuttons_itemgap</itemgap>
 			<include content="DefaultDialogButton">
-				<param name="id" value="11"/>
-				<param name="label" value="$LOCALIZE[1024]"/>
+				<param name="id" value="11" />
+				<param name="label" value="$LOCALIZE[1024]" />
 			</include>
 			<include content="DefaultDialogButton">
-				<param name="id" value="13"/>
-				<param name="label" value="$LOCALIZE[15019]"/>
+				<param name="id" value="13" />
+				<param name="label" value="$LOCALIZE[15019]" />
 			</include>
 			<include content="DefaultDialogButton">
-				<param name="id" value="14"/>
-				<param name="label" value="$LOCALIZE[1210]"/>
+				<param name="id" value="14" />
+				<param name="label" value="$LOCALIZE[1210]" />
 			</include>
 		</control>
 		<control type="label">
@@ -118,7 +118,7 @@
 			<height>90</height>
 			<align>center</align>
 			<aligny>center</aligny>
-			<label/>
+			<label />
 			<onup>10</onup>
 			<ondown>9001</ondown>
 			<colordiffuse>button_focus</colordiffuse>
@@ -133,12 +133,12 @@
 			<orientation>horizontal</orientation>
 			<onup>12</onup>
 			<include content="DefaultDialogButton">
-				<param name="id" value="18"/>
-				<param name="label" value="$LOCALIZE[186]"/>
+				<param name="id" value="18" />
+				<param name="label" value="$LOCALIZE[186]" />
 			</include>
 			<include content="DefaultDialogButton">
-				<param name="id" value="19"/>
-				<param name="label" value="$LOCALIZE[222]"/>
+				<param name="id" value="19" />
+				<param name="label" value="$LOCALIZE[222]" />
 			</include>
 		</control>
 		</control>

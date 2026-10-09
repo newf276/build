@@ -38,7 +38,7 @@
                 <left>30</left>
                 <height>40</height>
                 <font>font12</font>
-                <!-- Finder_26 -->
+                
                 <textcolor>unfocused_text</textcolor>
                 <shadowcolor>FF000000</shadowcolor>
                 <align>center</align>
@@ -50,7 +50,7 @@
                 <width>718</width>
                 <height>260</height>
                 <font>font13</font>
-                <!-- Finder_30 -->
+                
                 <textcolor>unfocused_text</textcolor>
                 <align>center</align>
                 <aligny>center</aligny>
@@ -66,10 +66,10 @@
                 <onright>11</onright>
                 <label>$INFO[Window.Property(ok_label)]</label>
                 <font>font12</font>
-                <!-- Finder_26 -->
+                
                 <textcolor>unfocused_text</textcolor>
-                <focusedcolor>focused_text</focusedcolor>
-                <texturefocus colordiffuse="button_focus">special://skin/media/buttons/dfo.png</texturefocus>
+                <focusedcolor>white</focusedcolor>
+                <texturefocus border="24">special://skin/media/finder_focus/setting-short.png</texturefocus>
                 <texturenofocus colordiffuse="button_focus2">special://skin/media/buttons/dnfo.png</texturenofocus>
                 <align>center</align>
                 <aligny>center</aligny>
@@ -84,10 +84,10 @@
                 <onright>10</onright>
                 <label>$INFO[Window.Property(cancel_label)]</label>
                 <font>font12</font>
-                <!-- Finder_26 -->
+                
                 <textcolor>unfocused_text</textcolor>
-                <focusedcolor>focused_text</focusedcolor>
-                <texturefocus colordiffuse="button_focus">special://skin/media/buttons/dfo.png</texturefocus>
+                <focusedcolor>white</focusedcolor>
+                <texturefocus border="24">special://skin/media/finder_focus/setting-short.png</texturefocus>
                 <texturenofocus colordiffuse="button_focus2">special://skin/media/buttons/dnfo.png</texturenofocus>
                 <align>center</align>
                 <aligny>center</aligny>

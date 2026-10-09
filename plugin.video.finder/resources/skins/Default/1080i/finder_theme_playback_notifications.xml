@@ -28,7 +28,7 @@
                 <texture>$INFO[Window.Property(clearlogo)]</texture>
                 <aspectratio>keep</aspectratio>
             </control>
-            <!-- Episode Status -->
+            
             <control type="group">
                 <visible>String.IsEqual(Window.Property(mode),next_episode)</visible>
                 <visible>!String.IsEmpty(Window.Property(episode_status.highlight))</visible>
@@ -46,17 +46,17 @@
                     <height>35</height>
                     <align>center</align>
                     <font>font10</font>
-                    <!-- Finder_21 -->
+                    
                     <textcolor>FFFFFFFF</textcolor>
                     <label>[B]$INFO[Window.Property(episode_status.label)][/B]</label>
                 </control>
             </control>
-            <!-- Logo -->
-            <!-- HEADING - NEXT EPISODE -->
+            
+            
             <control type="group">
                 <visible>String.IsEqual(Window.Property(mode),next_episode)</visible>
                 <left>275</left>
-                <!-- Autoplay -->
+                
                 <control type="label">
                     <visible>String.IsEmpty(Window.Property(pause_timer))</visible>
                     <left>80</left>
@@ -64,10 +64,10 @@
                     <height>40</height>
                     <label>[B]Next Episode In $INFO[Player.TimeRemaining()][/B]</label>
                     <font>font14</font>
-                    <!-- Finder_33 -->
+                    
                     <textcolor>FFB7B4BB</textcolor>
                 </control>
-                <!-- Waiting For Input -->
+                
                 <control type="label">
                     <visible>!String.IsEmpty(Window.Property(pause_timer))</visible>
                     <left>80</left>
@@ -75,45 +75,45 @@
                     <height>40</height>
                     <label>[B]Waiting for Input $INFO[Window.Property(pause_timer)][/B]</label>
                     <font>font14</font>
-                    <!-- Finder_33 -->
+                    
                     <textcolor>FFB7B4BB</textcolor>
                 </control>
             </control>
-            <!-- HEADING - STILL WATCHING -->
+            
             <control type="group">
                 <visible>String.IsEqual(Window.Property(mode),still_watching)</visible>
                 <left>275</left>
-                <!-- Still Watching? -->
+                
                 <control type="label">
                     <left>80</left>
                     <aligny>center</aligny>
                     <height>40</height>
                     <label>[B]Still Watching?...$INFO[Window.Property(pause_timer)][/B]</label>
                     <font>font14</font>
-                    <!-- Finder_33 -->
+                    
                     <textcolor>FFB7B4BB</textcolor>
                 </control>
             </control>
-            <!-- HEADING - STINGER -->
+            
             <control type="group">
                 <visible>String.IsEqual(Window.Property(mode),stinger)</visible>
                 <left>275</left>
-                <!-- Keep Watching During Credits!!! -->
+                
                 <control type="label">
                     <left>80</left>
                     <aligny>center</aligny>
                     <height>40</height>
                     <label>[B]Keep Watching During Credits....[/B]</label>
                     <font>font14</font>
-                    <!-- Finder_33 -->
+                    
                     <textcolor>FFB7B4BB</textcolor>
                 </control>
             </control>
-            <!-- BODY - NEXT EPISODE -->
+            
             <control type="group">
                 <visible>String.IsEqual(Window.Property(mode),next_episode)</visible>
                 <left>275</left>
-                <!-- Text Body -->
+                
                 <control type="label">
                     <top>45</top>
                     <left>35</left>
@@ -123,10 +123,10 @@
                     <aligny>center</aligny>
                     <label>$INFO[Window.Property(episode_label)]</label>
                     <font>font10</font>
-                    <!-- Finder_21 -->
+                    
                     <textcolor>FFB7B4BB</textcolor>
                 </control>
-                <!-- Buttons -->
+                
                 <control type="grouplist">
                     <left>30</left>
                     <top>100</top>
@@ -142,10 +142,10 @@
                         <onright>11</onright>
                         <label>Close</label>
                         <font>font10</font>
-                        <!-- Finder_21 -->
+                        
                         <textcolor>unfocused_text</textcolor>
-                        <focusedcolor>focused_text</focusedcolor>
-                        <texturefocus colordiffuse="button_focus">special://skin/media/buttons/dfo.png</texturefocus>
+                        <focusedcolor>white</focusedcolor>
+                        <texturefocus border="24">special://skin/media/finder_focus/setting-short.png</texturefocus>
                         <texturenofocus colordiffuse="button_focus2">special://skin/media/buttons/dnfo.png</texturenofocus>
                         <align>center</align>
                         <aligny>center</aligny>
@@ -158,10 +158,10 @@
                         <onright>12</onright>
                         <label>Play</label>
                         <font>font10</font>
-                        <!-- Finder_21 -->
+                        
                         <textcolor>unfocused_text</textcolor>
-                        <focusedcolor>focused_text</focusedcolor>
-                        <texturefocus colordiffuse="button_focus">special://skin/media/buttons/dfo.png</texturefocus>
+                        <focusedcolor>white</focusedcolor>
+                        <texturefocus border="24">special://skin/media/finder_focus/setting-short.png</texturefocus>
                         <texturenofocus colordiffuse="button_focus2">special://skin/media/buttons/dnfo.png</texturenofocus>
                         <align>center</align>
                         <aligny>center</aligny>
@@ -174,21 +174,21 @@
                         <onright>10</onright>
                         <label>Cancel</label>
                         <font>font10</font>
-                        <!-- Finder_21 -->
+                        
                         <textcolor>unfocused_text</textcolor>
-                        <focusedcolor>focused_text</focusedcolor>
-                        <texturefocus colordiffuse="button_focus">special://skin/media/buttons/dfo.png</texturefocus>
+                        <focusedcolor>white</focusedcolor>
+                        <texturefocus border="24">special://skin/media/finder_focus/setting-short.png</texturefocus>
                         <texturenofocus colordiffuse="button_focus2">special://skin/media/buttons/dnfo.png</texturenofocus>
                         <align>center</align>
                         <aligny>center</aligny>
                     </control>
                 </control>
             </control>
-            <!-- BODY - STILL WATCHING -->
+            
             <control type="group">
                 <visible>String.IsEqual(Window.Property(mode),still_watching)</visible>
                 <left>275</left>
-                <!-- Text Body -->
+                
                 <control type="label">
                     <top>45</top>
                     <left>35</left>
@@ -198,10 +198,10 @@
                     <aligny>center</aligny>
                     <label>$INFO[Window.Property(episode_label)]</label>
                     <font>font10</font>
-                    <!-- Finder_21 -->
+                    
                     <textcolor>FFB7B4BB</textcolor>
                 </control>
-                <!-- Buttons -->
+                
                 <control type="grouplist">
                     <left>30</left>
                     <top>100</top>
@@ -217,10 +217,10 @@
                         <onright>11</onright>
                         <label>Yes</label>
                         <font>font10</font>
-                        <!-- Finder_21 -->
+                        
                         <textcolor>unfocused_text</textcolor>
-                        <focusedcolor>focused_text</focusedcolor>
-                        <texturefocus colordiffuse="button_focus">special://skin/media/buttons/dfo.png</texturefocus>
+                        <focusedcolor>white</focusedcolor>
+                        <texturefocus border="24">special://skin/media/finder_focus/setting-short.png</texturefocus>
                         <texturenofocus colordiffuse="button_focus2">special://skin/media/buttons/dnfo.png</texturenofocus>
                         <align>center</align>
                         <aligny>center</aligny>
@@ -233,17 +233,17 @@
                         <onright>12</onright>
                         <label>No</label>
                         <font>font10</font>
-                        <!-- Finder_21 -->
+                        
                         <textcolor>unfocused_text</textcolor>
-                        <focusedcolor>focused_text</focusedcolor>
-                        <texturefocus colordiffuse="button_focus">special://skin/media/buttons/dfo.png</texturefocus>
+                        <focusedcolor>white</focusedcolor>
+                        <texturefocus border="24">special://skin/media/finder_focus/setting-short.png</texturefocus>
                         <texturenofocus colordiffuse="button_focus2">special://skin/media/buttons/dnfo.png</texturenofocus>
                         <align>center</align>
                         <aligny>center</aligny>
                     </control>
                 </control>
             </control>
-            <!-- BODY - STINGER -->
+            
             <control type="group">
                 <visible>String.IsEqual(Window.Property(mode),stinger)</visible>
                 <left>275</left>
@@ -268,7 +268,7 @@
                         <aligny>center</aligny>
                         <label>During Credits Stinger</label>
                         <font>font14</font>
-                        <!-- Finder_33 -->
+                        
                         <textcolor>FFB7B4BB</textcolor>
                     </control>
                     <control type="image" id="201">
@@ -290,7 +290,7 @@
                         <aligny>center</aligny>
                         <label>After Credits Stinger</label>
                         <font>font14</font>
-                        <!-- Finder_33 -->
+                        
                         <textcolor>FFB7B4BB</textcolor>
                     </control>
                 </control>

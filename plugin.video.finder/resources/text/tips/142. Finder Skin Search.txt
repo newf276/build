@@ -1,3 +1,5 @@
+Current integrated Search: up to five recent entries retain their media or actor search type. Select an entry to replay it. Left/Right selects within a result row; Down moves through populated categories and wraps from the last to the first; Up from the first returns to the toolbar. Movies, TV Shows, Anime and optional provider rows appear when results exist. Selecting a poster opens its matching information panel. A single actor match can open directly; multiple matches use the actor selection flow.
+
 When Finder is used with Finder Skin in integrated mode, the skin provides a dedicated Finder Search window for Movies, TV Shows and People.
 
 Submitted searches update the five visible Recent Searches in Finder Skin. Search result controls remain available while Finder is actively processing a submitted search, including searches that return no immediate items.

@@ -42,7 +42,7 @@
                     <left>130</left>
                     <height>20</height>
                     <font>font12</font>
-                    <!-- Finder_26 -->
+                    
                     <textcolor>unfocused_text</textcolor>
                     <shadowcolor>FF000000</shadowcolor>
                     <align>center</align>
@@ -55,7 +55,7 @@
                     <left>130</left>
                     <height>20</height>
                     <font>font12</font>
-                    <!-- Finder_26 -->
+                    
                     <textcolor>unfocused_text</textcolor>
                     <shadowcolor>FF000000</shadowcolor>
                     <align>center</align>
@@ -80,7 +80,7 @@
                         <top>25</top>
                         <height>5</height>
                         <font>font12</font>
-                        <!-- Finder_26 -->
+                        
                         <textcolor>unfocused_text</textcolor>
                         <aligny>center</aligny>
                         <scroll>false</scroll>
@@ -92,7 +92,7 @@
                         <width>60</width>
                         <height>5</height>
                         <font>font12</font>
-                        <!-- Finder_26 -->
+                        
                         <textcolor>FFB40025</textcolor>
                         <aligny>center</aligny>
                         <label>[B]$INFO[ListItem.Property(percent),,%][/B]</label>
@@ -104,7 +104,7 @@
                         <width max="820">auto</width>
                         <height>5</height>
                         <font>font12</font>
-                        <!-- Finder_26 -->
+                        
                         <textcolor>FFB40025</textcolor>
                         <aligny>center</aligny>
                         <align>left</align>
@@ -117,13 +117,13 @@
                         <width max="820">auto</width>
                         <height>5</height>
                         <font>font12</font>
-                        <!-- Finder_26 -->
+                        
                         <textcolor>FFB40025</textcolor>
                         <aligny>center</aligny>
                         <align>left</align>
                         <label>[UPPERCASE][B]Queued[/B][/UPPERCASE]</label>
                     </control>
-                    <!-- PROGRESS -->
+                    
                     <control type="group">
                         <visible>!String.IsEqual(ListItem.Property(status),paused) + !String.IsEqual(ListItem.Property(status),queued)</visible>
                         <top>53</top>
@@ -433,7 +433,7 @@
                     <control type="image">
                         <animation effect="fade" start="100" end="50" time="0" condition="!Control.HasFocus(2500)">Conditional</animation>
                         <width>890</width>
-                        <texture colordiffuse="button_focus">special://skin/media/masks/focus.png</texture>
+                        <texture border="24">special://skin/media/finder_focus/setting-long.png</texture>
                     </control>
                     <control type="label">
                         <width max="820">auto</width>
@@ -441,8 +441,8 @@
                         <top>25</top>
                         <height>5</height>
                         <font>font12</font>
-                        <!-- Finder_26 -->
-                        <textcolor>focused_text</textcolor>
+                        
+                        <textcolor>white</textcolor>
                         <aligny>center</aligny>
                         <scroll>false</scroll>
                         <label>[UPPERCASE][B]$INFO[ListItem.Property(name)][/B][/UPPERCASE]</label>
@@ -453,7 +453,7 @@
                         <width>60</width>
                         <height>5</height>
                         <font>font12</font>
-                        <!-- Finder_26 -->
+                        
                         <textcolor>FFB40025</textcolor>
                         <aligny>center</aligny>
                         <label>[B]$INFO[ListItem.Property(percent),,%][/B]</label>
@@ -465,7 +465,7 @@
                         <width max="820">auto</width>
                         <height>5</height>
                         <font>font12</font>
-                        <!-- Finder_26 -->
+                        
                         <textcolor>FFB40025</textcolor>
                         <aligny>center</aligny>
                         <align>left</align>
@@ -478,13 +478,13 @@
                         <width max="820">auto</width>
                         <height>5</height>
                         <font>font12</font>
-                        <!-- Finder_26 -->
+                        
                         <textcolor>FFB40025</textcolor>
                         <aligny>center</aligny>
                         <align>left</align>
                         <label>[UPPERCASE][B]Queued[/B][/UPPERCASE]</label>
                     </control>
-                    <!-- PROGRESS -->
+                    
                     <control type="group">
                         <visible>!String.IsEqual(ListItem.Property(status),paused) + !String.IsEqual(ListItem.Property(status),queued)</visible>
                         <top>53</top>

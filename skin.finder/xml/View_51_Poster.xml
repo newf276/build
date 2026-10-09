@@ -31,7 +31,7 @@
 					<onup>9000</onup>
 					<ondown>5199</ondown>
 					<onright>51</onright>
-					<hitrect x="100" y="0" w="800" h="400"/>
+					<hitrect x="100" y="0" w="800" h="400" />
 					<visible>Container.Content(movies) | Container.Content(seasons) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(games)</visible>
 					<preloaditems>1</preloaditems>
 					<viewtype label="20021">icon</viewtype>
@@ -63,7 +63,7 @@
 						</control>
 					</focusedlayout>
 				</control>
-				<!-- Title and Plot -->
+				
 				<control type="group">
 					<top>25</top>
 					<control type="group">
@@ -72,10 +72,10 @@
 						<height>245</height>
 						<visible>ListItem.IsCollection + String.IsEmpty(ListItem.PlotOutline) + String.IsEmpty(ListItem.Plot)</visible>
 						<include content="InfoList">
-							<param name="bottom" value="0"/>
-							<param name="sortby" value="year"/>
-							<param name="sortorder" value="ascending"/>
-							<param name="font" value="font13"/>
+							<param name="bottom" value="0" />
+							<param name="sortby" value="year" />
+							<param name="sortorder" value="ascending" />
+							<param name="font" value="font13" />
 						</include>
 					</control>
 					<control type="image">
@@ -123,7 +123,7 @@
 					<width>476</width>
 					<height>716</height>
 					<fadetime>200</fadetime>
-					<!-- <aspectratio>scale</aspectratio> -->
+					
 					<texture diffuse="masks/poster-50.png" fallback="DefaultMovies.png" background="true">$VAR[PosterThumbVar]</texture>
 				</control>
 				<control type="image">
@@ -149,7 +149,7 @@
 				<left>433</left>
 				<top>-14</top>
 				<include content="RatingCircle">
-					<param name="animation" value="True"/>
+					<param name="animation" value="True" />
 					<param name="left">-73</param>
 					<param name="top">18</param>
 					<param name="width">119</param>
@@ -191,16 +191,6 @@
 					<aligny>center</aligny>
 				</control>
 			</control>
-			<control type="progress">
-				<left>4</left>
-				<top>702</top>
-				<width>476</width>
-				<height>1</height>
-				<texturebg/>
-				<midtexture colordiffuse="button_focus2" border="3">progress/texturebg_alt_white.png</midtexture>
-				<info>ListItem.PercentPlayed</info>
-				<visible>!Integer.IsEqual(ListItem.PercentPlayed,0)</visible>
 			</control>
-		</control>
 	</include>
 </includes>

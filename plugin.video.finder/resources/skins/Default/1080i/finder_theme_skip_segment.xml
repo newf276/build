@@ -12,10 +12,10 @@
                 <height>80</height>
                 <label>$INFO[Window.Property(skip.label)]</label>
                 <font>font14</font>
-                <!-- Finder_33 -->
+                
                 <textcolor>unfocused_text</textcolor>
-                <focusedcolor>focused_text</focusedcolor>
-                <texturefocus colordiffuse="button_focus">special://skin/media/buttons/dfo.png</texturefocus>
+                <focusedcolor>white</focusedcolor>
+                <texturefocus border="24">special://skin/media/finder_focus/setting-short.png</texturefocus>
                 <texturenofocus colordiffuse="button_focus2">special://skin/media/buttons/dnfo.png</texturenofocus>
                 <align>center</align>
                 <aligny>center</aligny>

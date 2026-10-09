@@ -8,6 +8,11 @@
 	<backgroundcolor>background</backgroundcolor>
 	<controls>
 		<include>DefaultBackground</include>
+        <control type="image">
+            <depth>DepthBackground</depth><include>FullScreenDimensions</include>
+            <texture colordiffuse="finder_charcoal">colors/white.png</texture>
+            <visible>!Player.HasMedia</visible>
+        </control>
 		<control type="group" id="10000">
 			<left>470</left>
 			<control type="grouplist" id="610">
@@ -730,7 +735,7 @@
 						<left>25</left>
 						<width>445</width>
 						<height>85</height>
-						<texture colordiffuse="button_focus">masks/focus.png</texture>
+						<texture border="24">finder_focus/setting-short.png</texture>
 					</control>
 					<control type="label">
 						<left>25</left>
@@ -740,7 +745,7 @@
 						<font>font37</font>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
-						<textcolor>focused_text</textcolor>
+						<textcolor>white</textcolor>
 					</control>
 				</focusedlayout>
 				<content>

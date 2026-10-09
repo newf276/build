@@ -69,7 +69,7 @@
                     <left>30</left>
                     <height>40</height>
                     <font>font12</font>
-                    <!-- Finder_26 -->
+                    
                     <textcolor>unfocused_text</textcolor>
                     <shadowcolor>FF000000</shadowcolor>
                     <align>center</align>
@@ -82,7 +82,7 @@
                     <left>30</left>
                     <height>40</height>
                     <font>font12</font>
-                    <!-- Finder_26 -->
+                    
                     <textcolor>unfocused_text</textcolor>
                     <shadowcolor>FF000000</shadowcolor>
                     <align>center</align>
@@ -136,7 +136,7 @@
                         <top>45</top>
                         <height>5</height>
                         <font>font12</font>
-                        <!-- Finder_26 -->
+                        
                         <textcolor>unfocused_text</textcolor>
                         <aligny>center</aligny>
                         <label>[UPPERCASE]$INFO[ListItem.Property(line1)][/UPPERCASE]</label>
@@ -151,7 +151,7 @@
                             <top>25</top>
                             <height>5</height>
                             <font>font12</font>
-                            <!-- Finder_26 -->
+                            
                             <textcolor>unfocused_text</textcolor>
                             <aligny>center</aligny>
                             <label>[UPPERCASE][B]$INFO[ListItem.Property(line1)][/B][/UPPERCASE]</label>
@@ -161,7 +161,7 @@
                             <top>60</top>
                             <height>5</height>
                             <font>font12</font>
-                            <!-- Finder_26 -->
+                            
                             <textcolor>unfocused_text</textcolor>
                             <aligny>center</aligny>
                             <label>[UPPERCASE][I]$INFO[ListItem.Property(line2)][/I][/UPPERCASE]</label>
@@ -183,7 +183,7 @@
                     <control type="image">
                         <animation effect="fade" start="100" end="50" time="0" condition="!Control.HasFocus(2025)">Conditional</animation>
                         <width>700</width>
-                        <texture colordiffuse="button_focus">special://skin/media/masks/focus.png</texture>
+                        <texture border="24">special://skin/media/finder_focus/setting-long.png</texture>
                     </control>
                     <control type="label">
                         <description>Only Line1</description>
@@ -193,8 +193,8 @@
                         <height>5</height>
                         <width max="632">auto</width>
                         <font>font12</font>
-                        <!-- Finder_26 -->
-                        <textcolor>focused_text</textcolor>
+                        
+                        <textcolor>white</textcolor>
                         <aligny>center</aligny>
                         <label>[UPPERCASE]$INFO[ListItem.Property(line1)][/UPPERCASE]</label>
                         <scroll>Control.HasFocus(2025)</scroll>
@@ -208,8 +208,8 @@
                             <top>25</top>
                             <height>5</height>
                             <font>font12</font>
-                            <!-- Finder_26 -->
-                            <textcolor>focused_text</textcolor>
+                            
+                            <textcolor>white</textcolor>
                             <aligny>center</aligny>
                             <label>[UPPERCASE][B]$INFO[ListItem.Property(line1)][/B][/UPPERCASE]</label>
                             <scroll>Control.HasFocus(2025)</scroll>
@@ -218,8 +218,8 @@
                             <top>60</top>
                             <height>5</height>
                             <font>font12</font>
-                            <!-- Finder_26 -->
-                            <textcolor>focused_text</textcolor>
+                            
+                            <textcolor>white</textcolor>
                             <aligny>center</aligny>
                             <label>[UPPERCASE][I]$INFO[ListItem.Property(line2)][/I][/UPPERCASE]</label>
                             <scroll>Control.HasFocus(2025)</scroll>
@@ -251,10 +251,10 @@
                     <onright>2025</onright>
                     <label>OK</label>
                     <font>font12</font>
-                    <!-- Finder_26 -->
+                    
                     <textcolor>unfocused_text</textcolor>
-                    <focusedcolor>focused_text</focusedcolor>
-                    <texturefocus colordiffuse="button_focus">special://skin/media/buttons/dfo.png</texturefocus>
+                    <focusedcolor>white</focusedcolor>
+                    <texturefocus border="24">special://skin/media/finder_focus/setting-short.png</texturefocus>
                     <texturenofocus colordiffuse="button_focus2">special://skin/media/buttons/dnfo.png</texturenofocus>
                     <align>center</align>
                     <aligny>center</aligny>
@@ -270,10 +270,10 @@
                     <onright>2025</onright>
                     <label>Cancel</label>
                     <font>font12</font>
-                    <!-- Finder_26 -->
+                    
                     <textcolor>unfocused_text</textcolor>
-                    <focusedcolor>focused_text</focusedcolor>
-                    <texturefocus colordiffuse="button_focus">special://skin/media/buttons/dfo.png</texturefocus>
+                    <focusedcolor>white</focusedcolor>
+                    <texturefocus border="24">special://skin/media/finder_focus/setting-short.png</texturefocus>
                     <texturenofocus colordiffuse="button_focus2">special://skin/media/buttons/dnfo.png</texturenofocus>
                     <align>center</align>
                     <aligny>center</aligny>
@@ -289,10 +289,10 @@
                     <onright>2025</onright>
                     <label>Select All</label>
                     <font>font12</font>
-                    <!-- Finder_26 -->
+                    
                     <textcolor>unfocused_text</textcolor>
-                    <focusedcolor>focused_text</focusedcolor>
-                    <texturefocus colordiffuse="button_focus">special://skin/media/buttons/dfo.png</texturefocus>
+                    <focusedcolor>white</focusedcolor>
+                    <texturefocus border="24">special://skin/media/finder_focus/setting-short.png</texturefocus>
                     <texturenofocus colordiffuse="button_focus2">special://skin/media/buttons/dnfo.png</texturenofocus>
                     <align>center</align>
                     <aligny>center</aligny>
@@ -309,10 +309,10 @@
                     <onright>2025</onright>
                     <label>Deselect All</label>
                     <font>font12</font>
-                    <!-- Finder_26 -->
+                    
                     <textcolor>unfocused_text</textcolor>
-                    <focusedcolor>focused_text</focusedcolor>
-                    <texturefocus colordiffuse="button_focus">special://skin/media/buttons/dfo.png</texturefocus>
+                    <focusedcolor>white</focusedcolor>
+                    <texturefocus border="24">special://skin/media/finder_focus/setting-short.png</texturefocus>
                     <texturenofocus colordiffuse="button_focus2">special://skin/media/buttons/dnfo.png</texturenofocus>
                     <align>center</align>
                     <aligny>center</aligny>

@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <includes>
 	<include name="OSDButton">
-		<textureradioonfocus colordiffuse="focused_text">$PARAM[texture]</textureradioonfocus>
+		<textureradioonfocus colordiffuse="white">$PARAM[texture]</textureradioonfocus>
 		<textureradioonnofocus colordiffuse="unfocused_text">$PARAM[texture]</textureradioonnofocus>
-		<textureradioofffocus colordiffuse="focused_text">$PARAM[texture]</textureradioofffocus>
+		<textureradioofffocus colordiffuse="white">$PARAM[texture]</textureradioofffocus>
 		<textureradiooffnofocus colordiffuse="unfocused_text">$PARAM[texture]</textureradiooffnofocus>
 		<textureradioondisabled colordiffuse="disabled">$PARAM[texture]</textureradioondisabled>
 		<textureradiooffdisabled colordiffuse="disabled">$PARAM[texture]</textureradiooffdisabled>
-		<texturefocus colordiffuse="button_focus">osd/fullscreen/buttons/button-fo.png</texturefocus>
+		<texturefocus colordiffuse="white">buttons/home-button-charcoal-focus.png</texturefocus>
 		<width>76</width>
 		<animation center="38,38" effect="zoom" end="100" reversible="false" start="95" time="480" tween="back">Focus</animation>
 		<height>76</height>
@@ -62,9 +62,13 @@
 			<selectedcolor>selected</selectedcolor>
 			<font>font32</font>
 			<textcolor>unfocused_text</textcolor>
-			<focusedcolor>focused_text</focusedcolor>
-			<texturefocus colordiffuse="button_focus">masks/focus-long.png</texturefocus>
+			<focusedcolor>white</focusedcolor>
+			<texturefocus border="24">finder_focus/setting-long.png</texturefocus>
 			<texturenofocus/>
+            <textureradioonfocus colordiffuse="white">buttons/radio-button-on.png</textureradioonfocus>
+            <textureradioofffocus colordiffuse="white">buttons/radio-button-off.png</textureradioofffocus>
+            <textureupfocus colordiffuse="white">buttons/spinctrl/arrow-light-up.png</textureupfocus>
+            <texturedownfocus colordiffuse="white">buttons/spinctrl/arrow-light-down.png</texturedownfocus>
 		</definition>
 	</include>
 	<include name="DefaultSystemSettingsButton">
@@ -78,12 +82,16 @@
 			<right>$PARAM[right]</right>
 			<aligny>center</aligny>
 			<textcolor>unfocused_text</textcolor>
-			<focusedcolor>focused_text</focusedcolor>
+			<focusedcolor>white</focusedcolor>
 			<font>font37</font>
 			<invalidcolor>invalid</invalidcolor>
 			<selectedcolor>selected</selectedcolor>
-			<texturefocus colordiffuse="button_focus">masks/focus.png</texturefocus>
+			<texturefocus border="24">finder_focus/setting-short.png</texturefocus>
 			<texturenofocus/>
+            <textureradioonfocus colordiffuse="white">buttons/radio-button-on.png</textureradioonfocus>
+            <textureradioofffocus colordiffuse="white">buttons/radio-button-off.png</textureradioofffocus>
+            <textureupfocus colordiffuse="white">buttons/spinctrl/arrow-light-up.png</textureupfocus>
+            <texturedownfocus colordiffuse="white">buttons/spinctrl/arrow-light-down.png</texturedownfocus>
 		</definition>
 	</include>
 	<include name="DialogSettingButton">
@@ -97,8 +105,9 @@
 			<font>font14</font>
 			<invalidcolor>invalid</invalidcolor>
 			<selectedcolor>selected</selectedcolor>
-			<texturefocus colordiffuse="button_focus">masks/focus.png</texturefocus>
-			<texturenofocus colordiffuse="00FFFFFF">colors/white.png</texturenofocus>
+			<texturefocus border="24">finder_focus/setting-short.png</texturefocus>
+			<focusedcolor>white</focusedcolor>
+		<texturenofocus colordiffuse="00FFFFFF">colors/white.png</texturenofocus>
 		</definition>
 	</include>
 	<include name="DefaultSettingLabel">
@@ -145,8 +154,8 @@
 				<wrapmultiline>$PARAM[wrapmultiline]</wrapmultiline>
 				<align>center</align>
 				<textcolor>unfocused_text</textcolor>
-				<focusedcolor>focused_text</focusedcolor>
-				<texturefocus colordiffuse="button_focus">buttons/dfo.png</texturefocus>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="24">finder_focus/setting-short.png</texturefocus>
 				<texturenofocus colordiffuse="button_focus2">buttons/dnfo.png</texturenofocus>
 				<visible>$PARAM[visible]</visible>
 			</control>
@@ -156,7 +165,8 @@
 		<width>120</width>
 		<height>120</height>
 		<textoffsety>27</textoffsety>
-		<texturefocus colordiffuse="button_focus">buttons/roundbutton-fo.png</texturefocus>
+		<texturefocus border="24">finder_focus/setting-short.png</texturefocus>
+		<focusedcolor>white</focusedcolor>
 		<texturenofocus/>
 		<align>center</align>
 		<aligny>top</aligny>
@@ -183,6 +193,9 @@
 	<include name="IconButton">
 		<param name="height">120</param>
 		<param name="visible">true</param>
+		<param name="focus_tint">button_focus</param>
+		<param name="icon_focus_tint">focused_text</param>
+		<param name="focus_texture">buttons/roundbutton-fo.png</param>
 		<definition>
 			<control type="radiobutton" id="$PARAM[control_id]">
 				<include>FocusBounce</include>
@@ -215,15 +228,15 @@
 				<onclick>$PARAM[onclick_23]</onclick>
 				<font/>
 				<label>$PARAM[label]</label>
-				<texturefocus colordiffuse="button_focus">buttons/roundbutton-fo.png</texturefocus>
+				<texturefocus colordiffuse="$PARAM[focus_tint]">$PARAM[focus_texture]</texturefocus>
 				<texturenofocus/>
 				<radioposx>40</radioposx>
 				<radioposy>0</radioposy>
 				<radiowidth>40</radiowidth>
 				<radioheight>40</radioheight>
-				<textureradioonfocus colordiffuse="focused_text">$PARAM[icon]</textureradioonfocus>
+				<textureradioonfocus colordiffuse="$PARAM[icon_focus_tint]">$PARAM[icon]</textureradioonfocus>
 				<textureradioonnofocus colordiffuse="grey">$PARAM[icon]</textureradioonnofocus>
-				<textureradioofffocus colordiffuse="focused_text">$PARAM[icon]</textureradioofffocus>
+				<textureradioofffocus colordiffuse="$PARAM[icon_focus_tint]">$PARAM[icon]</textureradioofffocus>
 				<textureradiooffnofocus colordiffuse="grey">$PARAM[icon]</textureradiooffnofocus>
 				<visible>$PARAM[visible]</visible>
 			</control>
@@ -425,7 +438,7 @@
 					<top>0</top>
 					<width>550</width>
 					<height>70</height>
-					<texture colordiffuse="button_focus">masks/focus.png</texture>
+					<texture border="24">finder_focus/setting-short.png</texture>
 				</control>
 				<control type="label">
 					<left>0</left>
@@ -435,7 +448,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<label>[B]$INFO[ListItem.Label][/B]</label>
-					<textcolor>focused_text</textcolor>
+					<textcolor>white</textcolor>
 				</control>
 			</focusedlayout>
 		</definition>

@@ -4,6 +4,12 @@
 	<backgroundcolor>background</backgroundcolor>
 	<controls>
 		<include>DefaultBackground</include>
+		<control type="image">
+            <depth>DepthBackground</depth>
+            <include>FullScreenDimensions</include>
+            <texture colordiffuse="finder_charcoal">colors/white.png</texture>
+            <visible>!Player.HasMedia</visible>
+        </control>
 		<control type="group">
 			<control type="grouplist" id="5">
 				<description>control area</description>
@@ -39,10 +45,14 @@
 		<control type="radiobutton" id="8">
 			<description>Default RadioButton</description>
 			<include>DefaultSettingButton</include>
+			<textureradioonfocus colordiffuse="white">buttons/radio-button-on.png</textureradioonfocus>
+			<textureradioofffocus colordiffuse="white">buttons/radio-button-off.png</textureradioofffocus>
 		</control>
 		<control type="spincontrolex" id="9">
 			<description>Default SpinControlex</description>
 			<include>DefaultSettingButton</include>
+			<textureupfocus colordiffuse="white">buttons/spinctrl/arrow-light-up.png</textureupfocus>
+			<texturedownfocus colordiffuse="white">buttons/spinctrl/arrow-light-down.png</texturedownfocus>
 			<aligny>center</aligny>
 		</control>
 		<control type="sliderex" id="13">
@@ -97,7 +107,9 @@
 				<textoffsetx>40</textoffsetx>
 				<aligny>center</aligny>
 				<font>font37</font>
-				<texturefocus colordiffuse="button_focus">masks/focus.png</texturefocus>
+				<textcolor>unfocused_text</textcolor>
+				<focusedcolor>FFFFFFFF</focusedcolor>
+				<texturefocus border="24">finder_focus/setting-short.png</texturefocus>
 				<texturenofocus/>
 			</control>
 		</control>
@@ -133,7 +145,7 @@
 				<onclick>SettingsLevelChange</onclick>
 				<textoffsetx>100</textoffsetx>
 				<textoffsety>0</textoffsety>
-				<texturefocus colordiffuse="button_focus">masks/focus.png</texturefocus>
+				<texturefocus border="24">finder_focus/setting-short.png</texturefocus>
 				<texturenofocus/>
 				<radioposx>40</radioposx>
 				<radioposy>0</radioposy>
@@ -144,10 +156,10 @@
 				<onup>3</onup>
 				<ondown>3</ondown>
 				<textcolor>unfocused_text</textcolor>
-				<focusedcolor>focused_text</focusedcolor>
-				<textureradioonfocus colordiffuse="focused_text">icons/settings.png</textureradioonfocus>
+				<focusedcolor>white</focusedcolor>
+				<textureradioonfocus colordiffuse="white">icons/settings.png</textureradioonfocus>
 				<textureradioonnofocus colordiffuse="unfocused_text">icons/settings.png</textureradioonnofocus>
-				<textureradioofffocus colordiffuse="focused_text">icons/settings.png</textureradioofffocus>
+				<textureradioofffocus colordiffuse="white">icons/settings.png</textureradioofffocus>
 				<textureradiooffnofocus colordiffuse="unfocused_text">icons/settings.png</textureradiooffnofocus>
 			</control>
 		</control>

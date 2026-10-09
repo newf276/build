@@ -9,11 +9,11 @@
 			<width>1300</width>
 			<height>850</height>
 			<include content="DialogBackgroundCommons">
-				<param name="width" value="1300"/>
-				<param name="height" value="850"/>
-				<param name="header_label" value=""/>
-				<param name="header_id" value="411"/>
-				<param name="diffusetexture" value="masks/dialog-bg-squareish.png"/>
+				<param name="width" value="1300" />
+				<param name="height" value="850" />
+				<param name="header_label" value="" />
+				<param name="header_id" value="411" />
+				<param name="diffusetexture" value="masks/dialog-bg-squareish.png" />
 			</include>
 			<control type="grouplist" id="9000">
 				<left>990</left>
@@ -27,22 +27,22 @@
 				<onup>9000</onup>
 				<ondown>9000</ondown>
 				<include content="DefaultDialogButton">
-					<param name="id" value="413"/>
-					<param name="label" value="$LOCALIZE[186]"/>
+					<param name="id" value="413" />
+					<param name="label" value="$LOCALIZE[186]" />
 				</include>
 				<include content="DefaultDialogButton">
-					<param name="id" value="414"/>
-					<param name="label" value="$LOCALIZE[222]"/>
+					<param name="id" value="414" />
+					<param name="label" value="$LOCALIZE[222]" />
 				</include>
 				<include content="DefaultDialogButton">
-					<param name="id" value="415"/>
-					<param name="label" value="$LOCALIZE[119]"/>
-					<param name="visible" value="Control.IsEnabled(415)"/>
+					<param name="id" value="415" />
+					<param name="label" value="$LOCALIZE[119]" />
+					<param name="visible" value="Control.IsEnabled(415)" />
 				</include>
 				<include content="DefaultDialogButton">
-					<param name="id" value="416"/>
-					<param name="label" value="$LOCALIZE[749]"/>
-					<param name="visible" value="Control.IsEnabled(416)"/>
+					<param name="id" value="416" />
+					<param name="label" value="$LOCALIZE[749]" />
+					<param name="visible" value="Control.IsEnabled(416)" />
 				</include>
 			</control>
 			<control type="image">
@@ -92,14 +92,14 @@
 						<right>0</right>
 						<height>71</height>
 						<visible>Control.HasFocus(450)</visible>
-						<texture colordiffuse="button_focus">masks/focus-long.png</texture>
+						<texture border="24">finder_focus/setting-long.png</texture>
 					</control>
 					<control type="image">
 						<left>35</left>
 						<top>10</top>
 						<width>50</width>
 						<height>50</height>
-						<texture colordiffuse="focused_text">$INFO[ListItem.Icon]</texture>
+						<texture colordiffuse="white">$INFO[ListItem.Icon]</texture>
 						<aspectratio>keep</aspectratio>
 					</control>
 					<control type="label">
@@ -110,7 +110,7 @@
 						<aligny>center</aligny>
 						<selectedcolor>green</selectedcolor>
 						<label>[B]$INFO[ListItem.Label][/B]</label>
-						<textcolor>focused_text</textcolor>
+						<textcolor>white</textcolor>
 					</control>
 				</focusedlayout>
 			</control>
@@ -152,14 +152,14 @@
 						<right>0</right>
 						<height>71</height>
 						<visible>Control.HasFocus(451)</visible>
-						<texture colordiffuse="button_focus">masks/focus-long.png</texture>
+						<texture border="24">finder_focus/setting-long.png</texture>
 					</control>
 					<control type="image">
 						<left>35</left>
 						<top>10</top>
 						<width>50</width>
 						<height>50</height>
-						<texture colordiffuse="focused_text">$INFO[ListItem.Icon]</texture>
+						<texture colordiffuse="white">$INFO[ListItem.Icon]</texture>
 						<aspectratio>keep</aspectratio>
 					</control>
 					<control type="label">
@@ -170,7 +170,7 @@
 						<aligny>center</aligny>
 						<selectedcolor>green</selectedcolor>
 						<label>[B]$INFO[ListItem.Label][/B]</label>
-						<textcolor>focused_text</textcolor>
+						<textcolor>white</textcolor>
 					</control>
 				</focusedlayout>
 			</control>
@@ -207,11 +207,11 @@
 			</control>
 		</control>
 		<include content="UpDownArrows">
-			<param name="container_id" value="450"/>
-			<param name="posx" value="830"/>
-			<param name="up_posy" value="50"/>
-			<param name="down_posy" value="980"/>
-			<param name="visible" value="!System.HasActiveModalDialog"/>
+			<param name="container_id" value="450" />
+			<param name="posx" value="830" />
+			<param name="up_posy" value="50" />
+			<param name="down_posy" value="980" />
+			<param name="visible" value="!System.HasActiveModalDialog" />
 		</include>
 	</controls>
 </window>

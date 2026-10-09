@@ -21,8 +21,8 @@
 					<top>430</top>
 					<width>695</width>
 					<height>375</height>
-					<label/>
-					<texturefocus colordiffuse="button_focus" border="21">masks/landscape.png</texturefocus>
+					<label />
+					<texturefocus border="24">finder_focus/setting-short.png</texturefocus>
 					<texturenofocus colordiffuse="button_focus2" border="21">masks/landscape-unfocused.png</texturenofocus>
 					<onup>50</onup>
 					<ondown>9000</ondown>
@@ -49,7 +49,7 @@
 					<height>335</height>
 					<font>font25_title</font>
 					<label>$INFO[ListItem.AddonSummary,[B],[/B][CR]]$INFO[ListItem.AddonDescription][CR]$VAR[AddonNewsVar,[I][CR][CR],[/I]]</label>
-					<textcolor>focused_text</textcolor>
+					<textcolor>white</textcolor>
 					<autoscroll delay="5000" repeat="7500" time="5000">true</autoscroll>
 					<visible>Control.HasFocus(5000)</visible>
 				</control>
@@ -114,7 +114,7 @@
 							<top>16</top>
 							<width>393</width>
 							<height>228</height>
-							<texture border="8" colordiffuse="button_focus">masks/landscape.png</texture>
+							<texture border="24">finder_focus/setting-long.png</texture>
 						</control>
 						<control type="image">
 							<left>-12</left>
@@ -135,11 +135,11 @@
 					</focusedlayout>
 				</control>
 				<include content="LeftRightArrows">
-					<param name="list_id" value="50"/>
-					<param name="left_posx" value="590"/>
-					<param name="right_posx" value="1840"/>
-					<param name="posy" value="280"/>
-					<param name="visible" value="true"/>
+					<param name="list_id" value="50" />
+					<param name="left_posx" value="590" />
+					<param name="right_posx" value="1840" />
+					<param name="posy" value="280" />
+					<param name="visible" value="true" />
 				</include>
 				<control type="group">
 					<control type="image">
@@ -147,7 +147,7 @@
 						<top>430</top>
 						<width>478</width>
 						<height>375</height>
-						<!-- <aspectratio>scale</aspectratio> -->
+						
 						<texture colordiffuse="button_focus2" border="21">masks/landscape-unfocused.png</texture>
 					</control>
 					<control type="group">
@@ -158,7 +158,7 @@
 							<top>20</top>
 							<width>446</width>
 							<height>385</height>
-							<pagecontrol/>
+							<pagecontrol />
 							<itemlayout height="75">
 								<control type="label">
 									<left>10</left>
@@ -258,15 +258,15 @@
 					<align>center</align>
 					<itemgap>30</itemgap>
 					<orientation>horizontal</orientation>
-					<include content="InfoDialogButton">
-						<param name="id" value="12"/>
-						<param name="icon" value="icons/infodialogs/launch.png"/>
-						<param name="label" value="$LOCALIZE[518]"/>
+					<include content="FinderThemeAddonInfoButton">
+						<param name="id" value="12" />
+						<param name="icon" value="icons/infodialogs/launch.png" />
+						<param name="label" value="$LOCALIZE[518]" />
 					</include>
-					<include content="InfoDialogButton">
-						<param name="id" value="9"/>
-						<param name="icon" value="icons/infodialogs/configure.png"/>
-						<param name="label" value="$LOCALIZE[24020]"/>
+					<include content="FinderThemeAddonInfoButton">
+						<param name="id" value="9" />
+						<param name="icon" value="icons/infodialogs/configure.png" />
+						<param name="label" value="$LOCALIZE[24020]" />
 					</include>
 					<control type="radiobutton" id="13">
 						<width>220</width>
@@ -274,8 +274,8 @@
 						<align>center</align>
 						<aligny>top</aligny>
 						<textcolor>unfocused_text</textcolor>
-						<focusedcolor>focused_text</focusedcolor>
-						<texturefocus border="2" colordiffuse="button_focus">masks/landscape.png</texturefocus>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus border="24">finder_focus/setting-short.png</texturefocus>
 						<texturenofocus border="2" colordiffuse="button_focus2">masks/landscape-unfocused.png</texturenofocus>
 						<textoffsetx>35</textoffsetx>
 						<textoffsety>76</textoffsety>
@@ -284,35 +284,35 @@
 						<radiowidth>100</radiowidth>
 						<font>font12</font>
 						<visible>Control.IsEnabled(13)</visible>
-					</control>
-					<include content="InfoDialogButton">
-						<param name="id" value="10"/>
-						<param name="icon" value="icons/infodialogs/info.png"/>
-						<param name="label" value="$LOCALIZE[39024]"/>
+					<textureradioonfocus colordiffuse="white">buttons/radio-button-on.png</textureradioonfocus><textureradioofffocus colordiffuse="white">buttons/radio-button-off.png</textureradioofffocus></control>
+					<include content="FinderThemeAddonInfoButton">
+						<param name="id" value="10" />
+						<param name="icon" value="icons/infodialogs/info.png" />
+						<param name="label" value="$LOCALIZE[39024]" />
 					</include>
-					<include content="InfoDialogToggleButton">
-						<param name="id" value="7"/>
-						<param name="icon_on" value="icons/infodialogs/disable.png"/>
-						<param name="icon_off" value="icons/infodialogs/enabled.png"/>
-						<param name="selected" value="!String.StartsWith(Control.GetLabel(7),$LOCALIZE[24022]) | !Window.IsActive(addonbrowser)"/>
-						<param name="label" value=""/>
+					<include content="FinderThemeAddonInfoToggleButton">
+						<param name="id" value="7" />
+						<param name="icon_on" value="icons/infodialogs/disable.png" />
+						<param name="icon_off" value="icons/infodialogs/enabled.png" />
+						<param name="selected" value="!String.StartsWith(Control.GetLabel(7),$LOCALIZE[24022]) | !Window.IsActive(addonbrowser)" />
+						<param name="label" value="" />
 					</include>
-					<include content="InfoDialogButton">
-						<param name="id" value="8"/>
-						<param name="icon" value="icons/infodialogs/install.png"/>
-						<param name="label" value="$LOCALIZE[24138]"/>
+					<include content="FinderThemeAddonInfoButton">
+						<param name="id" value="8" />
+						<param name="icon" value="icons/infodialogs/install.png" />
+						<param name="label" value="$LOCALIZE[24138]" />
 					</include>
-					<include content="InfoDialogButton">
-						<param name="id" value="14"/>
-						<param name="icon" value="icons/infodialogs/update.png"/>
-						<param name="label" value="$LOCALIZE[24069]"/>
+					<include content="FinderThemeAddonInfoButton">
+						<param name="id" value="14" />
+						<param name="icon" value="icons/infodialogs/update.png" />
+						<param name="label" value="$LOCALIZE[24069]" />
 					</include>
-					<include content="InfoDialogToggleButton">
-						<param name="id" value="6"/>
-						<param name="icon_on" value="icons/infodialogs/uninstall.png"/>
-						<param name="icon_off" value="icons/infodialogs/install.png"/>
-						<param name="selected" value="ListItem.Property(addon.isinstalled) | !Window.IsActive(addonbrowser)"/>
-						<param name="label" value=""/>
+					<include content="FinderThemeAddonInfoToggleButton">
+						<param name="id" value="6" />
+						<param name="icon_on" value="icons/infodialogs/uninstall.png" />
+						<param name="icon_off" value="icons/infodialogs/install.png" />
+						<param name="selected" value="ListItem.Property(addon.isinstalled) | !Window.IsActive(addonbrowser)" />
+						<param name="label" value="" />
 					</include>
 				</control>
 			</control>
@@ -320,13 +320,13 @@
 				<include>OpenClose_Left</include>
 				<top>158</top>
 				<left>80</left>
-				<!-- Image control -->
+				
 				<control type="image">
 					<left>-6</left>
 					<top>4</top>
 					<width>540</width>
 					<height>540</height>
-					<!-- <aspectratio>scale</aspectratio> -->
+					
 					<texture diffuse="masks/landscapeinfo.png" colordiffuse="button_focus2">dialogs/dialog-bg-nobo.png</texture>
 					<bordersize>20</bordersize>
 				</control>
@@ -335,7 +335,7 @@
 					<top>24</top>
 					<width>500</width>
 					<height>500</height>
-					<!-- <aspectratio aligny="top">scale</aspectratio> -->
+					
 					<fadetime>300</fadetime>
 					<texture diffuse="masks/landscapeinfo.png" fallback="DefaultAddon.png" background="true">$INFO[ListItem.Art(thumb)]</texture>
 				</control>
@@ -374,8 +374,8 @@
 				<autoscroll time="2000" delay="3000" repeat="5000">true</autoscroll>
 			</control>
 			<include content="InfoDialogTopBarInfo">
-				<param name="main_label" value="[COLOR unfocused_text]$INFO[ListItem.AddonName][/COLOR]"/>
-				<param name="sub_label" value="[COLOR unfocused_text]$INFO[ListItem.AddonVersion][/COLOR][COLOR accent_color]$INFO[ListItem.AddonCreator, $LOCALIZE[31071] ][/COLOR]"/>
+				<param name="main_label" value="[COLOR unfocused_text]$INFO[ListItem.AddonName][/COLOR]" />
+				<param name="sub_label" value="[COLOR unfocused_text]$INFO[ListItem.AddonVersion][/COLOR][COLOR accent_color]$INFO[ListItem.AddonCreator, $LOCALIZE[31071] ][/COLOR]" />
 			</include>
 		</control>
 		<include condition="Skin.HasSetting(touchmode)">TouchBackButton</include>
