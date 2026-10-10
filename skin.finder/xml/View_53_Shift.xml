@@ -41,7 +41,7 @@
 							<width>370</width>
 							<height>480</height>
 							<texture>dialogs/dialog-bg-nobo.png</texture>
-							<!-- <bordertexture border="21" infill="false">overlays/shadow.png</bordertexture> -->
+							
 							<bordersize>20</bordersize>
 							<visible>String.IsEmpty(ListItem.Art(poster)) + [Container.Content(movies) | Container.Content(tvshows)]</visible>
 						</control>
@@ -53,7 +53,7 @@
 							<height>480</height>
 							<aspectratio aligny="center">keep</aspectratio>
 							<texture diffuse="masks/poster.png" fallback="DefaultVideo.png" background="true">$VAR[ShiftThumbVar]</texture>
-							<!-- <bordertexture border="21" infill="false">overlays/shadow.png</bordertexture> -->
+							
 							<bordersize>20</bordersize>
 						</control>
 						<control type="textbox">
@@ -129,13 +129,7 @@
 								<param name="cornerdiffuse">overlays/overlaybg7.png</param>
 							</include>
 						</control>
-						<include content="ProgressBar">
-							<!-- 31 -->
-							<param name="left" value="63"/>
-							<param name="top" value="525"/>
-							<param name="width" value="243"/>
-						</include>
-					</itemlayout>
+						</itemlayout>
 					<focusedlayout width="370">
 						<control type="image">
 							<left>0</left>
@@ -143,7 +137,7 @@
 							<width>370</width>
 							<height>480</height>
 							<texture>dialogs/dialog-bg-nobo.png</texture>
-							<!-- <bordertexture border="21" infill="false">overlays/shadow.png</bordertexture> -->
+							
 							<bordersize>20</bordersize>
 							<visible>String.IsEmpty(ListItem.Art(poster)) + [Container.Content(movies) | Container.Content(tvshows)]</visible>
 						</control>
@@ -155,7 +149,7 @@
 							<height>480</height>
 							<aspectratio aligny="center">keep</aspectratio>
 							<texture diffuse="masks/poster.png" fallback="DefaultVideo.png" background="true">$VAR[ShiftThumbVar]</texture>
-							<!-- <bordertexture border="21" infill="false">overlays/shadow.png</bordertexture> -->
+							
 							<bordersize>20</bordersize>
 						</control>
 						<control type="label">
@@ -232,12 +226,7 @@
 								<param name="cornerdiffuse">overlays/overlaybg7.png</param>
 							</include>
 						</control>
-						<include content="ProgressBar">
-							<param name="left" value="63"/>
-							<param name="top" value="525"/>
-							<param name="width" value="243"/>
-						</include>
-					</focusedlayout>
+						</focusedlayout>
 				</control>
 			</control>
 			<control type="group">
@@ -247,16 +236,16 @@
 				<control type="group">
 					<width>50%</width>
 					<include content="ShiftTextbox">
-						<param name="textbox_id" value="53200"/>
-						<param name="textbox_content" value="$VAR[ShiftLeftTextBoxVar]"/>
+						<param name="textbox_id" value="53200" />
+						<param name="textbox_content" value="$VAR[ShiftLeftTextBoxVar]" />
 					</include>
 				</control>
 				<control type="group">
 					<left>50%</left>
 					<width>50%</width>
 					<include content="ShiftTextbox">
-						<param name="textbox_id" value="53300"/>
-						<param name="textbox_content" value="$VAR[ShiftRightTextBoxVar]"/>
+						<param name="textbox_id" value="53300" />
+						<param name="textbox_content" value="$VAR[ShiftRightTextBoxVar]" />
 					</include>
 				</control>
 				<control type="panel">

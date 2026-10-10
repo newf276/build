@@ -1,0 +1,5 @@
+Finder offers the same Yes/No authorization choice for TMDb, Trakt and PunchPlay from My Lists. Signed-out services show an Authorize entry; authorized list submenus also retain an entry for deliberate reauthorization.
+
+A rejected account authorization can offer recovery for TMDb, Trakt, PunchPlay, Real-Debrid, Premiumize, AllDebrid, TorBox or Easynews. Existing automatic token refresh runs first where supported. Recovery prompts wait until playback and modal dialogs close. Ordinary network outages and rate limits do not mean that account authorization has expired.
+
+No or Back leaves credentials unchanged and suppresses automatic recovery reminders for that service across restarts. A deliberate authorization selection can ask again immediately; manual Yes restores recovery prompting. Easynews uses username/password settings, so Yes opens Finder Settings. Finder does not automatically replay a failed list modification: retry the original action after authorizing.

@@ -1,4 +1,4 @@
-Current supplied pair: Finder Skin 1.1.03 and Finder Add-on 1.0.08.12. The skin and add-on share the same charcoal/silver-white design. Keep an established interface configuration when upgrading; the first-run instructions below apply to a new setup.
+Current supplied pair: Finder Skin 2.0.0.0 and Finder Add-on 2.0.0.0. The skin and add-on share the same charcoal/silver-white design. Keep an established interface configuration when upgrading; the first-run instructions below apply to a new setup.
 
 Finder supports two interface modes: Finder + Finder Skin and Finder Standalone.
 

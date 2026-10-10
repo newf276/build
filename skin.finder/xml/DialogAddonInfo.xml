@@ -16,7 +16,6 @@
 			<control type="group">
 				<include>OpenClose_Right</include>
 				<control type="button" id="5000">
-					<include>FocusBounce</include>
 					<left>625</left>
 					<top>430</top>
 					<width>695</width>
@@ -109,7 +108,6 @@
 					</itemlayout>
 					<focusedlayout height="225" width="405">
 						<control type="image">
-							<include>FocusBounce</include>
 							<left>4</left>
 							<top>16</top>
 							<width>393</width>
@@ -147,7 +145,6 @@
 						<top>430</top>
 						<width>478</width>
 						<height>375</height>
-						
 						<texture colordiffuse="button_focus2" border="21">masks/landscape-unfocused.png</texture>
 					</control>
 					<control type="group">
@@ -167,7 +164,7 @@
 									<height>30</height>
 									<font>font27_narrow</font>
 									<label>$INFO[ListItem.Label,[COLOR accent_color],[/COLOR]]</label>
-									<textcolor>unfocused_text</textcolor> 
+									<textcolor>unfocused_text</textcolor>
 								</control>
 								<control type="label">
 									<left>10</left>
@@ -284,7 +281,9 @@
 						<radiowidth>100</radiowidth>
 						<font>font12</font>
 						<visible>Control.IsEnabled(13)</visible>
-					<textureradioonfocus colordiffuse="white">buttons/radio-button-on.png</textureradioonfocus><textureradioofffocus colordiffuse="white">buttons/radio-button-off.png</textureradioofffocus></control>
+						<textureradioonfocus colordiffuse="white">buttons/radio-button-on.png</textureradioonfocus>
+						<textureradioofffocus colordiffuse="white">buttons/radio-button-off.png</textureradioofffocus>
+					</control>
 					<include content="FinderThemeAddonInfoButton">
 						<param name="id" value="10" />
 						<param name="icon" value="icons/infodialogs/info.png" />
@@ -320,13 +319,11 @@
 				<include>OpenClose_Left</include>
 				<top>158</top>
 				<left>80</left>
-				
 				<control type="image">
 					<left>-6</left>
 					<top>4</top>
 					<width>540</width>
 					<height>540</height>
-					
 					<texture diffuse="masks/landscapeinfo.png" colordiffuse="button_focus2">dialogs/dialog-bg-nobo.png</texture>
 					<bordersize>20</bordersize>
 				</control>
@@ -335,7 +332,6 @@
 					<top>24</top>
 					<width>500</width>
 					<height>500</height>
-					
 					<fadetime>300</fadetime>
 					<texture diffuse="masks/landscapeinfo.png" fallback="DefaultAddon.png" background="true">$INFO[ListItem.Art(thumb)]</texture>
 				</control>

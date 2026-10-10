@@ -1,0 +1,11 @@
+Current supplied pair: Finder Skin 1.1.03 and Finder Add-on 1.0.08.12. The skin and add-on share the same charcoal/silver-white design. Keep an established interface configuration when upgrading; the first-run instructions below apply to a new setup.
+
+Finder supports two interface modes: Finder + Finder Skin and Finder Standalone.
+
+On first use Finder asks which mode you want. If Finder + Finder Skin is selected, Finder checks whether skin.finder is installed and can install it on demand. Finder then activates Finder Skin and continues directly into the Finder Skin Pre-Config selector; you do not need to activate the skin manually beforehand.
+
+Finder coordinates the Pre-Config choice, selected Primary Tracker authorization and initial synchronization before completing first-run setup. When the tracker is ready, Finder saves skin.finder as Kodi's selected skin, completes the final skin load and automatically opens a fresh Finder Home screen. That Home screen is the end of setup: begin using Finder normally. There is no need to back out of the setup windows, manually select Finder Skin, or exit/restart Kodi. Finder Skin remains the selected skin on subsequent Kodi starts.
+
+Finder Standalone remains available when you do not want the integrated skin experience. You can change the saved interface choice later from Tools -> Finder Interface Setup.
+
+Finder Skin integration does not require a separate FENtastic or Finder helper add-on for the integrated Search, widgets or MDbList rating service used by the current Finder setup. Updates are distributed through Newf276's repository, not an internal updater.

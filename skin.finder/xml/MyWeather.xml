@@ -36,7 +36,7 @@
 			<animation effect="zoom" center="auto" end="102,102" time="0" condition="Integer.IsGreater(System.StereoscopicMode,0)">conditional</animation>
 			<animation effect="fade" start="100" end="bg_alpha" time="0" condition="Player.HasMedia">Conditional</animation>
 			<animation effect="fade" start="0" end="100" time="300" condition="Window.Previous(fullscreenvideo) | Window.Previous(FullscreenGame) | Window.Previous(startup)">WindowOpen</animation>
-			<include>ColoredBackgroundImages</include>
+			<include>FinderThemeSurface</include>
 		</control>
 		<control type="grouplist" id="2000">
 			<orientation>vertical</orientation>
@@ -46,12 +46,12 @@
 			<ondown>20001</ondown>
 			<usecontrolcoords>true</usecontrolcoords>
 			<animation type="Conditional" condition="Control.IsVisible(20000)" reversible="false">
-				<effect type="slide" end="0,20" time="60" tween="sine"/>
-				<effect type="slide" end="0,-20" time="180" tween="sine" delay="80"/>
+				<effect type="slide" end="0,20" time="60" tween="sine" />
+				<effect type="slide" end="0,-20" time="180" tween="sine" delay="80" />
 			</animation>
 			<animation type="Conditional" condition="Control.IsVisible(20001)" reversible="false">
-				<effect type="slide" end="0,-20" time="60" tween="sine"/>
-				<effect type="slide" end="0,20" time="180" tween="sine" delay="80"/>
+				<effect type="slide" end="0,-20" time="60" tween="sine" />
+				<effect type="slide" end="0,20" time="180" tween="sine" delay="80" />
 			</animation>
 			<scrolltime tween="cubic" easing="out">500</scrolltime>
 			<include>OpenClose_Right</include>
@@ -72,7 +72,6 @@
 					<animation effect="fade" time="400">VisibleChange</animation>
 				</control>
 				<control type="button" id="20">
-					<include>FocusBounce</include>
 					<left>2.1%</left>
 					<top>120</top>
 					<width>95.8%</width>
@@ -81,13 +80,13 @@
 					<aligny>center</aligny>
 					<textoffsetx>40</textoffsetx>
 					<textoffsety>0</textoffsety>
-					<texturefocus border="40" colordiffuse="button_focus">masks/settingspanel.png</texturefocus>
-					<texturenofocus/>
+					<texturefocus border="20">finder_focus/system-tile.png</texturefocus>
+					<texturenofocus />
 					<onup>20000</onup>
 					<ondown>15100</ondown>
 					<font>font12</font>
 					<onclick>Weather.LocationNext</onclick>
-					<label/>
+					<label />
 				</control>
 				<control type="image">
 					<left>2.5%</left>
@@ -123,75 +122,75 @@
 					<align>justify</align>
 					<orientation>horizontal</orientation>
 					<include content="WeatherIconMyWeather">
-						<param name="label" value="Window(weather).Property(Current.Wind)"/>
-						<param name="texture" value="icons/weather/wind.png"/>
-						<param name="header" value="$LOCALIZE[404]"/>
+						<param name="label" value="Window(weather).Property(Current.Wind)" />
+						<param name="texture" value="icons/weather/wind.png" />
+						<param name="header" value="$LOCALIZE[404]" />
 					</include>
 					<include content="WeatherIconMyWeather">
-						<param name="label" value="Window(weather).Property(Current.Humidity)"/>
-						<param name="texture" value="icons/weather/humidity.png"/>
-						<param name="header" value="$LOCALIZE[406]"/>
+						<param name="label" value="Window(weather).Property(Current.Humidity)" />
+						<param name="texture" value="icons/weather/humidity.png" />
+						<param name="header" value="$LOCALIZE[406]" />
 					</include>
 					<include content="WeatherIconMyWeather">
-						<param name="label" value="Window(weather).Property(Current.Precipitation)"/>
-						<param name="texture" value="icons/weather/rain.png"/>
-						<param name="header" value="$LOCALIZE[33021]"/>
+						<param name="label" value="Window(weather).Property(Current.Precipitation)" />
+						<param name="texture" value="icons/weather/rain.png" />
+						<param name="header" value="$LOCALIZE[33021]" />
 					</include>
 					<include content="WeatherIconMyWeather">
-						<param name="label" value="Window(weather).Property(Today.Sunrise)"/>
-						<param name="texture" value="icons/weather/sunrise.png"/>
-						<param name="header" value="$LOCALIZE[405]"/>
+						<param name="label" value="Window(weather).Property(Today.Sunrise)" />
+						<param name="texture" value="icons/weather/sunrise.png" />
+						<param name="header" value="$LOCALIZE[405]" />
 					</include>
 					<include content="WeatherIconMyWeather">
-						<param name="label" value="Window(weather).Property(Today.Sunset)"/>
-						<param name="texture" value="icons/weather/sunset.png"/>
-						<param name="header" value="$LOCALIZE[403]"/>
+						<param name="label" value="Window(weather).Property(Today.Sunset)" />
+						<param name="texture" value="icons/weather/sunset.png" />
+						<param name="header" value="$LOCALIZE[403]" />
 					</include>
 				</control>
 			</control>
 			<include content="WeatherWidget">
-				<param name="content_include" value="DailyItems"/>
-				<param name="list_id" value="15100"/>
-				<param name="widget_header" value="$LOCALIZE[31019]"/>
-				<param name="visible" value="!String.IsEmpty(Window(weather).Property(Daily.IsFetched))"/>
-				<param name="width" value="258"/>
+				<param name="content_include" value="DailyItems" />
+				<param name="list_id" value="15100" />
+				<param name="widget_header" value="$LOCALIZE[31019]" />
+				<param name="visible" value="!String.IsEmpty(Window(weather).Property(Daily.IsFetched))" />
+				<param name="width" value="258" />
 			</include>
 			<include content="WeatherWidget">
-				<param name="content_include" value="HourlyItems"/>
-				<param name="list_id" value="15200"/>
-				<param name="widget_header" value="$LOCALIZE[33036]"/>
-				<param name="visible" value="!String.IsEmpty(Window(weather).Property(Hourly.IsFetched))"/>
-				<param name="width" value="258"/>
+				<param name="content_include" value="HourlyItems" />
+				<param name="list_id" value="15200" />
+				<param name="widget_header" value="$LOCALIZE[33036]" />
+				<param name="visible" value="!String.IsEmpty(Window(weather).Property(Hourly.IsFetched))" />
+				<param name="width" value="258" />
 			</include>
 			<include content="WeatherMapItem">
-				<param name="item_id" value="1"/>
-				<param name="onup_id" value="15200"/>
-				<param name="ondown_id" value="70020"/>
+				<param name="item_id" value="1" />
+				<param name="onup_id" value="15200" />
+				<param name="ondown_id" value="70020" />
 			</include>
 			<include content="WeatherMapItem">
-				<param name="item_id" value="2"/>
-				<param name="onup_id" value="70010"/>
-				<param name="ondown_id" value="70030"/>
+				<param name="item_id" value="2" />
+				<param name="onup_id" value="70010" />
+				<param name="ondown_id" value="70030" />
 			</include>
 			<include content="WeatherMapItem">
-				<param name="item_id" value="3"/>
-				<param name="onup_id" value="70020"/>
-				<param name="ondown_id" value="70040"/>
+				<param name="item_id" value="3" />
+				<param name="onup_id" value="70020" />
+				<param name="ondown_id" value="70040" />
 			</include>
 			<include content="WeatherMapItem">
-				<param name="item_id" value="4"/>
-				<param name="onup_id" value="70030"/>
-				<param name="ondown_id" value="70050"/>
+				<param name="item_id" value="4" />
+				<param name="onup_id" value="70030" />
+				<param name="ondown_id" value="70050" />
 			</include>
 			<include content="WeatherMapItem">
-				<param name="item_id" value="5"/>
-				<param name="onup_id" value="70040"/>
-				<param name="ondown_id" value="20001"/>
+				<param name="item_id" value="5" />
+				<param name="onup_id" value="70040" />
+				<param name="ondown_id" value="20001" />
 			</include>
 		</control>
 		<include content="TopBar">
-			<param name="breadcrumbs_label" value="$LOCALIZE[8]$INFO[Window(Weather).Property(Location), [B]»[/B] ]"/>
-			<param name="sublabel" value="$INFO[Window(weather).Property(WeatherProvider)]"/>
+			<param name="breadcrumbs_label" value="$LOCALIZE[8]$INFO[Window(Weather).Property(Location), [B]»[/B] ]" />
+			<param name="sublabel" value="$INFO[Window(weather).Property(WeatherProvider)]" />
 		</include>
 		<include>BottomBar</include>
 	</controls>

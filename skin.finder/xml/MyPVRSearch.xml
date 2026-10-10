@@ -6,7 +6,7 @@
 	<menucontrol>6053</menucontrol>
 	<controls>
 		<include>DefaultBackground</include>
-		<control type="group">
+		<include>FinderThemeSurface</include><control type="group">
 			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
 			<control type="group">
 				<visible>Control.IsVisible(50)</visible>
@@ -26,10 +26,10 @@
 					<pagecontrol>73</pagecontrol>
 					<scrolltime tween="cubic" easing="out">500</scrolltime>
 					<include content="PVRListItemLayouts">
-						<param name="list_id" value="50"/>
-						<param name="only_label_condition" value="String.IsEmpty(ListItem.Date)"/>
-						<param name="label1" value="$VAR[PVRMySearchLabel1Var]"/>
-						<param name="label2" value="$INFO[ListItem.Date]"/>
+						<param name="list_id" value="50" />
+						<param name="only_label_condition" value="String.IsEmpty(ListItem.Date)" />
+						<param name="label1" value="$VAR[PVRMySearchLabel1Var]" />
+						<param name="label2" value="$INFO[ListItem.Date]" />
 					</include>
 				</control>
 			</control>
@@ -39,10 +39,10 @@
 				<width>870</width>
 				<right>0</right>
 				<include content="ContentPanel">
-					<param name="left" value="-72"/>
-					<param name="width" value="970"/>
-					<param name="top" value="-20"/>
-					<param name="flipx" value="true"/>
+					<param name="left" value="-72" />
+					<param name="width" value="970" />
+					<param name="top" value="-20" />
+					<param name="flipx" value="true" />
 				</include>
 				<control type="scrollbar" id="73">
 					<left>-50</left>
@@ -57,10 +57,10 @@
 				<include>PVRInfoPanel</include>
 			</control>
 			<include content="TopBar">
-				<param name="breadcrumbs_label" value="$VAR[BreadcrumbsPVRSearchVar]"/>
+				<param name="breadcrumbs_label" value="$VAR[BreadcrumbsPVRSearchVar]" />
 			</include>
 			<include content="BottomBar">
-				<param name="info_visible" value="true"/>
+				<param name="info_visible" value="true" />
 			</include>
 			<control type="group">
 				<include>MediaMenuCommon</include>
@@ -68,11 +68,11 @@
 			</control>
 		</control>
 		<control type="label" id="29">
-			<font/>
+			<font />
 			<include>HiddenObject</include>
 		</control>
 		<control type="label" id="30">
-			<font/>
+			<font />
 			<include>HiddenObject</include>
 		</control>
 	</controls>

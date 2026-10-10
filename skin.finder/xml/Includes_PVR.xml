@@ -115,15 +115,15 @@
 					<info>ListItem.Progress</info>
 				</control>
 				<include content="PVRListItemLayout">
-					<param name="only_label_condition" value="$PARAM[only_label_condition]"/>
-					<param name="info_icon" value="$PARAM[info_icon]"/>
-					<param name="has_info_icon" value="$PARAM[has_info_icon]"/>
-					<param name="has_status_icon" value="$PARAM[has_status_icon]"/>
-					<param name="label0" value="[COLOR unfocused_text]$INFO[ListItem.ChannelNumberLabel][/COLOR]"/>
-					<param name="label1" value="[COLOR unfocused_text]$PARAM[label1][/COLOR]"/>
-					<param name="label2" value="[COLOR unfocused_text]$PARAM[label2][/COLOR]"/>
-					<param name="label3" value="[COLOR unfocused_text]$VAR[PVRListItemSubLabel][/COLOR]"/>
-					<param name="label4" value="[COLOR unfocused_text]$INFO[ListItem.Comment][/COLOR]"/>
+					<param name="only_label_condition" value="$PARAM[only_label_condition]" />
+					<param name="info_icon" value="$PARAM[info_icon]" />
+					<param name="has_info_icon" value="$PARAM[has_info_icon]" />
+					<param name="has_status_icon" value="$PARAM[has_status_icon]" />
+					<param name="label0" value="[COLOR unfocused_text]$INFO[ListItem.ChannelNumberLabel][/COLOR]" />
+					<param name="label1" value="[COLOR unfocused_text]$PARAM[label1][/COLOR]" />
+					<param name="label2" value="[COLOR unfocused_text]$PARAM[label2][/COLOR]" />
+					<param name="label3" value="[COLOR unfocused_text]$VAR[PVRListItemSubLabel][/COLOR]" />
+					<param name="label4" value="[COLOR unfocused_text]$INFO[ListItem.Comment][/COLOR]" />
 				</include>
 			</itemlayout>
 			<focusedlayout height="101" infoupdate="$PARAM[info_update]">
@@ -132,7 +132,7 @@
 					<top>0</top>
 					<right>25</right>
 					<animation effect="fade" start="100" end="0" time="0">UnFocus</animation>
-					<texture colordiffuse="button_focus">masks/focus.png</texture>
+					<texture border="12">finder_focus/system-tile.png</texture>
 					<visible>Control.HasFocus($PARAM[list_id])</visible>
 				</control>
 				<control type="progress">
@@ -142,21 +142,21 @@
 					<height>12</height>
 					<align>center</align>
 					<aligny>center</aligny>
-					<colordiffuse>focused_text</colordiffuse>
+					<colordiffuse>white</colordiffuse>
 					<midtexture border="3">progress/texturebg_white.png</midtexture>
 					<visible>ListItem.HasEpg + !$PARAM[has_info_icon]</visible>
 					<info>ListItem.Progress</info>
 				</control>
 				<include content="PVRListItemLayout">
-					<param name="only_label_condition" value="$PARAM[only_label_condition]"/>
-					<param name="info_icon" value="$PARAM[info_icon]"/>
-					<param name="has_info_icon" value="$PARAM[has_info_icon]"/>
-					<param name="has_status_icon" value="$PARAM[has_status_icon]"/>
-					<param name="label0" value="[COLOR focused_text][B]$INFO[ListItem.ChannelNumberLabel][/B][/COLOR]"/>
-					<param name="label1" value="[COLOR focused_text][B]$PARAM[label1][/B][/COLOR]"/>
-					<param name="label2" value="[COLOR focused_text][B]$PARAM[label2][/B][/COLOR]"/>
-					<param name="label3" value="[COLOR focused_text][B]$VAR[PVRListItemSubLabelFocused][/B][/COLOR]"/>
-					<param name="label4" value="[COLOR focused_text][B]$INFO[ListItem.Comment][/B][/COLOR]"/>
+					<param name="only_label_condition" value="$PARAM[only_label_condition]" />
+					<param name="info_icon" value="$PARAM[info_icon]" />
+					<param name="has_info_icon" value="$PARAM[has_info_icon]" />
+					<param name="has_status_icon" value="$PARAM[has_status_icon]" />
+					<param name="label0" value="[COLOR white][B]$INFO[ListItem.ChannelNumberLabel][/B][/COLOR]" />
+					<param name="label1" value="[COLOR white][B]$PARAM[label1][/B][/COLOR]" />
+					<param name="label2" value="[COLOR white][B]$PARAM[label2][/B][/COLOR]" />
+					<param name="label3" value="[COLOR white][B]$VAR[PVRListItemSubLabelFocused][/B][/COLOR]" />
+					<param name="label4" value="[COLOR white][B]$INFO[ListItem.Comment][/B][/COLOR]" />
 				</include>
 			</focusedlayout>
 		</definition>
@@ -220,7 +220,7 @@
 					<left>0</left>
 					<right>0</right>
 					<bottom>0</bottom>
-					<texture colordiffuse="button_focus">masks/focus.png</texture>
+					<texture border="12">finder_focus/system-tile.png</texture>
 					<visible>Control.HasFocus($PARAM[list_id])</visible>
 				</control>
 				<control type="image">
@@ -544,7 +544,7 @@
 				<onup>$PARAM[control_onupdown_id]</onup>
 				<ondown>$PARAM[control_onupdown_id]</ondown>
 				<viewtype label="$PARAM[viewtype_label]">list</viewtype>
-				<!-- progress panel -->
+				
 				<progresstexture border="$PARAM[progress_texture_border]" colordiffuse="unfocused_text">$PARAM[progress_texture]</progresstexture>
 				<rulerdatelayout width="1700" height="45" condition="$PARAM[has_rulerdate_layout]">
 					<control type="label">
@@ -615,7 +615,7 @@
 						<scroll>true</scroll>
 					</control>
 				</focusedchannellayout>
-				<!-- unfocused layout -->
+				
 				<itemlayout height="62" width="60">
 					<control type="image" id="2">
 						<width>58</width>
@@ -655,10 +655,10 @@
 						<left>2</left>
 						<width>54</width>
 						<height>54</height>
-						<texture colordiffuse="button_focus">masks/focus-PVR.png</texture>
+						<texture border="12">finder_focus/system-tile.png</texture>
 						<visible>Control.HasFocus($PARAM[control_id])</visible>
 					</control>
-					<!-- unfocused grid (back) -->
+					
 					<control type="label" id="1">
 						<left>15</left>
 						<top>12</top>
@@ -666,7 +666,7 @@
 						<aligny>center</aligny>
 						<font>font13</font>
 						<label>[B]$INFO[ListItem.Label][/B]</label>
-						<textcolor>focused_text</textcolor>
+						<textcolor>white</textcolor>
 					</control>
 					<control type="image">
 						<visible>ListItem.IsNew | ListItem.IsPremiere | ListItem.IsFinale | ListItem.IsLive</visible>

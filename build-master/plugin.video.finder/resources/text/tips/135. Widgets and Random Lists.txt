@@ -1,0 +1,6 @@
+Finder includes Random Lists for building widgets whose content changes over time. Random movie/TV lists can select from Finder's available list pages, while random Trakt lists can work with Trakt list sources.
+
+For dynamic labels, Finder exposes Window properties for supported random lists. The general pattern is:
+$INFO[Window.Property(finder.[NAME OF LIST])]
+
+Random Shortcut Folders provide another method: place several lists inside a Shortcut Folder, make it Random, then use that folder as the widget source. See the dedicated Random Shortcut Folder tip for details.

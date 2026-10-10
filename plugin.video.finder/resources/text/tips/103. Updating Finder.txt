@@ -1,4 +1,4 @@
-Build 029 upgrade: install the supplied Skin 1.1.03 and Finder Add-on 1.0.08.12 ZIPs over the existing versions, then restart Kodi. Keep userdata and authentication; no reset or repeat Pre-Config is needed. These local ZIPs do not imply the repository has been updated.
+Build 030 upgrade: install the supplied Skin 2.0.0.0 and Finder Add-on 2.0.0.0 ZIPs over the existing versions, then restart Kodi. Keep userdata and authentication; no reset or repeat Pre-Config is needed. These local ZIPs do not imply the repository has been updated.
 
 Finder no longer contains the old built-in self-updater. That functionality was removed so Kodi's normal repository update system can manage Finder versions cleanly.
 

@@ -308,10 +308,6 @@
                             <focusedlayout height="360" width="236">
                                 <control type="image">
                                     <animation effect="fade" start="100" end="60" condition="Control.HasFocus(4050)">Conditional</animation>
-                                    <animation type="Focus" reversible="false">
-                                        <effect type="zoom" end="105" time="75" tween="sine" easing="out" center="auto" />
-                                        <effect type="zoom" end="95" time="225" tween="sine" delay="100" easing="out" center="auto" />
-                                    </animation>
                                     <left>0</left>
                                     <top>5</top>
                                     <height>350</height>
@@ -408,10 +404,6 @@
                             <focusedlayout height="360" width="236">
                                 <control type="image">
                                     <animation effect="fade" start="100" end="60" condition="Control.HasFocus(4051)">Conditional</animation>
-                                    <animation type="Focus" reversible="false">
-                                        <effect type="zoom" end="105" time="75" tween="sine" easing="out" center="auto" />
-                                        <effect type="zoom" end="95" time="225" tween="sine" delay="100" easing="out" center="auto" />
-                                    </animation>
                                     <left>0</left>
                                     <top>5</top>
                                     <height>350</height>
@@ -601,10 +593,6 @@
                             <focusedlayout height="360" width="236">
                                 <control type="image">
                                     <animation effect="fade" start="100" end="60" condition="Control.HasFocus(4053)">Conditional</animation>
-                                    <animation type="Focus" reversible="false">
-                                        <effect type="zoom" end="105" time="75" tween="sine" easing="out" center="auto" />
-                                        <effect type="zoom" end="95" time="225" tween="sine" delay="100" easing="out" center="auto" />
-                                    </animation>
                                     <left>0</left>
                                     <top>5</top>
                                     <height>350</height>

@@ -1,0 +1,7 @@
+Finder is a customizable media browser for Movies, TV Shows, Seasons and Episodes.
+
+Use Tools -> Tips for Use at any time to return to this guide. Finder's menus, context actions, trackers, list managers, scraping controls, playback features and optional Finder Skin integration are designed to be configured to suit your setup.
+
+On a fresh installation, Finder guides the first-run sequence for you. Choose Finder + Finder Skin for the integrated experience or Finder Standalone. In integrated mode Finder can install and activate Finder Skin, opens the matching Pre-Config, completes the selected Primary Tracker authorization/synchronization, then automatically delivers you to a fresh Finder Home screen. When that Home screen appears, setup is complete and you can begin using Finder immediately; no Kodi restart or manual skin selection is required.
+
+The most important starting choices are your Finder interface mode and Primary Tracker. Your Primary Tracker determines the watched/progress source used by Finder. See the dedicated tips for Finder Interface and Primary Tracker before changing those settings later.

@@ -1,0 +1,3 @@
+Movies, TV Shows, Seasons and Episodes can expose an Options context-menu entry. This provides quick access to useful Finder settings without requiring a trip through the full Settings window.
+
+Some changes reopen the Options dialog so several related settings can be adjusted in sequence. Choose Save Settings and Exit when finished.

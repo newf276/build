@@ -1,0 +1,5 @@
+Finder includes a Kodi Log uploader under Tools -> Changelog & Log Utils.
+
+Use the Kodi Log upload option when reporting a problem. It creates a shareable log location that can be provided for troubleshooting.
+
+Before uploading a log, reproduce the problem once so the relevant entries are near the end of the log. Avoid posting unrelated personal information if it appears in your Kodi log.

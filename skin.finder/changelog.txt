@@ -1,17 +1,30 @@
+2.0.0.0 — Phase two
+- Fixed selected TV/radio channel text contrast inside the dark focus border.
+
+- Shared darker charcoal surface, with plain, blue, speckled and personal background choices; PVR and weather windows use the shared surface.
+- Full built-in Main Menu enable switches and section widget switches; existing built-in row switches are exposed under Widgets. Optional platform/provider rows require available content.
+- PVR and other icon cards use black interiors and silver-white focus; selection icons and text are centered with room for secondary text.
+- File Manager right-hand values gain padding; System Information storage uses a smaller monospaced font for columns.
+- Home and search media layouts enlarged 15 percent; category pills reduced and icon/caption geometry balanced. Existing library views retain their original sizing.
+- Decorative focus bounce, zoom and border shadows removed from the audited skin and Finder theme layouts; functional scrolling and loading indicators remain.
+- Extended Info season and cast cards include caption space inside the focus border; role accents changed from pink to blue; show logos constrained to the header. Options rows have explicit outlines and separate two-line text areas.
+- Weather home location, conditions and temperature bounded within the visible panel.
+- Duplicate ratings beside home/search row titles removed. Sidebar ratings remain. Existing watched circles/counts remain; duplicate thin poster progress lines stay removed.
+- Portable skin paths retained. Resolved absolute paths in Kodi logs are normal; user sources and account data are not rewritten.
+
+
 Version 1.1.03 — Final coordinated theme and search repair
 
-Final build 029 — 9 October 2026 after live testing.
+Final build 029 — accepted by Ian on 9 October 2026 after live testing.
+Finder Skin 1.1.03 pairs with Finder Add-on 1.0.08.12. These are the supplied local packages; this does not assert repository publication.
+Upgrade both over the existing installation. Keep userdata, authentication, watched data, databases and thumbnails. Do not rerun Pre-Config or reset an established setup for this update.
+Shared appearance: charcoal windows, silver-white rounded focus, circular toolbar/playback highlights, no added poster glow. Home navigation and layout remain protected.
+Search uses up to five recent entries with actor/media replay, separate populated result rows, directional navigation and bottom-to-first wrap. Rows depend on available provider results; not every search has every category.
+Poster/wide widgets keep the existing watched circles and counts; the duplicate thin progress line is removed. The playback timeline remains available.
+Live checks covered movie/TV/Anime row navigation, wrap with subsequent horizontal selection, media/actor history replay, Denzel poster opening and Global News Stop/Audio focus. Ian subsequently reported happy with all tested behavior.
+Not exhaustively tested: all five entries across restart, multiple actor matches, empty/late/optional provider rows, rapid input, music OSD and every settings child window. These remain follow-up checks, not known failures.
 
-- Shared appearance: charcoal windows, silver-white rounded focus, circular toolbar/playback highlights, no added poster glow. Home navigation and layout remain protected.
-
-- Search uses up to five recent entries with actor/media replay, separate populated result rows, directional navigation and bottom-to-first wrap. Rows depend on available provider results; not every search has every category.
-- Poster/wide widgets keep the existing watched circles and counts; the duplicate thin progress line is removed. The playback timeline remains available.
-
-- Live checks covered movie/TV/Anime row navigation, wrap with subsequent horizontal selection, media/actor history replay, Denzel poster opening and Global News Stop/Audio focus. 
-
-- Not exhaustively tested: all five entries across restart, multiple actor matches, empty/late/optional provider rows, rapid input, music OSD and every settings child window. These remain follow-up checks, not known failures.
-
-- Changes since 028: fixed XML row positioning, delayed focus transfer until row placement applies, and charcoal/white playback focus. Carries forward the coordinated settings/dialog theme, readable toggles, 80-pixel selection icons, five-slot history, protected Home layout and removal of duplicate poster progress lines.
+Changes since 028: fixed XML row positioning, delayed focus transfer until row placement applies, and charcoal/white playback focus. Carries forward the coordinated settings/dialog theme, readable toggles, 80-pixel selection icons, five-slot history, protected Home layout and removal of duplicate poster progress lines.
 
 Version 1.0.08
 

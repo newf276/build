@@ -1,8 +1,8 @@
-# Finder Skin 1.1.03
+# Finder Skin 2.0.0.0
 
 Finder Skin is the companion skin for plugin.video.finder, with Finder-native menus, Search, widgets, ratings and information windows.
 
-Use the supplied Finder Add-on 1.0.08.12 with Finder Skin 1.1.03. Keep existing userdata and accounts when upgrading. See SETUP_GUIDE.txt and changelog.txt for current guidance; earlier release sections below are historical.
+Use the supplied Finder Add-on 2.0.0.0 with Finder Skin 2.0.0.0. Keep existing userdata and accounts when upgrading. See SETUP_GUIDE.txt and changelog.txt for current guidance; earlier release sections below are historical.
 
 Finder and Finder Skin Setup Guide — 1.0.08
 
@@ -11,7 +11,7 @@ Finder and Finder Skin Setup Guide — 1.0.08
 3. Choose Finder, Trakt or PunchPlay as Primary Tracker. Authorize the chosen service. PunchPlay first-run setup synchronizes watched history and supported lists; keep Repair PunchPlay Watched Database for repair when needed.
 4. In Finder -> My Lists, select Authorize TMDb, Authorize Trakt or Authorize PunchPlay for a signed-out account. Yes launches its existing sign-in flow. No suppresses automatic recovery reminders; a manual selection can ask again. Leave and reopen My Lists after signing in.
 5. Choose a Finder Skin Pre-Config matching your tracker and preferred home layout, then customize menus/widgets in Skin Settings. The home paths remain Finder-native.
-6. Default home WideInfoWall layout is under Skin Settings -> Widgets. Search stays Poster View 54; movie/TV lists use List View 50 and normal navigation uses Wide List View 55. Category pill sizing is preserved.
+6. Default home WideInfoWall layout is under Skin Settings -> Widgets. Search stays Poster View 54; movie/TV lists use List View 50 and normal navigation uses Wide List View 55. Home and search media cards are 15% larger; category pills are smaller.
 7. Open First Unwatched Episode is enabled by default under Finder Settings -> Content -> General. Supported shows open to and focus the first aired unwatched episode while watched episodes remain available. Disable it for normal browsing.
 8. Use ExtendedInfo from Finder's context menu or Kodi Info for Finder items in Finder Skin. Play/Browse, Options, Sync and Play Trailer use Finder capabilities. Actor biographies, credits, related titles, seasons, videos and artwork are available where metadata exists.
 9. Native Finder trailers do not require the YouTube add-on. MPEG-DASH is disabled; progressive MP4/HLS playback is used. Individual videos can be restricted or unavailable.

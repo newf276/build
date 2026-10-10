@@ -1,0 +1,10 @@
+Credits and Thanks
+
+Angelitto — TMDbMovies ExtendedInfo layout, navigation and assets, adapted with his direct permission. Finder connects the adapted windows to its own playback, trailers, trackers and list managers. TMDbMovies does not need to be installed.
+
+silentbob2 — Forge, the source project from which Finder development began.
+Tikipeter — Fen/Fen Light foundations and the work inherited through that lineage.
+ivarbrandt and Zaxxon709 — FENtastic skin foundations and subsequent skin work inherited by Finder Skin.
+Team Kodi — Kodi and the Estuary skin foundations.
+
+Existing upstream licenses and notices remain included. Thanks to the developers and community whose work made this project possible.

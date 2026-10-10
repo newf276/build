@@ -1,0 +1,11 @@
+When PunchPlay is authorized, Finder provides a dedicated PunchPlay Lists Manager from the media context menu.
+
+For Movies and TV Shows it can:
+- Add to Watchlist
+- Remove from Watchlist
+- Add to Collection
+- Remove from Collection
+- Add to a PunchPlay Personal List
+- Remove from a PunchPlay Personal List
+
+This gives PunchPlay list management the same kind of direct, item-level workflow users are accustomed to with Trakt.

@@ -10,11 +10,11 @@
 			<height>750</height>
 			<width>1220</width>
 			<include content="DialogBackgroundCommons">
-				<param name="width" value="1220"/>
-				<param name="height" value="790"/>
-				<param name="header_label" value=""/>
-				<param name="header_id" value="1"/>
-				<param name="diffusetexture" value="masks/dialog-bg-large.png"/>
+				<param name="width" value="1220" />
+				<param name="height" value="790" />
+				<param name="header_label" value="" />
+				<param name="header_id" value="1" />
+				<param name="diffusetexture" value="masks/dialog-bg-large.png" />
 			</include>
 			<control type="image">
 				<left>0</left>
@@ -23,7 +23,6 @@
 				<bottom>2</bottom>
 				<texture border="40">buttons/dialogbutton-nofo.png</texture>
 			</control>
-			<!-- Color picker panel -->
 			<control type="panel" id="6">
 				<left>20</left>
 				<top>100</top>
@@ -58,7 +57,6 @@
 				</itemlayout>
 				<focusedlayout height="80" width="146">
 					<control type="group">
-						<animation effect="zoom" time="200" tween="sine" easing="inout" start="100" end="124" center="auto">Focus</animation>
 						<control type="image">
 							<top>3</top>
 							<left>8</left>
@@ -112,8 +110,8 @@
 				<itemgap>dialogbuttons_itemgap</itemgap>
 				<onright>6</onright>
 				<include content="DefaultDialogButton">
-					<param name="id" value="7"/>
-					<param name="label" value="$LOCALIZE[222]"/>
+					<param name="id" value="7" />
+					<param name="label" value="$LOCALIZE[222]" />
 				</include>
 			</control>
 		</control>

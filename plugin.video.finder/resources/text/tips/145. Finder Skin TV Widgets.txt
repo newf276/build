@@ -1,4 +1,4 @@
-Build 029 preserves the accepted Home layout and navigation, silver-white focus and supported episode counts. Watched circles remain; the duplicate thin progress line is removed.
+Version 2.0.0.0 enlarges Home cards by 15% and retains navigation, silver-white focus and supported episode counts. Watched circles remain; the duplicate thin progress line is removed.
 
 Finder Skin's finalized TV Show widget set is designed around Finder's native lists and navigation.
 

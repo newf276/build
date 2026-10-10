@@ -1,7 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <fonts>
 	<fontset id="Default" idloc="15109">
-		<!-- Normal Fonts -->
 		<font>
 			<name>font10</name>
 			<filename>NotoSans-Regular.ttf</filename>
@@ -99,7 +98,6 @@
 			<filename>Roboto-Thin.ttf</filename>
 			<size>45</size>
 		</font>
-		<!-- Title Fonts -->
 		<font>
 			<name>font_flag</name>
 			<filename>NotoSans-Regular.ttf</filename>
@@ -174,7 +172,6 @@
 		</font>
 	</fontset>
 	<fontset id="Arial" idloc="31053">
-		<!-- Arial Font better for non English -->
 		<font>
 			<name>font10</name>
 			<filename>arial.ttf</filename>
@@ -262,7 +259,6 @@
 			<size>40</size>
 			<style>lighten</style>
 		</font>
-		<!-- Title Fonts -->
 		<font>
 			<name>font_flag</name>
 			<filename>arial.ttf</filename>
@@ -286,7 +282,6 @@
 			<size>30</size>
 			<style>bold</style>
 		</font>
-
 		<font>
 			<name>font32_title</name>
 			<filename>arial.ttf</filename>
@@ -333,6 +328,11 @@
 		<font>
 			<name>Mono26</name>
 			<filename>arial.ttf</filename>
+			<size>26</size>
+		</font>
+		<font>
+			<name>Mono26</name>
+			<filename>NotoMono-Regular.ttf</filename>
 			<size>26</size>
 		</font>
 	</fontset>

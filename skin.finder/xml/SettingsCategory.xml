@@ -7,7 +7,7 @@
 		<control type="image">
             <depth>DepthBackground</depth>
             <include>FullScreenDimensions</include>
-            <texture colordiffuse="finder_charcoal">colors/white.png</texture>
+            <texture colordiffuse="$VAR[FinderThemeBackgroundTint]">$VAR[FinderThemeBackground]</texture>
             <visible>!Player.HasMedia</visible>
         </control>
 		<control type="group">
@@ -71,7 +71,7 @@
 			<textoffsetx>45</textoffsetx>
 			<top>0</top>
 			<height>50</height>
-			<label/>
+			<label />
 			<align>center</align>
 			<aligny>center</aligny>
 			<font>font25_title</font>
@@ -85,7 +85,7 @@
 		<control type="group">
 			<depth>DepthContentPanel</depth>
 			<include content="ContentPanel">
-				<param name="width" value="530"/>
+				<param name="width" value="530" />
 			</include>
 			<control type="grouplist" id="3">
 				<description>button area</description>
@@ -110,7 +110,7 @@
 				<textcolor>unfocused_text</textcolor>
 				<focusedcolor>FFFFFFFF</focusedcolor>
 				<texturefocus border="24">finder_focus/setting-short.png</texturefocus>
-				<texturenofocus/>
+				<texturenofocus />
 			</control>
 		</control>
 		<control type="group">
@@ -124,14 +124,14 @@
 				<bottom>0</bottom>
 				<width>12</width>
 				<orientation>vertical</orientation>
-				<texturesliderbackground/>
+				<texturesliderbackground />
 				<onleft>5</onleft>
 				<onright>5</onright>
-				<hitrect x="0" y="0" w="60" h="100%"/>
+				<hitrect x="0" y="0" w="60" h="100%" />
 			</control>
 		</control>
 		<include content="TopBar">
-			<param name="breadcrumbs_label" value="$LOCALIZE[5]$INFO[Control.GetLabel(2), [B]»[/B] ]"/>
+			<param name="breadcrumbs_label" value="$LOCALIZE[5]$INFO[Control.GetLabel(2), [B]»[/B] ]" />
 		</include>
 		<include>BottomBar</include>
 		<control type="group">
@@ -146,7 +146,7 @@
 				<textoffsetx>100</textoffsetx>
 				<textoffsety>0</textoffsety>
 				<texturefocus border="24">finder_focus/setting-short.png</texturefocus>
-				<texturenofocus/>
+				<texturenofocus />
 				<radioposx>40</radioposx>
 				<radioposy>0</radioposy>
 				<radiowidth>40</radiowidth>

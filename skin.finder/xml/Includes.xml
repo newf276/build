@@ -165,7 +165,6 @@
 			</control>
 		</definition>
 	</include>
-	
 	<include name="RatingCircle2">
 		<param name="animation">False</param>
 		<definition>
@@ -368,7 +367,7 @@
 						<visible>Control.HasFocus($PARAM[list_id])</visible>
 						<scroll>true</scroll>
 					</control>
-<control type="label">
+					<control type="label">
 						<left>45</left>
 						<top>0</top>
 						<right>45</right>
@@ -492,7 +491,7 @@
 						<visible>Control.HasFocus($PARAM[list_id])</visible>
 						<scroll>true</scroll>
 					</control>
-<control type="label">
+					<control type="label">
 						<left>45</left>
 						<top>0</top>
 						<right>45</right>
@@ -664,7 +663,7 @@
 						<top>0</top>
 						<right>25</right>
 						<bottom>0</bottom>
-						<texture border="24">finder_focus/setting-long.png</texture>
+						<texture border="12">finder_focus/system-tile.png</texture>
 						<animation effect="fade" start="100" end="0" time="0" condition="!Control.HasFocus($PARAM[list_id])">Conditional</animation>
 					</control>
 					<control type="image">
@@ -679,7 +678,7 @@
 						<left>90</left>
 						<top>0</top>
 						<bottom>0</bottom>
-						<right>20</right>
+						<right>310</right>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
 						<label>[B]$INFO[ListItem.Label][/B]</label>
@@ -687,15 +686,15 @@
 						<shadowcolor>text_shadow</shadowcolor>
 					</control>
 					<control type="label">
-						<left>0</left>
-						<textoffsetx>30</textoffsetx>
+						<textoffsetx>0</textoffsetx>
 						<top>0</top>
 						<bottom>0</bottom>
-						<right>0</right>
+						<right>55</right>
 						<align>right</align>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label2]</label>
 						<shadowcolor>text_shadow</shadowcolor>
+						<width>240</width>
 					</control>
 				</focusedlayout>
 				<itemlayout height="list_item_height">
@@ -711,23 +710,23 @@
 						<left>90</left>
 						<top>0</top>
 						<bottom>0</bottom>
-						<right>20</right>
+						<right>310</right>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
 						<textcolor>unfocused_text</textcolor>
 						<shadowcolor>text_shadow</shadowcolor>
 					</control>
 					<control type="label">
-						<left>0</left>
-						<textoffsetx>30</textoffsetx>
+						<textoffsetx>0</textoffsetx>
 						<top>0</top>
 						<bottom>0</bottom>
-						<right>0</right>
+						<right>55</right>
 						<align>right</align>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label2]</label>
 						<textcolor>grey</textcolor>
 						<shadowcolor>text_shadow</shadowcolor>
+						<width>240</width>
 					</control>
 				</itemlayout>
 			</control>
@@ -759,17 +758,18 @@
 								<top>150</top>
 								<include content="FinderThemeFavouriteLayout">
 									<param name="fallback_image" value="DefaultAddon.png" />
-								<param name="list_id" value="$PARAM[group_id]50" /></include>
+									<param name="list_id" value="$PARAM[group_id]50" />
+								</include>
 							</control>
 						</itemlayout>
 						<focusedlayout height="365" width="280">
 							<control type="group">
-								<include>FocusBounce</include>
 								<top>150</top>
 								<include content="FinderThemeFavouriteLayout">
 									<param name="fallback_image" value="DefaultAddon.png" />
 									<param name="focused" value="true" />
-								<param name="list_id" value="$PARAM[group_id]50" /></include>
+									<param name="list_id" value="$PARAM[group_id]50" />
+								</include>
 							</control>
 						</focusedlayout>
 						<content sortby="lastused" sortorder="descending" target="$PARAM[container_target]">$PARAM[container_path]</content>
@@ -1224,7 +1224,6 @@
 							<scroll>true</scroll>
 						</control>
 					</control>
-					
 					<control type="group">
 						<width>360</width>
 						<height>100</height>
@@ -1243,7 +1242,6 @@
 							<textcolor>unfocused_text</textcolor>
 						</control>
 					</control>
-					
 					<control type="group">
 						<width>70</width>
 						<height>100</height>
@@ -1258,7 +1256,6 @@
 							<aspectratio align="center" aligny="center">keep</aspectratio>
 						</control>
 					</control>
-					
 					<control type="label">
 						<top>-1</top>
 						<width>auto</width>
@@ -1270,7 +1267,6 @@
 						<textcolor>unfocused_text</textcolor>
 						<visible>!Skin.HasSetting(FinderHybrid) + Integer.IsGreater(System.ProfileCount,1) + !Player.HasMedia + Skin.HasSetting(show_weatherinfo) + Skin.HasSetting(show_profilename)</visible>
 					</control>
-					
 					<control type="label">
 						<top>-1</top>
 						<width>auto</width>
@@ -1282,7 +1278,6 @@
 						<textcolor>unfocused_text</textcolor>
 						<visible>!Skin.HasSetting(FinderHybrid) + Integer.IsGreater(System.ProfileCount,1) + !Player.HasMedia + Skin.HasSetting(show_weatherinfo) + [Skin.HasSetting(show_profileavatar) | Skin.HasSetting(show_profileboth)]</visible>
 					</control>
-					
 					<control type="group">
 						<width>70</width>
 						<height>100</height>
@@ -1297,7 +1292,6 @@
 							<texture colordiffuse="unfocused_text">$INFO[Weather.FanartCode,weather/small/,.png]</texture>
 						</control>
 					</control>
-					
 					<control type="label">
 						<top>-1</top>
 						<width>auto</width>
@@ -1309,7 +1303,6 @@
 						<textcolor>unfocused_text</textcolor>
 						<visible>Skin.HasSetting(show_weatherinfo) + Weather.IsFetched + !String.IsEqual(Weather.FanartCode,na)</visible>
 					</control>
-					
 					<control type="label">
 						<width>260</width>
 						<height>100</height>
@@ -1322,7 +1315,6 @@
 						<visible>!String.IsEmpty(System.Time(xx))</visible>
 						<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(screencalibration)">WindowClose</animation>
 					</control>
-					
 					<control type="label">
 						<width>170</width>
 						<height>100</height>
@@ -1541,7 +1533,7 @@
 					<animation effect="fade" start="100" end="bg_alpha" time="0" condition="!Control.IsVisible(31111)">Conditional</animation>
 					<animation effect="fade" start="0" end="100" time="300" condition="Window.Previous(fullscreenvideo) | Window.Previous(FullscreenGame) | Window.Previous(startup)">WindowOpen</animation>
 					<include>ColoredBackgroundImages</include>
-					</control>
+				</control>
 				<control type="group" id="31111">
 					<visible>![Window.IsActive(Home) | Window.IsActive(1121) | Window.IsActive(favouritesbrowser)] + [![Player.HasVideo | [Player.HasAudio + Visualisation.Enabled + !String.IsEmpty(Visualisation.Name)]] | !String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))]</visible>
 					<depth>DepthBackground</depth>
@@ -1570,6 +1562,7 @@
 					</control>
 				</control>
 			</control>
+			<include>FinderThemeSurface</include>
 		</definition>
 	</include>
 	<include name="BottomBar">
@@ -1750,7 +1743,6 @@
 			</control>
 		</definition>
 	</include>
-	
 	<include name="EstuaryContentPanel">
 		<param name="width">535</param>
 		<param name="left">-40</param>
@@ -1761,7 +1753,6 @@
 		<definition>
 			<control type="image">
 				<texture flipx="$PARAM[flipx]" colordiffuse="EDFFFFFF">lists/panel.png</texture>
-				<bordertexture border="21">overlays/shadow.png</bordertexture>
 				<bordersize>20</bordersize>
 				<width>$PARAM[width]</width>
 				<left>$PARAM[left]</left>
@@ -1780,10 +1771,8 @@
 		<param name="height">120%</param>
 		<param name="flipx">false</param>
 		<definition>
-			
 			<control type="image">
 				<texture flipx="$PARAM[flipx]" colordiffuse="button_focus2">lists/contentpanel-fade.png</texture>
-				
 				<bordersize>20</bordersize>
 				<width>$PARAM[width]</width>
 				<left>$PARAM[left]</left>
@@ -1924,7 +1913,6 @@
 				<width>410</width>
 				<height>270</height>
 				<texture colordiffuse="button_focus2">masks/settingspanel-unfocused.png</texture>
-				
 				<bordersize>20</bordersize>
 			</control>
 			<control type="image">
@@ -1954,18 +1942,15 @@
 					<width>410</width>
 					<height>270</height>
 					<texture colordiffuse="button_focus2">masks/settingspanel-unfocused.png</texture>
-					
 					<bordersize>20</bordersize>
 				</control>
 				<control type="image">
-					
 					<left>-7</left>
 					<top>-2</top>
 					<width>414</width>
 					<height>274</height>
 					<texture border="20">finder_focus/system-tile.png</texture>
 					<bordersize>20</bordersize>
-					<include>Animation_FocusTextureFade</include>
 				</control>
 				<control type="image">
 					<centerleft>50%</centerleft>
@@ -1988,7 +1973,6 @@
 			</control>
 		</focusedlayout>
 	</include>
-	
 	<include name="VisibleFadeEffect">
 		<animation effect="fade" time="1300">VisibleChange</animation>
 	</include>

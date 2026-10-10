@@ -1,0 +1,8 @@
+Advanced users can map a Kodi remote or keyboard key to a Finder context action.
+
+Supported actions include ExtendedInfo, Options, Playback Options, Movie Set, Recommended, More Like This, Similar, Trakt List browsing, Trakt Manager, PunchPlay Lists Manager, Personal Manager, TMDb Manager and Favorites Manager.
+
+The general Kodi command is:
+RunPlugin(plugin://plugin.video.finder/?mode=[CHOSEN ACTION])
+
+Replace the placeholder with the appropriate Finder action. Kodi's Keymap Editor can help create the mapping, but custom keymaps are intended for advanced users.

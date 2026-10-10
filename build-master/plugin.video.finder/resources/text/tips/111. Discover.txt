@@ -1,0 +1,5 @@
+Discover lets you build custom Movie or TV Show lists by combining available metadata filters. Only the filters you need have to be filled in; the rest can remain unchanged.
+
+For example, a movie list can combine a year range, genres, certification and cast. Save the Discover setup and Finder can present the resulting list from its Discovery menus.
+
+Discover lists can also be added to your main menus through Edit Main Menus.

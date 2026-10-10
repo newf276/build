@@ -9,12 +9,11 @@
 		<textureradiooffdisabled colordiffuse="disabled">$PARAM[texture]</textureradiooffdisabled>
 		<texturefocus colordiffuse="white">buttons/home-button-charcoal-focus.png</texturefocus>
 		<width>76</width>
-		<animation center="38,38" effect="zoom" end="100" reversible="false" start="95" time="480" tween="back">Focus</animation>
 		<height>76</height>
 		<radiowidth>74</radiowidth>
 		<radioheight>74</radioheight>
-		<font/>
-		<texturenofocus/>
+		<font />
+		<texturenofocus />
 		<radioposx>1</radioposx>
 		<radioposy>0</radioposy>
 	</include>
@@ -25,7 +24,6 @@
 		<param name="altclick">noop</param>
 		<definition>
 			<control type="togglebutton" id="$PARAM[control_id]">
-				<include>FocusBounce</include>
 				<width>472</width>
 				<height>49</height>
 				<textoffsetx>16</textoffsetx>
@@ -35,8 +33,8 @@
 				<focusedcolor>focused_text</focusedcolor>
 				<texturefocus colordiffuse="button_focus">masks/focus.png</texturefocus>
 				<alttexturefocus colordiffuse="button_focus">masks/focus.png</alttexturefocus>
-				<texturenofocus/>
-				<alttexturenofocus/>
+				<texturenofocus />
+				<alttexturenofocus />
 				<onclick>noop</onclick>
 				<onclick condition="$PARAM[onclick_condition]">$PARAM[onclick]</onclick>
 				<altclick>noop</altclick>
@@ -53,7 +51,7 @@
 		<param name="right">25</param>
 		<param name="textoffsetx">40</param>
 		<definition>
-			<textoffsetx>$PARAM[textoffsetx]</textoffsetx>
+			<textoffsetx>32</textoffsetx>
 			<top>0</top>
 			<height>$PARAM[height]</height>
 			<right>$PARAM[right]</right>
@@ -64,11 +62,13 @@
 			<textcolor>unfocused_text</textcolor>
 			<focusedcolor>white</focusedcolor>
 			<texturefocus border="24">finder_focus/setting-long.png</texturefocus>
-			<texturenofocus/>
-            <textureradioonfocus colordiffuse="white">buttons/radio-button-on.png</textureradioonfocus>
-            <textureradioofffocus colordiffuse="white">buttons/radio-button-off.png</textureradioofffocus>
-            <textureupfocus colordiffuse="white">buttons/spinctrl/arrow-light-up.png</textureupfocus>
-            <texturedownfocus colordiffuse="white">buttons/spinctrl/arrow-light-down.png</texturedownfocus>
+			<texturenofocus />
+			<textureradioonfocus colordiffuse="white">buttons/radio-button-on.png</textureradioonfocus>
+			<textureradioofffocus colordiffuse="white">buttons/radio-button-off.png</textureradioofffocus>
+			<textureupfocus colordiffuse="white">buttons/spinctrl/arrow-light-up.png</textureupfocus>
+			<texturedownfocus colordiffuse="white">buttons/spinctrl/arrow-light-down.png</texturedownfocus>
+			<textoffsety>0</textoffsety>
+			<textoffsetx2>32</textoffsetx2>
 		</definition>
 	</include>
 	<include name="DefaultSystemSettingsButton">
@@ -76,7 +76,7 @@
 		<param name="right">25</param>
 		<param name="textoffsetx">40</param>
 		<definition>
-			<textoffsetx>$PARAM[textoffsetx]</textoffsetx>
+			<textoffsetx>32</textoffsetx>
 			<top>0</top>
 			<height>$PARAM[height]</height>
 			<right>$PARAM[right]</right>
@@ -87,18 +87,20 @@
 			<invalidcolor>invalid</invalidcolor>
 			<selectedcolor>selected</selectedcolor>
 			<texturefocus border="24">finder_focus/setting-short.png</texturefocus>
-			<texturenofocus/>
-            <textureradioonfocus colordiffuse="white">buttons/radio-button-on.png</textureradioonfocus>
-            <textureradioofffocus colordiffuse="white">buttons/radio-button-off.png</textureradioofffocus>
-            <textureupfocus colordiffuse="white">buttons/spinctrl/arrow-light-up.png</textureupfocus>
-            <texturedownfocus colordiffuse="white">buttons/spinctrl/arrow-light-down.png</texturedownfocus>
+			<texturenofocus />
+			<textureradioonfocus colordiffuse="white">buttons/radio-button-on.png</textureradioonfocus>
+			<textureradioofffocus colordiffuse="white">buttons/radio-button-off.png</textureradioofffocus>
+			<textureupfocus colordiffuse="white">buttons/spinctrl/arrow-light-up.png</textureupfocus>
+			<texturedownfocus colordiffuse="white">buttons/spinctrl/arrow-light-down.png</texturedownfocus>
+			<textoffsety>0</textoffsety>
+			<textoffsetx2>32</textoffsetx2>
 		</definition>
 	</include>
 	<include name="DialogSettingButton">
 		<param name="height">70</param>
 		<param name="textoffsetx">40</param>
 		<definition>
-			<textoffsetx>$PARAM[textoffsetx]</textoffsetx>
+			<textoffsetx>32</textoffsetx>
 			<top>0</top>
 			<height>$PARAM[height]</height>
 			<aligny>center</aligny>
@@ -107,14 +109,16 @@
 			<selectedcolor>selected</selectedcolor>
 			<texturefocus border="24">finder_focus/setting-short.png</texturefocus>
 			<focusedcolor>white</focusedcolor>
-		<texturenofocus colordiffuse="00FFFFFF">colors/white.png</texturenofocus>
+			<texturenofocus colordiffuse="00FFFFFF">colors/white.png</texturenofocus>
+			<textoffsety>0</textoffsety>
+			<textoffsetx2>32</textoffsetx2>
 		</definition>
 	</include>
 	<include name="DefaultSettingLabel">
 		<left>0</left>
 		<top>0</top>
 		<height>75</height>
-		<label/>
+		<label />
 		<align>center</align>
 		<aligny>center</aligny>
 		<font>font25_title</font>
@@ -141,7 +145,7 @@
 		<param name="height">67</param>
 		<param name="wrapmultiline">false</param>
 		<param name="font">font25_title</param>
-		<param name="onclick"/>
+		<param name="onclick" />
 		<param name="visible">true</param>
 		<definition>
 			<control type="button" id="$PARAM[id]">
@@ -167,7 +171,7 @@
 		<textoffsety>27</textoffsety>
 		<texturefocus border="24">finder_focus/setting-short.png</texturefocus>
 		<focusedcolor>white</focusedcolor>
-		<texturenofocus/>
+		<texturenofocus />
 		<align>center</align>
 		<aligny>top</aligny>
 		<font>font45</font>
@@ -181,7 +185,7 @@
 				<align>left</align>
 				<aligny>top</aligny>
 				<texturefocus colordiffuse="button_focus">masks/focus.png</texturefocus>
-				<texturenofocus/>
+				<texturenofocus />
 				<textoffsetx>40</textoffsetx>
 				<textoffsety>35</textoffsety>
 				<label>$PARAM[label]</label>
@@ -198,7 +202,6 @@
 		<param name="focus_texture">buttons/roundbutton-fo.png</param>
 		<definition>
 			<control type="radiobutton" id="$PARAM[control_id]">
-				<include>FocusBounce</include>
 				<width>120</width>
 				<height>$PARAM[height]</height>
 				<align>center</align>
@@ -226,10 +229,10 @@
 				<onclick>$PARAM[onclick_21]</onclick>
 				<onclick>$PARAM[onclick_22]</onclick>
 				<onclick>$PARAM[onclick_23]</onclick>
-				<font/>
+				<font />
 				<label>$PARAM[label]</label>
 				<texturefocus colordiffuse="$PARAM[focus_tint]">$PARAM[focus_texture]</texturefocus>
-				<texturenofocus/>
+				<texturenofocus />
 				<radioposx>40</radioposx>
 				<radioposy>0</radioposy>
 				<radiowidth>40</radiowidth>
@@ -251,10 +254,10 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<onclick>$PARAM[onclick]</onclick>
-				<font/>
+				<font />
 				<label>$PARAM[label]</label>
 				<texturefocus colordiffuse="button_focus">buttons/roundbutton-fo.png</texturefocus>
-				<texturenofocus/>
+				<texturenofocus />
 				<radioposx>40</radioposx>
 				<radioposy>0</radioposy>
 				<radiowidth>40</radiowidth>
@@ -271,7 +274,6 @@
 		<param name="width">220</param>
 		<definition>
 			<width>$PARAM[width]</width>
-			<include>FocusBounce</include>
 			<height>130</height>
 			<align>center</align>
 			<aligny>top</aligny>
@@ -294,14 +296,12 @@
 		</definition>
 	</include>
 	<include name="InfoDialogButton">
-		<!-- 262 -->
 		<param name="width">220</param>
 		<param name="onclick_1_condition">true</param>
 		<param name="onclick_2_condition">true</param>
 		<param name="onclick_3_condition">true</param>
 		<definition>
 			<control type="radiobutton" id="$PARAM[id]">
-				<include>FocusBounce</include>
 				<width>$PARAM[width]</width>
 				<height>130</height>
 				<align>center</align>
@@ -335,7 +335,6 @@
 		<param name="width">220</param>
 		<definition>
 			<control type="radiobutton" id="$PARAM[id]">
-				<include>FocusBounce</include>
 				<width>$PARAM[width]</width>
 				<height>130</height>
 				<align>center</align>

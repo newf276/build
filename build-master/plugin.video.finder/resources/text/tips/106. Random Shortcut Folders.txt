@@ -1,0 +1,10 @@
+A Shortcut Folder can be converted into a Random Shortcut Folder for widget use.
+
+Open the folder's context menu and choose Make Random. Finder then chooses content from the folder at random when the folder is used as a widget source.
+
+Random folders work best when they contain several compatible movie, TV show, season or episode lists. To edit the contents, choose Remove Random first, make your changes, then choose Make Random again.
+
+For a widget label that follows the randomly selected list, use:
+$INFO[Window.Property(finder.[NAME OF SHORTCUT FOLDER])]
+
+Replace [NAME OF SHORTCUT FOLDER] with the actual folder name.

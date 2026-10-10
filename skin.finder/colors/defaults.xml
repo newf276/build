@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <colors>
-	<color name="finder_charcoal">FF222222</color>
+	<color name="finder_charcoal">FF181818</color>
 	<color name="primary_background">FF666666</color>
 	<color name="secondary_background">4D808080</color>
-	<color name="dialog_tint">E6222222</color>
+	<color name="dialog_tint">E6181818</color>
 	<color name="dialog_bg">FF1F2020</color>
 	<color name="dialog_bg2">FF363636</color>
 	<color name="button_focus">FF9DA9B3</color>

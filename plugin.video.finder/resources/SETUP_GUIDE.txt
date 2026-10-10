@@ -1,4 +1,4 @@
-Finder and Finder Skin Setup Guide — Current Versions
+Finder and Finder Skin Setup Guide — 1.0.08.8
 
 1. Install plugin.video.finder from Newf276's repository or the supplied ZIP. If you choose Finder + Finder Skin during first-run setup, Finder checks for skin.finder and can install it for you when needed. You do not need to activate Finder Skin manually before beginning setup.
 2. On first use, choose Finder + Finder Skin for the integrated interface or Finder Standalone to use the add-on without Finder Skin. In integrated mode Finder activates Finder Skin and continues directly to its Pre-Config selector.
@@ -16,4 +16,4 @@ Finder and Finder Skin Setup Guide — Current Versions
 14. Finder Skin uses four status indicators on supported Finder media views: outlined circle with center dot = untouched; half-filled circle = a TV show is partially watched; eye = that exact movie/episode has a stored resume point; circle with check = watched/completed. In Progress TV shows are ordered using recent watched activity and resumable episode activity, so a show you just resume can move to the front.
 15. Tools also provides two reset levels: yellow Reset Finder Settings to Defaults restores preferences while preserving accounts, API credentials, setup state, watched data, personal lists and caches; red Factory Reset Finder is destructive and returns Finder to the first-run Welcome flow after the next full Kodi restart.
 
-Credits: Angelitto (TMDbMovies ExtendedInfo, adapted with permission); silentbob2 (Forge); Tikipeter (Fen/Fen Light lineage); ivarbrandt and Zaxxon709 (skin lineage); Team Kodi (Kodi/Estuary). Existing licenses and notices remain included.
+Credits: Angelitto (TMDbMovies ExtendedInfo, adapted with permission); silencebob2 (Forge); Tikipeter (Fen/Fen Light lineage); ivarbrandt and Zaxxon709 (skin lineage); Team Kodi (Kodi/Estuary). Existing licenses and notices remain included.

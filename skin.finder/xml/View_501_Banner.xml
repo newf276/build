@@ -30,8 +30,6 @@
 							<width>860</width>
 							<height>195</height>
 							<texture diffuse="masks/banner.png" fallback="dialogs/dialog-bg-nobo.png" background="true">$VAR[BannerArtVar]</texture>
-							
-							
 							<bordersize>20</bordersize>
 						</control>
 						<control type="label">
@@ -58,12 +56,6 @@
 								<param name="cornerdiffuse">overlays/overlaybg7.png</param>
 							</include>
 						</control>
-						<include content="ProgressBar">
-							
-							<param name="left" value="55" />
-							<param name="top" value="150" />
-							<param name="width" value="745" />
-						</include>
 					</control>
 				</itemlayout>
 				<focusedlayout height="220" width="900">
@@ -71,7 +63,6 @@
 						<depth>DepthContentPopout</depth>
 						<top>100</top>
 						<control type="image">
-							<include>FocusBounce</include>
 							<left>13</left>
 							<top>13</top>
 							<width>834</width>
@@ -84,7 +75,6 @@
 							<width>860</width>
 							<height>195</height>
 							<texture diffuse="masks/banner.png" fallback="dialogs/dialog-bg-nobo.png" background="true">$VAR[BannerArtVar]</texture>
-							
 							<bordersize>20</bordersize>
 						</control>
 						<control type="label">
@@ -99,7 +89,6 @@
 							<visible>String.IsEmpty(ListItem.Art(banner)) + !Listitem.IsParentFolder</visible>
 						</control>
 						<control type="group">
-							<include>Animation_FocusTextureFade</include>
 							<control type="image">
 								<left>21</left>
 								<top>75</top>

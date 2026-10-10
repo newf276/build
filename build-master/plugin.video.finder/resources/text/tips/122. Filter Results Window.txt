@@ -1,0 +1,11 @@
+After Finder scrapes results, press Left while viewing the results to open the filter sideblade.
+
+Depending on the available result data, you can filter by provider, quality and other result information. You can also filter by text:
+
+Filter by Title
+- Keeps results whose title contains the entered keyword(s).
+
+Filter by Extra Info
+- Keeps results whose Extra Info contains the entered keyword(s).
+
+Use Back to leave the filter view and return to the complete result set.

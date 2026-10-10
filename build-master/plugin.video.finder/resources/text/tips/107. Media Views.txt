@@ -1,0 +1,5 @@
+Use Tools -> Set Views to assign the preferred Kodi view for Finder menus.
+
+Finder can maintain separate views for the main menu, Movies, TV Shows, Seasons, Episodes, single-episode lists and premium/result-style content.
+
+If automatic view handling is enabled, Finder applies the stored view as you navigate. Advanced users can enable manual view handling when they prefer Kodi/skin controls to manage the view themselves.

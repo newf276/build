@@ -63,7 +63,6 @@
 						</control>
 					</focusedlayout>
 				</control>
-				
 				<control type="group">
 					<top>25</top>
 					<control type="group">
@@ -123,7 +122,6 @@
 					<width>476</width>
 					<height>716</height>
 					<fadetime>200</fadetime>
-					
 					<texture diffuse="masks/poster-50.png" fallback="DefaultMovies.png" background="true">$VAR[PosterThumbVar]</texture>
 				</control>
 				<control type="image">
@@ -143,22 +141,21 @@
 					<shadowcolor>text_shadow</shadowcolor>
 					<align>right</align>
 					<visible>String.IsEqual(ListItem.DBtype,movie) + !String.IsEmpty(Container($PARAM[id]).ListItem.Property(WatchedProgress)) + !Integer.IsEqual(Container($PARAM[id]).ListItem.Property(WatchedProgress),0)</visible>
-					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
 				</control>
 				<control type="group">
-				<left>433</left>
-				<top>-14</top>
-				<include content="RatingCircle">
-					<param name="animation" value="True" />
-					<param name="left">-73</param>
-					<param name="top">18</param>
-					<param name="width">119</param>
-					<param name="height">119</param>
-					<param name="label-left">-16</param>
-					<param name="label-top">38</param>
-					<param name="cornerdiffuse">overlays/overlaybg4.png</param>
-				</include>
-			</control>
+					<left>433</left>
+					<top>-14</top>
+					<include content="RatingCircle">
+						<param name="animation" value="True" />
+						<param name="left">-73</param>
+						<param name="top">18</param>
+						<param name="width">119</param>
+						<param name="height">119</param>
+						<param name="label-left">-16</param>
+						<param name="label-top">38</param>
+						<param name="cornerdiffuse">overlays/overlaybg4.png</param>
+					</include>
+				</control>
 			</control>
 			<control type="group">
 				<visible>String.IsEqual(ListItem.DBtype,tvshow)</visible>
@@ -191,6 +188,6 @@
 					<aligny>center</aligny>
 				</control>
 			</control>
-			</control>
+		</control>
 	</include>
 </includes>

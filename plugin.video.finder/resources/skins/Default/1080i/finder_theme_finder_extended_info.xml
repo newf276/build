@@ -44,14 +44,6 @@
 					<posy>184</posy>
 					<itemgap>20</itemgap>
 					<ondown />
-					<animation type="Conditional" condition="!String.IsEmpty(Window.Property(Bounce.Down))" reversible="false">
-						<effect type="slide" end="0,20" time="60" tween="sine" />
-						<effect type="slide" end="0,-20" time="180" tween="sine" delay="80" />
-					</animation>
-					<animation type="Conditional" condition="!String.IsEmpty(Window.Property(Bounce.Up))" reversible="false">
-						<effect type="slide" end="0,-20" time="60" tween="sine" />
-						<effect type="slide" end="0,20" time="180" tween="sine" delay="80" />
-					</animation>
 					<width>2100</width>
 					<height>896</height>
 					<control type="group" id="140">
@@ -404,7 +396,7 @@
 									<posy>0</posy>
 									<posx>50</posx>
 									<width>373</width>
-									<animation effect="fade" start="0" end="100" time="160">Focus</animation>
+									<animation effect="fade" start="0" end="100" time="0">Focus</animation>
 									<animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
 									<height>260</height>
 									<texture border="24">special://skin/media/finder_focus/setting-short.png</texture>
@@ -500,7 +492,7 @@
 										<posy>0</posy>
 										<posx>50</posx>
 										<width>280</width>
-										<height>380</height>
+										<height>480</height>
 										<texture border="40" colordiffuse="FF141515">extendedinfo/common/roundedbutton-nofocus.png</texture>
 									</control>
 									<control type="group">
@@ -625,14 +617,14 @@
 										<control type="textbox">
 											<posx>0</posx>
 											<width>228</width>
-											<height>140</height>
-											<posy>340</posy>
+											<height>106</height>
+											<posy>346</posy>
 											<align>center</align>
 											
 											<textcolor>FFFFFFFF</textcolor>
 											<font>font12</font>
 											<label>$INFO[ListItem.Label]</label>
-										</control>
+										<aligny>center</aligny></control>
 									</control>
 								</control>
 							</itemlayout>
@@ -642,16 +634,16 @@
 										<posy>0</posy>
 										<posx>50</posx>
 										<width>280</width>
-										<height>380</height>
+										<height>480</height>
 										<texture border="40" colordiffuse="FF141515">extendedinfo/common/roundedbutton-nofocus.png</texture>
 									</control>
 									<control type="image">
 										<posy>0</posy>
 										<posx>50</posx>
 										<width>280</width>
-										<height>380</height>
+										<height>480</height>
 										<texture border="24">special://skin/media/finder_focus/setting-short.png</texture>
-										<animation effect="fade" start="0" end="100" time="160">Focus</animation>
+										<animation effect="fade" start="0" end="100" time="0">Focus</animation>
 										<animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
 									</control>
 									<control type="group">
@@ -767,15 +759,15 @@
 										<control type="textbox">
 											<posx>0</posx>
 											<width>228</width>
-											<height>140</height>
-											<posy>340</posy>
+											<height>106</height>
+											<posy>346</posy>
 											<align>center</align>
 											
 											<textcolor>FF33CCFF</textcolor>
-											<font>font13</font>
+											<font>font12</font>
 											<label>$INFO[ListItem.Label]</label>
 											<autoscroll delay="5000" time="2000" repeat="8001">true</autoscroll>
-										</control>
+										<aligny>center</aligny></control>
 									</control>
 								</control>
 							</focusedlayout>
@@ -843,7 +835,7 @@
 										<posy>0</posy>
 										<posx>50</posx>
 										<width>280</width>
-										<height>380</height>
+										<height>480</height>
 										<texture border="40" colordiffuse="FF141515">extendedinfo/common/roundedbutton-nofocus.png</texture>
 									</control>
 									<control type="group">
@@ -869,15 +861,15 @@
 										<control type="textbox">
 											<width>228</width>
 											<posx>0</posx>
-											<height>140</height>
-											<posy>340</posy>
+											<height>106</height>
+											<posy>346</posy>
 											<align>center</align>
 											
 											<textcolor>FFFFFFFF</textcolor>
 											<font>font12</font>
 											<animation effect="fade" start="100" end="70" time="0" condition="Control.HasFocus(1000)">Conditional</animation>
 											<label>$INFO[ListItem.Label]$INFO[ListItem.Property(character),[COLOR FF999999][CR],[/COLOR]]</label>
-										</control>
+										<aligny>center</aligny></control>
 									</control>
 								</control>
 							</itemlayout>
@@ -887,7 +879,7 @@
 										<posy>0</posy>
 										<posx>50</posx>
 										<width>280</width>
-										<height>380</height>
+										<height>480</height>
 										<texture border="24">special://skin/media/finder_focus/setting-short.png</texture>
 										<visible>Control.HasFocus(1000)</visible>
 									</control>
@@ -895,7 +887,7 @@
 										<posy>0</posy>
 										<posx>50</posx>
 										<width>280</width>
-										<height>380</height>
+										<height>480</height>
 										<texture border="40" colordiffuse="FF141515">extendedinfo/common/roundedbutton-nofocus.png</texture>
 										<visible>!Control.HasFocus(1000)</visible>
 									</control>
@@ -912,16 +904,16 @@
 										</control>
 										<control type="textbox">
 											<width>228</width>
-											<height>140</height>
+											<height>106</height>
 											<posx>0</posx>
-											<posy>340</posy>
+											<posy>346</posy>
 											<align>center</align>
 											
 											<textcolor>FF33CCFF</textcolor>
 											<font>font12</font>
 											<label>[B]$INFO[ListItem.Label]$INFO[ListItem.Property(character),[COLOR FF999999][CR],[/COLOR]]</label>
 											<autoscroll delay="5000" time="2000" repeat="8001">true</autoscroll>
-										</control>
+										<aligny>center</aligny></control>
 									</control>
 								</control>
 							</focusedlayout>
@@ -1105,7 +1097,7 @@
 										<width>280</width>
 										<height>380</height>
 										<texture border="24">special://skin/media/finder_focus/setting-short.png</texture>
-										<animation effect="fade" start="0" end="100" time="160">Focus</animation>
+										<animation effect="fade" start="0" end="100" time="0">Focus</animation>
 										<animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
 									</control>
 									<control type="group">
@@ -1310,7 +1302,7 @@
 									<posy>0</posy>
 									<posx>50</posx>
 									<width>373</width>
-									<animation effect="fade" start="0" end="100" time="160">Focus</animation>
+									<animation effect="fade" start="0" end="100" time="0">Focus</animation>
 									<animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
 									<height>260</height>
 									<texture border="24">special://skin/media/finder_focus/setting-short.png</texture>
@@ -1450,7 +1442,7 @@
 									<posy>0</posy>
 									<posx>50</posx>
 									<width>373</width>
-									<animation effect="fade" start="0" end="100" time="160">Focus</animation>
+									<animation effect="fade" start="0" end="100" time="0">Focus</animation>
 									<animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
 									<height>260</height>
 									<texture border="24">special://skin/media/finder_focus/setting-short.png</texture>
@@ -1580,7 +1572,7 @@
 										<width>280</width>
 										<height>380</height>
 										<texture border="24">special://skin/media/finder_focus/setting-short.png</texture>
-										<animation effect="fade" start="0" end="100" time="160">Focus</animation>
+										<animation effect="fade" start="0" end="100" time="0">Focus</animation>
 										<animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
 									</control>
 									<control type="image">
@@ -1694,7 +1686,7 @@
 										<width>560</width>
 										<height>380</height>
 										<texture border="24">special://skin/media/finder_focus/setting-short.png</texture>
-										<animation effect="fade" start="0" end="100" time="160">Focus</animation>
+										<animation effect="fade" start="0" end="100" time="0">Focus</animation>
 										<animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
 									</control>
 									<control type="image">
@@ -1717,11 +1709,11 @@
 					<visible>!Control.HasFocus(132) + !ControlGroup(5000).HasFocus</visible>
 					<animation effect="fade" time="250">VisibleChange</animation>
 					<control type="image">
-						<posx>880</posx>
-						<posy>-10</posy>
-						<width>852</width>
-						<height>168</height>
-						<aspectratio align="right">keep</aspectratio>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>990</width>
+						<height>70</height>
+						<aspectratio align="left">keep</aspectratio>
 						<texture background="true">$INFO[Window.Property(movie.Logo)]</texture>
 					</control>
 				</control>
@@ -1759,14 +1751,14 @@
 							<itemgap>0</itemgap>
 							<orientation>vertical</orientation>
 							<control type="label">
-								<width>1018</width>
+								<width>990</width>
 								<height>50</height>
 								<label>$INFO[Window.Property(movie.Title)]</label>
 								
 								<textcolor>FF33CCFF</textcolor>
 								<font>font30_title</font>
 								<scroll>true</scroll>
-							</control>
+							<visible>String.IsEmpty(Window.Property(movie.Logo)) | Control.HasFocus(132) | ControlGroup(5000).HasFocus</visible></control>
 						</control>
 					</control>
 					<control type="group">

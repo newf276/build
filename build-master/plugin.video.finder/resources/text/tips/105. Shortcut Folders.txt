@@ -1,0 +1,5 @@
+Shortcut Folders let you create your own folders inside Finder's Root, Movies or TV Shows menus. A Shortcut Folder can contain lists and other Finder content, allowing you to build themed menus such as "Action Movies", "My TV Lists" or "Weekend Watching".
+
+To create one, open Tools -> Shortcut Folders Manager -> Make New Shortcut Folder. Then use Add Content inside the folder to select Finder lists.
+
+You can rearrange or remove items from a folder using its context menu. A Shortcut Folder can be placed in more than one main menu. Removing it from a menu does not delete the folder; delete the folder itself from the Shortcut Folders Manager when you no longer need it.

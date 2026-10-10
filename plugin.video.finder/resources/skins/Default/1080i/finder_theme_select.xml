@@ -133,8 +133,8 @@
                         <visible>String.IsEqual(Window().Property(multi_line),false)</visible>
                         <width max="632">auto</width>
                         <left>34</left>
-                        <top>45</top>
-                        <height>5</height>
+                        <top>0</top>
+                        <height>90</height>
                         <font>font12</font>
                         
                         <textcolor>unfocused_text</textcolor>
@@ -148,8 +148,8 @@
                         <width max="632">auto</width>
                         <left>34</left>
                         <control type="label">
-                            <top>25</top>
-                            <height>5</height>
+                            <top>12</top>
+                            <height>30</height>
                             <font>font12</font>
                             
                             <textcolor>unfocused_text</textcolor>
@@ -158,8 +158,8 @@
                             <scroll>false</scroll>
                         </control>
                         <control type="label">
-                            <top>60</top>
-                            <height>5</height>
+                            <top>45</top>
+                            <height>30</height>
                             <font>font12</font>
                             
                             <textcolor>unfocused_text</textcolor>
@@ -184,13 +184,13 @@
                         <animation effect="fade" start="100" end="50" time="0" condition="!Control.HasFocus(2025)">Conditional</animation>
                         <width>700</width>
                         <texture border="24">special://skin/media/finder_focus/setting-long.png</texture>
-                    </control>
+                    <top>2</top><height>86</height></control>
                     <control type="label">
                         <description>Only Line1</description>
                         <visible>String.IsEqual(Window().Property(multi_line),false)</visible>
                         <left>34</left>
-                        <top>45</top>
-                        <height>5</height>
+                        <top>0</top>
+                        <height>90</height>
                         <width max="632">auto</width>
                         <font>font12</font>
                         
@@ -205,8 +205,8 @@
                         <width max="632">auto</width>
                         <left>34</left>
                         <control type="label">
-                            <top>25</top>
-                            <height>5</height>
+                            <top>12</top>
+                            <height>30</height>
                             <font>font12</font>
                             
                             <textcolor>white</textcolor>
@@ -215,8 +215,8 @@
                             <scroll>Control.HasFocus(2025)</scroll>
                         </control>
                         <control type="label">
-                            <top>60</top>
-                            <height>5</height>
+                            <top>45</top>
+                            <height>30</height>
                             <font>font12</font>
                             
                             <textcolor>white</textcolor>

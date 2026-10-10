@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<includes>
+    <include name="SearchHistory">
+
+        
+        <item>
+            <visible>!String.IsEmpty(Skin.String(SearchHistory.1))</visible>
+            <label>$INFO[Skin.String(SearchHistory.1)]</label>
+                        <property name="finder.history.slot">1</property><onclick>RunPlugin(plugin://plugin.video.finder/?mode=search.replay_history&amp;slot=1)</onclick><onclick>RunScript(special://skin/resources/scripts/finder_search_navigation.py,reset)</onclick></item>
+
+        
+        <item>
+            <visible>!String.IsEmpty(Skin.String(SearchHistory.2))</visible>
+            <label>$INFO[Skin.String(SearchHistory.2)]</label>
+                        <property name="finder.history.slot">2</property><onclick>RunPlugin(plugin://plugin.video.finder/?mode=search.replay_history&amp;slot=2)</onclick><onclick>RunScript(special://skin/resources/scripts/finder_search_navigation.py,reset)</onclick></item>
+
+        
+        <item>
+            <visible>!String.IsEmpty(Skin.String(SearchHistory.3))</visible>
+            <label>$INFO[Skin.String(SearchHistory.3)]</label>
+                        <property name="finder.history.slot">3</property><onclick>RunPlugin(plugin://plugin.video.finder/?mode=search.replay_history&amp;slot=3)</onclick><onclick>RunScript(special://skin/resources/scripts/finder_search_navigation.py,reset)</onclick></item>
+
+        
+        <item>
+            <visible>!String.IsEmpty(Skin.String(SearchHistory.4))</visible>
+            <label>$INFO[Skin.String(SearchHistory.4)]</label>
+                        <property name="finder.history.slot">4</property><onclick>RunPlugin(plugin://plugin.video.finder/?mode=search.replay_history&amp;slot=4)</onclick><onclick>RunScript(special://skin/resources/scripts/finder_search_navigation.py,reset)</onclick></item>
+
+        
+        <item>
+            <visible>!String.IsEmpty(Skin.String(SearchHistory.5))</visible>
+            <label>$INFO[Skin.String(SearchHistory.5)]</label>
+                        <property name="finder.history.slot">5</property><onclick>RunPlugin(plugin://plugin.video.finder/?mode=search.replay_history&amp;slot=5)</onclick><onclick>RunScript(special://skin/resources/scripts/finder_search_navigation.py,reset)</onclick></item>
+
+    </include>
+</includes>

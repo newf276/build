@@ -4,11 +4,12 @@
 	<backgroundcolor>background</backgroundcolor>
 	<controls>
 		<include>DefaultBackground</include>
-        <control type="image">
-            <depth>DepthBackground</depth><include>FullScreenDimensions</include>
-            <texture colordiffuse="finder_charcoal">colors/white.png</texture>
-            <visible>!Player.HasMedia</visible>
-        </control>
+		<control type="image">
+			<depth>DepthBackground</depth>
+			<include>FullScreenDimensions</include>
+			<texture colordiffuse="$VAR[FinderThemeBackgroundTint]">$VAR[FinderThemeBackground]</texture>
+			<visible>!Player.HasMedia</visible>
+		</control>
 		<control type="group" id="9100">
 			<include>OpenClose_Right</include>
 			<left>472</left>
@@ -43,7 +44,6 @@
 						<width>320</width>
 						<height>380</height>
 						<texture colordiffuse="dialog_bg">masks/addons.png</texture>
-						<!-- <bordertexture border="21" infill="false">overlays/shadow.png</bordertexture> -->
 						<bordersize>20</bordersize>
 					</control>
 					<control type="image">
@@ -51,7 +51,6 @@
 						<top>38</top>
 						<width>215</width>
 						<height>215</height>
-						<!-- <aspectratio>scale</aspectratio> -->
 						<texture diffuse="masks/landscapeinfo.png" fallback="DefaultUser.png">$INFO[Listitem.Icon]</texture>
 					</control>
 					<control type="label">
@@ -96,24 +95,20 @@
 							<width>320</width>
 							<height>380</height>
 							<texture colordiffuse="dialog_bg">masks/addons.png</texture>
-							<!-- <bordertexture border="21" infill="false">overlays/shadow.png</bordertexture> -->
 							<bordersize>20</bordersize>
 						</control>
 						<control type="image">
-							<include>FocusBounce</include>
 							<top>5</top>
 							<width>320</width>
 							<height>380</height>
 							<include>FinderThemeTileFocus</include>
 							<bordersize>20</bordersize>
-							<include>Animation_FocusTextureFade</include>
 						</control>
 						<control type="image">
 							<left>51</left>
 							<top>38</top>
 							<width>215</width>
 							<height>215</height>
-							<!-- <aspectratio>scale</aspectratio> -->
 							<texture diffuse="masks/landscapeinfo.png" fallback="DefaultUser.png">$INFO[Listitem.Icon]</texture>
 						</control>
 						<control type="label">
@@ -178,7 +173,7 @@
 			<depth>DepthContentPanel</depth>
 			<include>OpenClose_Left</include>
 			<include content="ContentPanel">
-				<param name="width" value="530"/>
+				<param name="width" value="530" />
 			</include>
 			<control type="list" id="9000">
 				<left>25</left>
@@ -222,18 +217,18 @@
 					<item id="1">
 						<label>$LOCALIZE[128]</label>
 						<onclick>noop</onclick>
-						<icon/>
+						<icon />
 					</item>
 					<item id="2">
 						<label>$LOCALIZE[13200]</label>
 						<onclick>noop</onclick>
-						<icon/>
+						<icon />
 					</item>
 				</content>
 			</control>
 		</control>
 		<include content="TopBar">
-			<param name="breadcrumbs_label" value="$LOCALIZE[10034]"/>
+			<param name="breadcrumbs_label" value="$LOCALIZE[10034]" />
 		</include>
 		<include>BottomBar</include>
 	</controls>

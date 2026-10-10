@@ -22,107 +22,107 @@
 			<control type="group" id="400">
 				<include>OpenClose_Right</include>
 				<include content="AddonLauncherPanel">
-					<param name="group_id" value="500"/>
-					<param name="id" value="video"/>
-					<param name="container_path" value="addons://sources/video/"/>
-					<param name="container_target" value="videos"/>
-					<param name="imagewidget_onclick" value="ActivateWindow(addonbrowser,addons://all/xbmc.addon.video,return)"/>
+					<param name="group_id" value="500" />
+					<param name="id" value="video" />
+					<param name="container_path" value="addons://sources/video/" />
+					<param name="container_target" value="videos" />
+					<param name="imagewidget_onclick" value="ActivateWindow(addonbrowser,addons://all/xbmc.addon.video,return)" />
 				</include>
 				<include content="AddonLauncherPanel">
-					<param name="group_id" value="501"/>
-					<param name="id" value="music"/>
-					<param name="container_path" value="addons://sources/audio/"/>
-					<param name="container_target" value="music"/>
-					<param name="imagewidget_onclick" value="ActivateWindow(addonbrowser,addons://all/xbmc.addon.audio,return)"/>
+					<param name="group_id" value="501" />
+					<param name="id" value="music" />
+					<param name="container_path" value="addons://sources/audio/" />
+					<param name="container_target" value="music" />
+					<param name="imagewidget_onclick" value="ActivateWindow(addonbrowser,addons://all/xbmc.addon.audio,return)" />
 				</include>
 				<include content="AddonLauncherPanel">
-					<param name="group_id" value="509"/>
-					<param name="id" value="game"/>
-					<param name="container_path" value="addons://sources/game/"/>
-					<param name="container_target" value="games"/>
-					<param name="imagewidget_onclick" value="ActivateWindow(addonbrowser,addons://all/category.standalonegames,return)"/>
+					<param name="group_id" value="509" />
+					<param name="id" value="game" />
+					<param name="container_path" value="addons://sources/game/" />
+					<param name="container_target" value="games" />
+					<param name="imagewidget_onclick" value="ActivateWindow(addonbrowser,addons://all/category.standalonegames,return)" />
 				</include>
 				<include content="AddonLauncherPanel">
-					<param name="group_id" value="502"/>
-					<param name="id" value="addons"/>
-					<param name="container_path" value="addons://sources/executable/"/>
-					<param name="container_target" value="programs"/>
-					<param name="imagewidget_onclick" value="ActivateWindow(addonbrowser,addons://all/xbmc.addon.executable,return)"/>
+					<param name="group_id" value="502" />
+					<param name="id" value="addons" />
+					<param name="container_path" value="addons://sources/executable/" />
+					<param name="container_target" value="programs" />
+					<param name="imagewidget_onclick" value="ActivateWindow(addonbrowser,addons://all/xbmc.addon.executable,return)" />
 				</include>
 				<include content="AddonLauncherPanel" condition="System.Platform.Android">
-					<param name="group_id" value="506"/>
-					<param name="id" value="android"/>
-					<param name="container_path" value="androidapp://sources/apps/"/>
-					<param name="container_target" value="programs"/>
+					<param name="group_id" value="506" />
+					<param name="id" value="android" />
+					<param name="container_path" value="androidapp://sources/apps/" />
+					<param name="container_target" value="programs" />
 				</include>
 				<include content="AddonLauncherPanel">
-					<param name="group_id" value="503"/>
-					<param name="id" value="pictures"/>
-					<param name="container_path" value="addons://sources/image/"/>
-					<param name="container_target" value="pictures"/>
-					<param name="imagewidget_onclick" value="ActivateWindow(addonbrowser,addons://all/xbmc.addon.image,return)"/>
+					<param name="group_id" value="503" />
+					<param name="id" value="pictures" />
+					<param name="container_path" value="addons://sources/image/" />
+					<param name="container_target" value="pictures" />
+					<param name="imagewidget_onclick" value="ActivateWindow(addonbrowser,addons://all/xbmc.addon.image,return)" />
 				</include>
 				<include content="AddonLauncherPanel">
-					<param name="group_id" value="507"/>
-					<param name="id" value="download"/>
-					<param name="container_path" value="addons://all/"/>
-					<param name="container_target" value="addonbrowser"/>
+					<param name="group_id" value="507" />
+					<param name="id" value="download" />
+					<param name="container_path" value="addons://all/" />
+					<param name="container_target" value="addonbrowser" />
 				</include>
 				<include content="AddonLauncherPanel">
-					<param name="group_id" value="508"/>
-					<param name="id" value="manage"/>
-					<param name="container_path" value="addons://user"/>
-					<param name="container_target" value="addonbrowser"/>
+					<param name="group_id" value="508" />
+					<param name="id" value="manage" />
+					<param name="container_path" value="addons://user" />
+					<param name="container_target" value="addonbrowser" />
 				</include>
 			</control>
 			<control type="group">
 				<include>OpenClose_Left</include>
 				<include content="ContentPanel">
-					<param name="width" value="523"/>
+					<param name="width" value="523" />
 				</include>
 				<control type="group">
 					<left>-10000</left>
 					<include content="InfoList">
-						<param name="path" value="addons://sources/video/"/>
-						<param name="bottom" value="1"/>
-						<param name="width" value="1"/>
-						<param name="list_id" value="9500"/>
-						<param name="item_label" value=""/>
+						<param name="path" value="addons://sources/video/" />
+						<param name="bottom" value="1" />
+						<param name="width" value="1" />
+						<param name="list_id" value="9500" />
+						<param name="item_label" value="" />
 					</include>
 					<include content="InfoList">
-						<param name="path" value="addons://sources/audio/"/>
-						<param name="bottom" value="1"/>
-						<param name="width" value="1"/>
-						<param name="list_id" value="9501"/>
-						<param name="item_label" value=""/>
+						<param name="path" value="addons://sources/audio/" />
+						<param name="bottom" value="1" />
+						<param name="width" value="1" />
+						<param name="list_id" value="9501" />
+						<param name="item_label" value="" />
 					</include>
 					<include content="InfoList">
-						<param name="path" value="addons://sources/game/"/>
-						<param name="bottom" value="1"/>
-						<param name="width" value="1"/>
-						<param name="list_id" value="9509"/>
-						<param name="item_label" value=""/>
+						<param name="path" value="addons://sources/game/" />
+						<param name="bottom" value="1" />
+						<param name="width" value="1" />
+						<param name="list_id" value="9509" />
+						<param name="item_label" value="" />
 					</include>
 					<include content="InfoList">
-						<param name="path" value="addons://sources/executable/"/>
-						<param name="bottom" value="1"/>
-						<param name="width" value="1"/>
-						<param name="list_id" value="9502"/>
-						<param name="item_label" value=""/>
+						<param name="path" value="addons://sources/executable/" />
+						<param name="bottom" value="1" />
+						<param name="width" value="1" />
+						<param name="list_id" value="9502" />
+						<param name="item_label" value="" />
 					</include>
 					<include content="InfoList" condition="System.Platform.Android">
-						<param name="path" value="androidapp://sources/apps/"/>
-						<param name="bottom" value="1"/>
-						<param name="width" value="1"/>
-						<param name="list_id" value="9506"/>
-						<param name="item_label" value=""/>
+						<param name="path" value="androidapp://sources/apps/" />
+						<param name="bottom" value="1" />
+						<param name="width" value="1" />
+						<param name="list_id" value="9506" />
+						<param name="item_label" value="" />
 					</include>
 					<include content="InfoList">
-						<param name="path" value="addons://sources/image/"/>
-						<param name="bottom" value="1"/>
-						<param name="width" value="1"/>
-						<param name="list_id" value="9503"/>
-						<param name="item_label" value=""/>
+						<param name="path" value="addons://sources/image/" />
+						<param name="bottom" value="1" />
+						<param name="width" value="1" />
+						<param name="list_id" value="9503" />
+						<param name="item_label" value="" />
 					</include>
 				</control>
 				<control type="fixedlist" id="9000">
@@ -146,7 +146,6 @@
 							<animation effect="fade" start="100" end="0" time="0" condition="!Control.HasFocus(9000)">Conditional</animation>
 						</control>
 						<control type="label">
-							<include>FocusBounce</include>
 							<left>65</left>
 							<bottom>0</bottom>
 							<right>10</right>
@@ -254,18 +253,17 @@
 				<onright>400</onright>
 				<usecontrolcoords>true</usecontrolcoords>
 				<control type="radiobutton" id="801">
-					<include>FocusBounce</include>
 					<width>120</width>
 					<height>120</height>
 					<align>right</align>
 					<aligny>center</aligny>
 					<onclick>ActivateWindow(addonbrowser,root)</onclick>
 					<font>font12</font>
-					<label/>
+					<label />
 					<textoffsetx>40</textoffsetx>
 					<textwidth>230</textwidth>
 					<texturefocus colordiffuse="FFFFFFFF">buttons/home-button-charcoal-focus.png</texturefocus>
-					<texturenofocus/>
+					<texturenofocus />
 					<radioposx>39</radioposx>
 					<radioposy>0</radioposy>
 					<radiowidth>40</radiowidth>
@@ -276,7 +274,6 @@
 					<textureradiooffnofocus colordiffuse="unfocused_text">icons/submenu/add-ons.png</textureradiooffnofocus>
 				</control>
 				<control type="radiobutton" id="802">
-					<include>FocusBounce</include>
 					<top>5</top>
 					<width>157</width>
 					<height>110</height>
@@ -284,11 +281,11 @@
 					<aligny>center</aligny>
 					<onclick>ActivateWindow(addonbrowser,addons://outdated/,return)</onclick>
 					<font>font12</font>
-					<label/>
+					<label />
 					<textoffsetx>40</textoffsetx>
 					<textwidth>230</textwidth>
 					<include>FinderThemeRowButton</include>
-					<texturenofocus/>
+					<texturenofocus />
 					<radioposx>35</radioposx>
 					<radioposy>0</radioposy>
 					<radiowidth>40</radiowidth>
@@ -302,18 +299,17 @@
 					<textureradiooffdisabled colordiffuse="disabled">icons/submenu/updatelibrary.png</textureradiooffdisabled>
 				</control>
 				<control type="radiobutton" id="803">
-					<include>FocusBounce</include>
 					<width>120</width>
 					<height>120</height>
 					<align>right</align>
 					<aligny>center</aligny>
 					<onclick>ActivateWindow(systemsettings,addons)</onclick>
 					<font>font12</font>
-					<label/>
+					<label />
 					<textoffsetx>40</textoffsetx>
 					<textwidth>230</textwidth>
 					<texturefocus colordiffuse="FFFFFFFF">buttons/home-button-charcoal-focus.png</texturefocus>
-					<texturenofocus/>
+					<texturenofocus />
 					<radioposx>40</radioposx>
 					<radioposy>0</radioposy>
 					<radiowidth>40</radiowidth>
@@ -337,17 +333,17 @@
 				</control>
 			</control>
 			<include content="TopBar">
-				<param name="breadcrumbs_label" value="$LOCALIZE[24001]"/>
+				<param name="breadcrumbs_label" value="$LOCALIZE[24001]" />
 			</include>
 			<include>BottomBar</include>
 			<control type="group">
 				<left>-10000</left>
 				<include content="InfoList">
-					<param name="path" value="addons://outdated/"/>
-					<param name="bottom" value="1"/>
-					<param name="width" value="1"/>
-					<param name="list_id" value="8000"/>
-					<param name="item_label" value=""/>
+					<param name="path" value="addons://outdated/" />
+					<param name="bottom" value="1" />
+					<param name="width" value="1" />
+					<param name="list_id" value="8000" />
+					<param name="item_label" value="" />
 				</include>
 			</control>
 		</control>

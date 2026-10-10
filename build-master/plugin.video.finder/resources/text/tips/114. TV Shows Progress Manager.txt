@@ -1,0 +1,3 @@
+The TV Shows Progress Manager lets you hide or unhide shows from Finder's progress/Next Episodes displays.
+
+This is useful when a show is technically unfinished but you do not want it contributing to your active progress lists. The behavior follows the active watched/progress provider, including Trakt or PunchPlay when selected as Primary Tracker.

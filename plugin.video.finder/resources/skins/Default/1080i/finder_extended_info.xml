@@ -22,7 +22,7 @@
 			<control type="button" id="20000">
 				<height>0</height>
 				<width>0</width>
-				<texturefocus/>
+				<texturefocus />
 				<posx>-5000</posx>
 				<onfocus>SetFocus(132)</onfocus>
 				<onclick>noop</onclick>
@@ -31,7 +31,7 @@
 			<control type="button" id="20001">
 				<height>0</height>
 				<width>0</width>
-				<texturefocus/>
+				<texturefocus />
 				<posx>-5000</posx>
 				<onclick>noop</onclick>
 				<visible allowhiddenfocus="true">Control.HasFocus(20001)</visible>
@@ -44,14 +44,14 @@
 					<posx>800</posx>
 					<posy>184</posy>
 					<itemgap>20</itemgap>
-					<ondown/>
+					<ondown />
 					<animation type="Conditional" condition="!String.IsEmpty(Window.Property(Bounce.Down))" reversible="false">
-						<effect type="slide" end="0,20" time="60" tween="sine"/>
-						<effect type="slide" end="0,-20" time="180" tween="sine" delay="80"/>
+						<effect type="slide" end="0,20" time="60" tween="sine" />
+						<effect type="slide" end="0,-20" time="180" tween="sine" delay="80" />
 					</animation>
 					<animation type="Conditional" condition="!String.IsEmpty(Window.Property(Bounce.Up))" reversible="false">
-						<effect type="slide" end="0,-20" time="60" tween="sine"/>
-						<effect type="slide" end="0,20" time="180" tween="sine" delay="80"/>
+						<effect type="slide" end="0,-20" time="60" tween="sine" />
+						<effect type="slide" end="0,20" time="180" tween="sine" delay="80" />
 					</animation>
 					<width>2100</width>
 					<height>896</height>
@@ -131,8 +131,6 @@
 							<itemgap>-10</itemgap>
 							<orientation>horizontal</orientation>
 							<scrolltime tween="quadratic">200</scrolltime>
-							
-							
 							<control type="radiobutton" id="8">
 								<label>[B]$INFO[Window.Property(PlayButtonLabel)][/B]</label>
 								<textureradioonfocus colordiffuse="FFFFFFFF">extendedinfo/icons/play.png</textureradioonfocus>
@@ -155,8 +153,6 @@
 								<radiowidth>44</radiowidth>
 								<radioheight>44</radioheight>
 							</control>
-
-							
 							<control type="radiobutton" id="445">
 								<width>280</width>
 								<height>140</height>
@@ -180,8 +176,6 @@
 								<label>[B]Options[/B]</label>
 								<visible>!Skin.HasSetting(kioskmode)</visible>
 							</control>
-
-							
 							<control type="radiobutton" id="447">
 								<width>280</width>
 								<height>140</height>
@@ -205,8 +199,6 @@
 								<label>[B]Sync[/B]</label>
 								<visible>!Skin.HasSetting(kioskmode)</visible>
 							</control>
-
-							
 							<control type="radiobutton" id="446">
 								<width>280</width>
 								<height>140</height>
@@ -230,7 +222,6 @@
 								<label>[B]Play Trailer[/B]</label>
 								<visible>!Skin.HasSetting(kioskmode)</visible>
 							</control>
-
 						</control>
 					</control>
 					<control type="group">
@@ -284,7 +275,6 @@
 							<width>1900</width>
 							<height>25</height>
 							<aligny>center</aligny>
-							
 							<textcolor>FFFFFFFF</textcolor>
 							<font>font14</font>
 							<label>[B]$INFO[Window.Property(movie.set.label)]$INFO[Container(250).NumItems, (,)][/B]</label>
@@ -295,7 +285,6 @@
 							<width>700</width>
 							<height>300</height>
 							<label fallback="N / A">[B]$INFO[Window.Property(movie.set.overview)][/B]</label>
-							
 							<textcolor>FFFFFFFF</textcolor>
 							<font>font12</font>
 							<autoscroll delay="10000" time="2000" repeat="10000">true</autoscroll>
@@ -311,7 +300,6 @@
 							<fadetime>0</fadetime>
 						</control>
 					</control>
-					
 					<control type="group">
 						<visible>Integer.IsGreater(Container(2000).NumItems,0)</visible>
 						<height>720</height>
@@ -321,14 +309,13 @@
 							<width>500</width>
 							<height>25</height>
 							<aligny>center</aligny>
-							
 							<textcolor>FFFFFFFF</textcolor>
 							<font>font14</font>
 							<label>[B]Episode index $INFO[Container(2000).NumItems,(,)][/B]</label>
 						</control>
 						<control type="panel" id="2000">
 							<animation type="WindowOpen" reversible="false">
-								<effect type="slide" start="0,800" end="0,0" tween="sine" time="500"/>
+								<effect type="slide" start="0,800" end="0,0" tween="sine" time="500" />
 							</animation>
 							<posx>-45</posx>
 							<posy>30</posy>
@@ -361,16 +348,14 @@
 										<aspectratio aligny="center">scale</aspectratio>
 										<fadetime>0</fadetime>
 									</control>
-
-								<control type="image">
-									<posx>235</posx>
-									<width>90</width>
-									<height>90</height>
-									<posy>0</posy>
-									<texture diffuse="extendedinfo/thumbs/movieposter_mask.png" colordiffuse="FFFFFFFF">extendedinfo/icons/TopRightOverlayWatched.png</texture>
-									<visible>Integer.IsGreater(ListItem.Property(PlayCount),0) + String.IsEqual(ListItem.DBTYPE,episode)</visible>
-								</control>
-
+									<control type="image">
+										<posx>235</posx>
+										<width>90</width>
+										<height>90</height>
+										<posy>0</posy>
+										<texture diffuse="extendedinfo/thumbs/movieposter_mask.png" colordiffuse="FFFFFFFF">extendedinfo/icons/TopRightOverlayWatched.png</texture>
+										<visible>Integer.IsGreater(ListItem.Property(PlayCount),0) + String.IsEqual(ListItem.DBTYPE,episode)</visible>
+									</control>
 									<control type="image">
 										<posy>10</posy>
 										<width>320</width>
@@ -386,7 +371,6 @@
 										<height>100</height>
 										<posy>227</posy>
 										<align>center</align>
-										
 										<textcolor>FFFFFFFF</textcolor>
 										<font>font12</font>
 										<label>$INFO[ListItem.Episode,[B],[/B]]$INFO[ListItem.Label,[B].[/B] ]$INFO[ListItem.Property(release_date),[CR][COLOR FFAAAAAA],[/COLOR]]</label>
@@ -421,23 +405,20 @@
 										<aspectratio aligny="center">scale</aspectratio>
 										<fadetime>0</fadetime>
 									</control>
-
-								<control type="image">
-									<posx>235</posx>
-									<width>90</width>
-									<height>90</height>
-									<posy>0</posy>
-									<texture diffuse="extendedinfo/thumbs/movieposter_mask.png" colordiffuse="$INFO[Window(home).Property(ImageColor)]">extendedinfo/icons/TopRightOverlayWatched.png</texture>
-									<visible>Integer.IsGreater(ListItem.Property(PlayCount),0) + String.IsEqual(ListItem.DBTYPE,episode)</visible>
-								</control>
-
+									<control type="image">
+										<posx>235</posx>
+										<width>90</width>
+										<height>90</height>
+										<posy>0</posy>
+										<texture diffuse="extendedinfo/thumbs/movieposter_mask.png" colordiffuse="$INFO[Window(home).Property(ImageColor)]">extendedinfo/icons/TopRightOverlayWatched.png</texture>
+										<visible>Integer.IsGreater(ListItem.Property(PlayCount),0) + String.IsEqual(ListItem.DBTYPE,episode)</visible>
+									</control>
 									<control type="textbox">
 										<posx>0</posx>
 										<width>323</width>
 										<height>100</height>
 										<posy>227</posy>
 										<align>center</align>
-										
 										<textcolor>FF33CCFF</textcolor>
 										<font>font12</font>
 										<label>$INFO[ListItem.Episode,[B],[/B]]$INFO[ListItem.Label,[B].[/B] ]$INFO[ListItem.Property(release_date),[CR][COLOR FFAAAAAA],[/COLOR]]</label>
@@ -455,7 +436,6 @@
 							<width>1900</width>
 							<height>25</height>
 							<aligny>center</aligny>
-							
 							<textcolor>FFFFFFFF</textcolor>
 							<font>font14</font>
 							<label>[B]Seasons$INFO[Container(250).NumItems, (,)][/B]</label>
@@ -493,7 +473,7 @@
 							<scrolltime>200</scrolltime>
 							<orientation>horizontal</orientation>
 							<animation type="WindowOpen" reversible="false">
-								<effect type="slide" start="0,800" end="0,0" tween="sine" time="500"/>
+								<effect type="slide" start="0,800" end="0,0" tween="sine" time="500" />
 							</animation>
 							<itemlayout height="500" width="270">
 								<control type="group">
@@ -501,7 +481,7 @@
 										<posy>0</posy>
 										<posx>50</posx>
 										<width>280</width>
-										<height>380</height>
+										<height>480</height>
 										<texture border="40" colordiffuse="button_focus">extendedinfo/common/roundedbutton-nofocus.png</texture>
 									</control>
 									<control type="group">
@@ -514,68 +494,64 @@
 											<texture diffuse="extendedinfo/thumbs/movieposter_mask.png" background="true" fallback="DefaultVideo.png">$INFO[ListItem.Thumb]</texture>
 											<aspectratio aligny="center">scale</aspectratio>
 										</control>
-
-									<control type="group">
-										<control type="image">
-											<posx>135</posx>
-											<width>90</width>
-											<height>90</height>
-											<posy>0</posy>
-											<texture diffuse="extendedinfo/thumbs/movieposter_mask.png" colordiffuse="$INFO[Window(home).Property(ImageColor)]">extendedinfo/icons/TopRightOverlayUnwatched2.png</texture>
-											<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + String.IsEqual(ListItem.DBTYPE,season)</visible>
+										<control type="group">
+											<control type="image">
+												<posx>135</posx>
+												<width>90</width>
+												<height>90</height>
+												<posy>0</posy>
+												<texture diffuse="extendedinfo/thumbs/movieposter_mask.png" colordiffuse="$INFO[Window(home).Property(ImageColor)]">extendedinfo/icons/TopRightOverlayUnwatched2.png</texture>
+												<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + String.IsEqual(ListItem.DBTYPE,season)</visible>
+											</control>
+											<control type="label">
+												<posx>182</posx>
+												<width>30</width>
+												<height>84</height>
+												<posy>10</posy>
+												<textcolor>black</textcolor>
+												<align>center</align>
+												<font>font10</font>
+												<label>[B]$INFO[ListItem.Property(UnWatchedEpisodes)][/B]</label>
+												<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + String.IsEqual(ListItem.DBTYPE,season)</visible>
+											</control>
+											<control type="image">
+												<posx>135</posx>
+												<width>90</width>
+												<height>90</height>
+												<posy>0</posy>
+												<texture diffuse="extendedinfo/thumbs/movieposter_mask.png" colordiffuse="$INFO[Window(home).Property(ImageColor)]">extendedinfo/icons/TopRightOverlayWatched.png</texture>
+												<visible>Integer.IsGreater(ListItem.Property(PlayCount),0) + String.IsEqual(ListItem.DBTYPE,season)</visible>
+											</control>
 										</control>
-										<control type="label">
-											<posx>182</posx>
-											<width>30</width>
-											<height>84</height>
-											<posy>10</posy>
-											<textcolor>black</textcolor>
-											<align>center</align>
-											<font>font10</font>
-											<label>[B]$INFO[ListItem.Property(UnWatchedEpisodes)][/B]</label>
-											<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + String.IsEqual(ListItem.DBTYPE,season)</visible>
+										<control type="group">
+											<control type="image">
+												<posx>135</posx>
+												<width>90</width>
+												<height>90</height>
+												<posy>0</posy>
+												<texture diffuse="extendedinfo/thumbs/movieposter_mask.png" colordiffuse="$INFO[Window(home).Property(ImageColor)]">extendedinfo/icons/TopRightOverlayUnwatched2.png</texture>
+												<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + !String.IsEmpty(ListItem.TVShowTitle)</visible>
+											</control>
+											<control type="label">
+												<posx>182</posx>
+												<width>30</width>
+												<height>84</height>
+												<posy>10</posy>
+												<textcolor>black</textcolor>
+												<align>center</align>
+												<font>font10</font>
+												<label>[B]$INFO[ListItem.Property(UnWatchedEpisodes)][/B]</label>
+												<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + !String.IsEmpty(ListItem.TVShowTitle)</visible>
+											</control>
+											<control type="image">
+												<posx>135</posx>
+												<width>90</width>
+												<height>90</height>
+												<posy>0</posy>
+												<texture diffuse="extendedinfo/thumbs/movieposter_mask.png" colordiffuse="$INFO[Window(home).Property(ImageColor)]">extendedinfo/icons/TopRightOverlayWatched.png</texture>
+												<visible>!Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsGreater(ListItem.Property(PlayCount),0) + [String.IsEqual(ListItem.DBTYPE,movie)|String.IsEqual(ListItem.DBTYPE,tvshow)]</visible>
+											</control>
 										</control>
-						<control type="image">
-							<posx>135</posx>
-							<width>90</width>
-							<height>90</height>
-							<posy>0</posy>
-							<texture diffuse="extendedinfo/thumbs/movieposter_mask.png" colordiffuse="$INFO[Window(home).Property(ImageColor)]">extendedinfo/icons/TopRightOverlayWatched.png</texture>
-							<visible>Integer.IsGreater(ListItem.Property(PlayCount),0) + String.IsEqual(ListItem.DBTYPE,season)</visible>
-						</control>
-									</control>
-
-					<control type="group">
-						<control type="image">
-							<posx>135</posx>
-							<width>90</width>
-							<height>90</height>
-							<posy>0</posy>
-							<texture diffuse="extendedinfo/thumbs/movieposter_mask.png" colordiffuse="$INFO[Window(home).Property(ImageColor)]">extendedinfo/icons/TopRightOverlayUnwatched2.png</texture>
-							<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + !String.IsEmpty(ListItem.TVShowTitle)</visible>
-						</control>
-						<control type="label">
-							<posx>182</posx>
-							<width>30</width>
-							<height>84</height>
-							<posy>10</posy>
-							<textcolor>black</textcolor>
-							<align>center</align>
-							<font>font10</font>
-							<label>[B]$INFO[ListItem.Property(UnWatchedEpisodes)][/B]</label>
-							<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + !String.IsEmpty(ListItem.TVShowTitle)</visible>
-						</control>
-
-						<control type="image">
-							<posx>135</posx>
-							<width>90</width>
-							<height>90</height>
-							<posy>0</posy>
-							<texture diffuse="extendedinfo/thumbs/movieposter_mask.png" colordiffuse="$INFO[Window(home).Property(ImageColor)]">extendedinfo/icons/TopRightOverlayWatched.png</texture>
-							<visible>!Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsGreater(ListItem.Property(PlayCount),0) + [String.IsEqual(ListItem.DBTYPE,movie)|String.IsEqual(ListItem.DBTYPE,tvshow)]</visible>
-						</control>
-					</control>
-
 										<control type="image">
 											<width>84</width>
 											<height>84</height>
@@ -589,7 +565,6 @@
 											<height>84</height>
 											<posy>10</posy>
 											<posx>0</posx>
-											
 											<texture flipx="true">extendedinfo/flags/local.png</texture>
 											<visible>!String.IsEmpty(ListItem.Property(DBID))</visible>
 										</control>
@@ -607,7 +582,6 @@
 											<posy>310</posy>
 											<width>84</width>
 											<height>25</height>
-											
 											<textcolor>FFFFFFFF</textcolor>
 											<font>font12</font>
 											<aligny>center</aligny>
@@ -626,14 +600,13 @@
 										<control type="textbox">
 											<posx>0</posx>
 											<width>228</width>
-											<height>140</height>
-											<posy>340</posy>
+											<height>106</height>
+											<posy>346</posy>
 											<align>center</align>
-											
 											<textcolor>FFFFFFFF</textcolor>
 											<font>font12</font>
 											<label>$INFO[ListItem.Label]</label>
-										</control>
+										<aligny>center</aligny></control>
 									</control>
 								</control>
 							</itemlayout>
@@ -643,14 +616,14 @@
 										<posy>0</posy>
 										<posx>50</posx>
 										<width>280</width>
-										<height>380</height>
+										<height>480</height>
 										<texture border="40" colordiffuse="button_focus">extendedinfo/common/roundedbutton-nofocus.png</texture>
 									</control>
 									<control type="image">
 										<posy>0</posy>
 										<posx>50</posx>
 										<width>280</width>
-										<height>380</height>
+										<height>480</height>
 										<texture border="40" colordiffuse="button_focus">extendedinfo/common/roundedbutton-focus.png</texture>
 										<animation effect="fade" start="0" end="100" time="160">Focus</animation>
 										<animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
@@ -666,68 +639,64 @@
 											<aspectratio aligny="center">scale</aspectratio>
 											<fadetime>0</fadetime>
 										</control>
-
-									<control type="group">
-										<control type="image">
-											<posx>135</posx>
-											<width>90</width>
-											<height>90</height>
-											<posy>0</posy>
-											<texture diffuse="extendedinfo/thumbs/movieposter_mask.png" colordiffuse="FFFFFFFF">extendedinfo/icons/TopRightOverlayUnwatched2.png</texture>
-											<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + String.IsEqual(ListItem.DBTYPE,season)</visible>
+										<control type="group">
+											<control type="image">
+												<posx>135</posx>
+												<width>90</width>
+												<height>90</height>
+												<posy>0</posy>
+												<texture diffuse="extendedinfo/thumbs/movieposter_mask.png" colordiffuse="FFFFFFFF">extendedinfo/icons/TopRightOverlayUnwatched2.png</texture>
+												<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + String.IsEqual(ListItem.DBTYPE,season)</visible>
+											</control>
+											<control type="label">
+												<posx>182</posx>
+												<width>30</width>
+												<height>84</height>
+												<posy>10</posy>
+												<textcolor>black</textcolor>
+												<align>center</align>
+												<font>font10</font>
+												<label>[B]$INFO[ListItem.Property(UnWatchedEpisodes)][/B]</label>
+												<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + String.IsEqual(ListItem.DBTYPE,season)</visible>
+											</control>
+											<control type="image">
+												<posx>135</posx>
+												<width>90</width>
+												<height>90</height>
+												<posy>0</posy>
+												<texture diffuse="extendedinfo/thumbs/movieposter_mask.png" colordiffuse="FFFFFFFF">extendedinfo/icons/TopRightOverlayWatched.png</texture>
+												<visible>Integer.IsGreater(ListItem.Property(PlayCount),0) + String.IsEqual(ListItem.DBTYPE,season)</visible>
+											</control>
 										</control>
-										<control type="label">
-											<posx>182</posx>
-											<width>30</width>
-											<height>84</height>
-											<posy>10</posy>
-											<textcolor>black</textcolor>
-											<align>center</align>
-											<font>font10</font>
-											<label>[B]$INFO[ListItem.Property(UnWatchedEpisodes)][/B]</label>
-											<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + String.IsEqual(ListItem.DBTYPE,season)</visible>
+										<control type="group">
+											<control type="image">
+												<posx>135</posx>
+												<width>90</width>
+												<height>90</height>
+												<posy>0</posy>
+												<texture diffuse="extendedinfo/thumbs/movieposter_mask.png" colordiffuse="FFFFFFFF">extendedinfo/icons/TopRightOverlayUnwatched2.png</texture>
+												<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + !String.IsEmpty(ListItem.TVShowTitle)</visible>
+											</control>
+											<control type="label">
+												<posx>182</posx>
+												<width>30</width>
+												<height>84</height>
+												<posy>10</posy>
+												<textcolor>black</textcolor>
+												<align>center</align>
+												<font>font10</font>
+												<label>[B]$INFO[ListItem.Property(UnWatchedEpisodes)][/B]</label>
+												<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + !String.IsEmpty(ListItem.TVShowTitle)</visible>
+											</control>
+											<control type="image">
+												<posx>135</posx>
+												<width>90</width>
+												<height>90</height>
+												<posy>0</posy>
+												<texture diffuse="extendedinfo/thumbs/movieposter_mask.png" colordiffuse="FFFFFFFF">extendedinfo/icons/TopRightOverlayWatched.png</texture>
+												<visible>!Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsGreater(ListItem.Property(PlayCount),0) + [String.IsEqual(ListItem.DBTYPE,movie)|String.IsEqual(ListItem.DBTYPE,tvshow)]</visible>
+											</control>
 										</control>
-						<control type="image">
-							<posx>135</posx>
-							<width>90</width>
-							<height>90</height>
-							<posy>0</posy>
-							<texture diffuse="extendedinfo/thumbs/movieposter_mask.png" colordiffuse="FFFFFFFF">extendedinfo/icons/TopRightOverlayWatched.png</texture>
-							<visible>Integer.IsGreater(ListItem.Property(PlayCount),0) + String.IsEqual(ListItem.DBTYPE,season)</visible>
-						</control>
-									</control>
-
-					<control type="group">
-						<control type="image">
-							<posx>135</posx>
-							<width>90</width>
-							<height>90</height>
-							<posy>0</posy>
-							<texture diffuse="extendedinfo/thumbs/movieposter_mask.png" colordiffuse="FFFFFFFF">extendedinfo/icons/TopRightOverlayUnwatched2.png</texture>
-							<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + !String.IsEmpty(ListItem.TVShowTitle)</visible>
-						</control>
-						<control type="label">
-							<posx>182</posx>
-							<width>30</width>
-							<height>84</height>
-							<posy>10</posy>
-							<textcolor>black</textcolor>
-							<align>center</align>
-							<font>font10</font>
-							<label>[B]$INFO[ListItem.Property(UnWatchedEpisodes)][/B]</label>
-							<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + !String.IsEmpty(ListItem.TVShowTitle)</visible>
-						</control>
-
-						<control type="image">
-							<posx>135</posx>
-							<width>90</width>
-							<height>90</height>
-							<posy>0</posy>
-							<texture diffuse="extendedinfo/thumbs/movieposter_mask.png" colordiffuse="FFFFFFFF">extendedinfo/icons/TopRightOverlayWatched.png</texture>
-							<visible>!Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsGreater(ListItem.Property(PlayCount),0) + [String.IsEqual(ListItem.DBTYPE,movie)|String.IsEqual(ListItem.DBTYPE,tvshow)]</visible>
-						</control>
-					</control>
-
 										<control type="image">
 											<width>84</width>
 											<height>84</height>
@@ -758,7 +727,6 @@
 											<posy>310</posy>
 											<width>84</width>
 											<height>25</height>
-											
 											<textcolor>FF33CCFF</textcolor>
 											<font>font12</font>
 											<aligny>center</aligny>
@@ -768,15 +736,14 @@
 										<control type="textbox">
 											<posx>0</posx>
 											<width>228</width>
-											<height>140</height>
-											<posy>340</posy>
+											<height>106</height>
+											<posy>346</posy>
 											<align>center</align>
-											
 											<textcolor>FF33CCFF</textcolor>
-											<font>font13</font>
+											<font>font12</font>
 											<label>$INFO[ListItem.Label]</label>
 											<autoscroll delay="5000" time="2000" repeat="8001">true</autoscroll>
-										</control>
+										<aligny>center</aligny></control>
 									</control>
 								</control>
 							</focusedlayout>
@@ -791,7 +758,6 @@
 							<width>500</width>
 							<height>25</height>
 							<aligny>center</aligny>
-							
 							<textcolor>FFFFFFFF</textcolor>
 							<font>font14</font>
 							<label>[B]Cast$INFO[Container(1000).NumItems, (,)][/B]</label>
@@ -823,20 +789,15 @@
 							<height>500</height>
 							<onleft>1000</onleft>
 							<onright>1000</onright>
-							
 							<onup>250</onup>
-							
 							<ondown condition="Integer.IsGreater(Container(150).NumItems,0)">150</ondown>
-							
 							<ondown condition="!Integer.IsGreater(Container(150).NumItems,0) + Integer.IsGreater(Container(1150).NumItems,0)">1150</ondown>
-							
 							<ondown condition="!Integer.IsGreater(Container(150).NumItems,0) + !Integer.IsGreater(Container(1150).NumItems,0) + Integer.IsGreater(Container(350).NumItems,0)">350</ondown>
-							
 							<ondown>1250</ondown>
 							<scrolltime>200</scrolltime>
 							<orientation>horizontal</orientation>
 							<animation type="WindowOpen" reversible="false">
-								<effect type="slide" start="0,800" end="0,0" tween="sine" time="500"/>
+								<effect type="slide" start="0,800" end="0,0" tween="sine" time="500" />
 							</animation>
 							<itemlayout height="500" width="270">
 								<control type="group">
@@ -873,7 +834,6 @@
 											<height>140</height>
 											<posy>340</posy>
 											<align>center</align>
-											
 											<textcolor>FFFFFFFF</textcolor>
 											<font>font12</font>
 											<animation effect="fade" start="100" end="70" time="0" condition="Control.HasFocus(1000)">Conditional</animation>
@@ -917,7 +877,6 @@
 											<posx>0</posx>
 											<posy>340</posy>
 											<align>center</align>
-											
 											<textcolor>FF33CCFF</textcolor>
 											<font>font12</font>
 											<label>[B]$INFO[ListItem.Label]$INFO[ListItem.Property(character),[COLOR FF999999][CR],[/COLOR]]</label>
@@ -928,7 +887,6 @@
 							</focusedlayout>
 						</control>
 					</control>
-					
 					<control type="group" id="50112">
 						<visible>Integer.IsGreater(Container(150).NumItems,0)</visible>
 						<height>500</height>
@@ -938,7 +896,6 @@
 							<width>500</width>
 							<height>25</height>
 							<aligny>center</aligny>
-							
 							<textcolor>FFFFFFFF</textcolor>
 							<font>font14</font>
 							<label>[B]Recommended By TMDB$INFO[Container(150).NumItems, (,)][/B]</label>
@@ -975,7 +932,7 @@
 							<scrolltime>200</scrolltime>
 							<orientation>horizontal</orientation>
 							<animation type="WindowOpen" reversible="false">
-								<effect type="slide" start="0,800" end="0,0" tween="sine" time="500"/>
+								<effect type="slide" start="0,800" end="0,0" tween="sine" time="500" />
 							</animation>
 							<itemlayout height="500" width="270">
 								<control type="group">
@@ -1011,7 +968,6 @@
 											<posy>310</posy>
 											<width>84</width>
 											<height>25</height>
-											
 											<textcolor>FFFFFFFF</textcolor>
 											<font>font12</font>
 											<aligny>center</aligny>
@@ -1050,44 +1006,39 @@
 											<height>140</height>
 											<posy>340</posy>
 											<align>center</align>
-											
 											<textcolor>FFFFFFFF</textcolor>
 											<font>font12</font>
 											<label>$INFO[ListItem.Label]</label>
 										</control>
-
-					<control type="group">
-						<control type="image">
-							<posx>135</posx>
-							<width>90</width>
-							<height>90</height>
-							<posy>0</posy>
-							<texture diffuse="extendedinfo/thumbs/movieposter_mask.png" colordiffuse="$INFO[Window(home).Property(ImageColor)]">extendedinfo/icons/TopRightOverlayUnwatched2.png</texture>
-							<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + !String.IsEmpty(ListItem.TVShowTitle)</visible>
-						</control>
-						<control type="label">
-							<posx>182</posx>
-							<width>30</width>
-							<height>84</height>
-							<posy>10</posy>
-							<textcolor>black</textcolor>
-							<align>center</align>
-							<font>font10</font>
-							<label>[B]$INFO[ListItem.Property(UnWatchedEpisodes)][/B]</label>
-							<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + !String.IsEmpty(ListItem.TVShowTitle)</visible>
-						</control>
-
-						<control type="image">
-							<posx>135</posx>
-							<width>90</width>
-							<height>90</height>
-							<posy>0</posy>
-							<texture diffuse="extendedinfo/thumbs/movieposter_mask.png" colordiffuse="$INFO[Window(home).Property(ImageColor)]">extendedinfo/icons/TopRightOverlayWatched.png</texture>
-							<visible>!Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsGreater(ListItem.Property(PlayCount),0) + [String.IsEqual(ListItem.DBTYPE,movie)|String.IsEqual(ListItem.DBTYPE,tvshow)]</visible>
-						</control>
-					</control>
-
-										
+										<control type="group">
+											<control type="image">
+												<posx>135</posx>
+												<width>90</width>
+												<height>90</height>
+												<posy>0</posy>
+												<texture diffuse="extendedinfo/thumbs/movieposter_mask.png" colordiffuse="$INFO[Window(home).Property(ImageColor)]">extendedinfo/icons/TopRightOverlayUnwatched2.png</texture>
+												<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + !String.IsEmpty(ListItem.TVShowTitle)</visible>
+											</control>
+											<control type="label">
+												<posx>182</posx>
+												<width>30</width>
+												<height>84</height>
+												<posy>10</posy>
+												<textcolor>black</textcolor>
+												<align>center</align>
+												<font>font10</font>
+												<label>[B]$INFO[ListItem.Property(UnWatchedEpisodes)][/B]</label>
+												<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + !String.IsEmpty(ListItem.TVShowTitle)</visible>
+											</control>
+											<control type="image">
+												<posx>135</posx>
+												<width>90</width>
+												<height>90</height>
+												<posy>0</posy>
+												<texture diffuse="extendedinfo/thumbs/movieposter_mask.png" colordiffuse="$INFO[Window(home).Property(ImageColor)]">extendedinfo/icons/TopRightOverlayWatched.png</texture>
+												<visible>!Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsGreater(ListItem.Property(PlayCount),0) + [String.IsEqual(ListItem.DBTYPE,movie)|String.IsEqual(ListItem.DBTYPE,tvshow)]</visible>
+											</control>
+										</control>
 									</control>
 								</control>
 							</itemlayout>
@@ -1150,7 +1101,6 @@
 											<posy>310</posy>
 											<width>84</width>
 											<height>25</height>
-											
 											<textcolor>FF33CCFF</textcolor>
 											<font>font12</font>
 											<aligny>center</aligny>
@@ -1163,44 +1113,40 @@
 											<height>140</height>
 											<posy>340</posy>
 											<align>center</align>
-											
 											<textcolor>FF33CCFF</textcolor>
 											<font>font12</font>
 											<label>$INFO[ListItem.Label]</label>
 											<autoscroll delay="5000" time="2000" repeat="8001">true</autoscroll>
 										</control>
-
-					<control type="group">
-						<control type="image">
-							<posx>135</posx>
-							<width>90</width>
-							<height>90</height>
-							<posy>0</posy>
-							<texture diffuse="extendedinfo/thumbs/movieposter_mask.png" colordiffuse="FFFFFFFF">extendedinfo/icons/TopRightOverlayUnwatched2.png</texture>
-							<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + !String.IsEmpty(ListItem.TVShowTitle)</visible>
-						</control>
-						<control type="label">
-							<posx>182</posx>
-							<width>30</width>
-							<height>84</height>
-							<posy>10</posy>
-							<textcolor>black</textcolor>
-							<align>center</align>
-							<font>font10</font>
-							<label>[B]$INFO[ListItem.Property(UnWatchedEpisodes)][/B]</label>
-							<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + !String.IsEmpty(ListItem.TVShowTitle)</visible>
-						</control>
-
-						<control type="image">
-							<posx>135</posx>
-							<width>90</width>
-							<height>90</height>
-							<posy>0</posy>
-							<texture diffuse="extendedinfo/thumbs/movieposter_mask.png" colordiffuse="FFFFFFFF">extendedinfo/icons/TopRightOverlayWatched.png</texture>
-							<visible>!Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsGreater(ListItem.Property(PlayCount),0) + [String.IsEqual(ListItem.DBTYPE,movie)|String.IsEqual(ListItem.DBTYPE,tvshow)]</visible>
-						</control>
-					</control>
-
+										<control type="group">
+											<control type="image">
+												<posx>135</posx>
+												<width>90</width>
+												<height>90</height>
+												<posy>0</posy>
+												<texture diffuse="extendedinfo/thumbs/movieposter_mask.png" colordiffuse="FFFFFFFF">extendedinfo/icons/TopRightOverlayUnwatched2.png</texture>
+												<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + !String.IsEmpty(ListItem.TVShowTitle)</visible>
+											</control>
+											<control type="label">
+												<posx>182</posx>
+												<width>30</width>
+												<height>84</height>
+												<posy>10</posy>
+												<textcolor>black</textcolor>
+												<align>center</align>
+												<font>font10</font>
+												<label>[B]$INFO[ListItem.Property(UnWatchedEpisodes)][/B]</label>
+												<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + !String.IsEmpty(ListItem.TVShowTitle)</visible>
+											</control>
+											<control type="image">
+												<posx>135</posx>
+												<width>90</width>
+												<height>90</height>
+												<posy>0</posy>
+												<texture diffuse="extendedinfo/thumbs/movieposter_mask.png" colordiffuse="FFFFFFFF">extendedinfo/icons/TopRightOverlayWatched.png</texture>
+												<visible>!Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsGreater(ListItem.Property(PlayCount),0) + [String.IsEqual(ListItem.DBTYPE,movie)|String.IsEqual(ListItem.DBTYPE,tvshow)]</visible>
+											</control>
+										</control>
 									</control>
 								</control>
 							</focusedlayout>
@@ -1215,7 +1161,6 @@
 							<width>500</width>
 							<height>25</height>
 							<aligny>center</aligny>
-							
 							<textcolor>FFFFFFFF</textcolor>
 							<font>font14</font>
 							<label>[B]Official videos$INFO[Container(1150).NumItems, (,)][/B]</label>
@@ -1242,7 +1187,7 @@
 						</control>
 						<control type="panel" id="1150">
 							<animation type="WindowOpen" reversible="false">
-								<effect type="slide" start="0,800" end="0,0" tween="sine" time="500"/>
+								<effect type="slide" start="0,800" end="0,0" tween="sine" time="500" />
 							</animation>
 							<posx>-45</posx>
 							<posy>30</posy>
@@ -1292,7 +1237,6 @@
 										<height>140</height>
 										<posy>227</posy>
 										<align>center</align>
-										
 										<textcolor>FFFFFFFF</textcolor>
 										<font>font12</font>
 										<label>$INFO[ListItem.Property(Type),[B],: [/B]]$INFO[ListItem.Label]</label>
@@ -1334,7 +1278,6 @@
 										<height>140</height>
 										<posy>227</posy>
 										<align>center</align>
-										
 										<textcolor>FF33CCFF</textcolor>
 										<font>font12</font>
 										<label>[B]$INFO[ListItem.Property(Type),[B],: [/B]][B]$INFO[ListItem.Label][/B]</label>
@@ -1352,7 +1295,6 @@
 							<width>500</width>
 							<height>25</height>
 							<aligny>center</aligny>
-							
 							<textcolor>FFFFFFFF</textcolor>
 							<font>font14</font>
 							<label>YouTube videos$INFO[Container(350).NumItems, (,)]</label>
@@ -1379,7 +1321,7 @@
 						</control>
 						<control type="panel" id="350">
 							<animation type="WindowOpen" reversible="false">
-								<effect type="slide" start="0,800" end="0,0" tween="sine" time="500"/>
+								<effect type="slide" start="0,800" end="0,0" tween="sine" time="500" />
 							</animation>
 							<posx>-45</posx>
 							<posy>30</posy>
@@ -1387,12 +1329,9 @@
 							<height>700</height>
 							<onleft>350</onleft>
 							<onright>350</onright>
-							
-							
 							<onup condition="Integer.IsGreater(Container(1150).NumItems,0)">1150</onup>
 							<onup condition="!Integer.IsGreater(Container(1150).NumItems,0) + Integer.IsGreater(Container(150).NumItems,0)">150</onup>
 							<onup>1000</onup>
-							
 							<ondown>1250</ondown>
 							<pagecontrol>60</pagecontrol>
 							<scrolltime>300</scrolltime>
@@ -1432,7 +1371,6 @@
 										<height>140</height>
 										<posy>227</posy>
 										<align>center</align>
-										
 										<textcolor>FFFFFFFF</textcolor>
 										<font>font12</font>
 										<label>$INFO[ListItem.Label]</label>
@@ -1473,7 +1411,6 @@
 										<height>140</height>
 										<posy>227</posy>
 										<align>center</align>
-										
 										<textcolor>FF33CCFF</textcolor>
 										<font>font12</font>
 										<label>[B]$INFO[ListItem.Label][/B]</label>
@@ -1482,7 +1419,6 @@
 							</focusedlayout>
 						</control>
 					</control>
-					
 					<control type="group">
 						<height>450</height>
 						<visible>Integer.IsGreater(Container(1250).NumItems,0)</visible>
@@ -1523,18 +1459,15 @@
 							<height>600</height>
 							<onleft>1250</onleft>
 							<onright>1250</onright>
-							
-							
 							<onup condition="Integer.IsGreater(Container(350).NumItems,0)">350</onup>
 							<onup condition="!Integer.IsGreater(Container(350).NumItems,0) + Integer.IsGreater(Container(1150).NumItems,0)">1150</onup>
 							<onup condition="!Integer.IsGreater(Container(350).NumItems,0) + !Integer.IsGreater(Container(1150).NumItems,0) + Integer.IsGreater(Container(150).NumItems,0)">150</onup>
 							<onup>1000</onup>
-							
 							<ondown>1350</ondown>
 							<scrolltime>200</scrolltime>
 							<orientation>horizontal</orientation>
 							<animation type="WindowOpen" reversible="false">
-								<effect type="slide" start="0,800" end="0,0" tween="sine" time="500"/>
+								<effect type="slide" start="0,800" end="0,0" tween="sine" time="500" />
 							</animation>
 							<itemlayout height="400" width="270">
 								<control type="group">
@@ -1637,18 +1570,14 @@
 							<height>600</height>
 							<onleft>1350</onleft>
 							<onright>1350</onright>
-							
-							
 							<onup condition="Integer.IsGreater(Container(1250).NumItems,0)">1250</onup>
-							
 							<onup condition="!Integer.IsGreater(Container(1250).NumItems,0) + Integer.IsGreater(Container(350).NumItems,0)">350</onup>
 							<onup>1000</onup>
-							
 							<ondown>132</ondown>
 							<scrolltime>200</scrolltime>
 							<orientation>horizontal</orientation>
 							<animation type="WindowOpen" reversible="false">
-								<effect type="slide" start="0,800" end="0,0" tween="sine" time="500"/>
+								<effect type="slide" start="0,800" end="0,0" tween="sine" time="500" />
 							</animation>
 							<itemlayout height="400" width="666">
 								<control type="group">
@@ -1732,8 +1661,8 @@
 					<animation effect="fade" time="250">VisibleChange</animation>
 					<control type="group">
 						<animation type="WindowOpen" reversible="false">
-							<effect type="fade" start="0" end="100" time="750" tween="cubic"/>
-							<effect type="slide" start="0,80" end="0,0" time="1000" tween="cubic"/>
+							<effect type="fade" start="0" end="100" time="750" tween="cubic" />
+							<effect type="slide" start="0,80" end="0,0" time="1000" tween="cubic" />
 						</animation>
 						<control type="group">
 							<visible>!String.IsEmpty(Window.Property(movie.Top250))</visible>
@@ -1763,7 +1692,6 @@
 								<width>1018</width>
 								<height>50</height>
 								<label>$INFO[Window.Property(movie.Title)]</label>
-								
 								<textcolor>FF33CCFF</textcolor>
 								<font>font30_title</font>
 								<scroll>true</scroll>
@@ -1773,8 +1701,8 @@
 					<control type="group">
 						<posy>-54</posy>
 						<animation type="WindowOpen" reversible="false">
-							<effect type="fade" start="0" end="100" time="750" tween="cubic"/>
-							<effect type="zoom" start="100,0" end="100,100" time="1000" center="0,170" tween="cubic"/>
+							<effect type="fade" start="0" end="100" time="750" tween="cubic" />
+							<effect type="zoom" start="100,0" end="100,100" time="1000" center="0,170" tween="cubic" />
 						</animation>
 						<control type="image">
 							<posx>0</posx>
@@ -1881,7 +1809,7 @@
 							<control type="group">
 								<width>220</width>
 								<visible>!String.IsEmpty(Window.Property(movie.release_date))</visible>
-									<control type="image">
+								<control type="image">
 									<posx>0</posx>
 									<height>79</height>
 									<width>2</width>
@@ -2023,7 +1951,6 @@
 				<height>1100</height>
 				<aspectratio aligny="top">scale</aspectratio>
 				<texture fallback="extendedinfo/black.png">$INFO[Window.Property(movie.ImageFilter)]</texture>
-				<bordertexture>thumbs/homewidget_shadow.png</bordertexture>
 				<bordersize>10</bordersize>
 			</control>
 			<control type="image">
@@ -2043,5 +1970,14 @@
 				<texture>$INFO[Window.Property(movie.still_original)]</texture>
 			</control>
 		</control>
-	<control type="image"><description>Kodi corner icon</description><left>1842</left><top>25</top><width>48</width><height>48</height><aspectratio>keep</aspectratio><texture colordiffuse="accent_color">special://xbmc/media/vendor_icon.png</texture></control></controls>
+		<control type="image">
+			<description>Kodi corner icon</description>
+			<left>1842</left>
+			<top>25</top>
+			<width>48</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture colordiffuse="accent_color">special://xbmc/media/vendor_icon.png</texture>
+		</control>
+	</controls>
 </window>

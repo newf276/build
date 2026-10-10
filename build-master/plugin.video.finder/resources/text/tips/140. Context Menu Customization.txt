@@ -1,0 +1,5 @@
+Finder's Context Menu settings let you choose which actions are enabled and the order in which they appear.
+
+Current actions include Quick Add, Play Trailer, Mark Watched, ExtendedInfo, Related, More Like This, Refresh, Trakt Manager, PunchPlay Lists Manager, TMDb Manager, Options, Playback Options, Movie Set, Seasons, Episodes, Recommended, Similar, In Trakt List, Personal Manager and Favorites Manager, along with maintenance/navigation actions where applicable.
+
+Quick Add has its own target setting. Changing the context-menu order can put your most frequently used action near the top for easier remote control.

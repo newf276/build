@@ -1,0 +1,12 @@
+Current Finder Skin keeps watched circles and episode counts on supported poster/wide widgets. The duplicate thin progress line has been removed. The video playback timeline remains a separate playback control.
+
+Finder's TV progress features depend on the selected Primary Tracker. In Progress and Next Episodes use the active tracking source rather than being permanently tied to one service.
+
+Next Episodes can be configured to use Last Aired or Last Watched as its starting method. Its sort can be based on Recently Watched, Airdate or Title, and additional options control watchlist/favorite inclusion, airing-today items and unaired episodes.
+
+This means the TV progress area can be tailored for either a strict continuation workflow or a broader "what should I watch next?" view.
+
+Finder Settings -> Content -> General includes Open First Unwatched Episode (enabled by default). Opening a supported show goes through to its first aired unwatched episode and focuses it. Watched episodes remain available for replay; future episodes are not chosen as the next episode. Disable the option to browse normally, or use Browse All Seasons where offered. Clear Progress is offered from supported In Progress items; it resets resume progress rather than deleting the item.
+
+
+In Progress TV-show ordering also considers the newest resumable episode activity. Resuming an unfinished episode can therefore move its parent show to the front even though the episode has not yet been marked watched. With Finder Skin 1.0.08, supported views distinguish untouched (circle/dot), partially watched TV shows (half circle), genuine resume points (eye), and completed items (circle/check).

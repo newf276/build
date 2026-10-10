@@ -26,10 +26,8 @@
 							<width>396</width>
 							<height>245</height>
 							<texture colordiffuse="button_focus2">masks/landscape-unfocused.png</texture>
-							
 							<bordersize>20</bordersize>
 						</control>
-						
 						<control type="image">
 							<left>120</left>
 							<top>35</top>
@@ -57,18 +55,15 @@
 						<depth>DepthContentPopout</depth>
 						<top>150</top>
 						<control type="image">
-							<include>FocusBounce</include>
 							<width>396</width>
 							<height>245</height>
 							<texture colordiffuse="white">masks/landscape.png</texture>
 							<bordersize>15</bordersize>
-							<include>Animation_FocusTextureFade</include>
 						</control>
 						<control type="image">
 							<width>396</width>
 							<height>245</height>
 							<texture colordiffuse="dialog_bg">masks/landscape-unfocused.png</texture>
-							
 							<bordersize>20</bordersize>
 						</control>
 						<control type="image">
@@ -100,7 +95,6 @@
 							<width>330</width>
 							<height>140</height>
 							<texture>dialogs/dialog-bg-nobo.png</texture>
-							<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
 							<bordersize>20</bordersize>
 						</control>
 						<control type="textbox">
@@ -122,7 +116,6 @@
 							<width>330</width>
 							<height>140</height>
 							<texture>dialogs/dialog-bg-nobo.png</texture>
-							<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
 							<bordersize>20</bordersize>
 						</control>
 						<control type="image">
@@ -130,7 +123,6 @@
 							<height>140</height>
 							<texture colordiffuse="button_focus2">colors/grey.png</texture>
 							<bordersize>20</bordersize>
-							<include>Animation_FocusTextureFade</include>
 						</control>
 						<control type="textbox">
 							<left>30</left>

@@ -86,14 +86,6 @@
 					<width>2000</width>
 					<itemgap>15</itemgap>
 					<height>1000</height>
-					<animation type="Conditional" condition="!String.IsEmpty(Window.Property(Bounce.Down))" reversible="false">
-						<effect type="slide" end="0,20" time="60" tween="sine" />
-						<effect type="slide" end="0,-20" time="180" tween="sine" delay="80" />
-					</animation>
-					<animation type="Conditional" condition="!String.IsEmpty(Window.Property(Bounce.Up))" reversible="false">
-						<effect type="slide" end="0,-20" time="60" tween="sine" />
-						<effect type="slide" end="0,20" time="180" tween="sine" delay="80" />
-					</animation>
 					<scrolltime tween="sine">400</scrolltime>
 					<orientation>vertical</orientation>
 					<usecontrolcoords>true</usecontrolcoords>
@@ -392,7 +384,7 @@
 										<width>280</width>
 										<height>380</height>
 										<texture border="24">special://skin/media/finder_focus/setting-short.png</texture>
-										<animation effect="fade" start="0" end="100" time="160">Focus</animation>
+										<animation effect="fade" start="0" end="100" time="0">Focus</animation>
 										<animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
 									</control>
 									<control type="group">
@@ -666,7 +658,7 @@
 										<width>280</width>
 										<height>380</height>
 										<texture border="24">special://skin/media/finder_focus/setting-short.png</texture>
-										<animation effect="fade" start="0" end="100" time="160">Focus</animation>
+										<animation effect="fade" start="0" end="100" time="0">Focus</animation>
 										<animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
 									</control>
 									<control type="group">
@@ -857,7 +849,7 @@
 									<posy>0</posy>
 									<posx>50</posx>
 									<width>373</width>
-									<animation effect="fade" start="0" end="100" time="160">Focus</animation>
+									<animation effect="fade" start="0" end="100" time="0">Focus</animation>
 									<animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
 									<height>260</height>
 									<texture border="24">special://skin/media/finder_focus/setting-short.png</texture>
@@ -970,7 +962,7 @@
 										<width>280</width>
 										<height>380</height>
 										<texture border="24">special://skin/media/finder_focus/setting-short.png</texture>
-										<animation effect="fade" start="0" end="100" time="160">Focus</animation>
+										<animation effect="fade" start="0" end="100" time="0">Focus</animation>
 										<animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
 									</control>
 									<control type="group">
@@ -1082,7 +1074,7 @@
 										<width>560</width>
 										<height>380</height>
 										<texture border="24">special://skin/media/finder_focus/setting-short.png</texture>
-										<animation effect="fade" start="0" end="100" time="160">Focus</animation>
+										<animation effect="fade" start="0" end="100" time="0">Focus</animation>
 										<animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
 									</control>
 									<control type="image">

@@ -4,7 +4,7 @@ import xbmc
 import xbmcgui
 
 ROWS = (27011, 27012, 27013, 27017, 270171)
-HEIGHTS = {27011:580, 27012:580, 27013:580, 27017:305, 270171:580}
+HEIGHTS = {27011:667, 27012:667, 27013:667, 27017:305, 270171:667}
 
 def next_row(current, direction, available):
     if not available:

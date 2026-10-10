@@ -1,0 +1,9 @@
+Finder includes a native MDbList ratings service for Finder Skin. A separate FENtastic helper or Finder helper add-on is not required.
+
+Enter or update your MDbList API key through Finder Skin's MDbList setting. When Finder Skin is active, Finder can retrieve supported ratings for the currently focused Movie or TV Show and publish them to the skin.
+
+Supported displays include IMDb, IMDb Popular, Metacritic, Rotten Tomatoes critic and audience ratings, and TMDb when the corresponding data is available. Finder caches MDbList rating results locally to reduce unnecessary requests.
+
+Changing the MDbList API key takes effect without requiring a separate helper add-on. Rating visibility remains controlled by the available Finder Skin rating settings.
+
+Important: MDbList integration in this version is for ratings display only. MDbList is not a Primary Tracker or watched-state provider in Phase 2. Primary Tracker choices remain Finder, Trakt, and PunchPlay. Full MDbList watched-provider/tracker integration is reserved for possible future development.
